@@ -526,9 +526,10 @@
 
             <content>
                 <item>
-                    <label>$LOCALIZE[31064]</label>
+                    <label>$LOCALIZE[31024]</label>
                     <property name="sublabel">$INFO[Container(99950).ListItem.Property(Awards)]</property>
-                    <property name="plotlabel">$VAR[Label_Critics]</property>
+                    <property name="plotlabel">$INFO[Container(99950).ListItem.Property(rottentomatoes_consensus),, ]$INFO[Container(99950).ListItem.Property(rottentomatoes_reviewsfresh),$LOCALIZE[31054] , ]$INFO[Container(99950).ListItem.Property(rottentomatoes_reviewstotal),$LOCALIZE[31055] , $LOCALIZE[31056] ]$INFO[Container(99950).ListItem.Property(Awards)]</property>
+                    <visible>!String.IsEmpty(Container(99950).ListItem.Property(Awards)) | !String.IsEmpty(Container(99950).ListItem.Property(rottentomatoes_consensus))</visible>
                 </item>
             </content>
 
