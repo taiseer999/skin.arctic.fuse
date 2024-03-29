@@ -79,7 +79,7 @@
         <oninfo condition="$EXP[Exp_Window_IsClassicHub] + ![Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Library)] + String.IsEmpty(Window.Property(Hub.Header))">SetProperty(Options.Menu.Header,$LOCALIZE[10000] › $LOCALIZE[31150],Home)</oninfo>
         <oninfo>ActivateWindow(1170)</oninfo>
         <onback>CancelAlarm(SplashTimeOut,silent)</onback>
-        <onback condition="Window.IsVisible(Home)">SetFocus(308)</onback>
+        <onback condition="Window.IsVisible(Home) + !Skin.HasSetting(Navigation.DisableOptionsOnBack)">SetFocus(308)</onback>
     </include>
 
     <include name="Home_Menu_List">
