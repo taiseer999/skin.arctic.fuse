@@ -2,6 +2,7 @@
 <window type="window" id="1182">
     <defaultcontrol>5000</defaultcontrol>
     <include>Action_PreserveTransitionProp_Onload</include>
+    <onload>SetFocus(5098)</onload>
     <controls>
         <include>DialogInfo_Recommendations_BackgroundLoader</include>
         <include>Background_Main</include>
@@ -12,7 +13,19 @@
                 <include>Animation_Transition_InfoPanel_Hide</include>
             </include>
             <include content="DialogInfo_Recommendations_Widgets_Grouplist">
-                <param name="ondown">ActivateWindow(1171)</param>
+                <control type="button" id="5098">
+                    <height>0</height>
+                    <texturefocus />
+                    <texturenofocus />
+                    <onfocus>Action(Down)</onfocus>
+                    <animation effect="fade" time="400" start="0" end="0">Focus</animation>
+                    <visible>!ControlGroup(5000).HasFocus() | Control.HasFocus(5098)</visible>
+                </control>
+                <include content="DialogInfo_Recommendations_Widgets">
+                    <param name="include_onclick">false</param>
+                    <param name="transition_include">true</param>
+                    <param name="target">videos</param>
+                </include>
                 <include>skinvariables-homemenu-extended</include>
                 <include>skinvariables-homemenu-extended-global</include>
                 <control type="group" id="5099">
@@ -22,7 +35,8 @@
                         <visible>!Integer.IsEqual(Container(5000).NumItems,1) | !Control.HasFocus(5098) | ControlGroup(5000).HasFocus()</visible>
                         <visible>!$EXP[Exp_InfoDialogs]</visible>
                         <include content="Furniture_Bottom_WidgetGroups">
-                            <param name="label">$LOCALIZE[33063]</param>
+                            <param name="label">$VAR[Label_NextBump]</param>
+                            <param name="icon">special://skin/extras/icons/kodi.png</param>
                         </include>
                     </control>
                 </control>

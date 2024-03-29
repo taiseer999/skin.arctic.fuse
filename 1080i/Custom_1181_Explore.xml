@@ -2,6 +2,7 @@
 <window type="window" id="1181">
     <defaultcontrol>5000</defaultcontrol>
     <include>Action_PreserveTransitionProp_Onload</include>
+    <onload>SetFocus(5098)</onload>
     <controls>
         <include>DialogInfo_Recommendations_BackgroundLoader</include>
         <include>Background_Main</include>
@@ -12,7 +13,14 @@
                 <include>Animation_Transition_InfoPanel_Hide</include>
             </include>
             <include content="DialogInfo_Recommendations_Widgets_Grouplist">
-                <!-- <param name="ondown">ActivateWindow(1171)</param> -->
+                <control type="button" id="5098">
+                    <height>0</height>
+                    <texturefocus />
+                    <texturenofocus />
+                    <onfocus>Action(Down)</onfocus>
+                    <animation effect="fade" time="400" start="0" end="0">Focus</animation>
+                    <visible>!ControlGroup(5000).HasFocus() | Control.HasFocus(5098)</visible>
+                </control>
                 <include content="DialogInfo_Recommendations_Widgets" condition="![Window.Previous(music) | Window.Previous(1103)]">
                     <param name="include_onclick">false</param>
                     <param name="transition_include">true</param>
