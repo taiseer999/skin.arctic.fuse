@@ -72,6 +72,16 @@
         <onup>SetFocus(333)</onup>
     </include>
 
+    <include name="Home_Menu_List_OnBackInfo">
+        <oninfo condition="$EXP[Exp_Window_IsHub]">SetProperty(Options.Menu.GUID,$INFO[Container(303).ListItem.Property(GUID)],Home)</oninfo>
+        <oninfo condition="Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Library)">SetProperty(Options.Menu.Header,$LOCALIZE[10000]$INFO[Container(303).ListItem.Label, › ,] › $LOCALIZE[31150],Home)</oninfo>
+        <oninfo condition="$EXP[Exp_Window_IsHub] + ![Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Library)] + !String.IsEmpty(Window.Property(Hub.Header))">SetProperty(Options.Menu.Header,$INFO[Window.Property(Hub.Header)] › $LOCALIZE[31150],Home)</oninfo>
+        <oninfo condition="$EXP[Exp_Window_IsHub] + ![Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Library)] + String.IsEmpty(Window.Property(Hub.Header))">SetProperty(Options.Menu.Header,$LOCALIZE[10000] › $LOCALIZE[31150],Home)</oninfo>
+        <oninfo>ActivateWindow(1170)</oninfo>
+        <onback>CancelAlarm(SplashTimeOut,silent)</onback>
+        <onback condition="Window.IsVisible(Home)">SetFocus(308)</onback>
+    </include>
+
     <include name="Home_Menu_List">
         <param name="items_include">Home_Menu_Content</param>
         <param name="onlist">320</param>
@@ -111,7 +121,7 @@
                     <ondown condition="![Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Library)]">$PARAM[onlist]</ondown>
                     <ondown condition="![Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Library)]">SetFocus($PARAM[onlist])</ondown>
 
-                    <onback>CancelAlarm(SplashTimeOut,silent)</onback>
+                    <include>Home_Menu_List_OnBackInfo</include>
                     <onfocus>ClearProperty(WidgetGroup.Movement)</onfocus>
 
                     <onfocus condition="Window.IsVisible(Home) + Skin.HasSetting(Hub.Home.DisableSubmenu)">SetProperty(Slide.WidgetContainer,True,Home)</onfocus>
@@ -128,9 +138,6 @@
 
                     <onfocus condition="!String.IsEmpty(Window.Property(List.ViewContainer.Prev))">SetProperty(List.ViewContainer,$INFO[Window.Property(List.ViewContainer.Prev)])</onfocus>
                     <onfocus condition="!String.IsEmpty(Window.Property(List.ViewContainer.Prev))">ClearProperty(List.ViewContainer.Prev)</onfocus>
-
-                    <oninfo>ActivateWindow(1170)</oninfo>
-                    <onback condition="Window.IsVisible(Home)">SetFocus(308)</onback>
 
                     <include content="Action_HomeMenu_OnRightLeft">
                         <param name="onlist">$PARAM[onlist]</param>

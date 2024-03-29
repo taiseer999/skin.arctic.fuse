@@ -3,30 +3,26 @@
     <defaultcontrol>7000</defaultcontrol>
     <onload>SetFocus(7021)</onload>
     <include>Action_ButtonMenu_Onload</include>
-
+    <onunload>ClearProperty(Options.Menu.GUID,Home)</onunload>
+    <onunload>ClearProperty(Options.Menu.Header,Home)</onunload>
     <controls>
+
+        <include content="Object_Hidden_List">
+            <param name="id">303</param>
+            <content>
+                <item>
+                    <label>$INFO[Window(Home).Property(Options.Menu.Header)]</label>
+                    <property name="guid">$INFO[Window(Home).Property(Options.Menu.GUID)]</property>
+                </item>
+            </content>
+        </include>
 
         <control type="group">
             <include>Dimension_DialogSideMenu</include>
             <include>Animation_Right_Delay</include>
             <include content="Dialog_Dim_Side">
                 <param name="slide_animation">false</param>
-                <!-- <param name="slide_condition">!Integer.IsEqual(Container(9000).NumItems,0)</param> -->
             </include>
-
-            <!-- Bottom Layer -->
-            <!-- <include content="Dialog_Background_Side">
-                <param name="slide_condition">!Integer.IsEqual(Container(9000).NumItems,0)</param>
-                <param name="dialog_size">Dimension_DialogSideMenu</param>
-                <include content="Dialog_Body">
-                    <include content="Dialog_Side_Grouplist">
-                        <param name="id">9000</param>
-                        <onleft>Close</onleft>
-                        <onright>7000</onright>
-                        <include>skinvariables-powersidemenu-staticitems</include>
-                    </include>
-                </include>
-            </include> -->
 
             <include content="Dialog_Foreground_Side">
                 <param name="dialog_size">Dimension_DialogSideMenu</param>
@@ -36,6 +32,8 @@
                 <!-- Header -->
                 <include content="Dialog_Head">
                     <param name="label">$LOCALIZE[33063]</param>
+                    <param name="sublabel">$INFO[Window(Home).Property(Options.Menu.Header)]</param>
+                    <param name="sublabel_include">!String.IsEmpty(Window(Home).Property(Options.Menu.Header))</param>
                 </include>
                 <include>Dialog_Head_CloseButton</include>
 
@@ -63,7 +61,7 @@
                             <texture colordiffuse="dialog_fg_12">common/white.png</texture>
                         </control>
 
-                        <include content="Object_Control">
+                        <include content="Object_Control" condition="String.IsEmpty(Window(Home).Property(Options.Menu.GUID))">
                             <param name="control">grouplist</param>
                             <param name="id">8000</param>
                             <top>320</top>
@@ -74,6 +72,28 @@
                             <onleft>Close</onleft>
                             <onright>-</onright>
                             <include>skinvariables-powermainmenu-staticitems</include>
+                        </include>
+
+                        <include content="List_DialogSelect" condition="!String.IsEmpty(Window(Home).Property(Options.Menu.GUID))">
+                            <param name="id">8000</param>
+                            <param name="itemlayout_include">Layout_MenuList</param>
+                            <top>320</top>
+                            <bottom>80</bottom>
+                            <onup>7020</onup>
+                            <ondown>6000</ondown>
+                            <onleft>Close</onleft>
+                            <onright>-</onright>
+                            <content>
+                                <include condition="Window.IsVisible(Home)">skinvariables-homemenu-staticitems</include>
+                                <include condition="Window.IsVisible(1101)">skinvariables-1101menu-staticitems</include>
+                                <include condition="Window.IsVisible(1102)">skinvariables-1102menu-staticitems</include>
+                                <include condition="Window.IsVisible(1103)">skinvariables-1103menu-staticitems</include>
+                                <include condition="Window.IsVisible(1104)">skinvariables-1104menu-staticitems</include>
+                                <include condition="Window.IsVisible(1106)">skinvariables-1106menu-staticitems</include>
+                                <include condition="Window.IsVisible(1107)">skinvariables-1107menu-staticitems</include>
+                                <include condition="Window.IsVisible(1108)">skinvariables-1108menu-staticitems</include>
+                                <include condition="Window.IsVisible(1109)">skinvariables-1109menu-staticitems</include>
+                            </content>
                         </include>
 
                         <include>ButtonMenu_PlayerControls</include>

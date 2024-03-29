@@ -288,6 +288,7 @@
             </include>
             <control type="list" id="370">
                 <visible allowhiddenfocus="true">Control.HasFocus(370) | Control.HasFocus(333)</visible>
+
                 <include content="Animation_Fade_In">
                     <param name="type">Visible</param>
                 </include>
@@ -299,15 +300,8 @@
                 <onup>SetFocus(333)</onup>
                 <ondown>SetFocus(303,0,absolute)</ondown>
 
-                <oninfo>ActivateWindow(1170)</oninfo>
-                <onback condition="Window.IsVisible(Home)">SetFocus(308)</onback>
+                <include>Home_Menu_List_OnBackInfo</include>
 
-                <!-- <include content="Action_Widget_Top">
-                    <param name="id">370</param>
-                </include> -->
-                <!-- <ondown condition="!Integer.IsEqual(Container(301).NumItems,0)">311</ondown>
-                <ondown condition="Integer.IsEqual(Container(301).NumItems,0) + !Integer.IsEqual(Container(300).NumItems,0)">300</ondown>
-                <ondown condition="Integer.IsEqual(Container(301).NumItems,0) + Integer.IsEqual(Container(300).NumItems,0)">$INFO[Container(370).ListItem.Property(widgets_setfocus)]</ondown> -->
                 <top>20</top>
                 <left>120</left>
                 <height>200</height>

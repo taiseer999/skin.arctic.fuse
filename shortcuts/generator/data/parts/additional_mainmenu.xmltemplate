@@ -3,3 +3,4 @@
 <property name="global_widgets">{item_global_widgets}</property>
 <property name="use_as_widget">{item_use_as_widget}</property>
 <property name="sidemenu_guid">{item_sidemenu_guid}</property>
+<onclick>Dialog.Close(1170,true)</onclick>
