@@ -260,23 +260,6 @@
             <label>$LOCALIZE[31372]</label>
         </include>
 
-        <include content="Settings_Divider_Label">
-            <param name="id">8012</param>
-            <param name="color">dialog_fg</param>
-            <param name="label">$LOCALIZE[137]</param>
-        </include>
-        <include content="Settings_Button">
-            <param name="id">8008</param>
-            <param name="control">button</param>
-            <param name="dialog">true</param>
-            <onclick>SetProperty(Shortcuts.EditMenu,menu=searchmenu,Home)</onclick>
-            <onclick>ClearProperty(Shortcuts.EditMode,Home)</onclick>
-            <onclick>ClearProperty(Shortcuts.EditGUID,Home)</onclick>
-            <onclick>Close</onclick>
-            <onclick>ActivateWindow(1116)</onclick>
-            <label>$LOCALIZE[137] [LOWERCASE]$LOCALIZE[31103][/LOWERCASE]</label>
-        </include>
-
     </include>
 
     <include name="Items_DialogSelect_Standard">

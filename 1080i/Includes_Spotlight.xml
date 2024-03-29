@@ -143,6 +143,7 @@
                         <param name="condition">Integer.IsEqual(Container(300).NumItems,0)</param>
                         <param name="id">311</param>
                         <param name="bump_id">333</param>
+                        <param name="window_id">$PARAM[window_id]</param>
                     </include>
 
                     <ondown condition="!Integer.IsEqual(Container(300).NumItems,0)">300</ondown>

@@ -1788,6 +1788,11 @@ msgctxt "#31376"
 msgid "Reset discover search history"
 msgstr ""
 
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31377"
+msgid "Next window"
+msgstr ""
+
 msgctxt "#31378"
 msgid "Foreign"
 msgstr ""

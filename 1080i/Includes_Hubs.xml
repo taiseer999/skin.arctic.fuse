@@ -525,6 +525,7 @@
             <include content="Action_Widget_End">
                 <param name="topid">$PARAM[topid]</param>
                 <param name="id">$PARAM[id]</param>
+                <param name="window_id">$PARAM[window_id]</param>
             </include>
 
             <visible>$PARAM[visible]</visible>

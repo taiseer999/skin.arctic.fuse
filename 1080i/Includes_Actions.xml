@@ -223,23 +223,23 @@
             <ondown condition="$PARAM[condition] + $PARAM[move]">Control.Move(303,1)</ondown>
 
             <!-- Options -->
-            <ondown condition="$PARAM[condition] + ![$PARAM[move]] + Skin.String(Navigation.Global.OnDown,Options)">ActivateWindow(1171)</ondown>
+            <ondown condition="$PARAM[condition] + ![$PARAM[move]] + String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Options)">ActivateWindow(1171)</ondown>
 
             <!-- Search -->
-            <ondown condition="$PARAM[condition] + ![$PARAM[move]] + Skin.String(Navigation.Global.OnDown,Search)">ActivateWindow(1185)</ondown>
+            <ondown condition="$PARAM[condition] + ![$PARAM[move]] + [[String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Search)] | Skin.String(Navigation.Hub.$PARAM[window_id].OnDown,Search)]">ActivateWindow(1185)</ondown>
 
             <!-- Filter -->
-            <ondown condition="$PARAM[condition] + ![$PARAM[move]] + Skin.String(Navigation.Global.OnDown,Filter)">ActivateWindow(1105)</ondown>
+            <ondown condition="$PARAM[condition] + ![$PARAM[move]] + String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Filter)">ActivateWindow(1105)</ondown>
 
             <!-- Add-ons -->
-            <ondown condition="$PARAM[condition] + ![$PARAM[move]] + Skin.String(Navigation.Global.OnDown,Add-ons)">ActivateWindow(1132)</ondown>
+            <ondown condition="$PARAM[condition] + ![$PARAM[move]] + String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Add-ons)">ActivateWindow(1132)</ondown>
 
             <!-- Bump -->
-            <ondown condition="$PARAM[condition] + ![$PARAM[move]] + Skin.String(Navigation.Global.OnDown,Bump)">SetFocus(330)</ondown>
+            <ondown condition="$PARAM[condition] + ![$PARAM[move]] + String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Bump)">SetFocus(330)</ondown>
 
             <!-- Explore -->
             <include content="Action_View_Explore_OnDown">
-                <param name="condition">$PARAM[condition] + ![$PARAM[move]] + Skin.String(Navigation.Global.OnDown,Explore)</param>
+                <param name="condition">$PARAM[condition] + ![$PARAM[move]] + [[String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Explore)] | Skin.String(Navigation.Hub.$PARAM[window_id].OnDown,Explore)]</param>
             </include>
         </definition>
     </include>

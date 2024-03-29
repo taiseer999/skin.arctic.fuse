@@ -309,8 +309,6 @@
             <control type="list" id="303">
                 <focusposition>2</focusposition>
                 <movement>2</movement>
-                <onup>308</onup>
-                <ondown>309</ondown>
                 <onright>340</onright>
 
                 <onclick>ClearProperty(Shortcuts.EditMode,Home)</onclick>
@@ -402,16 +400,34 @@
 
             </include>
 
+            <include content="Dialog_Side_Button">
+                <param name="vertical">false</param>
+                <param name="id">11</param>
+                <param name="baseid">35</param>
+                <param name="textcolor">main_fg</param>
+                <param name="nf_opacity">70</param>
+                <param name="db_opacity">12</param>
+                <param name="label">$LOCALIZE[137]</param>
+                <param name="icon">special://skin/extras/icons/search.png</param>
+                <onclick>SetProperty(Shortcuts.EditMenu,menu=searchmenu,Home)</onclick>
+                <onclick>ClearProperty(Shortcuts.EditMode,Home)</onclick>
+                <onclick>ClearProperty(Shortcuts.EditGUID,Home)</onclick>
+                <onclick>ActivateWindow(1116)</onclick>
+            </include>
 
-        </control>
-
-        <control type="grouplist" id="305">
-            <left>130</left>
-            <centerbottom>100</centerbottom>
-            <itemgap>0</itemgap>
-            <orientation>horizontal</orientation>
-            <height>160</height>
-            <onup>340</onup>
+            <include content="Dialog_Side_Button">
+                <param name="vertical">false</param>
+                <param name="id">12</param>
+                <param name="baseid">35</param>
+                <param name="textcolor">main_fg</param>
+                <param name="nf_opacity">70</param>
+                <param name="db_opacity">12</param>
+                <param name="label">$LOCALIZE[33063]</param>
+                <param name="icon">special://skin/extras/icons/bars.png</param>
+                <onclick>SetProperty(CustomDialogSettingsTitle,[CAPITALIZE]$LOCALIZE[31086][/CAPITALIZE],Home)</onclick>
+                <onclick>SetProperty(CustomDialogSettingsItems,Items_Settings_PowerMenuConfigure,Home)</onclick>
+                <onclick>ActivateWindow(1118)</onclick>
+            </include>
 
             <include content="Dialog_Side_Button">
                 <param name="vertical">false</param>
@@ -437,36 +453,50 @@
                 <onclick>RunPlugin(plugin://script.skinvariables/?info=get_shortcuts_node&amp;skin=$VAR[Path_SkinVariables_SkinFolder]$INFO[Window.Property(categories_menu),&amp;,]&amp;func=do_refresh&amp;&amp;False&amp;&amp;ActivateWindow(1115))</onclick>
             </include>
 
-            <!-- <include content="Dialog_Side_Button">
-                <param name="vertical">false</param>
-                <param name="id">11</param>
-                <param name="baseid">35</param>
-                <param name="textcolor">main_fg</param>
-                <param name="nf_opacity">70</param>
-                <param name="db_opacity">12</param>
-                <param name="label">$LOCALIZE[137]</param>
-                <param name="icon">special://skin/extras/icons/search.png</param>
-                <onclick>SetProperty(Shortcuts.EditMenu,menu=searchmenu,Home)</onclick>
-                <onclick>ClearProperty(Shortcuts.EditMode,Home)</onclick>
-                <onclick>ClearProperty(Shortcuts.EditGUID,Home)</onclick>
-                <onclick>ActivateWindow(1116)</onclick>
-            </include> -->
-
-            <include content="Dialog_Side_Button">
-                <param name="vertical">false</param>
-                <param name="id">12</param>
-                <param name="baseid">35</param>
-                <param name="textcolor">main_fg</param>
-                <param name="nf_opacity">70</param>
-                <param name="db_opacity">12</param>
-                <param name="label">Options</param>
-                <param name="icon">special://skin/extras/icons/bars.png</param>
-                <onclick>SetProperty(CustomDialogSettingsTitle,[CAPITALIZE]$LOCALIZE[31086][/CAPITALIZE],Home)</onclick>
-                <onclick>SetProperty(CustomDialogSettingsItems,Items_Settings_PowerMenuConfigure,Home)</onclick>
-                <onclick>ActivateWindow(1118)</onclick>
-            </include>
         </control>
+
+        <control type="button" id="305">
+            <left>160</left>
+            <centerbottom>100</centerbottom>
+            <height>80</height>
+            <label>[CAPITALIZE]$LOCALIZE[31377][/CAPITALIZE]$VAR[Shortcuts_Window_Var_Label_NavigationOnDown,: ,]</label>
+            <width max="920">auto</width>
+            <align>left</align>
+            <aligny>top</aligny>
+            <textcolor>main_fg_70</textcolor>
+            <textoffsetx>40</textoffsetx>
+            <textoffsety>17</textoffsety>
+            <font>font_main</font>
+            <height>80</height>
+            <onup>340</onup>
+            <onclick>RunScript(script.skinvariables,run_dialog=select,heading=$LOCALIZE[31324] > $LOCALIZE[31008],separator=||,list=Default||Search||Explore,"executebuiltin_0=Skin.Reset(Navigation.$INFO[Container(2804).ListItem.Property(value)].OnDown)","executebuiltin_1=Skin.SetString(Navigation.$INFO[Container(2804).ListItem.Property(value)].OnDown,Search)","executebuiltin_2=Skin.SetString(Navigation.$INFO[Container(2804).ListItem.Property(value)].OnDown,Explore)")</onclick>
+            <texturenofocus />
+        </control>
+
+        <!-- <control type="grouplist" id="305">
+            <left>130</left>
+            <centerbottom>100</centerbottom>
+            <itemgap>0</itemgap>
+            <orientation>horizontal</orientation>
+            <height>160</height>
+            <onup>340</onup>
+
+
+        </control> -->
     </include>
+
+    <variable name="Shortcuts_Window_Var_Label_NavigationOnDown">
+        <value condition="String.IsEqual(Container(2804).ListItem.Property(value),Hub.Home) + !String.IsEmpty(Skin.String(Navigation.Hub.Home.OnDown))">$INFO[Skin.String(Navigation.Hub.Home.OnDown)]</value>
+        <value condition="String.IsEqual(Container(2804).ListItem.Property(value),Hub.1101) + !String.IsEmpty(Skin.String(Navigation.Hub.1101.OnDown))">$INFO[Skin.String(Navigation.Hub.1101.OnDown)]</value>
+        <value condition="String.IsEqual(Container(2804).ListItem.Property(value),Hub.1102) + !String.IsEmpty(Skin.String(Navigation.Hub.1102.OnDown))">$INFO[Skin.String(Navigation.Hub.1102.OnDown)]</value>
+        <value condition="String.IsEqual(Container(2804).ListItem.Property(value),Hub.1103) + !String.IsEmpty(Skin.String(Navigation.Hub.1103.OnDown))">$INFO[Skin.String(Navigation.Hub.1103.OnDown)]</value>
+        <value condition="String.IsEqual(Container(2804).ListItem.Property(value),Hub.1104) + !String.IsEmpty(Skin.String(Navigation.Hub.1104.OnDown))">$INFO[Skin.String(Navigation.Hub.1104.OnDown)]</value>
+        <value condition="String.IsEqual(Container(2804).ListItem.Property(value),Hub.1106) + !String.IsEmpty(Skin.String(Navigation.Hub.1106.OnDown))">$INFO[Skin.String(Navigation.Hub.1106.OnDown)]</value>
+        <value condition="String.IsEqual(Container(2804).ListItem.Property(value),Hub.1107) + !String.IsEmpty(Skin.String(Navigation.Hub.1107.OnDown))">$INFO[Skin.String(Navigation.Hub.1107.OnDown)]</value>
+        <value condition="String.IsEqual(Container(2804).ListItem.Property(value),Hub.1108) + !String.IsEmpty(Skin.String(Navigation.Hub.1108.OnDown))">$INFO[Skin.String(Navigation.Hub.1108.OnDown)]</value>
+        <value condition="String.IsEqual(Container(2804).ListItem.Property(value),Hub.1109) + !String.IsEmpty(Skin.String(Navigation.Hub.1109.OnDown))">$INFO[Skin.String(Navigation.Hub.1109.OnDown)]</value>
+        <value>$LOCALIZE[571]$INFO[Skin.String(Navigation.Global.OnDown), (,)]</value>
+    </variable>
 
     <variable name="Shortcuts_Window_Var_Label_GlobalMode">
         <value condition="$EXP[Shortcuts_Window_Exp_WidgetsOnly] + !String.IsEmpty(Container(303).ListItem.Property(global_widgets))">$LOCALIZE[31031]</value>
@@ -568,46 +598,55 @@
             <content>
                 <item>
                     <label>Home</label>
+                    <property name="value">Hub.Home</property>
                     <onclick>SetProperty(categories_menu,menu=homemenu)</onclick>
                     <onclick>SetProperty(hub_prefix,Home)</onclick>
                 </item>
                 <item>
                     <label>1101</label>
+                    <property name="value">Hub.1101</property>
                     <onclick>SetProperty(categories_menu,menu=1101menu)</onclick>
                     <onclick>SetProperty(hub_prefix,1101)</onclick>
                 </item>
                 <item>
                     <label>1102</label>
+                    <property name="value">Hub.1102</property>
                     <onclick>SetProperty(categories_menu,menu=1102menu)</onclick>
                     <onclick>SetProperty(hub_prefix,1102)</onclick>
                 </item>
                 <item>
                     <label>1103</label>
+                    <property name="value">Hub.1103</property>
                     <onclick>SetProperty(categories_menu,menu=1103menu)</onclick>
                     <onclick>SetProperty(hub_prefix,1103)</onclick>
                 </item>
                 <item>
                     <label>1104</label>
+                    <property name="value">Hub.1104</property>
                     <onclick>SetProperty(categories_menu,menu=1104menu)</onclick>
                     <onclick>SetProperty(hub_prefix,1104)</onclick>
                 </item>
                 <item>
                     <label>1106</label>
+                    <property name="value">Hub.1106</property>
                     <onclick>SetProperty(categories_menu,menu=1106menu)</onclick>
                     <onclick>SetProperty(hub_prefix,1106)</onclick>
                 </item>
                 <item>
                     <label>1107</label>
+                    <property name="value">Hub.1107</property>
                     <onclick>SetProperty(categories_menu,menu=1107menu)</onclick>
                     <onclick>SetProperty(hub_prefix,1107)</onclick>
                 </item>
                 <item>
                     <label>1108</label>
+                    <property name="value">Hub.1108</property>
                     <onclick>SetProperty(categories_menu,menu=1108menu)</onclick>
                     <onclick>SetProperty(hub_prefix,1108)</onclick>
                 </item>
                 <item>
                     <label>1109</label>
+                    <property name="value">Hub.1109</property>
                     <onclick>SetProperty(categories_menu,menu=1109menu)</onclick>
                     <onclick>SetProperty(hub_prefix,1109)</onclick>
                 </item>
