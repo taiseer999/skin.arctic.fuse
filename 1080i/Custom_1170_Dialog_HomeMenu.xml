@@ -53,13 +53,13 @@
                     <include content="Dialog_Body_Group">
                         <param name="id">7000</param>
 
-                        <include content="ButtonMenu_Layout" condition="Skin.String(OptionsTiles.Layout,$NUMBER[2])">
+                        <include content="ButtonMenu_Layout" condition="Skin.String(OptionsTiles.Layout,$NUMBER[2]) + String.IsEmpty(Window(Home).Property(Options.Menu.GUID))">
                             <param name="layout_include">ButtonMenu_Layout_Two</param>
                         </include>
-                        <include content="ButtonMenu_Layout" condition="Skin.String(OptionsTiles.Layout,$NUMBER[3])">
+                        <include content="ButtonMenu_Layout" condition="Skin.String(OptionsTiles.Layout,$NUMBER[3]) + String.IsEmpty(Window(Home).Property(Options.Menu.GUID))">
                             <param name="layout_include">ButtonMenu_Layout_Three</param>
                         </include>
-                        <include content="ButtonMenu_Layout" condition="Skin.String(OptionsTiles.Layout,$NUMBER[4])">
+                        <include content="ButtonMenu_Layout" condition="Skin.String(OptionsTiles.Layout,$NUMBER[4]) + String.IsEmpty(Window(Home).Property(Options.Menu.GUID))">
                             <param name="layout_include">ButtonMenu_Layout_Four</param>
                         </include>
 
@@ -69,6 +69,7 @@
                             <right>20</right>
                             <height>1</height>
                             <texture colordiffuse="dialog_fg_12">common/white.png</texture>
+                            <visible>String.IsEmpty(Window(Home).Property(Options.Menu.GUID))</visible>
                         </control>
 
                         <include content="Object_Control" condition="String.IsEmpty(Window(Home).Property(Options.Menu.GUID))">
@@ -87,7 +88,7 @@
                         <include content="List_DialogSelect" condition="!String.IsEmpty(Window(Home).Property(Options.Menu.GUID))">
                             <param name="id">8000</param>
                             <param name="itemlayout_include">Layout_MenuList</param>
-                            <top>320</top>
+                            <!-- <top>320</top> -->
                             <bottom>80</bottom>
                             <onup>7020</onup>
                             <ondown>6000</ondown>
