@@ -81,6 +81,7 @@
                             <onup>7020</onup>
                             <ondown>6000</ondown>
                             <onleft>Close</onleft>
+                            <oninfo>Close</oninfo>
                             <onright>-</onright>
                             <include>skinvariables-powermainmenu-staticitems</include>
                         </include>
@@ -93,6 +94,7 @@
                             <onup>7020</onup>
                             <ondown>6000</ondown>
                             <onleft>Close</onleft>
+                            <oninfo>Close</oninfo>
                             <onright>-</onright>
                             <content>
                                 <include condition="Window.IsVisible(Home)">skinvariables-homemenu-staticitems</include>

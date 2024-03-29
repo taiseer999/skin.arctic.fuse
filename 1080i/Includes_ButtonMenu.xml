@@ -19,6 +19,7 @@
             <onup condition="!Window.IsVisible(1170)">9009</onup>
             <ondown condition="!Window.IsVisible(1170)">19</ondown>
             <onback condition="!Window.IsVisible(1170)">68</onback>
+            <oninfo>Close</oninfo>
             <!-- Button 1 -->
             <control type="button" id="6001">
                 <include>Defs_OSD_Button</include>
@@ -135,6 +136,7 @@
             <onup condition="!Window.IsVisible(1170)">9009</onup>
             <ondown condition="!Window.IsVisible(1170)">19</ondown>
             <onback condition="!Window.IsVisible(1170)">68</onback>
+            <oninfo>Close</oninfo>
 
             <itemlayout width="100" height="80">
                 <include content="Layout_OptionTray">
@@ -217,6 +219,7 @@
                 <ondown>$PARAM[ondown]</ondown>
                 <onright>$PARAM[onright]</onright>
                 <onleft>$PARAM[onleft]</onleft>
+                <oninfo>Close</oninfo>
                 <onclick>Dialog.Close(all,true)</onclick>
                 <onclick>Fullscreen</onclick>
                 <include>defs_dialog_button</include>
@@ -238,6 +241,7 @@
                 <ondown>$PARAM[ondown]</ondown>
                 <onright>$PARAM[onright]</onright>
                 <onleft>$PARAM[onleft]</onleft>
+                <oninfo>Close</oninfo>
                 <onclick>Close</onclick>
                 <onclick condition="Skin.HasSetting(SkinUserLogin.Disabled)">System.LogOff</onclick>
                 <onclick condition="!Skin.HasSetting(SkinUserLogin.Disabled)">ActivateWindow(1195)</onclick>
@@ -351,6 +355,7 @@
                 <ondown>$PARAM[ondown]</ondown>
                 <onright>$PARAM[onright]</onright>
                 <onleft>$PARAM[onleft]</onleft>
+                <oninfo>Close</oninfo>
                 <onclick>Close</onclick>
                 <onclick>ActivateWindow(systeminfo)</onclick>
                 <include>defs_dialog_button</include>
@@ -389,6 +394,7 @@
                 <ondown>$PARAM[ondown]</ondown>
                 <onright>$PARAM[onright]</onright>
                 <onleft>$PARAM[onleft]</onleft>
+                <oninfo>Close</oninfo>
                 <onclick>Close</onclick>
                 <onclick>ActivateWindow(1161)</onclick>
                 <include>defs_dialog_button</include>
@@ -409,6 +415,7 @@
                 <ondown>$PARAM[ondown]</ondown>
                 <onright>$PARAM[onright]</onright>
                 <onleft>$PARAM[onleft]</onleft>
+                <oninfo>Close</oninfo>
                 <onclick>Close</onclick>
                 <onclick>$PARAM[onclick]</onclick>
                 <include>defs_dialog_button</include>
@@ -429,6 +436,7 @@
                 <ondown>$PARAM[ondown]</ondown>
                 <onright>$PARAM[onright]</onright>
                 <onleft>$PARAM[onleft]</onleft>
+                <oninfo>Close</oninfo>
                 <onclick>Close</onclick>
                 <onclick>ActivateWindow(settings)</onclick>
                 <include>defs_dialog_button</include>
