@@ -1421,7 +1421,7 @@
 
             <include content="Widget_Info_Row" condition="!String.IsEmpty(Window.Property(Item_Year))">
                 <param name="id">01</param>
-                <param name="label">$LOCALIZE[31390]</param>
+                <param name="label">$LOCALIZE[31390]$INFO[Window.Property(Item_Year), (,)]</param>
                 <param name="include">List_Poster_Row</param>
                 <param name="visible">!String.IsEmpty(Window.Property(Item_Year))</param>
                 <param name="transition_include">$PARAM[transition_include]</param>
@@ -1435,7 +1435,7 @@
 
             <include content="Widget_Info_Row" condition="!String.IsEmpty(Window.Property(Genre_Title))">
                 <param name="id">02</param>
-                <param name="label">$LOCALIZE[515]</param>
+                <param name="label">$LOCALIZE[515]$INFO[Window.Property(Genre_Title), (,)]</param>
                 <param name="include">List_Poster_Row</param>
                 <param name="visible">!String.IsEmpty(Window.Property(Genre_Query))</param>
                 <param name="transition_include">$PARAM[transition_include]</param>
@@ -1449,7 +1449,7 @@
 
             <include content="Widget_Info_Row" condition="!String.IsEmpty(Window.Property(Item_Query))">
                 <param name="id">03</param>
-                <param name="label">$LOCALIZE[31018]</param>
+                <param name="label">$LOCALIZE[31018]$INFO[Window.Property(Item_Title), (,)]</param>
                 <param name="include">List_Poster_Row</param>
                 <param name="visible">!String.IsEmpty(Window.Property(Item_Query))</param>
                 <param name="transition_include">$PARAM[transition_include]</param>
