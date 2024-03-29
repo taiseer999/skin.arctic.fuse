@@ -8,8 +8,17 @@
     <onunload>ClearProperty(Options.Menu.Header,Home)</onunload>
     <controls>
 
-        <include content="Object_Hidden_List">
+        <include content="Object_Hidden_List" condition="![Skin.String(Home.SideMenuCollapse,Topbar) + Window.IsVisible(Home)]">
             <param name="id">303</param>
+            <content>
+                <item>
+                    <label>$INFO[Window(Home).Property(Options.Menu.Header)]</label>
+                    <property name="guid">$INFO[Window(Home).Property(Options.Menu.GUID)]</property>
+                </item>
+            </content>
+        </include>
+        <include content="Object_Hidden_List" condition="[Skin.String(Home.SideMenuCollapse,Topbar) + Window.IsVisible(Home)]">
+            <param name="id">370</param>
             <content>
                 <item>
                     <label>$INFO[Window(Home).Property(Options.Menu.Header)]</label>
