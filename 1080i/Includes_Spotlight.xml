@@ -273,25 +273,6 @@
                         <param name="icon_colordiffuse">main_fg_70</param>
                     </include>
 
-                    <!-- <control type="button" id="315">
-                        <include>Defs_OSD_Button</include>
-                        <centertop>50%</centertop>
-                        <onclick>Control.Move(301,1)</onclick>
-                        <include content="Spotlight_Main_Button_Standard">
-                            <param name="id">315</param>
-                            <param name="window_id">$PARAM[window_id]</param>
-                        </include>
-                    </control>
-                    <include content="OSD_Button_Icon_Overlay">
-                        <param name="icon">special://skin/extras/icons/arrow-down.png</param>
-                        <param name="id">315</param>
-                        <param name="groupid">325</param>
-                        <param name="vertical">false</param>
-                        <param name="itemgap">0</param>
-                        <param name="center">true</param>
-                        <param name="icon_colordiffuse">main_fg_70</param>
-                    </include> -->
-
                 </control>
             </control>
         </definition>
