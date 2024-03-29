@@ -1550,13 +1550,13 @@
                 </control>
 
                 <control type="group">
-                    <include content="Object_EpisodeTypeBanner" condition="Skin.HasSetting(Indicator.EpisodeTypeBanner)">
+                    <include content="Object_EpisodeTypeBanner" condition="$PARAM[indicator] + Skin.HasSetting(Indicator.EpisodeTypeBanner)">
                         <param name="listitem">$PARAM[listitem]</param>
                     </include>
-                    <include content="Object_RatingCircle" condition="Skin.HasSetting(Indicator.RatingsCircle)">
+                    <include content="Object_RatingCircle" condition="$PARAM[indicator] + Skin.HasSetting(Indicator.RatingsCircle)">
                         <param name="listitem">$PARAM[listitem]</param>
                     </include>
-                    <include content="Object_ProgressPercent" condition="Skin.HasSetting(Indicator.ProgressPercent)">
+                    <include content="Object_ProgressPercent" condition="$PARAM[indicator] + Skin.HasSetting(Indicator.ProgressPercent)">
                         <param name="affix">$PARAM[affix]</param>
                         <param name="listitem">$PARAM[listitem]</param>
                     </include>
@@ -1599,10 +1599,10 @@
                         <bordersize>20</bordersize>
                         <visible>String.IsEmpty($PARAM[listitem].Art(banner)) + String.IsEmpty($PARAM[listitem].Art(tvshow.banner)) + String.IsEmpty($PARAM[listitem].Art(season.banner))</visible>
                     </control>
-                    <include content="Object_RatingCircle" condition="Skin.HasSetting(Indicator.RatingsCircle)">
+                    <include content="Object_RatingCircle" condition="$PARAM[indicator] + Skin.HasSetting(Indicator.RatingsCircle)">
                         <param name="listitem">$PARAM[listitem]</param>
                     </include>
-                    <include content="Object_ProgressPercent" condition="Skin.HasSetting(Indicator.ProgressPercent)">
+                    <include content="Object_ProgressPercent" condition="$PARAM[indicator] + Skin.HasSetting(Indicator.ProgressPercent)">
                         <param name="affix">$PARAM[affix]</param>
                         <param name="listitem">$PARAM[listitem]</param>
                     </include>
@@ -1703,7 +1703,7 @@
                     </control>
                 </control>
                 <control type="group">
-                    <include content="Object_EpisodeTypeBanner" condition="Skin.HasSetting(Indicator.EpisodeTypeBanner)">
+                    <include content="Object_EpisodeTypeBanner" condition="$PARAM[indicator] + Skin.HasSetting(Indicator.EpisodeTypeBanner)">
                         <param name="listitem">$PARAM[listitem]</param>
                     </include>
                     <include content="Object_RatingCircle" condition="$PARAM[indicator] + Skin.HasSetting(Indicator.RatingsCircle)">
@@ -2430,15 +2430,15 @@
                     <param name="listitem">$PARAM[listitem]</param>
                 </include>
 
-                <include content="Object_EpisodeTypeBanner" condition="Skin.HasSetting(Indicator.EpisodeTypeBanner)">
+                <include content="Object_EpisodeTypeBanner" condition="$PARAM[indicator] + Skin.HasSetting(Indicator.EpisodeTypeBanner)">
                     <param name="listitem">$PARAM[listitem]</param>
                 </include>
 
-                <include content="Object_RatingCircle" condition="Skin.HasSetting(Indicator.RatingsCircle)">
+                <include content="Object_RatingCircle" condition="$PARAM[indicator] + Skin.HasSetting(Indicator.RatingsCircle)">
                     <param name="listitem">$PARAM[listitem]</param>
                 </include>
 
-                <include content="Object_ProgressPercent" condition="Skin.HasSetting(Indicator.ProgressPercent)">
+                <include content="Object_ProgressPercent" condition="$PARAM[indicator] + Skin.HasSetting(Indicator.ProgressPercent)">
                     <param name="affix">$PARAM[affix]</param>
                     <param name="listitem">$PARAM[listitem]</param>
                 </include>
