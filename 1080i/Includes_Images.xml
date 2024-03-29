@@ -22,6 +22,24 @@
 
     <variable name="Image_NextWidget">
         <value condition="!String.IsEmpty(Container(303).ListItemNoWrap(1).Label) + Window.IsVisible(Home) + Skin.HasSetting(Hub.Home.DisableSubmenu) + !Skin.HasSetting(Hub.Home.DisableMoveBetweenGroups)">special://skin/extras/icons/arrow-down.png</value>
+        <value condition="Window.IsVisible(Home) + Skin.String(Navigation.Hub.Home.OnDown,Explore)">special://skin/extras/icons/arrow-down.png</value>
+        <value condition="Window.IsVisible(1101) + Skin.String(Navigation.Hub.1101.OnDown,Explore)">special://skin/extras/icons/arrow-down.png</value>
+        <value condition="Window.IsVisible(1102) + Skin.String(Navigation.Hub.1102.OnDown,Explore)">special://skin/extras/icons/arrow-down.png</value>
+        <value condition="Window.IsVisible(1103) + Skin.String(Navigation.Hub.1103.OnDown,Explore)">special://skin/extras/icons/arrow-down.png</value>
+        <value condition="Window.IsVisible(1104) + Skin.String(Navigation.Hub.1104.OnDown,Explore)">special://skin/extras/icons/arrow-down.png</value>
+        <value condition="Window.IsVisible(1106) + Skin.String(Navigation.Hub.1106.OnDown,Explore)">special://skin/extras/icons/arrow-down.png</value>
+        <value condition="Window.IsVisible(1107) + Skin.String(Navigation.Hub.1107.OnDown,Explore)">special://skin/extras/icons/arrow-down.png</value>
+        <value condition="Window.IsVisible(1108) + Skin.String(Navigation.Hub.1108.OnDown,Explore)">special://skin/extras/icons/arrow-down.png</value>
+        <value condition="Window.IsVisible(1109) + Skin.String(Navigation.Hub.1109.OnDown,Explore)">special://skin/extras/icons/arrow-down.png</value>
+        <value condition="Window.IsVisible(Home) + Skin.String(Navigation.Hub.Home.OnDown,Search)">special://skin/extras/icons/arrow-down.png</value>
+        <value condition="Window.IsVisible(1101) + Skin.String(Navigation.Hub.1101.OnDown,Search)">special://skin/extras/icons/arrow-down.png</value>
+        <value condition="Window.IsVisible(1102) + Skin.String(Navigation.Hub.1102.OnDown,Search)">special://skin/extras/icons/arrow-down.png</value>
+        <value condition="Window.IsVisible(1103) + Skin.String(Navigation.Hub.1103.OnDown,Search)">special://skin/extras/icons/arrow-down.png</value>
+        <value condition="Window.IsVisible(1104) + Skin.String(Navigation.Hub.1104.OnDown,Search)">special://skin/extras/icons/arrow-down.png</value>
+        <value condition="Window.IsVisible(1106) + Skin.String(Navigation.Hub.1106.OnDown,Search)">special://skin/extras/icons/arrow-down.png</value>
+        <value condition="Window.IsVisible(1107) + Skin.String(Navigation.Hub.1107.OnDown,Search)">special://skin/extras/icons/arrow-down.png</value>
+        <value condition="Window.IsVisible(1108) + Skin.String(Navigation.Hub.1108.OnDown,Search)">special://skin/extras/icons/arrow-down.png</value>
+        <value condition="Window.IsVisible(1109) + Skin.String(Navigation.Hub.1109.OnDown,Search)">special://skin/extras/icons/arrow-down.png</value>
         <value>$VAR[Image_NextMedia]</value>
     </variable>
 
