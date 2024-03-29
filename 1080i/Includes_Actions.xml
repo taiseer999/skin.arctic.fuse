@@ -69,7 +69,9 @@
         <onload condition="String.IsEmpty(Skin.String(Navigation.Global.OnDown))">Skin.SetString(Navigation.Global.OnDown,Search)</onload>
         <onload>RunScript(script.skinvariables,action=buildviews)</onload>
         <onload>ClearProperty(MediaFilterBase)</onload>
+        <onload>ClearProperty(MediaFilterWall)</onload>
         <onunload>ClearProperty(MediaFilterBase)</onunload>
+        <onunload>ClearProperty(MediaFilterWall)</onunload>
     </include>
 
     <include name="Action_PreserveTransitionProp_Onload">
