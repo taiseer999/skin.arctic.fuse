@@ -296,8 +296,9 @@
                     <param name="type">Hidden</param>
                 </include>
 
-                <onup>SetProperty(List.ViewContainer,$NUMBER[370])</onup>
-                <onup>SetFocus(333)</onup>
+                <onup condition="Skin.HasSetting(Navigation.EnableOptionsOnLeft)">Action(Info)</onup>
+                <onup condition="!Skin.HasSetting(Navigation.EnableOptionsOnLeft)">SetProperty(List.ViewContainer,$NUMBER[370])</onup>
+                <onup condition="!Skin.HasSetting(Navigation.EnableOptionsOnLeft)">SetFocus(333)</onup>
                 <ondown>SetFocus(303,0,absolute)</ondown>
 
                 <include>Home_Menu_List_OnBackInfo</include>
