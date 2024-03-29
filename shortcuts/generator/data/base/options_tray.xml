@@ -11,6 +11,7 @@
                 <condition>{item_disabled}!=True</condition>
                 <condition>{item_label}!=</condition>
                 <condition>{item_path}!=ActivateWindow(shutdownmenu)</condition>
+                <condition>{item_path}!=ActivateWindow(1170)</condition>
                 <value name="parts_additional">&lt;onclick&gt;Close&lt;/onclick&gt;</value>
             </item>
         </items>

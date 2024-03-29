@@ -115,6 +115,55 @@
         </control>
     </include>
 
+    <include name="ButtonMenu_OptionsTray">
+        <control type="image">
+            <bottom>60</bottom>
+            <left>20</left>
+            <right>20</right>
+            <height>1</height>
+            <texture colordiffuse="dialog_fg_12">common/white.png</texture>
+        </control>
+        <control type="fixedlist" id="6000">
+            <focusposition>2</focusposition>
+            <movement>2</movement>
+            <orientation>horizontal</orientation>
+            <height>80</height>
+            <bottom>-40</bottom>
+            <left>20</left>
+            <scrolltime tween="quadratic">400</scrolltime>
+            <onup condition="Window.IsVisible(1170)">SetFocus(8000,9999,absolute)</onup>
+            <onup condition="!Window.IsVisible(1170)">9009</onup>
+            <ondown condition="!Window.IsVisible(1170)">19</ondown>
+            <onback condition="!Window.IsVisible(1170)">68</onback>
+
+            <itemlayout width="100" height="80">
+                <include content="Layout_OptionTray">
+                    <param name="selected">false</param>
+                </include>
+            </itemlayout>
+
+            <focusedlayout width="100" height="80">
+                <control type="group">
+                    <visible>Control.HasFocus(6000)</visible>
+                    <include content="Layout_OptionTray">
+                        <param name="selected">true</param>
+                    </include>
+                </control>
+                <control type="group">
+                    <visible>!Control.HasFocus(6000)</visible>
+                    <include content="Layout_OptionTray">
+                        <param name="selected">false</param>
+                    </include>
+                </control>
+            </focusedlayout>
+
+            <content>
+                <include>skinvariables-options-tray-staticitems</include>
+            </content>
+
+        </control>
+    </include>
+
     <include name="ButtonMenu_Clock">
         <control type="group">
             <width>80</width>
