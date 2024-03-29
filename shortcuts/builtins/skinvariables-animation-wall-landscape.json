@@ -77,6 +77,13 @@
     },
     "values": {
         "sleeptime": "0.9",
+        "position_x": [
+            {
+                "rules": ["{position_x}=="],
+                "value": "0"
+            },
+            "{position_x}"
+        ],
         "folderpath": [
             {
                 "rules": ["{folderpath}=="],
