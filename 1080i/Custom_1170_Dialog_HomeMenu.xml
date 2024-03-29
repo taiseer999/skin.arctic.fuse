@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog" id="1170">
     <defaultcontrol>7000</defaultcontrol>
-    <onload>SetFocus(7021)</onload>
+    <onload condition="String.IsEmpty(Window(Home).Property(Options.Menu.GUID))">SetFocus(7021)</onload>
+    <onload condition="!String.IsEmpty(Window(Home).Property(Options.Menu.GUID))">SetFocus(8000,0,absolute)</onload>
     <include>Action_ButtonMenu_Onload</include>
     <onunload>ClearProperty(Options.Menu.GUID,Home)</onunload>
     <onunload>ClearProperty(Options.Menu.Header,Home)</onunload>

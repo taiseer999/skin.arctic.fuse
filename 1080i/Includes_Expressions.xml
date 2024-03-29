@@ -71,6 +71,8 @@
 
     <expression name="Exp_Window_IsHub">[Window.IsVisible(Home) | Window.IsVisible(1101) | Window.IsVisible(1102) | Window.IsVisible(1103) | Window.IsVisible(1104) | Window.IsVisible(1106) | Window.IsVisible(1107) | Window.IsVisible(1108) | Window.IsVisible(1109)]</expression>
 
+    <expression name="Exp_Window_IsClassicHub">[[Window.IsVisible(Home) + Skin.HasSetting(Hub.Home.DisableSubmenu)] | [Window.IsVisible(1101) + Skin.HasSetting(Hub.1101.DisableSubmenu)] | [Window.IsVisible(1102) + Skin.HasSetting(Hub.1102.DisableSubmenu)] | [Window.IsVisible(1103) + Skin.HasSetting(Hub.1103.DisableSubmenu)] | [Window.IsVisible(1104) + Skin.HasSetting(Hub.1104.DisableSubmenu)] | [Window.IsVisible(1106) + Skin.HasSetting(Hub.1106.DisableSubmenu)] | [Window.IsVisible(1107) + Skin.HasSetting(Hub.1107.DisableSubmenu)] | [Window.IsVisible(1108) + Skin.HasSetting(Hub.1108.DisableSubmenu)] | [Window.IsVisible(1109) + Skin.HasSetting(Hub.1109.DisableSubmenu)]]</expression>
+
     <!-- ==== -->
     <!-- Hubs -->
     <!-- ==== -->

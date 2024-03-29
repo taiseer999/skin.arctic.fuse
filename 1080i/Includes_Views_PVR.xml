@@ -329,6 +329,7 @@
                     <include content="Dialog_Body_Grouplist">
                         <param name="id">9000</param>
 
+                        <onleft>50</onleft>
                         <onback>50</onback>
 
                         <include content="Settings_Button">

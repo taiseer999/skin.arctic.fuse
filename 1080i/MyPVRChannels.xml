@@ -12,6 +12,11 @@
         <include>Background_Main</include>
         <include>Background_Transition</include>
 
+        <include content="Object_Hidden_Button">
+            <param name="id">64</param>
+            <onfocus>SetFocus(9000)</onfocus>
+        </include>
+
         <include content="View_PVR_Main">
             <param name="include">View_PVRChannels</param>
         </include>
