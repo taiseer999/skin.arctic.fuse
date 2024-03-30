@@ -76,6 +76,10 @@
         </control>
     </include>
 
+    <expression name="Shortcuts_Dialog_Exp_IsWidgetMode">[String.IsEqual(Window(Home).Property(Shortcuts.EditMode),mode=widgets) | String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=searchmenu) | String.EndsWith(Window(Home).Property(Shortcuts.EditMenu),-widgetsonly) | String.EndsWith(Window(Home).Property(Shortcuts.EditMenu),-globalwidgets)]</expression>
+
+    <expression name="Shortcuts_Dialog_Exp_WidgetsOnly">[[Skin.HasSetting(Hub.Home.DisableSubmenu) + String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=homemenu)] | [Skin.HasSetting(Hub.1101.DisableSubmenu) + String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=1101menu)] | [Skin.HasSetting(Hub.1102.DisableSubmenu) + String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=1102menu)] | [Skin.HasSetting(Hub.1103.DisableSubmenu) + String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=1103menu)] | [Skin.HasSetting(Hub.1104.DisableSubmenu) + String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=1104menu)] | [Skin.HasSetting(Hub.1105.DisableSubmenu) + String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=1105menu)] | [Skin.HasSetting(Hub.1106.DisableSubmenu) + String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=1106menu)] | [Skin.HasSetting(Hub.1107.DisableSubmenu) + String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=1107menu)] | [Skin.HasSetting(Hub.1108.DisableSubmenu) + String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=1108menu)] | [Skin.HasSetting(Hub.1109.DisableSubmenu) + String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=1109menu)]]</expression>
+
     <expression name="Shortcuts_Window_Exp_WidgetsOnly">[[Skin.HasSetting(Hub.Home.DisableSubmenu) + String.IsEqual(Window.Property(categories_menu),menu=homemenu)] | [Skin.HasSetting(Hub.1101.DisableSubmenu) + String.IsEqual(Window.Property(categories_menu),menu=1101menu)] | [Skin.HasSetting(Hub.1102.DisableSubmenu) + String.IsEqual(Window.Property(categories_menu),menu=1102menu)] | [Skin.HasSetting(Hub.1103.DisableSubmenu) + String.IsEqual(Window.Property(categories_menu),menu=1103menu)] | [Skin.HasSetting(Hub.1104.DisableSubmenu) + String.IsEqual(Window.Property(categories_menu),menu=1104menu)] | [Skin.HasSetting(Hub.1105.DisableSubmenu) + String.IsEqual(Window.Property(categories_menu),menu=1105menu)] | [Skin.HasSetting(Hub.1106.DisableSubmenu) + String.IsEqual(Window.Property(categories_menu),menu=1106menu)] | [Skin.HasSetting(Hub.1107.DisableSubmenu) + String.IsEqual(Window.Property(categories_menu),menu=1107menu)] | [Skin.HasSetting(Hub.1108.DisableSubmenu) + String.IsEqual(Window.Property(categories_menu),menu=1108menu)] | [Skin.HasSetting(Hub.1109.DisableSubmenu) + String.IsEqual(Window.Property(categories_menu),menu=1109menu)]]</expression>
 
     <expression name="Shortcuts_Window_Exp_WidgetSelector">[[Skin.HasSetting(Hub.Home.WidgetSelector) + String.IsEqual(Window.Property(categories_menu),menu=homemenu)] | [Skin.HasSetting(Hub.1101.WidgetSelector) + String.IsEqual(Window.Property(categories_menu),menu=1101menu)] | [Skin.HasSetting(Hub.1102.WidgetSelector) + String.IsEqual(Window.Property(categories_menu),menu=1102menu)] | [Skin.HasSetting(Hub.1103.WidgetSelector) + String.IsEqual(Window.Property(categories_menu),menu=1103menu)] | [Skin.HasSetting(Hub.1104.WidgetSelector) + String.IsEqual(Window.Property(categories_menu),menu=1104menu)] | [Skin.HasSetting(Hub.1105.WidgetSelector) + String.IsEqual(Window.Property(categories_menu),menu=1105menu)] | [Skin.HasSetting(Hub.1106.WidgetSelector) + String.IsEqual(Window.Property(categories_menu),menu=1106menu)] | [Skin.HasSetting(Hub.1107.WidgetSelector) + String.IsEqual(Window.Property(categories_menu),menu=1107menu)] | [Skin.HasSetting(Hub.1108.WidgetSelector) + String.IsEqual(Window.Property(categories_menu),menu=1108menu)] | [Skin.HasSetting(Hub.1109.WidgetSelector) + String.IsEqual(Window.Property(categories_menu),menu=1109menu)]]</expression>
@@ -455,34 +459,28 @@
 
         </control>
 
-        <control type="button" id="305">
+        <control type="grouplist" id="305">
             <left>160</left>
-            <centerbottom>100</centerbottom>
-            <height>80</height>
-            <label>[CAPITALIZE]$LOCALIZE[31377][/CAPITALIZE]$VAR[Shortcuts_Window_Var_Label_NavigationOnDown,: ,]</label>
-            <width max="920">auto</width>
-            <align>left</align>
-            <aligny>top</aligny>
-            <textcolor>main_fg_70</textcolor>
-            <textoffsetx>40</textoffsetx>
-            <textoffsety>17</textoffsety>
-            <font>font_main</font>
-            <height>80</height>
-            <onup>340</onup>
-            <onclick>RunScript(script.skinvariables,run_dialog=select,heading=$LOCALIZE[31324] > $LOCALIZE[31008],separator=||,list=Default||Search||Explore,"executebuiltin_0=Skin.Reset(Navigation.$INFO[Container(2804).ListItem.Property(value)].OnDown)","executebuiltin_1=Skin.SetString(Navigation.$INFO[Container(2804).ListItem.Property(value)].OnDown,Search)","executebuiltin_2=Skin.SetString(Navigation.$INFO[Container(2804).ListItem.Property(value)].OnDown,Explore)")</onclick>
-            <texturenofocus />
-        </control>
-
-        <!-- <control type="grouplist" id="305">
-            <left>130</left>
             <centerbottom>100</centerbottom>
             <itemgap>0</itemgap>
             <orientation>horizontal</orientation>
             <height>160</height>
             <onup>340</onup>
-
-
-        </control> -->
+            <control type="button" id="35021">
+                <centertop>50%</centertop>
+                <height>80</height>
+                <label>[CAPITALIZE]$LOCALIZE[31377][/CAPITALIZE]$VAR[Shortcuts_Window_Var_Label_NavigationOnDown,: ,]</label>
+                <width max="920">auto</width>
+                <align>left</align>
+                <aligny>top</aligny>
+                <textcolor>main_fg_70</textcolor>
+                <textoffsetx>40</textoffsetx>
+                <textoffsety>17</textoffsety>
+                <font>font_main</font>
+                <onclick>RunScript(script.skinvariables,run_dialog=select,heading=$LOCALIZE[31324] > $LOCALIZE[31008],separator=||,list=Default||Search||Explore,"executebuiltin_0=Skin.Reset(Navigation.$INFO[Container(2804).ListItem.Property(value)].OnDown)","executebuiltin_1=Skin.SetString(Navigation.$INFO[Container(2804).ListItem.Property(value)].OnDown,Search)","executebuiltin_2=Skin.SetString(Navigation.$INFO[Container(2804).ListItem.Property(value)].OnDown,Explore)")</onclick>
+                <texturenofocus />
+            </control>
+        </control>
     </include>
 
     <variable name="Shortcuts_Window_Var_Label_NavigationOnDown">

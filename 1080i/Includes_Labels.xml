@@ -173,7 +173,7 @@
     </variable>
 
     <variable name="Label_Shortcut_TopHeader">
-        <value condition="$EXP[Exp_Hubs_Shortcuts_IsWidgetMode]">$LOCALIZE[31103]</value>
+        <value condition="$EXP[Shortcuts_Dialog_Exp_IsWidgetMode]">$LOCALIZE[31103]</value>
         <value>$LOCALIZE[111]</value>
     </variable>
 

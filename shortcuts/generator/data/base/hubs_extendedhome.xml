@@ -1,6 +1,9 @@
 <contents>
     <value name="comments">Home Extended</value>
     <template>generator/data/parts/basic_include.xmltemplate</template>
+    <value name="grouplist_id">5000</value>
+    <value name="grouplist_first_id">5001</value>
+    <value name="grouplist_refocus">Action(PreviousMenu)</value>
     <value name="includes_name">skinvariables-homemenu-extended</value>
     <value name="includes_part">
         <items menu="sidemenu">

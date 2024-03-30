@@ -242,10 +242,13 @@
                 <param name="condition">$PARAM[condition] + ![$PARAM[move]] + [[String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Explore)] | Skin.String(Navigation.Hub.$PARAM[window_id].OnDown,Explore)]</param>
                 <param name="window_id">1181</param>
             </include>
-            <include content="Action_View_Explore_OnDown" condition="Window.IsVisible(Home)">
+
+            <!-- Extended -->
+            <include content="Action_View_Extend_OnDown" condition="Window.IsVisible(Home)">
                 <param name="condition">$PARAM[condition] + ![$PARAM[move]] + [[String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Explore)] | Skin.String(Navigation.Hub.$PARAM[window_id].OnDown,Explore)]</param>
                 <param name="window_id">1182</param>
             </include>
+
         </definition>
     </include>
 
@@ -308,6 +311,9 @@
 
     <include name="Action_BuildShortcuts_OnLoad">
         <onload>runscript(script.skinvariables,"run_executebuiltin=special://skin/shortcuts/skinvariables-build-templates.json",use_rules)</onload>
+    </include>
+    <include name="Action_BuildShortcuts_OnUnLoad">
+        <onunload>runscript(script.skinvariables,"run_executebuiltin=special://skin/shortcuts/skinvariables-build-templates.json",use_rules)</onunload>
     </include>
 
     <include name="Action_View_Transition">
@@ -399,13 +405,32 @@
         </definition>
     </include>
 
+    <include name="Action_View_Extend_OnDown">
+        <param name="condition">True</param>
+        <param name="window_id">1182</param>
+        <definition>
+            <ondown condition="$PARAM[condition]">ClearProperty(Hubs.ExtendedWidgetGUID,Home)</ondown>
+            <ondown condition="$PARAM[condition] + Window.IsVisible(home) + String.IsEmpty(Container(303).ListItem.Property(global_extended_widgets)) + !Skin.String(Home.SideMenuCollapse,Topbar)">SetProperty(Hubs.ExtendedWidgetGUID,$INFO[Container(303).ListItem.Property(guid)],Home)</ondown>
+            <ondown condition="$PARAM[condition] + Window.IsVisible(home) + String.IsEmpty(Container(370).ListItem.Property(global_extended_widgets)) + Skin.String(Home.SideMenuCollapse,Topbar)">SetProperty(Hubs.ExtendedWidgetGUID,$INFO[Container(370).ListItem.Property(guid)],Home)</ondown>
+            <ondown condition="$PARAM[condition] + Window.IsVisible(home)">SetProperty(Hubs.ExtendedWidgetBase,homemenu,Home)</ondown>
+            <ondown condition="$PARAM[condition] + Window.IsVisible(1101)">SetProperty(Hubs.ExtendedWidgetBase,1101menu,Home)</ondown>
+            <ondown condition="$PARAM[condition] + Window.IsVisible(1102)">SetProperty(Hubs.ExtendedWidgetBase,1102menu,Home)</ondown>
+            <ondown condition="$PARAM[condition] + Window.IsVisible(1103)">SetProperty(Hubs.ExtendedWidgetBase,1103menu,Home)</ondown>
+            <ondown condition="$PARAM[condition] + Window.IsVisible(1104)">SetProperty(Hubs.ExtendedWidgetBase,1104menu,Home)</ondown>
+            <ondown condition="$PARAM[condition] + Window.IsVisible(1106)">SetProperty(Hubs.ExtendedWidgetBase,1106menu,Home)</ondown>
+            <ondown condition="$PARAM[condition] + Window.IsVisible(1107)">SetProperty(Hubs.ExtendedWidgetBase,1107menu,Home)</ondown>
+            <ondown condition="$PARAM[condition] + Window.IsVisible(1108)">SetProperty(Hubs.ExtendedWidgetBase,1108menu,Home)</ondown>
+            <ondown condition="$PARAM[condition] + Window.IsVisible(1109)">SetProperty(Hubs.ExtendedWidgetBase,1109menu,Home)</ondown>
+
+
+            <ondown condition="$PARAM[condition]">ActivateWindow($PARAM[window_id])</ondown>
+        </definition>
+    </include>
+
     <include name="Action_View_Explore_OnDown">
         <param name="condition">True</param>
         <param name="window_id">1181</param>
         <definition>
-
-            <ondown condition="$PARAM[condition]">SetProperty(Hubs.ExtendedWidgetGUID,$INFO[Container(303).ListItem.Property(guid)],Home)</ondown>
-
             <ondown condition="$PARAM[condition] + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)]">SetProperty(Item_Title,$VAR[Label_Title_Container],$PARAM[window_id])</ondown>
             <ondown condition="$PARAM[condition] + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)]">SetProperty(Item_Query,$VAR[Path_Param_Query],$PARAM[window_id])</ondown>
             <ondown condition="$PARAM[condition] + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)]">SetProperty(Item_Type,$VAR[Path_Param_Type],$PARAM[window_id])</ondown>

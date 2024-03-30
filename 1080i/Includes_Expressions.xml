@@ -81,8 +81,6 @@
 
     <expression name="Exp_Hubs_Spotlight_HasItems">[!Integer.IsEqual(Container(301).NumItems,0) | Container(301).IsUpdating]</expression>
 
-    <expression name="Exp_Hubs_Shortcuts_IsWidgetMode">[String.IsEqual(Window(Home).Property(Shortcuts.EditMode),mode=widgets) | String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=searchmenu) | String.EndsWith(Window(Home).Property(Shortcuts.EditMenu),-widgetsonly) | String.EndsWith(Window(Home).Property(Shortcuts.EditMenu),-globalwidgets)]</expression>
-
 
     <!-- ============== -->
     <!-- Standard Views -->
