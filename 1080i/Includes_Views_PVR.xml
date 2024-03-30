@@ -201,83 +201,86 @@
 
     <include name="View_PVR_Full">
         <control type="image">
+            <visible>!Window.IsVisible(pvrchannelguide)</visible>
             <texture colordiffuse="$VAR[ColorBackground]">background/combined_overlay.png</texture>
             <include>Animation_FadeIn</include>
             <include>Animation_FadeOut</include>
         </control>
         <control type="group">
-            <include>Animation_View_WindowChange</include>
+            <visible>!Window.IsVisible(pvrchannelguide)</visible>
             <control type="group">
-                <include>Animation_Group_Bumper</include>
-                <height>880</height>
-                <bottom>80</bottom>
-                <right>view_pad</right>
-                <left>view_side</left>
-                <include content="Settings_Left_Group">
-                    <top>80</top>
-                </include>
+                <include>Animation_View_WindowChange</include>
                 <control type="group">
-                    <include>Settings_Box</include>
+                    <include>Animation_Group_Bumper</include>
+                    <height>880</height>
                     <bottom>80</bottom>
-                    <top>40</top>
-                    <left>480</left>
+                    <right>view_pad</right>
+                    <left>view_side</left>
+                    <include content="Settings_Left_Group">
+                        <top>80</top>
+                    </include>
+                    <control type="group">
+                        <include>Settings_Box</include>
+                        <bottom>80</bottom>
+                        <top>40</top>
+                        <left>480</left>
+                    </control>
+                    <include>$PARAM[include]</include>
                 </control>
-                <include>$PARAM[include]</include>
+                <include>Furniture_Bottom</include>
+                <include>View_PVR_GroupSwitcher</include>
+                <include>View_Row_Header</include>
             </control>
-            <nested />
-            <include>Furniture_Bottom</include>
-            <include>View_PVR_GroupSwitcher</include>
-            <include>View_Row_Header</include>
         </control>
     </include>
 
     <include name="View_PVR_Half">
         <control type="group">
-            <include>Animation_Half_WindowChange</include>
-            <visible>!$EXP[Exp_InfoDialogs]</visible>
-            <include content="Animation_Zoom_Out">
-                <param name="type">Hidden</param>
-            </include>
-            <include>Animation_View_WindowChange</include>
-            <animation type="Visible" reversible="false">
-                <effect type="fade" start="0" end="100" time="300" delay="0" tween="sine" easing="out"/>
-                <effect type="slide" start="320" end="0" time="400" delay="0" tween="cubic" easing="out" />
-            </animation>
+            <visible>!Window.IsVisible(pvrchannelguide)</visible>
+            <control type="group">
+                <include>Animation_Half_WindowChange</include>
+                <include content="Animation_Zoom_Out">
+                    <param name="type">Hidden</param>
+                </include>
+                <include>Animation_View_WindowChange</include>
+                <animation type="Visible" reversible="false">
+                    <effect type="fade" start="0" end="100" time="300" delay="0" tween="sine" easing="out"/>
+                    <effect type="slide" start="320" end="0" time="400" delay="0" tween="cubic" easing="out" />
+                </animation>
+                <control type="group">
+                    <include>Animation_Group_Bumper</include>
+                    <height>480</height>
+                    <bottom>86</bottom>
+                    <right>view_pad</right>
+                    <left>view_side</left>
+                    <control type="group">
+                        <include>Settings_Box</include>
+                        <bottom>80</bottom>
+                        <top>40</top>
+                        <left>480</left>
+                    </control>
+                    <include>$PARAM[include]</include>
+                </control>
+                <include>Furniture_Bottom</include>
+                <include>View_PVR_GroupSwitcher</include>
+            </control>
             <control type="group">
                 <include>Animation_Group_Bumper</include>
-                <height>480</height>
-                <bottom>86</bottom>
-                <right>view_pad</right>
-                <left>view_side</left>
-                <control type="group">
-                    <include>Settings_Box</include>
-                    <bottom>80</bottom>
-                    <top>40</top>
-                    <left>480</left>
-                </control>
-                <include>$PARAM[include]</include>
+                <include>Animation_Transition_InfoPanel_Hide</include>
+                <include>Animation_View_WindowChange</include>
+                <include content="Info_Panel">
+                    <param name="titlelabel">$VAR[Label_Title]</param>
+                    <param name="plotlabel">$VAR[Label_Plot]</param>
+                    <top>view_top</top>
+                    <width>info_panel_w</width>
+                    <left>view_side</left>
+                </include>
+                <include content="Info_Viewline">
+                    <param name="item_condition">true</param>
+                    <param name="label">$INFO[Container.NumItems,, $LOCALIZE[19019]]</param>
+                </include>
+                <include>View_Row_Header</include>
             </control>
-            <nested />
-            <include>Furniture_Bottom</include>
-            <include>View_PVR_GroupSwitcher</include>
-        </control>
-        <control type="group">
-            <include>Animation_Group_Bumper</include>
-            <visible>!$EXP[Exp_InfoDialogs]</visible>
-            <include>Animation_Transition_InfoPanel_Hide</include>
-            <include>Animation_View_WindowChange</include>
-            <include content="Info_Panel">
-                <param name="titlelabel">$VAR[Label_Title]</param>
-                <param name="plotlabel">$VAR[Label_Plot]</param>
-                <top>view_top</top>
-                <width>info_panel_w</width>
-                <left>view_side</left>
-            </include>
-            <include content="Info_Viewline">
-                <param name="item_condition">true</param>
-                <param name="label">$INFO[Container.NumItems,, $LOCALIZE[19019]]</param>
-            </include>
-            <include>View_Row_Header</include>
         </control>
     </include>
 
