@@ -198,7 +198,7 @@
             <onup condition="$PARAM[condition] + $PARAM[move]">Control.Move(303,-1)</onup>
 
             <onup condition="$PARAM[condition] + ![$PARAM[move]] + ![!Skin.String(Home.SideMenuCollapse,Always) + Window.IsVisible(Home)]">SetProperty(List.ViewContainer,$NUMBER[$PARAM[id]])</onup>
-            <onup condition="$PARAM[condition] + ![$PARAM[move]] + ![!Skin.String(Home.SideMenuCollapse,Always) + Window.IsVisible(Home)]">SetFocus(303,9999,absolute)</onup>
+            <onup condition="$PARAM[condition] + ![$PARAM[move]] + ![!Skin.String(Home.SideMenuCollapse,Always) + Window.IsVisible(Home)]">SetFocus(303,1,absolute)</onup>
 
             <!-- Bump -->
             <onup condition="$PARAM[condition] + ![$PARAM[move]] + [!Skin.String(Home.SideMenuCollapse,Always) + Window.IsVisible(Home)]">SetProperty(List.ViewContainer,$NUMBER[$PARAM[id]])</onup>
@@ -460,7 +460,7 @@
     </variable>
 
     <include name="Action_View_Movement_OnUp">
-        <onup>SetFocus(303,9999,absolute)</onup>
+        <onup>SetFocus(303,1,absolute)</onup>
     </include>
 
     <include name="Action_View_Movement_OnDown">

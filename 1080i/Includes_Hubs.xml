@@ -469,7 +469,7 @@
                 </include>
 
                 <onup condition="$EXP[Exp_Hubs_Spotlight_HasItems]">311</onup>
-                <onup condition="!$EXP[Exp_Hubs_Spotlight_HasItems] + [Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Topbar)]">SetFocus(303,9999,absolute)</onup>
+                <onup condition="!$EXP[Exp_Hubs_Spotlight_HasItems] + [Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Topbar)]">SetFocus(303,1,absolute)</onup>
                 <include content="Action_Widget_Top">
                     <param name="id">300</param>
                     <param name="condition">!$EXP[Exp_Hubs_Spotlight_HasItems] + ![Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Topbar)]</param>
@@ -612,6 +612,6 @@
         <include content="Action_Widget_Top" condition="![Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Topbar)]">
             <param name="id">$PARAM[id]</param>
         </include>
-        <onup condition="Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Topbar)">SetFocus(303,9999,absolute)</onup>
+        <onup condition="Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Topbar)">SetFocus(303,1,absolute)</onup>
     </include>
 </includes>

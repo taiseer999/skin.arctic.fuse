@@ -183,7 +183,7 @@
                     <onfocus>SetProperty(List.Target,$INFO[Container(5099).ListItem.Property(target)])</onfocus>
                     <visible>Skin.HasSetting(Search.DisableDiscover)</visible>
                     <visible>Integer.IsEqual(Container(5099).ListItem.Property(listid),50)</visible>
-                    <onup>SetFocus(303,9999,absolute)</onup>
+                    <onup>SetFocus(303,1,absolute)</onup>
 
                     <include>Search_View_OnDown</include>
 
@@ -205,7 +205,7 @@
                     <onfocus>SetProperty(List.Target,$INFO[Container(5099).ListItem.Property(target)])</onfocus>
                     <visible>Skin.HasSetting(Search.DisableDiscover)</visible>
                     <visible>Integer.IsEqual(Container(5099).ListItem.Property(listid),51)</visible>
-                    <onup>SetFocus(303,9999,absolute)</onup>
+                    <onup>SetFocus(303,1,absolute)</onup>
                     <include>Search_View_OnDown</include>
                     <include content="Action_View_Movement_OnLeftRight">
                         <param name="id">51</param>
@@ -225,7 +225,7 @@
                     <onfocus>SetProperty(List.Target,$INFO[Container(5099).ListItem.Property(target)])</onfocus>
                     <!-- <visible>!Skin.HasSetting(Search.DisableDiscover)</visible> -->
                     <visible>Integer.IsEqual(Container(5099).ListItem.Property(listid),52)</visible>
-                    <onup>SetFocus(303,9999,absolute)</onup>
+                    <onup>SetFocus(303,1,absolute)</onup>
                     <include>Search_View_OnDown</include>
                     <include content="Action_View_Movement_OnLeftRight">
                         <param name="id">52</param>

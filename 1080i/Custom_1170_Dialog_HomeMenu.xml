@@ -8,7 +8,7 @@
     <onunload>ClearProperty(Options.Menu.Header,Home)</onunload>
     <controls>
 
-        <include content="Object_Hidden_List" condition="![Skin.String(Home.SideMenuCollapse,Topbar) + Window.IsVisible(Home)]">
+        <include content="Object_Hidden_List" condition="$EXP[Exp_HomeMenu_DontHide]">
             <param name="id">303</param>
             <content>
                 <item>
@@ -17,7 +17,7 @@
                 </item>
             </content>
         </include>
-        <include content="Object_Hidden_List" condition="[Skin.String(Home.SideMenuCollapse,Topbar) + Window.IsVisible(Home)]">
+        <include content="Object_Hidden_List" condition="Skin.String(Home.SideMenuCollapse,Topbar) + Window.IsVisible(Home)">
             <param name="id">370</param>
             <content>
                 <item>
@@ -100,15 +100,7 @@
                             <oninfo>Close</oninfo>
                             <onright>-</onright>
                             <content>
-                                <include condition="Window.IsVisible(Home)">skinvariables-homemenu-staticitems</include>
-                                <include condition="Window.IsVisible(1101)">skinvariables-1101menu-staticitems</include>
-                                <include condition="Window.IsVisible(1102)">skinvariables-1102menu-staticitems</include>
-                                <include condition="Window.IsVisible(1103)">skinvariables-1103menu-staticitems</include>
-                                <include condition="Window.IsVisible(1104)">skinvariables-1104menu-staticitems</include>
-                                <include condition="Window.IsVisible(1106)">skinvariables-1106menu-staticitems</include>
-                                <include condition="Window.IsVisible(1107)">skinvariables-1107menu-staticitems</include>
-                                <include condition="Window.IsVisible(1108)">skinvariables-1108menu-staticitems</include>
-                                <include condition="Window.IsVisible(1109)">skinvariables-1109menu-staticitems</include>
+                                <include>skinvariables-homemenu-staticitems</include>
                             </content>
                         </include>
 

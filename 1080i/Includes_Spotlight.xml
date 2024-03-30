@@ -130,7 +130,7 @@
                     <include content="Action_Widget_Top" condition="!Skin.String(Home.SideMenuCollapse,Topbar)">
                         <param name="id">311</param>
                     </include>
-                    <onup condition="Skin.String(Home.SideMenuCollapse,Topbar)">SetFocus(303,9999,absolute)</onup>
+                    <onup condition="Skin.String(Home.SideMenuCollapse,Topbar)">SetFocus(303,1,absolute)</onup>
 
                     <include content="Action_View_Movement_OnLeftRight">
                         <param name="id">311</param>
