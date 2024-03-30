@@ -258,6 +258,7 @@
                         <centertop>50%</centertop>
                         <onclick>Control.Move(301,1)</onclick>
                         <onup>Control.Move(301,-1)</onup>
+                        <ondown>Control.Move(301,1)</ondown>
                         <include content="Spotlight_Main_Button_Standard">
                             <param name="id">314</param>
                             <param name="window_id">$PARAM[window_id]</param>
