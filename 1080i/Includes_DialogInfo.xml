@@ -41,6 +41,7 @@
             <include>Furniture_Top</include>
         </control>
         <control type="group">
+            <include condition="!$EXP[Exp_Footer_BottomLeft_IsVisible]">Animation_FadeIn_Delay</include>
             <include>Furniture_Bottom_Left</include>
         </control>
         <control type="group">
