@@ -173,25 +173,18 @@
     <!-- Widgets -->
     <constant name="hub_spotlight_t">420</constant>
     <constant name="hub_spotlight_h">40</constant>
-    <constant name="hub_spotlight_s">0</constant>
     <constant name="hub_categorieswidget_t">680</constant>
     <constant name="hub_categorieswidget_h">320</constant>
-    <constant name="hub_categorieswidget_s">0</constant>
     <constant name="hub_submenuwidget_t">740</constant>
     <constant name="hub_submenuwidget_h">240</constant>
-    <constant name="hub_submenuwidget_s">0</constant>
 
-    <!-- <constant name="hub_group_widgetup_s">-300</constant>
-    <constant name="hub_group_nospotlight_s">-300</constant> -->
     <constant name="hub_group_widgetup_s">-360</constant>
     <constant name="hub_group_nospotlight_s">-360</constant>
+    <constant name="hub_group_fanartspotlight_s">380</constant>
+    <constant name="-hub_group_fanartspotlight_s">-380</constant>
 
     <constant name="hub_widgets_grouplist_t">860</constant>
     <constant name="hub_widgets_grouplist_b">-360</constant>
-
-    <!-- <constant name="hub_widgets_nosubmenu_s">-60</constant>
-    <constant name="hub_widgets_nocategories_s">-60</constant> -->
-
 
     <constant name="widget_tbump_h">140</constant>  <!-- Bumper to address label top spacing -->
     <constant name="widget_label_t">-140</constant>  <!-- Space from widget bottom to next widget label -->
