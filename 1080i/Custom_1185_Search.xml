@@ -43,10 +43,10 @@
             </control>
             <control type="group">
                 <include content="Animation_Half_WindowChange">
-                    <param name="windowopen_up">False</param>
-                    <param name="windowopen_down">!$EXP[Exp_SettingsDialogs_Prev]</param>
-                    <param name="windowclose_up">False</param>
-                    <param name="windowclose_down">!$EXP[Exp_SettingsDialogs_Next]</param>
+                    <param name="windowopen_up">!$EXP[Exp_SettingsDialogs_Prev] + !String.IsEmpty(Window(Home).Property(ReverseTransition))</param>
+                    <param name="windowopen_down">!$EXP[Exp_SettingsDialogs_Prev] + String.IsEmpty(Window(Home).Property(ReverseTransition))</param>
+                    <param name="windowclose_up">!$EXP[Exp_SettingsDialogs_Next] + !String.IsEmpty(Window(Home).Property(ReverseTransition))</param>
+                    <param name="windowclose_down">!$EXP[Exp_SettingsDialogs_Next] + String.IsEmpty(Window(Home).Property(ReverseTransition))</param>
                 </include>
                 <visible>String.IsEmpty(Control.GetLabel(9099).index(1)) | Integer.IsEqual(Container(5000).NumItems,0)</visible>
                 <control type="grouplist">
@@ -105,10 +105,14 @@
                     <right>-40</right>
                     <textoffsetx>40</textoffsetx>
                     <align>left</align>
+                    <onup>ClearProperty(ReverseTransition,Home)</onup>
                     <onup>PreviousMenu</onup>
                     <ondown condition="![String.IsEmpty(Control.GetLabel(9099).index(1)) | Integer.IsEqual(Container(5000).NumItems,0)]">5001</ondown>
                     <ondown condition="[String.IsEmpty(Control.GetLabel(9099).index(1)) | Integer.IsEqual(Container(5000).NumItems,0)]">SetProperty(List.ViewContainer,9099)</ondown>
                     <ondown condition="[String.IsEmpty(Control.GetLabel(9099).index(1)) | Integer.IsEqual(Container(5000).NumItems,0)]">SetFocus(330)</ondown>
+                    <!-- <ondown condition="[String.IsEmpty(Control.GetLabel(9099).index(1)) | Integer.IsEqual(Container(5000).NumItems,0)]">SetProperty(ReverseTransition,True,Home)</ondown>
+                    <ondown condition="[String.IsEmpty(Control.GetLabel(9099).index(1)) | Integer.IsEqual(Container(5000).NumItems,0)]">AlarmClock(ClearReverseTransition,ClearProperty(ReverseTransition,Home),00:00,silent)</ondown>
+                    <ondown condition="[String.IsEmpty(Control.GetLabel(9099).index(1)) | Integer.IsEqual(Container(5000).NumItems,0)]">Action(PreviousMenu)</ondown> -->
                     <visible allowhiddenfocus="true">Control.HasFocus(9099) + !Window.IsVisible(1171) + !Window.IsVisible(1170)</visible>
                 </control>
             </control>

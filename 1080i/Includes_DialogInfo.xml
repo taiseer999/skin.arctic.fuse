@@ -1399,10 +1399,10 @@
                 <onup>$PARAM[onup]</onup>
                 <ondown>$PARAM[ondown]</ondown>
                 <include content="Animation_Half_WindowChange">
-                    <param name="windowopen_up">False</param>
-                    <param name="windowopen_down">!$EXP[Exp_SettingsDialogs_Prev]</param>
-                    <param name="windowclose_up">False</param>
-                    <param name="windowclose_down">!$EXP[Exp_SettingsDialogs_Next]</param>
+                    <param name="windowopen_up">!$EXP[Exp_SettingsDialogs_Prev] + !String.IsEmpty(Window(Home).Property(ReverseTransition))</param>
+                    <param name="windowopen_down">!$EXP[Exp_SettingsDialogs_Prev] + String.IsEmpty(Window(Home).Property(ReverseTransition))</param>
+                    <param name="windowclose_up">!$EXP[Exp_SettingsDialogs_Next] + !String.IsEmpty(Window(Home).Property(ReverseTransition))</param>
+                    <param name="windowclose_down">!$EXP[Exp_SettingsDialogs_Next] + String.IsEmpty(Window(Home).Property(ReverseTransition))</param>
                 </include>
                 <orientation>vertical</orientation>
                 <control type="group" id="5999">

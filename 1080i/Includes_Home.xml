@@ -67,6 +67,9 @@
     </include>
 
     <include name="Home_Menu_List_OnUp_Bump">
+        <!-- <onup>SetProperty(ReverseTransition,True,Home)</onup>
+        <onup>AlarmClock(ClearReverseTransition,ClearProperty(ReverseTransition,Home),00:00,silent)</onup>
+        <onup>ActivateWindow(1185)</onup> -->
         <onup>SetProperty(List.ViewContainer.Prev,$INFO[Window.Property(List.ViewContainer)])</onup>
         <onup>SetProperty(List.ViewContainer,$PARAM[id])</onup>
         <onup>SetFocus(333)</onup>
