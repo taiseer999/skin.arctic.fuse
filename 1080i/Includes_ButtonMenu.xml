@@ -135,12 +135,14 @@
             <onup condition="Window.IsVisible(1170)">SetFocus(8000,9999,absolute)</onup>
             <onup condition="!Window.IsVisible(1170)">9009</onup>
             <ondown condition="!Window.IsVisible(1170)">19</ondown>
+            <ondown condition="Window.IsVisible(1170)">7010</ondown>
             <onback condition="!Window.IsVisible(1170)">68</onback>
             <oninfo>Close</oninfo>
 
             <itemlayout width="100" height="80">
                 <include content="Layout_OptionTray">
                     <param name="selected">false</param>
+                    <param name="color">dialog_fg</param>
                 </include>
             </itemlayout>
 
@@ -149,12 +151,14 @@
                     <visible>Control.HasFocus(6000)</visible>
                     <include content="Layout_OptionTray">
                         <param name="selected">true</param>
+                        <param name="color">dialog_fg</param>
                     </include>
                 </control>
                 <control type="group">
                     <visible>!Control.HasFocus(6000)</visible>
                     <include content="Layout_OptionTray">
                         <param name="selected">false</param>
+                        <param name="color">dialog_fg</param>
                     </include>
                 </control>
             </focusedlayout>
@@ -584,7 +588,7 @@
         <include content="ButtonMenu_LayoutGroup_Top">
             <include content="ButtonMenu_LayoutGroup_Single">
                 <param name="groupid">1</param>
-                <param name="onup">noop</param>
+                <param name="onup">SetFocus(6000,2)</param>
                 <param name="ondown">7020</param>
 
                 <param name="button_one_include">$PARAM[button_01_include]</param>
@@ -613,7 +617,7 @@
         <include content="ButtonMenu_LayoutGroup_Top">
             <include content="ButtonMenu_LayoutGroup_Single">
                 <param name="groupid">1</param>
-                <param name="onup">noop</param>
+                <param name="onup">SetFocus(6000,2)</param>
                 <param name="ondown">7020</param>
 
                 <param name="button_one_include">$PARAM[button_01_include]</param>
@@ -665,7 +669,7 @@
             <include content="ButtonMenu_LayoutGroup_Double">
                 <param name="groupid">2</param>
                 <param name="onup">7010</param>
-                <param name="ondown">8000</param>
+                <param name="ondown">SetFocus(8000,0,absolute)</param>
 
                 <param name="button_one_include">$PARAM[button_03_include]</param>
                 <param name="button_one_label">$PARAM[button_03_label]</param>

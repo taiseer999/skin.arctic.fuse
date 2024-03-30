@@ -79,7 +79,7 @@
                             <bottom>80</bottom>
                             <orientation>vertical</orientation>
                             <onup>7020</onup>
-                            <ondown>6000</ondown>
+                            <ondown>SetFocus(6000,2)</ondown>
                             <onleft>Close</onleft>
                             <oninfo>Close</oninfo>
                             <onright>-</onright>
@@ -92,7 +92,7 @@
                             <!-- <top>320</top> -->
                             <bottom>80</bottom>
                             <onup>7020</onup>
-                            <ondown>6000</ondown>
+                            <ondown>SetFocus(6000,2)</ondown>
                             <onleft>Close</onleft>
                             <oninfo>Close</oninfo>
                             <onright>-</onright>

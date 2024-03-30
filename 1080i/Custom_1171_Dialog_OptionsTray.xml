@@ -58,7 +58,7 @@
                         </item>
                         <item>
                             <icon>special://skin/extras/icons/right-left.png</icon>
-                            <label>$LOCALIZE[33063]</label>
+                            <label>$LOCALIZE[21483]</label>
                             <onclick>Dialog.Close(1171,true)</onclick>
                             <onclick>AlarmClock(refocus,$VAR[Action_Var_ToMediaFilter],00:00,silent)</onclick>
                             <visible>Window.IsMedia</visible>

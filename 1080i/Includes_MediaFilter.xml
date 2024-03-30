@@ -51,8 +51,8 @@
 
                         <onleft>68</onleft>
                         <onback>68</onback>
-                        <onup>6000</onup>
-                        <ondown>6000</ondown>
+                        <onup>SetFocus(6000,2)</onup>
+                        <ondown>SetFocus(6000,2)</ondown>
 
                         <control type="edit" id="19">
                             <description>Filter</description>
