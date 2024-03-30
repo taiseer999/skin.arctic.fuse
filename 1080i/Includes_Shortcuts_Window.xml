@@ -40,6 +40,7 @@
             <include>Shortcuts_Window_Content_Spotlight</include>
             <include>Shortcuts_Window_Content_Categories</include>
             <include>Shortcuts_Window_Content_Widgets</include>
+            <include>Shortcuts_Window_Content_Tray</include>
         </control>
 
         <include>Shortcuts_Window_Help</include>
@@ -336,13 +337,15 @@
         </control>
     </include>
 
-    <include name="Shortcuts_Window_Tray">
+    <include name="Shortcuts_Window_Content_Tray">
         <control type="grouplist" id="306">
             <left>130</left>
             <centertop>240</centertop>
             <itemgap>0</itemgap>
             <orientation>horizontal</orientation>
             <height>160</height>
+            <onleft>303</onleft>
+            <onright>noop</onright>
             <onup>2800</onup>
             <ondown>301</ondown>
 
@@ -406,35 +409,6 @@
 
             <include content="Dialog_Side_Button">
                 <param name="vertical">false</param>
-                <param name="id">11</param>
-                <param name="baseid">35</param>
-                <param name="textcolor">main_fg</param>
-                <param name="nf_opacity">70</param>
-                <param name="db_opacity">12</param>
-                <param name="label">$LOCALIZE[137]</param>
-                <param name="icon">special://skin/extras/icons/search.png</param>
-                <onclick>SetProperty(Shortcuts.EditMenu,menu=searchmenu,Home)</onclick>
-                <onclick>ClearProperty(Shortcuts.EditMode,Home)</onclick>
-                <onclick>ClearProperty(Shortcuts.EditGUID,Home)</onclick>
-                <onclick>ActivateWindow(1116)</onclick>
-            </include>
-
-            <include content="Dialog_Side_Button">
-                <param name="vertical">false</param>
-                <param name="id">12</param>
-                <param name="baseid">35</param>
-                <param name="textcolor">main_fg</param>
-                <param name="nf_opacity">70</param>
-                <param name="db_opacity">12</param>
-                <param name="label">$LOCALIZE[33063]</param>
-                <param name="icon">special://skin/extras/icons/bars.png</param>
-                <onclick>SetProperty(CustomDialogSettingsTitle,[CAPITALIZE]$LOCALIZE[31086][/CAPITALIZE],Home)</onclick>
-                <onclick>SetProperty(CustomDialogSettingsItems,Items_Settings_PowerMenuConfigure,Home)</onclick>
-                <onclick>ActivateWindow(1118)</onclick>
-            </include>
-
-            <include content="Dialog_Side_Button">
-                <param name="vertical">false</param>
                 <param name="id">01</param>
                 <param name="baseid">35</param>
                 <param name="textcolor">main_fg</param>
@@ -465,7 +439,11 @@
             <itemgap>0</itemgap>
             <orientation>horizontal</orientation>
             <height>160</height>
-            <onup>340</onup>
+
+            <onright>noop</onright>
+            <onleft>303</onleft>
+
+            <onup>304</onup>
             <control type="button" id="35021">
                 <centertop>50%</centertop>
                 <height>80</height>
@@ -480,6 +458,62 @@
                 <onclick>RunScript(script.skinvariables,run_dialog=select,heading=$LOCALIZE[31324] > $LOCALIZE[31008],separator=||,list=Default||Search||Explore,"executebuiltin_0=Skin.Reset(Navigation.$INFO[Container(2804).ListItem.Property(value)].OnDown)","executebuiltin_1=Skin.SetString(Navigation.$INFO[Container(2804).ListItem.Property(value)].OnDown,Search)","executebuiltin_2=Skin.SetString(Navigation.$INFO[Container(2804).ListItem.Property(value)].OnDown,Explore)")</onclick>
                 <texturenofocus />
             </control>
+
+            <include content="Dialog_Side_Button">
+                <param name="vertical">false</param>
+                <param name="id">22</param>
+                <param name="baseid">35</param>
+                <param name="textcolor">main_fg</param>
+                <param name="nf_opacity">70</param>
+                <param name="db_opacity">12</param>
+                <param name="label">$LOCALIZE[31148]</param>
+                <param name="icon">special://skin/extras/icons/shapes.png</param>
+                <param name="visible">[[String.IsEqual(Container(2804).ListItem.Property(value),Hub.Home) + Skin.String(Navigation.Hub.Home.OnDown,Explore)] | [String.IsEqual(Container(2804).ListItem.Property(value),Hub.Home) + String.IsEmpty(Skin.String(Navigation.Hub.Home.OnDown)) + Skin.String(Navigation.Global.OnDown,Explore)]]</param>
+
+                <!-- Local Widgets -->
+                <onclick condition="![Skin.HasSetting(Hub.Home.DisableSubmenu) | !String.IsEmpty(Container(303).ListItem.Property(global_extended_widgets))]">SetProperty(Shortcuts.EditGUID,guid=$INFO[Container(303).ListItem.Property(guid)],Home)</onclick>
+                <onclick condition="![Skin.HasSetting(Hub.Home.DisableSubmenu) | !String.IsEmpty(Container(303).ListItem.Property(global_extended_widgets))]">SetProperty(Shortcuts.EditMenu,menu=$INFO[Container(303).ListItem.Property(menu)],Home)</onclick>
+                <onclick condition="![Skin.HasSetting(Hub.Home.DisableSubmenu) | !String.IsEmpty(Container(303).ListItem.Property(global_extended_widgets))]">SetProperty(Shortcuts.EditMode,mode=widgets,Home)</onclick>
+                <onclick condition="![Skin.HasSetting(Hub.Home.DisableSubmenu) | !String.IsEmpty(Container(303).ListItem.Property(global_extended_widgets))]">ClearProperty(Shortcuts.Category,Home)</onclick>
+
+                <!-- Global Widgets -->
+                <onclick condition="Skin.HasSetting(Hub.Home.DisableSubmenu) | !String.IsEmpty(Container(303).ListItem.Property(global_extended_widgets))">ClearProperty(Shortcuts.EditGUID,Home)</onclick>
+                <onclick condition="Skin.HasSetting(Hub.Home.DisableSubmenu) | !String.IsEmpty(Container(303).ListItem.Property(global_extended_widgets))">SetProperty(Shortcuts.EditMenu,menu=homemenu-extendedwidgets,Home)</onclick>
+                <onclick condition="Skin.HasSetting(Hub.Home.DisableSubmenu) | !String.IsEmpty(Container(303).ListItem.Property(global_extended_widgets))">ClearProperty(Shortcuts.EditMode,Home)</onclick>
+                <onclick condition="Skin.HasSetting(Hub.Home.DisableSubmenu) | !String.IsEmpty(Container(303).ListItem.Property(global_extended_widgets))">ClearProperty(Shortcuts.Category,Home)</onclick>
+
+                <onclick>ActivateWindow(1116)</onclick>
+
+            </include>
+
+            <include content="Dialog_Side_Button">
+                <param name="vertical">false</param>
+                <param name="id">11</param>
+                <param name="baseid">35</param>
+                <param name="textcolor">main_fg</param>
+                <param name="nf_opacity">70</param>
+                <param name="db_opacity">12</param>
+                <param name="label">$LOCALIZE[137]</param>
+                <param name="icon">special://skin/extras/icons/search.png</param>
+                <onclick>SetProperty(Shortcuts.EditMenu,menu=searchmenu,Home)</onclick>
+                <onclick>ClearProperty(Shortcuts.EditMode,Home)</onclick>
+                <onclick>ClearProperty(Shortcuts.EditGUID,Home)</onclick>
+                <onclick>ActivateWindow(1116)</onclick>
+            </include>
+
+            <include content="Dialog_Side_Button">
+                <param name="vertical">false</param>
+                <param name="id">12</param>
+                <param name="baseid">35</param>
+                <param name="textcolor">main_fg</param>
+                <param name="nf_opacity">70</param>
+                <param name="db_opacity">12</param>
+                <param name="label">$LOCALIZE[33063]</param>
+                <param name="icon">special://skin/extras/icons/bars.png</param>
+                <onclick>SetProperty(CustomDialogSettingsTitle,[CAPITALIZE]$LOCALIZE[31086][/CAPITALIZE],Home)</onclick>
+                <onclick>SetProperty(CustomDialogSettingsItems,Items_Settings_PowerMenuConfigure,Home)</onclick>
+                <onclick>ActivateWindow(1118)</onclick>
+            </include>
         </control>
     </include>
 

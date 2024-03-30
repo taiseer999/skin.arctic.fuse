@@ -410,8 +410,8 @@
         <param name="window_id">1182</param>
         <definition>
             <ondown condition="$PARAM[condition]">ClearProperty(Hubs.ExtendedWidgetGUID,Home)</ondown>
-            <ondown condition="$PARAM[condition] + Window.IsVisible(home) + String.IsEmpty(Container(303).ListItem.Property(global_extended_widgets)) + !Skin.String(Home.SideMenuCollapse,Topbar)">SetProperty(Hubs.ExtendedWidgetGUID,$INFO[Container(303).ListItem.Property(guid)],Home)</ondown>
-            <ondown condition="$PARAM[condition] + Window.IsVisible(home) + String.IsEmpty(Container(370).ListItem.Property(global_extended_widgets)) + Skin.String(Home.SideMenuCollapse,Topbar)">SetProperty(Hubs.ExtendedWidgetGUID,$INFO[Container(370).ListItem.Property(guid)],Home)</ondown>
+            <ondown condition="$PARAM[condition] + Window.IsVisible(home) + String.IsEmpty(Container(303).ListItem.Property(global_extended_widgets)) + !Skin.String(Home.SideMenuCollapse,Topbar) + !Skin.HasSetting(Hub.Home.DisableSubmenu)">SetProperty(Hubs.ExtendedWidgetGUID,$INFO[Container(303).ListItem.Property(guid)],Home)</ondown>
+            <ondown condition="$PARAM[condition] + Window.IsVisible(home) + String.IsEmpty(Container(370).ListItem.Property(global_extended_widgets)) + Skin.String(Home.SideMenuCollapse,Topbar) + !Skin.HasSetting(Hub.Home.DisableSubmenu)">SetProperty(Hubs.ExtendedWidgetGUID,$INFO[Container(370).ListItem.Property(guid)],Home)</ondown>
             <ondown condition="$PARAM[condition] + Window.IsVisible(home)">SetProperty(Hubs.ExtendedWidgetBase,homemenu,Home)</ondown>
             <ondown condition="$PARAM[condition] + Window.IsVisible(1101)">SetProperty(Hubs.ExtendedWidgetBase,1101menu,Home)</ondown>
             <ondown condition="$PARAM[condition] + Window.IsVisible(1102)">SetProperty(Hubs.ExtendedWidgetBase,1102menu,Home)</ondown>
