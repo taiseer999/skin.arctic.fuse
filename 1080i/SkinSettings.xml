@@ -176,6 +176,18 @@
                             <selected>!Skin.HasSetting(SideMenu.DisableSearchButton)</selected>
                             <visible>Container(3).HasFocus(1)</visible>
                         </include>
+                        <include content="Settings_Button" description="Disable Menu Button">
+                            <param name="id">1014</param>
+                            <param name="dialog">false</param>
+                            <param name="control">radiobutton</param>
+                            <label>$LOCALIZE[31416] > $LOCALIZE[13014] > $LOCALIZE[33063]</label>
+                            <onclick>Skin.ToggleSetting(SideMenu.EnableOptionsButton)</onclick>
+                            <onclick>ReloadSkin()</onclick>
+                            <onclick>AlarmClock(refocusblura,SetFocus(3,0,absolute),00:00,silent)</onclick>
+                            <onclick>AlarmClock(refocusblurb,SetFocus(1014),00:00,silent)</onclick>
+                            <selected>Skin.HasSetting(SideMenu.EnableOptionsButton)</selected>
+                            <visible>Container(3).HasFocus(1)</visible>
+                        </include>
                         <include content="Settings_Button" description="Home group indicator">
                             <param name="id">1006</param>
                             <param name="dialog">false</param>
