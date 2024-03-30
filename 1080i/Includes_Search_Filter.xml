@@ -132,10 +132,12 @@
                         <textoffsetx>40</textoffsetx>
                         <align>left</align>
                         <onup>SetProperty(SearchTerm,$INFO[Control.GetLabel(9099).index(1)])</onup>
-                        <onleft>SetProperty(SearchTerm,$INFO[Control.GetLabel(9099).index(1)])</onleft>
+                        <onleft>9099</onleft>
+                        <onright>9099</onright>
+                        <!-- <onleft>SetProperty(SearchTerm,$INFO[Control.GetLabel(9099).index(1)])</onleft>
                         <onleft>SetFocus(9002)</onleft>
                         <onright>SetProperty(SearchTerm,$INFO[Control.GetLabel(9099).index(1)])</onright>
-                        <onright>SetFocus(9002)</onright>
+                        <onright>SetFocus(9002)</onright> -->
                         <ondown>SetProperty(SearchTerm,$INFO[Control.GetLabel(9099).index(1)])</ondown>
                         <ondown>9002</ondown>
                         <onup>SetFocus(5098,99999,absolute)</onup>
