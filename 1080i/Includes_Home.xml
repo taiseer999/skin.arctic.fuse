@@ -62,6 +62,10 @@
         <onup>9099</onup>
     </include>
 
+    <include name="Home_Menu_List_OnUp_Discover">
+        <onup>67</onup>
+    </include>
+
     <include name="Home_Menu_List_OnUp_Previous">
         <onup>PreviousMenu</onup>
     </include>
@@ -116,10 +120,13 @@
                     <include content="Home_Menu_List_OnUp_Search" condition="!$EXP[Exp_HomeMenu_DontHide] + Window.IsVisible(1185)">
                         <param name="id">$PARAM[id]</param>
                     </include>
+                    <include content="Home_Menu_List_OnUp_Discover" condition="!$EXP[Exp_HomeMenu_DontHide] + Window.IsVisible(1105)">
+                        <param name="id">$PARAM[id]</param>
+                    </include>
                     <include content="Home_Menu_List_OnUp_Previous" condition="!$EXP[Exp_HomeMenu_DontHide] + [Window.IsVisible(1181) | Window.IsVisible(1182) | Window.IsVisible(1130) | Window.IsVisible(1131) | Window.IsVisible(1132)]">
                         <param name="id">$PARAM[id]</param>
                     </include>
-                    <include content="Home_Menu_List_OnUp_Bump" condition="!$EXP[Exp_HomeMenu_DontHide] + ![Window.IsVisible(Home) | Window.IsVisible(1185) | Window.IsVisible(1181) | Window.IsVisible(1182) | Window.IsVisible(1130) | Window.IsVisible(1131) | Window.IsVisible(1132)]">
+                    <include content="Home_Menu_List_OnUp_Bump" condition="!$EXP[Exp_HomeMenu_DontHide] + ![Window.IsVisible(Home) | Window.IsVisible(1105) | Window.IsVisible(1185) | Window.IsVisible(1181) | Window.IsVisible(1182) | Window.IsVisible(1130) | Window.IsVisible(1131) | Window.IsVisible(1132)]">
                         <param name="id">$PARAM[id]</param>
                     </include>
 

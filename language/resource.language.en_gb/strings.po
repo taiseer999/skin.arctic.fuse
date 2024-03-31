@@ -1823,6 +1823,21 @@ msgctxt "#31384"
 msgid "Tray labels"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31385"
+msgid "Secondary"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31386"
+msgid "Primary"
+msgstr ""
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31387"
+msgid "Contextual"
+msgstr ""
+
 msgctxt "#31390"
 msgid "Release Year"
 msgstr ""

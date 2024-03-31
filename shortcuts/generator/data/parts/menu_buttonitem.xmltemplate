@@ -9,6 +9,7 @@
     <property name="expression">none</property>
     <onclick>SetFocus(67)</onclick>
     <visible>Window.IsVisible(1105)</visible>
+    <visible>!Skin.HasSetting(SideMenu.DisableSearchButton)</visible>
 </item>
 
 <!-- View: PVR -->
@@ -22,6 +23,7 @@
     <property name="expression">none</property>
     <onclick>SetFocus(9000)</onclick>
     <visible>[Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRChannels.xml)]</visible>
+    <visible>!Skin.HasSetting(SideMenu.DisableSearchButton)</visible>
 </item>
 
 <!-- View: Weather -->
@@ -35,6 +37,7 @@
     <property name="expression">none</property>
     <onclick>Weather.LocationNext</onclick>
     <visible>Window.IsVisible(weather)</visible>
+    <visible>!Skin.HasSetting(SideMenu.DisableSearchButton)</visible>
 </item>
 
 <!-- View: Media -->
@@ -48,8 +51,8 @@
     <property name="expression">none</property>
     <onclick>SetFocus(64)</onclick>
     <visible>Window.IsMedia + ![Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRChannels.xml)] + !Skin.String(Navigation.Global.OnDown,Filter) + !Skin.String(Navigation.Global.OnDown,Options)</visible>
+    <visible>!Skin.HasSetting(SideMenu.DisableSearchButton)</visible>
 </item>
-
 
 <!-- Contextual: Discover -->
 <item>
@@ -68,7 +71,27 @@
     <visible>![Window.IsMedia + ![Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRChannels.xml)] + !Skin.String(Navigation.Global.OnDown,Filter) + !Skin.String(Navigation.Global.OnDown,Options)]</visible>
     <visible>!Skin.HasSetting(SideMenu.DisableSearchButton)</visible>
 </item>
-<!-- Contextual: Close -->
+
+
+<!-- Exit: Custom -->
+<item>
+    <label>$INFO[Skin.String(SideMenu.CustomShortcut.Label)]</label>
+    <icon>$INFO[Skin.String(SideMenu.CustomShortcut.Icon)]</icon>
+    <property name="showlabel">True</property>
+    <property name="path">$INFO[Skin.String(SideMenu.CustomShortcut.Path)]</property>
+    <property name="guid">{item_guid}</property>
+    <property name="widgets_setfocus">SetFocus(400)</property>
+    <property name="expression">none</property>
+    <onclick condition="String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Target))">$INFO[Skin.String(SideMenu.CustomShortcut.Path)]</onclick>
+    <onclick condition="!String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Target)) + Window.IsVisible(MyVideoNav.xml) + Skin.String(SideMenu.CustomShortcut.Target,videos)">Container.Update($INFO[Skin.String(SideMenu.CustomShortcut.Path)])</onclick>
+    <onclick condition="!String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Target)) + Window.IsVisible(MyMusicNav.xml) + Skin.String(SideMenu.CustomShortcut.Target,music)">Container.Update($INFO[Skin.String(SideMenu.CustomShortcut.Path)])</onclick>
+    <onclick condition="!String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Target))">ActivateWindow($INFO[Skin.String(SideMenu.CustomShortcut.Target)],$INFO[Skin.String(SideMenu.CustomShortcut.Path)],return)</onclick>
+    <visible>Skin.HasSetting(SideMenu.DisableSearchButton)</visible>
+    <visible>![String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Path)) | Skin.String(SideMenu.CustomShortcut.Path,noop)]</visible>
+</item>
+
+
+<!-- Exit: Close -->
 <item>
     <label>$LOCALIZE[15067]</label>
     <icon>special://skin/extras/icons/circle-xmark.png</icon>
@@ -79,14 +102,11 @@
     <property name="expression">none</property>
     <onclick>PreviousMenu</onclick>
     <visible>!Window.IsVisible(Home)</visible>
-    <visible>!Window.IsVisible(1105)</visible>
-    <visible>![Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRChannels.xml)]</visible>
-    <visible>!Window.IsVisible(weather)</visible>
-    <visible>![Window.IsMedia + ![Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRChannels.xml)] + !Skin.String(Navigation.Global.OnDown,Filter) + !Skin.String(Navigation.Global.OnDown,Options)]</visible>
     <visible>Skin.HasSetting(SideMenu.DisableSearchButton)</visible>
+    <visible>[String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Path)) | Skin.String(SideMenu.CustomShortcut.Path,noop)]</visible>
 </item>
 
-<!-- Contextual: Home Pseudo Logout -->
+<!-- Exit: Home Pseudo Logout -->
 <item>
     <label>$LOCALIZE[31053]</label>
     <icon>special://skin/extras/icons/address-card.png</icon>
@@ -98,10 +118,11 @@
     <onclick>ActivateWindow(1195)</onclick>
     <visible>Window.IsVisible(Home)</visible>
     <visible>!Skin.HasSetting(SkinUserLogin.Disabled)</visible>
-    <visible>Skin.HasSetting(SideMenu.DisableSearchButton) | Skin.String(Home.SideMenuCollapse,Topbar)</visible>
+    <visible>Skin.HasSetting(SideMenu.DisableSearchButton)</visible>
+    <visible>[String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Path)) | Skin.String(SideMenu.CustomShortcut.Path,noop)]</visible>
 </item>
 
-<!-- Contextual: Home Actual Logout -->
+<!-- Exit: Home Actual Logout -->
 <item>
     <label>$LOCALIZE[20126]</label>
     <icon>special://skin/extras/icons/address-card.png</icon>
@@ -113,10 +134,11 @@
     <onclick>System.LogOff</onclick>
     <visible>Window.IsVisible(Home)</visible>
     <visible>System.HasLoginScreen + Skin.HasSetting(SkinUserLogin.Disabled)</visible>
-    <visible>Skin.HasSetting(SideMenu.DisableSearchButton) | Skin.String(Home.SideMenuCollapse,Topbar)</visible>
+    <visible>Skin.HasSetting(SideMenu.DisableSearchButton)</visible>
+    <visible>[String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Path)) | Skin.String(SideMenu.CustomShortcut.Path,noop)]</visible>
 </item>
 
-<!-- Contextual: Home Quit -->
+<!-- Exit: Home Quit -->
 <item>
     <label>$LOCALIZE[13009]</label>
     <icon>special://skin/extras/icons/power.png</icon>
@@ -128,7 +150,8 @@
     <onclick>Quit()</onclick>
     <visible>Window.IsVisible(Home)</visible>
     <visible>![System.HasLoginScreen | !Skin.HasSetting(SkinUserLogin.Disabled)]</visible>
-    <visible>Skin.HasSetting(SideMenu.DisableSearchButton) | Skin.String(Home.SideMenuCollapse,Topbar)</visible>
+    <visible>Skin.HasSetting(SideMenu.DisableSearchButton)</visible>
+    <visible>[String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Path)) | Skin.String(SideMenu.CustomShortcut.Path,noop)]</visible>
 </item>
 
 <!-- Menu -->
@@ -141,8 +164,7 @@
     <property name="widgets_setfocus">SetFocus(400)</property>
     <property name="expression">none</property>
     <onclick>ActivateWindow(1172)</onclick>
-    <visible>![Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Topbar)]</visible>
-    <visible>!Skin.HasSetting(SideMenu.EnableOptionsButton)</visible>
+    <visible>![Skin.HasSetting(SideMenu.EnableOptionsButton) | Skin.String(Home.SideMenuCollapse,Topbar)]</visible>
 </item>
 
 <!-- Options -->
@@ -155,6 +177,5 @@
     <property name="widgets_setfocus">SetFocus(400)</property>
     <property name="expression">none</property>
     <onclick>ActivateWindow(1170)</onclick>
-    <visible>![Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Topbar)]</visible>
-    <visible>Skin.HasSetting(SideMenu.EnableOptionsButton)</visible>
+    <visible>[Skin.HasSetting(SideMenu.EnableOptionsButton) | Skin.String(Home.SideMenuCollapse,Topbar)]</visible>
 </item>

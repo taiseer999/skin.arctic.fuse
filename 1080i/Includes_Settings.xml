@@ -199,12 +199,35 @@
     </include>
 
     <include name="Settings_Standard_Buttons">
-        <include content="Settings_Side_Button">
+        <include content="Settings_Side_Button" condition="Skin.HasSetting(SideMenu.DisableSearchButton)">
+            <param name="id">02</param>
+            <param name="label">$LOCALIZE[15067]</param>
+            <param name="icon">special://skin/extras/icons/circle-xmark.png</param>
+            <param name="visible">[String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Path)) | Skin.String(SideMenu.CustomShortcut.Path,noop)]</param>
+            <onclick>Action(PreviousMenu)</onclick>
+        </include>
+        <include content="Settings_Side_Button" condition="Skin.HasSetting(SideMenu.DisableSearchButton)">
+            <param name="id">92</param>
+            <param name="label">$INFO[Skin.String(SideMenu.CustomShortcut.Label)]</param>
+            <param name="icon">$INFO[Skin.String(SideMenu.CustomShortcut.Icon)]</param>
+            <param name="visible">![String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Path)) | Skin.String(SideMenu.CustomShortcut.Path,noop)]</param>
+            <onclick condition="String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Target))">$INFO[Skin.String(SideMenu.CustomShortcut.Path)]</onclick>
+            <onclick condition="!String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Target))">ActivateWindow($INFO[Skin.String(SideMenu.CustomShortcut.Target)],$INFO[Skin.String(SideMenu.CustomShortcut.Path)],return)</onclick>
+        </include>
+        <include content="Settings_Side_Button" condition="!System.AddonIsEnabled(service.libreelec.settings) + !Skin.HasSetting(SideMenu.DisableSearchButton)">
             <param name="id">02</param>
             <param name="label">$LOCALIZE[5]</param>
             <param name="icon">special://skin/extras/icons/toolbox.png</param>
             <onclick>SetFocus(30040)</onclick>
         </include>
+        <include content="Settings_Side_Button" condition="System.AddonIsEnabled(service.libreelec.settings) + !Skin.HasSetting(SideMenu.DisableSearchButton)">
+            <param name="id">02</param>
+            <param name="label">LibreELEC</param>
+            <param name="icon">special://skin/extras/icons/libreelec.png</param>
+            <onclick>RunAddon(service.libreelec.settings)</onclick>
+        </include>
+
+
         <include content="Settings_Side_Button" condition="!Skin.HasSetting(SideMenu.EnableOptionsButton)">
             <param name="id">01</param>
             <param name="label">$LOCALIZE[33061]</param>

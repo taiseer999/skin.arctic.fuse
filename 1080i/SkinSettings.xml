@@ -27,13 +27,6 @@
                 <onright>3</onright>
                 <onleft>SetFocus(30040)</onleft>
                 <include>Settings_Standard_Buttons</include>
-                <include content="Settings_Side_Button">
-                    <param name="id">03</param>
-                    <param name="label">LibreELEC</param>
-                    <param name="icon">special://skin/extras/icons/libreelec.png</param>
-                    <param name="visible">System.AddonIsEnabled(service.libreelec.settings)</param>
-                    <onclick>RunAddon(service.libreelec.settings)</onclick>
-                </include>
             </include>
             <include content="Settings_Main_Group">
                 <include content="Settings_Left_Group">
@@ -164,29 +157,67 @@
                             <onclick condition="!Skin.String(Home.SideMenuCollapse,Library) + !Skin.String(Home.SideMenuCollapse,Always)">Skin.SetString(Home.SideMenuCollapse,Library)</onclick>
                             <visible>Container(3).HasFocus(1)</visible>
                         </include>
-                        <include content="Settings_Button" description="Disable Discover Button">
-                            <param name="id">1012</param>
+                        <include content="Settings_Button" description="Primary Menu Button">
+                            <param name="id">1020</param>
                             <param name="dialog">false</param>
-                            <param name="control">radiobutton</param>
-                            <label>$LOCALIZE[31416] > $LOCALIZE[13014] > $LOCALIZE[31066]</label>
+                            <param name="control">button</param>
+                            <label>$LOCALIZE[31416] > $LOCALIZE[13014] > $LOCALIZE[31386]</label>
+                            <label2>$VAR[Label_Setting_MenuButton_Primary]</label2>
+                            <onclick condition="![String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Path)) | Skin.String(SideMenu.CustomShortcut.Path,noop)]">Skin.Reset(SideMEnu.CustomShortcut.Path)</onclick>
+                            <onclick condition="![String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Path)) | Skin.String(SideMenu.CustomShortcut.Path,noop)]">Skin.Reset(SideMEnu.CustomShortcut.Icon)</onclick>
+                            <onclick condition="![String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Path)) | Skin.String(SideMenu.CustomShortcut.Path,noop)]">Skin.Reset(SideMEnu.CustomShortcut.Label)</onclick>
                             <onclick>Skin.ToggleSetting(SideMenu.DisableSearchButton)</onclick>
                             <onclick>ReloadSkin()</onclick>
                             <onclick>AlarmClock(refocusblura,SetFocus(3,0,absolute),00:00,silent)</onclick>
-                            <onclick>AlarmClock(refocusblurb,SetFocus(1012),00:00,silent)</onclick>
-                            <selected>!Skin.HasSetting(SideMenu.DisableSearchButton)</selected>
+                            <onclick>AlarmClock(refocusblurb,SetFocus(1020),00:00,silent)</onclick>
                             <visible>Container(3).HasFocus(1)</visible>
                         </include>
-                        <include content="Settings_Button" description="Disable Menu Button">
+                        <include content="Settings_Button" description="Primary Menu Customise Action">
+                            <param name="id">1021</param>
+                            <param name="dialog">false</param>
+                            <param name="control">button</param>
+                            <label> - $LOCALIZE[15217]</label>
+                            <label2>$VAR[Label_Setting_MenuButton_Primary_Action]</label2>
+                            <onclick>SetProperty(Shortcuts.Groupings.Links,Links,Home)</onclick>
+                            <onclick>RunScript(script.skinvariables,set_shortcut=SideMenu.CustomShortcut)</onclick>
+                            <visible>Skin.HasSetting(SideMenu.DisableSearchButton)</visible>
+                            <visible>Container(3).HasFocus(1)</visible>
+                        </include>
+                        <include content="Settings_Button" description="Primary Menu Customise Label">
+                            <param name="id">1022</param>
+                            <param name="dialog">false</param>
+                            <param name="control">button</param>
+                            <label> - $LOCALIZE[21899]</label>
+                            <label2>$INFO[Skin.String(SideMenu.CustomShortcut.Label)]</label2>
+                            <onclick>Skin.SetString(SideMenu.CustomShortcut.Label)</onclick>
+                            <visible>Skin.HasSetting(SideMenu.DisableSearchButton)</visible>
+                            <visible>![String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Path)) | Skin.String(SideMenu.CustomShortcut.Path,noop)]</visible>
+                            <visible>Container(3).HasFocus(1)</visible>
+                        </include>
+                        <include content="Settings_ButtonImage" description="Primary Menu Customise Label">
+                            <param name="id">1023</param>
+                            <param name="groupid">1123</param>
+                            <param name="dialog">false</param>
+                            <param name="control">button</param>
+                            <param name="icon">$INFO[Skin.String(SideMenu.CustomShortcut.Icon)]</param>
+                            <label> - $LOCALIZE[31274]</label>
+                            <onclick>Skin.SetImage(SideMenu.CustomShortcut.Icon,special://skin/extras/icons/)</onclick>
+                            <visible>Skin.HasSetting(SideMenu.DisableSearchButton)</visible>
+                            <visible>![String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Path)) | Skin.String(SideMenu.CustomShortcut.Path,noop)]</visible>
+                            <visible>Container(3).HasFocus(1)</visible>
+                        </include>
+                        <include content="Settings_Button" description="Secondary Menu Button">
                             <param name="id">1014</param>
                             <param name="dialog">false</param>
-                            <param name="control">radiobutton</param>
-                            <label>$LOCALIZE[31416] > $LOCALIZE[13014] > $LOCALIZE[33063]</label>
+                            <param name="control">button</param>
+                            <label>$LOCALIZE[31416] > $LOCALIZE[13014] > $LOCALIZE[31385]</label>
+                            <label2>$VAR[Label_Setting_MenuButton_Secondary]</label2>
                             <onclick>Skin.ToggleSetting(SideMenu.EnableOptionsButton)</onclick>
                             <onclick>ReloadSkin()</onclick>
                             <onclick>AlarmClock(refocusblura,SetFocus(3,0,absolute),00:00,silent)</onclick>
                             <onclick>AlarmClock(refocusblurb,SetFocus(1014),00:00,silent)</onclick>
-                            <selected>Skin.HasSetting(SideMenu.EnableOptionsButton)</selected>
                             <visible>Container(3).HasFocus(1)</visible>
+                            <visible>!Skin.String(Home.SideMenuCollapse,Topbar)</visible>
                         </include>
                         <include content="Settings_Button" description="Home group indicator">
                             <param name="id">1006</param>
