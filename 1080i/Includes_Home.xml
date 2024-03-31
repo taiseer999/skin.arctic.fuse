@@ -80,6 +80,7 @@
         <param name="property">ReverseTransition</param>
         <param name="condition">true</param>
         <definition>
+            <onup condition="$PARAM[condition]">SetProperty(PreviousWindow,$VAR[Label_Header_Main],1185)</onup>
             <onup condition="$PARAM[condition]">SetProperty($PARAM[property],True,Home)</onup>
             <onup condition="$PARAM[condition]">AlarmClock(Clear$PARAM[property],ClearProperty($PARAM[property],Home),00:00,silent)</onup>
             <onup condition="$PARAM[condition]">ActivateWindow(1185)</onup>
