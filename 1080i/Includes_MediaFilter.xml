@@ -54,7 +54,17 @@
                         <onup>SetFocus(6000,2)</onup>
                         <ondown>SetFocus(6000,2)</ondown>
 
-                        <control type="edit" id="19">
+                        <control type="group" id="9019">
+                            <height>80</height>
+                            <include content="Search_Filter_Edit">
+                                <param name="id">19</param>
+                                <param name="ondown">9018</param>
+                                <param name="onup">SetFocus(6000,2)</param>
+                                <param name="label">$LOCALIZE[587] $LOCALIZE[369]</param>
+                            </include>
+                        </control>
+
+                        <!-- <control type="edit" id="19">
                             <description>Filter</description>
                             <font>font_main</font>
                             <textcolor>dialog_fg_70</textcolor>
@@ -64,9 +74,9 @@
                             <height>view_pad</height>
                             <textoffsetx>40</textoffsetx>
                             <align>left</align>
-                        </control>
+                        </control> -->
 
-                        <control type="group" id="9019">
+                        <control type="group" id="9029">
                             <height>40</height>
                             <control type="image">
                                 <centertop>50%</centertop>
@@ -82,6 +92,7 @@
                             <param name="control">button</param>
                             <param name="dialog">true</param>
                             <!-- <onleft condition="Integer.IsEqual(Container.CurrentPage,1)">68</onleft> -->
+                            <!-- <texturefocus /> -->
                             <onclick>SetFocus(68)</onclick>
                             <onleft>SetFocus(50)</onleft>
                             <onleft>Action(prevletter)</onleft>
@@ -285,6 +296,29 @@
             </itemlayout>
 
             <focusedlayout width="42">
+                <!-- <control type="group">
+                    <visible>Control.HasFocus(9018)</visible>
+                    <control type="label">
+                        <font>font_main_black</font>
+                        <label>$INFO[ListItem.Label]</label>
+                        <textcolor>$VAR[ColorSelected]</textcolor>
+                        <align>center</align>
+                    </control>
+                    <control type="image">
+                        <include>Texture_Highlight_Scrollbar_H</include>
+                        <height>scrollbar_w</height>
+                        <centerbottom>12</centerbottom>
+                        <width>75%</width>
+                        <centerleft>50%</centerleft>
+                    </control>
+                </control>
+                <control type="label">
+                    <font>font_main</font>
+                    <label>$INFO[ListItem.Label]</label>
+                    <textcolor>dialog_fg_70</textcolor>
+                    <align>center</align>
+                    <visible>![Control.HasFocus(9018)]</visible>
+                </control> -->
 
                 <control type="label">
                     <font>font_main_black</font>
