@@ -22,7 +22,7 @@
     <variable name="Label_NextMedia">
         <value condition="Skin.String(Navigation.Global.OnDown,Explore)">$LOCALIZE[31148]</value>
         <value condition="Skin.String(Navigation.Global.OnDown,Options)">$LOCALIZE[33063]</value>
-        <value condition="Skin.String(Navigation.Global.OnDown,Search)">$LOCALIZE[137]</value>
+        <value condition="Skin.String(Navigation.Global.OnDown,Search) + !Skin.String(Navigation.Global.OnUp,Search)">$LOCALIZE[137]</value>
         <value condition="Skin.String(Navigation.Global.OnDown,Add-ons)">$LOCALIZE[24001]</value>
         <value condition="Skin.String(Navigation.Global.OnDown,Filter) + !Window.IsMedia + !Window.IsVisible(1105)">$LOCALIZE[31066]</value>
         <value condition="Skin.String(Navigation.Global.OnDown,Filter)">$LOCALIZE[587]</value>
@@ -40,15 +40,15 @@
         <value condition="Window.IsVisible(1107) + Skin.String(Navigation.Hub.1107.OnDown,Explore)">$LOCALIZE[31148]</value>
         <value condition="Window.IsVisible(1108) + Skin.String(Navigation.Hub.1108.OnDown,Explore)">$LOCALIZE[31148]</value>
         <value condition="Window.IsVisible(1109) + Skin.String(Navigation.Hub.1109.OnDown,Explore)">$LOCALIZE[31148]</value>
-        <value condition="Window.IsVisible(Home) + Skin.String(Navigation.Hub.Home.OnDown,Search)">$LOCALIZE[137]</value>
-        <value condition="Window.IsVisible(1101) + Skin.String(Navigation.Hub.1101.OnDown,Search)">$LOCALIZE[137]</value>
-        <value condition="Window.IsVisible(1102) + Skin.String(Navigation.Hub.1102.OnDown,Search)">$LOCALIZE[137]</value>
-        <value condition="Window.IsVisible(1103) + Skin.String(Navigation.Hub.1103.OnDown,Search)">$LOCALIZE[137]</value>
-        <value condition="Window.IsVisible(1104) + Skin.String(Navigation.Hub.1104.OnDown,Search)">$LOCALIZE[137]</value>
-        <value condition="Window.IsVisible(1106) + Skin.String(Navigation.Hub.1106.OnDown,Search)">$LOCALIZE[137]</value>
-        <value condition="Window.IsVisible(1107) + Skin.String(Navigation.Hub.1107.OnDown,Search)">$LOCALIZE[137]</value>
-        <value condition="Window.IsVisible(1108) + Skin.String(Navigation.Hub.1108.OnDown,Search)">$LOCALIZE[137]</value>
-        <value condition="Window.IsVisible(1109) + Skin.String(Navigation.Hub.1109.OnDown,Search)">$LOCALIZE[137]</value>
+        <value condition="Window.IsVisible(Home) + Skin.String(Navigation.Hub.Home.OnDown,Search) + !Skin.String(Navigation.Global.OnUp,Search)">$LOCALIZE[137]</value>
+        <value condition="Window.IsVisible(1101) + Skin.String(Navigation.Hub.1101.OnDown,Search) + !Skin.String(Navigation.Global.OnUp,Search)">$LOCALIZE[137]</value>
+        <value condition="Window.IsVisible(1102) + Skin.String(Navigation.Hub.1102.OnDown,Search) + !Skin.String(Navigation.Global.OnUp,Search)">$LOCALIZE[137]</value>
+        <value condition="Window.IsVisible(1103) + Skin.String(Navigation.Hub.1103.OnDown,Search) + !Skin.String(Navigation.Global.OnUp,Search)">$LOCALIZE[137]</value>
+        <value condition="Window.IsVisible(1104) + Skin.String(Navigation.Hub.1104.OnDown,Search) + !Skin.String(Navigation.Global.OnUp,Search)">$LOCALIZE[137]</value>
+        <value condition="Window.IsVisible(1106) + Skin.String(Navigation.Hub.1106.OnDown,Search) + !Skin.String(Navigation.Global.OnUp,Search)">$LOCALIZE[137]</value>
+        <value condition="Window.IsVisible(1107) + Skin.String(Navigation.Hub.1107.OnDown,Search) + !Skin.String(Navigation.Global.OnUp,Search)">$LOCALIZE[137]</value>
+        <value condition="Window.IsVisible(1108) + Skin.String(Navigation.Hub.1108.OnDown,Search) + !Skin.String(Navigation.Global.OnUp,Search)">$LOCALIZE[137]</value>
+        <value condition="Window.IsVisible(1109) + Skin.String(Navigation.Hub.1109.OnDown,Search) + !Skin.String(Navigation.Global.OnUp,Search)">$LOCALIZE[137]</value>
         <value>$VAR[Label_NextMedia]</value>
     </variable>
 

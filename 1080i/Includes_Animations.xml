@@ -325,7 +325,7 @@
         <param name="windowclose_up">[False]</param>
         <definition>
             <include content="Animation_Widgets_Grouplist_Slide_Out">
-                <param name="condition">$PARAM[windowclose_down]</param>
+                <param name="condition">[[$PARAM[windowclose_down]] + String.IsEmpty(Window(Home).Property(InhibitTransition))]</param>
                 <param name="type">WindowClose</param>
                 <param name="time">200</param>
                 <param name="tween">circle</param>
@@ -334,7 +334,7 @@
                 <param name="posy">$PARAM[posy]</param>
             </include>
             <include content="Animation_Widgets_Grouplist_Slide_Out">
-                <param name="condition">$PARAM[windowclose_up]</param>
+                <param name="condition">[[$PARAM[windowclose_up]] + String.IsEmpty(Window(Home).Property(InhibitTransition))]</param>
                 <param name="type">WindowClose</param>
                 <param name="time">200</param>
                 <param name="tween">circle</param>
@@ -343,7 +343,7 @@
                 <param name="posy">-$PARAM[posy]</param>
             </include>
             <include content="Animation_Widgets_Grouplist_Slide_In">
-                <param name="condition">$PARAM[windowopen_down]</param>
+                <param name="condition">[[$PARAM[windowopen_down]] + String.IsEmpty(Window(Home).Property(InhibitTransition))]</param>
                 <param name="type">WindowOpen</param>
                 <param name="posy">$PARAM[posy]</param>
                 <param name="delay">0</param>
@@ -352,7 +352,7 @@
                 <param name="easing">out</param>
             </include>
             <include content="Animation_Widgets_Grouplist_Slide_In">
-                <param name="condition">$PARAM[windowopen_up]</param>
+                <param name="condition">[[$PARAM[windowopen_up]] + String.IsEmpty(Window(Home).Property(InhibitTransition))]</param>
                 <param name="type">WindowOpen</param>
                 <param name="posy">-$PARAM[posy]</param>
                 <param name="delay">0</param>

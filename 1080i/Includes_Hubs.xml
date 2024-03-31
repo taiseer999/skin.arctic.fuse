@@ -296,9 +296,18 @@
                     <param name="type">Hidden</param>
                 </include>
 
-                <onup condition="Skin.HasSetting(Navigation.EnableOptionsOnLeft)">Action(Info)</onup>
-                <onup condition="!Skin.HasSetting(Navigation.EnableOptionsOnLeft)">SetProperty(List.ViewContainer,$NUMBER[370])</onup>
-                <onup condition="!Skin.HasSetting(Navigation.EnableOptionsOnLeft)">SetFocus(333)</onup>
+
+                <include content="Home_Menu_List_OnUp_Bump" condition="!Skin.String(Navigation.Global.OnUp,Search)">
+                    <param name="id">370</param>
+                </include>
+                <include content="Home_Menu_List_OnUp_ActivateSearch" condition="Skin.String(Navigation.Global.OnUp,Search) + !$EXP[Exp_Window_IsClassicHub]">
+                    <param name="property">InhibitTransition</param>
+                </include>
+                <include content="Home_Menu_List_OnUp_ActivateSearch" condition="Skin.String(Navigation.Global.OnUp,Search) + $EXP[Exp_Window_IsClassicHub]">
+                    <param name="property">ReverseTransition</param>
+                </include>
+
+
                 <ondown>SetFocus(303,0,absolute)</ondown>
 
                 <include>Home_Menu_List_OnBackInfo</include>
