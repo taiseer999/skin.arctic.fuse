@@ -76,11 +76,10 @@
     </include>
 
     <include name="Home_Menu_List_OnBackInfo">
-        <oninfo condition="$EXP[Exp_HomeMenu_DontHide]">SetProperty(Options.Menu.GUID,$INFO[Container(303).ListItem.Property(GUID)],Home)</oninfo>
+        <!-- <oninfo condition="$EXP[Exp_HomeMenu_DontHide]">SetProperty(Options.Menu.GUID,$INFO[Container(303).ListItem.Property(GUID)],Home)</oninfo>
         <oninfo condition="$EXP[Exp_HomeMenu_DontHide]">SetProperty(Options.Menu.Header,$INFO[Container(303).ListItem.Label],Home)</oninfo>
-
         <oninfo condition="Skin.String(Home.SideMenuCollapse,Topbar) + Window.IsVisible(Home)">SetProperty(Options.Menu.GUID,$INFO[Container(370).ListItem.Property(GUID)],Home)</oninfo>
-        <oninfo condition="Skin.String(Home.SideMenuCollapse,Topbar) + Window.IsVisible(Home)">SetProperty(Options.Menu.Header,$INFO[Container(370).ListItem.Label],Home)</oninfo>
+        <oninfo condition="Skin.String(Home.SideMenuCollapse,Topbar) + Window.IsVisible(Home)">SetProperty(Options.Menu.Header,$INFO[Container(370).ListItem.Label],Home)</oninfo> -->
 
         <oninfo>ActivateWindow(1170)</oninfo>
 

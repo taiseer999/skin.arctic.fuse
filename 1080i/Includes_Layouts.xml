@@ -122,13 +122,13 @@
                 <height>40</height>
                 <visible>!$PARAM[detailed]</visible>
                 <control type="image">
-                    <aspectratio>keep</aspectratio>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
                     <bordersize>icon_home_bordersize</bordersize>
                     <include content="Object_ColorDiffuse" condition="$PARAM[selected]">
                         <param name="colordiffuse">$VAR[ColorSelected]</param>
                     </include>
                     <colordiffuse>dialog_fg_70</colordiffuse>
-                    <texture>$INFO[ListItem.Icon]</texture>
+                    <texture diffuse="diffuse/circle_50.png">$INFO[ListItem.Icon]</texture>
                 </control>
             </control>
 

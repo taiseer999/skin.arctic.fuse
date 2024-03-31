@@ -18,6 +18,8 @@
             <onup condition="Window.IsVisible(1170)">SetFocus(8000,9999,absolute)</onup>
             <onup condition="!Window.IsVisible(1170)">9009</onup>
             <ondown condition="!Window.IsVisible(1170)">19</ondown>
+            <ondown condition="Window.IsVisible(1170) + String.IsEmpty(Window(Home).Property(Options.Menu.GUID))">7010</ondown>
+            <ondown condition="Window.IsVisible(1170) + !String.IsEmpty(Window(Home).Property(Options.Menu.GUID))">SetFocus(8000,0,absolute)</ondown>
             <onback condition="!Window.IsVisible(1170)">68</onback>
             <oninfo>Close</oninfo>
             <!-- Button 1 -->
@@ -135,7 +137,8 @@
             <onup condition="Window.IsVisible(1170)">SetFocus(8000,9999,absolute)</onup>
             <onup condition="!Window.IsVisible(1170)">9009</onup>
             <ondown condition="!Window.IsVisible(1170)">19</ondown>
-            <ondown condition="Window.IsVisible(1170)">7010</ondown>
+            <ondown condition="Window.IsVisible(1170) + String.IsEmpty(Window(Home).Property(Options.Menu.GUID))">7010</ondown>
+            <ondown condition="Window.IsVisible(1170) + !String.IsEmpty(Window(Home).Property(Options.Menu.GUID))">SetFocus(8000,0,absolute)</ondown>
             <onback condition="!Window.IsVisible(1170)">68</onback>
             <oninfo>Close</oninfo>
 
