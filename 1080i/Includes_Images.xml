@@ -43,6 +43,13 @@
         <value>$VAR[Image_NextMedia]</value>
     </variable>
 
+    <variable name="Image_Settings_Level">
+        <value condition="String.IsEqual(Control.GetLabel(20),Expert)">special://skin/extras/icons/settings-expert.png</value>
+        <value condition="String.IsEqual(Control.GetLabel(20),Advanced)">special://skin/extras/icons/settings-advanced.png</value>
+        <value condition="String.IsEqual(Control.GetLabel(20),Standard)">special://skin/extras/icons/settings-standard.png</value>
+        <value condition="String.IsEqual(Control.GetLabel(20),Basic)">special://skin/extras/icons/settings-basic.png</value>
+    </variable>
+
     <variable name="Image_Search_FilterClear">
         <value condition="!Skin.HasSetting(Search.DisableDiscover)">special://skin/extras/icons/filter-small.png</value>
         <value>special://skin/extras/icons/triangle-exclamation.png</value>

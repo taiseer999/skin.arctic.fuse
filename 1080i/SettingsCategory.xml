@@ -25,7 +25,7 @@
                 <include content="Settings_Side_Button">
                     <param name="id">03</param>
                     <param name="label">$INFO[Control.GEtLabel(20)]</param>
-                    <param name="icon">special://skin/extras/icons/settings.png</param>
+                    <param name="icon">$VAR[Image_Settings_Level]</param>
                     <onclick>settingslevelchange</onclick>
                 </include>
             </include>
