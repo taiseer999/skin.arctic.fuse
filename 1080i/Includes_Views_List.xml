@@ -288,7 +288,6 @@
 
                         <onright condition="Skin.String(Navigation.Global.OnDown,Options)">ActivateWindow(1171)</onright>
                         <onright condition="Skin.String(Navigation.Global.OnDown,Search)">ActivateWindow(1185)</onright>
-                        <onright condition="Skin.String(Navigation.Global.OnDown,Add-ons)">ActivateWindow(1132)</onright>
                         <onright condition="Skin.String(Navigation.Global.OnDown,Next Aired Library)">ActivateWindow(1131)</onright>
                         <onright condition="Skin.String(Navigation.Global.OnDown,Next Aired Trakt)">ActivateWindow(1130)</onright>
                         <onright condition="Skin.String(Navigation.Global.OnDown,Filter)">SetFocus(64)</onright>

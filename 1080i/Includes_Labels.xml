@@ -23,7 +23,6 @@
         <value condition="Skin.String(Navigation.Global.OnDown,Explore)">$LOCALIZE[31148]</value>
         <value condition="Skin.String(Navigation.Global.OnDown,Options)">$LOCALIZE[33063]</value>
         <value condition="Skin.String(Navigation.Global.OnDown,Search) + !Skin.String(Navigation.Global.OnUp,Search)">$LOCALIZE[137]</value>
-        <value condition="Skin.String(Navigation.Global.OnDown,Add-ons)">$LOCALIZE[24001]</value>
         <value condition="Skin.String(Navigation.Global.OnDown,Filter) + !Window.IsMedia + !Window.IsVisible(1105)">$LOCALIZE[31066]</value>
         <value condition="Skin.String(Navigation.Global.OnDown,Filter)">$LOCALIZE[587]</value>
         <value>$VAR[Label_NextBump]</value>
@@ -118,6 +117,16 @@
     <variable name="Label_Settings_KeyboardSize">
         <value condition="Skin.HasSetting(Keyboard.FullSized)">$LOCALIZE[31439]</value>
         <value>$LOCALIZE[1438]</value>
+    </variable>
+
+    <variable name="Label_Settings_NavigationMenuLeft">
+        <value condition="!Skin.HasSetting(Navigation.DisableOptionsOnLeft)">$LOCALIZE[33063]</value>
+        <value>$INFO[Skin.String(Navigation.OnLeftRight)]</value>
+    </variable>
+
+    <variable name="Label_Settings_NavigationHomeBack">
+        <value condition="!Skin.HasSetting(Navigation.DisableOptionsOnBack)">$LOCALIZE[33063]</value>
+        <value>$LOCALIZE[231]</value>
     </variable>
 
     <variable name="Label_DialogInfo_TraktRating">
