@@ -1818,6 +1818,11 @@ msgctxt "#31383"
 msgid "Production"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31384"
+msgid "Tray labels"
+msgstr ""
+
 msgctxt "#31390"
 msgid "Release Year"
 msgstr ""

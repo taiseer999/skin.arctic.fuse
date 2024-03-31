@@ -170,7 +170,7 @@
 
     <include name="Layout_OptionTray">
         <param name="selected">false</param>
-        <param name="detailed">!Skin.HasSetting(Options.DisableTrayLabels)</param>
+        <param name="detailed">Skin.HasSetting(Options.EnableTrayLabels)</param>
         <param name="color">main_fg</param>
         <definition>
             <control type="group">
