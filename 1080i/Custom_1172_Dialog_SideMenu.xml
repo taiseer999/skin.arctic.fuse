@@ -34,6 +34,16 @@
             <visible>!Window.IsVisible(1170)</visible>
             <include>Animation_FadeOut</include>
             <control type="group">
+                <control type="group">
+                    <left>80</left>
+                    <centerbottom>70</centerbottom>
+                    <height>100</height>
+                    <include content="Layout_Home_Menu_Label">
+                        <param name="detailed">true</param>
+                        <param name="selected">[Control.HasFocus(309)]</param>
+                        <param name="label">$LOCALIZE[33063]</param>
+                    </include>
+                </control>
                 <control type="grouplist">
                     <orientation>horizontal</orientation>
                     <centerbottom>100</centerbottom>
@@ -49,13 +59,15 @@
                             <param name="id">309</param>
                             <onup>SetFocus(303,9999,absolute)</onup>
                             <ondown>308</ondown>
-                            <onleft>311</onleft>
-                            <onright>310</onright>
+                            <onleft>Close</onleft>
+                            <onright>Close</onright>
+                            <!-- <onleft>311</onleft>
+                            <onright>310</onright> -->
                             <onclick>Close</onclick>
                             <onclick>ActivateWindow(shutdownmenu)</onclick>
                         </include>
                     </include>
-                    <include content="Home_Menu_Button_Icon">
+                    <!-- <include content="Home_Menu_Button_Icon">
                         <param name="id">310</param>
                         <param name="icon">special://skin/extras/icons/settings.png</param>
                         <param name="color_nf">main_fg_70</param>
@@ -85,7 +97,7 @@
                             <onclick>Quit()</onclick>
                         </include>
                         <include>Animation_Home_Menu_Label</include>
-                    </include>
+                    </include> -->
 
                 </control>
 

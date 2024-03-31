@@ -1907,7 +1907,7 @@
             <bordersize>icon_home_bordersize</bordersize>
             <colordiffuse>$PARAM[color]</colordiffuse>
             <texture>$INFO[ListItem.Icon]</texture>
-            <visible>String.IsEmpty(ListItem.Property(showlabel)) | Skin.HasSetting(Options.DisableTrayLabels)</visible>
+            <visible>String.IsEmpty(ListItem.Property(showlabel))</visible>
         </control>
         <control type="image">
             <nested />
@@ -1917,7 +1917,7 @@
             <bordersize>icon_home_bordersize</bordersize>
             <colordiffuse>$PARAM[color]</colordiffuse>
             <texture>$INFO[ListItem.Icon]</texture>
-            <visible>![String.IsEmpty(ListItem.Property(showlabel)) | Skin.HasSetting(Options.DisableTrayLabels)]</visible>
+            <visible>![String.IsEmpty(ListItem.Property(showlabel))]</visible>
         </control>
         <control type="label">
             <nested />
@@ -1930,7 +1930,7 @@
             <aligny>top</aligny>
             <left>-40</left>
             <right>-40</right>
-            <visible>![String.IsEmpty(ListItem.Property(showlabel)) | Skin.HasSetting(Options.DisableTrayLabels)]</visible>
+            <visible>![String.IsEmpty(ListItem.Property(showlabel))]</visible>
         </control>
     </include>
 
