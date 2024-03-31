@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
+    <include name="ButtonMenu_Tray_Movement">
+        <onup condition="Window.IsVisible(1170)">SetFocus(8000,9999,absolute)</onup>
+        <onup condition="[Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRChannels.xml)]">9004</onup>
+        <onup condition="!Window.IsVisible(1170) + ![Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRChannels.xml)]">9009</onup>
+        <ondown condition="Window.IsVisible(1170)">7010</ondown>
+        <ondown condition="[Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRChannels.xml)]">9001</ondown>
+        <ondown condition="!Window.IsVisible(1170) + ![Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRChannels.xml)]">19</ondown>
+        <onback condition="!Window.IsVisible(1170)">68</onback>
+        <oninfo>Close</oninfo>
+    </include>
+
     <include name="ButtonMenu_PlayerControls">
         <control type="image">
             <bottom>60</bottom>
@@ -15,13 +26,7 @@
             <bottom>-40</bottom>
             <itemgap>20</itemgap>
             <align>center</align>
-            <onup condition="Window.IsVisible(1170)">SetFocus(8000,9999,absolute)</onup>
-            <onup condition="!Window.IsVisible(1170)">9009</onup>
-            <ondown condition="!Window.IsVisible(1170)">19</ondown>
-            <ondown condition="Window.IsVisible(1170) + String.IsEmpty(Window(Home).Property(Options.Menu.GUID))">7010</ondown>
-            <ondown condition="Window.IsVisible(1170) + !String.IsEmpty(Window(Home).Property(Options.Menu.GUID))">SetFocus(8000,0,absolute)</ondown>
-            <onback condition="!Window.IsVisible(1170)">68</onback>
-            <oninfo>Close</oninfo>
+            <include>ButtonMenu_Tray_Movement</include>
             <!-- Button 1 -->
             <control type="button" id="6001">
                 <include>Defs_OSD_Button</include>
@@ -134,13 +139,8 @@
             <bottom>-40</bottom>
             <left>20</left>
             <scrolltime tween="quadratic">400</scrolltime>
-            <onup condition="Window.IsVisible(1170)">SetFocus(8000,9999,absolute)</onup>
-            <onup condition="!Window.IsVisible(1170)">9009</onup>
-            <ondown condition="!Window.IsVisible(1170)">19</ondown>
-            <ondown condition="Window.IsVisible(1170) + String.IsEmpty(Window(Home).Property(Options.Menu.GUID))">7010</ondown>
-            <ondown condition="Window.IsVisible(1170) + !String.IsEmpty(Window(Home).Property(Options.Menu.GUID))">SetFocus(8000,0,absolute)</ondown>
-            <onback condition="!Window.IsVisible(1170)">68</onback>
-            <oninfo>Close</oninfo>
+
+            <include>ButtonMenu_Tray_Movement</include>
 
             <itemlayout width="100" height="80">
                 <include content="Layout_OptionTray">

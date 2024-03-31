@@ -310,7 +310,7 @@
             <include>Dimension_DialogSideMenu</include>
             <include>Animation_Right</include>
 
-            <visible>ControlGroup(9000).HasFocus()</visible>
+            <visible>ControlGroup(9000).HasFocus() | Control.HasFocus(6000)</visible>
 
             <include content="Dialog_Dim_Side">
                 <param name="slide_animation">False</param>
@@ -319,7 +319,7 @@
             <include content="Dialog_Foreground_Side">
                 <param name="dialog_size">Dimension_DialogSideMenu</param>
                 <param name="topline">true</param>
-                <param name="subline">true</param>
+                <param name="subline">false</param>
 
                 <include content="Dialog_Head">
                     <param name="label">$LOCALIZE[31319]</param>
@@ -331,6 +331,11 @@
                 <include content="Dialog_Body">
                     <include content="Dialog_Body_Grouplist">
                         <param name="id">9000</param>
+
+                        <bottom>100</bottom>
+
+                        <onup>SetFocus(6000,2)</onup>
+                        <ondown>SetFocus(6000,2)</ondown>
 
                         <onleft>50</onleft>
                         <onback>50</onback>
@@ -403,7 +408,7 @@
                             <label>$LOCALIZE[33063]</label>
                         </include>
 
-                        <include content="Settings_Button" description="PVR Style combined">
+                        <!-- <include content="Settings_Button" description="PVR Style combined">
                             <param name="id">9002</param>
                             <param name="control">button</param>
                             <param name="dialog">true</param>
@@ -411,7 +416,7 @@
                             <onclick>Skin.ToggleSetting(Views.UseHalfPVRGuide)</onclick>
                             <onclick>ReloadSkin()</onclick>
                             <onclick>AlarmClock(refocus2,SetFocus(9002),00:00,silent)</onclick>
-                        </include>
+                        </include> -->
 
                         <include content="Settings_Button">
                             <param name="id">9003</param>
@@ -429,6 +434,18 @@
                             <onclick>Container.SetSortDirection</onclick>
                         </include>
 
+                    </include>
+
+                    <include content="Dialog_Body_Group">
+                        <control type="group">
+                            <visible>Player.HasMedia</visible>
+                            <include>ButtonMenu_PlayerControls</include>
+                        </control>
+
+                        <control type="group">
+                            <visible>!Player.HasMedia</visible>
+                            <include>ButtonMenu_OptionsTray</include>
+                        </control>
                     </include>
                 </include>
             </include>

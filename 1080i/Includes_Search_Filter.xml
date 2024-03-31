@@ -137,7 +137,7 @@
             <onclick condition="$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]">SetFocus(68)</onclick>
             <onclick condition="![$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]]">PreviousMenu</onclick>
             <onleft>SetFocus(9502)</onleft>
-            <onright>SetFocus(9502)</onright>
+            <!-- <onright>SetFocus(9502)</onright> -->
             <onup>SetFocus(9502)</onup>
             <ondown>SetFocus(9502)</ondown>
             <texturenofocus />
@@ -187,7 +187,7 @@
                         <onup>9099</onup>
                         <ondown>SetFocus(5098,0,absolute)</ondown>
                         <onleft condition="$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]">68</onleft>
-                        <onright condition="$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]">68</onright>
+                        <!-- <onright condition="$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]">68</onright> -->
                         <onback condition="$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]">68</onback>
                         <onback condition="![$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]]">68</onback>
                     </control>
@@ -215,7 +215,7 @@
                         <onup>9501</onup>
                         <ondown>9099</ondown>
                         <onleft condition="$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]">68</onleft>
-                        <onright condition="$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]">68</onright>
+                        <!-- <onright condition="$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]">68</onright> -->
                         <onback condition="$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]">68</onback>
                         <onback condition="![$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]]">68</onback>
                         <onclick>SetFocus(5099,$INFO[Container(5098).ListItem.CurrentItem],absolute)</onclick>
@@ -322,7 +322,7 @@
                         <param name="itemlayout_include">Layout_MenuList</param>
                         <param name="detailed">true</param>
                         <onleft>9501</onleft>
-                        <onright>9501</onright>
+                        <!-- <onright>9501</onright> -->
                         <onback>9501</onback>
                         <include>Dimension_Dialog_Body_Group</include>
                         <content>
@@ -440,7 +440,7 @@
             <texturenofocus />
             <texturefocus />
             <onleft>8000</onleft>
-            <onright>8000</onright>
+            <!-- <onright>8000</onright> -->
             <onup>8000</onup>
             <ondown>8000</ondown>
             <onback>8000</onback>

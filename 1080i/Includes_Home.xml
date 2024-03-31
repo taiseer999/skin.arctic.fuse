@@ -88,12 +88,15 @@
     </include>
 
     <include name="Home_Menu_List_OnBackInfo">
+
         <!-- <oninfo condition="$EXP[Exp_HomeMenu_DontHide]">SetProperty(Options.Menu.GUID,$INFO[Container(303).ListItem.Property(GUID)],Home)</oninfo>
         <oninfo condition="$EXP[Exp_HomeMenu_DontHide]">SetProperty(Options.Menu.Header,$INFO[Container(303).ListItem.Label],Home)</oninfo>
         <oninfo condition="Skin.String(Home.SideMenuCollapse,Topbar) + Window.IsVisible(Home)">SetProperty(Options.Menu.GUID,$INFO[Container(370).ListItem.Property(GUID)],Home)</oninfo>
         <oninfo condition="Skin.String(Home.SideMenuCollapse,Topbar) + Window.IsVisible(Home)">SetProperty(Options.Menu.Header,$INFO[Container(370).ListItem.Label],Home)</oninfo> -->
 
-        <oninfo>ActivateWindow(1170)</oninfo>
+        <oninfo condition="Window.IsMedia">SetFocus(64)</oninfo>
+        <oninfo condition="Window.IsVisible(1105)">SetFocus(67)</oninfo>
+        <oninfo condition="!Window.IsVisible(1105) + !Window.IsMedia">ActivateWindow(1170)</oninfo>
 
         <onback>CancelAlarm(SplashTimeOut,silent)</onback>
         <onback condition="Window.IsVisible(Home) + !Skin.HasSetting(Navigation.DisableOptionsOnBack)">SetFocus(308)</onback>
@@ -128,16 +131,16 @@
                     <include content="Home_Menu_List_OnUp_Search" condition="!$EXP[Exp_HomeMenu_DontHide] + Window.IsVisible(1185)">
                         <param name="id">$PARAM[id]</param>
                     </include>
-                    <include content="Home_Menu_List_OnUp_Discover" condition="!$EXP[Exp_HomeMenu_DontHide] + Window.IsVisible(1105)">
+                    <!-- <include content="Home_Menu_List_OnUp_Discover" condition="!$EXP[Exp_HomeMenu_DontHide] + Window.IsVisible(1105)">
                         <param name="id">$PARAM[id]</param>
-                    </include>
+                    </include> -->
                     <include content="Home_Menu_List_OnUp_Previous" condition="!$EXP[Exp_HomeMenu_DontHide] + [Window.IsVisible(1181) | Window.IsVisible(1182) | Window.IsVisible(1130) | Window.IsVisible(1131) | Window.IsVisible(1132)]">
                         <param name="id">$PARAM[id]</param>
                     </include>
-                    <include content="Home_Menu_List_OnUp_Bump" condition="!$EXP[Exp_HomeMenu_DontHide] + !Skin.String(Navigation.Global.OnUp,Search) + ![Window.IsVisible(Home) | Window.IsVisible(1105) | Window.IsVisible(1185) | Window.IsVisible(1181) | Window.IsVisible(1182) | Window.IsVisible(1130) | Window.IsVisible(1131) | Window.IsVisible(1132)]">
+                    <include content="Home_Menu_List_OnUp_Bump" condition="!$EXP[Exp_HomeMenu_DontHide] + !Skin.String(Navigation.Global.OnUp,Search) + ![Window.IsVisible(Home) | Window.IsVisible(1185) | Window.IsVisible(1181) | Window.IsVisible(1182) | Window.IsVisible(1130) | Window.IsVisible(1131) | Window.IsVisible(1132)]">
                         <param name="id">$PARAM[id]</param>
                     </include>
-                    <include content="Home_Menu_List_OnUp_ActivateSearch" condition="!$EXP[Exp_HomeMenu_DontHide] + Skin.String(Navigation.Global.OnUp,Search) + ![Window.IsVisible(Home) | Window.IsVisible(1105) | Window.IsVisible(1185) | Window.IsVisible(1181) | Window.IsVisible(1182) | Window.IsVisible(1130) | Window.IsVisible(1131) | Window.IsVisible(1132)]">
+                    <include content="Home_Menu_List_OnUp_ActivateSearch" condition="!$EXP[Exp_HomeMenu_DontHide] + Skin.String(Navigation.Global.OnUp,Search) + ![Window.IsVisible(Home) | Window.IsVisible(1185) | Window.IsVisible(1181) | Window.IsVisible(1182) | Window.IsVisible(1130) | Window.IsVisible(1131) | Window.IsVisible(1132)]">
                     </include>
 
                     <ondown condition="!$EXP[Exp_HomeMenu_DontHide] + ![Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Library)]">$PARAM[onlist]</ondown>
