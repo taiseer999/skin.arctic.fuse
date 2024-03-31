@@ -247,6 +247,7 @@
             <ondown condition="$PARAM[condition] + ![$PARAM[move]] + String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Add-ons)">ActivateWindow(1132)</ondown>
 
             <!-- Bump -->
+            <ondown condition="$PARAM[condition] + ![$PARAM[move]] + String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Bump)">SetProperty(List.ViewContainer,$INFO[System.CurrentControlId])</ondown>
             <ondown condition="$PARAM[condition] + ![$PARAM[move]] + String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Bump)">SetFocus(330)</ondown>
 
             <!-- Explore -->
@@ -496,6 +497,7 @@
             <ondown condition="$PARAM[condition] + Skin.String(Navigation.Global.OnDown,Add-ons)">ActivateWindow(1132)</ondown>
 
             <!-- Bump -->
+            <ondown condition="$PARAM[condition] + Skin.String(Navigation.Global.OnDown,Bump)">SetProperty(List.ViewContainer,$INFO[System.CurrentControlId])</ondown>
             <ondown condition="$PARAM[condition] + Skin.String(Navigation.Global.OnDown,Bump)">SetFocus(330)</ondown>
         </definition>
     </include>
