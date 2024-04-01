@@ -508,7 +508,7 @@
                                         <include content="Settings_Button">
                                             <param name="dialog">true</param>
                                             <param name="id">23093</param>
-                                            <label>Edit explore widgets</label>
+                                            <label>$LOCALIZE[31328] ($LOCALIZE[31148])</label>
                                             <visible>[!String.IsEqual(Container(22001).ListItem.Property(disabled),True) + !String.IsEqual(Container(22001).ListItem.Property(blank),True)]</visible>
                                             <visible>[String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=sidemenu) + String.IsEmpty(Window(Home).Property(Shortcuts.EditMode)) + String.IsEmpty(Window(Home).Property(Shortcuts.EditGUID))]</visible>
                                             <visible>[[String.IsEmpty(Skin.String(Navigation.Hub.Home.OnDown)) + Skin.String(Navigation.Global.OnDown,Explore)] | Skin.String(Navigation.Hub.Home.OnDown,Explore)]</visible>

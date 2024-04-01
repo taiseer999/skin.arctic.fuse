@@ -107,14 +107,19 @@
 
     <include name="Animation_Widget_FadeOut">
         <param name="condition">true</param>
+        <param name="dim">[$EXP[Exp_Hubs_Spotlight_IsVisible] | String.IsEmpty(Window.Property(TMDBHelper.WidgetContainer))]</param>
         <definition>
             <include content="_Animation_Widget_FadeOut" condition="!$EXP[Exp_Footer_BottomLeft_IsVisible]">
                 <param name="end">30</param>
                 <param name="condition">$PARAM[condition]</param>
             </include>
             <include content="_Animation_Widget_FadeOut" condition="$EXP[Exp_Footer_BottomLeft_IsVisible]">
+                <param name="end">30</param>
+                <param name="condition">[$PARAM[condition]] + [$PARAM[dim]]</param>
+            </include>
+            <include content="_Animation_Widget_FadeOut" condition="$EXP[Exp_Footer_BottomLeft_IsVisible]">
                 <param name="end">0</param>
-                <param name="condition">$PARAM[condition]</param>
+                <param name="condition">[$PARAM[condition]] + ![$PARAM[dim]]</param>
             </include>
         </definition>
     </include>

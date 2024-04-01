@@ -7,8 +7,7 @@
         <include content="NextAired_Window">
             <include content="Home_Widgets_Infopanel">
                 <param name="visible">true</param>
-                <include content="Info_Panel">
-                </include>
+                <include>Info_Panel</include>
             </include>
 
             <include content="NextAired_GroupList">
