@@ -29,14 +29,17 @@
         <rule>
             <condition>{item_widget_style}==Apps</condition>
             <value>List_Apps_Row</value>
+            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
         </rule>
         <rule>
             <condition>{item_widget_style}==Icon</condition>
             <value>List_Icon_Row</value>
+            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
         </rule>
         <rule>
             <condition>{item_widget_style}==Text</condition>
             <value>List_Text_Row</value>
+            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
         </rule>
         <rule>
             <condition>{parent_item_widget_style}==Landscape</condition>
@@ -65,14 +68,17 @@
         <rule>
             <condition>{parent_item_widget_style}==Apps</condition>
             <value>List_Apps_Row</value>
+            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
         </rule>
         <rule>
             <condition>{parent_item_widget_style}==Icon</condition>
             <value>List_Icon_Row</value>
+            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
         </rule>
         <rule>
             <condition>{parent_item_widget_style}==Text</condition>
             <value>List_Text_Row</value>
+            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
         </rule>
         <rule>
             <condition>True</condition>
