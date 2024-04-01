@@ -521,7 +521,8 @@
     <include name="Action_View_Movement_OnLeft">
         <param name="onleft" />
         <param name="onbump">Skin.String(Navigation.OnLeftRight,Bump)</param>
-        <param name="onwrap">Skin.String(Navigation.OnLeftRight,Wrap)</param>
+        <param name="onwrap">[Skin.String(Navigation.OnLeftRight,Wrap) | [Skin.String(Navigation.OnLeftRight,Loop) + !Skin.HasSetting(Navigation.DisableOptionsOnLeft) + !$EXP[Exp_HomeMenu_DontHide]]]</param>
+        <!-- <param name="onwrap">Skin.String(Navigation.OnLeftRight,Wrap)</param> -->
         <param name="menuid">303</param>
         <definition>
             <onleft condition="![$PARAM[onwrap]] + $PARAM[onbump]">SetProperty(List.ViewContainer.Bump,True)</onleft>
