@@ -839,6 +839,24 @@
                                             <visible>!$EXP[Shortcuts_Dialog_Exp_WidgetsOnly]</visible>
                                         </include>
 
+                                        <!-- Widgets: Stacked Parent -->
+                                        <include content="Settings_Stacked_Button">
+                                            <param name="dialog">true</param>
+                                            <param name="id">23011</param>
+                                            <param name="groupid">24011</param>
+                                            <param name="control">button</param>
+                                            <param name="toplabel">$LOCALIZE[31389]</param>
+                                            <param name="sublabel">$LOCALIZE[31388] = $VAR[Label_Shortcut_StackedParent]</param>
+                                            <param name="sublabel_visible">true</param>
+                                            <onclick condition="!String.IsEqual(Container(22001).ListItem.Property(widget_parent),1) + !String.IsEqual(Container(22001).ListItem.Property(widget_parent),2)">RunPlugin($INFO[Container(22001).ListItem.Property(url),,&amp;func=do_edit&amp;&amp;widget_parent&amp;&amp;1])</onclick>
+                                            <onclick condition="String.IsEqual(Container(22001).ListItem.Property(widget_parent),1)">RunPlugin($INFO[Container(22001).ListItem.Property(url),,&amp;func=do_edit&amp;&amp;widget_parent&amp;&amp;2])</onclick>
+                                            <onclick condition="String.IsEqual(Container(22001).ListItem.Property(widget_parent),2)">RunPlugin($INFO[Container(22001).ListItem.Property(url),,&amp;func=do_edit&amp;&amp;widget_parent&amp;&amp;0])</onclick>
+                                            <visible>$EXP[Shortcuts_Dialog_Exp_IsWidgetMode]</visible>
+                                            <onback>29999</onback>
+                                            <visible>[!String.IsEqual(Container(22001).ListItem.Property(disabled),True) + !String.IsEqual(Container(22001).ListItem.Property(blank),True)]</visible>
+                                            <visible>String.StartsWith(Container(22001).ListItem.Property(path),Stacked_)</visible>
+                                        </include>
+
                                         <!-- Widgets: Autoscroll -->
                                         <include content="Settings_Button">
                                             <param name="dialog">true</param>

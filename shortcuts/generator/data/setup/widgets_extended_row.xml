@@ -25,7 +25,16 @@
     <value name="widget_group_id">$MATH[5000 + 100 + {enum_x}]</value>
     <value name="widget_selector_id">$MATH[5000 + 419]</value>
     <value name="widget_shortstack_id">$MATH[5000 + 800 + {enum_x}]</value>
-    <value name="widget_prev_id">$MATH[5000 + {enum_x} - 1]</value>
+    <rules name="widget_prev_id">
+        <rule>
+            <condition>{item_widget_parent}!=</condition>
+            <value>$MATH[5000 + {enum_x} - 1 - {item_widget_parent}]</value>
+        </rule>
+        <rule>
+            <condition>True</condition>
+            <value>$MATH[5000 + {enum_x} - 1]</value>
+        </rule>
+    </rules>
     <value name="widget_next_id">$MATH[5000 + {enum_x} + 1]</value>
     <value name="widget_nextnext_id">$MATH[5000 + {enum_x} + 2]</value>
     <value name="widget_nextnextnext_id">$MATH[5000 + {enum_x} + 3]</value>

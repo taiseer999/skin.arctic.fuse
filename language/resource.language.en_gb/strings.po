@@ -1838,6 +1838,16 @@ msgctxt "#31387"
 msgid "Contextual"
 msgstr ""
 
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31388"
+msgid "Seed"
+msgstr ""
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31389"
+msgid "Parent widget"
+msgstr ""
+
 msgctxt "#31390"
 msgid "Release Year"
 msgstr ""

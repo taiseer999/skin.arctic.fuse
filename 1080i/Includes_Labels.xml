@@ -63,6 +63,12 @@
         <value>$LOCALIZE[593] [LOWERCASE]$LOCALIZE[31150][/LOWERCASE]</value>
     </variable>
 
+    <variable name="Label_Shortcut_StackedParent">
+        <value condition="Integer.IsEqual(Container(22001).ListItem.Property(widget_parent),1)">$INFO[Container(22001).ListItemNoWrap(-2).Label]</value>
+        <value condition="Integer.IsEqual(Container(22001).ListItem.Property(widget_parent),2)">$INFO[Container(22001).ListItemNoWrap(-3).Label]</value>
+        <value>$INFO[Container(22001).ListItemNoWrap(-1).Label]</value>
+    </variable>
+
     <variable name="Label_SkinVariables_FilterName">
         <value condition="!String.IsEmpty(Container(22001).ListItem.Property(sidemenu_guid))">$INFO[Container(22001).ListItem.Property(sidemenu_guid)]$INFO[Container(29313).Listitem.Label, (,)]</value>
         <value>$LOCALIZE[31313]</value>
