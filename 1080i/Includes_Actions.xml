@@ -181,6 +181,7 @@
             <onback condition="$PARAM[enable] + [[Integer.IsEqual(Container($PARAM[id]).CurrentItem,1) + Skin.String(Navigation.OnBack,Previous)] | Skin.String(Navigation.OnBack,Parent)]">AlarmClock(refocus2,$PARAM[refocus],00:00,silent)</onback>
 
             <!-- Menu: Go to Menu -->
+            <onback condition="$PARAM[enable] + Skin.String(Navigation.OnBack,Menu)">SetProperty(List.ViewContainer,$PARAM[id])</onback>
             <onback condition="$PARAM[enable] + Skin.String(Navigation.OnBack,Menu)">$PARAM[grouplistid]</onback>
             <onback condition="$PARAM[enable] + Skin.String(Navigation.OnBack,Menu)">AlarmClock(refocus2,SetFocus($VAR[Action_Hubs_MenuID]),00:00,silent)</onback>
 
@@ -302,7 +303,8 @@
             <onleft condition="![$PARAM[c_menu]]">ClearProperty(List.ViewContainer.Left)</onleft>
             <onleft condition="![$PARAM[c_menu]]">ClearProperty(List.ViewContainer.Bump)</onleft>
 
-            <onright condition="$PARAM[c_view]">SetFocus($PARAM[i_view],0,absolute)</onright>
+            <onright condition="$PARAM[c_view] + !Skin.String(Navigation.OnBack,Menu)">SetFocus($PARAM[i_view],0,absolute)</onright>
+            <onright condition="$PARAM[c_view] + Skin.String(Navigation.OnBack,Menu)">SetFocus($PARAM[i_view])</onright>
             <onright condition="!$PARAM[c_view] + $PARAM[c_tmdb]">SetFocus($PARAM[i_tmdb])</onright>
             <onright condition="!$PARAM[c_view] + !$PARAM[c_tmdb] + $PARAM[c_wosf]">$PARAM[i_wosf]</onright>
             <onright condition="!$PARAM[c_view] + !$PARAM[c_tmdb] + !$PARAM[c_wosf]">$PARAM[onlist]</onright>
