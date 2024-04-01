@@ -13,12 +13,19 @@
         <preloaditems>0</preloaditems>
         <movement>view_icon_movement</movement>
     </include>
-    <!-- 7 Item: Poster, Square, Apps -->
+    <!-- 7 Item: Poster, Square -->
     <include name="List_Poster_Row_Movement">
         <left>view_touchmode_edge_l</left>
         <right>view_touchmode_edge_r</right>
         <preloaditems>0</preloaditems>
         <movement>view_poster_movement</movement>
+    </include>
+    <!-- 6 Item: Apps -->
+    <include name="List_Poster_Row_Movement">
+        <left>view_touchmode_edge_l</left>
+        <right>view_touchmode_edge_r</right>
+        <preloaditems>0</preloaditems>
+        <movement>view_apps_movement</movement>
     </include>
     <!-- 5 Item: Card -->
     <include name="List_Card_Row_Movement">

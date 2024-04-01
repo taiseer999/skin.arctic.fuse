@@ -66,10 +66,10 @@
     <constant name="-view_icon_item_w">-170</constant>
     <constant name="view_icon_itemlayout_w">210</constant>
     <constant name="-view_icon_itemlayout_w">-210</constant>
-    <constant name="view_icon_item_h">174</constant>
-    <constant name="-view_icon_item_h">-174</constant>
-    <constant name="view_icon_itemlayout_h">214</constant>
-    <constant name="-view_icon_itemlayout_h">-214</constant>
+    <constant name="view_icon_item_h">214</constant>
+    <constant name="-view_icon_item_h">-214</constant>
+    <constant name="view_icon_itemlayout_h">254</constant>
+    <constant name="-view_icon_itemlayout_h">-254</constant>
     <constant name="view_icon_movement">7</constant>
 
     <!-- View ItemLayouts -->
@@ -124,8 +124,7 @@
     <constant name="-view_button_offset_x">-40</constant>
     <constant name="view_button_left">-80</constant>
 
-    <constant name="view_apps_item_h">112</constant>
-    <constant name="-view_apps_item_h">-112</constant>
+    <constant name="view_apps_movement">5</constant>
 
     <constant name="view_weatherforecast_itemlayout_w">280</constant>
     <constant name="-view_weatherforecast_itemlayout_w">-280</constant>

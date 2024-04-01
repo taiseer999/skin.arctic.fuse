@@ -218,7 +218,7 @@
         </rule>
         <rule>
             <condition>{item_widget_style}==Text</condition>
-            <value>List_Apps_Row</value>
+            <value>List_Text_Row</value>
         </rule>
         <rule>
             <condition>{parent_item_widget_style}==Landscape</condition>
@@ -261,21 +261,7 @@
             <value>List_Landscape_Row</value>
         </rule>
     </rules>
-    <rules name="widget_detailed">
-        <rule>
-            <condition>{item_widget_style}==Text</condition>
-            <value>True</value>
-        </rule>
-        <rule>
-            <condition>{item_widget_style}==</condition>
-            <condition>{parent_item_widget_style}==Text</condition>
-            <value>True</value>
-        </rule>
-        <rule>
-            <condition>True</condition>
-            <value>False</value>
-        </rule>
-    </rules>
+    <value name="widget_detailed">False</value>
     <rules name="widget_custom_onclick">
         <rule>
             <condition>{item_path}==Custom_Submenu</condition>

@@ -36,7 +36,7 @@
         </rule>
         <rule>
             <condition>{item_widget_style}==Text</condition>
-            <value>List_Apps_Row</value>
+            <value>List_Text_Row</value>
         </rule>
         <rule>
             <condition>{parent_item_widget_style}==Landscape</condition>
@@ -72,7 +72,7 @@
         </rule>
         <rule>
             <condition>{parent_item_widget_style}==Text</condition>
-            <value>List_Apps_Row</value>
+            <value>List_Text_Row</value>
         </rule>
         <rule>
             <condition>True</condition>

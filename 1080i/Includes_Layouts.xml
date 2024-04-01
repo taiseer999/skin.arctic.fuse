@@ -1456,7 +1456,7 @@
         </definition>
     </include>
 
-    <include name="Layout_Apps">
+    <include name="Layout_Text">
         <param name="detailed">false</param>
         <param name="selected">false</param>
         <param name="diffuse">diffuse/landscape_w200_h112.png</param>
@@ -1471,9 +1471,9 @@
                 <height>$PARAM[item_h]</height>
 
                 <control type="group">
-                    <include content="Object_Bottom" condition="$PARAM[detailed]">
+                    <!-- <include content="Object_Bottom" condition="$PARAM[detailed]">
                         <param name="bottom">-62</param>
-                    </include>
+                    </include> -->
                     <include content="Object_ItemBack">
                         <param name="selected">$PARAM[selected]</param>
                         <param name="shadow_colordiffuse">$PARAM[shadow_colordiffuse]</param>
@@ -1483,13 +1483,14 @@
                         <include>Texture_Box_Highlight_V</include>
                     </include>
                     <control type="textbox">
+                        <include condition="$PARAM[selected]">Color_SelectedText</include>
                         <textcolor>$PARAM[textcolor]_90</textcolor>
                         <label>$INFO[$PARAM[listitem].$PARAM[listitem_label]]</label>
                         <left>20</left>
                         <right>20</right>
                         <align>center</align>
                         <aligny>center</aligny>
-                        <font>font_mini_black</font>
+                        <font>font_mini_plot</font>
                         <visible>$PARAM[detailed]</visible>
                     </control>
                     <include content="Object_Layout_Image">
