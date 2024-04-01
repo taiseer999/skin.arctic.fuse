@@ -52,6 +52,7 @@
                 <param name="hitrect_y">40</param>
                 <param name="hitrect_w">1640</param>
                 <param name="hitrect_h">80</param>
+                <param name="shorten">True</param>
                 <top>0</top>
                 <left>240</left>
                 <height>240</height>
