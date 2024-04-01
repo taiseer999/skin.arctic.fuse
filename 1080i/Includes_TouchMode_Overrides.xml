@@ -21,7 +21,7 @@
         <movement>view_poster_movement</movement>
     </include>
     <!-- 6 Item: Apps -->
-    <include name="List_Poster_Row_Movement">
+    <include name="List_Apps_Row_Movement">
         <left>view_touchmode_edge_l</left>
         <right>view_touchmode_edge_r</right>
         <preloaditems>0</preloaditems>
