@@ -510,7 +510,7 @@
     </variable>
 
     <variable name="Label_Player_Plot">
-        <value condition="VideoPlayer.Content(episodes) + !String.IsEmpty(VideoPlayer.Plot)">$INFO[VideoPlayer.Title,[B][COLOR=panel_fg_100],[/COLOR][/B] ~ ]$INFO[VideoPlayer.Plot]</value>
+        <value condition="VideoPlayer.Content(episodes) + !String.IsEmpty(VideoPlayer.Plot)">$INFO[VideoPlayer.Title,, ~ ]$INFO[VideoPlayer.Plot]</value>
         <value>$INFO[VideoPlayer.Plot]</value>
     </variable>
 
@@ -1045,35 +1045,11 @@
         <value condition="!String.IsEmpty(ListItem.Property(Artist_Type))">$INFO[ListItem.Property(Artist_Type)]</value>
     </variable>
 
-    <variable name="Label_ListTrackNumber">
-        <value condition="String.IsEqual(ListItem.DBType,album)">$INFO[ListItem.Year]</value>
-        <value>$INFO[ListItem.TrackNumber]$INFO[ListItem.DiscNumber,     [COLOR=main_fg_30],[/COLOR]]</value>
-    </variable>
-
-    <variable name="Label_ListArtist">
-        <value condition="String.IsEqual(Container.FolderName,$LOCALIZE[15102])">$INFO[ListItem.Album]</value>
-        <value>$INFO[ListItem.Artist]</value>
-    </variable>
-
-    <variable name="Label_ListEpisode">
-        <value condition="!String.IsEmpty(ListItem.Label2)">$INFO[ListItem.Label2]</value>
-        <value condition="!String.IsEmpty(ListItem.Duration)">$INFO[ListItem.Premiered,,  [COLOR=main_fg_70]•[/COLOR]  ]$INFO[ListItem.Duration]</value>
-        <value condition="!String.IsEmpty(ListItem.Premiered)">$INFO[ListItem.Premiered]</value>
-    </variable>
-
-    <variable name="Label_ListPlot">
-        <value condition="!String.IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
-        <value condition="!String.IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description)]</value>
-        <value condition="!String.IsEmpty(ListItem.AddonDescription)">$INFO[ListItem.AddonDescription]</value>
-        <value condition="String.IsEqual(ListItem.DBType,episode) + !String.IsEmpty(ListItem.Plot)">[B]$INFO[ListItem.Title,[COLOR=main_fg_100], ~ [/COLOR]][/B]$INFO[ListItem.Plot]</value>
-        <value condition="!String.IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
-    </variable>
-
     <variable name="Label_WidgetPlot">
         <value condition="!String.IsEmpty(Container(99950).ListItem.Property(base_artist_description))">$INFO[Container(99950).ListItem.Property(base_artist_description)]</value>
         <value condition="!String.IsEmpty(Container(99950).ListItem.Property(base_album_description))">$INFO[Container(99950).ListItem.Property(base_album_description)]</value>
         <value condition="!String.IsEmpty(Container(99950).ListItem.Property(base_addon_description))">$INFO[Container(99950).ListItem.Property(base_addon_description)]</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Property(base_dbtype),episode) + !String.IsEmpty(Container(99950).ListItem.Property(base_plot))">$INFO[Container(99950).ListItem.Property(base_title),[B][COLOR=main_fg_100],[/COLOR][/B] ~ ]$INFO[Container(99950).ListItem.Property(base_plot)]</value>
+        <value condition="String.IsEqual(Container(99950).ListItem.Property(base_dbtype),episode) + !String.IsEmpty(Container(99950).ListItem.Property(base_plot))">$INFO[Container(99950).ListItem.Property(base_title),, ~ ]$INFO[Container(99950).ListItem.Property(base_plot)]</value>
         <value condition="!String.IsEmpty(Container(99950).ListItem.Property(base_plot))">$INFO[Container(99950).ListItem.Property(base_plot)]</value>
         <value condition="!String.IsEmpty(Container(99950).ListItem.Plot)">$INFO[Container(99950).ListItem.Plot]</value>
         <value>$VAR[Def_PlotDetails_Fallback]</value>
