@@ -232,6 +232,7 @@
         <value condition="String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=powermainmenu)">$LOCALIZE[31126] > $LOCALIZE[31515]</value>
         <value condition="String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=powersidemenu)">$LOCALIZE[31126] > $LOCALIZE[31362]</value>
         <value condition="String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=options-tray)">$LOCALIZE[31372]</value>
+        <value condition="String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=homemenu-extendedwidgets)">$LOCALIZE[10000] $LOCALIZE[31026] > $LOCALIZE[31392]</value>
         <value>FIXME</value>
     </variable>
 
