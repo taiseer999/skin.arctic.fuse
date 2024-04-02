@@ -772,7 +772,8 @@
         <param name="item_count">$VAR[Label_Info_ViewLine_NumItems]</param>
         <param name="item_updating">[[Container.IsUpdating + ![$EXP[Exp_View_502] | $EXP[Exp_View_512] | $EXP[Exp_View_522]]] | [$EXP[Exp_View_502] + Container(503).IsUpdating] | [$EXP[Exp_View_512] + Container(513).IsUpdating] | [$EXP[Exp_View_522] + Container(523).IsUpdating]]</param>
         <param name="library_condition">false</param>
-        <param name="custom_condition">false</param>
+        <param name="custom_icon_condition">false</param>
+        <param name="custom_label_condition">false</param>
         <definition>
 
             <control type="group">
@@ -813,9 +814,13 @@
                         <label>$PARAM[item_count]</label>
                     </include>
 
-                    <include content="Info_Viewline_Icon" condition="$PARAM[custom_condition]">
+                    <include content="Info_Viewline_Icon" condition="$PARAM[custom_icon_condition]">
                         <param name="icon_enabled">$PARAM[custom_icon]</param>
                         <param name="icon_disabled">$PARAM[custom_icon]</param>
+                    </include>
+
+                    <include content="Info_Viewline_Label" condition="$PARAM[custom_label_condition]">
+                        <label>$PARAM[custom_label]</label>
                     </include>
 
                     <orientation>horizontal</orientation>
