@@ -167,6 +167,7 @@
         <value condition="String.IsEqual(Container(301).ListItem.DBtype,movie) | String.IsEqual(Container(301).ListItem.DBtype,set)">special://skin/extras/backgrounds/fallbacks/film.jpg</value>
         <value condition="String.IsEqual(Container(301).ListItem.DBtype,artist) | String.IsEqual(Container(301).ListItem.DBtype,album) | String.IsEqual(Container(301).ListItem.DBtype,song) | String.IsEqual(Container(301).ListItem.DBtype,musicvideo)">special://skin/extras/backgrounds/fallbacks/music.jpg</value>
         <value condition="String.IsEqual(Container(301).ListItem.DBtype,tvshow) | String.IsEqual(Container(301).ListItem.DBtype,season) | String.IsEqual(Container(301).ListItem.DBtype,episode) | String.IsEqual(Container(301).ListItem.DBtype,video)">special://skin/extras/backgrounds/fallbacks/tv.jpg</value>
+        <value>$INFO[Container(99971).ListItem.PicturePath]</value>
     </variable>
 
     <variable name="Image_Scrollbar_Content">
