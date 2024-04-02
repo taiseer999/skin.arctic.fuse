@@ -221,12 +221,15 @@
     <include name="View_Furniture_Bottom_Group">
         <control type="group">
             <visible>!$EXP[Exp_InfoDialogs]</visible>
-            <visible>!Window.IsVisible(1171)</visible>
+            <include>Animation_Transition_InfoPanel_Hide</include>
             <control type="group">
-                <visible>![[Container.Scrolling + $EXP[Exp_FurnitureFooter_Left_IsVisible]] | !String.IsEmpty(Window.Property(MediaFilterBase)) | !String.IsEmpty(Window.Property(MediaFilterWall))]</visible>
-                <animation effect="fade" start="100" end="0" delay="400" time="1" reversible="true">Hidden</animation>
-                <animation effect="fade" start="0" end="100" delay="400" time="1" reversible="false">Visible</animation>
-                <include>$PARAM[include]</include>
+                <visible>!Window.IsVisible(1171)</visible>
+                <control type="group">
+                    <visible>![[Container.Scrolling + $EXP[Exp_FurnitureFooter_Left_IsVisible]] | !String.IsEmpty(Window.Property(MediaFilterBase)) | !String.IsEmpty(Window.Property(MediaFilterWall))]</visible>
+                    <animation effect="fade" start="100" end="0" delay="400" time="1" reversible="true">Hidden</animation>
+                    <animation effect="fade" start="0" end="100" delay="400" time="1" reversible="false">Visible</animation>
+                    <include>$PARAM[include]</include>
+                </control>
             </control>
         </control>
     </include>
@@ -287,6 +290,7 @@
         <control type="group">
             <include>Furniture_Bottom_Right</include>
             <visible>!$EXP[Exp_InfoDialogs]</visible>
+            <include>Animation_Transition_InfoPanel_Hide</include>
             <control type="group">
                 <visible>!Window.IsVisible(1171)</visible>
                 <control type="group">
