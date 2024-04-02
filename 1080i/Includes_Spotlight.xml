@@ -27,14 +27,14 @@
     </include>
 
     <include name="Spotlight_Info">
-        <include content="Home_Widgets_Infopanel">
+        <include content="Hub_Widgets_Infopanel">
             <include content="Info_Panel">
                 <param name="titlelabel">$VAR[Label_Title_C301]</param>
                 <param name="plotlabel">$VAR[Label_Plot_C301]</param>
                 <param name="container">Container(301).</param>
-                <param name="details_include">Spotlight_Info_Animation</param>
                 <param name="visible">Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)</param>
             </include>
+            <include condition="Skin.HasSetting(Slide.WidgetContainer)">Spotlight_Info_Animation</include>
         </include>
     </include>
 

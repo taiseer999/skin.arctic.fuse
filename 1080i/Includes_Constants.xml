@@ -170,17 +170,17 @@
     <constant name="context_slide_sq">102.4</constant>
 
     <!-- Widgets -->
-    <constant name="hub_spotlight_t">420</constant>
+    <constant name="hub_spotlight_t">400</constant>
     <constant name="hub_spotlight_h">40</constant>
-    <constant name="hub_categorieswidget_t">680</constant>
+    <constant name="hub_categorieswidget_t">640</constant>
     <constant name="hub_categorieswidget_h">320</constant>
-    <constant name="hub_submenuwidget_t">740</constant>
+    <constant name="hub_submenuwidget_t">700</constant>
     <constant name="hub_submenuwidget_h">240</constant>
 
     <constant name="hub_group_widgetup_s">-360</constant>
     <constant name="hub_group_nospotlight_s">-360</constant>
-    <constant name="hub_group_fanartspotlight_s">380</constant>
-    <constant name="-hub_group_fanartspotlight_s">-380</constant>
+    <constant name="hub_group_fanartspotlight_s">280</constant>
+    <constant name="-hub_group_fanartspotlight_s">-280</constant>
 
     <constant name="hub_widgets_grouplist_t">860</constant>
     <constant name="hub_widgets_grouplist_b">-360</constant>

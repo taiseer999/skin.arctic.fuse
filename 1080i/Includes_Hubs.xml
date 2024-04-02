@@ -7,16 +7,10 @@
     </include>
 
     <include name="Hub_Slide_Spotlight_NoFocus">
-        <animation effect="slide" start="0" end="0,hub_group_fanartspotlight_s" time="400" tween="quadratic" reversible="false" condition="[[Control.HasFocus(370) | ControlGroup(310).HasFocus() | Control.HasFocus(333)] | [[Control.HasFocus(303) | Control.HasFocus(308) | Control.HasFocus(309)] + !Integer.IsEqual(Window.Property(List.ViewContainer),300) + !Integer.IsEqual(Window.Property(List.ViewContainer),302) + Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)]]">Conditional</animation>
-        <animation effect="slide" end="0" start="0,hub_group_fanartspotlight_s" time="400" tween="quadratic" reversible="false" condition="![[Control.HasFocus(370) | ControlGroup(310).HasFocus() | Control.HasFocus(333)] | [[Control.HasFocus(303) | Control.HasFocus(308) | Control.HasFocus(309)] + !Integer.IsEqual(Window.Property(List.ViewContainer),300) + !Integer.IsEqual(Window.Property(List.ViewContainer),302) + Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)]]">Conditional</animation>
-
-        <animation effect="slide" start="0" end="0,-hub_group_fanartspotlight_s" time="400" tween="quadratic" reversible="false" condition="[[Control.HasFocus(370) | ControlGroup(310).HasFocus() | Control.HasFocus(333)] | [[Control.HasFocus(303) | Control.HasFocus(308) | Control.HasFocus(309)] + !Integer.IsEqual(Window.Property(List.ViewContainer),300) + !Integer.IsEqual(Window.Property(List.ViewContainer),302) + Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)]]">WindowClose</animation>
-        <animation effect="slide" end="0" start="0,-hub_group_fanartspotlight_s" time="400" tween="quadratic" reversible="false" condition="[[Control.HasFocus(370) | ControlGroup(310).HasFocus() | Control.HasFocus(333)] | [[Control.HasFocus(303) | Control.HasFocus(308) | Control.HasFocus(309)] + !Integer.IsEqual(Window.Property(List.ViewContainer),300) + !Integer.IsEqual(Window.Property(List.ViewContainer),302) + Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)]]">WindowOpen</animation>
-    </include>
-
-    <include name="Hub_Slide_Group_NoSpotlight">
-        <animation effect="slide" time="400" end="0" start="0,hub_group_nospotlight_s" tween="quadratic" easing="out" reversible="false" condition="![!$EXP[Exp_Hubs_Spotlight_HasItems] + $EXP[Exp_Hubs_Spotlight_IsVisible]]">Conditional</animation>
-        <animation effect="slide" time="400" end="0,hub_group_nospotlight_s" start="0" tween="quadratic" easing="out" reversible="false" condition="!$EXP[Exp_Hubs_Spotlight_HasItems] + $EXP[Exp_Hubs_Spotlight_IsVisible]">Conditional</animation>
+        <animation effect="slide" start="0" end="0,hub_group_fanartspotlight_s" time="400" tween="quadratic" reversible="false" condition="$EXP[Exp_Hubs_Spotlight_Slide]">Conditional</animation>
+        <animation effect="slide" end="0" start="0,hub_group_fanartspotlight_s" time="400" tween="quadratic" reversible="false" condition="!$EXP[Exp_Hubs_Spotlight_Slide]">Conditional</animation>
+        <animation effect="slide" start="0" end="0,-hub_group_fanartspotlight_s" time="400" tween="quadratic" reversible="false" condition="$EXP[Exp_Hubs_Spotlight_Slide]">WindowClose</animation>
+        <animation effect="slide" end="0" start="0,-hub_group_fanartspotlight_s" time="400" tween="quadratic" reversible="false" condition="$EXP[Exp_Hubs_Spotlight_Slide]">WindowOpen</animation>
     </include>
 
     <include name="Hub_WindowTransition_WidgetsGroup">
@@ -66,11 +60,10 @@
                     <param name="backid">320</param>
                 </include>
 
-                <animation effect="slide" time="400" start="0,-20" end="0" tween="quadratic" easing="out" reversible="false" condition="![!Container(302).IsUpdating + Integer.IsEqual(Container(302).NumItems,0) + Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)]">Conditional</animation>
-                <animation effect="slide" time="400" start="0" end="0,-20" tween="quadratic" easing="out" reversible="false" condition="!Container(302).IsUpdating + Integer.IsEqual(Container(302).NumItems,0) + Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)">Conditional</animation>
+                <!-- <animation effect="slide" time="400" start="0,-20" end="0" tween="quadratic" easing="out" reversible="false" condition="![!Container(302).IsUpdating + Integer.IsEqual(Container(302).NumItems,0) + Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)]">Conditional</animation>
+                <animation effect="slide" time="400" start="0" end="0,-20" tween="quadratic" easing="out" reversible="false" condition="!Container(302).IsUpdating + Integer.IsEqual(Container(302).NumItems,0) + Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)">Conditional</animation> -->
 
-                <animation effect="slide" time="400" end="0" start="0,20" tween="quadratic" easing="out" reversible="false" condition="![!String.IsEmpty(Window.Property(Slide.WidgetContainer)) | !$EXP[Exp_Hubs_Spotlight_HasItems]]">Conditional</animation>
-                <animation effect="slide" time="400" end="0,20" start="0" tween="quadratic" easing="out" reversible="false" condition="!String.IsEmpty(Window.Property(Slide.WidgetContainer)) | !$EXP[Exp_Hubs_Spotlight_HasItems]">Conditional</animation>
+                <include>Hub_Categories_FadeIn</include>
 
                 <nested />
             </include>
@@ -97,7 +90,6 @@
         <definition>
             <control type="group">
                 <include>Animation_Half_WindowChange_UpDown</include>
-                <include condition="![$PARAM[widgets_only]]">Hub_Slide_Group_NoSpotlight</include>
                 <include>Hub_Slide_Group_WidgetsUp</include>
                 <nested />
             </control>
@@ -144,7 +136,7 @@
             <animation effect="fade" start="0" end="100" time="background_fadetime" delay="background_fadetime">Visible</animation>
             <animation effect="fade" start="100" end="0" time="background_fadetime" delay="background_fadetime">Hidden</animation>
             <visible>Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) + !Integer.IsEqual(Container(301).NumItems,0) + Skin.HasSetting(Background.EnableSpotlightFanart)</visible>
-            <visible>[[Control.HasFocus(370) | ControlGroup(310).HasFocus() | Control.HasFocus(333)] | [[Control.HasFocus(303) | Control.HasFocus(308) | Control.HasFocus(309)] + !Integer.IsEqual(Window.Property(List.ViewContainer),300) + !Integer.IsEqual(Window.Property(List.ViewContainer),302) + Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)]]</visible>
+            <visible>$EXP[Exp_Hubs_Spotlight_Slide]</visible>
         </control>
     </include>
 
@@ -372,7 +364,7 @@
     <include name="Hub_Widgets_Only">
         <include>Background_Transition</include>
         <include content="Hub_Widgets_Group">
-            <include content="Home_Widgets_Infopanel">
+            <include content="Hub_Widgets_Infopanel">
                 <include content="Info_Panel">
                     <param name="container">Container.</param>
                 </include>
@@ -401,10 +393,16 @@
             <include>Hub_WindowTransition_WidgetsGroup</include>
         </include>
 
-        <include content="Home_Widgets_Infopanel">
+        <include content="Hub_Widgets_Infopanel">
             <include content="Info_Panel">
                 <param name="container">Container.</param>
-                <param name="visible">!Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)</param>
+                <include content="Animation_Fade_In" condition="Skin.HasSetting(Slide.WidgetContainer)">
+                    <param name="condition">!Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)</param>
+                    <param name="delay">200</param>
+                </include>
+                <include content="Animation_ConditionalFade">
+                    <param name="condition">Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)</param>
+                </include>
             </include>
         </include>
     </include>
@@ -457,11 +455,34 @@
             <visible>!$EXP[Exp_InfoDialogs]</visible>
             <include>Animation_Transition_InfoPanel_Hide</include>
             <include>Hub_WindowTransition_CategoriesSpotlightGroup</include>
+            <include>Transitions_Lower_Visibility</include>
             <include content="Spotlight_Main">
                 <param name="window_id">$PARAM[window_id]</param>
-                <param name="visible">$EXP[Exp_Hubs_Spotlight_HasItems]</param>
+                <!-- <param name="visible">$EXP[Exp_Hubs_Spotlight_HasItems]</param> -->
             </include>
-            <include>Transitions_Lower_Visibility</include>
+            <include content="Info_Viewline" condition="Skin.HasSetting(Background.EnableSpotlightFanart)">
+                <param name="label">$LOCALIZE[31150]</param>
+                <param name="custom_icon_condition">true</param>
+                <param name="custom_icon">special://skin/extras/icons/arrow-down.png</param>
+                <top>680</top>
+                <!-- <include content="Animation_Fade_In">
+                    <param name="condition">[Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) + $EXP[Exp_Hubs_Spotlight_Slide]]</param>
+                    <param name="delay">0</param>
+                </include> -->
+                <include content="Animation_ConditionalFade">
+                    <param name="condition">![Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) + $EXP[Exp_Hubs_Spotlight_Slide]]</param>
+                </include>
+                <animation effect="fade" start="100" end="30" condition="true">Conditional</animation>
+            </include>
+            <include content="Info_Viewline" condition="Skin.HasSetting(Slide.WidgetContainer)">
+                <param name="label">$LOCALIZE[31105]</param>
+                <param name="custom_icon_condition">true</param>
+                <param name="custom_icon">special://skin/extras/icons/arrow-up.png</param>
+                <top>560</top>
+                <include content="Hub_Categories_FadeIn">
+                    <param name="no_fanart_condition">!String.IsEmpty(Window.Property(Slide.WidgetContainer))</param>
+                </include>
+            </include>
             <include content="Categories_Selector">
                 <param name="window_id">$PARAM[window_id]</param>
                 <param name="hitrect_x">-40</param>
@@ -491,14 +512,36 @@
                     <include>skinvariables-$PARAM[categories]-staticitems</include>
                 </content>
 
-                <animation effect="slide" time="400" start="0,20" end="0" tween="quadratic" easing="out" reversible="false" condition="![!Container(302).IsUpdating + Integer.IsEqual(Container(302).NumItems,0) + Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)]">Conditional</animation>
-                <animation effect="slide" time="400" start="0" end="0,20" tween="quadratic" easing="out" reversible="false" condition="!Container(302).IsUpdating + Integer.IsEqual(Container(302).NumItems,0) + Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)">Conditional</animation>
+                <!-- <animation effect="slide" time="400" start="0,20" end="0" tween="quadratic" easing="out" reversible="false" condition="![!Container(302).IsUpdating + Integer.IsEqual(Container(302).NumItems,0) + Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)]">Conditional</animation>
+                <animation effect="slide" time="400" start="0" end="0,20" tween="quadratic" easing="out" reversible="false" condition="!Container(302).IsUpdating + Integer.IsEqual(Container(302).NumItems,0) + Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)">Conditional</animation> -->
 
-                <animation effect="slide" time="400" end="0" start="0,20" tween="quadratic" easing="out" reversible="false" condition="![!String.IsEmpty(Window.Property(Slide.WidgetContainer)) | !$EXP[Exp_Hubs_Spotlight_HasItems]]">Conditional</animation>
-                <animation effect="slide" time="400" end="0,20" start="0" tween="quadratic" easing="out" reversible="false" condition="!String.IsEmpty(Window.Property(Slide.WidgetContainer)) | !$EXP[Exp_Hubs_Spotlight_HasItems]">Conditional</animation>
+                <include>Hub_Categories_FadeIn</include>
 
             </include>
         </control>
+    </include>
+
+    <include name="Hub_Categories_FadeIn">
+        <param name="no_fanart_condition">True</param>
+        <definition>
+
+            <include content="Animation_Fade_In" condition="!Skin.HasSetting(Background.EnableSpotlightFanart)">
+                <param name="condition">Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) + $PARAM[no_fanart_condition]</param>
+                <param name="delay">200</param>
+            </include>
+            <include content="Animation_ConditionalFade" condition="!Skin.HasSetting(Background.EnableSpotlightFanart)">
+                <param name="condition">![Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) + $PARAM[no_fanart_condition]]</param>
+            </include>
+
+            <include content="Animation_Fade_In" condition="Skin.HasSetting(Background.EnableSpotlightFanart)">
+                <param name="condition">Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)</param>
+                <param name="delay">200</param>
+            </include>
+            <include content="Animation_ConditionalFade" condition="Skin.HasSetting(Background.EnableSpotlightFanart)">
+                <param name="condition">![Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) + !$EXP[Exp_Hubs_Spotlight_Slide]]</param>
+            </include>
+        </definition>
+
     </include>
 
     <include name="Hub_Widgets_Grouplist_Animation_Slide">
@@ -596,7 +639,7 @@
         </control>
     </include>
 
-    <include name="Home_Widgets_Infopanel">
+    <include name="Hub_Widgets_Infopanel">
         <param name="visible">True</param>
         <param name="conditional_fade">Window.IsActive(1105)</param>
         <definition>

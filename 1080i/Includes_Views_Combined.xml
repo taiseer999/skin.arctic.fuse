@@ -260,7 +260,6 @@
             <right>480</right>
             <include content="Categories_Selector">
                 <param name="id">$PARAM[id]2</param>
-                <param name="visible">True</param>
                 <param name="font">font_mini</param>
                 <param name="hitrect_x">view_side</param>
                 <param name="hitrect_y">920</param>

@@ -42,7 +42,7 @@
             <include content="MediaWall_Info_Transition" condition="$EXP[Exp_FilterWall_IsEnabled]">
                 <param name="condition">$EXP[Exp_MediaFilter_IsActive]</param>
             </include>
-            <include content="Home_Widgets_Infopanel">
+            <include content="Hub_Widgets_Infopanel">
                 <param name="visible">$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]</param>
                 <param name="conditional_fade">False</param>
                 <include content="Info_Panel">
@@ -274,7 +274,6 @@
             <param name="id">5099</param>
             <param name="hidden_button">List_ButtonMenu_Row_HiddenButton_Search</param>
             <param name="hidden_button_enabled">true</param>
-            <param name="visible">True</param>
             <param name="font">font_mini</param>
             <top>920</top>
             <onup>6000</onup>

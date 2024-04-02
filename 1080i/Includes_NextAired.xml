@@ -34,7 +34,7 @@
     </include>
 
     <include name="NextAired_Content">
-        <include content="Home_Widgets_Infopanel">
+        <include content="Hub_Widgets_Infopanel">
             <param name="visible">true</param>
             <include>Info_Panel</include>
         </include>
