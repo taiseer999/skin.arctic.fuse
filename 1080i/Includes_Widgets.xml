@@ -108,7 +108,7 @@
                 <height>$PARAM[widgetheight]</height>
                 <animation effect="fade" start="100" end="0" time="0" condition="[Container($PARAM[id]).IsUpdating | $PARAM[busy_isupdating]] + $PARAM[busy_visible]">Conditional</animation>
                 <visible>$PARAM[visible] + [Container($PARAM[id]).IsUpdating | !Integer.IsEqual(Container($PARAM[id]).NumItems,0) | $PARAM[altvisible]]</visible>
-                <onfocus>SetProperty(Slide.WidgetContainer,True)</onfocus>
+                <onfocus>SetProperty(Slide.WidgetContainer,$PARAM[id])</onfocus>
 
                 <include content="Animation_Widget_FadeOut" condition="$PARAM[widgetfade_include]">
                     <param name="condition">!Control.HasFocus($PARAM[id]) + !Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),$PARAM[id])</param>

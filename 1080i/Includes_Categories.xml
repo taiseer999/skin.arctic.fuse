@@ -62,7 +62,7 @@
                     <param name="id">$PARAM[id]</param>
                 </include>
 
-                <onfocus condition="$PARAM[slide]">SetProperty(Slide.WidgetContainer,True,$PARAM[window_id])</onfocus>
+                <onfocus condition="$PARAM[slide]">SetProperty(Slide.WidgetContainer,$PARAM[id],$PARAM[window_id])</onfocus>
                 <onfocus condition="![$PARAM[slide]]">ClearProperty(Slide.WidgetContainer,$PARAM[window_id])</onfocus>
 
                 <left>160</left>
