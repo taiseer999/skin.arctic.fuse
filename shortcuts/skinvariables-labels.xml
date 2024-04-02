@@ -42,12 +42,17 @@
         <value condition="!String.IsEmpty({listitem}.Property(department))">$INFO[{listitem}.Property(department)]</value>
         <value condition="!String.IsEmpty({listitem}.ChannelNumberLabel) + !String.IsEmpty({listitem}.Title)">$INFO[{listitem}.ChannelName]</value>
         <value condition="!String.IsEmpty({listitem}.TvShowTitle) + !String.IsEqual({listitem}.Title,{listitem}.TVShowTitle) + !String.IsEqual({listitem}.DBType,tvshow)">$INFO[{listitem}.TvShowTitle]</value>
+        <value condition="String.StartsWith({listitem}.FolderPath,videodb://movies/videoversions/)">$INFO[{listitem}.VideoVersionName]</value>
         <value condition="!String.IsEmpty({listitem}.Genre)">$INFO[{listitem}.Genre]</value>
         <value condition="!String.IsEmpty({listitem}.Premiered)">$INFO[{listitem}.Premiered]</value>
         <value condition="!String.IsEmpty({listitem}.PictureResolution)">$INFO[{listitem}.PictureResolution]</value>
         <value condition="!String.IsEmpty({listitem}.Label2)">$INFO[{listitem}.Label2]</value>
         <value condition="!String.IsEmpty({listitem}.Size)">$INFO[{listitem}.Size]</value>
         <value condition="!String.IsEmpty({listitem}.Date)">$INFO[{listitem}.Date]</value>
+        <value condition="!String.IsEmpty({listitem}.AddonType)">$INFO[{listitem}.AddonType]</value>
+        <value condition="!String.IsEmpty({listitem}.AddonVersion)">$INFO[{listitem}.AddonVersion]</value>
+        <value condition="!String.IsEmpty({listitem}.DBType)">$INFO[{listitem}.DBType,[CAPITALIZE],[/CAPITALIZE]]</value>
+        <value>$LOCALIZE[231]</value>
     </variable>
 
 </includes>
