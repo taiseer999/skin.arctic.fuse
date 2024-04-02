@@ -81,8 +81,11 @@
 
     <expression name="Exp_Hubs_Spotlight_HasItems">[!Integer.IsEqual(Container(301).NumItems,0) | Container(301).IsUpdating]</expression>
 
-    <expression name="Exp_Hubs_Spotlight_Slide">[[Control.HasFocus(370) | ControlGroup(310).HasFocus() | Control.HasFocus(333)] | [[Control.HasFocus(303) | Control.HasFocus(308) | Control.HasFocus(309)] + !Integer.IsEqual(Window.Property(List.ViewContainer),300) + !Integer.IsEqual(Window.Property(List.ViewContainer),302) + Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)]]</expression>
+    <expression name="Exp_Hubs_SlideDown_Spotlight">[Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) + String.IsEmpty(Window.Property(Slide.WidgetContainer))]</expression>
 
+    <expression name="Exp_Hubs_SlideDown_Widgets">[String.IsEmpty(Window.Property(Slide.WidgetContainer)) | Integer.IsEqual(Window.Property(Slide.WidgetContainer),300) | Integer.IsEqual(Window.Property(Slide.WidgetContainer),302)]</expression>
+
+    <expression name="Exp_Hubs_SlideDown_Categories">[String.IsEmpty(Window.Property(Slide.WidgetContainer))]</expression>
 
     <!-- ============== -->
     <!-- Standard Views -->
