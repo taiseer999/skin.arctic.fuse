@@ -3203,9 +3203,9 @@
                     <include content="Info_Ratings" condition="$PARAM[ratings]">
                         <param name="$PARAM[container]">$PARAM[container]</param>
                         <include content="Object_Top" condition="!Skin.HasSetting(TMDbHelper.EnableCrop)">
-                            <param name="top">82</param>
+                            <param name="top">80</param>
                         </include>
-                        <top>2</top>
+                        <top>0</top>
                         <left>0</left>
                         <visible>$PARAM[details]</visible>
                         <include>$PARAM[details_include]</include>
