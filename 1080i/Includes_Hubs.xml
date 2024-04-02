@@ -74,9 +74,6 @@
                     <param name="backid">320</param>
                 </include>
 
-                <!-- <animation effect="slide" time="400" start="0,-20" end="0" tween="quadratic" easing="out" reversible="false" condition="![!Container(302).IsUpdating + Integer.IsEqual(Container(302).NumItems,0) + Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)]">Conditional</animation>
-                <animation effect="slide" time="400" start="0" end="0,-20" tween="quadratic" easing="out" reversible="false" condition="!Container(302).IsUpdating + Integer.IsEqual(Container(302).NumItems,0) + Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)">Conditional</animation> -->
-
                 <include>Hub_Categories_FadeIn</include>
 
                 <nested />
@@ -478,17 +475,12 @@
             <include>Transitions_Lower_Visibility</include>
             <include content="Spotlight_Main">
                 <param name="window_id">$PARAM[window_id]</param>
-                <!-- <param name="visible">$EXP[Exp_Hubs_Spotlight_HasItems]</param> -->
             </include>
             <include content="Info_Viewline" condition="Skin.HasSetting(Background.EnableSpotlightFanart)">
                 <param name="label">$LOCALIZE[31150]</param>
                 <param name="custom_icon_condition">true</param>
                 <param name="custom_icon">special://skin/extras/icons/arrow-down.png</param>
                 <top>680</top>
-                <!-- <include content="Animation_Fade_In">
-                    <param name="condition">[Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) + $EXP[Exp_Hubs_SlideDown_Spotlight]]</param>
-                    <param name="delay">0</param>
-                </include> -->
                 <include content="Animation_ConditionalFade">
                     <param name="condition">![Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) + $EXP[Exp_Hubs_SlideDown_Spotlight]]</param>
                 </include>
@@ -519,12 +511,7 @@
                     <param name="backid">320</param>
                 </include>
 
-                <onup condition="$EXP[Exp_Hubs_Spotlight_HasItems]">311</onup>
-                <onup condition="!$EXP[Exp_Hubs_Spotlight_HasItems] + [Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Topbar)]">SetFocus(303,1,absolute)</onup>
-                <include content="Action_Widget_Top">
-                    <param name="id">300</param>
-                    <param name="condition">!$EXP[Exp_Hubs_Spotlight_HasItems] + ![Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Topbar)]</param>
-                </include>
+                <onup>311</onup>
                 <ondown>302</ondown>
                 <onfocus>SetProperty(TMDbHelper.WidgetContainer,301,$PARAM[window_id])</onfocus>
 
@@ -532,11 +519,7 @@
                     <include>skinvariables-$PARAM[categories]-staticitems</include>
                 </content>
 
-                <!-- <animation effect="slide" time="400" start="0,20" end="0" tween="quadratic" easing="out" reversible="false" condition="![!Container(302).IsUpdating + Integer.IsEqual(Container(302).NumItems,0) + Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)]">Conditional</animation>
-                <animation effect="slide" time="400" start="0" end="0,20" tween="quadratic" easing="out" reversible="false" condition="!Container(302).IsUpdating + Integer.IsEqual(Container(302).NumItems,0) + Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)">Conditional</animation> -->
-
                 <include>Hub_Categories_FadeIn</include>
-
             </include>
         </control>
     </include>

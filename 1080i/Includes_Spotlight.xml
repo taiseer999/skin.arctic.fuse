@@ -5,7 +5,7 @@
         <include content="Object_Hidden_List">
             <param name="id">99971</param>
             <include content="Defs_AutoScroll">
-                <param name="condition">[Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) + ![!Integer.IsEqual(Container(301).NumItems,0) | Container(301).IsUpdating]]</param>
+                <param name="condition">[Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) + ![$EXP[Exp_Hubs_Spotlight_HasItems]]</param>
             </include>
             <content sortby="random">$VAR[Path_Spotlight_SlideShow_Content]</content>
             <visible>[Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) + !$EXP[Exp_Hubs_Spotlight_HasItems]]</visible>
@@ -194,14 +194,14 @@
                         <textoffsetx>80</textoffsetx>
                         <texturenofocus />
                         <texturefocus />
-                        <onclick condition="Container(301).ListItem.IsFolder">ActivateWindow($VAR[Path_Spotlight_Target],$INFO[Container(301).ListItem.FolderPath],return)</onclick>
-                        <onclick condition="!Container(301).ListItem.IsFolder + !String.IsEmpty(Container(301).ListItem.FileNameAndPath)">PlayMedia($ESCINFO[Container(301).ListItem.FileNameAndPath])</onclick>
-                        <onclick condition="!Container(301).ListItem.IsFolder + String.IsEmpty(Container(301).ListItem.FileNameAndPath) + !String.IsEmpty(Container(301).ListItem.FolderPath)">PlayMedia($ESCINFO[Container(301).ListItem.FolderPath])</onclick>
+                        <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems] + Container(301).ListItem.IsFolder">ActivateWindow($VAR[Path_Spotlight_Target],$INFO[Container(301).ListItem.FolderPath],return)</onclick>
+                        <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems] + !Container(301).ListItem.IsFolder + !String.IsEmpty(Container(301).ListItem.FileNameAndPath)">PlayMedia($ESCINFO[Container(301).ListItem.FileNameAndPath])</onclick>
+                        <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems] + !Container(301).ListItem.IsFolder + String.IsEmpty(Container(301).ListItem.FileNameAndPath) + !String.IsEmpty(Container(301).ListItem.FolderPath)">PlayMedia($ESCINFO[Container(301).ListItem.FolderPath])</onclick>
+                        <onclick condition="!$EXP[Exp_Hubs_Spotlight_HasItems]">SlideShow($VAR[Path_Spotlight_SlideShow_Content],beginslide=$ESCINFO[Container(99971).ListItem.PicturePath])</onclick>
                         <include content="Spotlight_Main_Button_Standard">
                             <param name="id">311</param>
                             <param name="window_id">$PARAM[window_id]</param>
                         </include>
-
                     </control>
 
                     <control type="group" id="319">
@@ -212,9 +212,11 @@
                     <control type="button" id="312">
                         <include>Defs_OSD_Button</include>
                         <centertop>50%</centertop>
-                        <onclick>SetFocus(301)</onclick>
-                        <onclick>Action(Info)</onclick>
-                        <onclick>SetFocus(312)</onclick>
+                        <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">SetFocus(301)</onclick>
+                        <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">Action(Info)</onclick>
+                        <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">SetFocus(312)</onclick>
+                        <onclick condition="!$EXP[Exp_Hubs_Spotlight_HasItems] + Weather.IsFetched">ActivateWindow(weather)</onclick>
+                        <onclick condition="!$EXP[Exp_Hubs_Spotlight_HasItems] + !Weather.IsFetched">ActivateWindow(systeminfo)</onclick>
                         <include content="Spotlight_Main_Button_Standard">
                             <param name="id">312</param>
                             <param name="window_id">$PARAM[window_id]</param>
@@ -234,9 +236,10 @@
                         <left>20</left>
                         <include>Defs_OSD_Button</include>
                         <centertop>50%</centertop>
-                        <onclick>SetFocus(301)</onclick>
-                        <onclick>Action(ContextMenu)</onclick>
-                        <onclick>SetFocus(313)</onclick>
+                        <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">SetFocus(301)</onclick>
+                        <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">Action(ContextMenu)</onclick>
+                        <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">SetFocus(313)</onclick>
+                        <onclick condition="!$EXP[Exp_Hubs_Spotlight_HasItems]">ActivateWindow(1170)</onclick>
                         <include content="Spotlight_Main_Button_Standard">
                             <param name="id">313</param>
                             <param name="window_id">$PARAM[window_id]</param>
@@ -256,9 +259,12 @@
                         <left>20</left>
                         <include>Defs_OSD_Button</include>
                         <centertop>50%</centertop>
-                        <onclick>Control.Move(301,1)</onclick>
-                        <onup>Control.Move(301,-1)</onup>
-                        <ondown>Control.Move(301,1)</ondown>
+                        <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">Control.Move(301,1)</onclick>
+                        <onup condition="$EXP[Exp_Hubs_Spotlight_HasItems]">Control.Move(301,-1)</onup>
+                        <ondown condition="$EXP[Exp_Hubs_Spotlight_HasItems]">Control.Move(301,1)</ondown>
+                        <onclick condition="!$EXP[Exp_Hubs_Spotlight_HasItems]">Control.Move(99971,1)</onclick>
+                        <onup condition="!$EXP[Exp_Hubs_Spotlight_HasItems]">Control.Move(99971,-1)</onup>
+                        <ondown condition="!$EXP[Exp_Hubs_Spotlight_HasItems]">Control.Move(99971,1)</ondown>
                         <include content="Spotlight_Main_Button_Standard">
                             <param name="id">314</param>
                             <param name="window_id">$PARAM[window_id]</param>
