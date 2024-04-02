@@ -87,8 +87,8 @@
         </include>
         <include content="Object_Hidden_Button">
             <param name="id">67</param>
-            <onfocus condition="Skin.String(Navigation.Global.OnDown,Explore)">Action(Down)</onfocus>
-            <include condition="Skin.String(Navigation.Global.OnDown,Explore)">Action_View_Explore_OnDown</include>
+            <onfocus>SetFocus($VAR[Action_View_ContentID])</onfocus>
+            <include condition="Skin.String(Navigation.Global.OnDown,Explore)">Action_View_Explore_OnFocus</include>
         </include>
     </include>
 
