@@ -52,7 +52,8 @@
         <value condition="!String.IsEmpty({listitem}.AddonType)">$INFO[{listitem}.AddonType]</value>
         <value condition="!String.IsEmpty({listitem}.AddonVersion)">$INFO[{listitem}.AddonVersion]</value>
         <value condition="!String.IsEmpty({listitem}.DBType)">$INFO[{listitem}.DBType,[CAPITALIZE],[/CAPITALIZE]]</value>
-        <value>$LOCALIZE[231]</value>
+        <value condition="{listitem}.IsFolder">$LOCALIZE[19076]</value>
+        <value>$LOCALIZE[31025]</value>
     </variable>
 
 </includes>
