@@ -448,9 +448,9 @@
                 <param name="detailed">$PARAM[detailed]</param>
                 <param name="orientation">horizontal</param>
                 <param name="control">fixedlist</param>
-                <param name="item_w">view_poster_item_w</param>
-                <param name="item_h">view_poster_item_w</param>
-                <param name="itemlayout_w">view_poster_itemlayout_w</param>
+                <param name="item_w">view_icon_item_w</param>
+                <param name="item_h">view_icon_item_w</param>
+                <param name="itemlayout_w">view_icon_itemlayout_w</param>
                 <param name="itemlayout_h">view_icon_itemlayout_h</param>
                 <param name="itemlayout_include">Layout_Square</param>
                 <param name="variation">true</param>
@@ -463,7 +463,7 @@
                 <param name="hidden_button_enabled">$PARAM[hidden_button_enabled]</param>
                 <param name="hidden_button">$PARAM[hidden_button]</param>
                 <nested />
-                <include>List_Poster_Row_Movement</include>
+                <include>List_Icon_Row_Movement</include>
             </include>
         </definition>
     </include>

@@ -2294,6 +2294,19 @@
                         <height>64</height>
                     </control>
                 </control>
+                <control type="group">
+                    <visible>[$PARAM[variation]]</visible>
+                    <top>$PARAM[item_h]</top>
+                    <control type="label">
+                        <top>17</top>
+                        <label>$INFO[$PARAM[listitem].Label]</label>
+                        <textcolor>main_fg_70</textcolor>
+                        <font>font_mini</font>
+                        <textoffsetx>0</textoffsetx>
+                        <align>center</align>
+                        <height>32</height>
+                    </control>
+                </control>
             </control>
         </definition>
     </include>
