@@ -737,7 +737,8 @@
         <onclick>Skin.Reset(gradientcolor.name)</onclick>
         <onclick>Skin.Reset(EnableMonochromeHighlight)</onclick>
         <onclick>Skin.Reset(InvertSelectedText)</onclick>
-        <onclick>Skin.Reset(Background.DialogImage)</onclick>
+        <onclick condition="!Skin.HasSetting(TMDbHelper.EnableBlur) | !String.IsEmpty(Skin.String(Background.ArtworkStyle))">Skin.Reset(Background.DialogImage)</onclick>
+        <onclick condition="Skin.HasSetting(TMDbHelper.EnableBlur) + String.IsEmpty(Skin.String(Background.ArtworkStyle))">Skin.SetString(Background.DialogImage,Adaptive)</onclick>
         <onclick>Skin.SetString(Background.Image,special://skin/extras/backgrounds/blur/purple_blur.jpg)</onclick>
         <include content="Action_BuildTextures_Onclick_Preset">
             <param name="window_id">$PARAM[window_id]</param>
@@ -750,7 +751,8 @@
         <onclick>Skin.SetString(gradientcolor.name,ff00bfa5)</onclick>
         <onclick>Skin.Reset(EnableMonochromeHighlight)</onclick>
         <onclick>Skin.Reset(InvertSelectedText)</onclick>
-        <onclick>Skin.SetString(Background.DialogImage,Green)</onclick>
+        <onclick condition="!Skin.HasSetting(TMDbHelper.EnableBlur) | !String.IsEmpty(Skin.String(Background.ArtworkStyle))">Skin.SetString(Background.DialogImage,Green)</onclick>
+        <onclick condition="Skin.HasSetting(TMDbHelper.EnableBlur) + String.IsEmpty(Skin.String(Background.ArtworkStyle))">Skin.SetString(Background.DialogImage,Adaptive)</onclick>
         <onclick>Skin.SetString(Background.Image,special://skin/extras/backgrounds/blur/green_blur.jpg)</onclick>
         <include content="Action_BuildTextures_Onclick_Preset">
             <param name="window_id">$PARAM[window_id]</param>
@@ -763,7 +765,8 @@
         <onclick>Skin.SetString(gradientcolor.name,ffe91e63)</onclick>
         <onclick>Skin.Reset(EnableMonochromeHighlight)</onclick>
         <onclick>Skin.Reset(InvertSelectedText)</onclick>
-        <onclick>Skin.SetString(Background.DialogImage,Blush)</onclick>
+        <onclick condition="!Skin.HasSetting(TMDbHelper.EnableBlur) | !String.IsEmpty(Skin.String(Background.ArtworkStyle))">Skin.SetString(Background.DialogImage,Blush)</onclick>
+        <onclick condition="Skin.HasSetting(TMDbHelper.EnableBlur) + String.IsEmpty(Skin.String(Background.ArtworkStyle))">Skin.SetString(Background.DialogImage,Adaptive)</onclick>
         <onclick>Skin.SetString(Background.Image,special://skin/extras/backgrounds/blur/pink_blur.jpg)</onclick>
         <include content="Action_BuildTextures_Onclick_Preset">
             <param name="window_id">$PARAM[window_id]</param>
@@ -776,7 +779,8 @@
         <onclick>Skin.SetString(gradientcolor.name,ff0091ea)</onclick>
         <onclick>Skin.SetBool(EnableMonochromeHighlight)</onclick>
         <onclick>Skin.Reset(InvertSelectedText)</onclick>
-        <onclick>Skin.SetString(Background.DialogImage,Slate)</onclick>
+        <onclick condition="!Skin.HasSetting(TMDbHelper.EnableBlur) | !String.IsEmpty(Skin.String(Background.ArtworkStyle))">Skin.SetString(Background.DialogImage,Slate)</onclick>
+        <onclick condition="Skin.HasSetting(TMDbHelper.EnableBlur) + String.IsEmpty(Skin.String(Background.ArtworkStyle))">Skin.SetString(Background.DialogImage,Adaptive)</onclick>
         <onclick>Skin.SetString(Background.Image,special://skin/extras/backgrounds/blur/slate_blur.jpg)</onclick>
         <include content="Action_BuildTextures_Onclick_Preset">
             <param name="window_id">$PARAM[window_id]</param>
@@ -789,7 +793,8 @@
         <onclick>Skin.SetString(gradientcolor.name,ff5528a8)</onclick>
         <onclick>Skin.SetBool(EnableMonochromeHighlight)</onclick>
         <onclick>Skin.Reset(InvertSelectedText)</onclick>
-        <onclick>Skin.SetString(Background.DialogImage,Coal)</onclick>
+        <onclick condition="!Skin.HasSetting(TMDbHelper.EnableBlur) | !String.IsEmpty(Skin.String(Background.ArtworkStyle))">Skin.SetString(Background.DialogImage,Coal)</onclick>
+        <onclick condition="Skin.HasSetting(TMDbHelper.EnableBlur) + String.IsEmpty(Skin.String(Background.ArtworkStyle))">Skin.SetString(Background.DialogImage,Adaptive)</onclick>
         <onclick>Skin.SetString(Background.Image,special://skin/extras/backgrounds/blur/coal_blur.jpg)</onclick>
         <include content="Action_BuildTextures_Onclick_Preset">
             <param name="window_id">$PARAM[window_id]</param>
