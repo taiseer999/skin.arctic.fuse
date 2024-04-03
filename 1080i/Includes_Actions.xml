@@ -189,7 +189,8 @@
     </include>
 
     <include name="Action_Widget_Top">
-        <param name="move">Window.IsVisible(Home) + Skin.HasSetting(Hub.Home.DisableSubmenu) + Skin.String(Home.SideMenuCollapse,Library) + !String.IsEmpty(Container(303).ListItemNoWrap(-1).Property(guid)) + !Skin.HasSetting(Hub.Home.DisableMoveBetweenGroups)</param>
+        <param name="move">Window.IsVisible(Home) + Skin.HasSetting(Hub.Home.DisableSubmenu) + $EXP[Exp_HomeMenu_DontHide] + !String.IsEmpty(Container(303).ListItemNoWrap(-1).Property(guid)) + !Skin.HasSetting(Hub.Home.DisableMoveBetweenGroups)</param>
+        <param name="search_transition">$EXP[Exp_Window_IsClassicHub]</param>
         <param name="condition">true</param>
         <definition>
 
@@ -200,30 +201,39 @@
             <onup condition="$PARAM[condition] + $PARAM[move]">SetProperty(WidgetGroup.Movement,Up)</onup>
             <onup condition="$PARAM[condition] + $PARAM[move]">Control.Move(303,-1)</onup>
 
-            <onup condition="$PARAM[condition] + ![$PARAM[move]] + ![!Skin.String(Home.SideMenuCollapse,Always) + Window.IsVisible(Home)]">SetProperty(List.ViewContainer,$NUMBER[$PARAM[id]])</onup>
-            <onup condition="$PARAM[condition] + ![$PARAM[move]] + ![!Skin.String(Home.SideMenuCollapse,Always) + Window.IsVisible(Home)]">SetFocus(303,1,absolute)</onup>
+            <onup condition="$PARAM[condition] + ![$PARAM[move]] + !$EXP[Exp_HomeMenu_DontHide]">SetProperty(List.ViewContainer,$NUMBER[$PARAM[id]])</onup>
+            <onup condition="$PARAM[condition] + ![$PARAM[move]] + !$EXP[Exp_HomeMenu_DontHide]">SetFocus(303,1,absolute)</onup>
 
             <!-- Bump -->
-            <onup condition="$PARAM[condition] + ![$PARAM[move]] + [!Skin.String(Home.SideMenuCollapse,Always) + Window.IsVisible(Home)] + !Skin.String(Navigation.Global.OnUp,Search)">SetProperty(List.ViewContainer,$NUMBER[$PARAM[id]])</onup>
-            <onup condition="$PARAM[condition] + ![$PARAM[move]] + [!Skin.String(Home.SideMenuCollapse,Always) + Window.IsVisible(Home)] + !Skin.String(Navigation.Global.OnUp,Search)">333</onup>
+            <onup condition="$PARAM[condition] + ![$PARAM[move]] + $EXP[Exp_HomeMenu_DontHide] + !Skin.String(Navigation.Global.OnUp,Search)">SetProperty(List.ViewContainer,$NUMBER[$PARAM[id]])</onup>
+            <onup condition="$PARAM[condition] + ![$PARAM[move]] + $EXP[Exp_HomeMenu_DontHide] + !Skin.String(Navigation.Global.OnUp,Search)">333</onup>
 
             <!-- Search -->
-            <include content="Home_Menu_List_OnUp_ActivateSearch" condition="Skin.String(Navigation.Global.OnUp,Search) + !$EXP[Exp_Window_IsClassicHub]">
+            <include content="Home_Menu_List_OnUp_ActivateSearch" condition="Skin.String(Navigation.Global.OnUp,Search) + ![$PARAM[search_transition]]">
                 <param name="property">InhibitTransition</param>
-                <param name="condition">$PARAM[condition] + ![$PARAM[move]] + [!Skin.String(Home.SideMenuCollapse,Always) + Window.IsVisible(Home)]</param>
+                <param name="condition">$PARAM[condition] + ![$PARAM[move]] + $EXP[Exp_HomeMenu_DontHide]</param>
             </include>
-            <include content="Home_Menu_List_OnUp_ActivateSearch" condition="Skin.String(Navigation.Global.OnUp,Search) + $EXP[Exp_Window_IsClassicHub]">
+            <include content="Home_Menu_List_OnUp_ActivateSearch" condition="Skin.String(Navigation.Global.OnUp,Search) + $PARAM[search_transition]">
                 <param name="property">ReverseTransition</param>
-                <param name="condition">$PARAM[condition] + ![$PARAM[move]] + [!Skin.String(Home.SideMenuCollapse,Always) + Window.IsVisible(Home)]</param>
+                <param name="condition">$PARAM[condition] + ![$PARAM[move]] + $EXP[Exp_HomeMenu_DontHide]</param>
             </include>
 
         </definition>
     </include>
 
+    <include name="Action_View_Movement_OnUp">
+        <include content="Action_Widget_Top">
+            <param name="move">False</param>
+            <param name="id">50</param>
+            <param name="search_transition">True</param>
+        </include>
+        <!-- <onup>SetFocus(303,1,absolute)</onup> -->
+    </include>
+
     <include name="Action_Widget_End">
         <param name="condition">true</param>
         <param name="bump_id">330</param>
-        <param name="move">Window.IsVisible(Home) + Skin.HasSetting(Hub.Home.DisableSubmenu) + Skin.String(Home.SideMenuCollapse,Library) + !String.IsEmpty(Container(303).ListItemNoWrap(1).Property(guid)) + !Skin.HasSetting(Hub.Home.DisableMoveBetweenGroups)</param>
+        <param name="move">Window.IsVisible(Home) + Skin.HasSetting(Hub.Home.DisableSubmenu) + $EXP[Exp_HomeMenu_DontHide] + !String.IsEmpty(Container(303).ListItemNoWrap(1).Property(guid)) + !Skin.HasSetting(Hub.Home.DisableMoveBetweenGroups)</param>
         <definition>
             <!-- EndRow Hack: Bump focus back up to widget first -->
             <ondown condition="$PARAM[condition] + !String.IsEmpty(Window.Property(EndRow.HasFocus))">Action(Up)</ondown>
@@ -519,9 +529,7 @@
         <value>Runscript(script.skinvariables,$VAR[MediaWall_ScriptTypeDef],use_rules,id=$VAR[Action_View_ContentID],use_mediafilter=True,win_prop=WallSlideIn,focus_id=9012,clear_prop_one=Null,clear_prop_two=Null)</value>
     </variable>
 
-    <include name="Action_View_Movement_OnUp">
-        <onup>SetFocus(303,1,absolute)</onup>
-    </include>
+
 
     <include name="Action_View_Movement_OnDown">
         <param name="condition">true</param>

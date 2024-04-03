@@ -92,9 +92,11 @@
     </variable>
 
     <variable name="Label_Settings_SideMenuCollapse">
-        <value condition="Skin.String(Home.SideMenuCollapse,Always)">$LOCALIZE[34122]</value>
-        <value condition="Skin.String(Home.SideMenuCollapse,Library)">$LOCALIZE[14022]</value>
-        <value condition="Skin.String(Home.SideMenuCollapse,Topbar)">$LOCALIZE[31352] ($LOCALIZE[31068])</value>
+        <value condition="Skin.String(Home.SideMenuCollapse,Topbar)">$LOCALIZE[10000] ($LOCALIZE[31068] $LOCALIZE[31352]) + $LOCALIZE[31351] + $LOCALIZE[14022] + $LOCALIZE[5]</value>
+        <value condition="Skin.String(Home.SideMenuCollapse,Always)">$LOCALIZE[10000] + $LOCALIZE[31351] + $LOCALIZE[14022] + $LOCALIZE[5]</value>
+        <value condition="Skin.String(Home.SideMenuCollapse,Library)">$LOCALIZE[31351] + $LOCALIZE[14022] + $LOCALIZE[5]</value>
+        <value condition="Skin.String(Home.SideMenuCollapse,Hubs)">$LOCALIZE[14022] + $LOCALIZE[5]</value>
+        <value condition="Skin.String(Home.SideMenuCollapse,Never)">$LOCALIZE[5]</value>
     </variable>
 
     <variable name="Label_Settings_LeftFooterVisibility">
@@ -1218,7 +1220,7 @@
         <value condition="Window.IsVisible(favouritesbrowser)">$LOCALIZE[1036]</value>
         <value condition="$EXP[Exp_Window_IsHub] + !String.IsEmpty(Window.Property(Hub.Header))">$INFO[Window.Property(Hub.Header)]</value>
         <value condition="!String.IsEmpty(Skin.String(Home.Label))">$INFO[Skin.String(Home.Label)]</value>
-        <value condition="Window.IsVisible(Home) + !Skin.HasSetting(Home.SideMenu.DisableIndicator) + Skin.String(Home.SideMenuCollapse,Library) + !String.IsEmpty(Container(303).ListItem.Label)">$INFO[Container(303).ListItem.Label]</value>
+        <value condition="Window.IsVisible(Home) + !Skin.HasSetting(Home.SideMenu.DisableIndicator) + $EXP[Exp_HomeMenu_DontHide] + !String.IsEmpty(Container(303).ListItem.Label)">$INFO[Container(303).ListItem.Label]</value>
         <value>$LOCALIZE[10000]</value>
     </variable>
 

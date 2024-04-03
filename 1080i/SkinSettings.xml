@@ -152,9 +152,11 @@
                             <param name="control">button</param>
                             <label>$LOCALIZE[31416] > $LOCALIZE[13014]</label>
                             <label2>$VAR[Label_Settings_SideMenuCollapse]</label2>
+                            <onclick condition="Skin.String(Home.SideMenuCollapse,Never)">Skin.SetString(Home.SideMenuCollapse,Hubs)</onclick>
+                            <onclick condition="Skin.String(Home.SideMenuCollapse,Hubs)">Skin.SetString(Home.SideMenuCollapse,Library)</onclick>
                             <onclick condition="Skin.String(Home.SideMenuCollapse,Library)">Skin.SetString(Home.SideMenuCollapse,Always)</onclick>
                             <onclick condition="Skin.String(Home.SideMenuCollapse,Always)">Skin.SetString(Home.SideMenuCollapse,Topbar)</onclick>
-                            <onclick condition="!Skin.String(Home.SideMenuCollapse,Library) + !Skin.String(Home.SideMenuCollapse,Always)">Skin.SetString(Home.SideMenuCollapse,Library)</onclick>
+                            <onclick condition="!Skin.String(Home.SideMenuCollapse,Library) + !Skin.String(Home.SideMenuCollapse,Always) + !Skin.String(Home.SideMenuCollapse,Hubs) + !Skin.String(Home.SideMenuCollapse,Never)">Skin.SetString(Home.SideMenuCollapse,Never)</onclick>
                             <visible>Container(3).HasFocus(1)</visible>
                         </include>
                         <include content="Settings_Button" description="Primary Menu Button">
@@ -227,7 +229,7 @@
                             <onclick>Skin.ToggleSetting(Home.SideMenu.DisableIndicator)</onclick>
                             <selected>!Skin.HasSetting(Home.SideMenu.DisableIndicator)</selected>
                             <visible>Container(3).HasFocus(1)</visible>
-                            <visible>Skin.String(Home.SideMenuCollapse,Library)</visible>
+                            <visible>Skin.String(Home.SideMenuCollapse,Library) | Skin.String(Home.SideMenuCollapse,Hubs) | Skin.String(Home.SideMenuCollapse,Never)</visible>
                         </include>
 
                         <!-- Appearance -->
@@ -519,7 +521,7 @@
                             <label>$LOCALIZE[33061] > $LOCALIZE[39162]</label>
                             <label2>$VAR[Label_Settings_NavigationMenuLeft]</label2>
                             <visible>Container(3).HasFocus(4)</visible>
-                            <visible>[Skin.String(Home.SideMenuCollapse,Library) | Skin.String(Home.SideMenuCollapse,Topbar)]</visible>
+                            <visible>[Skin.String(Home.SideMenuCollapse,Library) | Skin.String(Home.SideMenuCollapse,Topbar) | Skin.String(Home.SideMenuCollapse,Hubs) | Skin.String(Home.SideMenuCollapse,Never)]</visible>
                             <onclick>Skin.ToggleSetting(Navigation.DisableOptionsOnLeft)</onclick>
                         </include>
                         <include content="Settings_Button" description="Menu options on left">

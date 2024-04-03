@@ -144,8 +144,8 @@
                     <include content="Home_Menu_List_OnUp_ActivateSearch" condition="!$EXP[Exp_HomeMenu_DontHide] + Skin.String(Navigation.Global.OnUp,Search) + ![Window.IsVisible(Home) | Window.IsVisible(1185) | Window.IsVisible(1181) | Window.IsVisible(1182) | Window.IsVisible(1130) | Window.IsVisible(1131) | Window.IsVisible(1132)]">
                     </include>
 
-                    <ondown condition="!$EXP[Exp_HomeMenu_DontHide] + ![Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Library)]">$PARAM[onlist]</ondown>
-                    <ondown condition="!$EXP[Exp_HomeMenu_DontHide] + ![Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Library)]">SetFocus($PARAM[onlist])</ondown>
+                    <ondown condition="!$EXP[Exp_HomeMenu_DontHide]">$PARAM[onlist]</ondown>
+                    <ondown condition="!$EXP[Exp_HomeMenu_DontHide]">SetFocus($PARAM[onlist])</ondown>
 
                     <include>Home_Menu_List_OnBackInfo</include>
                     <onfocus>ClearProperty(WidgetGroup.Movement)</onfocus>
@@ -177,7 +177,7 @@
                     <include content="Home_Menu_List_ItemLayout" condition="!Skin.HasSetting(Hub.Home.DisableSubmenu)">
                         <param name="id">$PARAM[id]</param>
                         <param name="hidden_button">Home_Menu_List_HiddenButton_Alt</param>
-                        <param name="hidden_button_enabled">[Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Library)]</param>
+                        <param name="hidden_button_enabled">[Window.IsVisible(Home) + $EXP[Exp_HomeMenu_DontHide]]</param>
                     </include>
 
                     <include>$PARAM[items_include]</include>
