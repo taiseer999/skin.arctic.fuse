@@ -412,10 +412,13 @@
             <include content="Info_Panel">
                 <param name="container">Container.</param>
                 <include content="Animation_Fade_In" condition="Skin.HasSetting(Slide.WidgetContainer)">
-                    <param name="condition">!Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)</param>
+                    <param name="condition">![Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) | $EXP[Exp_Hubs_Categories_IsFocus]]</param>
                     <param name="delay">200</param>
                 </include>
-                <include content="Animation_ConditionalFade">
+                <include content="Animation_ConditionalFade" condition="Skin.HasSetting(Slide.WidgetContainer)">
+                    <param name="condition">[Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) | $EXP[Exp_Hubs_Categories_IsFocus]]</param>
+                </include>
+                <include content="Animation_ConditionalFade" condition="!Skin.HasSetting(Slide.WidgetContainer)">
                     <param name="condition">Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)</param>
                 </include>
             </include>
@@ -528,19 +531,19 @@
         <definition>
 
             <include content="Animation_Fade_In" condition="!Skin.HasSetting(Background.EnableSpotlightFanart)">
-                <param name="condition">Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) + $PARAM[no_fanart_condition]</param>
+                <param name="condition">[Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) | $EXP[Exp_Hubs_Categories_IsFocus]] + $PARAM[no_fanart_condition]</param>
                 <param name="delay">200</param>
             </include>
             <include content="Animation_ConditionalFade" condition="!Skin.HasSetting(Background.EnableSpotlightFanart)">
-                <param name="condition">![Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) + $PARAM[no_fanart_condition]]</param>
+                <param name="condition">![[Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) | $EXP[Exp_Hubs_Categories_IsFocus]] + $PARAM[no_fanart_condition]]</param>
             </include>
 
             <include content="Animation_Fade_In" condition="Skin.HasSetting(Background.EnableSpotlightFanart)">
-                <param name="condition">Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)</param>
+                <param name="condition">$EXP[Exp_Hubs_Categories_IsFocus]</param>
                 <param name="delay">200</param>
             </include>
             <include content="Animation_ConditionalFade" condition="Skin.HasSetting(Background.EnableSpotlightFanart)">
-                <param name="condition">![Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) + !$EXP[Exp_Hubs_SlideDown_Spotlight]]</param>
+                <param name="condition">![$EXP[Exp_Hubs_Categories_IsFocus] + !$EXP[Exp_Hubs_SlideDown_Spotlight]]</param>
             </include>
         </definition>
 
