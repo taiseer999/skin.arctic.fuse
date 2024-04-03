@@ -5,9 +5,8 @@
         "51":   "31045",
         "52":   "20021",
         "56":   "31479",
-        "506":  "31168",
         "516":  "31480",
-        "500":  "31169",
+        "500":  "31168",
         "502":  "Combined Square",
         "512":  "Combined Landscape",
         "522":  "Combined Poster"
@@ -17,7 +16,6 @@
         "51":   "special://skin/extras/icons/view-landscape.png",
         "52":   "special://skin/extras/icons/view-poster.png",
         "56":   "special://skin/extras/icons/view-list.png",
-        "506":  "special://skin/extras/icons/view-list.png",
         "516":  "special://skin/extras/icons/view-list.png",
         "500":  "special://skin/extras/icons/view-list.png",
         "502":  "special://skin/extras/icons/view-combined.png",
