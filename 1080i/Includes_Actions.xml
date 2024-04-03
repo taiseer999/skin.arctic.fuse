@@ -131,9 +131,10 @@
     </include>
 
     <variable name="Action_Default_HomeFocus">
+        <value condition="!$EXP[Exp_HomeMenu_DontHide]">1</value>
         <value condition="!String.IsEmpty(Window(Home).Property(Home.MenuFocus))">$INFO[Window(Home).Property(Home.MenuFocus)]</value>
         <value condition="!Window.IsVisible(Home)">1</value>
-        <value condition="!String.IsEmpty(Skin.String(Home.DefaultFocus)) + !Skin.String(Home.SideMenuCollapse,Always)">$INFO[Skin.String(Home.DefaultFocus)]</value>
+        <value condition="!String.IsEmpty(Skin.String(Home.DefaultFocus))">$INFO[Skin.String(Home.DefaultFocus)]</value>
         <value>1</value>
     </variable>
 

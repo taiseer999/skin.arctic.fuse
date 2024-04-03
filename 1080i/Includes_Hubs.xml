@@ -155,10 +155,8 @@
     <include name="Hub_Refocus_Buttons">
         <include content="Object_Hidden_Button">
             <param name="id">309</param>
-            <onfocus condition="Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Always)">SetFocus(303,1,absolute)</onfocus>
-            <onfocus condition="Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Library)">SetFocus(303,$VAR[Action_Default_HomeFocus],absolute)</onfocus>
             <onfocus condition="Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Topbar)">SetFocus(370,$VAR[Action_Default_HomeFocus],absolute)</onfocus>
-            <onfocus condition="!Window.IsVisible(Home)">SetFocus(303)</onfocus>
+            <onfocus condition="!Window.IsVisible(Home) | !Skin.String(Home.SideMenuCollapse,Topbar)">SetFocus(303,$VAR[Action_Default_HomeFocus],absolute)</onfocus>
             <onleft>SetFocus($VAR[Action_Hubs_MenuID])</onleft>
             <onright>SetFocus($VAR[Action_Hubs_MenuID])</onright>
             <ondown>SetFocus($VAR[Action_Hubs_MenuID])</ondown>
