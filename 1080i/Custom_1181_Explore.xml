@@ -108,6 +108,6 @@
             <visible>!$EXP[Exp_InfoDialogs]</visible>
             <include>DialogInfo_Recommendations_Furniture</include>
         </control>
-        <include>TouchMode_Recs_Zones</include>
+
     </controls>
 </window>
