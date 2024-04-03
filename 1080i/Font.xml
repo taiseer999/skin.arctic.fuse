@@ -25,7 +25,7 @@
         <font>
             <name>font_info_black</name>
             <filename>RobotoCondensed-Black.ttf</filename>
-            <size>112</size>
+            <size>128</size>
         </font>
         <font>
             <name>font_title_black</name>
@@ -264,7 +264,7 @@
         <font>
             <name>font_info_black</name>
             <filename>RobotoNotoCondensed-Black.ttf</filename>
-            <size>112</size>
+            <size>128</size>
         </font>
         <font>
             <name>font_title_black</name>
@@ -504,7 +504,7 @@
             <name>font_info_black</name>
             <filename>resource://resource.font.robotocjksc/RobotoCJKSC-Bold.ttf</filename>
             <aspect>0.89</aspect>
-            <size>112</size>
+            <size>128</size>
         </font>
         <font>
             <name>font_title_black</name>

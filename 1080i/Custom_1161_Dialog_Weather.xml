@@ -186,9 +186,12 @@
                                     </control>
                                 </control>
 
-                                <include content="Weather_Fanart_HighLow">
+                                <control type="group">
                                     <top>20</top>
-                                </include>
+                                    <height>280</height>
+                                    <width>480</width>
+                                    <include>Weather_Fanart_HighLow</include>
+                                </control>
 
                             </control>
 

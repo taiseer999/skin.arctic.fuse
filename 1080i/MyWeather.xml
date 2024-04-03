@@ -43,14 +43,16 @@
                 <top>view_top</top>
             </include>
 
-            <include content="Weather_Fanart_HighLow">
+            <control type="group">
                 <bottom>view_top</bottom>
                 <left>view_side</left>
-                <width>480</width>
-            </include>
+                <height>view_poster_item_h</height>
+                <width>view_board_item_w</width>
+                <include>Weather_Fanart_HighLow</include>
+            </control>
 
             <include content="Dialog_Outline_Box">
-                <left>720</left>
+                <left>760</left>
                 <top>160</top>
                 <bottom>160</bottom>
                 <right>view_pad</right>

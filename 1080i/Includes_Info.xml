@@ -8,7 +8,7 @@
         <param name="width">info_plot_w</param>
         <param name="height">100%</param>
         <definition>
-            <!-- <control type="group">
+            <control type="group">
                 <nested />
                 <width>$PARAM[width]</width>
                 <height>$PARAM[height]</height>
@@ -21,7 +21,17 @@
                     <font>font_title_black</font>
                     <right>-40</right>
                 </control>
-            </control> -->
+            </control>
+        </definition>
+    </include>
+
+    <include name="Info_Title_LogoLabel">
+        <param name="label">$VAR[Label_Title_Container]</param>
+        <param name="wrapmultiline">false</param>
+        <param name="visible">true</param>
+        <param name="width">info_plot_w</param>
+        <param name="height">100%</param>
+        <definition>
             <control type="group">
                 <visible>$PARAM[visible]</visible>
                 <width>$PARAM[width]</width>
@@ -29,7 +39,6 @@
                 <control type="group">
                     <centertop>20</centertop>
                     <height>40</height>
-                    <!-- <left>4</left> -->
                     <control type="image">
                         <centertop>20</centertop>
                         <height>32</height>
@@ -70,7 +79,7 @@
 
     <include name="Info_Title_Logo">
         <definition>
-            <include content="Info_Title_Label">
+            <include content="Info_Title_LogoLabel">
                 <param name="label">$PARAM[label]</param>
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="height">132</param>
@@ -1121,9 +1130,10 @@
         <param name="colordiffuse">main_fg</param>
         <param name="container" />
         <param name="starrating">false</param>
+        <param name="grouplistid">99951</param>
         <definition>
 
-            <control type="grouplist">
+            <control type="grouplist" id="$PARAM[grouplistid]">
                 <hitrect x="0" y="0" w="0" h="0" />
                 <height>80</height>
                 <orientation>horizontal</orientation>
@@ -1384,6 +1394,34 @@
 
                 <nested />
             </control>
+            <control type="grouplist">
+                <hitrect x="0" y="0" w="0" h="0" />
+                <height>80</height>
+                <orientation>horizontal</orientation>
+                <itemgap>10</itemgap>
+
+                <visible>Integer.IsEqual(Container($PARAM[grouplistid]).NumItems,0)</visible>
+
+                <control type="group">
+                    <width>64</width>
+                    <description>Bumper for info icon</description>
+                </control>
+                <include content="Info_Line_Item">
+                    <param name="label">$INFO[Weather.Location]</param>
+                    <param name="textcolor">$PARAM[colordiffuse]_70</param>
+                    <visible>Weather.IsFetched</visible>
+                </include>
+                <include content="Info_Line_Item">
+                    <param name="label">$LOCALIZE[19055]</param>
+                    <param name="textcolor">$PARAM[colordiffuse]_70</param>
+                    <visible>!Weather.IsFetched</visible>
+                </include>
+
+                <nested />
+
+            </control>
+
+
         </definition>
     </include>
 
@@ -3215,6 +3253,7 @@
                             <param name="colordiffuse">$PARAM[colordiffuse]</param>
                             <param name="container">$PARAM[container]</param>
                             <param name="starrating">$PARAM[starrating]</param>
+                            <param name="grouplistid">$PARAM[grouplistid]</param>
                             <centertop>37.5</centertop>
                             <visible>$PARAM[visible]</visible>
                         </include>
