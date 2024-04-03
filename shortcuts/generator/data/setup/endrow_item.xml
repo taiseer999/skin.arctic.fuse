@@ -37,11 +37,6 @@
             <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
         </rule>
         <rule>
-            <condition>{item_widget_style}==Text</condition>
-            <value>List_Text_Row</value>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
-        </rule>
-        <rule>
             <condition>{parent_item_widget_style}==Landscape</condition>
             <value>List_Landscape_Row</value>
         </rule>
@@ -73,11 +68,6 @@
         <rule>
             <condition>{parent_item_widget_style}==Icon</condition>
             <value>List_Icon_Row</value>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
-        </rule>
-        <rule>
-            <condition>{parent_item_widget_style}==Text</condition>
-            <value>List_Text_Row</value>
             <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
         </rule>
         <rule>
