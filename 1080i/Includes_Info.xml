@@ -1406,15 +1406,15 @@
                     <width>64</width>
                     <description>Bumper for info icon</description>
                 </control>
-                <include content="Info_Line_Item">
+                <!-- <include content="Info_Line_Item">
                     <param name="label">$INFO[Weather.Location]</param>
                     <param name="textcolor">$PARAM[colordiffuse]_70</param>
                     <visible>Weather.IsFetched</visible>
-                </include>
+                </include> -->
                 <include content="Info_Line_Item">
                     <param name="label">$LOCALIZE[19055]</param>
                     <param name="textcolor">$PARAM[colordiffuse]_70</param>
-                    <visible>!Weather.IsFetched</visible>
+                    <!-- <visible>!Weather.IsFetched</visible> -->
                 </include>
 
                 <nested />
