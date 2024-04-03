@@ -1,0 +1,25 @@
+<!-- Menu -->
+<item>
+    <label>$LOCALIZE[33061]</label>
+    <icon>special://skin/extras/icons/bars-progress.png</icon>
+    <property name="showlabel">True</property>
+    <property name="path">ActivateWindow(1172)</property>
+    <property name="guid">{item_guid}</property>
+    <property name="widgets_setfocus">SetFocus(400)</property>
+    <property name="expression">none</property>
+    <onclick>ActivateWindow(1172)</onclick>
+    <visible>![Skin.HasSetting(SideMenu.EnableOptionsButton) | Skin.String(Home.SideMenuCollapse,Topbar)]</visible>
+</item>
+
+<!-- Options -->
+<item>
+    <label>$LOCALIZE[33063]</label>
+    <icon>special://skin/extras/icons/bars.png</icon>
+    <property name="showlabel">True</property>
+    <property name="path">ActivateWindow(1170)</property>
+    <property name="guid">{item_guid}</property>
+    <property name="widgets_setfocus">SetFocus(400)</property>
+    <property name="expression">none</property>
+    <onclick>ActivateWindow(1170)</onclick>
+    <visible>[Skin.HasSetting(SideMenu.EnableOptionsButton) | Skin.String(Home.SideMenuCollapse,Topbar)]</visible>
+</item>

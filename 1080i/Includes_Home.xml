@@ -8,7 +8,8 @@
                 <include>skinvariables-sidemenu-staticitems</include>
             </include>
             <include content="Object_ContentNested" condition="![$PARAM[condition]]">
-                <include>skinvariables-sidemenu-staticbutton</include>
+                <include>skinvariables-sidemenu-staticbutton-primary</include>
+                <include>skinvariables-sidemenu-staticbutton-secondary</include>
             </include>
         </definition>
     </include>
@@ -395,10 +396,12 @@
         <control type="group">
             <visible>!$EXP[Exp_InfoDialogs]</visible>
             <control type="group">
+
                 <include content="Home_Menu_List">
                     <param name="onlist">$PARAM[onlist]</param>
                     <param name="window_id">$PARAM[window_id]</param>
                 </include>
+
             </control>
         </control>
     </include>
