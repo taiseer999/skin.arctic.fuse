@@ -71,6 +71,10 @@
         <onload>RunScript(script.skinvariables,action=buildviews)</onload>
         <onload>ClearProperty(MediaFilterBase)</onload>
         <onload>ClearProperty(MediaFilterWall)</onload>
+
+        <onload condition="!String.IsEmpty(Window(Home).Property(Home.MenuFocus)) + $EXP[Exp_HomeMenu_DontHide]">SetFocus(303,$INFO[Window(Home).Property(Home.MenuFocus)])</onload>
+        <onload>ClearProperty(Home.MenuFocus,Home)</onload>
+
         <onunload>ClearProperty(MediaFilterBase)</onunload>
         <onunload>ClearProperty(MediaFilterWall)</onunload>
     </include>
@@ -127,6 +131,8 @@
     </include>
 
     <variable name="Action_Default_HomeFocus">
+        <value condition="!String.IsEmpty(Window(Home).Property(Home.MenuFocus))">$INFO[Window(Home).Property(Home.MenuFocus)]</value>
+        <value condition="!Window.IsVisible(Home)">1</value>
         <value condition="!String.IsEmpty(Skin.String(Home.DefaultFocus)) + !Skin.String(Home.SideMenuCollapse,Always)">$INFO[Skin.String(Home.DefaultFocus)]</value>
         <value>1</value>
     </variable>
@@ -152,6 +158,9 @@
         <onload condition="Skin.HasSetting(Hub.1109.DisableSubmenu)">SetProperty(Slide.WidgetContainer,True,1109)</onload>
 
         <include>Action_BuildShortcuts_OnLoad</include>
+
+        <onload condition="!String.IsEmpty(Window(Home).Property(Home.MenuFocus)) + $EXP[Exp_HomeMenu_DontHide]">SetFocus(303,$INFO[Window(Home).Property(Home.MenuFocus)])</onload>
+        <onload>ClearProperty(Home.MenuFocus,Home)</onload>
 
         <onunload>CancelAlarm(playtrailer,silent)</onunload>
     </include>
@@ -222,12 +231,14 @@
     </include>
 
     <include name="Action_View_Movement_OnUp">
-        <include content="Action_Widget_Top">
-            <param name="move">False</param>
-            <param name="id">50</param>
-            <param name="search_transition">True</param>
-        </include>
-        <!-- <onup>SetFocus(303,1,absolute)</onup> -->
+        <param name="id">50</param>
+        <definition>
+            <include content="Action_Widget_Top">
+                <param name="move">False</param>
+                <param name="id">$PARAM[id]</param>
+                <param name="search_transition">True</param>
+            </include>
+        </definition>
     </include>
 
     <include name="Action_Widget_End">

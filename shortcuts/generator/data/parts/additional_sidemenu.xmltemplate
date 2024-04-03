@@ -7,5 +7,6 @@
 <property name="widgets_first_id">$NUMBER[$MATH[{widget_group_id} * 1000 + 601]]</property>
 <property name="widgets_saved_id">$INFO[Window(1198).Property(TMDbHelper.$MATH[{widget_group_id} * 1000 + 400].WidgetContainer)]</property>
 <property name="widgets_tmdbh_id">TMDbHelper.$MATH[{widget_group_id} * 1000 + 400].WidgetContainer</property>
+<onclick>SetProperty(Home.MenuFocus,$INFO[Container(303).Position],Home)</onclick>
 <onclick condition="Window.IsVisible(1172)">Dialog.Close(1172,force)</onclick>
 <onclick condition="Window.IsVisible(1172) + Window.IsMedia">ReplaceWindow(Home)</onclick>
