@@ -1515,7 +1515,7 @@
                                 <!-- <label>$INFO[MusicPlayer.Title]</label> -->
                                 <label>$INFO[MusicPlayer.Artist]</label>
                                 <textcolor>panel_fg_100</textcolor>
-                                <font>font_info_black_doublerow</font>
+                                <font>font_title_black</font>
                             </control>
                         </control>
                         <control type="label">

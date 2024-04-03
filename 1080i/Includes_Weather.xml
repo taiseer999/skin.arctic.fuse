@@ -12,8 +12,8 @@
                 <include content="Info_Title_Label">
                     <param name="colordiffuse">main_fg</param>
                     <param name="label">$PARAM[toplabel]</param>
-                    <height>120</height>
-                    <width>480</width>
+                    <param name="height">120</param>
+                    <param name="width">480</param>
                 </include>
 
                 <control type="group">

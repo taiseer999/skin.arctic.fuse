@@ -3,18 +3,65 @@
 
     <include name="Info_Title_Label">
         <param name="label">$VAR[Label_Title_Container]</param>
-        <param name="wrapmultiline">true</param>
+        <param name="wrapmultiline">false</param>
+        <param name="visible">true</param>
+        <param name="width">info_plot_w</param>
+        <param name="height">100%</param>
         <definition>
-            <control type="group">
+            <!-- <control type="group">
                 <nested />
-                <width>info_plot_w</width>
+                <width>$PARAM[width]</width>
+                <height>$PARAM[height]</height>
                 <control type="label">
                     <wrapmultiline>$PARAM[wrapmultiline]</wrapmultiline>
                     <top>5</top>
                     <bottom>5</bottom>
                     <label>$PARAM[label]</label>
                     <textcolor>$PARAM[colordiffuse]_100</textcolor>
-                    <font>font_info_black_doublerow</font>
+                    <font>font_title_black</font>
+                    <right>-40</right>
+                </control>
+            </control> -->
+            <control type="group">
+                <visible>$PARAM[visible]</visible>
+                <width>$PARAM[width]</width>
+                <height>$PARAM[height]</height>
+                <control type="group">
+                    <centertop>20</centertop>
+                    <height>40</height>
+                    <!-- <left>4</left> -->
+                    <control type="image">
+                        <centertop>20</centertop>
+                        <height>32</height>
+                        <width>32</width>
+                        <bordersize>-18</bordersize>
+                        <texture colordiffuse="$VAR[ColorHighlight]">special://skin/extras/icons/kodi.png</texture>
+                    </control>
+                    <control type="image">
+                        <centertop>20</centertop>
+                        <height>32</height>
+                        <width>32</width>
+                        <bordersize>-18</bordersize>
+                        <texture colordiffuse="$VAR[ColorGradient]">special://skin/extras/icons/kodi.png</texture>
+                        <animation effect="fade" end="33" condition="true">Conditional</animation>
+                    </control>
+                    <control type="label">
+                        <left>41</left>
+                        <centertop>21</centertop>
+                        <height>32</height>
+                        <textcolor>$PARAM[colordiffuse]_100</textcolor>
+                        <font>font_logo</font>
+                        <label>KODI</label>
+                    </control>
+                </control>
+                <control type="label">
+                    <wrapmultiline>$PARAM[wrapmultiline]</wrapmultiline>
+                    <height>88</height>
+                    <bottom>0</bottom>
+                    <aligny>center</aligny>
+                    <label>$PARAM[label]</label>
+                    <textcolor>$PARAM[colordiffuse]_100</textcolor>
+                    <font>font_title_black</font>
                     <right>-40</right>
                 </control>
             </control>
@@ -26,8 +73,8 @@
             <include content="Info_Title_Label">
                 <param name="label">$PARAM[label]</param>
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                <height>132</height>
-                <visible>![$PARAM[mainlogo_visible]]</visible>
+                <param name="height">132</param>
+                <param name="visible">![$PARAM[mainlogo_visible]]</param>
             </include>
             <control type="image">
                 <height>132</height>
@@ -60,7 +107,7 @@
                         <param name="label">$PARAM[label]</param>
                         <param name="colordiffuse">$PARAM[colordiffuse]</param>
                         <param name="wrapmultiline">false</param>
-                        <height>42</height>
+                        <param name="height">42</param>
                     </include>
                     <!-- Other -->
                     <include content="Info_Title_Logo" condition="Skin.HasSetting(TMDbHelper.EnableCrop)">

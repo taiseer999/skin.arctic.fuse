@@ -1383,8 +1383,10 @@
     </variable>
 
     <variable name="Label_TitleFallback">
-        <value condition="!String.IsEmpty(Weather.Conditions) + Weather.IsFetched">$INFO[Weather.Temperature]$INFO[Weather.Conditions,[CR],]</value>
-        <value>$INFO[System.Time][CR]$INFO[System.Date(dd mmm yyyy)]</value>
+        <value condition="!String.IsEmpty(Weather.Conditions) + Weather.IsFetched">$INFO[Weather.Temperature]</value>
+        <value>$INFO[System.Time]</value>
+        <!-- <value condition="!String.IsEmpty(Weather.Conditions) + Weather.IsFetched">$INFO[Weather.Temperature]$INFO[Weather.Conditions,[CR],]</value>
+        <value>$INFO[System.Time][CR]$INFO[System.Date(dd mmm yyyy)]</value> -->
     </variable>
 
 </includes>
