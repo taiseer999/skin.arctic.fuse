@@ -1076,7 +1076,7 @@
         <param name="starrating">false</param>
         <definition>
 
-            <control type="grouplist" id="99951">
+            <control type="grouplist">
                 <hitrect x="0" y="0" w="0" h="0" />
                 <height>80</height>
                 <orientation>horizontal</orientation>
@@ -1337,28 +1337,6 @@
 
                 <nested />
             </control>
-
-            <control type="grouplist">
-                <hitrect x="0" y="0" w="0" h="0" />
-                <height>80</height>
-                <orientation>horizontal</orientation>
-                <itemgap>10</itemgap>
-
-                <visible>Integer.IsEqual(Container(99951).NumItems,0)</visible>
-
-                <control type="group">
-                    <width>64</width>
-                    <description>Bumper for info icon</description>
-                </control>
-                <include content="Info_Line_Item">
-                    <param name="label">$LOCALIZE[16018]</param>
-                    <param name="textcolor">$PARAM[colordiffuse]_70</param>
-                </include>
-
-                <nested />
-
-            </control>
-
         </definition>
     </include>
 
