@@ -780,8 +780,7 @@
 
                 <onclick>SetFocus(9099)</onclick>
                 <onclick>SetProperty(SearchTerm,$INFO[Container($PARAM[rowtwo]).ListItem.Label])</onclick>
-                <onclick>RunScript(script.skinvariables,set_editcontrol=9099,window_id=1105,setfocus=9099,text=$INFO[Container($PARAM[rowtwo]).ListItem.Label])</onclick>
-                <onclick>SetFocus($PARAM[rowtwo])</onclick>
+                <onclick>RunScript(script.skinvariables,set_editcontrol=9099,window_id=1105,setfocus=$PARAM[rowtwo],text=$INFO[Container($PARAM[rowtwo]).ListItem.Label])</onclick>
 
                 <itemlayout width="134">
                     <control type="label">
