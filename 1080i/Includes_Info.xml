@@ -41,23 +41,23 @@
                     <height>40</height>
                     <control type="image">
                         <centertop>20</centertop>
-                        <height>32</height>
-                        <width>32</width>
-                        <bordersize>-18</bordersize>
+                        <height>40</height>
+                        <width>40</width>
+                        <bordersize>-8</bordersize>
                         <texture colordiffuse="$VAR[ColorHighlight]">special://skin/extras/icons/kodi.png</texture>
                     </control>
                     <control type="image">
                         <centertop>20</centertop>
-                        <height>32</height>
-                        <width>32</width>
-                        <bordersize>-18</bordersize>
+                        <height>40</height>
+                        <width>40</width>
+                        <bordersize>-8</bordersize>
                         <texture colordiffuse="$VAR[ColorGradient]">special://skin/extras/icons/kodi.png</texture>
                         <animation effect="fade" end="33" condition="true">Conditional</animation>
                     </control>
                     <control type="label">
-                        <left>41</left>
-                        <centertop>21</centertop>
-                        <height>32</height>
+                        <left>46</left>
+                        <centertop>21.4</centertop>
+                        <height>40</height>
                         <textcolor>$PARAM[colordiffuse]_100</textcolor>
                         <font>font_logo</font>
                         <label>KODI</label>
@@ -65,7 +65,7 @@
                 </control>
                 <control type="label">
                     <wrapmultiline>$PARAM[wrapmultiline]</wrapmultiline>
-                    <height>88</height>
+                    <height>90</height>
                     <bottom>0</bottom>
                     <aligny>center</aligny>
                     <label>$PARAM[label]</label>
