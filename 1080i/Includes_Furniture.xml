@@ -76,7 +76,10 @@
                 <include content="Furniture_Gutters">
                     <control type="group">
                         <visible>!Window.IsVisible(1171)</visible>
-                        <include>Animation_Widget_FadeOut</include>
+                        <include content="Animation_Widget_FadeOut">
+                            <param name="condition">$PARAM[condition]</param>
+                            <param name="dim">$PARAM[dim]</param>
+                        </include>
                         <control type="group">
                             <top>10</top>
                             <height>35</height>

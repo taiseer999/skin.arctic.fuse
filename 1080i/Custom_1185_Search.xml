@@ -37,10 +37,12 @@
                             <include content="Furniture_Bottom_WidgetGroups" condition="!Skin.String(Navigation.Global.OnUp,Search)">
                                 <param name="label">$VAR[Label_NextBump]</param>
                                 <param name="icon">special://skin/extras/icons/kodi.png</param>
+                                <param name="dim">[False]</param>
                             </include>
                             <include content="Furniture_Bottom_WidgetGroups" condition="Skin.String(Navigation.Global.OnUp,Search)">
                                 <param name="label">$INFO[Window.Property(PreviousWindow)]</param>
                                 <param name="icon">special://skin/extras/icons/arrow-down.png</param>
+                                <param name="dim">[False]</param>
                             </include>
                         </control>
                     </control>
@@ -86,10 +88,12 @@
                 <include content="Furniture_Bottom_WidgetGroups" condition="!Skin.String(Navigation.Global.OnUp,Search)">
                     <param name="label">$VAR[Label_NextBump]</param>
                     <param name="icon">special://skin/extras/icons/kodi.png</param>
+                    <param name="dim">[False]</param>
                 </include>
                 <include content="Furniture_Bottom_WidgetGroups" condition="Skin.String(Navigation.Global.OnUp,Search)">
                     <param name="label">$INFO[Window.Property(PreviousWindow)]</param>
                     <param name="icon">special://skin/extras/icons/arrow-down.png</param>
+                    <param name="dim">[False]</param>
                 </include>
             </control>
         </include>
