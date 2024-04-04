@@ -175,10 +175,8 @@
                         <include>Search_Filter_Content</include>
                         <onup>9099</onup>
                         <ondown>SetFocus(5098,0,absolute)</ondown>
-                        <onleft condition="$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]">68</onleft>
-                        <!-- <onright condition="$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]">68</onright> -->
-                        <onback condition="$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]">68</onback>
-                        <onback condition="![$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]]">68</onback>
+                        <onleft>68</onleft>
+                        <onback>68</onback>
                     </control>
 
                     <control type="image">
@@ -203,9 +201,8 @@
                         <orientation>vertical</orientation>
                         <onup>9501</onup>
                         <ondown>9099</ondown>
-                        <onleft condition="$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]">68</onleft>
-                        <onback condition="$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]">68</onback>
-                        <onback condition="![$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]]">68</onback>
+                        <onleft>68</onleft>
+                        <onback>68</onback>
                         <onclick>SetFocus(5099,$INFO[Container(5098).ListItem.CurrentItem],absolute)</onclick>
                         <onclick condition="!Integer.IsEqual(Container(5098).NumItems,Container(5098).ListItem.CurrentItem)">Action(Left)</onclick>
                         <onclick>SetProperty(List.Target,$INFO[Container(5099).ListItem.Property(target)])</onclick>

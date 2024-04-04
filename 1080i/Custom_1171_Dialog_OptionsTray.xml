@@ -61,14 +61,14 @@
                             <icon>special://skin/extras/icons/right-left.png</icon>
                             <label>$LOCALIZE[21483]</label>
                             <onclick>Dialog.Close(1171,true)</onclick>
-                            <onclick>AlarmClock(refocus,$VAR[Action_Var_ToMediaFilter],00:00,silent)</onclick>
+                            <onclick>AlarmClock(refocus,SetFocus(64),00:00,silent)</onclick>
                             <visible>Window.IsMedia</visible>
                         </item>
                         <item>
                             <icon>special://skin/extras/icons/binoculars.png</icon>
                             <label>$LOCALIZE[31066]</label>
                             <onclick>Dialog.Close(1171,true)</onclick>
-                            <onclick>AlarmClock(refocus,SetFocus(67),00:00,silent)</onclick>
+                            <onclick>AlarmClock(refocus,SetFocus(64),00:00,silent)</onclick>
                             <visible>Window.IsVisible(1105)</visible>
                         </item>
                     </content>

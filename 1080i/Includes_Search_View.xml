@@ -4,17 +4,24 @@
     <include name="Search_View">
 
         <include content="Object_Hidden_Button">
-            <param name="id">67</param>
+            <param name="id">64</param>
             <onfocus>$VAR[Action_Var_Search_ToMediaFilter]</onfocus>
         </include>
 
         <include content="Object_Hidden_Button">
+            <param name="id">67</param>
+            <onfocus>SetFocus($VAR[Action_View_ContentID])</onfocus>
+            <include condition="Skin.String(Navigation.Global.OnDown,Explore)">Action_View_Explore_OnFocus</include>
+        </include>
+
+        <include content="Object_Hidden_Button">
             <param name="id">68</param>
-            <onfocus>SetProperty(List.Target,$INFO[Container(5099).ListItem.Property(target)])</onfocus>
-            <onfocus condition="String.IsEmpty(Window.Property(MediaFilterWall))">ClearProperty(MediaFilterBase)</onfocus>
-            <onfocus condition="String.IsEmpty(Window.Property(MediaFilterWall))">ClearProperty(MediaFilterWall)</onfocus>
-            <onfocus condition="String.IsEmpty(Window.Property(MediaFilterWall))">SetFocus($VAR[Action_Search_ContentID])</onfocus>
-            <onfocus condition="!String.IsEmpty(Window.Property(MediaFilterWall))">Runscript(script.skinvariables,$VAR[MediaWall_Search_ScriptTypeDef],use_rules,id=$VAR[Action_Search_ContentID],win_prop=WallSlideOut,focus_id=$VAR[Action_Search_ContentID],clear_prop_one=MediaFilterBase,clear_prop_two=MediaFilterWall)</onfocus>
+            <onfocus condition="![$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]]">PreviousMenu</onfocus>
+            <onfocus condition="$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]">SetProperty(List.Target,$INFO[Container(5099).ListItem.Property(target)])</onfocus>
+            <onfocus condition="$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating] + String.IsEmpty(Window.Property(MediaFilterWall))">ClearProperty(MediaFilterBase)</onfocus>
+            <onfocus condition="$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating] + String.IsEmpty(Window.Property(MediaFilterWall))">ClearProperty(MediaFilterWall)</onfocus>
+            <onfocus condition="$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating] + String.IsEmpty(Window.Property(MediaFilterWall))">SetFocus($VAR[Action_Search_ContentID])</onfocus>
+            <onfocus condition="$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating] + !String.IsEmpty(Window.Property(MediaFilterWall))">Runscript(script.skinvariables,$VAR[MediaWall_Search_ScriptTypeDef],use_rules,id=$VAR[Action_Search_ContentID],win_prop=WallSlideOut,focus_id=$VAR[Action_Search_ContentID],clear_prop_one=MediaFilterBase,clear_prop_two=MediaFilterWall)</onfocus>
         </include>
 
         <control type="group">
@@ -137,14 +144,6 @@
         <value>-</value>
     </variable>
 
-    <include name="Search_View_OnDown">
-        <ondown condition="Skin.String(Navigation.Global.OnDown,Search)">SetProperty(CustomSearchTerm,$ESCINFO[Control.GetLabel(9099).index(1)],Home)</ondown>
-        <ondown condition="Skin.String(Navigation.Global.OnDown,Filter)">SetFocus(67)</ondown>
-        <ondown condition="!Skin.String(Navigation.Global.OnDown,Filter) + !Skin.String(Navigation.Global.OnDown,Options)">SetProperty(DiscoverReturn,True)</ondown>
-        <include content="Action_View_Movement_OnDown">
-            <param name="condition">!Skin.String(Navigation.Global.OnDown,Filter)</param>
-        </include>
-    </include>
 
     <include name="Search_View_Widgets_Group">
         <control type="group">
@@ -184,7 +183,7 @@
                         <param name="id">50</param>
                     </include>
 
-                    <include>Search_View_OnDown</include>
+                    <include>Action_View_Movement_OnDown</include>
 
                     <include content="Action_View_Movement_OnLeftRight">
                         <param name="id">50</param>
@@ -203,7 +202,7 @@
                     <include content="Action_View_Movement_OnUp">
                         <param name="id">51</param>
                     </include>
-                    <include>Search_View_OnDown</include>
+                    <include>Action_View_Movement_OnDown</include>
                     <include content="Action_View_Movement_OnLeftRight">
                         <param name="id">51</param>
                         <param name="onback">[Integer.IsEqual(Container(51).CurrentItem,1)]</param>
@@ -220,7 +219,7 @@
                     <include content="Action_View_Movement_OnUp">
                         <param name="id">52</param>
                     </include>
-                    <include>Search_View_OnDown</include>
+                    <include>Action_View_Movement_OnDown</include>
                     <include content="Action_View_Movement_OnLeftRight">
                         <param name="id">52</param>
                         <param name="onback">[Integer.IsEqual(Container(52).CurrentItem,1)]</param>
@@ -315,7 +314,7 @@
             <param name="font">font_mini</param>
             <top>920</top>
             <onup>6000</onup>
-            <include>Search_View_OnDown</include>
+            <include>Action_View_Movement_OnDown</include>
             <visible allowhiddenfocus="true">False</visible>
             <content>
                 <item>
