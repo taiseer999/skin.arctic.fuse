@@ -59,7 +59,7 @@
             <onclick condition="!Skin.HasSetting(Search.DisableDiscover)">SetFocus(8000)</onclick>
 
             <onclick condition="Skin.HasSetting(Search.DisableDiscover)">SetFocus(9099)</onclick>
-            <onclick condition="Skin.HasSetting(Search.DisableDiscover)">RunScript(script.skinvariables,set_editcontrol=9099,window_id=1105,setfocus=9099)</onclick>
+            <onclick condition="Skin.HasSetting(Search.DisableDiscover)">RunScript(script.skinvariables,set_editcontrol=9099,window_id=1105,setfocus=9501)</onclick>
             <onclick condition="Skin.HasSetting(Search.DisableDiscover)">ClearProperty(SearchTerm)</onclick>
             <onclick condition="Skin.HasSetting(Search.DisableDiscover)">ClearProperty(SearchDiscover.SortLabel)</onclick>
             <onclick condition="Skin.HasSetting(Search.DisableDiscover)">ClearProperty(SearchDiscover.FilmSort)</onclick>
@@ -314,6 +314,8 @@
                         <content>
                             <item>
                                 <label>$LOCALIZE[192]</label>
+                                <onclick>SetFocus(9099)</onclick>
+                                <onclick>RunScript(script.skinvariables,set_editcontrol=9099,window_id=1105,setfocus=9501)</onclick>
                                 <onclick>ClearProperty(SearchDiscover.SortLabel)</onclick>
                                 <onclick>ClearProperty(SearchDiscover.FilmSort)</onclick>
                                 <onclick>ClearProperty(SearchDiscover.ShowSort)</onclick>
