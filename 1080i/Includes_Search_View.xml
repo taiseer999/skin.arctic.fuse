@@ -117,11 +117,10 @@
         <control type="group">
             <visible>!$EXP[Exp_InfoDialogs]</visible>
             <control type="group">
-                <visible>![!String.IsEmpty(Window.Property(MediaFilterWall)) | !String.IsEmpty(Window.Property(MediaFilterBase))]</visible>
-                <control type="group">
-                    <visible>[Skin.String(Furniture.BottomLeft.Enable,Library) | Skin.String(Furniture.BottomLeft.Enable,Always)]</visible>
-                    <include>Furniture_Bottom_Left</include>
-                </control>
+                <visible>String.IsEmpty(Window.Property(MediaFilterWall))</visible>
+                <visible>String.IsEmpty(Window.Property(MediaFilterBase))</visible>
+                <visible>!Window.IsVisible(1171)</visible>
+                <include condition="Skin.String(Furniture.BottomLeft.Enable,Library) | Skin.String(Furniture.BottomLeft.Enable,Always)">Furniture_Bottom_Left</include>
                 <include>View_Furniture_Bottom_Group_NextLabel</include>
             </control>
             <include>Furniture_Bottom_Right</include>
