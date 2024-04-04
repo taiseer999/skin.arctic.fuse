@@ -133,17 +133,6 @@
     </include>
 
     <include name="Search_Filter">
-        <control type="button" id="9968">
-            <onclick condition="$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]">SetFocus(68)</onclick>
-            <onclick condition="![$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]]">PreviousMenu</onclick>
-            <onleft>SetFocus(9502)</onleft>
-            <!-- <onright>SetFocus(9502)</onright> -->
-            <onup>SetFocus(9502)</onup>
-            <ondown>SetFocus(9502)</ondown>
-            <texturenofocus />
-            <texturefocus />
-            <visible>!String.IsEmpty(Window.Property(MediaFilterWall)) | !String.IsEmpty(Window.Property(MediaFilterBase))</visible>
-        </control>
         <control type="group">
             <include>Dimension_DialogSideMenu</include>
             <include>Animation_Right</include>
@@ -215,11 +204,11 @@
                         <onup>9501</onup>
                         <ondown>9099</ondown>
                         <onleft condition="$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]">68</onleft>
-                        <!-- <onright condition="$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]">68</onright> -->
                         <onback condition="$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]">68</onback>
                         <onback condition="![$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]]">68</onback>
                         <onclick>SetFocus(5099,$INFO[Container(5098).ListItem.CurrentItem],absolute)</onclick>
                         <onclick condition="!Integer.IsEqual(Container(5098).NumItems,Container(5098).ListItem.CurrentItem)">Action(Left)</onclick>
+                        <onclick>SetProperty(List.Target,$INFO[Container(5099).ListItem.Property(target)])</onclick>
                         <onclick>SetFocus(5098)</onclick>
                         <content>
                             <item>
