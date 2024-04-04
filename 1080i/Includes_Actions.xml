@@ -266,7 +266,9 @@
             <!-- Filter -->
             <ondown condition="$PARAM[condition] + ![$PARAM[move]] + String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Filter)">SetProperty(List.ViewContainer,$INFO[System.CurrentControlId])</ondown>
             <ondown condition="$PARAM[condition] + ![$PARAM[move]] + String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Filter)">SetFocus(330)</ondown>
-            <!-- <ondown condition="$PARAM[condition] + ![$PARAM[move]] + String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Filter)">ActivateWindow(1105)</ondown> -->
+
+            <!-- Discover -->
+            <ondown condition="$PARAM[condition] + ![$PARAM[move]] + String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Discover)">ActivateWindow(1105)</ondown>
 
             <!-- Bump -->
             <ondown condition="$PARAM[condition] + ![$PARAM[move]] + String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Bump)">SetProperty(List.ViewContainer,$INFO[System.CurrentControlId])</ondown>
@@ -553,6 +555,10 @@
 
             <!-- Filter -->
             <ondown condition="$PARAM[condition] + Skin.String(Navigation.Global.OnDown,Filter)">SetFocus(64)</ondown>
+
+            <!-- Discover -->
+            <ondown condition="$PARAM[condition] + Skin.String(Navigation.Global.OnDown,Discover) + !Window.IsVisible(1105)">ActivateWindow(1105)</ondown>
+            <ondown condition="$PARAM[condition] + Skin.String(Navigation.Global.OnDown,Discover) + Window.IsVisible(1105)">SetFocus(64)</ondown>
 
             <!-- Options -->
             <ondown condition="$PARAM[condition] + Skin.String(Navigation.Global.OnDown,Options)">ActivateWindow(1171)</ondown>

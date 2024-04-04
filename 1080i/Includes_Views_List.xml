@@ -220,8 +220,7 @@
 
                         <onright condition="Skin.String(Navigation.Global.OnDown,Options)">ActivateWindow(1171)</onright>
                         <onright condition="Skin.String(Navigation.Global.OnDown,Search)">ActivateWindow(1185)</onright>
-                        <onright condition="Skin.String(Navigation.Global.OnDown,Next Aired Library)">ActivateWindow(1131)</onright>
-                        <onright condition="Skin.String(Navigation.Global.OnDown,Next Aired Trakt)">ActivateWindow(1130)</onright>
+                        <onright condition="Skin.String(Navigation.Global.OnDown,Discover)">ActivateWindow(1105)</onright>
                         <onright condition="Skin.String(Navigation.Global.OnDown,Filter)">SetFocus(64)</onright>
                         <onright condition="Skin.String(Navigation.Global.OnDown,Explore)">SetFocus(67)</onright>
                         <onright condition="Skin.String(Navigation.Global.OnDown,Bump)">SetFocus(332)</onright>
@@ -231,8 +230,6 @@
                             <param name="onback">True</param>
                             <param name="onleft">50</param>
                         </include>
-                        <!-- <onright>SetFocus(65)</onright> -->
-                        <!-- <onright>SetFocus(64)</onright> -->
 
                         <focusposition>1</focusposition>
                         <movement>2</movement>
