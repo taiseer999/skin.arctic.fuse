@@ -16,6 +16,7 @@
 
     <variable name="Image_NextMedia">
         <value condition="Skin.String(Navigation.Global.OnDown,Bump)">special://skin/extras/icons/kodi.png</value>
+        <value condition="Skin.String(Navigation.Global.OnDown,Filter) + ![Window.IsMedia | Window.IsVisible(1105)]">special://skin/extras/icons/kodi.png</value>
         <value condition="$EXP[Exp_View_56] | $EXP[Exp_View_500] | $EXP[Exp_View_516]">special://skin/extras/icons/arrow-right.png</value>
         <value>special://skin/extras/icons/arrow-down.png</value>
     </variable>
