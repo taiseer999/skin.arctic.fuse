@@ -654,52 +654,52 @@
                 <include content="Info_Line_Item">
                     <param name="label">$INFO[VideoPlayer.ChannelName]</param>
                     <param name="visible">!String.IsEmpty(VideoPlayer.ChannelName)</param>
-                    <param name="textcolor">panel_fg_90</param>
+                    <param name="textcolor">panel_fg_70</param>
                 </include>
 
                 <!-- Season / Episode -->
                 <include content="Info_Line_Item">
                     <param name="label">$INFO[VideoPlayer.Season,,x]$INFO[VideoPlayer.Episode,0,]</param>
                     <param name="visible">VideoPlayer.Content(episodes) + !String.IsEmpty(VideoPlayer.Episode) + Integer.IsLess(VideoPlayer.Episode,10)</param>
-                    <param name="textcolor">panel_fg_90</param>
+                    <param name="textcolor">panel_fg_70</param>
                 </include>
                 <include content="Info_Line_Item">
                     <param name="label">$INFO[VideoPlayer.Season,,x]$INFO[VideoPlayer.Episode,,]</param>
                     <param name="visible">VideoPlayer.Content(episodes) + !String.IsEmpty(VideoPlayer.Episode) + !Integer.IsLess(VideoPlayer.Episode,10)</param>
-                    <param name="textcolor">panel_fg_90</param>
+                    <param name="textcolor">panel_fg_70</param>
                 </include>
 
                 <!-- Year / Premiered -->
                 <include content="Info_Line_Item">
                     <param name="label">$INFO[VideoPlayer.Year]</param>
                     <param name="visible">!String.IsEmpty(VideoPlayer.Year) + [String.IsEmpty(VideoPlayer.Premiered) | VideoPlayer.Content(movies)]</param>
-                    <param name="textcolor">panel_fg_90</param>
+                    <param name="textcolor">panel_fg_70</param>
                 </include>
                 <include content="Info_Line_Item">
                     <param name="label">$INFO[VideoPlayer.Premiered]</param>
                     <param name="visible">!String.IsEmpty(VideoPlayer.Premiered) + !VideoPlayer.Content(movies)</param>
-                    <param name="textcolor">panel_fg_90</param>
+                    <param name="textcolor">panel_fg_70</param>
                 </include>
 
                 <!-- MPAA -->
                 <include content="Info_Line_Item">
                     <param name="label">$INFO[VideoPlayer.MPAA]</param>
                     <param name="visible">!String.IsEmpty(VideoPlayer.MPAA)</param>
-                    <param name="textcolor">panel_fg_90</param>
+                    <param name="textcolor">panel_fg_70</param>
                 </include>
 
                 <!-- Genres -->
                 <include content="Info_Line_Item">
                     <param name="label">$INFO[Window(Home).Property(TMDbHelper.Player.Genre.1.Name)]</param>
                     <param name="visible">String.IsEmpty(VideoPlayer.Property(Genre.1.Name)) + !String.IsEmpty(Window(Home).Property(TMDbHelper.Player.Genre.1.Name))</param>
-                    <param name="textcolor">panel_fg_90</param>
+                    <param name="textcolor">panel_fg_70</param>
                 </include>
 
                 <!-- Ends -->
                 <include content="Info_Line_Item">
                     <param name="label">$INFO[Player.FinishTime,$LOCALIZE[31184] ,]</param>
                     <param name="visible">!String.IsEmpty(Player.FinishTime)</param>
-                    <param name="textcolor">panel_fg_90</param>
+                    <param name="textcolor">panel_fg_70</param>
                 </include>
 
             </control>
