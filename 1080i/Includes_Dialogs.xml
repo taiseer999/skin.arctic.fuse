@@ -338,7 +338,7 @@
         <param name="left">view_pad</param>
         <param name="top">view_pad</param>
         <param name="height">view_bar</param>
-        <param name="right">view_pad</param>
+        <param name="right">160</param>
         <definition>
             <control type="group">
                 <right>$PARAM[right]</right>

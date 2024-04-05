@@ -36,6 +36,7 @@
 
     <include file="Includes_DialogInfo.xml" />
     <include file="Includes_DialogSelect.xml" />
+    <include file="Includes_DialogContextMenu.xml" />
     <include file="Includes_Furniture.xml" />
     <include file="Includes_Items.xml" />
     <include file="Includes_Textures.xml" />
