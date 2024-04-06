@@ -66,6 +66,7 @@
         <onload>ClearProperty(BlurImage.Original,Home)</onload>
         <onload>ClearProperty(TMDbHelper.Image.Override,Home)</onload>
         <onload>ClearProperty(ReviewsActive)</onload>
+        <onload>AlarmClock(Refocus,SetFocus(4001),00:00,silent)</onload>
     </include>
 
     <include name="DialogInfo_List_Movement">
