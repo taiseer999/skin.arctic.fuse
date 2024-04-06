@@ -1196,7 +1196,6 @@
     </variable>
 
     <variable name="Label_Header_Main">
-        <!-- <value>$INFO[System.Time]</value> -->
         <value condition="$EXP[Exp_InfoDialogs] | [Window.IsVisible(1190) | Window.IsVisible(1191)]">$LOCALIZE[19033]</value>
         <value condition="$EXP[Exp_SettingsDialogs]">$VAR[Label_Header_Mini]</value>
         <value condition="Window.IsVisible(videoplaylist)">$LOCALIZE[559]</value>
@@ -1206,7 +1205,6 @@
         <value condition="Window.IsVisible(MyMusicPlaylistEditor.xml)">$LOCALIZE[10503]</value>
         <value condition="Window.IsMedia + String.IsEqual(Container.FolderName,Skin Variables) + !String.IsEmpty(Window.Property(MediaFilter.BaseDir.Name))">$LOCALIZE[587]</value>
         <value condition="Window.IsMedia + !String.IsEmpty(Control.GetLabel(19).index(1))">$LOCALIZE[587]: $INFO[Control.GetLabel(19).index(1)]</value>
-        <!-- <value condition="[Window.IsVisible(10025) | Window.IsVisible(10502)] + !String.IsEmpty(Container.PluginName)">$INFO[System.AddonTitle(Container.PluginName)]</value> -->
         <value condition="[Window.IsVisible(10025) | Window.IsVisible(10502)] + [Container.Content(addons) | !String.IsEmpty(Container.PluginName)]">$LOCALIZE[24000]</value>
         <value condition="[Window.IsVisible(10025) | Window.IsVisible(10502)] + Container.Content(files)">$LOCALIZE[744]</value>
         <value condition="[Window.IsVisible(10025) | Window.IsVisible(10502)]">$LOCALIZE[14022]</value>
@@ -1221,6 +1219,7 @@
         <value condition="$EXP[Exp_Window_IsHub] + !String.IsEmpty(Window.Property(Hub.Header))">$INFO[Window.Property(Hub.Header)]</value>
         <value condition="!String.IsEmpty(Skin.String(Home.Label))">$INFO[Skin.String(Home.Label)]</value>
         <value condition="Window.IsVisible(Home) + !Skin.HasSetting(Home.SideMenu.DisableIndicator) + $EXP[Exp_HomeMenu_DontHide] + !String.IsEmpty(Container(303).ListItem.Label)">$INFO[Container(303).ListItem.Label]</value>
+        <value condition="Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Topbar) + !String.IsEmpty(Container(370).ListItem.Label)">$INFO[Container(370).ListItem.Label]</value>
         <value>$LOCALIZE[10000]</value>
     </variable>
 

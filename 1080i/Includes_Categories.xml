@@ -22,99 +22,6 @@
         <width>1000</width>
     </include>
 
-    <include name="Categories_Selector_Fake">
-        <param name="id">302</param>
-        <param name="font">font_mini</param>
-        <param name="top">0</param>
-        <param name="height">240</param>
-        <param name="left">240</param>
-        <param name="textoffsety">20</param>
-        <definition>
-            <control type="group">
-                <top>$PARAM[top]</top>
-                <left>$PARAM[left]</left>
-                <height>$PARAM[height]</height>
-                <include>Hub_Categories_FadeIn</include>
-                <animation effect="slide" start="0" end="-80" time="400" tween="quadratic" easing="out" condition="!Container($PARAM[id]).OnNext" reversible="false">Conditional</animation>
-                <animation effect="slide" start="0" end="80" time="400" tween="quadratic" easing="out" condition="!Container($PARAM[id]).OnPrevious" reversible="false">Conditional</animation>
-                <control type="grouplist">
-                    <left>10</left>
-                    <right>50</right>
-                    <height>hub_categorieswidget_h</height>
-                    <top>-100</top>
-                    <orientation>horizontal</orientation>
-                    <!-- <align>center</align> -->
-                    <control type="togglebutton">
-                        <width>auto</width>
-                        <height>80</height>
-                        <centertop>50%</centertop>
-                        <include>Texture_Highlight_ToggleButton_FakeFocus</include>
-                        <usealttexture>Control.HasFocus($PARAM[id])</usealttexture>
-                        <font>$PARAM[font]</font>
-                        <textoffsety>$PARAM[textoffsety]</textoffsety>
-                        <aligny>top</aligny>
-                        <label>$INFO[Container($PARAM[id]).ListItem(0).Label]</label>
-                        <altlabel>[COLOR=$VAR[ColorSelected]]$INFO[Container($PARAM[id]).ListItem(0).Label][/COLOR]</altlabel>
-                        <onclick>SetFocus($PARAM[id],0)</onclick>
-                        <onclick>Action(Select)</onclick>
-                    </control>
-                    <control type="button">
-                        <width>auto</width>
-                        <height>80</height>
-                        <centertop>50%</centertop>
-                        <texturenofocus />
-                        <font>$PARAM[font]</font>
-                        <textoffsety>$PARAM[textoffsety]</textoffsety>
-                        <aligny>top</aligny>
-                        <label>$INFO[Container($PARAM[id]).ListItem(1).Label]</label>
-                        <onclick>SetFocus($PARAM[id],1)</onclick>
-                        <onclick>Action(Select)</onclick>
-                        <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,1)</visible>
-                    </control>
-                    <control type="button">
-                        <width>auto</width>
-                        <height>80</height>
-                        <centertop>50%</centertop>
-                        <texturenofocus />
-                        <font>$PARAM[font]</font>
-                        <textoffsety>$PARAM[textoffsety]</textoffsety>
-                        <aligny>top</aligny>
-                        <label>$INFO[Container($PARAM[id]).ListItem(2).Label]</label>
-                        <onclick>SetFocus($PARAM[id],2)</onclick>
-                        <onclick>Action(Select)</onclick>
-                        <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,2)</visible>
-                    </control>
-                    <control type="button">
-                        <width>auto</width>
-                        <height>80</height>
-                        <centertop>50%</centertop>
-                        <texturenofocus />
-                        <font>$PARAM[font]</font>
-                        <textoffsety>$PARAM[textoffsety]</textoffsety>
-                        <aligny>top</aligny>
-                        <label>$INFO[Container($PARAM[id]).ListItem(3).Label]</label>
-                        <onclick>SetFocus($PARAM[id],3)</onclick>
-                        <onclick>Action(Select)</onclick>
-                        <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,3)</visible>
-                    </control>
-                    <control type="button">
-                        <width>auto</width>
-                        <height>80</height>
-                        <centertop>50%</centertop>
-                        <texturenofocus />
-                        <font>$PARAM[font]</font>
-                        <textoffsety>$PARAM[textoffsety]</textoffsety>
-                        <aligny>top</aligny>
-                        <label>$INFO[Container($PARAM[id]).ListItem(4).Label]</label>
-                        <onclick>SetFocus($PARAM[id],4)</onclick>
-                        <onclick>Action(Select)</onclick>
-                        <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,4)</visible>
-                    </control>
-                </control>
-            </control>
-        </definition>
-    </include>
-
     <include name="Categories_Selector">
         <param name="id">300</param>
         <param name="window_id" />
@@ -162,6 +69,111 @@
                 <top>hub_categorieswidget_t</top>
             </include>
 
+        </definition>
+    </include>
+
+    <include name="Categories_Selector_Fake">
+        <param name="id">302</param>
+        <param name="header">$INFO[Container(300).ListItem(0).Label]</param>
+        <definition>
+            <control type="grouplist">
+                <height>256</height>
+                <centertop>100</centertop>
+                <left>120</left>
+                <orientation>horizontal</orientation>
+                <itemgap>-80</itemgap>
+                <control type="button">
+                    <width>auto</width>
+                    <height>256</height>
+                    <centertop>50%</centertop>
+                    <font>font_midi_black</font>
+                    <textcolor>main_fg_100</textcolor>
+                    <label>$PARAM[header]</label>
+                    <textoffsetx>80</textoffsetx>
+                    <texturenofocus />
+                </control>
+                <control type="grouplist">
+                    <height>256</height>
+                    <orientation>horizontal</orientation>
+                    <itemgap>-80</itemgap>
+                    <include>Hub_Categories_FadeIn</include>
+                    <animation effect="slide" start="0" end="-60" time="400" tween="quadratic" easing="out" condition="!Container($PARAM[id]).OnNext" reversible="false">Conditional</animation>
+                    <animation effect="slide" start="0" end="60" time="400" tween="quadratic" easing="out" condition="!Container($PARAM[id]).OnPrevious" reversible="false">Conditional</animation>
+                    <!-- <control type="button">
+                        <width>auto</width>
+                        <height>256</height>
+                        <centertop>50%</centertop>
+                        <texturenofocus />
+                        <font>font_mini</font>
+                        <label>$INFO[Container($PARAM[id]).ListItem(-1).Label]</label>
+                        <textoffsetx>80</textoffsetx>
+                        <onclick>SetFocus($PARAM[id],2)</onclick>
+                        <onclick>Action(Select)</onclick>
+                        <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,1)</visible>
+                    </control> -->
+                    <control type="togglebutton">
+                        <width>auto</width>
+                        <height>256</height>
+                        <centertop>50%</centertop>
+                        <include>Texture_MainMenu_Highlight_ToggleButton_FakeFocus</include>
+                        <usealttexture>Control.HasFocus($PARAM[id])</usealttexture>
+                        <font>font_mini</font>
+                        <label>$INFO[Container($PARAM[id]).ListItem(0).Label]</label>
+                        <textoffsetx>80</textoffsetx>
+                        <altlabel>[COLOR=$VAR[ColorSelected]]$INFO[Container($PARAM[id]).ListItem(0).Label][/COLOR]</altlabel>
+                        <onclick>SetFocus($PARAM[id],0)</onclick>
+                        <onclick>Action(Select)</onclick>
+                    </control>
+                    <control type="button">
+                        <width>auto</width>
+                        <height>256</height>
+                        <centertop>50%</centertop>
+                        <texturenofocus />
+                        <font>font_mini</font>
+                        <label>$INFO[Container($PARAM[id]).ListItem(1).Label]</label>
+                        <textoffsetx>80</textoffsetx>
+                        <onclick>SetFocus($PARAM[id],1)</onclick>
+                        <onclick>Action(Select)</onclick>
+                        <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,1)</visible>
+                    </control>
+                    <control type="button">
+                        <width>auto</width>
+                        <height>256</height>
+                        <centertop>50%</centertop>
+                        <texturenofocus />
+                        <font>font_mini</font>
+                        <label>$INFO[Container($PARAM[id]).ListItem(2).Label]</label>
+                        <textoffsetx>80</textoffsetx>
+                        <onclick>SetFocus($PARAM[id],2)</onclick>
+                        <onclick>Action(Select)</onclick>
+                        <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,2)</visible>
+                    </control>
+                    <!-- <control type="button">
+                        <width>auto</width>
+                        <height>256</height>
+                        <centertop>50%</centertop>
+                        <texturenofocus />
+                        <font>font_mini</font>
+                        <label>$INFO[Container($PARAM[id]).ListItem(3).Label]</label>
+                        <textoffsetx>80</textoffsetx>
+                        <onclick>SetFocus($PARAM[id],3)</onclick>
+                        <onclick>Action(Select)</onclick>
+                        <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,3)</visible>
+                    </control> -->
+                    <!-- <control type="button">
+                        <width>auto</width>
+                        <height>256</height>
+                        <centertop>50%</centertop>
+                        <texturenofocus />
+                        <font>font_mini</font>
+                        <label>$INFO[Container($PARAM[id]).ListItem(4).Label]</label>
+                        <textoffsetx>80</textoffsetx>
+                        <onclick>SetFocus($PARAM[id],4)</onclick>
+                        <onclick>Action(Select)</onclick>
+                        <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,4)</visible>
+                    </control> -->
+                </control>
+            </control>
         </definition>
     </include>
 </includes>

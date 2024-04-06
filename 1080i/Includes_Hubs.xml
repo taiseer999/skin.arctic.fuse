@@ -80,7 +80,7 @@
 
                 <include>Hub_Categories_FadeIn</include>
 
-                <include content="Animation_ConditionalFade">
+                <include content="Animation_ConditionalFade" condition="Skin.HasSetting(Background.EnableSpotlightFanart)">
                     <param name="condition">true</param>
                 </include>
 
@@ -98,11 +98,12 @@
             <height>hub_submenuwidget_h</height>
             <left>view_button_left</left>
             <orientation>vertical</orientation>
+            <include content="Animation_ConditionalFade" condition="Skin.HasSetting(Background.EnableSpotlightFanart)">
+                <param name="condition">![Integer.IsEqual(Window.Property(Slide.WidgetContainer),302) | Control.HasFocus(302)]</param>
+            </include>
             <include condition="Skin.HasSetting(Background.EnableSpotlightFanart)">Hub_WindowTransition_CategoriesSpotlight_OnCategories</include>
             <include condition="!Skin.HasSetting(Background.EnableSpotlightFanart)">Hub_WindowTransition_CategoriesSpotlight_OnWidgets</include>
             <nested />
-
-            <include>Categories_Selector_Fake</include>
 
         </control>
     </include>
@@ -246,8 +247,30 @@
                 <include>Animation_View_WindowChange</include>
                 <include>Hub_Widgets_Group_Furniture</include>
                 <include>Animation_Group_Bumper</include>
-                <include condition="![Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Topbar)]">Furniture_Top</include>
-                <include condition="Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Topbar)">Hub_TopBar_Categories</include>
+
+                <control type="group">
+                    <visible>[Integer.IsEqual(Window.Property(Slide.WidgetContainer),300) | Control.HasFocus(300)]</visible>
+                    <include content="Categories_Selector_Fake" condition="Skin.HasSetting(Background.EnableSpotlightFanart)">
+                        <param name="id">300</param>
+                        <param name="header">[CAPITALIZE]$VAR[Label_Header_Main][/CAPITALIZE]</param>
+                    </include>
+                </control>
+
+                <control type="group">
+                    <visible>[Integer.IsEqual(Window.Property(Slide.WidgetContainer),302) | Control.HasFocus(302)]</visible>
+                    <include content="Categories_Selector_Fake" condition="Skin.HasSetting(Background.EnableSpotlightFanart)">
+                        <param name="id">302</param>
+                        <param name="header">[CAPITALIZE]$INFO[Container(300).ListItem.Label][/CAPITALIZE]</param>
+                    </include>
+                </control>
+
+                <control type="group">
+                    <include content="Animation_ConditionalFade" condition="Skin.HasSetting(Background.EnableSpotlightFanart)">
+                        <param name="condition">$EXP[Exp_Hubs_Categories_IsFocus]</param>
+                    </include>
+                    <include condition="![Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Topbar)]">Furniture_Top</include>
+                    <include condition="Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Topbar)">Hub_TopBar_Categories</include>
+                </control>
             </control>
 
             <nested />
@@ -417,7 +440,8 @@
         <include content="Hub_Widgets_Infopanel">
             <include content="Info_Panel">
                 <param name="container">Container.</param>
-                <include content="Animation_Fade_In" condition="Skin.HasSetting(Background.EnableSpotlightFanart)">
+                <param name="visible">!Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)</param>
+                <!-- <include content="Animation_Fade_In" condition="Skin.HasSetting(Background.EnableSpotlightFanart)">
                     <param name="condition">![Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) | $EXP[Exp_Hubs_Categories_IsFocus]]</param>
                     <param name="delay">200</param>
                 </include>
@@ -426,7 +450,7 @@
                 </include>
                 <include content="Animation_ConditionalFade" condition="!Skin.HasSetting(Background.EnableSpotlightFanart)">
                     <param name="condition">Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)</param>
-                </include>
+                </include> -->
             </include>
         </include>
     </include>
@@ -494,17 +518,15 @@
                 </include>
                 <animation effect="fade" start="100" end="30" condition="true">Conditional</animation>
             </include>
-            <include content="Info_Viewline" condition="Skin.HasSetting(Background.EnableSpotlightFanart)">
-                <param name="label">$LOCALIZE[31105]</param>
-                <param name="custom_icon_condition">true</param>
-                <param name="custom_icon">special://skin/extras/icons/arrow-up.png</param>
-                <top>560</top>
-                <include content="Hub_Categories_FadeIn">
-                    <param name="no_fanart_condition">!String.IsEmpty(Window.Property(Slide.WidgetContainer))</param>
-                </include>
-            </include>
+            <!-- <include content="Info_Viewline" condition="!Skin.HasSetting(Background.EnableSpotlightFanart)">
+                <param name="label">$LOCALIZE[31150]</param>
+                <top>520</top>
+            </include> -->
 
             <control type="group">
+                <include content="Animation_ConditionalFade" condition="Skin.HasSetting(Background.EnableSpotlightFanart)">
+                    <param name="condition">![Integer.IsEqual(Window.Property(Slide.WidgetContainer),300) | Control.HasFocus(300)]</param>
+                </include>
                 <include>Hub_Categories_FadeIn</include>
                 <include content="Categories_Selector">
                     <param name="window_id">$PARAM[window_id]</param>
@@ -531,21 +553,13 @@
                     <onfocus condition="!Skin.HasSetting(Background.EnableSpotlightFanart)">SetProperty(TMDbHelper.WidgetContainer,301,$PARAM[window_id])</onfocus>
                     <onfocus condition="Skin.HasSetting(Background.EnableSpotlightFanart)">SetProperty(TMDbHelper.WidgetContainer,$INFO[Container(300).ListItem.Property(item)]601,$PARAM[window_id])</onfocus>
 
-                    <include content="Animation_ConditionalFade">
+                    <include content="Animation_ConditionalFade" condition="Skin.HasSetting(Background.EnableSpotlightFanart)">
                         <param name="condition">true</param>
                     </include>
 
                     <content>
                         <include>skinvariables-$PARAM[categories]-staticitems</include>
                     </content>
-                </include>
-
-                <include content="Categories_Selector_Fake">
-                    <param name="id">300</param>
-                    <param name="font">font_main_black</param>
-                    <param name="top">hub_categorieswidget_t</param>
-                    <param name="left">160</param>
-                    <param name="textoffsety">16</param>
                 </include>
 
             </control>

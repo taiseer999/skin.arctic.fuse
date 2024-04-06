@@ -37,6 +37,12 @@
 <include name="Texture_Scrollbar_SliderBar_V">
     <texturesliderbar border="4">special://profile/addon_data/script.texturemaker/{skindir}/scrollv_v.png</texturesliderbar>
 </include>
+<include name="Texture_MainMenu_Highlight_ToggleButton_FakeFocus">
+    <texturenofocus />
+    <texturefocus border="80">special://profile/addon_data/script.texturemaker/{skindir}/menumain_h.png</texturefocus>
+    <alttexturefocus border="80">special://profile/addon_data/script.texturemaker/{skindir}/menumain_h.png</alttexturefocus>
+    <alttexturenofocus border="80">special://profile/addon_data/script.texturemaker/{skindir}/menumain_h.png</alttexturenofocus>
+</include>
 <include name="Texture_MainMenu_Highlight_H">
     <texture border="80">special://profile/addon_data/script.texturemaker/{skindir}/menumain_h.png</texture>
 </include>
