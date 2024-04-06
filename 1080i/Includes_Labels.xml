@@ -1211,6 +1211,55 @@
         <value condition="!String.IsEmpty(Container(99950).ListItem.Premiered)">$INFO[Container(99950).ListItem.Premiered]</value>
     </variable>
 
+    <variable name="Label_Header_Main_Home">
+        <!-- <value condition="!Skin.HasSetting(Hub.Home.DisableSubmenu) + !String.IsEmpty(Container(300).ListItem.Label) + !Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) + !Integer.IsEqual(Window.Property(Slide.WidgetContainer),300)">$INFO[Container(300).ListItem.Label]</value> -->
+        <value condition="!Skin.HasSetting(Home.SideMenu.DisableIndicator) + $EXP[Exp_HomeMenu_DontHide] + !String.IsEmpty(Container(303).ListItem.Label)">$INFO[Container(303).ListItem.Label]</value>
+        <value condition="!Skin.HasSetting(Home.SideMenu.DisableIndicator) + Skin.String(Home.SideMenuCollapse,Topbar) + !String.IsEmpty(Container(370).ListItem.Label)">$INFO[Container(370).ListItem.Label]</value>
+        <value condition="!String.IsEmpty(Skin.String(Home.Label))">$INFO[Skin.String(Home.Label)]</value>
+        <value>$LOCALIZE[10000]</value>
+    </variable>
+
+    <variable name="Label_Header_Main_1101">
+        <!-- <value condition="!Skin.HasSetting(Hub.1101.DisableSubmenu) + !String.IsEmpty(Container(300).ListItem.Label) + !Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) + !Integer.IsEqual(Window.Property(Slide.WidgetContainer),300)">$INFO[Container(300).ListItem.Label]</value> -->
+        <value condition="!String.IsEmpty(Window.Property(Hub.Header))">$INFO[Window.Property(Hub.Header)]</value>
+        <value>$LOCALIZE[31026]</value>
+    </variable>
+    <variable name="Label_Header_Main_1102">
+        <!-- <value condition="!Skin.HasSetting(Hub.1102.DisableSubmenu) + !String.IsEmpty(Container(300).ListItem.Label) + !Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) + !Integer.IsEqual(Window.Property(Slide.WidgetContainer),300)">$INFO[Container(300).ListItem.Label]</value> -->
+        <value condition="!String.IsEmpty(Window.Property(Hub.Header))">$INFO[Window.Property(Hub.Header)]</value>
+        <value>$LOCALIZE[31026]</value>
+    </variable>
+    <variable name="Label_Header_Main_1103">
+        <!-- <value condition="!Skin.HasSetting(Hub.1103.DisableSubmenu) + !String.IsEmpty(Container(300).ListItem.Label) + !Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) + !Integer.IsEqual(Window.Property(Slide.WidgetContainer),300)">$INFO[Container(300).ListItem.Label]</value> -->
+        <value condition="!String.IsEmpty(Window.Property(Hub.Header))">$INFO[Window.Property(Hub.Header)]</value>
+        <value>$LOCALIZE[31026]</value>
+    </variable>
+    <variable name="Label_Header_Main_1104">
+        <!-- <value condition="!Skin.HasSetting(Hub.1104.DisableSubmenu) + !String.IsEmpty(Container(300).ListItem.Label) + !Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) + !Integer.IsEqual(Window.Property(Slide.WidgetContainer),300)">$INFO[Container(300).ListItem.Label]</value> -->
+        <value condition="!String.IsEmpty(Window.Property(Hub.Header))">$INFO[Window.Property(Hub.Header)]</value>
+        <value>$LOCALIZE[31026]</value>
+    </variable>
+    <variable name="Label_Header_Main_1106">
+        <!-- <value condition="!Skin.HasSetting(Hub.1106.DisableSubmenu) + !String.IsEmpty(Container(300).ListItem.Label) + !Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) + !Integer.IsEqual(Window.Property(Slide.WidgetContainer),300)">$INFO[Container(300).ListItem.Label]</value> -->
+        <value condition="!String.IsEmpty(Window.Property(Hub.Header))">$INFO[Window.Property(Hub.Header)]</value>
+        <value>$LOCALIZE[31026]</value>
+    </variable>
+    <variable name="Label_Header_Main_1107">
+        <!-- <value condition="!Skin.HasSetting(Hub.1107.DisableSubmenu) + !String.IsEmpty(Container(300).ListItem.Label) + !Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) + !Integer.IsEqual(Window.Property(Slide.WidgetContainer),300)">$INFO[Container(300).ListItem.Label]</value> -->
+        <value condition="!String.IsEmpty(Window.Property(Hub.Header))">$INFO[Window.Property(Hub.Header)]</value>
+        <value>$LOCALIZE[31026]</value>
+    </variable>
+    <variable name="Label_Header_Main_1108">
+        <!-- <value condition="!Skin.HasSetting(Hub.1108.DisableSubmenu) + !String.IsEmpty(Container(300).ListItem.Label) + !Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) + !Integer.IsEqual(Window.Property(Slide.WidgetContainer),300)">$INFO[Container(300).ListItem.Label]</value> -->
+        <value condition="!String.IsEmpty(Window.Property(Hub.Header))">$INFO[Window.Property(Hub.Header)]</value>
+        <value>$LOCALIZE[31026]</value>
+    </variable>
+    <variable name="Label_Header_Main_1109">
+        <!-- <value condition="!Skin.HasSetting(Hub.1109.DisableSubmenu) + !String.IsEmpty(Container(300).ListItem.Label) + !Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) + !Integer.IsEqual(Window.Property(Slide.WidgetContainer),300)">$INFO[Container(300).ListItem.Label]</value> -->
+        <value condition="!String.IsEmpty(Window.Property(Hub.Header))">$INFO[Window.Property(Hub.Header)]</value>
+        <value>$LOCALIZE[31026]</value>
+    </variable>
+
     <variable name="Label_Header_Main">
         <value condition="$EXP[Exp_InfoDialogs] | [Window.IsVisible(1190) | Window.IsVisible(1191)]">$LOCALIZE[19033]</value>
         <value condition="$EXP[Exp_SettingsDialogs]">$VAR[Label_Header_Mini]</value>
@@ -1232,11 +1281,15 @@
         <value condition="Window.IsVisible(1105)">$LOCALIZE[31066]</value>
         <value condition="Window.IsVisible(pictures)">$LOCALIZE[10002]</value>
         <value condition="Window.IsVisible(favouritesbrowser)">$LOCALIZE[1036]</value>
-        <value condition="$EXP[Exp_Window_IsHub] + !String.IsEmpty(Window.Property(Hub.Header))">$INFO[Window.Property(Hub.Header)]</value>
-        <value condition="!String.IsEmpty(Skin.String(Home.Label))">$INFO[Skin.String(Home.Label)]</value>
-        <value condition="Window.IsVisible(Home) + !Skin.HasSetting(Home.SideMenu.DisableIndicator) + $EXP[Exp_HomeMenu_DontHide] + !String.IsEmpty(Container(303).ListItem.Label)">$INFO[Container(303).ListItem.Label]</value>
-        <value condition="Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Topbar) + !String.IsEmpty(Container(370).ListItem.Label)">$INFO[Container(370).ListItem.Label]</value>
-        <value>$LOCALIZE[10000]</value>
+        <value condition="Window.IsVisible(Home)">$VAR[Label_Header_Main_Home]</value>
+        <value condition="Window.IsVisible(1101)">$VAR[Label_Header_Main_1101]</value>
+        <value condition="Window.IsVisible(1102)">$VAR[Label_Header_Main_1102]</value>
+        <value condition="Window.IsVisible(1103)">$VAR[Label_Header_Main_1103]</value>
+        <value condition="Window.IsVisible(1104)">$VAR[Label_Header_Main_1104]</value>
+        <value condition="Window.IsVisible(1106)">$VAR[Label_Header_Main_1106]</value>
+        <value condition="Window.IsVisible(1107)">$VAR[Label_Header_Main_1107]</value>
+        <value condition="Window.IsVisible(1108)">$VAR[Label_Header_Main_1108]</value>
+        <value condition="Window.IsVisible(1109)">$VAR[Label_Header_Main_1109]</value>
     </variable>
 
     <variable name="Label_Section_Main">

@@ -76,6 +76,22 @@
         <param name="id">302</param>
         <param name="header">$INFO[Container(300).ListItem(0).Label]</param>
         <definition>
+            <!-- <control type="group">
+                <height>30</height>
+                <centertop>100</centertop>
+                <left>200</left>
+                <control type="label">
+                    <aligny>center</aligny>
+                    <width>auto</width>
+                    <font>font_tiny</font>
+                    <label>$INFO[System.Time]</label>
+                    <param name="textcolor">main_fg_70</param>
+                    <param name="shadowcolor">main_bg_12</param>
+                    <bottom>-30</bottom>
+                    <height>50</height>
+                    <visible>!Skin.HasSetting(Furniture.EnableClock) + Skin.HasSetting(Furniture.EnableClock.TopLeft)</visible>
+                </control>
+            </control> -->
             <control type="grouplist">
                 <height>256</height>
                 <centertop>100</centertop>
@@ -83,6 +99,7 @@
                 <orientation>horizontal</orientation>
                 <itemgap>-80</itemgap>
                 <control type="button">
+                    <!-- <animation effect="slide" start="0" end="0,-15" condition="!Skin.HasSetting(Furniture.EnableClock) + Skin.HasSetting(Furniture.EnableClock.TopLeft)">Conditional</animation> -->
                     <width>auto</width>
                     <height>256</height>
                     <centertop>50%</centertop>
