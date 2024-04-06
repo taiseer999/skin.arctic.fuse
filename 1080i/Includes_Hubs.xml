@@ -248,79 +248,22 @@
                 <include>Hub_Widgets_Group_Furniture</include>
                 <include>Animation_Group_Bumper</include>
 
+                <include condition="Skin.HasSetting(Background.EnableSpotlightFanart)">Hub_Categories_Selector_Fake</include>
+
                 <control type="group">
-                    <height>30</height>
-                    <centertop>100</centertop>
-                    <left>200</left>
-                    <control type="label">
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <width>auto</width>
-                        <font>font_tiny</font>
-                        <label>$INFO[System.Time]</label>
-                        <param name="textcolor">main_fg_70</param>
-                        <param name="shadowcolor">main_bg_12</param>
-                        <bottom>-30</bottom>
-                        <height>50</height>
-                        <visible>!Skin.HasSetting(Furniture.EnableClock) + Skin.HasSetting(Furniture.EnableClock.TopLeft)</visible>
-                    </control>
-                </control>
-                <control type="grouplist">
-                    <height>256</height>
-                    <centertop>100</centertop>
+                    <centertop>120</centertop>
                     <left>120</left>
-                    <orientation>horizontal</orientation>
-                    <itemgap>0</itemgap>
-                    <control type="button">
-                        <animation effect="slide" start="0" end="0,-15" condition="!Skin.HasSetting(Furniture.EnableClock) + Skin.HasSetting(Furniture.EnableClock.TopLeft)">Conditional</animation>
-                        <align>left</align>
-                        <width>auto</width>
-                        <height>256</height>
-                        <centertop>50%</centertop>
-                        <font>font_midi_black</font>
-                        <textcolor>main_fg_100</textcolor>
-                        <label>[CAPITALIZE]$VAR[Label_Header_Main][/CAPITALIZE]</label>
-                        <textoffsetx>80</textoffsetx>
-                        <texturenofocus />
-                        <texturefocus />
-                    </control>
-
-                    <control type="group">
-                        <left>-80</left>
-                        <width>1080</width>
-                        <include content="Animation_ConditionalFade">
-                            <param name="condition">[Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) | ![Integer.IsEqual(Window.Property(Slide.WidgetContainer),300) | Control.HasFocus(300) | Integer.IsEqual(Container(302).NumItems,0)] | [Integer.IsEqual(Window.Property(Slide.WidgetContainer),302) | Control.HasFocus(302)]]</param>
-                        </include>
-                        <include content="Categories_Selector_Fake" condition="Skin.HasSetting(Background.EnableSpotlightFanart)">
-                            <param name="id">300</param>
-                            <param name="clock">!$EXP[Exp_Hubs_Categories_IsFocus]</param>
-                        </include>
-                    </control>
-
-                    <control type="group">
-                        <left>-1080</left>
-                        <width>1080</width>
-                        <include content="Animation_ConditionalFade">
-                            <param name="condition">[Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) | [Integer.IsEqual(Window.Property(Slide.WidgetContainer),300) | Control.HasFocus(300) | Integer.IsEqual(Container(302).NumItems,0)]]</param>
-                        </include>
-                        <include content="Categories_Selector_Fake" condition="Skin.HasSetting(Background.EnableSpotlightFanart)">
-                            <param name="id">302</param>
-                            <param name="clock">!$EXP[Exp_Hubs_Categories_IsFocus]</param>
-                        </include>
-                    </control>
-
-                    <control type="group">
-                        <left>-1080</left>
-                        <width>1080</width>
-                        <include condition="Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Topbar)">Hub_TopBar_Categories</include>
-                    </control>
+                    <height>200</height>
+                    <!-- <left>-1080</left> -->
+                    <width>1080</width>
+                    <include condition="Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Topbar)">Hub_TopBar_Categories</include>
                 </control>
 
                 <control type="group">
-                    <include content="Animation_ConditionalFade" condition="Skin.HasSetting(Background.EnableSpotlightFanart)">
-                        <param name="condition">!Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)</param>
+                    <include content="Animation_ConditionalFade">
+                        <param name="condition">[$EXP[Exp_Hubs_Categories_IsFocus] + Skin.HasSetting(Background.EnableSpotlightFanart)] | Control.HasFocus(370)</param>
                     </include>
-                    <include condition="![Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Topbar)]">Furniture_Top</include>
+                    <include>Furniture_Top</include>
                 </control>
             </control>
 
@@ -337,26 +280,83 @@
         </definition>
     </include>
 
+    <include name="Hub_Categories_Selector_Fake">
+        <control type="group">
+            <visible allowhiddenfocus="true">$EXP[Exp_Hubs_Categories_IsFocus] | Control.HasFocus(370)</visible>
+            <control type="group">
+                <height>30</height>
+                <centertop>100</centertop>
+                <left>200</left>
+                <!-- <control type="label">
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <width>auto</width>
+                    <font>font_tiny</font>
+                    <label>$INFO[System.Time]</label>
+                    <param name="textcolor">main_fg_70</param>
+                    <param name="shadowcolor">main_bg_12</param>
+                    <bottom>-30</bottom>
+                    <height>50</height>
+                    <visible>!Skin.HasSetting(Furniture.EnableClock) + Skin.HasSetting(Furniture.EnableClock.TopLeft)</visible>
+                </control> -->
+            </control>
+            <control type="grouplist">
+                <height>256</height>
+                <centertop>100</centertop>
+                <left>120</left>
+                <orientation>horizontal</orientation>
+                <itemgap>0</itemgap>
+                <control type="button">
+                    <!-- <animation effect="slide" start="0" end="0,-15" condition="!Skin.HasSetting(Furniture.EnableClock) + Skin.HasSetting(Furniture.EnableClock.TopLeft)">Conditional</animation> -->
+                    <align>left</align>
+                    <width>auto</width>
+                    <height>256</height>
+                    <centertop>50%</centertop>
+                    <font>font_midi_black</font>
+                    <textcolor>main_fg_100</textcolor>
+                    <label>[CAPITALIZE]$VAR[Label_Header_Main][/CAPITALIZE]</label>
+                    <textoffsetx>80</textoffsetx>
+                    <texturenofocus />
+                    <texturefocus />
+                </control>
+
+                <control type="group">
+                    <left>-80</left>
+                    <width>1080</width>
+                    <include content="Animation_ConditionalFade">
+                        <param name="condition">[Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) | ![Integer.IsEqual(Window.Property(Slide.WidgetContainer),300) | Control.HasFocus(300) | Integer.IsEqual(Container(302).NumItems,0)] | [Integer.IsEqual(Window.Property(Slide.WidgetContainer),302) | Control.HasFocus(302)]]</param>
+                    </include>
+                    <include content="Categories_Selector_Fake" condition="Skin.HasSetting(Background.EnableSpotlightFanart)">
+                        <param name="id">300</param>
+                    </include>
+                </control>
+
+                <control type="group">
+                    <left>-1080</left>
+                    <width>1080</width>
+                    <include content="Animation_ConditionalFade">
+                        <param name="condition">[Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) | [Integer.IsEqual(Window.Property(Slide.WidgetContainer),300) | Control.HasFocus(300) | Integer.IsEqual(Container(302).NumItems,0)]]</param>
+                    </include>
+                    <include content="Categories_Selector_Fake" condition="Skin.HasSetting(Background.EnableSpotlightFanart)">
+                        <param name="id">302</param>
+                    </include>
+                </control>
+            </control>
+        </control>
+    </include>
+
     <include name="Hub_TopBar_Categories">
         <control type="group">
             <include content="Animation_Fade_In">
                 <param name="type">WindowOpen</param>
-                <param name="condition">[Control.HasFocus(370) | Control.HasFocus(333) | Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)]</param>
+                <param name="condition">[Control.HasFocus(370) | Control.HasFocus(333)]</param>
             </include>
             <include content="Animation_Fade_Out">
                 <param name="type">WindowClose</param>
-                <param name="condition">[Control.HasFocus(370) | Control.HasFocus(333) | Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)]</param>
+                <param name="condition">[Control.HasFocus(370) | Control.HasFocus(333)]</param>
             </include>
             <control type="list" id="370">
-                <visible allowhiddenfocus="true">Control.HasFocus(370) | Control.HasFocus(333) | Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)</visible>
-
-                <!-- <include content="Animation_Fade_In">
-                    <param name="type">Visible</param>
-                </include>
-                <include content="Animation_Fade_Out">
-                    <param name="type">Hidden</param>
-                </include> -->
-
+                <visible allowhiddenfocus="true">Control.HasFocus(370) | Control.HasFocus(333)</visible>
 
                 <include content="Home_Menu_List_OnUp_Bump" condition="!Skin.String(Navigation.Global.OnUp,Search)">
                     <param name="id">370</param>
@@ -368,13 +368,9 @@
                     <param name="property">ReverseTransition</param>
                 </include>
 
-
                 <ondown>SetFocus(303,0,absolute)</ondown>
 
                 <include>Home_Menu_List_OnBackInfo</include>
-
-                <top>50</top>
-                <left>-20</left>
                 <height>200</height>
                 <width>440</width>
                 <orientation>horizontal</orientation>
@@ -390,42 +386,6 @@
                 <content>
                     <include>skinvariables-sidemenu-staticitems</include>
                 </content>
-            </control>
-            <control type="group">
-                <top>80</top>
-                <left>160</left>
-                <height>40</height>
-                <width>420</width>
-                <control type="image">
-                    <texture colordiffuse="main_fg_30">special://skin/extras/icons/angle-left.png</texture>
-                    <height>40</height>
-                    <width>40</width>
-                    <left>-40</left>
-                    <centertop>50%</centertop>
-                    <visible>Container(370).HasPrevious</visible>
-                    <visible>Control.HasFocus(370)</visible>
-                    <include content="Animation_Fade_In">
-                        <param name="type">Visible</param>
-                    </include>
-                    <include content="Animation_Fade_Out">
-                        <param name="type">Hidden</param>
-                    </include>
-                </control>
-                <control type="image">
-                    <texture colordiffuse="main_fg_30" flipx="true">special://skin/extras/icons/angle-left.png</texture>
-                    <height>40</height>
-                    <width>40</width>
-                    <right>-40</right>
-                    <centertop>50%</centertop>
-                    <visible>Container(370).HasNext</visible>
-                    <visible>Control.HasFocus(370)</visible>
-                    <include content="Animation_Fade_In">
-                        <param name="type">Visible</param>
-                    </include>
-                    <include content="Animation_Fade_Out">
-                        <param name="type">Hidden</param>
-                    </include>
-                </control>
             </control>
         </control>
     </include>
