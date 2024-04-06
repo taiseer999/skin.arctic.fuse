@@ -249,24 +249,31 @@
                 <include>Animation_Group_Bumper</include>
 
                 <control type="group">
-                    <visible>[Integer.IsEqual(Window.Property(Slide.WidgetContainer),300) | Control.HasFocus(300)]</visible>
+                    <include content="Animation_ConditionalFade">
+                        <param name="condition">[Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) | ![Integer.IsEqual(Window.Property(Slide.WidgetContainer),300) | Control.HasFocus(300) | Integer.IsEqual(Container(302).NumItems,0)] | [Integer.IsEqual(Window.Property(Slide.WidgetContainer),302) | Control.HasFocus(302)]]</param>
+                    </include>
                     <include content="Categories_Selector_Fake" condition="Skin.HasSetting(Background.EnableSpotlightFanart)">
                         <param name="id">300</param>
                         <param name="header">[CAPITALIZE]$VAR[Label_Header_Main][/CAPITALIZE]</param>
+                        <param name="clock">!$EXP[Exp_Hubs_Categories_IsFocus]</param>
                     </include>
                 </control>
 
                 <control type="group">
-                    <visible>[Integer.IsEqual(Window.Property(Slide.WidgetContainer),302) | Control.HasFocus(302)]</visible>
+                    <include content="Animation_ConditionalFade">
+                        <param name="condition">[Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) | [Integer.IsEqual(Window.Property(Slide.WidgetContainer),300) | Control.HasFocus(300) | Integer.IsEqual(Container(302).NumItems,0)]]</param>
+                    </include>
                     <include content="Categories_Selector_Fake" condition="Skin.HasSetting(Background.EnableSpotlightFanart)">
                         <param name="id">302</param>
-                        <param name="header">[CAPITALIZE]$INFO[Container(300).ListItem.Label][/CAPITALIZE]</param>
+                        <param name="header">[CAPITALIZE]$VAR[Label_Header_Main][/CAPITALIZE]</param>
+                        <param name="clock">!$EXP[Exp_Hubs_Categories_IsFocus]</param>
+                        <!-- <param name="header">[CAPITALIZE]$INFO[Container(300).ListItem.Label][/CAPITALIZE]</param> -->
                     </include>
                 </control>
 
                 <control type="group">
                     <include content="Animation_ConditionalFade" condition="Skin.HasSetting(Background.EnableSpotlightFanart)">
-                        <param name="condition">$EXP[Exp_Hubs_Categories_IsFocus]</param>
+                        <param name="condition">!Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)</param>
                     </include>
                     <include condition="![Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Topbar)]">Furniture_Top</include>
                     <include condition="Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Topbar)">Hub_TopBar_Categories</include>
