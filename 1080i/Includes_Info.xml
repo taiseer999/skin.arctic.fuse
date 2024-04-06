@@ -830,6 +830,7 @@
         <param name="library_condition">false</param>
         <param name="custom_icon_condition">false</param>
         <param name="custom_label_condition">false</param>
+        <param name="label_fallback" />
         <definition>
 
             <control type="group">
@@ -843,7 +844,7 @@
                         <include content="Object_TextColor" condition="!Skin.HasSetting(Furniture.ViewLineMonochrome)">
                             <param name="textcolor">$VAR[ColorHighlight]</param>
                         </include>
-                        <label>$PARAM[label]</label>
+                        <label fallback="$PARAM[label_fallback]">$PARAM[label]</label>
                         <visible>$PARAM[primary_visible]</visible>
                     </include>
 
@@ -889,7 +890,7 @@
                         <aligny>center</aligny>
                         <textcolor>$VAR[ColorGradient]</textcolor>
                         <font>font_main_black</font>
-                        <label>$PARAM[label]</label>
+                        <label fallback="$PARAM[label_fallback]">$PARAM[label]</label>
                         <width>auto</width>
                         <height>35</height>
                         <visible>$PARAM[primary_visible]</visible>

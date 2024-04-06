@@ -9,6 +9,7 @@
             <value>$MATH[{grouplist_item_x} * 1000 + 600 + {enum_x} - 1]</value>
         </rule>
     </rules>
+    <value name="widget_busy_isupdating">True</value>
     <value name="widget_id">$MATH[{grouplist_item_x} * 1000 + 600 + {enum_x}]</value>
     <value name="widget_group_id">$MATH[{grouplist_item_x} * 1000 + 700 + {enum_x}]</value>
     <value name="widget_selector_id">$MATH[{grouplist_item_x} * 1000 + 419]</value>

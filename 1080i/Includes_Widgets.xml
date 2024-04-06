@@ -20,6 +20,7 @@
                     <param name="item_condition">true</param>
                     <param name="item_count">$INFO[Container($PARAM[id]).NumItems]</param>
                     <param name="item_updating">[Container($PARAM[id]).IsUpdating | $PARAM[busy_visible]]</param>
+                    <param name="label_fallback">31282</param>
                     <top>20</top>
                     <left>0</left>
                     <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating | $PARAM[busy_visible]</visible>
@@ -30,6 +31,7 @@
                     <param name="item_condition">true</param>
                     <param name="item_count">$INFO[Container($PARAM[id]).NumItems]</param>
                     <param name="item_updating">[Container($PARAM[id]).IsUpdating | $PARAM[busy_visible]]</param>
+                    <param name="label_fallback">31282</param>
                     <top>20</top>
                     <left>0</left>
                     <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating | $PARAM[busy_visible]</visible>
@@ -554,7 +556,7 @@
                 <param name="altvisible">$PARAM[altvisible]</param>
                 <param name="detailed">$PARAM[detailed]</param>
                 <param name="busy_isupdating">$PARAM[busy_isupdating]</param>
-                <param name="busy_visible">[Integer.IsEqual(Container($PARAM[id]).NumItems,0) | Integer.IsEqual(Container($PARAM[id]).NumItems,1)]</param>
+                <param name="busy_visible">[Integer.IsEqual(Container($PARAM[id]).NumItems,0)]</param>
                 <param name="transition_include">$PARAM[transition_include]</param>
                 <param name="transition_hidden">$PARAM[transition_hidden]</param>
                 <param name="shortstack_id">$PARAM[shortstack_id]</param>
