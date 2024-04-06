@@ -44,30 +44,30 @@
         ],
         "widget_folderpath": [
             {
-                "rules": ["!String.IsEmpty(Container(302).ListItem.Property(widget_path)) + [!String.IsEmpty(Container(300).ListItem.Property(use_as_widget)) | {force_widget}]"],
+                "rules": ["!String.IsEmpty(Container(302).ListItem.Property(widget_path)) + [!String.IsEmpty(Container(300).ListItem.Property(use_as_widget))]"],
                 "value": "{widget_path_302}"
             },
             {
-                "rules": ["String.IsEmpty(Container(302).ListItem.Property(widget_path)) + !String.IsEmpty(Container(302).ListItem.Property(path)) + !String.IsEmpty(Container(302).ListItem.Property(target)) + [!String.IsEmpty(Container(300).ListItem.Property(use_as_widget)) | {force_widget}]"],
+                "rules": ["String.IsEmpty(Container(302).ListItem.Property(widget_path)) + !String.IsEmpty(Container(302).ListItem.Property(path)) + !String.IsEmpty(Container(302).ListItem.Property(target)) + [!String.IsEmpty(Container(300).ListItem.Property(use_as_widget))]"],
                 "value": "{widget_list_302}"
             },
             {
-                "rules": ["String.IsEmpty(Container(302).ListItem.Property(widget_path)) + String.IsEmpty(Container(302).ListItem.Property(path)) + !String.IsEmpty(Container(302).ListItem.FolderPath) + Container(302).ListItem.IsFolder + [!String.IsEmpty(Container(300).ListItem.Property(use_as_widget)) | {force_widget}]"],
+                "rules": ["String.IsEmpty(Container(302).ListItem.Property(widget_path)) + String.IsEmpty(Container(302).ListItem.Property(path)) + !String.IsEmpty(Container(302).ListItem.FolderPath) + Container(302).ListItem.IsFolder + [!String.IsEmpty(Container(300).ListItem.Property(use_as_widget))]"],
                 "value": "{widget_folderpath_302}"
             },
             ""
         ],
         "widget_label": [
             {
-                "rules": ["!String.IsEmpty(Container(302).ListItem.Property(widget_path)) + [!String.IsEmpty(Container(300).ListItem.Property(use_as_widget)) | {force_widget}]"],
+                "rules": ["!String.IsEmpty(Container(302).ListItem.Property(widget_path)) + [!String.IsEmpty(Container(300).ListItem.Property(use_as_widget))]"],
                 "value": "{widget_label_302}"
             },
             {
-                "rules": ["String.IsEmpty(Container(302).ListItem.Property(widget_path)) + !String.IsEmpty(Container(302).ListItem.Property(path)) + !String.IsEmpty(Container(302).ListItem.Property(target)) + [!String.IsEmpty(Container(300).ListItem.Property(use_as_widget)) | {force_widget}]"],
+                "rules": ["String.IsEmpty(Container(302).ListItem.Property(widget_path)) + !String.IsEmpty(Container(302).ListItem.Property(path)) + !String.IsEmpty(Container(302).ListItem.Property(target)) + [!String.IsEmpty(Container(300).ListItem.Property(use_as_widget))]"],
                 "value": "{widget_label_302}"
             },
             {
-                "rules": ["String.IsEmpty(Container(302).ListItem.Property(widget_path)) + String.IsEmpty(Container(302).ListItem.Property(path)) + !String.IsEmpty(Container(302).ListItem.FolderPath) + Container(302).ListItem.IsFolder + [!String.IsEmpty(Container(300).ListItem.Property(use_as_widget)) | {force_widget}]"],
+                "rules": ["String.IsEmpty(Container(302).ListItem.Property(widget_path)) + String.IsEmpty(Container(302).ListItem.Property(path)) + !String.IsEmpty(Container(302).ListItem.FolderPath) + Container(302).ListItem.IsFolder + [!String.IsEmpty(Container(300).ListItem.Property(use_as_widget))]"],
                 "value": "{widget_label_302}"
             },
             ""
@@ -88,7 +88,7 @@
             "rules": ["Container(302).IsUpdating"],
             "value": [
                 "sleep=0.8",
-                "RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-specialfolderpath.json,use_rules,condition={condition},prefix={prefix},force_widget={force_widget})"
+                "RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-specialfolderpath.json,use_rules,condition={condition},prefix={prefix})"
             ]
         },
         "SetProperty({prefix}SpecialFolderPath,{widget_folderpath})",

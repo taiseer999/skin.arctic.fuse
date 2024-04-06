@@ -66,8 +66,8 @@
                 <height>240</height>
                 <onup>300</onup>
                 <ondown>$PARAM[ondown]</ondown>
-                <onfocus condition="String.IsEmpty(Container(300).ListItem.Property(use_as_widget)) | !Skin.HasSetting(Slide.WidgetContainer)">SetProperty(TMDbHelper.WidgetContainer,301,$PARAM[window_id])</onfocus>
-                <onfocus condition="!String.IsEmpty(Container(300).ListItem.Property(use_as_widget)) + Skin.HasSetting(Slide.WidgetContainer)">SetProperty(TMDbHelper.WidgetContainer,$INFO[Container(300).ListItem.Property(item)]601,$PARAM[window_id])</onfocus>
+                <onfocus condition="!Skin.HasSetting(Slide.WidgetContainer)">SetProperty(TMDbHelper.WidgetContainer,301,$PARAM[window_id])</onfocus>
+                <onfocus condition="Skin.HasSetting(Slide.WidgetContainer)">SetProperty(TMDbHelper.WidgetContainer,$INFO[Container(300).ListItem.Property(item)]601,$PARAM[window_id])</onfocus>
 
                 <include content="Action_View_Movement_OnLeftRight">
                     <param name="id">$PARAM[id]</param>
@@ -501,6 +501,7 @@
                 <param name="hitrect_h">80</param>
                 <param name="shorten">True</param>
                 <param name="hidden_button_prefix">Item.$INFO[Container(300).ListItem.Property(item)]302.</param>
+                <param name="hidden_button">List_ButtonMenu_Row_HiddenButton_Home_Categories</param>
                 <param name="slide">True</param>
 
                 <include content="Action_View_Movement_OnLeftRight">
@@ -511,7 +512,8 @@
 
                 <onup>311</onup>
                 <ondown>302</ondown>
-                <onfocus>SetProperty(TMDbHelper.WidgetContainer,301,$PARAM[window_id])</onfocus>
+                <onfocus condition="!Skin.HasSetting(Slide.WidgetContainer)">SetProperty(TMDbHelper.WidgetContainer,301,$PARAM[window_id])</onfocus>
+                <onfocus condition="Skin.HasSetting(Slide.WidgetContainer)">SetProperty(TMDbHelper.WidgetContainer,$INFO[Container(300).ListItem.Property(item)]601,$PARAM[window_id])</onfocus>
 
                 <content>
                     <include>skinvariables-$PARAM[categories]-staticitems</include>

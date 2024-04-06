@@ -48,7 +48,6 @@
                 <param name="backing">true</param>
                 <param name="hidden_button">$PARAM[hidden_button]</param>
                 <param name="hidden_button_prefix">$PARAM[hidden_button_prefix]</param>
-                <param name="hidden_button_force_widget">$PARAM[hidden_button_force_widget]</param>
                 <preloaditems>0</preloaditems>
 
                 <hitrect x="$PARAM[hitrect_x]" y="$PARAM[hitrect_y]" w="$PARAM[hitrect_w]" h="$PARAM[hitrect_h]" />
