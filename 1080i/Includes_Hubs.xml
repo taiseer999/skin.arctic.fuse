@@ -518,10 +518,6 @@
                 </include>
                 <animation effect="fade" start="100" end="30" condition="true">Conditional</animation>
             </include>
-            <!-- <include content="Info_Viewline" condition="!Skin.HasSetting(Background.EnableSpotlightFanart)">
-                <param name="label">$LOCALIZE[31150]</param>
-                <top>520</top>
-            </include> -->
 
             <control type="group">
                 <include content="Animation_ConditionalFade" condition="Skin.HasSetting(Background.EnableSpotlightFanart)">

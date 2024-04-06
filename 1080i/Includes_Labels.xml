@@ -260,6 +260,22 @@
         <value>$LOCALIZE[584]</value>
     </variable>
 
+    <variable name="Label_Spotlight_Name">
+        <value condition="!String.IsEmpty(Container(300).ListItem.Property(spotlight_path)) + !String.IsEmpty(Container(300).ListItem.Property(spotlight_label))">$INFO[Container(300).ListItem.Property(spotlight_label)]</value>
+        <value condition="!String.IsEmpty(Container(370).ListItem.Property(spotlight_path)) + !String.IsEmpty(Container(370).ListItem.Property(spotlight_label))">$INFO[Container(370).ListItem.Property(spotlight_label)]</value>
+        <value condition="!String.IsEmpty(Container(303).ListItem.Property(spotlight_path)) + !String.IsEmpty(Container(303).ListItem.Property(spotlight_label))">$INFO[Container(303).ListItem.Property(spotlight_label)]</value>
+        <value condition="Window.IsVisible(Home) + !String.IsEmpty(Skin.String(Hub.Home.Spotlight.Label))">$INFO[Skin.String(Hub.Home.Spotlight.Label)]</value>
+        <value condition="Window.IsVisible(1101) + !String.IsEmpty(Skin.String(Hub.1101.Spotlight.Label))">$INFO[Skin.String(Hub.1101.Spotlight.Label)]</value>
+        <value condition="Window.IsVisible(1102) + !String.IsEmpty(Skin.String(Hub.1102.Spotlight.Label))">$INFO[Skin.String(Hub.1102.Spotlight.Label)]</value>
+        <value condition="Window.IsVisible(1103) + !String.IsEmpty(Skin.String(Hub.1103.Spotlight.Label))">$INFO[Skin.String(Hub.1103.Spotlight.Label)]</value>
+        <value condition="Window.IsVisible(1104) + !String.IsEmpty(Skin.String(Hub.1104.Spotlight.Label))">$INFO[Skin.String(Hub.1104.Spotlight.Label)]</value>
+        <value condition="Window.IsVisible(1106) + !String.IsEmpty(Skin.String(Hub.1106.Spotlight.Label))">$INFO[Skin.String(Hub.1106.Spotlight.Label)]</value>
+        <value condition="Window.IsVisible(1107) + !String.IsEmpty(Skin.String(Hub.1107.Spotlight.Label))">$INFO[Skin.String(Hub.1107.Spotlight.Label)]</value>
+        <value condition="Window.IsVisible(1108) + !String.IsEmpty(Skin.String(Hub.1108.Spotlight.Label))">$INFO[Skin.String(Hub.1108.Spotlight.Label)]</value>
+        <value condition="Window.IsVisible(1109) + !String.IsEmpty(Skin.String(Hub.1109.Spotlight.Label))">$INFO[Skin.String(Hub.1109.Spotlight.Label)]</value>
+        <value>$LOCALIZE[31105]</value>
+    </variable>
+
     <variable name="Label_Shortcut_HubSpotlight_Window_Path">
         <value condition="!String.IsEmpty(Container(300).ListItem.Property(spotlight_path))">$INFO[Container(300).ListItem.Property(spotlight_path)]</value>
         <value condition="!String.IsEmpty(Container(303).ListItem.Property(spotlight_path)) + String.IsEqual(Window.Property(categories_menu),menu=homemenu)">$INFO[Container(303).ListItem.Property(spotlight_path)]</value>
