@@ -114,6 +114,9 @@
         <param name="visible">True</param>
         <definition>
             <control type="group" id="304">
+                <include content="Object_Top" condition="Skin.HasSetting(Background.EnableSpotlightFanart)">
+                    <param name="top">hub_spotlight_fanart_t</param>
+                </include>
                 <top>hub_spotlight_t</top>
                 <height>hub_spotlight_h</height>
 
