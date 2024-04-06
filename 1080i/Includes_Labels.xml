@@ -1250,6 +1250,9 @@
         <value condition="Window.IsVisible(10025)">$LOCALIZE[14236]</value>
         <value condition="Window.IsVisible(10502)">$LOCALIZE[14237]</value>
         <value condition="Window.IsVisible(pictures)">$LOCALIZE[10002]</value>
+        <value condition="Window.IsVisible(favouritesbrowser)">$LOCALIZE[1036]</value>
+
+
         <value condition="!String.IsEmpty(Skin.String(Home.Label))">$INFO[Skin.String(Home.Label)]</value>
         <value condition="Window.IsVisible(Home) + Skin.HasSetting(Hub.Home.DisableSubmenu) + !String.IsEmpty(Container(303).ListItem.Label)">$INFO[Container(303).ListItem.Label]</value>
         <value>$LOCALIZE[10000]</value>
