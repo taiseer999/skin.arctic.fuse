@@ -35,7 +35,7 @@
                 <param name="grouplistid">99952</param>
                 <param name="visible">Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)</param>
             </include>
-            <include condition="Skin.HasSetting(Slide.WidgetContainer)">Spotlight_Animation</include>
+            <include condition="Skin.HasSetting(Background.EnableSpotlightFanart)">Spotlight_Animation</include>
         </include>
     </include>
 
@@ -118,8 +118,8 @@
                 <height>hub_spotlight_h</height>
 
                 <!-- Animation for Slides -->
-                <include condition="Skin.HasSetting(Slide.WidgetContainer)">Spotlight_Animation</include>
-                <include content="Animation_Fade_In" condition="!Skin.HasSetting(Slide.WidgetContainer)">
+                <include condition="Skin.HasSetting(Background.EnableSpotlightFanart)">Spotlight_Animation</include>
+                <include content="Animation_Fade_In" condition="!Skin.HasSetting(Background.EnableSpotlightFanart)">
                     <param name="condition">Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)</param>
                     <param name="delay">200</param>
                 </include>
