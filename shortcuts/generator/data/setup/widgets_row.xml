@@ -96,6 +96,10 @@
             <value>{item_target}</value>
         </rule>
         <rule>
+            <condition>{item_path}&lt;&lt;pvr://</condition>
+            <value>tvguide</value>
+        </rule>
+        <rule>
             <condition>True</condition>
             <value>videos</value>
         </rule>

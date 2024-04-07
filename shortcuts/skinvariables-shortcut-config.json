@@ -801,6 +801,13 @@
             "link": "true"
         },
         {
+            "name": "Grouped Channels",
+            "icon": "DefaultAddonPVRClient.png",
+            "node": "tvchannels",
+            "path": "pvr://channels/tv/",
+            "link": "true"
+        },
+        {
             "name": "Active Recordings",
             "icon": "DefaultAddonPVRClient.png",
             "node": "tvrecordings",
