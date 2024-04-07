@@ -282,6 +282,18 @@
         <value>$VAR[Label_Shortcut_HubSpotlight_Path]</value>
     </variable>
 
+    <variable name="Label_Shortcut_HubSpotlight_Label">
+        <value condition="String.IsEqual(Window.Property(hub_prefix),Home)">$INFO[Skin.String(Hub.Home.Spotlight.Label)]</value>
+        <value condition="String.IsEqual(Window.Property(hub_prefix),1101)">$INFO[Skin.String(Hub.1101.Spotlight.Label)]</value>
+        <value condition="String.IsEqual(Window.Property(hub_prefix),1102)">$INFO[Skin.String(Hub.1102.Spotlight.Label)]</value>
+        <value condition="String.IsEqual(Window.Property(hub_prefix),1103)">$INFO[Skin.String(Hub.1103.Spotlight.Label)]</value>
+        <value condition="String.IsEqual(Window.Property(hub_prefix),1104)">$INFO[Skin.String(Hub.1104.Spotlight.Label)]</value>
+        <value condition="String.IsEqual(Window.Property(hub_prefix),1106)">$INFO[Skin.String(Hub.1106.Spotlight.Label)]</value>
+        <value condition="String.IsEqual(Window.Property(hub_prefix),1107)">$INFO[Skin.String(Hub.1107.Spotlight.Label)]</value>
+        <value condition="String.IsEqual(Window.Property(hub_prefix),1108)">$INFO[Skin.String(Hub.1108.Spotlight.Label)]</value>
+        <value condition="String.IsEqual(Window.Property(hub_prefix),1109)">$INFO[Skin.String(Hub.1109.Spotlight.Label)]</value>
+    </variable>
+
     <variable name="Label_Shortcut_HubSpotlight_Path">
         <value condition="String.IsEqual(Window.Property(hub_prefix),Home)">$INFO[Skin.String(Hub.Home.Spotlight.Path)]</value>
         <value condition="String.IsEqual(Window.Property(hub_prefix),1101)">$INFO[Skin.String(Hub.1101.Spotlight.Path)]</value>
