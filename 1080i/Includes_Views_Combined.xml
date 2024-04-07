@@ -255,7 +255,7 @@
         <definition>
             <control type="group">
                 <visible>$PARAM[visible]</visible>
-                <animation effect="fade" start="100" end="30" time="200" condition="!Control.HasFocus($PARAM[id])">Conditional</animation>
+                <!-- <animation effect="fade" start="100" end="30" time="200" condition="!Control.HasFocus($PARAM[id])">Conditional</animation> -->
                 <control type="group">
                     <centerbottom>100</centerbottom>
                     <height>40</height>
@@ -296,6 +296,7 @@
                         <left>-80</left>
                         <width>1080</width>
                         <include content="Categories_Selector_Fake">
+                            <param name="visible_five">true</param>
                             <param name="id">$PARAM[id]</param>
                         </include>
                     </control>
@@ -341,8 +342,10 @@
                     <param name="onback">[Integer.IsEqual(Container($PARAM[id]2).CurrentItem,1)]</param>
                     <param name="backid">63</param>
                 </include>
-                <onleft>$PARAM[id]2</onleft>
-                <onright>$PARAM[id]2</onright>
+                <!-- <onleft>$PARAM[id]2</onleft>
+                <onright>$PARAM[id]2</onright> -->
+                <onleft>332</onleft>
+                <onright>332</onright>
                 <top>920</top>
                 <onup>$PARAM[id]3</onup>
                 <pagecontrol>65</pagecontrol>
