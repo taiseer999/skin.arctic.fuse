@@ -246,6 +246,62 @@
             </control>
         </definition>
     </include>
+
+    <include name="View_Combined_List_Horz_Fake">
+        <param name="label">[CAPITALIZE]$INFO[Container.Content][/CAPITALIZE]</param>
+        <param name="visible">true</param>
+        <param name="id" />
+        <param name="groupid" />
+        <definition>
+            <control type="group">
+                <visible>$PARAM[visible]</visible>
+                <animation effect="fade" start="100" end="30" time="200" condition="!Control.HasFocus($PARAM[id])">Conditional</animation>
+                <control type="group">
+                    <centerbottom>100</centerbottom>
+                    <height>40</height>
+                    <include content="Info_Viewline">
+                        <param name="label">$PARAM[label]</param>
+                        <param name="item_condition">true</param>
+                        <param name="item_count">$INFO[Container($PARAM[id]).NumItems]</param>
+                        <param name="item_updating">Container($PARAM[id]).IsUpdating</param>
+                        <top>0</top>
+                    </include>
+                </control>
+
+                <control type="grouplist">
+                    <height>256</height>
+                    <centerbottom>100</centerbottom>
+                    <left>120</left>
+                    <orientation>horizontal</orientation>
+                    <itemgap>0</itemgap>
+                    <control type="button">
+                        <align>left</align>
+                        <width>auto</width>
+                        <height>256</height>
+                        <centertop>50%</centertop>
+                        <font>font_main_black</font>
+                        <textcolor>00ffffff</textcolor>
+                        <label>$PARAM[label]</label>
+                        <textoffsetx>80</textoffsetx>
+                        <texturenofocus />
+                        <texturefocus />
+                    </control>
+
+                    <control type="group">
+                        <include content="Object_Left" condition="Skin.HasSetting(Furniture.EnableViewLineDisableIcons)">
+                            <param name="left">0</param>
+                        </include>
+                        <left>-80</left>
+                        <width>1080</width>
+                        <include content="Categories_Selector_Fake">
+                            <param name="id">$PARAM[id]</param>
+                        </include>
+                    </control>
+                </control>
+            </control>
+        </definition>
+    </include>
+
     <include name="View_Combined_List_Horz">
         <control type="group">
             <include content="Animation_ConditionalFade">
@@ -256,6 +312,13 @@
 
             <animation effect="fade" start="100" end="0" delay="400" time="1" reversible="true">Hidden</animation>
             <animation effect="fade" start="0" end="100" delay="400" time="1" reversible="false">Visible</animation>
+
+
+            <include content="View_Combined_List_Horz_Fake">
+                <param name="id">$PARAM[id]2</param>
+                <param name="label">[CAPITALIZE]$INFO[Container.Content][/CAPITALIZE]</param>
+                <param name="visible">$PARAM[visible]</param>
+            </include>
 
             <right>480</right>
             <include content="Categories_Selector">
@@ -284,6 +347,10 @@
                 <include content="Action_View_Movement_OnDown">
                     <param name="to_scrollbar">false</param>
                     <param name="id">$PARAM[id]2</param>
+                </include>
+
+                <include content="Animation_ConditionalFade">
+                    <param name="condition">true</param>
                 </include>
                 <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id]3)</onfocus>
                 <onfocus>ClearProperty(SpecialFolderPath)</onfocus>

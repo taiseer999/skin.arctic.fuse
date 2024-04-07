@@ -3,7 +3,7 @@
     "output": "script-skinvariables-generator-includes-{skinuser}.xml",
     "header": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<includes>",
     "footer": "</includes>",
-    "buildv": "0.4.5",
+    "buildv": "0.4.7",
     "skinid": "skin.arctic.fuse",
     "getnfo": {},
     "addnfo": {
@@ -28,6 +28,7 @@
         {"datafile": "generator/data/base/hubs_classichome.xml"},
         {"datafile": "generator/data/base/hubs_extendedhome.xml"},
         {"datafile": "generator/data/base/hubs_extendedglobal.xml"},
+        {"datafile": "generator/data/base/classic_selectors.xml"},
         {"datafile": "generator/data/base/power_main.xml"},
         {"datafile": "generator/data/base/power_side.xml"},
         {"datafile": "generator/data/base/options_tray.xml"},

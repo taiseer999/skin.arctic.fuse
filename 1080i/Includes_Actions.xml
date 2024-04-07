@@ -577,6 +577,7 @@
         <param name="onback">True</param>
         <param name="backid">62</param>
         <param name="menuid">303</param>
+        <param name="tbarid">370</param>
         <param name="onbump">Skin.String(Navigation.OnLeftRight,Bump)</param>
         <param name="enable">True</param>
         <param name="always">False</param>
@@ -587,7 +588,7 @@
             <onback condition="$PARAM[enable] + [Skin.String(Navigation.OnBack,Menu) | [Window.IsVisible(Home) + ![![$PARAM[onback] | Container($PARAM[id]).ListItem.IsParentFolder] + Skin.String(Navigation.OnBack,Previous)]]] + $PARAM[onbump]">SetProperty(List.ViewContainer.Bump,True)</onback>
             <onback condition="$PARAM[enable] + [Skin.String(Navigation.OnBack,Menu) | [Window.IsVisible(Home) + ![![$PARAM[onback] | Container($PARAM[id]).ListItem.IsParentFolder] + Skin.String(Navigation.OnBack,Previous)]]] + ![$PARAM[onbump]]">ClearProperty(List.ViewContainer.Bump)</onback>
             <onback condition="$PARAM[enable] + [Skin.String(Navigation.OnBack,Menu) | [Window.IsVisible(Home) + ![![$PARAM[onback] | Container($PARAM[id]).ListItem.IsParentFolder] + Skin.String(Navigation.OnBack,Previous)]]] + ![Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Topbar)]">$PARAM[menuid]</onback>
-            <onback condition="$PARAM[enable] + [Skin.String(Navigation.OnBack,Menu) | [Window.IsVisible(Home) + ![![$PARAM[onback] | Container($PARAM[id]).ListItem.IsParentFolder] + Skin.String(Navigation.OnBack,Previous)]]] + Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Topbar)">370</onback>
+            <onback condition="$PARAM[enable] + [Skin.String(Navigation.OnBack,Menu) | [Window.IsVisible(Home) + ![![$PARAM[onback] | Container($PARAM[id]).ListItem.IsParentFolder] + Skin.String(Navigation.OnBack,Previous)]]] + Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Topbar)">$PARAM[tbarid]</onback>
 
             <onback condition="$PARAM[enable] + $PARAM[always]">SetFocus($PARAM[id],0,absolute)</onback>
             <onback condition="$PARAM[enable] + $PARAM[always]">SetFocus(50)</onback>

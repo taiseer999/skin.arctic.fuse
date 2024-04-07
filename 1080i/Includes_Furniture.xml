@@ -86,7 +86,7 @@
                             <include content="Info_Viewline">
                                 <param name="library_condition">false</param>
                                 <param name="label">$PARAM[label]</param>
-                                <param name="custom_icon_condition">true</param>
+                                <param name="custom_icon_condition">Skin.HasSetting(Furniture.EnableViewLineDisableIcons)</param>
                                 <param name="custom_icon">$PARAM[icon]</param>
                                 <top>0</top>
                                 <left>0</left>

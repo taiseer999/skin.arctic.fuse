@@ -663,7 +663,6 @@
         <definition>
             <include content="Categories_Selector">
                 <param name="id">$PARAM[id]</param>
-                <param name="grouplistid">$PARAM[groupid]</param>
                 <param name="window_id">home</param>
                 <param name="itemlayout_w">view_button_item_w</param>
                 <param name="offset_x">view_button_offset_x</param>

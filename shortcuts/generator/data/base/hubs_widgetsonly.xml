@@ -71,5 +71,16 @@
                 </value>
             </value>
         </item>
+        <item>
+            <value name="comments">Hubs Widgets Only Selector</value>
+            <template>generator/data/parts/basic_include.xmltemplate</template>
+            <value name="includes_name">skinvariables-{item}-widgetsonly-selector</value>
+            <value name="includes_part">
+                <value name="comments">Widget Selector</value>
+                <template>generator/data/parts/endrow_fakeitems.xmltemplate</template>
+                <condition>Skin.HasSetting(Hub.{window_id}.WidgetSelector)</condition>
+                <value name="endrow_visible">True</value>
+            </value>
+        </item>
     </items>
 </contents>

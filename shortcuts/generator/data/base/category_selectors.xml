@@ -1,0 +1,18 @@
+<contents>
+    <template>generator/data/parts/basic_include.xmltemplate</template>
+    <value name="comments">Standard Selectors</value>
+    <value name="category_id">300</value>
+    <value name="includes_name">skinvariables-{item}-widgets-selector</value>
+    <value name="includes_part">
+        <items menu="{item}">
+            <item>
+                <value name="grouplist_item_x">{item_x}</value>
+                <datafile>generator/data/base/category_widgets_standard_group_selector.xml</datafile>
+            </item>
+        </items>
+    </value>
+    <value name="includes_misc">
+        <value name="grouplist_item_x">99</value>
+        <datafile>generator/data/base/category_widgets_global_group_selector.xml</datafile>
+    </value>
+</contents>

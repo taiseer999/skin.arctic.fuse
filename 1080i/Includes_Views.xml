@@ -216,7 +216,7 @@
                             <include content="Info_Viewline">
                                 <param name="library_condition">false</param>
                                 <param name="label">$VAR[Label_NextMedia]</param>
-                                <param name="custom_icon_condition">true</param>
+                                <param name="custom_icon_condition">Skin.HasSetting(Furniture.EnableViewLineDisableIcons)</param>
                                 <param name="custom_icon">$VAR[Image_NextMedia]</param>
                                 <top>0</top>
                                 <left>0</left>
