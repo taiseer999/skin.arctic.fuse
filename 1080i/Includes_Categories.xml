@@ -79,46 +79,83 @@
                 <height>256</height>
                 <orientation>horizontal</orientation>
                 <itemgap>-80</itemgap>
-                <animation effect="slide" start="0" end="-60" time="400" tween="quadratic" easing="out" condition="!Container($PARAM[id]).OnNext" reversible="false">Conditional</animation>
-                <animation effect="slide" start="0" end="60" time="400" tween="quadratic" easing="out" condition="!Container($PARAM[id]).OnPrevious" reversible="false">Conditional</animation>
+                <animation effect="slide" start="0" end="-60" time="400" tween="quadratic" easing="out" condition="!Container($PARAM[id]).OnNext + !String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).CurrentItem)" reversible="false">Conditional</animation>
+                <animation effect="slide" start="0" end="60" time="400" tween="quadratic" easing="out" condition="!Container($PARAM[id]).OnPrevious + !String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).CurrentItem)" reversible="false">Conditional</animation>
                 <!-- <animation effect="slide" start="0" end="-60" time="400" tween="quadratic" easing="out" condition="!Container($PARAM[id]).OnNext + !String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(2).CurrentItem)" reversible="false">Conditional</animation>
                 <animation effect="slide" start="0" end="60" time="400" tween="quadratic" easing="out" condition="!Container($PARAM[id]).OnPrevious + !String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(2).CurrentItem)" reversible="false">Conditional</animation> -->
-                <!-- <control type="button">
+                <control type="button">
                     <width>auto</width>
                     <height>256</height>
                     <centertop>50%</centertop>
+                    <aligny>top</aligny>
+                    <textoffsety>110</textoffsety>
+                    <include>Texture_MainMenu_Highlight_ToggleButton_FakeFocus</include>
                     <texturenofocus />
                     <font>font_mini</font>
-                    <label>$INFO[Container($PARAM[id]).ListItem(-2).Label]</label>
+                    <!-- <shadowcolor>main_bg_30</shadowcolor> -->
+                    <textcolor>main_fg_90</textcolor>
+                    <label>$INFO[Container($PARAM[id]).ListItem(-3).Label]</label>
                     <textoffsetx>80</textoffsetx>
-                    <onclick>SetFocus($PARAM[id],1)</onclick>
+                    <onclick>SetFocus($PARAM[id],-3)</onclick>
                     <onclick>Action(Select)</onclick>
                     <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,0)</visible>
                     <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,1)</visible>
                     <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,2)</visible>
                     <visible>String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(1).CurrentItem)</visible>
+                    <visible>!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(-3).CurrentItem)</visible>
                 </control>
                 <control type="button">
                     <width>auto</width>
                     <height>256</height>
                     <centertop>50%</centertop>
+                    <aligny>top</aligny>
+                    <textoffsety>110</textoffsety>
+                    <include>Texture_MainMenu_Highlight_ToggleButton_FakeFocus</include>
                     <texturenofocus />
                     <font>font_mini</font>
-                    <label>$INFO[Container($PARAM[id]).ListItem(-1).Label]</label>
+                    <!-- <shadowcolor>main_bg_30</shadowcolor> -->
+                    <textcolor>main_fg_90</textcolor>
+                    <label>$INFO[Container($PARAM[id]).ListItem(-2).Label]</label>
                     <textoffsetx>80</textoffsetx>
-                    <onclick>SetFocus($PARAM[id],2)</onclick>
+                    <onclick>SetFocus($PARAM[id],-2)</onclick>
                     <onclick>Action(Select)</onclick>
                     <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,0)</visible>
                     <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,1)</visible>
+                    <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,2)</visible>
                     <visible>String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(2).CurrentItem)</visible>
-                </control> -->
+                    <visible>!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(-2).CurrentItem)</visible>
+                </control>
+                <control type="button">
+                    <width>auto</width>
+                    <height>256</height>
+                    <centertop>50%</centertop>
+                    <aligny>top</aligny>
+                    <textoffsety>110</textoffsety>
+                    <include>Texture_MainMenu_Highlight_ToggleButton_FakeFocus</include>
+                    <texturenofocus />
+                    <font>font_mini</font>
+                    <!-- <shadowcolor>main_bg_30</shadowcolor> -->
+                    <textcolor>main_fg_90</textcolor>
+                    <label>$INFO[Container($PARAM[id]).ListItem(-1).Label]</label>
+                    <textoffsetx>80</textoffsetx>
+                    <onclick>SetFocus($PARAM[id],-1)</onclick>
+                    <onclick>Action(Select)</onclick>
+                    <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,0)</visible>
+                    <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,1)</visible>
+                    <visible>String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).CurrentItem)</visible>
+                    <visible>!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(-1).CurrentItem)</visible>
+                </control>
                 <control type="togglebutton">
                     <width>auto</width>
                     <height>256</height>
-                    <centertop>49.5%</centertop>
+                    <centertop>50%</centertop>
+                    <aligny>top</aligny>
+                    <textoffsety>110</textoffsety>
                     <include>Texture_MainMenu_Highlight_ToggleButton_FakeFocus</include>
                     <usealttexture>Control.HasFocus($PARAM[id])</usealttexture>
                     <font>font_mini</font>
+                    <shadowcolor>main_bg_30</shadowcolor>
+                    <textcolor>main_fg_90</textcolor>
                     <label>$INFO[Container($PARAM[id]).ListItem(0).Label]</label>
                     <textoffsetx>80</textoffsetx>
                     <altlabel>[COLOR=$VAR[ColorSelected]]$INFO[Container($PARAM[id]).ListItem(0).Label][/COLOR]</altlabel>
@@ -128,23 +165,33 @@
                 <control type="button">
                     <width>auto</width>
                     <height>256</height>
-                    <centertop>49.5%</centertop>
+                    <centertop>50%</centertop>
+                    <aligny>top</aligny>
+                    <textoffsety>110</textoffsety>
+                    <include>Texture_MainMenu_Highlight_ToggleButton_FakeFocus</include>
                     <texturenofocus />
                     <font>font_mini</font>
+                    <!-- <shadowcolor>main_bg_30</shadowcolor> -->
+                    <textcolor>main_fg_90</textcolor>
                     <label>$INFO[Container($PARAM[id]).ListItem(1).Label]</label>
                     <textoffsetx>80</textoffsetx>
                     <onclick>SetFocus($PARAM[id],1)</onclick>
                     <onclick>Action(Select)</onclick>
                     <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,0)</visible>
                     <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,1)</visible>
-                    <!-- <visible>!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(1).CurrentItem)</visible> -->
+                    <visible>!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(1).CurrentItem)</visible>
                 </control>
                 <control type="button">
                     <width>auto</width>
                     <height>256</height>
-                    <centertop>49.5%</centertop>
+                    <centertop>50%</centertop>
+                    <aligny>top</aligny>
+                    <textoffsety>110</textoffsety>
+                    <include>Texture_MainMenu_Highlight_ToggleButton_FakeFocus</include>
                     <texturenofocus />
                     <font>font_mini</font>
+                    <!-- <shadowcolor>main_bg_30</shadowcolor> -->
+                    <textcolor>main_fg_90</textcolor>
                     <label>$INFO[Container($PARAM[id]).ListItem(2).Label]</label>
                     <textoffsetx>80</textoffsetx>
                     <onclick>SetFocus($PARAM[id],2)</onclick>
@@ -152,7 +199,28 @@
                     <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,0)</visible>
                     <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,1)</visible>
                     <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,2)</visible>
-                    <!-- <visible>!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(2).CurrentItem)</visible> -->
+                    <visible>!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(2).CurrentItem)</visible>
+                </control>
+                <control type="button">
+                    <width>auto</width>
+                    <height>256</height>
+                    <centertop>50%</centertop>
+                    <aligny>top</aligny>
+                    <textoffsety>110</textoffsety>
+                    <include>Texture_MainMenu_Highlight_ToggleButton_FakeFocus</include>
+                    <texturenofocus />
+                    <font>font_mini</font>
+                    <!-- <shadowcolor>main_bg_30</shadowcolor> -->
+                    <textcolor>main_fg_90</textcolor>
+                    <label>$INFO[Container($PARAM[id]).ListItem(3).Label]</label>
+                    <textoffsetx>80</textoffsetx>
+                    <onclick>SetFocus($PARAM[id],3)</onclick>
+                    <onclick>Action(Select)</onclick>
+                    <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,0)</visible>
+                    <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,1)</visible>
+                    <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,2)</visible>
+                    <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,3)</visible>
+                    <visible>!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).CurrentItem)</visible>
                 </control>
             </control>
         </definition>

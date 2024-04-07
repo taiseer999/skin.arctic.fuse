@@ -281,6 +281,8 @@
                         <centertop>50%</centertop>
                         <font>font_main_black</font>
                         <textcolor>00ffffff</textcolor>
+                        <selectedcolor>00ffffff</selectedcolor>
+                        <disabledcolor>00ffffff</disabledcolor>
                         <label>$PARAM[label]</label>
                         <textoffsetx>80</textoffsetx>
                         <texturenofocus />
