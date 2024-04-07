@@ -603,7 +603,7 @@
     <include name="List_ButtonMenu_Row_HiddenButton_Home_Categories_OnFocus">
         <param name="condition">true</param>
         <definition>
-            <!-- <onfocus condition="Skin.HasSetting(Background.EnableSpotlightFanart)">SetProperty(TMDbHelper.WidgetContainer,$INFO[Container(300).ListItem.Property(item),,601])</onfocus> -->
+            <onfocus condition="Skin.HasSetting(Navigation.EnableTopCategories)">SetProperty(TMDbHelper.WidgetContainer,$INFO[Container(300).ListItem.Property(item),,601])</onfocus>
             <onfocus>AlarmClock(SwitchAdaptiveWidget,RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-specialfolderpath.json,use_rules,condition=$PARAM[condition],prefix=$PARAM[prefix]),00:01,silent)</onfocus>
         </definition>
     </include>

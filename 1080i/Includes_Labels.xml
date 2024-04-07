@@ -399,7 +399,7 @@
     </variable>
 
     <variable name="Label_Setting_SpotlightStyle">
-        <value condition="Skin.HasSetting(Background.EnableSpotlightFanart)">$LOCALIZE[20445]</value>
+        <value condition="$EXP[Exp_Hubs_Spotlight_IsFanart]">$LOCALIZE[20445]</value>
         <value>$LOCALIZE[571]</value>
     </variable>
 

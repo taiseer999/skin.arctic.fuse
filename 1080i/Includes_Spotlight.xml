@@ -35,7 +35,7 @@
                 <param name="grouplistid">99952</param>
                 <param name="visible">Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)</param>
             </include>
-            <!-- <include condition="Skin.HasSetting(Background.EnableSpotlightFanart)">Spotlight_Animation</include> -->
+            <!-- <include condition="$EXP[Exp_Hubs_Spotlight_IsFanart]">Spotlight_Animation</include> -->
         </include>
     </include>
 
@@ -114,15 +114,15 @@
         <param name="visible">True</param>
         <definition>
             <control type="group" id="304">
-                <!-- <include content="Object_Top" condition="Skin.HasSetting(Background.EnableSpotlightFanart)">
+                <!-- <include content="Object_Top" condition="$EXP[Exp_Hubs_Spotlight_IsFanart]">
                     <param name="top">hub_spotlight_fanart_t</param>
                 </include> -->
                 <top>hub_spotlight_t</top>
                 <height>hub_spotlight_h</height>
 
                 <!-- Animation for Slides -->
-                <!-- <include condition="Skin.HasSetting(Background.EnableSpotlightFanart)">Spotlight_Animation</include> -->
-                <!-- <include content="Animation_Fade_In" condition="!Skin.HasSetting(Background.EnableSpotlightFanart)">
+                <!-- <include condition="$EXP[Exp_Hubs_Spotlight_IsFanart]">Spotlight_Animation</include> -->
+                <!-- <include content="Animation_Fade_In" condition="!$EXP[Exp_Hubs_Spotlight_IsFanart]">
                     <param name="condition">Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)</param>
                     <param name="delay">200</param>
                 </include> -->
