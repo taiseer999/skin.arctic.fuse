@@ -694,11 +694,11 @@
                     <param name="backid">$PARAM[grouplistid]</param>
                 </include>
 
-                <onleft>332</onleft>
-                <onright>332</onright>
+                <!-- <onleft>332</onleft>
+                <onright>332</onright> -->
 
-                <!-- <onleft>$PARAM[id]</onleft>
-                <onright>$PARAM[id]</onright> -->
+                <onleft>$PARAM[id]</onleft>
+                <onright>$PARAM[id]</onright>
 
                 <include content="Animation_ConditionalFade">
                     <param name="condition">Window.IsVisible(1171)</param>
