@@ -114,15 +114,19 @@
         <param name="visible">True</param>
         <definition>
             <control type="group" id="304">
-                <include content="Object_Top" condition="Skin.HasSetting(Background.EnableSpotlightFanart)">
+                <!-- <include content="Object_Top" condition="Skin.HasSetting(Background.EnableSpotlightFanart)">
                     <param name="top">hub_spotlight_fanart_t</param>
-                </include>
+                </include> -->
                 <top>hub_spotlight_t</top>
                 <height>hub_spotlight_h</height>
 
                 <!-- Animation for Slides -->
-                <include condition="Skin.HasSetting(Background.EnableSpotlightFanart)">Spotlight_Animation</include>
-                <include content="Animation_Fade_In" condition="!Skin.HasSetting(Background.EnableSpotlightFanart)">
+                <!-- <include condition="Skin.HasSetting(Background.EnableSpotlightFanart)">Spotlight_Animation</include> -->
+                <!-- <include content="Animation_Fade_In" condition="!Skin.HasSetting(Background.EnableSpotlightFanart)">
+                    <param name="condition">Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)</param>
+                    <param name="delay">200</param>
+                </include> -->
+                <include content="Animation_Fade_In">
                     <param name="condition">Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)</param>
                     <param name="delay">200</param>
                 </include>
