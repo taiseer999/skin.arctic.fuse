@@ -79,8 +79,8 @@
                 <height>256</height>
                 <orientation>horizontal</orientation>
                 <itemgap>-80</itemgap>
-                <animation effect="slide" start="0" end="-60" time="400" tween="quadratic" easing="out" condition="!Container($PARAM[id]).OnNext + !String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).CurrentItem)" reversible="false">Conditional</animation>
-                <animation effect="slide" start="0" end="60" time="400" tween="quadratic" easing="out" condition="!Container($PARAM[id]).OnPrevious + !String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).CurrentItem)" reversible="false">Conditional</animation>
+                <animation effect="slide" start="0" end="-64" time="400" tween="quadratic" easing="out" condition="!Container($PARAM[id]).OnNext + !String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).CurrentItem)" reversible="false">Conditional</animation>
+                <animation effect="slide" start="0" end="64" time="400" tween="quadratic" easing="out" condition="!Container($PARAM[id]).OnPrevious + !String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).CurrentItem)" reversible="false">Conditional</animation>
                 <!-- <animation effect="slide" start="0" end="-60" time="400" tween="quadratic" easing="out" condition="!Container($PARAM[id]).OnNext + !String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(2).CurrentItem)" reversible="false">Conditional</animation>
                 <animation effect="slide" start="0" end="60" time="400" tween="quadratic" easing="out" condition="!Container($PARAM[id]).OnPrevious + !String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(2).CurrentItem)" reversible="false">Conditional</animation> -->
                 <control type="button">
@@ -98,11 +98,12 @@
                     <textoffsetx>80</textoffsetx>
                     <onclick>SetFocus($PARAM[id],-3)</onclick>
                     <onclick>Action(Select)</onclick>
-                    <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,0)</visible>
+                    <visible>Container($PARAM[id]).Position(3)</visible>
+                    <!-- <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,0)</visible>
                     <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,1)</visible>
                     <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,2)</visible>
                     <visible>String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(1).CurrentItem)</visible>
-                    <visible>!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(-3).CurrentItem)</visible>
+                    <visible>!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(-3).CurrentItem)</visible> -->
                 </control>
                 <control type="button">
                     <width>auto</width>
@@ -119,11 +120,12 @@
                     <textoffsetx>80</textoffsetx>
                     <onclick>SetFocus($PARAM[id],-2)</onclick>
                     <onclick>Action(Select)</onclick>
-                    <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,0)</visible>
+                    <visible>Container($PARAM[id]).Position(3) | Container($PARAM[id]).Position(2)</visible>
+                    <!-- <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,0)</visible>
                     <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,1)</visible>
                     <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,2)</visible>
                     <visible>String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(2).CurrentItem)</visible>
-                    <visible>!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(-2).CurrentItem)</visible>
+                    <visible>!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(-2).CurrentItem)</visible> -->
                 </control>
                 <control type="button">
                     <width>auto</width>
@@ -140,10 +142,11 @@
                     <textoffsetx>80</textoffsetx>
                     <onclick>SetFocus($PARAM[id],-1)</onclick>
                     <onclick>Action(Select)</onclick>
-                    <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,0)</visible>
+                    <visible>Container($PARAM[id]).Position(3) | Container($PARAM[id]).Position(2) | Container($PARAM[id]).Position(1)</visible>
+                    <!-- <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,0)</visible>
                     <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,1)</visible>
                     <visible>String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).CurrentItem)</visible>
-                    <visible>!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(-1).CurrentItem)</visible>
+                    <visible>!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(-1).CurrentItem)</visible> -->
                 </control>
                 <control type="togglebutton">
                     <width>auto</width>
@@ -177,9 +180,10 @@
                     <textoffsetx>80</textoffsetx>
                     <onclick>SetFocus($PARAM[id],1)</onclick>
                     <onclick>Action(Select)</onclick>
-                    <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,0)</visible>
+                    <visible>Container($PARAM[id]).Position(2) | Container($PARAM[id]).Position(1) | Container($PARAM[id]).Position(0)</visible>
+                    <!-- <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,0)</visible>
                     <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,1)</visible>
-                    <visible>!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(1).CurrentItem)</visible>
+                    <visible>!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(1).CurrentItem)</visible> -->
                 </control>
                 <control type="button">
                     <width>auto</width>
@@ -196,10 +200,11 @@
                     <textoffsetx>80</textoffsetx>
                     <onclick>SetFocus($PARAM[id],2)</onclick>
                     <onclick>Action(Select)</onclick>
-                    <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,0)</visible>
+                    <visible>Container($PARAM[id]).Position(1) | Container($PARAM[id]).Position(0)</visible>
+                    <!-- <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,0)</visible>
                     <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,1)</visible>
                     <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,2)</visible>
-                    <visible>!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(2).CurrentItem)</visible>
+                    <visible>!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(2).CurrentItem)</visible> -->
                 </control>
                 <control type="button">
                     <width>auto</width>
@@ -216,11 +221,12 @@
                     <textoffsetx>80</textoffsetx>
                     <onclick>SetFocus($PARAM[id],3)</onclick>
                     <onclick>Action(Select)</onclick>
-                    <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,0)</visible>
+                    <visible>Container($PARAM[id]).Position(0)</visible>
+                    <!-- <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,0)</visible>
                     <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,1)</visible>
                     <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,2)</visible>
                     <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,3)</visible>
-                    <visible>!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).CurrentItem)</visible>
+                    <visible>!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).CurrentItem)</visible> -->
                 </control>
             </control>
         </definition>
