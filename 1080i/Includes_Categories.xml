@@ -154,7 +154,7 @@
                     <include>Texture_MainMenu_Highlight_ToggleButton_FakeFocus</include>
                     <usealttexture>Control.HasFocus($PARAM[id])</usealttexture>
                     <font>font_mini</font>
-                    <shadowcolor>main_bg_30</shadowcolor>
+                    <!-- <shadowcolor>main_bg_30</shadowcolor> -->
                     <textcolor>main_fg_90</textcolor>
                     <label>$INFO[Container($PARAM[id]).ListItem(0).Label]</label>
                     <textoffsetx>80</textoffsetx>
