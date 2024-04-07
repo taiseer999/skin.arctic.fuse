@@ -255,6 +255,7 @@
         <definition>
             <control type="group">
                 <visible>$PARAM[visible]</visible>
+                <animation effect="fade" start="100" end="0" delay="400" reversible="false" time="200" condition="$EXP[Exp_InfoDialogs]">Conditional</animation>
                 <!-- <animation effect="fade" start="100" end="30" time="200" condition="!Control.HasFocus($PARAM[id])">Conditional</animation> -->
                 <control type="group">
                     <centerbottom>100</centerbottom>
@@ -294,7 +295,7 @@
                             <param name="left">0</param>
                         </include>
                         <left>-80</left>
-                        <width>1080</width>
+                        <right>480</right>
                         <include content="Categories_Selector_Fake">
                             <param name="visible_five">true</param>
                             <param name="id">$PARAM[id]</param>
@@ -308,10 +309,11 @@
     <include name="View_Combined_List_Horz">
         <control type="group">
             <include content="Animation_ConditionalFade">
-                <param name="condition">[$EXP[Exp_InfoDialogs] | $EXP[Exp_MediaFilter_IsActive] | $EXP[Exp_FilterWall_IsActive] | $EXP[Exp_ScrollbarVisible_H] | Window.IsVisible(1171)]</param>
+                <param name="condition">[$EXP[Exp_MediaFilter_IsActive] | $EXP[Exp_FilterWall_IsActive] | $EXP[Exp_ScrollbarVisible_H] | Window.IsVisible(1171)]</param>
             </include>
 
             <visible>![[Container.Scrolling + $EXP[Exp_FurnitureFooter_Left_IsVisible]] | !String.IsEmpty(Window.Property(MediaFilterBase)) | !String.IsEmpty(Window.Property(MediaFilterWall))]</visible>
+
 
             <animation effect="fade" start="100" end="0" delay="400" time="1" reversible="true">Hidden</animation>
             <animation effect="fade" start="0" end="100" delay="400" time="1" reversible="false">Visible</animation>
