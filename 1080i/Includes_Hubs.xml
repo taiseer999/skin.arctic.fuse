@@ -111,7 +111,7 @@
             <include>Hub_WindowTransition_CategoriesSpotlight_OnWidgets</include>
 
             <control type="group">
-                <left>300</left>
+                <left>260</left>
                 <height>hub_categorieswidget_h</height>
                 <top>0</top>
                 <include>Hub_Categories_FadeIn</include>

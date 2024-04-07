@@ -259,7 +259,7 @@
                     <textcolor>yellowgreen</textcolor>
                 </include>
                 <include content="Overlay_InfoLabel">
-                    <label>   --tmdbhelper.isupdating: $VAR[Overlay_InfoLabel_WidgetContainer,widget: , ]$INFO[Window(Home).Property(TMDBHelper.CurrentWindow),window: , ]$INFO[Window(Home).Property(TMDBHelper.IsUpdating),details: , ]$INFO[Window(Home).Property(TMDBHelper.IsUpdatingRatings),ratings: , ]</label>
+                    <label>   --tmdbhelper.isupdating: $VAR[Overlay_InfoLabel_WidgetContainer,widget: , ]$INFO[Window(Home).Property(TMDBHelper.CurrentWindow),window: , ]$INFO[Window(Home).Property(TMDBHelper.IsUpdating),details: , ]$INFO[Window(Home).Property(TMDBHelper.IsUpdatingRatings),ratings: , ] -- $INFO[Window(Home).Property(TMDBHelper.WidgetContainer)]$INFO[Window(Home).Property(Slide.WidgetContainer), (,)]$INFO[Window(Home).Property(List.ViewContainer), (*,)]</label>
                     <textcolor>yellowgreen</textcolor>
                 </include>
             </control>
