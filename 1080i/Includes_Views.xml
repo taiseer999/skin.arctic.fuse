@@ -304,9 +304,9 @@
                 <include content="Info_Viewline">
                     <param name="library_condition">false</param>
                     <param name="label">$LOCALIZE[31135]$INFO[Container.CurrentPage, , $LOCALIZE[20163] ]$INFO[Container.NumPages]</param>
-                    <param name="custom_icon_condition">true</param>
+                    <param name="custom_icon_condition">Skin.HasSetting(Furniture.EnableViewLineDisableIcons)</param>
                     <param name="custom_icon">special://skin/extras/icons/kodi.png</param>
-                    <param name="custom_label_condition">true</param>
+                    <param name="custom_label_condition">Skin.HasSetting(Furniture.EnableViewLineDisableIcons)</param>
                     <param name="custom_label">$INFO[ListItem.SortLetter]</param>
                     <top>0</top>
                     <left>0</left>

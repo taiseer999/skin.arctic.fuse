@@ -1364,6 +1364,7 @@
     <include name="DialogInfo_Recommendations_Furniture">
         <param name="header">$LOCALIZE[31148]</param>
         <param name="onlist">5000</param>
+        <param name="header_visible">true</param>
         <definition>
             <include condition="!Window.IsVisible(1121)">Home_Fade</include>
             <include content="Home_Menu" condition="!Window.IsVisible(1121)">
@@ -1381,9 +1382,12 @@
             <control type="group">
                 <include>Animation_Group_Bumper</include>
                 <include>Animation_View_WindowChange</include>
-                <include content="Furniture_Top">
-                    <param name="label">$PARAM[header]</param>
-                </include>
+                <control type="group">
+                    <visible>$PARAM[header_visible]</visible>
+                    <include content="Furniture_Top">
+                        <param name="label">$PARAM[header]</param>
+                    </include>
+                </control>
                 <include content="Hub_Widgets_Group_Furniture">
                     <param name="visible">true</param>
                     <param name="include_conditionalfade">false</param>

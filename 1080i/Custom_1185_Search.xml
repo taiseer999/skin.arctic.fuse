@@ -115,13 +115,16 @@
                     <visible>Window.IsVisible(1171)</visible>
                 </control>
                 <control type="edit" id="9099">
+                    <height>256</height>
+                    <centertop>50%</centertop>
+                    <include>Texture_MainMenu_Highlight_ToggleButton_FakeFocus</include>
                     <description>Search</description>
                     <font>font_main_black</font>
                     <textcolor>dialog_fg_90</textcolor>
                     <focusedcolor>$VAR[ColorSelected]</focusedcolor>
-                    <left>-40</left>
-                    <right>-40</right>
-                    <textoffsetx>40</textoffsetx>
+                    <left>-80</left>
+                    <right>-80</right>
+                    <textoffsetx>80</textoffsetx>
                     <align>left</align>
                     <onup condition="Skin.String(Navigation.Global.OnUp,Search)">SetProperty(List.ViewContainer,9099)</onup>
                     <onup condition="Skin.String(Navigation.Global.OnUp,Search)">SetFocus(330)</onup>
