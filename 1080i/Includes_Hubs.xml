@@ -79,6 +79,8 @@
                     <param name="id">$PARAM[id]</param>
                     <param name="onback">[Integer.IsEqual(Container($PARAM[id]).CurrentItem,1)]</param>
                     <param name="backid">320</param>
+                    <param name="menuid">311</param>
+                    <param name="tbarid">311</param>
                 </include>
                 <onleft>332</onleft>
                 <onright>332</onright>
