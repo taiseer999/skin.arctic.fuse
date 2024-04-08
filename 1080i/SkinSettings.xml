@@ -612,6 +612,14 @@
                             <visible>Container(3).HasFocus(5)</visible>
                             <onclick>Skin.ToggleSetting(Furniture.DisablePlayCounts)</onclick>
                         </include>
+                        <include content="Settings_Button" description="Tray header">
+                            <param name="id">5008</param>
+                            <param name="control">radiobutton</param>
+                            <label> - $LOCALIZE[31418]</label>
+                            <selected>!Skin.HasSetting(Furniture.DisableTrayViewLine)</selected>
+                            <visible>Container(3).HasFocus(5)</visible>
+                            <onclick>Skin.ToggleSetting(Furniture.DisableTrayViewLine)</onclick>
+                        </include>
                         <include content="Settings_Button" description="Footer: Right: Studio / Clock / None">
                             <param name="id">5002</param>
                             <param name="control">button</param>

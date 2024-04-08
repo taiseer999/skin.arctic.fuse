@@ -1965,6 +1965,11 @@ msgctxt "#31417"
 msgid "Random Artists"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31418"
+msgid "Selector tray label"
+msgstr ""
+
 msgctxt "#31421"
 msgid "Choose submenu list"
 msgstr ""

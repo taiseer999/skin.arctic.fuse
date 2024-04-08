@@ -85,7 +85,7 @@
             <font>$PARAM[font]</font>
             <textcolor>$PARAM[textcolor_nf]</textcolor>
             <label>$INFO[Container($PARAM[id]).ListItemNoWrap($PARAM[pos]).Label]</label>
-            <textoffsetx>80</textoffsetx>
+            <textoffsetx>70</textoffsetx>
             <onclick>SetFocus($PARAM[id],$PARAM[pos])</onclick>
             <onclick>Action(Select)</onclick>
         </control>
@@ -103,7 +103,7 @@
             <font>$PARAM[font]</font>
             <textcolor>$PARAM[textcolor_fo]</textcolor>
             <label>$INFO[Container($PARAM[id]).ListItem.Label]</label>
-            <textoffsetx>80</textoffsetx>
+            <textoffsetx>70</textoffsetx>
             <altlabel>[COLOR=$VAR[ColorSelected]]$INFO[Container($PARAM[id]).ListItem.Label][/COLOR]</altlabel>
             <onclick>SetFocus($PARAM[id],0)</onclick>
             <onclick>Action(Select)</onclick>

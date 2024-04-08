@@ -28,6 +28,7 @@
                 <control type="group">
                     <centertop>50%</centertop>
                     <height>40</height>
+                    <visible>!Skin.HasSetting(Furniture.DisableTrayViewLine)</visible>
                     <include content="Info_Viewline">
                         <param name="label">$LOCALIZE[33063]</param>
                         <param name="item_condition">false</param>
@@ -56,6 +57,7 @@
                         <textoffsetx>80</textoffsetx>
                         <texturenofocus />
                         <texturefocus />
+                        <visible>!Skin.HasSetting(Furniture.DisableTrayViewLine)</visible>
                     </control>
 
                     <control type="list" id="9000">
@@ -64,6 +66,9 @@
                         <movement>2</movement>
                         <orientation>horizontal</orientation>
                         <centertop>50%</centertop>
+                        <include content="Object_Left" condition="Skin.HasSetting(Furniture.DisableTrayViewLine)">
+                            <param name="left">100</param>
+                        </include>
                         <height>80</height>
                         <width>700</width>
 

@@ -260,6 +260,7 @@
                 <control type="group">
                     <centerbottom>100</centerbottom>
                     <height>40</height>
+                    <visible>!Skin.HasSetting(Furniture.DisableTrayViewLine)</visible>
                     <include content="Info_Viewline">
                         <param name="label">$PARAM[label]</param>
                         <param name="item_condition">true</param>
@@ -288,9 +289,13 @@
                         <textoffsetx>80</textoffsetx>
                         <texturenofocus />
                         <texturefocus />
+                        <visible>!Skin.HasSetting(Furniture.DisableTrayViewLine)</visible>
                     </control>
 
                     <control type="group">
+                        <include content="Object_Left" condition="Skin.HasSetting(Furniture.DisableTrayViewLine)">
+                            <param name="left">10</param>
+                        </include>
                         <include content="Object_Left" condition="Skin.HasSetting(Furniture.EnableViewLineDisableIcons)">
                             <param name="left">0</param>
                         </include>
