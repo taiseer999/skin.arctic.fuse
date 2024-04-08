@@ -297,7 +297,7 @@
                         <left>-80</left>
                         <right>480</right>
                         <include content="Categories_Selector_Fake">
-                            <param name="visible_five">true</param>
+                            <param name="include_five">true</param>
                             <param name="id">$PARAM[id]</param>
                         </include>
                     </control>
