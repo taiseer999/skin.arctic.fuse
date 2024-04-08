@@ -16,7 +16,7 @@
 
         <control type="group">
             <include>Animation_Group_Bumper</include>
-            <left>160</left>
+            <left>-20</left>
             <width>1160</width>
             <height>120</height>
             <bottom>40</bottom>
@@ -25,58 +25,93 @@
                     <param name="pad">20</param>
                 </include>
 
-                <control type="list" id="9000">
-                    <onup>Close</onup>
-                    <focusposition>2</focusposition>
-                    <movement>2</movement>
+                <control type="group">
+                    <centertop>50%</centertop>
+                    <height>40</height>
+                    <include content="Info_Viewline">
+                        <param name="label">$LOCALIZE[33063]</param>
+                        <param name="item_condition">false</param>
+                        <param name="item_count">$INFO[Container(9000).NumItems]</param>
+                        <param name="item_updating">Container(9000).IsUpdating</param>
+                        <top>0</top>
+                    </include>
+                </control>
+
+                <control type="grouplist">
+                    <height>256</height>
+                    <centertop>50%</centertop>
+                    <left>80</left>
                     <orientation>horizontal</orientation>
-                    <height>80</height>
-                    <right>-40</right>
+                    <itemgap>0</itemgap>
+                    <control type="button">
+                        <align>left</align>
+                        <width>auto</width>
+                        <height>256</height>
+                        <centertop>50%</centertop>
+                        <font>font_main_black</font>
+                        <textcolor>00ffffff</textcolor>
+                        <selectedcolor>00ffffff</selectedcolor>
+                        <disabledcolor>00ffffff</disabledcolor>
+                        <label>$LOCALIZE[33063]</label>
+                        <textoffsetx>80</textoffsetx>
+                        <texturenofocus />
+                        <texturefocus />
+                    </control>
 
-                    <ondown>SetProperty(Bumpers.OnDown,True,Home)</ondown>
-                    <ondown>SetFocus(330)</ondown>
+                    <control type="list" id="9000">
+                        <onup>Close</onup>
+                        <focusposition>2</focusposition>
+                        <movement>2</movement>
+                        <orientation>horizontal</orientation>
+                        <centertop>50%</centertop>
+                        <height>80</height>
+                        <width>700</width>
 
-                    <itemlayout width="100" height="80">
-                        <include content="Layout_OptionTray">
-                            <param name="selected">false</param>
-                        </include>
-                    </itemlayout>
+                        <ondown>SetProperty(Bumpers.OnDown,True,Home)</ondown>
+                        <ondown>SetFocus(330)</ondown>
 
-                    <focusedlayout width="100" height="80">
-                        <include content="Layout_OptionTray">
-                            <param name="selected">true</param>
-                        </include>
-                    </focusedlayout>
+                        <itemlayout width="100" height="80">
+                            <include content="Layout_OptionTray">
+                                <param name="selected">false</param>
+                            </include>
+                        </itemlayout>
 
-                    <content>
-                        <item>
-                            <icon>special://skin/extras/icons/bars.png</icon>
-                            <label>$LOCALIZE[33063]</label>
-                            <onclick>Dialog.Close(1171,true)</onclick>
-                            <onclick>ActivateWindow(shutdownmenu)</onclick>
-                            <visible>!Window.IsMedia</visible>
-                            <visible>!Window.IsVisible(1105)</visible>
-                        </item>
-                        <item>
-                            <icon>special://skin/extras/icons/right-left.png</icon>
-                            <label>$LOCALIZE[21483]</label>
-                            <onclick>Dialog.Close(1171,true)</onclick>
-                            <onclick>AlarmClock(refocus,SetFocus(64),00:00,silent)</onclick>
-                            <visible>Window.IsMedia</visible>
-                        </item>
-                        <item>
-                            <icon>special://skin/extras/icons/binoculars.png</icon>
-                            <label>$LOCALIZE[31066]</label>
-                            <onclick>Dialog.Close(1171,true)</onclick>
-                            <onclick>AlarmClock(refocus,SetFocus(64),00:00,silent)</onclick>
-                            <visible>Window.IsVisible(1105)</visible>
-                        </item>
-                    </content>
+                        <focusedlayout width="100" height="80">
+                            <include content="Layout_OptionTray">
+                                <param name="selected">true</param>
+                            </include>
+                        </focusedlayout>
 
-                    <content>
-                        <include>skinvariables-options-tray-staticitems</include>
-                    </content>
+                        <content>
+                            <item>
+                                <icon>special://skin/extras/icons/bars.png</icon>
+                                <label>$LOCALIZE[33063]</label>
+                                <onclick>Dialog.Close(1171,true)</onclick>
+                                <onclick>ActivateWindow(shutdownmenu)</onclick>
+                                <visible>!Window.IsMedia</visible>
+                                <visible>!Window.IsVisible(1105)</visible>
+                            </item>
+                            <item>
+                                <icon>special://skin/extras/icons/right-left.png</icon>
+                                <label>$LOCALIZE[21483]</label>
+                                <onclick>Dialog.Close(1171,true)</onclick>
+                                <onclick>AlarmClock(refocus,SetFocus(64),00:00,silent)</onclick>
+                                <visible>Window.IsMedia</visible>
+                            </item>
+                            <item>
+                                <icon>special://skin/extras/icons/binoculars.png</icon>
+                                <label>$LOCALIZE[31066]</label>
+                                <onclick>Dialog.Close(1171,true)</onclick>
+                                <onclick>AlarmClock(refocus,SetFocus(64),00:00,silent)</onclick>
+                                <visible>Window.IsVisible(1105)</visible>
+                            </item>
+                        </content>
 
+                        <content>
+                            <include>skinvariables-options-tray-staticitems</include>
+                        </content>
+
+                    </control>
                 </control>
             </control>
         </control>
