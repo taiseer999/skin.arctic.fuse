@@ -75,7 +75,7 @@
 
     <include name="Categories_Selector_Fake_Button_NF">
         <control type="button">
-            <width>auto</width>
+            <width max="420">auto</width>
             <height>256</height>
             <centertop>50%</centertop>
             <aligny>top</aligny>
@@ -93,7 +93,7 @@
 
     <include name="Categories_Selector_Fake_Button_FO">
         <control type="togglebutton">
-            <width>auto</width>
+            <width max="420">auto</width>
             <height>256</height>
             <centertop>50%</centertop>
             <aligny>top</aligny>
