@@ -5,10 +5,15 @@
     <include content="Animation_ConditionalFade">
         <param name="condition">Window.IsVisible(1171)</param>
     </include>
-    <include content="View_Combined_List_Horz_Fake">
+    <include content="View_Combined_List_Horz_Fake" condition="Skin.HasSetting(Views.DisableItemPeek)">
         <param name="id">$MATH[{grouplist_item_x} * 1000 + 419]</param>
         <param name="label">Widgets</param>
         <param name="visible">{endrow_visible}</param>
         <param name="width">280</param>
+    </include>
+    <include content="View_Combined_List_Horz_Fake" condition="!Skin.HasSetting(Views.DisableItemPeek)">
+        <param name="id">$MATH[{grouplist_item_x} * 1000 + 419]</param>
+        <param name="label">Widgets</param>
+        <param name="visible">{endrow_visible}</param>
     </include>
 </control>
