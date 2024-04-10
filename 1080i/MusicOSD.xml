@@ -22,6 +22,7 @@
                     <centertop>100</centertop>
                     <control type="button" id="6030">
                         <include>Defs_OSD_Button</include>
+                        <onclick>CancelAlarm(osd_timeout,true)</onclick>
                         <onclick>Dialog.Close(musicosd,true)</onclick>
                         <onclick>Action(FullScreen)</onclick>
                         <ondown>6020</ondown>
@@ -79,6 +80,7 @@
                     <!-- Button 1 -->
                     <control type="button" id="6001">
                         <include>Defs_OSD_Button</include>
+                        <onclick>CancelAlarm(osd_timeout,true)</onclick>
                         <onclick>Close</onclick>
                         <onclick>ActivateWindow(musicplaylist)</onclick>
                         <onfocus>ClearProperty(OSDArtistDetails,Home)</onfocus>
@@ -95,6 +97,7 @@
                     <!-- Button 2 -->
                     <control type="button" id="6002">
                         <include>Defs_OSD_Button</include>
+                        <onclick>CancelAlarm(osd_timeout,true)</onclick>
                         <onclick>PlayerControl(Previous)</onclick>
                         <onfocus>ClearProperty(OSDArtistDetails,Home)</onfocus>
                         <onfocus condition="String.IsEmpty(Window(Home).Property(ResetScroll))">SetProperty(ResetScroll," ",home)</onfocus>
@@ -111,6 +114,7 @@
                     <!-- Button 3 -->
                     <control type="button" id="6003">
                         <include>Defs_OSD_Button</include>
+                        <onclick>CancelAlarm(osd_timeout,true)</onclick>
                         <onclick>PlayerControl(Next)</onclick>
                         <onfocus>ClearProperty(OSDArtistDetails,Home)</onfocus>
                         <onfocus condition="String.IsEmpty(Window(Home).Property(ResetScroll))">SetProperty(ResetScroll," ",home)</onfocus>
@@ -127,6 +131,7 @@
                     <!-- Button 4 -->
                     <control type="button" id="6004">
                         <include>Defs_OSD_Button</include>
+                        <onclick>CancelAlarm(osd_timeout,true)</onclick>
                         <onclick>PlayerControl(Stop)</onclick>
                         <onfocus>ClearProperty(OSDArtistDetails,Home)</onfocus>
                         <onfocus condition="String.IsEmpty(Window(Home).Property(ResetScroll))">SetProperty(ResetScroll," ",home)</onfocus>
@@ -158,6 +163,7 @@
                     <!-- Button 5 -->
                     <control type="button" id="6005">
                         <include>Defs_OSD_Button</include>
+                        <onclick>CancelAlarm(osd_timeout,true)</onclick>
                         <onclick>Close</onclick>
                         <onclick>runscript(script.cu.lrclyrics)</onclick>
                         <onfocus>SetProperty(OSDArtistDetails,1,Home)</onfocus>
@@ -198,6 +204,7 @@
                     <!-- Button 8 -->
                     <control type="button" id="6008">
                         <include>Defs_OSD_Button</include>
+                        <onclick>CancelAlarm(osd_timeout,true)</onclick>
                         <onclick>SetProperty(CustomDialogSettingsTitle,[CAPITALIZE]$LOCALIZE[31460][/CAPITALIZE],Home)</onclick>
                         <onclick>SetProperty(CustomDialogSettingsItems,Items_Settings_MusicVisualisation,Home)</onclick>
                         <onclick>ActivateWindow(1118)</onclick>
