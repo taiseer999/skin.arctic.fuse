@@ -13,13 +13,13 @@
         <include content="Categories_Selector_Movement_Position">
             <param name="id">$PARAM[id]</param>
         </include>
-        <width>920</width>
+        <width>1040</width>
     </include>
     <include name="Categories_Selector_Movement_Mainmenu">
         <include content="Categories_Selector_Movement_Position">
             <param name="id">$PARAM[id]</param>
         </include>
-        <width>680</width>
+        <width>840</width>
     </include>
 
     <include name="Categories_Selector">
@@ -36,12 +36,14 @@
         <param name="hitrect_y">0</param>
         <param name="hitrect_w">0</param>
         <param name="hitrect_h">0</param>
+        <param name="itemlayout_w">200</param>
+        <param name="scrolltime">0</param>
         <definition>
             <include content="List_ButtonMenu_Row">
                 <param name="id">$PARAM[id]</param>
                 <param name="color_fo">$PARAM[color_fo]</param>
                 <param name="color_nf">$PARAM[color_nf]</param>
-                <param name="itemlayout_w">160</param>
+                <param name="itemlayout_w">$PARAM[itemlayout_w]</param>
                 <param name="offset_x">view_button_offset_x</param>
                 <param name="control">fixedlist</param>
                 <param name="font">$PARAM[font]</param>
@@ -49,7 +51,7 @@
                 <param name="hidden_button">$PARAM[hidden_button]</param>
                 <param name="hidden_button_prefix">$PARAM[hidden_button_prefix]</param>
                 <preloaditems>0</preloaditems>
-                <scrolltime tween="quadratic">0</scrolltime>
+                <scrolltime tween="quadratic">$PARAM[scrolltime]</scrolltime>
 
                 <hitrect x="$PARAM[hitrect_x]" y="$PARAM[hitrect_y]" w="$PARAM[hitrect_w]" h="$PARAM[hitrect_h]" />
 
@@ -75,7 +77,8 @@
 
     <include name="Categories_Selector_Fake_Button_NF">
         <control type="button">
-            <width max="420">auto</width>
+            <width max="400" min="200">$PARAM[width]</width>
+            <width>240</width>
             <height>256</height>
             <centertop>50%</centertop>
             <aligny>top</aligny>
@@ -88,12 +91,13 @@
             <textoffsetx>70</textoffsetx>
             <onclick>SetFocus($PARAM[id],$PARAM[pos])</onclick>
             <onclick>Action(Select)</onclick>
+
         </control>
     </include>
 
     <include name="Categories_Selector_Fake_Button_FO">
         <control type="togglebutton">
-            <width max="420">auto</width>
+            <width max="400" min="200">$PARAM[width]</width>
             <height>256</height>
             <centertop>50%</centertop>
             <aligny>top</aligny>
@@ -117,6 +121,8 @@
         <param name="textcolor_nf">main_fg_30</param>
         <param name="textcolor_fo">main_fg_90</param>
         <param name="include_five">false</param>
+        <param name="itemgap">-80</param>
+        <param name="width">auto</param>
         <definition>
             <control type="group">
                 <animation effect="slide" start="0" end="-64" time="400" tween="quadratic" easing="out" condition="!Container($PARAM[id]).OnScrollNext" reversible="false">Conditional</animation>
@@ -126,7 +132,7 @@
                 <control type="grouplist">
                     <height>256</height>
                     <orientation>horizontal</orientation>
-                    <itemgap>-80</itemgap>
+                    <itemgap>$PARAM[itemgap]</itemgap>
                     <visible>Container($PARAM[id]).Position(0)</visible>
                     <include content="Categories_Selector_Fake_Button_FO">
                         <param name="id">$PARAM[id]</param>
@@ -134,6 +140,7 @@
                         <param name="font">$PARAM[font]</param>
                         <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_fo">$PARAM[textcolor_fo]</param>
+                        <param name="width">$PARAM[width]</param>
                     </include>
                     <include content="Categories_Selector_Fake_Button_NF">
                         <param name="id">$PARAM[id]</param>
@@ -141,6 +148,7 @@
                         <param name="font">$PARAM[font]</param>
                         <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_nf">$PARAM[textcolor_nf]</param>
+                        <param name="width">$PARAM[width]</param>
                     </include>
                     <include content="Categories_Selector_Fake_Button_NF">
                         <param name="id">$PARAM[id]</param>
@@ -148,6 +156,7 @@
                         <param name="font">$PARAM[font]</param>
                         <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_nf">$PARAM[textcolor_nf]</param>
+                        <param name="width">$PARAM[width]</param>
                     </include>
                     <include content="Categories_Selector_Fake_Button_NF">
                         <param name="id">$PARAM[id]</param>
@@ -155,6 +164,7 @@
                         <param name="font">$PARAM[font]</param>
                         <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_nf">$PARAM[textcolor_nf]</param>
+                        <param name="width">$PARAM[width]</param>
                     </include>
                     <include content="Categories_Selector_Fake_Button_NF" condition="$PARAM[include_five]">
                         <param name="id">$PARAM[id]</param>
@@ -162,6 +172,7 @@
                         <param name="font">$PARAM[font]</param>
                         <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_nf">$PARAM[textcolor_nf]</param>
+                        <param name="width">$PARAM[width]</param>
                     </include>
                 </control>
 
@@ -169,7 +180,7 @@
                 <control type="grouplist">
                     <height>256</height>
                     <orientation>horizontal</orientation>
-                    <itemgap>-80</itemgap>
+                    <itemgap>$PARAM[itemgap]</itemgap>
                     <visible>Container($PARAM[id]).Position(1)</visible>
                     <include content="Categories_Selector_Fake_Button_NF">
                         <param name="id">$PARAM[id]</param>
@@ -177,6 +188,7 @@
                         <param name="font">$PARAM[font]</param>
                         <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_nf">$PARAM[textcolor_nf]</param>
+                        <param name="width">$PARAM[width]</param>
                     </include>
                     <include content="Categories_Selector_Fake_Button_FO">
                         <param name="id">$PARAM[id]</param>
@@ -184,6 +196,7 @@
                         <param name="font">$PARAM[font]</param>
                         <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_fo">$PARAM[textcolor_fo]</param>
+                        <param name="width">$PARAM[width]</param>
                     </include>
                     <include content="Categories_Selector_Fake_Button_NF">
                         <param name="id">$PARAM[id]</param>
@@ -191,6 +204,7 @@
                         <param name="font">$PARAM[font]</param>
                         <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_nf">$PARAM[textcolor_nf]</param>
+                        <param name="width">$PARAM[width]</param>
                     </include>
                     <include content="Categories_Selector_Fake_Button_NF">
                         <param name="id">$PARAM[id]</param>
@@ -198,6 +212,7 @@
                         <param name="font">$PARAM[font]</param>
                         <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_nf">$PARAM[textcolor_nf]</param>
+                        <param name="width">$PARAM[width]</param>
                     </include>
                 </control>
 
@@ -205,7 +220,7 @@
                 <control type="grouplist">
                     <height>256</height>
                     <orientation>horizontal</orientation>
-                    <itemgap>-80</itemgap>
+                    <itemgap>$PARAM[itemgap]</itemgap>
                     <visible>Container($PARAM[id]).Position(2)</visible>
                     <include content="Categories_Selector_Fake_Button_NF">
                         <param name="id">$PARAM[id]</param>
@@ -213,6 +228,7 @@
                         <param name="font">$PARAM[font]</param>
                         <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_nf">$PARAM[textcolor_nf]</param>
+                        <param name="width">$PARAM[width]</param>
                     </include>
                     <include content="Categories_Selector_Fake_Button_NF">
                         <param name="id">$PARAM[id]</param>
@@ -220,6 +236,7 @@
                         <param name="font">$PARAM[font]</param>
                         <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_nf">$PARAM[textcolor_nf]</param>
+                        <param name="width">$PARAM[width]</param>
                     </include>
                     <include content="Categories_Selector_Fake_Button_FO">
                         <param name="id">$PARAM[id]</param>
@@ -227,6 +244,7 @@
                         <param name="font">$PARAM[font]</param>
                         <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_fo">$PARAM[textcolor_fo]</param>
+                        <param name="width">$PARAM[width]</param>
                     </include>
                     <include content="Categories_Selector_Fake_Button_NF">
                         <param name="id">$PARAM[id]</param>
@@ -234,6 +252,7 @@
                         <param name="font">$PARAM[font]</param>
                         <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_nf">$PARAM[textcolor_nf]</param>
+                        <param name="width">$PARAM[width]</param>
                     </include>
                 </control>
 
@@ -241,7 +260,7 @@
                 <control type="grouplist">
                     <height>256</height>
                     <orientation>horizontal</orientation>
-                    <itemgap>-80</itemgap>
+                    <itemgap>$PARAM[itemgap]</itemgap>
                     <visible>Container($PARAM[id]).Position(3)</visible>
                     <include content="Categories_Selector_Fake_Button_NF">
                         <param name="id">$PARAM[id]</param>
@@ -249,6 +268,7 @@
                         <param name="font">$PARAM[font]</param>
                         <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_nf">$PARAM[textcolor_nf]</param>
+                        <param name="width">$PARAM[width]</param>
                     </include>
                     <include content="Categories_Selector_Fake_Button_NF">
                         <param name="id">$PARAM[id]</param>
@@ -256,6 +276,7 @@
                         <param name="font">$PARAM[font]</param>
                         <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_nf">$PARAM[textcolor_nf]</param>
+                        <param name="width">$PARAM[width]</param>
                     </include>
                     <include content="Categories_Selector_Fake_Button_NF">
                         <param name="id">$PARAM[id]</param>
@@ -263,6 +284,7 @@
                         <param name="font">$PARAM[font]</param>
                         <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_nf">$PARAM[textcolor_nf]</param>
+                        <param name="width">$PARAM[width]</param>
                     </include>
                     <include content="Categories_Selector_Fake_Button_FO">
                         <param name="id">$PARAM[id]</param>
@@ -270,6 +292,7 @@
                         <param name="font">$PARAM[font]</param>
                         <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_fo">$PARAM[textcolor_fo]</param>
+                        <param name="width">$PARAM[width]</param>
                     </include>
                 </control>
             </control>

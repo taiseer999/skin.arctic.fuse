@@ -273,7 +273,7 @@
                     <include content="Info_Viewline">
                         <param name="library_condition">false</param>
                         <param name="label">$INFO[Container(50).NumItems] $LOCALIZE[31022]</param>
-                        <param name="custom_icon_condition">Skin.HasSetting(Furniture.EnableViewLineDisableIcons)</param>
+                        <param name="custom_icon_condition">Skin.HasSetting(Furniture.EnableViewLineIcons)</param>
                         <param name="custom_icon">special://skin/extras/icons/kodi.png</param>
                         <!-- <param name="custom_label_condition">true</param>
                         <param name="custom_label">$INFO[ListItem.SortLetter]</param> -->
@@ -284,7 +284,7 @@
                     <include content="Info_Viewline">
                         <param name="library_condition">false</param>
                         <param name="label">$INFO[Container(51).NumItems] $LOCALIZE[31022]</param>
-                        <param name="custom_icon_condition">Skin.HasSetting(Furniture.EnableViewLineDisableIcons)</param>
+                        <param name="custom_icon_condition">Skin.HasSetting(Furniture.EnableViewLineIcons)</param>
                         <param name="custom_icon">special://skin/extras/icons/kodi.png</param>
                         <!-- <param name="custom_label_condition">true</param>
                         <param name="custom_label">$INFO[ListItem.SortLetter]</param> -->
@@ -295,7 +295,7 @@
                     <include content="Info_Viewline">
                         <param name="library_condition">false</param>
                         <param name="label">$INFO[Container(52).NumItems] $LOCALIZE[31022]</param>
-                        <param name="custom_icon_condition">Skin.HasSetting(Furniture.EnableViewLineDisableIcons)</param>
+                        <param name="custom_icon_condition">Skin.HasSetting(Furniture.EnableViewLineIcons)</param>
                         <param name="custom_icon">special://skin/extras/icons/kodi.png</param>
                         <!-- <param name="custom_label_condition">true</param>
                         <param name="custom_label">$INFO[ListItem.SortLetter]</param> -->

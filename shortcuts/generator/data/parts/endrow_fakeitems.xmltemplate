@@ -9,5 +9,6 @@
         <param name="id">$MATH[{grouplist_item_x} * 1000 + 419]</param>
         <param name="label">Widgets</param>
         <param name="visible">{endrow_visible}</param>
+        <param name="width">280</param>
     </include>
 </control>

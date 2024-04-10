@@ -15,14 +15,14 @@
     </variable>
 
     <variable name="Image_NextMedia">
-        <!-- <value condition="!Skin.HasSetting(Furniture.EnableViewLineDisableIcons)">special://skin/extras/icons/_none.png</value> -->
+        <!-- <value condition="!Skin.HasSetting(Furniture.EnableViewLineIcons)">special://skin/extras/icons/_none.png</value> -->
         <value condition="[Skin.String(Navigation.Global.OnDown,Bump) | [Skin.String(Navigation.Global.OnDown,Filter) + ![Window.IsMedia | Window.IsVisible(1105)]]]">special://skin/extras/icons/kodi.png</value>
         <value condition="$EXP[Exp_View_56] | $EXP[Exp_View_500] | $EXP[Exp_View_516]">special://skin/extras/icons/arrow-right.png</value>
         <value>special://skin/extras/icons/arrow-down.png</value>
     </variable>
 
     <variable name="Image_NextWidget">
-        <!-- <value condition="!Skin.HasSetting(Furniture.EnableViewLineDisableIcons)">special://skin/extras/icons/_none.png</value> -->
+        <!-- <value condition="!Skin.HasSetting(Furniture.EnableViewLineIcons)">special://skin/extras/icons/_none.png</value> -->
         <value condition="!String.IsEmpty(Container(303).ListItemNoWrap(1).Label) + Window.IsVisible(Home) + Skin.HasSetting(Hub.Home.DisableSubmenu) + !Skin.HasSetting(Hub.Home.DisableMoveBetweenGroups)">special://skin/extras/icons/arrow-down.png</value>
         <value condition="Window.IsVisible(Home) + Skin.String(Navigation.Hub.Home.OnDown,Explore)">special://skin/extras/icons/arrow-down.png</value>
         <value condition="Window.IsVisible(1101) + Skin.String(Navigation.Hub.1101.OnDown,Explore)">special://skin/extras/icons/arrow-down.png</value>

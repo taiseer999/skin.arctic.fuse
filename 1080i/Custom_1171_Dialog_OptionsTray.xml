@@ -17,61 +17,31 @@
 
         <control type="group">
             <include>Animation_Group_Bumper</include>
-            <left>-20</left>
-            <width>1160</width>
-            <height>120</height>
-            <bottom>40</bottom>
             <control type="group">
-                <include content="Dimension_Padding">
-                    <param name="pad">20</param>
+                <centerbottom>100</centerbottom>
+                <height>40</height>
+                <visible>!Skin.HasSetting(Furniture.DisableTrayViewLine)</visible>
+                <include content="Info_Viewline">
+                    <param name="label">$LOCALIZE[33063]</param>
+                    <top>0</top>
                 </include>
+            </control>
 
+            <control type="grouplist">
+                <include content="View_Combined_List_Horz_Grouplist_Definition">
+                    <param name="label">$LOCALIZE[33063]</param>
+                    <param name="include_trayicons_condition">False</param>
+                </include>
                 <control type="group">
+                    <left>40</left>
+                    <height>80</height>
                     <centertop>50%</centertop>
-                    <height>40</height>
-                    <visible>!Skin.HasSetting(Furniture.DisableTrayViewLine)</visible>
-                    <include content="Info_Viewline">
-                        <param name="label">$LOCALIZE[33063]</param>
-                        <param name="item_condition">false</param>
-                        <param name="item_count">$INFO[Container(9000).NumItems]</param>
-                        <param name="item_updating">Container(9000).IsUpdating</param>
-                        <top>0</top>
-                    </include>
-                </control>
-
-                <control type="grouplist">
-                    <height>256</height>
-                    <centertop>50%</centertop>
-                    <left>80</left>
-                    <orientation>horizontal</orientation>
-                    <itemgap>0</itemgap>
-                    <control type="button">
-                        <align>left</align>
-                        <width>auto</width>
-                        <height>256</height>
-                        <centertop>50%</centertop>
-                        <font>font_main_black</font>
-                        <textcolor>00ffffff</textcolor>
-                        <selectedcolor>00ffffff</selectedcolor>
-                        <disabledcolor>00ffffff</disabledcolor>
-                        <label>$LOCALIZE[33063]</label>
-                        <textoffsetx>80</textoffsetx>
-                        <texturenofocus />
-                        <texturefocus />
-                        <visible>!Skin.HasSetting(Furniture.DisableTrayViewLine)</visible>
-                    </control>
-
+                    <width>700</width>
                     <control type="list" id="9000">
                         <onup>Close</onup>
                         <focusposition>2</focusposition>
                         <movement>2</movement>
                         <orientation>horizontal</orientation>
-                        <centertop>50%</centertop>
-                        <include content="Object_Left" condition="Skin.HasSetting(Furniture.DisableTrayViewLine)">
-                            <param name="left">100</param>
-                        </include>
-                        <height>80</height>
-                        <width>700</width>
 
                         <ondown>SetProperty(Bumpers.OnDown,True,Home)</ondown>
                         <ondown>SetFocus(330)</ondown>

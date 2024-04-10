@@ -848,23 +848,23 @@
                         <visible>$PARAM[primary_visible]</visible>
                     </include>
 
-                    <include content="Info_Viewline_Icon" condition="$PARAM[item_condition] + Skin.HasSetting(Furniture.EnableViewLineDisableIcons)">
+                    <include content="Info_Viewline_Icon" condition="$PARAM[item_condition] + Skin.HasSetting(Furniture.EnableViewLineIcons)">
                         <param name="icon_enabled">special://skin/extras/icons/rotate.png</param>
                         <param name="icon_disabled">special://skin/extras/icons/rotate.png</param>
                         <visible>$PARAM[item_updating]</visible>
                     </include>
 
-                    <include content="Info_Viewline_Icon" condition="$PARAM[item_condition] + ![$PARAM[library_condition]] + Skin.HasSetting(Furniture.EnableViewLineDisableIcons)">
+                    <include content="Info_Viewline_Icon" condition="$PARAM[item_condition] + ![$PARAM[library_condition]] + Skin.HasSetting(Furniture.EnableViewLineIcons)">
                         <param name="icon_enabled">special://skin/extras/icons/layer-group.png</param>
                         <param name="icon_disabled">special://skin/extras/icons/layer-group.png</param>
                     </include>
 
-                    <include content="Info_Viewline_Icon" condition="$PARAM[item_condition] + $PARAM[library_condition] + Skin.HasSetting(Furniture.EnableViewLineDisableIcons)">
+                    <include content="Info_Viewline_Icon" condition="$PARAM[item_condition] + $PARAM[library_condition] + Skin.HasSetting(Furniture.EnableViewLineIcons)">
                         <param name="icon_enabled">$VAR[Info_Viewline_ItemsIcon]</param>
                         <param name="icon_disabled">$VAR[Info_Viewline_ItemsIcon]</param>
                     </include>
 
-                    <include content="Info_Viewline_Label" condition="$PARAM[item_condition] + Skin.HasSetting(Furniture.EnableViewLineDisableIcons)">
+                    <include content="Info_Viewline_Label" condition="$PARAM[item_condition] + Skin.HasSetting(Furniture.EnableViewLineIcons)">
                         <font>font_mini</font>
                         <height>38</height>
                         <left>-10</left>

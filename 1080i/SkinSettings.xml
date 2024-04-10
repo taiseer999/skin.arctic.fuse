@@ -661,8 +661,8 @@
                             <param name="control">radiobutton</param>
                             <label>$LOCALIZE[536]</label>
                             <visible>Container(3).HasFocus(5)</visible>
-                            <onclick>Skin.ToggleSetting(Furniture.EnableViewLineDisableIcons)</onclick>
-                            <selected>Skin.HasSetting(Furniture.EnableViewLineDisableIcons)</selected>
+                            <onclick>Skin.ToggleSetting(Furniture.EnableViewLineIcons)</onclick>
+                            <selected>Skin.HasSetting(Furniture.EnableViewLineIcons)</selected>
                         </include>
                         <include content="Settings_Button" description="Viewline Highlight">
                             <param name="id">5023</param>
