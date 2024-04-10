@@ -697,7 +697,7 @@
                             <height>40</height>
                             <centertop>50%</centertop>
                             <control type="label">
-                                <height>35</height>
+                                <!-- <height>35</height> -->
                                 <aligny>center</aligny>
                                 <textoffsetx>0</textoffsetx>
                                 <align>center</align>
@@ -718,7 +718,7 @@
                             <height>40</height>
                             <centertop>50%</centertop>
                             <control type="label">
-                                <height>35</height>
+                                <!-- <height>35</height> -->
                                 <aligny>center</aligny>
                                 <textoffsetx>0</textoffsetx>
                                 <align>center</align>
@@ -728,7 +728,7 @@
                                 <visible>$PARAM[label_fo]</visible>
                             </control>
                             <control type="label">
-                                <height>35</height>
+                                <!-- <height>35</height> -->
                                 <aligny>center</aligny>
                                 <textoffsetx>0</textoffsetx>
                                 <align>center</align>
@@ -770,7 +770,7 @@
                                 </control>
                             </control>
                             <control type="label">
-                                <height>35</height>
+                                <!-- <height>35</height> -->
                                 <aligny>center</aligny>
                                 <textoffsetx>0</textoffsetx>
                                 <align>center</align>

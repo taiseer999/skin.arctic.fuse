@@ -399,8 +399,8 @@
                         <include content="Categories_Selector" condition="Skin.HasSetting(Views.DisableItemPeek)">
                             <param name="id">$PARAM[id]2</param>
                             <param name="font">font_mini</param>
-                            <param name="hitrect_x">view_side</param>
-                            <param name="hitrect_y">920</param>
+                            <param name="hitrect_x">0</param>
+                            <param name="hitrect_y">0</param>
                             <param name="hitrect_w">1080</param>
                             <param name="hitrect_h">120</param>
                             <param name="scrolltime">400</param>
@@ -415,8 +415,8 @@
                             <param name="font">font_mini</param>
                             <param name="hitrect_x">0</param>
                             <param name="hitrect_y">0</param>
-                            <param name="hitrect_w">0</param>
-                            <param name="hitrect_h">0</param>
+                            <param name="hitrect_w">1080</param>
+                            <param name="hitrect_h">120</param>
                             <param name="scrolltime">0</param>
                             <include content="View_Combined_List_Horz_Selector_Content">
                                 <param name="id">$PARAM[id]</param>

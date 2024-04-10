@@ -673,10 +673,10 @@
                 <param name="color_nf">main_fg_30</param>
                 <param name="hidden_button">List_ButtonMenu_Row_HiddenButton_ERow</param>
                 <param name="hidden_button_prefix">$PARAM[hidden_button_prefix]</param>
-                <param name="hitrect_x">-40</param>
-                <param name="hitrect_y">-140</param>
-                <param name="hitrect_w">1640</param>
-                <param name="hitrect_h">80</param>
+                <param name="hitrect_x">160</param>
+                <param name="hitrect_y">-160</param>
+                <param name="hitrect_w">1280</param>
+                <param name="hitrect_h">120</param>
 
                 <onfocus>SetProperty(EndRow.HasFocus,$PARAM[id])</onfocus>
                 <onunfocus>ClearProperty(EndRow.HasFocus)</onunfocus>
@@ -692,9 +692,6 @@
                     <param name="onback">[Integer.IsEqual(Container($PARAM[id]).CurrentItem,1)]</param>
                     <param name="backid">$PARAM[grouplistid]</param>
                 </include>
-
-                <!-- <onleft>332</onleft>
-                <onright>332</onright> -->
 
                 <onleft>$PARAM[id]</onleft>
                 <onright>$PARAM[id]</onright>
@@ -713,8 +710,9 @@
                 <nested />
 
                 <include content="Object_Left" condition="!Skin.HasSetting(Furniture.DisableTrayViewLine)">
-                    <param name="left">300</param>
+                    <param name="left">400</param>
                 </include>
+                <left>160</left>
                 <height>160</height>
                 <top>-160</top>
 

@@ -44,9 +44,6 @@
     </variable>
 
     <include name="Hub_Submenu_List_Definition_Content">
-        <top>0</top>
-        <left>240</left>
-        <height>240</height>
         <onup>300</onup>
         <ondown>$PARAM[ondown]</ondown>
         <onfocus>SetProperty(TMDbHelper.WidgetContainer,301,$PARAM[window_id])</onfocus>
@@ -80,10 +77,10 @@
             <param name="hidden_button">$PARAM[hidden_button]</param>
             <param name="hidden_button_prefix">$PARAM[hidden_button_prefix]</param>
             <param name="slide">True</param>
-            <param name="hitrect_x">0</param>
-            <param name="hitrect_y">0</param>
-            <param name="hitrect_w">0</param>
-            <param name="hitrect_h">0</param>
+            <param name="hitrect_x">20</param>
+            <param name="hitrect_y">20</param>
+            <param name="hitrect_w">1080</param>
+            <param name="hitrect_h">120</param>
             <param name="shorten">True</param>
             <param name="scrolltime">0</param>
 
@@ -109,10 +106,10 @@
             <param name="hidden_button">$PARAM[hidden_button]</param>
             <param name="hidden_button_prefix">$PARAM[hidden_button_prefix]</param>
             <param name="slide">True</param>
-            <param name="hitrect_x">40</param>
-            <param name="hitrect_y">40</param>
-            <param name="hitrect_w">1640</param>
-            <param name="hitrect_h">80</param>
+            <param name="hitrect_x">20</param>
+            <param name="hitrect_y">20</param>
+            <param name="hitrect_w">1080</param>
+            <param name="hitrect_h">120</param>
             <param name="shorten">True</param>
             <param name="scrolltime">400</param>
             <include content="Hub_Submenu_List_Definition_Content">
@@ -160,18 +157,13 @@
 
     <include name="Hub_Submenu_Group_Selector_Fake">
         <control type="group">
-            <left>260</left>
-            <height>hub_categorieswidget_h</height>
-            <top>0</top>
+            <centertop>60</centertop>
+            <height>256</height>
             <include>Hub_Categories_FadeIn</include>
-            <control type="group">
-                <centertop>60</centertop>
-                <height>256</height>
-                <include content="Categories_Selector_Fake">
-                    <param name="id">302</param>
-                    <param name="include_five">true</param>
-                </include>
-            </control>
+            <include content="Categories_Selector_Fake">
+                <param name="id">302</param>
+                <param name="include_five">true</param>
+            </include>
         </control>
     </include>
 
@@ -182,7 +174,7 @@
             <include>Transitions_Lower_Visibility</include>
             <top>hub_submenuwidget_t</top>
             <height>hub_submenuwidget_h</height>
-            <left>view_button_left</left>
+            <left>160</left>
             <orientation>vertical</orientation>
             <include>Hub_WindowTransition_CategoriesSpotlight_OnWidgets</include>
             <include condition="!Skin.HasSetting(Navigation.EnableTopCategories) + !Skin.HasSetting(Views.DisableItemPeek)">Hub_Submenu_Group_Selector_Fake</include>
@@ -605,28 +597,23 @@
 
     <include name="Hub_Categories_Definition_Selector_Fake">
         <control type="group">
-            <left>180</left>
-            <height>hub_categorieswidget_h</height>
-            <top>hub_categorieswidget_t</top>
-            <control type="group">
-                <centertop>60</centertop>
-                <height>256</height>
-                <include content="Categories_Selector_Fake">
-                    <param name="id">300</param>
-                    <param name="font">font_main_black</param>
-                    <param name="textoffsety">105</param>
-                </include>
-            </control>
+            <centertop>60</centertop>
+            <height>256</height>
+            <include content="Categories_Selector_Fake">
+                <param name="id">300</param>
+                <param name="font">font_main_black</param>
+            </include>
         </control>
     </include>
 
     <include name="Hub_Categories_Definition_Fake">
+        <include condition="!Skin.HasSetting(Navigation.EnableTopCategories)">Hub_Categories_Definition_Selector_Fake</include>
         <include content="Categories_Selector">
             <param name="window_id">$PARAM[window_id]</param>
-            <param name="hitrect_x">0</param>
-            <param name="hitrect_y">0</param>
-            <param name="hitrect_w">0</param>
-            <param name="hitrect_h">0</param>
+            <param name="hitrect_x">20</param>
+            <param name="hitrect_y">-20</param>
+            <param name="hitrect_w">1080</param>
+            <param name="hitrect_h">120</param>
             <param name="shorten">True</param>
             <param name="hidden_button_prefix">Item.$INFO[Container(300).ListItem.Property(item)]302.</param>
             <param name="hidden_button">List_ButtonMenu_Row_HiddenButton_Home_Categories</param>
@@ -640,15 +627,14 @@
                 <param name="condition">true</param>
             </include>
         </include>
-        <include condition="!Skin.HasSetting(Navigation.EnableTopCategories)">Hub_Categories_Definition_Selector_Fake</include>
     </include>
     <include name="Hub_Categories_Definition_Real">
         <include content="Categories_Selector">
             <param name="window_id">$PARAM[window_id]</param>
-            <param name="hitrect_x">-40</param>
-            <param name="hitrect_y">700</param>
-            <param name="hitrect_w">1640</param>
-            <param name="hitrect_h">80</param>
+            <param name="hitrect_x">20</param>
+            <param name="hitrect_y">-20</param>
+            <param name="hitrect_w">1080</param>
+            <param name="hitrect_h">120</param>
             <param name="shorten">True</param>
             <param name="hidden_button_prefix">Item.$INFO[Container(300).ListItem.Property(item)]302.</param>
             <param name="hidden_button">List_ButtonMenu_Row_HiddenButton_Home_Categories</param>
@@ -701,6 +687,9 @@
                 </include>
                 <control type="group">
                     <include>Hub_Categories_FadeIn</include>
+                    <left>160</left>
+                    <height>hub_categorieswidget_h</height>
+                    <top>hub_categorieswidget_t</top>
                     <include content="Hub_Categories_Definition">
                         <param name="window_id">$PARAM[window_id]</param>
                         <param name="categories">$PARAM[categories]</param>

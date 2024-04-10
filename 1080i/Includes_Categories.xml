@@ -53,7 +53,11 @@
                 <preloaditems>0</preloaditems>
                 <scrolltime tween="quadratic">$PARAM[scrolltime]</scrolltime>
 
+                <!-- <hitrectcolor>7fff00ff</hitrectcolor> -->
+
                 <hitrect x="$PARAM[hitrect_x]" y="$PARAM[hitrect_y]" w="$PARAM[hitrect_w]" h="$PARAM[hitrect_h]" />
+
+                <height>120</height>
 
                 <nested />
 
@@ -66,10 +70,6 @@
 
                 <onfocus condition="$PARAM[slide]">SetProperty(Slide.WidgetContainer,$PARAM[id],$PARAM[window_id])</onfocus>
                 <onfocus condition="![$PARAM[slide]]">ClearProperty(Slide.WidgetContainer,$PARAM[window_id])</onfocus>
-
-                <left>160</left>
-                <height>hub_categorieswidget_h</height>
-                <top>hub_categorieswidget_t</top>
             </include>
 
         </definition>
@@ -81,8 +81,6 @@
             <width>240</width>
             <height>256</height>
             <centertop>50%</centertop>
-            <aligny>top</aligny>
-            <textoffsety>$PARAM[textoffsety]</textoffsety>
             <texturenofocus />
             <include>Texture_MainMenu_Highlight_ToggleButton_FakeFocus</include>
             <font>$PARAM[font]</font>
@@ -100,8 +98,6 @@
             <width max="400" min="200">$PARAM[width]</width>
             <height>256</height>
             <centertop>50%</centertop>
-            <aligny>top</aligny>
-            <textoffsety>$PARAM[textoffsety]</textoffsety>
             <include>Texture_MainMenu_Highlight_ToggleButton_FakeFocus</include>
             <usealttexture>Control.HasFocus($PARAM[id])</usealttexture>
             <font>$PARAM[font]</font>
@@ -117,7 +113,6 @@
     <include name="Categories_Selector_Fake">
         <param name="id">302</param>
         <param name="font">font_mini</param>
-        <param name="textoffsety">109</param>
         <param name="textcolor_nf">main_fg_30</param>
         <param name="textcolor_fo">main_fg_90</param>
         <param name="include_five">false</param>
@@ -138,7 +133,6 @@
                         <param name="id">$PARAM[id]</param>
                         <param name="pos">0</param>
                         <param name="font">$PARAM[font]</param>
-                        <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_fo">$PARAM[textcolor_fo]</param>
                         <param name="width">$PARAM[width]</param>
                     </include>
@@ -146,7 +140,6 @@
                         <param name="id">$PARAM[id]</param>
                         <param name="pos">1</param>
                         <param name="font">$PARAM[font]</param>
-                        <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_nf">$PARAM[textcolor_nf]</param>
                         <param name="width">$PARAM[width]</param>
                     </include>
@@ -154,7 +147,6 @@
                         <param name="id">$PARAM[id]</param>
                         <param name="pos">2</param>
                         <param name="font">$PARAM[font]</param>
-                        <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_nf">$PARAM[textcolor_nf]</param>
                         <param name="width">$PARAM[width]</param>
                     </include>
@@ -162,7 +154,6 @@
                         <param name="id">$PARAM[id]</param>
                         <param name="pos">3</param>
                         <param name="font">$PARAM[font]</param>
-                        <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_nf">$PARAM[textcolor_nf]</param>
                         <param name="width">$PARAM[width]</param>
                     </include>
@@ -170,7 +161,6 @@
                         <param name="id">$PARAM[id]</param>
                         <param name="pos">4</param>
                         <param name="font">$PARAM[font]</param>
-                        <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_nf">$PARAM[textcolor_nf]</param>
                         <param name="width">$PARAM[width]</param>
                     </include>
@@ -186,7 +176,6 @@
                         <param name="id">$PARAM[id]</param>
                         <param name="pos">-1</param>
                         <param name="font">$PARAM[font]</param>
-                        <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_nf">$PARAM[textcolor_nf]</param>
                         <param name="width">$PARAM[width]</param>
                     </include>
@@ -194,7 +183,6 @@
                         <param name="id">$PARAM[id]</param>
                         <param name="pos">0</param>
                         <param name="font">$PARAM[font]</param>
-                        <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_fo">$PARAM[textcolor_fo]</param>
                         <param name="width">$PARAM[width]</param>
                     </include>
@@ -202,7 +190,6 @@
                         <param name="id">$PARAM[id]</param>
                         <param name="pos">1</param>
                         <param name="font">$PARAM[font]</param>
-                        <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_nf">$PARAM[textcolor_nf]</param>
                         <param name="width">$PARAM[width]</param>
                     </include>
@@ -210,7 +197,6 @@
                         <param name="id">$PARAM[id]</param>
                         <param name="pos">2</param>
                         <param name="font">$PARAM[font]</param>
-                        <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_nf">$PARAM[textcolor_nf]</param>
                         <param name="width">$PARAM[width]</param>
                     </include>
@@ -226,7 +212,6 @@
                         <param name="id">$PARAM[id]</param>
                         <param name="pos">-2</param>
                         <param name="font">$PARAM[font]</param>
-                        <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_nf">$PARAM[textcolor_nf]</param>
                         <param name="width">$PARAM[width]</param>
                     </include>
@@ -234,7 +219,6 @@
                         <param name="id">$PARAM[id]</param>
                         <param name="pos">-1</param>
                         <param name="font">$PARAM[font]</param>
-                        <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_nf">$PARAM[textcolor_nf]</param>
                         <param name="width">$PARAM[width]</param>
                     </include>
@@ -242,7 +226,6 @@
                         <param name="id">$PARAM[id]</param>
                         <param name="pos">0</param>
                         <param name="font">$PARAM[font]</param>
-                        <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_fo">$PARAM[textcolor_fo]</param>
                         <param name="width">$PARAM[width]</param>
                     </include>
@@ -250,7 +233,6 @@
                         <param name="id">$PARAM[id]</param>
                         <param name="pos">1</param>
                         <param name="font">$PARAM[font]</param>
-                        <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_nf">$PARAM[textcolor_nf]</param>
                         <param name="width">$PARAM[width]</param>
                     </include>
@@ -266,7 +248,6 @@
                         <param name="id">$PARAM[id]</param>
                         <param name="pos">-3</param>
                         <param name="font">$PARAM[font]</param>
-                        <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_nf">$PARAM[textcolor_nf]</param>
                         <param name="width">$PARAM[width]</param>
                     </include>
@@ -274,7 +255,6 @@
                         <param name="id">$PARAM[id]</param>
                         <param name="pos">-2</param>
                         <param name="font">$PARAM[font]</param>
-                        <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_nf">$PARAM[textcolor_nf]</param>
                         <param name="width">$PARAM[width]</param>
                     </include>
@@ -282,7 +262,6 @@
                         <param name="id">$PARAM[id]</param>
                         <param name="pos">-1</param>
                         <param name="font">$PARAM[font]</param>
-                        <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_nf">$PARAM[textcolor_nf]</param>
                         <param name="width">$PARAM[width]</param>
                     </include>
@@ -290,7 +269,6 @@
                         <param name="id">$PARAM[id]</param>
                         <param name="pos">0</param>
                         <param name="font">$PARAM[font]</param>
-                        <param name="textoffsety">$PARAM[textoffsety]</param>
                         <param name="textcolor_fo">$PARAM[textcolor_fo]</param>
                         <param name="width">$PARAM[width]</param>
                     </include>
