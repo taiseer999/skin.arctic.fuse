@@ -819,7 +819,7 @@
                                 <left>-60</left>
                                 <right>-60</right>
                                 <control type="image">
-                                    <include>Texture_MainMenu_Highlight_H</include>
+                                    <include>Texture_MainMenu_Highlight_V</include>
                                 </control>
                             </control>
                             <control type="label">

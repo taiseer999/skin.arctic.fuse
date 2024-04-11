@@ -157,6 +157,7 @@
 
     <include name="Hub_Submenu_Group_Selector_Fake">
         <control type="group">
+            <left>-20</left>
             <centertop>60</centertop>
             <height>256</height>
             <include>Hub_Categories_FadeIn</include>
@@ -600,6 +601,7 @@
 
     <include name="Hub_Categories_Definition_Selector_Fake">
         <control type="group">
+            <left>-20</left>
             <centertop>60</centertop>
             <height>256</height>
             <include content="Categories_Selector_Fake">

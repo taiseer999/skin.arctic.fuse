@@ -173,7 +173,7 @@
     <constant name="hub_spotlight_fanart_t">400</constant>
     <constant name="hub_spotlight_t">460</constant>
     <constant name="hub_spotlight_h">40</constant>
-    <constant name="hub_categorieswidget_t">720</constant>
+    <constant name="hub_categorieswidget_t">740</constant>
     <constant name="hub_categorieswidget_h">320</constant>
     <constant name="hub_submenuwidget_t">800</constant>
     <constant name="hub_submenuwidget_h">240</constant>

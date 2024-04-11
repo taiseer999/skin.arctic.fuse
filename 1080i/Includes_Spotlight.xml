@@ -181,7 +181,7 @@
                         <control type="group">
                             <visible>Control.HasFocus(311)</visible>
                             <control type="image">
-                                <include>Texture_Circle_Highlight_H</include>
+                                <include>Texture_Circle_Highlight_V</include>
                             </control>
                             <control type="image">
                                 <bordersize>20</bordersize>

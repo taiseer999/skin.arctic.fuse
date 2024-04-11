@@ -39,9 +39,12 @@
 </include>
 <include name="Texture_MainMenu_Highlight_ToggleButton_FakeFocus">
     <texturenofocus />
-    <texturefocus border="80">special://profile/addon_data/script.texturemaker/{skindir}/menumain_h.png</texturefocus>
-    <alttexturefocus border="80">special://profile/addon_data/script.texturemaker/{skindir}/menumain_h.png</alttexturefocus>
-    <alttexturenofocus border="80">special://profile/addon_data/script.texturemaker/{skindir}/menumain_h.png</alttexturenofocus>
+    <texturefocus border="80" flipy="true">special://profile/addon_data/script.texturemaker/{skindir}/menumain_v.png</texturefocus>
+    <alttexturefocus border="80" flipy="true">special://profile/addon_data/script.texturemaker/{skindir}/menumain_v.png</alttexturefocus>
+    <alttexturenofocus border="80" flipy="true">special://profile/addon_data/script.texturemaker/{skindir}/menumain_v.png</alttexturenofocus>
+</include>
+<include name="Texture_MainMenu_Highlight_V">
+    <texture border="80" flipy="true">special://profile/addon_data/script.texturemaker/{skindir}/menumain_v.png</texture>
 </include>
 <include name="Texture_MainMenu_Highlight_H">
     <texture border="80">special://profile/addon_data/script.texturemaker/{skindir}/menumain_h.png</texture>
