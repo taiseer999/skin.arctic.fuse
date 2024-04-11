@@ -415,6 +415,11 @@
         <value>$LOCALIZE[571]</value>
     </variable>
 
+    <variable name="Label_Setting_CategoriesStyle">
+        <value condition="Skin.HasSetting(Navigation.EnableTopCategories)">$LOCALIZE[31352]</value>
+        <value>$LOCALIZE[571]</value>
+    </variable>
+
     <variable name="Label_Setting_ColourPreset">
         <value condition="$EXP[Exp_ColourPreset_MiamiVaporwave]">$LOCALIZE[31140]</value>
         <value condition="$EXP[Exp_ColourPreset_AquaClassic]">$LOCALIZE[31138]</value>

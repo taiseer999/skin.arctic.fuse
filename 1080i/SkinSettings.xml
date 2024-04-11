@@ -357,7 +357,17 @@
                             <label>$LOCALIZE[31474]</label>
                             <label2>$VAR[Label_Setting_SpotlightStyle]</label2>
                             <visible>Container(3).HasFocus(2)</visible>
-                            <onclick>Skin.ToggleSetting(Background.EnableSpotlightFanart)</onclick>
+                            <onclick condition="!Skin.HasSetting(Navigation.EnableTopCategories)">Skin.ToggleSetting(Background.EnableSpotlightFanart)</onclick>
+                            <onclick condition="Skin.HasSetting(Navigation.EnableTopCategories)">Skin.Reset(Background.EnableSpotlightFanart)</onclick>
+                            <onclick condition="Skin.HasSetting(Navigation.EnableTopCategories)">Skin.Reset(Navigation.EnableTopCategories)</onclick>
+                        </include>
+                        <include content="Settings_Button" description="Categories Style">
+                            <param name="id">2024</param>
+                            <param name="control">button</param>
+                            <label>$LOCALIZE[31422]</label>
+                            <label2>$VAR[Label_Setting_CategoriesStyle]</label2>
+                            <visible>Container(3).HasFocus(2)</visible>
+                            <onclick>Skin.ToggleSetting(Navigation.EnableTopCategories)</onclick>
                         </include>
                         <include content="Settings_Button" description="Border Style">
                             <param name="id">2018</param>
