@@ -479,7 +479,6 @@
                 <param name="itemlayout_w">186.67</param>
                 <param name="itemlayout_h">view_icon_itemlayout_h</param>
                 <param name="itemlayout_include">Layout_Square</param>
-                <param name="variation">true</param>
                 <param name="diffuse">diffuse/square_w170_h170.png</param>
                 <param name="focusedlayout_special">$PARAM[focusedlayout_special]</param>
                 <param name="offset_x">$PARAM[offset_x]</param>
