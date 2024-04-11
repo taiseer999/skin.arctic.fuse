@@ -550,6 +550,42 @@
         </definition>
     </include>
 
+    <include name="Object_SquareIcon">
+        <param name="genre_bordersize">50</param>
+        <param name="other_bordersize">20</param>
+        <definition>
+            <control type="group">
+                <visible>![String.IsEqual($PARAM[listitem].DBType,genre) | String.IsEqual($PARAM[listitem].Property(DBType),genre)]</visible>
+                <visible>![String.IsEqual($PARAM[listitem].DBType,studio) | String.IsEqual($PARAM[listitem].Property(DBType),studio)]</visible>
+                <visible>![String.IsEqual($PARAM[listitem].DBType,country) | String.IsEqual($PARAM[listitem].Property(DBType),country)]</visible>
+                <include content="Object_Layout_Image">
+                    <param name="diffuse">$PARAM[diffuse]</param>
+                    <param name="icon">$PARAM[icon]</param>
+                    <param name="listitem">$PARAM[listitem]</param>
+                    <param name="aspectratio">$PARAM[aspectratio]</param>
+                </include>
+            </control>
+            <control type="image">
+                <texture background="true" diffuse="$PARAM[icon_diffuse]" colordiffuse="main_fg_100" fallback="DefaultGenres.png">$PARAM[icon]</texture>
+                <aspectratio scalediffuse="false">keep</aspectratio>
+                <bordersize>$PARAM[genre_bordersize]</bordersize>
+                <visible>[String.IsEqual($PARAM[listitem].DBType,genre) | String.IsEqual($PARAM[listitem].Property(DBType),genre)]</visible>
+            </control>
+            <control type="image">
+                <texture background="true" diffuse="$PARAM[icon_diffuse]" colordiffuse="main_fg_100" fallback="DefaultStudios.png">$PARAM[icon]</texture>
+                <aspectratio scalediffuse="false">keep</aspectratio>
+                <bordersize>$PARAM[other_bordersize]</bordersize>
+                <visible>[String.IsEqual($PARAM[listitem].DBType,studio) | String.IsEqual($PARAM[listitem].Property(DBType),studio)]</visible>
+            </control>
+            <control type="image">
+                <texture background="true" diffuse="$PARAM[icon_diffuse]" colordiffuse="main_fg_100" fallback="DefaultCountry.png">$PARAM[icon]</texture>
+                <aspectratio scalediffuse="false">keep</aspectratio>
+                <bordersize>$PARAM[other_bordersize]</bordersize>
+                <visible>[String.IsEqual($PARAM[listitem].DBType,country) | String.IsEqual($PARAM[listitem].Property(DBType),country)]</visible>
+            </control>
+        </definition>
+    </include>
+
     <include name="Object_InfoCircle_Horizontal">
         <param name="bordersize">3</param>
         <param name="max">400</param>

@@ -19,6 +19,16 @@
     </variable>
 
     <!-- Images -->
+    <variable name="Image_Overview" containers="50" start="-2" end="10" types="listitem,listitemposition">
+        <value condition="!String.IsEmpty({listitem}.Art(fanart)) + [String.IsEqual({listitem}.DBType,movie) | String.IsEqual({listitem}.DBType,tvshow) | String.IsEqual({listitem}.DBType,season) | String.IsEqual({listitem}.DBType,set)]">$INFO[{listitem}.Art(fanart)]</value>
+        <value condition="!String.IsEmpty({listitem}.Art(poster)) + [String.IsEqual({listitem}.DBType,movie) | String.IsEqual({listitem}.DBType,tvshow) | String.IsEqual({listitem}.DBType,season) | String.IsEqual({listitem}.DBType,set)]">$INFO[{listitem}.Art(poster)]</value>
+        <value condition="String.IsEqual({listitem}.DBType,studio) | String.IsEqual({listitem}.Property(DBType),studio)">$INFO[{listitem}.Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual({listitem}.DBType,country) | String.IsEqual({listitem}.Property(DBType),country)">$INFO[{listitem}.Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual({listitem}.DBType,genre) | String.IsEqual({listitem}.Property(DBType),genre)">$INFO[{listitem}.Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty({listitem}.Art(thumb))">$INFO[{listitem}.Art(thumb)]</value>
+        <value condition="!String.IsEmpty({listitem}.Icon)">$INFO[{listitem}.Icon]</value>
+    </variable>
+
     <variable name="Image_Icon" containers="50,503" start="-20" end="20" types="listitem,listitemposition">
         <value condition="String.IsEqual({listitem}.DBType,studio) | String.IsEqual({listitem}.Property(DBType),studio)">$INFO[{listitem}.Label,resource://resource.images.studios.white/,.png]</value>
         <value condition="String.IsEqual({listitem}.DBType,country) | String.IsEqual({listitem}.Property(DBType),country)">$INFO[{listitem}.Label,resource://resource.images.moviecountryicons.maps/,.png]</value>

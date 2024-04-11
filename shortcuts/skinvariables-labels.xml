@@ -35,6 +35,15 @@
         <value>$VAR[Def_PlotDetails_Fallback]</value>
     </variable>
 
+    <variable name="Label_Landscape_Plot" containers="51,513" start="-20" end="20" types="listitem,listitemposition">
+        <value condition="!String.IsEmpty({listitem}.Property(Album_Description))">$INFO[{listitem}.Property(Album_Description)]</value>
+        <value condition="!String.IsEmpty({listitem}.Property(Artist_Description))">$INFO[{listitem}.Property(Artist_Description)]</value>
+        <value condition="!String.IsEmpty({listitem}.AddonDescription)">$INFO[{listitem}.AddonDescription]</value>
+        <value condition="!String.IsEmpty({listitem}.Plot)">$INFO[{listitem}.Plot]</value>
+        <value condition="!String.IsEmpty({listitem}.Property(biography))">$INFO[{listitem}.Property(biography)]</value>
+        <value condition="!String.IsEmpty({listitem}.Label)">$INFO[{listitem}.Label]</value>
+    </variable>
+
     <variable name="Label_Landscape_Lower" containers="51,513" start="-20" end="20" types="listitem,listitemposition">
         <value condition="!String.IsEmpty({listitem}.Property(job))">$INFO[{listitem}.Property(job)]</value>
         <value condition="!String.IsEmpty({listitem}.Property(role))">$INFO[{listitem}.Property(role)]</value>
@@ -52,6 +61,7 @@
         <value condition="!String.IsEmpty({listitem}.AddonType)">$INFO[{listitem}.AddonType]</value>
         <value condition="!String.IsEmpty({listitem}.AddonVersion)">$INFO[{listitem}.AddonVersion]</value>
         <value condition="!String.IsEmpty({listitem}.DBType)">$INFO[{listitem}.DBType,[CAPITALIZE],[/CAPITALIZE]]</value>
+        <value condition="!String.IsEmpty({listitem}.Property(widget))">$INFO[{listitem}.Property(widget)]</value>
         <value condition="{listitem}.IsFolder">$LOCALIZE[19076]</value>
         <value>$LOCALIZE[31025]</value>
     </variable>

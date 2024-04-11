@@ -107,6 +107,510 @@
         <value condition="Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),553)">$VAR[Image_Foreground_Cheater_C553]</value>
         <value condition="True">$VAR[Image_Foreground_Cheater]</value>
     </variable>
+    <variable name="Image_Overview_C50_-2">
+        <value condition="!String.IsEmpty(Container(50).ListItem(-2).Art(fanart)) + [String.IsEqual(Container(50).ListItem(-2).DBType,movie) | String.IsEqual(Container(50).ListItem(-2).DBType,tvshow) | String.IsEqual(Container(50).ListItem(-2).DBType,season) | String.IsEqual(Container(50).ListItem(-2).DBType,set)]">$INFO[Container(50).ListItem(-2).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(-2).Art(poster)) + [String.IsEqual(Container(50).ListItem(-2).DBType,movie) | String.IsEqual(Container(50).ListItem(-2).DBType,tvshow) | String.IsEqual(Container(50).ListItem(-2).DBType,season) | String.IsEqual(Container(50).ListItem(-2).DBType,set)]">$INFO[Container(50).ListItem(-2).Art(poster)]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(-2).DBType,studio) | String.IsEqual(Container(50).ListItem(-2).Property(DBType),studio)">$INFO[Container(50).ListItem(-2).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(-2).DBType,country) | String.IsEqual(Container(50).ListItem(-2).Property(DBType),country)">$INFO[Container(50).ListItem(-2).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(-2).DBType,genre) | String.IsEqual(Container(50).ListItem(-2).Property(DBType),genre)">$INFO[Container(50).ListItem(-2).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(-2).Art(thumb))">$INFO[Container(50).ListItem(-2).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(-2).Icon)">$INFO[Container(50).ListItem(-2).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_C50_-1">
+        <value condition="!String.IsEmpty(Container(50).ListItem(-1).Art(fanart)) + [String.IsEqual(Container(50).ListItem(-1).DBType,movie) | String.IsEqual(Container(50).ListItem(-1).DBType,tvshow) | String.IsEqual(Container(50).ListItem(-1).DBType,season) | String.IsEqual(Container(50).ListItem(-1).DBType,set)]">$INFO[Container(50).ListItem(-1).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(-1).Art(poster)) + [String.IsEqual(Container(50).ListItem(-1).DBType,movie) | String.IsEqual(Container(50).ListItem(-1).DBType,tvshow) | String.IsEqual(Container(50).ListItem(-1).DBType,season) | String.IsEqual(Container(50).ListItem(-1).DBType,set)]">$INFO[Container(50).ListItem(-1).Art(poster)]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(-1).DBType,studio) | String.IsEqual(Container(50).ListItem(-1).Property(DBType),studio)">$INFO[Container(50).ListItem(-1).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(-1).DBType,country) | String.IsEqual(Container(50).ListItem(-1).Property(DBType),country)">$INFO[Container(50).ListItem(-1).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(-1).DBType,genre) | String.IsEqual(Container(50).ListItem(-1).Property(DBType),genre)">$INFO[Container(50).ListItem(-1).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(-1).Art(thumb))">$INFO[Container(50).ListItem(-1).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(-1).Icon)">$INFO[Container(50).ListItem(-1).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_C50_0">
+        <value condition="!String.IsEmpty(Container(50).ListItem(0).Art(fanart)) + [String.IsEqual(Container(50).ListItem(0).DBType,movie) | String.IsEqual(Container(50).ListItem(0).DBType,tvshow) | String.IsEqual(Container(50).ListItem(0).DBType,season) | String.IsEqual(Container(50).ListItem(0).DBType,set)]">$INFO[Container(50).ListItem(0).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(0).Art(poster)) + [String.IsEqual(Container(50).ListItem(0).DBType,movie) | String.IsEqual(Container(50).ListItem(0).DBType,tvshow) | String.IsEqual(Container(50).ListItem(0).DBType,season) | String.IsEqual(Container(50).ListItem(0).DBType,set)]">$INFO[Container(50).ListItem(0).Art(poster)]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(0).DBType,studio) | String.IsEqual(Container(50).ListItem(0).Property(DBType),studio)">$INFO[Container(50).ListItem(0).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(0).DBType,country) | String.IsEqual(Container(50).ListItem(0).Property(DBType),country)">$INFO[Container(50).ListItem(0).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(0).DBType,genre) | String.IsEqual(Container(50).ListItem(0).Property(DBType),genre)">$INFO[Container(50).ListItem(0).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(0).Art(thumb))">$INFO[Container(50).ListItem(0).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(0).Icon)">$INFO[Container(50).ListItem(0).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_C50_1">
+        <value condition="!String.IsEmpty(Container(50).ListItem(1).Art(fanart)) + [String.IsEqual(Container(50).ListItem(1).DBType,movie) | String.IsEqual(Container(50).ListItem(1).DBType,tvshow) | String.IsEqual(Container(50).ListItem(1).DBType,season) | String.IsEqual(Container(50).ListItem(1).DBType,set)]">$INFO[Container(50).ListItem(1).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(1).Art(poster)) + [String.IsEqual(Container(50).ListItem(1).DBType,movie) | String.IsEqual(Container(50).ListItem(1).DBType,tvshow) | String.IsEqual(Container(50).ListItem(1).DBType,season) | String.IsEqual(Container(50).ListItem(1).DBType,set)]">$INFO[Container(50).ListItem(1).Art(poster)]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(1).DBType,studio) | String.IsEqual(Container(50).ListItem(1).Property(DBType),studio)">$INFO[Container(50).ListItem(1).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(1).DBType,country) | String.IsEqual(Container(50).ListItem(1).Property(DBType),country)">$INFO[Container(50).ListItem(1).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(1).DBType,genre) | String.IsEqual(Container(50).ListItem(1).Property(DBType),genre)">$INFO[Container(50).ListItem(1).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(1).Art(thumb))">$INFO[Container(50).ListItem(1).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(1).Icon)">$INFO[Container(50).ListItem(1).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_C50_2">
+        <value condition="!String.IsEmpty(Container(50).ListItem(2).Art(fanart)) + [String.IsEqual(Container(50).ListItem(2).DBType,movie) | String.IsEqual(Container(50).ListItem(2).DBType,tvshow) | String.IsEqual(Container(50).ListItem(2).DBType,season) | String.IsEqual(Container(50).ListItem(2).DBType,set)]">$INFO[Container(50).ListItem(2).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(2).Art(poster)) + [String.IsEqual(Container(50).ListItem(2).DBType,movie) | String.IsEqual(Container(50).ListItem(2).DBType,tvshow) | String.IsEqual(Container(50).ListItem(2).DBType,season) | String.IsEqual(Container(50).ListItem(2).DBType,set)]">$INFO[Container(50).ListItem(2).Art(poster)]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(2).DBType,studio) | String.IsEqual(Container(50).ListItem(2).Property(DBType),studio)">$INFO[Container(50).ListItem(2).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(2).DBType,country) | String.IsEqual(Container(50).ListItem(2).Property(DBType),country)">$INFO[Container(50).ListItem(2).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(2).DBType,genre) | String.IsEqual(Container(50).ListItem(2).Property(DBType),genre)">$INFO[Container(50).ListItem(2).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(2).Art(thumb))">$INFO[Container(50).ListItem(2).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(2).Icon)">$INFO[Container(50).ListItem(2).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_C50_3">
+        <value condition="!String.IsEmpty(Container(50).ListItem(3).Art(fanart)) + [String.IsEqual(Container(50).ListItem(3).DBType,movie) | String.IsEqual(Container(50).ListItem(3).DBType,tvshow) | String.IsEqual(Container(50).ListItem(3).DBType,season) | String.IsEqual(Container(50).ListItem(3).DBType,set)]">$INFO[Container(50).ListItem(3).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(3).Art(poster)) + [String.IsEqual(Container(50).ListItem(3).DBType,movie) | String.IsEqual(Container(50).ListItem(3).DBType,tvshow) | String.IsEqual(Container(50).ListItem(3).DBType,season) | String.IsEqual(Container(50).ListItem(3).DBType,set)]">$INFO[Container(50).ListItem(3).Art(poster)]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(3).DBType,studio) | String.IsEqual(Container(50).ListItem(3).Property(DBType),studio)">$INFO[Container(50).ListItem(3).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(3).DBType,country) | String.IsEqual(Container(50).ListItem(3).Property(DBType),country)">$INFO[Container(50).ListItem(3).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(3).DBType,genre) | String.IsEqual(Container(50).ListItem(3).Property(DBType),genre)">$INFO[Container(50).ListItem(3).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(3).Art(thumb))">$INFO[Container(50).ListItem(3).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(3).Icon)">$INFO[Container(50).ListItem(3).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_C50_4">
+        <value condition="!String.IsEmpty(Container(50).ListItem(4).Art(fanart)) + [String.IsEqual(Container(50).ListItem(4).DBType,movie) | String.IsEqual(Container(50).ListItem(4).DBType,tvshow) | String.IsEqual(Container(50).ListItem(4).DBType,season) | String.IsEqual(Container(50).ListItem(4).DBType,set)]">$INFO[Container(50).ListItem(4).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(4).Art(poster)) + [String.IsEqual(Container(50).ListItem(4).DBType,movie) | String.IsEqual(Container(50).ListItem(4).DBType,tvshow) | String.IsEqual(Container(50).ListItem(4).DBType,season) | String.IsEqual(Container(50).ListItem(4).DBType,set)]">$INFO[Container(50).ListItem(4).Art(poster)]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(4).DBType,studio) | String.IsEqual(Container(50).ListItem(4).Property(DBType),studio)">$INFO[Container(50).ListItem(4).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(4).DBType,country) | String.IsEqual(Container(50).ListItem(4).Property(DBType),country)">$INFO[Container(50).ListItem(4).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(4).DBType,genre) | String.IsEqual(Container(50).ListItem(4).Property(DBType),genre)">$INFO[Container(50).ListItem(4).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(4).Art(thumb))">$INFO[Container(50).ListItem(4).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(4).Icon)">$INFO[Container(50).ListItem(4).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_C50_5">
+        <value condition="!String.IsEmpty(Container(50).ListItem(5).Art(fanart)) + [String.IsEqual(Container(50).ListItem(5).DBType,movie) | String.IsEqual(Container(50).ListItem(5).DBType,tvshow) | String.IsEqual(Container(50).ListItem(5).DBType,season) | String.IsEqual(Container(50).ListItem(5).DBType,set)]">$INFO[Container(50).ListItem(5).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(5).Art(poster)) + [String.IsEqual(Container(50).ListItem(5).DBType,movie) | String.IsEqual(Container(50).ListItem(5).DBType,tvshow) | String.IsEqual(Container(50).ListItem(5).DBType,season) | String.IsEqual(Container(50).ListItem(5).DBType,set)]">$INFO[Container(50).ListItem(5).Art(poster)]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(5).DBType,studio) | String.IsEqual(Container(50).ListItem(5).Property(DBType),studio)">$INFO[Container(50).ListItem(5).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(5).DBType,country) | String.IsEqual(Container(50).ListItem(5).Property(DBType),country)">$INFO[Container(50).ListItem(5).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(5).DBType,genre) | String.IsEqual(Container(50).ListItem(5).Property(DBType),genre)">$INFO[Container(50).ListItem(5).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(5).Art(thumb))">$INFO[Container(50).ListItem(5).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(5).Icon)">$INFO[Container(50).ListItem(5).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_C50_6">
+        <value condition="!String.IsEmpty(Container(50).ListItem(6).Art(fanart)) + [String.IsEqual(Container(50).ListItem(6).DBType,movie) | String.IsEqual(Container(50).ListItem(6).DBType,tvshow) | String.IsEqual(Container(50).ListItem(6).DBType,season) | String.IsEqual(Container(50).ListItem(6).DBType,set)]">$INFO[Container(50).ListItem(6).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(6).Art(poster)) + [String.IsEqual(Container(50).ListItem(6).DBType,movie) | String.IsEqual(Container(50).ListItem(6).DBType,tvshow) | String.IsEqual(Container(50).ListItem(6).DBType,season) | String.IsEqual(Container(50).ListItem(6).DBType,set)]">$INFO[Container(50).ListItem(6).Art(poster)]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(6).DBType,studio) | String.IsEqual(Container(50).ListItem(6).Property(DBType),studio)">$INFO[Container(50).ListItem(6).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(6).DBType,country) | String.IsEqual(Container(50).ListItem(6).Property(DBType),country)">$INFO[Container(50).ListItem(6).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(6).DBType,genre) | String.IsEqual(Container(50).ListItem(6).Property(DBType),genre)">$INFO[Container(50).ListItem(6).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(6).Art(thumb))">$INFO[Container(50).ListItem(6).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(6).Icon)">$INFO[Container(50).ListItem(6).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_C50_7">
+        <value condition="!String.IsEmpty(Container(50).ListItem(7).Art(fanart)) + [String.IsEqual(Container(50).ListItem(7).DBType,movie) | String.IsEqual(Container(50).ListItem(7).DBType,tvshow) | String.IsEqual(Container(50).ListItem(7).DBType,season) | String.IsEqual(Container(50).ListItem(7).DBType,set)]">$INFO[Container(50).ListItem(7).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(7).Art(poster)) + [String.IsEqual(Container(50).ListItem(7).DBType,movie) | String.IsEqual(Container(50).ListItem(7).DBType,tvshow) | String.IsEqual(Container(50).ListItem(7).DBType,season) | String.IsEqual(Container(50).ListItem(7).DBType,set)]">$INFO[Container(50).ListItem(7).Art(poster)]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(7).DBType,studio) | String.IsEqual(Container(50).ListItem(7).Property(DBType),studio)">$INFO[Container(50).ListItem(7).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(7).DBType,country) | String.IsEqual(Container(50).ListItem(7).Property(DBType),country)">$INFO[Container(50).ListItem(7).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(7).DBType,genre) | String.IsEqual(Container(50).ListItem(7).Property(DBType),genre)">$INFO[Container(50).ListItem(7).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(7).Art(thumb))">$INFO[Container(50).ListItem(7).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(7).Icon)">$INFO[Container(50).ListItem(7).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_C50_8">
+        <value condition="!String.IsEmpty(Container(50).ListItem(8).Art(fanart)) + [String.IsEqual(Container(50).ListItem(8).DBType,movie) | String.IsEqual(Container(50).ListItem(8).DBType,tvshow) | String.IsEqual(Container(50).ListItem(8).DBType,season) | String.IsEqual(Container(50).ListItem(8).DBType,set)]">$INFO[Container(50).ListItem(8).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(8).Art(poster)) + [String.IsEqual(Container(50).ListItem(8).DBType,movie) | String.IsEqual(Container(50).ListItem(8).DBType,tvshow) | String.IsEqual(Container(50).ListItem(8).DBType,season) | String.IsEqual(Container(50).ListItem(8).DBType,set)]">$INFO[Container(50).ListItem(8).Art(poster)]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(8).DBType,studio) | String.IsEqual(Container(50).ListItem(8).Property(DBType),studio)">$INFO[Container(50).ListItem(8).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(8).DBType,country) | String.IsEqual(Container(50).ListItem(8).Property(DBType),country)">$INFO[Container(50).ListItem(8).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(8).DBType,genre) | String.IsEqual(Container(50).ListItem(8).Property(DBType),genre)">$INFO[Container(50).ListItem(8).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(8).Art(thumb))">$INFO[Container(50).ListItem(8).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(8).Icon)">$INFO[Container(50).ListItem(8).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_C50_9">
+        <value condition="!String.IsEmpty(Container(50).ListItem(9).Art(fanart)) + [String.IsEqual(Container(50).ListItem(9).DBType,movie) | String.IsEqual(Container(50).ListItem(9).DBType,tvshow) | String.IsEqual(Container(50).ListItem(9).DBType,season) | String.IsEqual(Container(50).ListItem(9).DBType,set)]">$INFO[Container(50).ListItem(9).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(9).Art(poster)) + [String.IsEqual(Container(50).ListItem(9).DBType,movie) | String.IsEqual(Container(50).ListItem(9).DBType,tvshow) | String.IsEqual(Container(50).ListItem(9).DBType,season) | String.IsEqual(Container(50).ListItem(9).DBType,set)]">$INFO[Container(50).ListItem(9).Art(poster)]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(9).DBType,studio) | String.IsEqual(Container(50).ListItem(9).Property(DBType),studio)">$INFO[Container(50).ListItem(9).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(9).DBType,country) | String.IsEqual(Container(50).ListItem(9).Property(DBType),country)">$INFO[Container(50).ListItem(9).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(9).DBType,genre) | String.IsEqual(Container(50).ListItem(9).Property(DBType),genre)">$INFO[Container(50).ListItem(9).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(9).Art(thumb))">$INFO[Container(50).ListItem(9).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(9).Icon)">$INFO[Container(50).ListItem(9).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_C50_10">
+        <value condition="!String.IsEmpty(Container(50).ListItem(10).Art(fanart)) + [String.IsEqual(Container(50).ListItem(10).DBType,movie) | String.IsEqual(Container(50).ListItem(10).DBType,tvshow) | String.IsEqual(Container(50).ListItem(10).DBType,season) | String.IsEqual(Container(50).ListItem(10).DBType,set)]">$INFO[Container(50).ListItem(10).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(10).Art(poster)) + [String.IsEqual(Container(50).ListItem(10).DBType,movie) | String.IsEqual(Container(50).ListItem(10).DBType,tvshow) | String.IsEqual(Container(50).ListItem(10).DBType,season) | String.IsEqual(Container(50).ListItem(10).DBType,set)]">$INFO[Container(50).ListItem(10).Art(poster)]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(10).DBType,studio) | String.IsEqual(Container(50).ListItem(10).Property(DBType),studio)">$INFO[Container(50).ListItem(10).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(10).DBType,country) | String.IsEqual(Container(50).ListItem(10).Property(DBType),country)">$INFO[Container(50).ListItem(10).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItem(10).DBType,genre) | String.IsEqual(Container(50).ListItem(10).Property(DBType),genre)">$INFO[Container(50).ListItem(10).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(10).Art(thumb))">$INFO[Container(50).ListItem(10).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem(10).Icon)">$INFO[Container(50).ListItem(10).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_C50">
+        <value condition="!String.IsEmpty(Container(50).ListItem.Art(fanart)) + [String.IsEqual(Container(50).ListItem.DBType,movie) | String.IsEqual(Container(50).ListItem.DBType,tvshow) | String.IsEqual(Container(50).ListItem.DBType,season) | String.IsEqual(Container(50).ListItem.DBType,set)]">$INFO[Container(50).ListItem.Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem.Art(poster)) + [String.IsEqual(Container(50).ListItem.DBType,movie) | String.IsEqual(Container(50).ListItem.DBType,tvshow) | String.IsEqual(Container(50).ListItem.DBType,season) | String.IsEqual(Container(50).ListItem.DBType,set)]">$INFO[Container(50).ListItem.Art(poster)]</value>
+        <value condition="String.IsEqual(Container(50).ListItem.DBType,studio) | String.IsEqual(Container(50).ListItem.Property(DBType),studio)">$INFO[Container(50).ListItem.Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItem.DBType,country) | String.IsEqual(Container(50).ListItem.Property(DBType),country)">$INFO[Container(50).ListItem.Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItem.DBType,genre) | String.IsEqual(Container(50).ListItem.Property(DBType),genre)">$INFO[Container(50).ListItem.Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem.Art(thumb))">$INFO[Container(50).ListItem.Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem.Icon)">$INFO[Container(50).ListItem.Icon]</value>
+    </variable>
+    <variable name="Image_Overview_-2">
+        <value condition="!String.IsEmpty(ListItem(-2).Art(fanart)) + [String.IsEqual(ListItem(-2).DBType,movie) | String.IsEqual(ListItem(-2).DBType,tvshow) | String.IsEqual(ListItem(-2).DBType,season) | String.IsEqual(ListItem(-2).DBType,set)]">$INFO[ListItem(-2).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItem(-2).Art(poster)) + [String.IsEqual(ListItem(-2).DBType,movie) | String.IsEqual(ListItem(-2).DBType,tvshow) | String.IsEqual(ListItem(-2).DBType,season) | String.IsEqual(ListItem(-2).DBType,set)]">$INFO[ListItem(-2).Art(poster)]</value>
+        <value condition="String.IsEqual(ListItem(-2).DBType,studio) | String.IsEqual(ListItem(-2).Property(DBType),studio)">$INFO[ListItem(-2).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(ListItem(-2).DBType,country) | String.IsEqual(ListItem(-2).Property(DBType),country)">$INFO[ListItem(-2).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(ListItem(-2).DBType,genre) | String.IsEqual(ListItem(-2).Property(DBType),genre)">$INFO[ListItem(-2).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(ListItem(-2).Art(thumb))">$INFO[ListItem(-2).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(ListItem(-2).Icon)">$INFO[ListItem(-2).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_-1">
+        <value condition="!String.IsEmpty(ListItem(-1).Art(fanart)) + [String.IsEqual(ListItem(-1).DBType,movie) | String.IsEqual(ListItem(-1).DBType,tvshow) | String.IsEqual(ListItem(-1).DBType,season) | String.IsEqual(ListItem(-1).DBType,set)]">$INFO[ListItem(-1).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItem(-1).Art(poster)) + [String.IsEqual(ListItem(-1).DBType,movie) | String.IsEqual(ListItem(-1).DBType,tvshow) | String.IsEqual(ListItem(-1).DBType,season) | String.IsEqual(ListItem(-1).DBType,set)]">$INFO[ListItem(-1).Art(poster)]</value>
+        <value condition="String.IsEqual(ListItem(-1).DBType,studio) | String.IsEqual(ListItem(-1).Property(DBType),studio)">$INFO[ListItem(-1).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(ListItem(-1).DBType,country) | String.IsEqual(ListItem(-1).Property(DBType),country)">$INFO[ListItem(-1).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(ListItem(-1).DBType,genre) | String.IsEqual(ListItem(-1).Property(DBType),genre)">$INFO[ListItem(-1).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(ListItem(-1).Art(thumb))">$INFO[ListItem(-1).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(ListItem(-1).Icon)">$INFO[ListItem(-1).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_0">
+        <value condition="!String.IsEmpty(ListItem(0).Art(fanart)) + [String.IsEqual(ListItem(0).DBType,movie) | String.IsEqual(ListItem(0).DBType,tvshow) | String.IsEqual(ListItem(0).DBType,season) | String.IsEqual(ListItem(0).DBType,set)]">$INFO[ListItem(0).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItem(0).Art(poster)) + [String.IsEqual(ListItem(0).DBType,movie) | String.IsEqual(ListItem(0).DBType,tvshow) | String.IsEqual(ListItem(0).DBType,season) | String.IsEqual(ListItem(0).DBType,set)]">$INFO[ListItem(0).Art(poster)]</value>
+        <value condition="String.IsEqual(ListItem(0).DBType,studio) | String.IsEqual(ListItem(0).Property(DBType),studio)">$INFO[ListItem(0).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(ListItem(0).DBType,country) | String.IsEqual(ListItem(0).Property(DBType),country)">$INFO[ListItem(0).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(ListItem(0).DBType,genre) | String.IsEqual(ListItem(0).Property(DBType),genre)">$INFO[ListItem(0).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(ListItem(0).Art(thumb))">$INFO[ListItem(0).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(ListItem(0).Icon)">$INFO[ListItem(0).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_1">
+        <value condition="!String.IsEmpty(ListItem(1).Art(fanart)) + [String.IsEqual(ListItem(1).DBType,movie) | String.IsEqual(ListItem(1).DBType,tvshow) | String.IsEqual(ListItem(1).DBType,season) | String.IsEqual(ListItem(1).DBType,set)]">$INFO[ListItem(1).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItem(1).Art(poster)) + [String.IsEqual(ListItem(1).DBType,movie) | String.IsEqual(ListItem(1).DBType,tvshow) | String.IsEqual(ListItem(1).DBType,season) | String.IsEqual(ListItem(1).DBType,set)]">$INFO[ListItem(1).Art(poster)]</value>
+        <value condition="String.IsEqual(ListItem(1).DBType,studio) | String.IsEqual(ListItem(1).Property(DBType),studio)">$INFO[ListItem(1).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(ListItem(1).DBType,country) | String.IsEqual(ListItem(1).Property(DBType),country)">$INFO[ListItem(1).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(ListItem(1).DBType,genre) | String.IsEqual(ListItem(1).Property(DBType),genre)">$INFO[ListItem(1).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(ListItem(1).Art(thumb))">$INFO[ListItem(1).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(ListItem(1).Icon)">$INFO[ListItem(1).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_2">
+        <value condition="!String.IsEmpty(ListItem(2).Art(fanart)) + [String.IsEqual(ListItem(2).DBType,movie) | String.IsEqual(ListItem(2).DBType,tvshow) | String.IsEqual(ListItem(2).DBType,season) | String.IsEqual(ListItem(2).DBType,set)]">$INFO[ListItem(2).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItem(2).Art(poster)) + [String.IsEqual(ListItem(2).DBType,movie) | String.IsEqual(ListItem(2).DBType,tvshow) | String.IsEqual(ListItem(2).DBType,season) | String.IsEqual(ListItem(2).DBType,set)]">$INFO[ListItem(2).Art(poster)]</value>
+        <value condition="String.IsEqual(ListItem(2).DBType,studio) | String.IsEqual(ListItem(2).Property(DBType),studio)">$INFO[ListItem(2).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(ListItem(2).DBType,country) | String.IsEqual(ListItem(2).Property(DBType),country)">$INFO[ListItem(2).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(ListItem(2).DBType,genre) | String.IsEqual(ListItem(2).Property(DBType),genre)">$INFO[ListItem(2).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(ListItem(2).Art(thumb))">$INFO[ListItem(2).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(ListItem(2).Icon)">$INFO[ListItem(2).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_3">
+        <value condition="!String.IsEmpty(ListItem(3).Art(fanart)) + [String.IsEqual(ListItem(3).DBType,movie) | String.IsEqual(ListItem(3).DBType,tvshow) | String.IsEqual(ListItem(3).DBType,season) | String.IsEqual(ListItem(3).DBType,set)]">$INFO[ListItem(3).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItem(3).Art(poster)) + [String.IsEqual(ListItem(3).DBType,movie) | String.IsEqual(ListItem(3).DBType,tvshow) | String.IsEqual(ListItem(3).DBType,season) | String.IsEqual(ListItem(3).DBType,set)]">$INFO[ListItem(3).Art(poster)]</value>
+        <value condition="String.IsEqual(ListItem(3).DBType,studio) | String.IsEqual(ListItem(3).Property(DBType),studio)">$INFO[ListItem(3).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(ListItem(3).DBType,country) | String.IsEqual(ListItem(3).Property(DBType),country)">$INFO[ListItem(3).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(ListItem(3).DBType,genre) | String.IsEqual(ListItem(3).Property(DBType),genre)">$INFO[ListItem(3).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(ListItem(3).Art(thumb))">$INFO[ListItem(3).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(ListItem(3).Icon)">$INFO[ListItem(3).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_4">
+        <value condition="!String.IsEmpty(ListItem(4).Art(fanart)) + [String.IsEqual(ListItem(4).DBType,movie) | String.IsEqual(ListItem(4).DBType,tvshow) | String.IsEqual(ListItem(4).DBType,season) | String.IsEqual(ListItem(4).DBType,set)]">$INFO[ListItem(4).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItem(4).Art(poster)) + [String.IsEqual(ListItem(4).DBType,movie) | String.IsEqual(ListItem(4).DBType,tvshow) | String.IsEqual(ListItem(4).DBType,season) | String.IsEqual(ListItem(4).DBType,set)]">$INFO[ListItem(4).Art(poster)]</value>
+        <value condition="String.IsEqual(ListItem(4).DBType,studio) | String.IsEqual(ListItem(4).Property(DBType),studio)">$INFO[ListItem(4).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(ListItem(4).DBType,country) | String.IsEqual(ListItem(4).Property(DBType),country)">$INFO[ListItem(4).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(ListItem(4).DBType,genre) | String.IsEqual(ListItem(4).Property(DBType),genre)">$INFO[ListItem(4).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(ListItem(4).Art(thumb))">$INFO[ListItem(4).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(ListItem(4).Icon)">$INFO[ListItem(4).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_5">
+        <value condition="!String.IsEmpty(ListItem(5).Art(fanart)) + [String.IsEqual(ListItem(5).DBType,movie) | String.IsEqual(ListItem(5).DBType,tvshow) | String.IsEqual(ListItem(5).DBType,season) | String.IsEqual(ListItem(5).DBType,set)]">$INFO[ListItem(5).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItem(5).Art(poster)) + [String.IsEqual(ListItem(5).DBType,movie) | String.IsEqual(ListItem(5).DBType,tvshow) | String.IsEqual(ListItem(5).DBType,season) | String.IsEqual(ListItem(5).DBType,set)]">$INFO[ListItem(5).Art(poster)]</value>
+        <value condition="String.IsEqual(ListItem(5).DBType,studio) | String.IsEqual(ListItem(5).Property(DBType),studio)">$INFO[ListItem(5).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(ListItem(5).DBType,country) | String.IsEqual(ListItem(5).Property(DBType),country)">$INFO[ListItem(5).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(ListItem(5).DBType,genre) | String.IsEqual(ListItem(5).Property(DBType),genre)">$INFO[ListItem(5).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(ListItem(5).Art(thumb))">$INFO[ListItem(5).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(ListItem(5).Icon)">$INFO[ListItem(5).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_6">
+        <value condition="!String.IsEmpty(ListItem(6).Art(fanart)) + [String.IsEqual(ListItem(6).DBType,movie) | String.IsEqual(ListItem(6).DBType,tvshow) | String.IsEqual(ListItem(6).DBType,season) | String.IsEqual(ListItem(6).DBType,set)]">$INFO[ListItem(6).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItem(6).Art(poster)) + [String.IsEqual(ListItem(6).DBType,movie) | String.IsEqual(ListItem(6).DBType,tvshow) | String.IsEqual(ListItem(6).DBType,season) | String.IsEqual(ListItem(6).DBType,set)]">$INFO[ListItem(6).Art(poster)]</value>
+        <value condition="String.IsEqual(ListItem(6).DBType,studio) | String.IsEqual(ListItem(6).Property(DBType),studio)">$INFO[ListItem(6).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(ListItem(6).DBType,country) | String.IsEqual(ListItem(6).Property(DBType),country)">$INFO[ListItem(6).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(ListItem(6).DBType,genre) | String.IsEqual(ListItem(6).Property(DBType),genre)">$INFO[ListItem(6).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(ListItem(6).Art(thumb))">$INFO[ListItem(6).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(ListItem(6).Icon)">$INFO[ListItem(6).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_7">
+        <value condition="!String.IsEmpty(ListItem(7).Art(fanart)) + [String.IsEqual(ListItem(7).DBType,movie) | String.IsEqual(ListItem(7).DBType,tvshow) | String.IsEqual(ListItem(7).DBType,season) | String.IsEqual(ListItem(7).DBType,set)]">$INFO[ListItem(7).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItem(7).Art(poster)) + [String.IsEqual(ListItem(7).DBType,movie) | String.IsEqual(ListItem(7).DBType,tvshow) | String.IsEqual(ListItem(7).DBType,season) | String.IsEqual(ListItem(7).DBType,set)]">$INFO[ListItem(7).Art(poster)]</value>
+        <value condition="String.IsEqual(ListItem(7).DBType,studio) | String.IsEqual(ListItem(7).Property(DBType),studio)">$INFO[ListItem(7).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(ListItem(7).DBType,country) | String.IsEqual(ListItem(7).Property(DBType),country)">$INFO[ListItem(7).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(ListItem(7).DBType,genre) | String.IsEqual(ListItem(7).Property(DBType),genre)">$INFO[ListItem(7).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(ListItem(7).Art(thumb))">$INFO[ListItem(7).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(ListItem(7).Icon)">$INFO[ListItem(7).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_8">
+        <value condition="!String.IsEmpty(ListItem(8).Art(fanart)) + [String.IsEqual(ListItem(8).DBType,movie) | String.IsEqual(ListItem(8).DBType,tvshow) | String.IsEqual(ListItem(8).DBType,season) | String.IsEqual(ListItem(8).DBType,set)]">$INFO[ListItem(8).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItem(8).Art(poster)) + [String.IsEqual(ListItem(8).DBType,movie) | String.IsEqual(ListItem(8).DBType,tvshow) | String.IsEqual(ListItem(8).DBType,season) | String.IsEqual(ListItem(8).DBType,set)]">$INFO[ListItem(8).Art(poster)]</value>
+        <value condition="String.IsEqual(ListItem(8).DBType,studio) | String.IsEqual(ListItem(8).Property(DBType),studio)">$INFO[ListItem(8).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(ListItem(8).DBType,country) | String.IsEqual(ListItem(8).Property(DBType),country)">$INFO[ListItem(8).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(ListItem(8).DBType,genre) | String.IsEqual(ListItem(8).Property(DBType),genre)">$INFO[ListItem(8).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(ListItem(8).Art(thumb))">$INFO[ListItem(8).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(ListItem(8).Icon)">$INFO[ListItem(8).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_9">
+        <value condition="!String.IsEmpty(ListItem(9).Art(fanart)) + [String.IsEqual(ListItem(9).DBType,movie) | String.IsEqual(ListItem(9).DBType,tvshow) | String.IsEqual(ListItem(9).DBType,season) | String.IsEqual(ListItem(9).DBType,set)]">$INFO[ListItem(9).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItem(9).Art(poster)) + [String.IsEqual(ListItem(9).DBType,movie) | String.IsEqual(ListItem(9).DBType,tvshow) | String.IsEqual(ListItem(9).DBType,season) | String.IsEqual(ListItem(9).DBType,set)]">$INFO[ListItem(9).Art(poster)]</value>
+        <value condition="String.IsEqual(ListItem(9).DBType,studio) | String.IsEqual(ListItem(9).Property(DBType),studio)">$INFO[ListItem(9).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(ListItem(9).DBType,country) | String.IsEqual(ListItem(9).Property(DBType),country)">$INFO[ListItem(9).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(ListItem(9).DBType,genre) | String.IsEqual(ListItem(9).Property(DBType),genre)">$INFO[ListItem(9).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(ListItem(9).Art(thumb))">$INFO[ListItem(9).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(ListItem(9).Icon)">$INFO[ListItem(9).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_10">
+        <value condition="!String.IsEmpty(ListItem(10).Art(fanart)) + [String.IsEqual(ListItem(10).DBType,movie) | String.IsEqual(ListItem(10).DBType,tvshow) | String.IsEqual(ListItem(10).DBType,season) | String.IsEqual(ListItem(10).DBType,set)]">$INFO[ListItem(10).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItem(10).Art(poster)) + [String.IsEqual(ListItem(10).DBType,movie) | String.IsEqual(ListItem(10).DBType,tvshow) | String.IsEqual(ListItem(10).DBType,season) | String.IsEqual(ListItem(10).DBType,set)]">$INFO[ListItem(10).Art(poster)]</value>
+        <value condition="String.IsEqual(ListItem(10).DBType,studio) | String.IsEqual(ListItem(10).Property(DBType),studio)">$INFO[ListItem(10).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(ListItem(10).DBType,country) | String.IsEqual(ListItem(10).Property(DBType),country)">$INFO[ListItem(10).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(ListItem(10).DBType,genre) | String.IsEqual(ListItem(10).Property(DBType),genre)">$INFO[ListItem(10).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(ListItem(10).Art(thumb))">$INFO[ListItem(10).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(ListItem(10).Icon)">$INFO[ListItem(10).Icon]</value>
+    </variable>
+    <variable name="Image_Overview">
+        <value condition="!String.IsEmpty(ListItem.Art(fanart)) + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,set)]">$INFO[ListItem.Art(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItem.Art(poster)) + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,set)]">$INFO[ListItem.Art(poster)]</value>
+        <value condition="String.IsEqual(ListItem.DBType,studio) | String.IsEqual(ListItem.Property(DBType),studio)">$INFO[ListItem.Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(ListItem.DBType,country) | String.IsEqual(ListItem.Property(DBType),country)">$INFO[ListItem.Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(ListItem.DBType,genre) | String.IsEqual(ListItem.Property(DBType),genre)">$INFO[ListItem.Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
+        <value condition="!String.IsEmpty(ListItem.Icon)">$INFO[ListItem.Icon]</value>
+    </variable>
+    <variable name="Image_Overview_LIP_C50_-2">
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(-2).Art(fanart)) + [String.IsEqual(Container(50).ListItemPosition(-2).DBType,movie) | String.IsEqual(Container(50).ListItemPosition(-2).DBType,tvshow) | String.IsEqual(Container(50).ListItemPosition(-2).DBType,season) | String.IsEqual(Container(50).ListItemPosition(-2).DBType,set)]">$INFO[Container(50).ListItemPosition(-2).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(-2).Art(poster)) + [String.IsEqual(Container(50).ListItemPosition(-2).DBType,movie) | String.IsEqual(Container(50).ListItemPosition(-2).DBType,tvshow) | String.IsEqual(Container(50).ListItemPosition(-2).DBType,season) | String.IsEqual(Container(50).ListItemPosition(-2).DBType,set)]">$INFO[Container(50).ListItemPosition(-2).Art(poster)]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(-2).DBType,studio) | String.IsEqual(Container(50).ListItemPosition(-2).Property(DBType),studio)">$INFO[Container(50).ListItemPosition(-2).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(-2).DBType,country) | String.IsEqual(Container(50).ListItemPosition(-2).Property(DBType),country)">$INFO[Container(50).ListItemPosition(-2).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(-2).DBType,genre) | String.IsEqual(Container(50).ListItemPosition(-2).Property(DBType),genre)">$INFO[Container(50).ListItemPosition(-2).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(-2).Art(thumb))">$INFO[Container(50).ListItemPosition(-2).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(-2).Icon)">$INFO[Container(50).ListItemPosition(-2).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_LIP_C50_-1">
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(-1).Art(fanart)) + [String.IsEqual(Container(50).ListItemPosition(-1).DBType,movie) | String.IsEqual(Container(50).ListItemPosition(-1).DBType,tvshow) | String.IsEqual(Container(50).ListItemPosition(-1).DBType,season) | String.IsEqual(Container(50).ListItemPosition(-1).DBType,set)]">$INFO[Container(50).ListItemPosition(-1).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(-1).Art(poster)) + [String.IsEqual(Container(50).ListItemPosition(-1).DBType,movie) | String.IsEqual(Container(50).ListItemPosition(-1).DBType,tvshow) | String.IsEqual(Container(50).ListItemPosition(-1).DBType,season) | String.IsEqual(Container(50).ListItemPosition(-1).DBType,set)]">$INFO[Container(50).ListItemPosition(-1).Art(poster)]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(-1).DBType,studio) | String.IsEqual(Container(50).ListItemPosition(-1).Property(DBType),studio)">$INFO[Container(50).ListItemPosition(-1).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(-1).DBType,country) | String.IsEqual(Container(50).ListItemPosition(-1).Property(DBType),country)">$INFO[Container(50).ListItemPosition(-1).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(-1).DBType,genre) | String.IsEqual(Container(50).ListItemPosition(-1).Property(DBType),genre)">$INFO[Container(50).ListItemPosition(-1).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(-1).Art(thumb))">$INFO[Container(50).ListItemPosition(-1).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(-1).Icon)">$INFO[Container(50).ListItemPosition(-1).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_LIP_C50_0">
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(0).Art(fanart)) + [String.IsEqual(Container(50).ListItemPosition(0).DBType,movie) | String.IsEqual(Container(50).ListItemPosition(0).DBType,tvshow) | String.IsEqual(Container(50).ListItemPosition(0).DBType,season) | String.IsEqual(Container(50).ListItemPosition(0).DBType,set)]">$INFO[Container(50).ListItemPosition(0).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(0).Art(poster)) + [String.IsEqual(Container(50).ListItemPosition(0).DBType,movie) | String.IsEqual(Container(50).ListItemPosition(0).DBType,tvshow) | String.IsEqual(Container(50).ListItemPosition(0).DBType,season) | String.IsEqual(Container(50).ListItemPosition(0).DBType,set)]">$INFO[Container(50).ListItemPosition(0).Art(poster)]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(0).DBType,studio) | String.IsEqual(Container(50).ListItemPosition(0).Property(DBType),studio)">$INFO[Container(50).ListItemPosition(0).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(0).DBType,country) | String.IsEqual(Container(50).ListItemPosition(0).Property(DBType),country)">$INFO[Container(50).ListItemPosition(0).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(0).DBType,genre) | String.IsEqual(Container(50).ListItemPosition(0).Property(DBType),genre)">$INFO[Container(50).ListItemPosition(0).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(0).Art(thumb))">$INFO[Container(50).ListItemPosition(0).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(0).Icon)">$INFO[Container(50).ListItemPosition(0).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_LIP_C50_1">
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(1).Art(fanart)) + [String.IsEqual(Container(50).ListItemPosition(1).DBType,movie) | String.IsEqual(Container(50).ListItemPosition(1).DBType,tvshow) | String.IsEqual(Container(50).ListItemPosition(1).DBType,season) | String.IsEqual(Container(50).ListItemPosition(1).DBType,set)]">$INFO[Container(50).ListItemPosition(1).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(1).Art(poster)) + [String.IsEqual(Container(50).ListItemPosition(1).DBType,movie) | String.IsEqual(Container(50).ListItemPosition(1).DBType,tvshow) | String.IsEqual(Container(50).ListItemPosition(1).DBType,season) | String.IsEqual(Container(50).ListItemPosition(1).DBType,set)]">$INFO[Container(50).ListItemPosition(1).Art(poster)]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(1).DBType,studio) | String.IsEqual(Container(50).ListItemPosition(1).Property(DBType),studio)">$INFO[Container(50).ListItemPosition(1).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(1).DBType,country) | String.IsEqual(Container(50).ListItemPosition(1).Property(DBType),country)">$INFO[Container(50).ListItemPosition(1).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(1).DBType,genre) | String.IsEqual(Container(50).ListItemPosition(1).Property(DBType),genre)">$INFO[Container(50).ListItemPosition(1).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(1).Art(thumb))">$INFO[Container(50).ListItemPosition(1).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(1).Icon)">$INFO[Container(50).ListItemPosition(1).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_LIP_C50_2">
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(2).Art(fanart)) + [String.IsEqual(Container(50).ListItemPosition(2).DBType,movie) | String.IsEqual(Container(50).ListItemPosition(2).DBType,tvshow) | String.IsEqual(Container(50).ListItemPosition(2).DBType,season) | String.IsEqual(Container(50).ListItemPosition(2).DBType,set)]">$INFO[Container(50).ListItemPosition(2).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(2).Art(poster)) + [String.IsEqual(Container(50).ListItemPosition(2).DBType,movie) | String.IsEqual(Container(50).ListItemPosition(2).DBType,tvshow) | String.IsEqual(Container(50).ListItemPosition(2).DBType,season) | String.IsEqual(Container(50).ListItemPosition(2).DBType,set)]">$INFO[Container(50).ListItemPosition(2).Art(poster)]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(2).DBType,studio) | String.IsEqual(Container(50).ListItemPosition(2).Property(DBType),studio)">$INFO[Container(50).ListItemPosition(2).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(2).DBType,country) | String.IsEqual(Container(50).ListItemPosition(2).Property(DBType),country)">$INFO[Container(50).ListItemPosition(2).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(2).DBType,genre) | String.IsEqual(Container(50).ListItemPosition(2).Property(DBType),genre)">$INFO[Container(50).ListItemPosition(2).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(2).Art(thumb))">$INFO[Container(50).ListItemPosition(2).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(2).Icon)">$INFO[Container(50).ListItemPosition(2).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_LIP_C50_3">
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(3).Art(fanart)) + [String.IsEqual(Container(50).ListItemPosition(3).DBType,movie) | String.IsEqual(Container(50).ListItemPosition(3).DBType,tvshow) | String.IsEqual(Container(50).ListItemPosition(3).DBType,season) | String.IsEqual(Container(50).ListItemPosition(3).DBType,set)]">$INFO[Container(50).ListItemPosition(3).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(3).Art(poster)) + [String.IsEqual(Container(50).ListItemPosition(3).DBType,movie) | String.IsEqual(Container(50).ListItemPosition(3).DBType,tvshow) | String.IsEqual(Container(50).ListItemPosition(3).DBType,season) | String.IsEqual(Container(50).ListItemPosition(3).DBType,set)]">$INFO[Container(50).ListItemPosition(3).Art(poster)]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(3).DBType,studio) | String.IsEqual(Container(50).ListItemPosition(3).Property(DBType),studio)">$INFO[Container(50).ListItemPosition(3).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(3).DBType,country) | String.IsEqual(Container(50).ListItemPosition(3).Property(DBType),country)">$INFO[Container(50).ListItemPosition(3).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(3).DBType,genre) | String.IsEqual(Container(50).ListItemPosition(3).Property(DBType),genre)">$INFO[Container(50).ListItemPosition(3).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(3).Art(thumb))">$INFO[Container(50).ListItemPosition(3).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(3).Icon)">$INFO[Container(50).ListItemPosition(3).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_LIP_C50_4">
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(4).Art(fanart)) + [String.IsEqual(Container(50).ListItemPosition(4).DBType,movie) | String.IsEqual(Container(50).ListItemPosition(4).DBType,tvshow) | String.IsEqual(Container(50).ListItemPosition(4).DBType,season) | String.IsEqual(Container(50).ListItemPosition(4).DBType,set)]">$INFO[Container(50).ListItemPosition(4).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(4).Art(poster)) + [String.IsEqual(Container(50).ListItemPosition(4).DBType,movie) | String.IsEqual(Container(50).ListItemPosition(4).DBType,tvshow) | String.IsEqual(Container(50).ListItemPosition(4).DBType,season) | String.IsEqual(Container(50).ListItemPosition(4).DBType,set)]">$INFO[Container(50).ListItemPosition(4).Art(poster)]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(4).DBType,studio) | String.IsEqual(Container(50).ListItemPosition(4).Property(DBType),studio)">$INFO[Container(50).ListItemPosition(4).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(4).DBType,country) | String.IsEqual(Container(50).ListItemPosition(4).Property(DBType),country)">$INFO[Container(50).ListItemPosition(4).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(4).DBType,genre) | String.IsEqual(Container(50).ListItemPosition(4).Property(DBType),genre)">$INFO[Container(50).ListItemPosition(4).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(4).Art(thumb))">$INFO[Container(50).ListItemPosition(4).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(4).Icon)">$INFO[Container(50).ListItemPosition(4).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_LIP_C50_5">
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(5).Art(fanart)) + [String.IsEqual(Container(50).ListItemPosition(5).DBType,movie) | String.IsEqual(Container(50).ListItemPosition(5).DBType,tvshow) | String.IsEqual(Container(50).ListItemPosition(5).DBType,season) | String.IsEqual(Container(50).ListItemPosition(5).DBType,set)]">$INFO[Container(50).ListItemPosition(5).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(5).Art(poster)) + [String.IsEqual(Container(50).ListItemPosition(5).DBType,movie) | String.IsEqual(Container(50).ListItemPosition(5).DBType,tvshow) | String.IsEqual(Container(50).ListItemPosition(5).DBType,season) | String.IsEqual(Container(50).ListItemPosition(5).DBType,set)]">$INFO[Container(50).ListItemPosition(5).Art(poster)]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(5).DBType,studio) | String.IsEqual(Container(50).ListItemPosition(5).Property(DBType),studio)">$INFO[Container(50).ListItemPosition(5).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(5).DBType,country) | String.IsEqual(Container(50).ListItemPosition(5).Property(DBType),country)">$INFO[Container(50).ListItemPosition(5).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(5).DBType,genre) | String.IsEqual(Container(50).ListItemPosition(5).Property(DBType),genre)">$INFO[Container(50).ListItemPosition(5).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(5).Art(thumb))">$INFO[Container(50).ListItemPosition(5).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(5).Icon)">$INFO[Container(50).ListItemPosition(5).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_LIP_C50_6">
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(6).Art(fanart)) + [String.IsEqual(Container(50).ListItemPosition(6).DBType,movie) | String.IsEqual(Container(50).ListItemPosition(6).DBType,tvshow) | String.IsEqual(Container(50).ListItemPosition(6).DBType,season) | String.IsEqual(Container(50).ListItemPosition(6).DBType,set)]">$INFO[Container(50).ListItemPosition(6).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(6).Art(poster)) + [String.IsEqual(Container(50).ListItemPosition(6).DBType,movie) | String.IsEqual(Container(50).ListItemPosition(6).DBType,tvshow) | String.IsEqual(Container(50).ListItemPosition(6).DBType,season) | String.IsEqual(Container(50).ListItemPosition(6).DBType,set)]">$INFO[Container(50).ListItemPosition(6).Art(poster)]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(6).DBType,studio) | String.IsEqual(Container(50).ListItemPosition(6).Property(DBType),studio)">$INFO[Container(50).ListItemPosition(6).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(6).DBType,country) | String.IsEqual(Container(50).ListItemPosition(6).Property(DBType),country)">$INFO[Container(50).ListItemPosition(6).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(6).DBType,genre) | String.IsEqual(Container(50).ListItemPosition(6).Property(DBType),genre)">$INFO[Container(50).ListItemPosition(6).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(6).Art(thumb))">$INFO[Container(50).ListItemPosition(6).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(6).Icon)">$INFO[Container(50).ListItemPosition(6).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_LIP_C50_7">
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(7).Art(fanart)) + [String.IsEqual(Container(50).ListItemPosition(7).DBType,movie) | String.IsEqual(Container(50).ListItemPosition(7).DBType,tvshow) | String.IsEqual(Container(50).ListItemPosition(7).DBType,season) | String.IsEqual(Container(50).ListItemPosition(7).DBType,set)]">$INFO[Container(50).ListItemPosition(7).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(7).Art(poster)) + [String.IsEqual(Container(50).ListItemPosition(7).DBType,movie) | String.IsEqual(Container(50).ListItemPosition(7).DBType,tvshow) | String.IsEqual(Container(50).ListItemPosition(7).DBType,season) | String.IsEqual(Container(50).ListItemPosition(7).DBType,set)]">$INFO[Container(50).ListItemPosition(7).Art(poster)]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(7).DBType,studio) | String.IsEqual(Container(50).ListItemPosition(7).Property(DBType),studio)">$INFO[Container(50).ListItemPosition(7).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(7).DBType,country) | String.IsEqual(Container(50).ListItemPosition(7).Property(DBType),country)">$INFO[Container(50).ListItemPosition(7).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(7).DBType,genre) | String.IsEqual(Container(50).ListItemPosition(7).Property(DBType),genre)">$INFO[Container(50).ListItemPosition(7).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(7).Art(thumb))">$INFO[Container(50).ListItemPosition(7).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(7).Icon)">$INFO[Container(50).ListItemPosition(7).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_LIP_C50_8">
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(8).Art(fanart)) + [String.IsEqual(Container(50).ListItemPosition(8).DBType,movie) | String.IsEqual(Container(50).ListItemPosition(8).DBType,tvshow) | String.IsEqual(Container(50).ListItemPosition(8).DBType,season) | String.IsEqual(Container(50).ListItemPosition(8).DBType,set)]">$INFO[Container(50).ListItemPosition(8).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(8).Art(poster)) + [String.IsEqual(Container(50).ListItemPosition(8).DBType,movie) | String.IsEqual(Container(50).ListItemPosition(8).DBType,tvshow) | String.IsEqual(Container(50).ListItemPosition(8).DBType,season) | String.IsEqual(Container(50).ListItemPosition(8).DBType,set)]">$INFO[Container(50).ListItemPosition(8).Art(poster)]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(8).DBType,studio) | String.IsEqual(Container(50).ListItemPosition(8).Property(DBType),studio)">$INFO[Container(50).ListItemPosition(8).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(8).DBType,country) | String.IsEqual(Container(50).ListItemPosition(8).Property(DBType),country)">$INFO[Container(50).ListItemPosition(8).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(8).DBType,genre) | String.IsEqual(Container(50).ListItemPosition(8).Property(DBType),genre)">$INFO[Container(50).ListItemPosition(8).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(8).Art(thumb))">$INFO[Container(50).ListItemPosition(8).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(8).Icon)">$INFO[Container(50).ListItemPosition(8).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_LIP_C50_9">
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(9).Art(fanart)) + [String.IsEqual(Container(50).ListItemPosition(9).DBType,movie) | String.IsEqual(Container(50).ListItemPosition(9).DBType,tvshow) | String.IsEqual(Container(50).ListItemPosition(9).DBType,season) | String.IsEqual(Container(50).ListItemPosition(9).DBType,set)]">$INFO[Container(50).ListItemPosition(9).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(9).Art(poster)) + [String.IsEqual(Container(50).ListItemPosition(9).DBType,movie) | String.IsEqual(Container(50).ListItemPosition(9).DBType,tvshow) | String.IsEqual(Container(50).ListItemPosition(9).DBType,season) | String.IsEqual(Container(50).ListItemPosition(9).DBType,set)]">$INFO[Container(50).ListItemPosition(9).Art(poster)]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(9).DBType,studio) | String.IsEqual(Container(50).ListItemPosition(9).Property(DBType),studio)">$INFO[Container(50).ListItemPosition(9).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(9).DBType,country) | String.IsEqual(Container(50).ListItemPosition(9).Property(DBType),country)">$INFO[Container(50).ListItemPosition(9).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(9).DBType,genre) | String.IsEqual(Container(50).ListItemPosition(9).Property(DBType),genre)">$INFO[Container(50).ListItemPosition(9).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(9).Art(thumb))">$INFO[Container(50).ListItemPosition(9).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(9).Icon)">$INFO[Container(50).ListItemPosition(9).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_LIP_C50_10">
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(10).Art(fanart)) + [String.IsEqual(Container(50).ListItemPosition(10).DBType,movie) | String.IsEqual(Container(50).ListItemPosition(10).DBType,tvshow) | String.IsEqual(Container(50).ListItemPosition(10).DBType,season) | String.IsEqual(Container(50).ListItemPosition(10).DBType,set)]">$INFO[Container(50).ListItemPosition(10).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(10).Art(poster)) + [String.IsEqual(Container(50).ListItemPosition(10).DBType,movie) | String.IsEqual(Container(50).ListItemPosition(10).DBType,tvshow) | String.IsEqual(Container(50).ListItemPosition(10).DBType,season) | String.IsEqual(Container(50).ListItemPosition(10).DBType,set)]">$INFO[Container(50).ListItemPosition(10).Art(poster)]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(10).DBType,studio) | String.IsEqual(Container(50).ListItemPosition(10).Property(DBType),studio)">$INFO[Container(50).ListItemPosition(10).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(10).DBType,country) | String.IsEqual(Container(50).ListItemPosition(10).Property(DBType),country)">$INFO[Container(50).ListItemPosition(10).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItemPosition(10).DBType,genre) | String.IsEqual(Container(50).ListItemPosition(10).Property(DBType),genre)">$INFO[Container(50).ListItemPosition(10).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(10).Art(thumb))">$INFO[Container(50).ListItemPosition(10).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItemPosition(10).Icon)">$INFO[Container(50).ListItemPosition(10).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_LIP_C50">
+        <value condition="!String.IsEmpty(Container(50).ListItem.Art(fanart)) + [String.IsEqual(Container(50).ListItem.DBType,movie) | String.IsEqual(Container(50).ListItem.DBType,tvshow) | String.IsEqual(Container(50).ListItem.DBType,season) | String.IsEqual(Container(50).ListItem.DBType,set)]">$INFO[Container(50).ListItem.Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem.Art(poster)) + [String.IsEqual(Container(50).ListItem.DBType,movie) | String.IsEqual(Container(50).ListItem.DBType,tvshow) | String.IsEqual(Container(50).ListItem.DBType,season) | String.IsEqual(Container(50).ListItem.DBType,set)]">$INFO[Container(50).ListItem.Art(poster)]</value>
+        <value condition="String.IsEqual(Container(50).ListItem.DBType,studio) | String.IsEqual(Container(50).ListItem.Property(DBType),studio)">$INFO[Container(50).ListItem.Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItem.DBType,country) | String.IsEqual(Container(50).ListItem.Property(DBType),country)">$INFO[Container(50).ListItem.Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(Container(50).ListItem.DBType,genre) | String.IsEqual(Container(50).ListItem.Property(DBType),genre)">$INFO[Container(50).ListItem.Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem.Art(thumb))">$INFO[Container(50).ListItem.Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem.Icon)">$INFO[Container(50).ListItem.Icon]</value>
+    </variable>
+    <variable name="Image_Overview_LIP_-2">
+        <value condition="!String.IsEmpty(ListItemPosition(-2).Art(fanart)) + [String.IsEqual(ListItemPosition(-2).DBType,movie) | String.IsEqual(ListItemPosition(-2).DBType,tvshow) | String.IsEqual(ListItemPosition(-2).DBType,season) | String.IsEqual(ListItemPosition(-2).DBType,set)]">$INFO[ListItemPosition(-2).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(-2).Art(poster)) + [String.IsEqual(ListItemPosition(-2).DBType,movie) | String.IsEqual(ListItemPosition(-2).DBType,tvshow) | String.IsEqual(ListItemPosition(-2).DBType,season) | String.IsEqual(ListItemPosition(-2).DBType,set)]">$INFO[ListItemPosition(-2).Art(poster)]</value>
+        <value condition="String.IsEqual(ListItemPosition(-2).DBType,studio) | String.IsEqual(ListItemPosition(-2).Property(DBType),studio)">$INFO[ListItemPosition(-2).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(ListItemPosition(-2).DBType,country) | String.IsEqual(ListItemPosition(-2).Property(DBType),country)">$INFO[ListItemPosition(-2).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(ListItemPosition(-2).DBType,genre) | String.IsEqual(ListItemPosition(-2).Property(DBType),genre)">$INFO[ListItemPosition(-2).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(-2).Art(thumb))">$INFO[ListItemPosition(-2).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(-2).Icon)">$INFO[ListItemPosition(-2).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_LIP_-1">
+        <value condition="!String.IsEmpty(ListItemPosition(-1).Art(fanart)) + [String.IsEqual(ListItemPosition(-1).DBType,movie) | String.IsEqual(ListItemPosition(-1).DBType,tvshow) | String.IsEqual(ListItemPosition(-1).DBType,season) | String.IsEqual(ListItemPosition(-1).DBType,set)]">$INFO[ListItemPosition(-1).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(-1).Art(poster)) + [String.IsEqual(ListItemPosition(-1).DBType,movie) | String.IsEqual(ListItemPosition(-1).DBType,tvshow) | String.IsEqual(ListItemPosition(-1).DBType,season) | String.IsEqual(ListItemPosition(-1).DBType,set)]">$INFO[ListItemPosition(-1).Art(poster)]</value>
+        <value condition="String.IsEqual(ListItemPosition(-1).DBType,studio) | String.IsEqual(ListItemPosition(-1).Property(DBType),studio)">$INFO[ListItemPosition(-1).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(ListItemPosition(-1).DBType,country) | String.IsEqual(ListItemPosition(-1).Property(DBType),country)">$INFO[ListItemPosition(-1).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(ListItemPosition(-1).DBType,genre) | String.IsEqual(ListItemPosition(-1).Property(DBType),genre)">$INFO[ListItemPosition(-1).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(-1).Art(thumb))">$INFO[ListItemPosition(-1).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(-1).Icon)">$INFO[ListItemPosition(-1).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_LIP_0">
+        <value condition="!String.IsEmpty(ListItemPosition(0).Art(fanart)) + [String.IsEqual(ListItemPosition(0).DBType,movie) | String.IsEqual(ListItemPosition(0).DBType,tvshow) | String.IsEqual(ListItemPosition(0).DBType,season) | String.IsEqual(ListItemPosition(0).DBType,set)]">$INFO[ListItemPosition(0).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(0).Art(poster)) + [String.IsEqual(ListItemPosition(0).DBType,movie) | String.IsEqual(ListItemPosition(0).DBType,tvshow) | String.IsEqual(ListItemPosition(0).DBType,season) | String.IsEqual(ListItemPosition(0).DBType,set)]">$INFO[ListItemPosition(0).Art(poster)]</value>
+        <value condition="String.IsEqual(ListItemPosition(0).DBType,studio) | String.IsEqual(ListItemPosition(0).Property(DBType),studio)">$INFO[ListItemPosition(0).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(ListItemPosition(0).DBType,country) | String.IsEqual(ListItemPosition(0).Property(DBType),country)">$INFO[ListItemPosition(0).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(ListItemPosition(0).DBType,genre) | String.IsEqual(ListItemPosition(0).Property(DBType),genre)">$INFO[ListItemPosition(0).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(0).Art(thumb))">$INFO[ListItemPosition(0).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(0).Icon)">$INFO[ListItemPosition(0).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_LIP_1">
+        <value condition="!String.IsEmpty(ListItemPosition(1).Art(fanart)) + [String.IsEqual(ListItemPosition(1).DBType,movie) | String.IsEqual(ListItemPosition(1).DBType,tvshow) | String.IsEqual(ListItemPosition(1).DBType,season) | String.IsEqual(ListItemPosition(1).DBType,set)]">$INFO[ListItemPosition(1).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(1).Art(poster)) + [String.IsEqual(ListItemPosition(1).DBType,movie) | String.IsEqual(ListItemPosition(1).DBType,tvshow) | String.IsEqual(ListItemPosition(1).DBType,season) | String.IsEqual(ListItemPosition(1).DBType,set)]">$INFO[ListItemPosition(1).Art(poster)]</value>
+        <value condition="String.IsEqual(ListItemPosition(1).DBType,studio) | String.IsEqual(ListItemPosition(1).Property(DBType),studio)">$INFO[ListItemPosition(1).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(ListItemPosition(1).DBType,country) | String.IsEqual(ListItemPosition(1).Property(DBType),country)">$INFO[ListItemPosition(1).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(ListItemPosition(1).DBType,genre) | String.IsEqual(ListItemPosition(1).Property(DBType),genre)">$INFO[ListItemPosition(1).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(1).Art(thumb))">$INFO[ListItemPosition(1).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(1).Icon)">$INFO[ListItemPosition(1).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_LIP_2">
+        <value condition="!String.IsEmpty(ListItemPosition(2).Art(fanart)) + [String.IsEqual(ListItemPosition(2).DBType,movie) | String.IsEqual(ListItemPosition(2).DBType,tvshow) | String.IsEqual(ListItemPosition(2).DBType,season) | String.IsEqual(ListItemPosition(2).DBType,set)]">$INFO[ListItemPosition(2).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(2).Art(poster)) + [String.IsEqual(ListItemPosition(2).DBType,movie) | String.IsEqual(ListItemPosition(2).DBType,tvshow) | String.IsEqual(ListItemPosition(2).DBType,season) | String.IsEqual(ListItemPosition(2).DBType,set)]">$INFO[ListItemPosition(2).Art(poster)]</value>
+        <value condition="String.IsEqual(ListItemPosition(2).DBType,studio) | String.IsEqual(ListItemPosition(2).Property(DBType),studio)">$INFO[ListItemPosition(2).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(ListItemPosition(2).DBType,country) | String.IsEqual(ListItemPosition(2).Property(DBType),country)">$INFO[ListItemPosition(2).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(ListItemPosition(2).DBType,genre) | String.IsEqual(ListItemPosition(2).Property(DBType),genre)">$INFO[ListItemPosition(2).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(2).Art(thumb))">$INFO[ListItemPosition(2).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(2).Icon)">$INFO[ListItemPosition(2).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_LIP_3">
+        <value condition="!String.IsEmpty(ListItemPosition(3).Art(fanart)) + [String.IsEqual(ListItemPosition(3).DBType,movie) | String.IsEqual(ListItemPosition(3).DBType,tvshow) | String.IsEqual(ListItemPosition(3).DBType,season) | String.IsEqual(ListItemPosition(3).DBType,set)]">$INFO[ListItemPosition(3).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(3).Art(poster)) + [String.IsEqual(ListItemPosition(3).DBType,movie) | String.IsEqual(ListItemPosition(3).DBType,tvshow) | String.IsEqual(ListItemPosition(3).DBType,season) | String.IsEqual(ListItemPosition(3).DBType,set)]">$INFO[ListItemPosition(3).Art(poster)]</value>
+        <value condition="String.IsEqual(ListItemPosition(3).DBType,studio) | String.IsEqual(ListItemPosition(3).Property(DBType),studio)">$INFO[ListItemPosition(3).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(ListItemPosition(3).DBType,country) | String.IsEqual(ListItemPosition(3).Property(DBType),country)">$INFO[ListItemPosition(3).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(ListItemPosition(3).DBType,genre) | String.IsEqual(ListItemPosition(3).Property(DBType),genre)">$INFO[ListItemPosition(3).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(3).Art(thumb))">$INFO[ListItemPosition(3).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(3).Icon)">$INFO[ListItemPosition(3).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_LIP_4">
+        <value condition="!String.IsEmpty(ListItemPosition(4).Art(fanart)) + [String.IsEqual(ListItemPosition(4).DBType,movie) | String.IsEqual(ListItemPosition(4).DBType,tvshow) | String.IsEqual(ListItemPosition(4).DBType,season) | String.IsEqual(ListItemPosition(4).DBType,set)]">$INFO[ListItemPosition(4).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(4).Art(poster)) + [String.IsEqual(ListItemPosition(4).DBType,movie) | String.IsEqual(ListItemPosition(4).DBType,tvshow) | String.IsEqual(ListItemPosition(4).DBType,season) | String.IsEqual(ListItemPosition(4).DBType,set)]">$INFO[ListItemPosition(4).Art(poster)]</value>
+        <value condition="String.IsEqual(ListItemPosition(4).DBType,studio) | String.IsEqual(ListItemPosition(4).Property(DBType),studio)">$INFO[ListItemPosition(4).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(ListItemPosition(4).DBType,country) | String.IsEqual(ListItemPosition(4).Property(DBType),country)">$INFO[ListItemPosition(4).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(ListItemPosition(4).DBType,genre) | String.IsEqual(ListItemPosition(4).Property(DBType),genre)">$INFO[ListItemPosition(4).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(4).Art(thumb))">$INFO[ListItemPosition(4).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(4).Icon)">$INFO[ListItemPosition(4).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_LIP_5">
+        <value condition="!String.IsEmpty(ListItemPosition(5).Art(fanart)) + [String.IsEqual(ListItemPosition(5).DBType,movie) | String.IsEqual(ListItemPosition(5).DBType,tvshow) | String.IsEqual(ListItemPosition(5).DBType,season) | String.IsEqual(ListItemPosition(5).DBType,set)]">$INFO[ListItemPosition(5).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(5).Art(poster)) + [String.IsEqual(ListItemPosition(5).DBType,movie) | String.IsEqual(ListItemPosition(5).DBType,tvshow) | String.IsEqual(ListItemPosition(5).DBType,season) | String.IsEqual(ListItemPosition(5).DBType,set)]">$INFO[ListItemPosition(5).Art(poster)]</value>
+        <value condition="String.IsEqual(ListItemPosition(5).DBType,studio) | String.IsEqual(ListItemPosition(5).Property(DBType),studio)">$INFO[ListItemPosition(5).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(ListItemPosition(5).DBType,country) | String.IsEqual(ListItemPosition(5).Property(DBType),country)">$INFO[ListItemPosition(5).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(ListItemPosition(5).DBType,genre) | String.IsEqual(ListItemPosition(5).Property(DBType),genre)">$INFO[ListItemPosition(5).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(5).Art(thumb))">$INFO[ListItemPosition(5).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(5).Icon)">$INFO[ListItemPosition(5).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_LIP_6">
+        <value condition="!String.IsEmpty(ListItemPosition(6).Art(fanart)) + [String.IsEqual(ListItemPosition(6).DBType,movie) | String.IsEqual(ListItemPosition(6).DBType,tvshow) | String.IsEqual(ListItemPosition(6).DBType,season) | String.IsEqual(ListItemPosition(6).DBType,set)]">$INFO[ListItemPosition(6).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(6).Art(poster)) + [String.IsEqual(ListItemPosition(6).DBType,movie) | String.IsEqual(ListItemPosition(6).DBType,tvshow) | String.IsEqual(ListItemPosition(6).DBType,season) | String.IsEqual(ListItemPosition(6).DBType,set)]">$INFO[ListItemPosition(6).Art(poster)]</value>
+        <value condition="String.IsEqual(ListItemPosition(6).DBType,studio) | String.IsEqual(ListItemPosition(6).Property(DBType),studio)">$INFO[ListItemPosition(6).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(ListItemPosition(6).DBType,country) | String.IsEqual(ListItemPosition(6).Property(DBType),country)">$INFO[ListItemPosition(6).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(ListItemPosition(6).DBType,genre) | String.IsEqual(ListItemPosition(6).Property(DBType),genre)">$INFO[ListItemPosition(6).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(6).Art(thumb))">$INFO[ListItemPosition(6).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(6).Icon)">$INFO[ListItemPosition(6).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_LIP_7">
+        <value condition="!String.IsEmpty(ListItemPosition(7).Art(fanart)) + [String.IsEqual(ListItemPosition(7).DBType,movie) | String.IsEqual(ListItemPosition(7).DBType,tvshow) | String.IsEqual(ListItemPosition(7).DBType,season) | String.IsEqual(ListItemPosition(7).DBType,set)]">$INFO[ListItemPosition(7).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(7).Art(poster)) + [String.IsEqual(ListItemPosition(7).DBType,movie) | String.IsEqual(ListItemPosition(7).DBType,tvshow) | String.IsEqual(ListItemPosition(7).DBType,season) | String.IsEqual(ListItemPosition(7).DBType,set)]">$INFO[ListItemPosition(7).Art(poster)]</value>
+        <value condition="String.IsEqual(ListItemPosition(7).DBType,studio) | String.IsEqual(ListItemPosition(7).Property(DBType),studio)">$INFO[ListItemPosition(7).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(ListItemPosition(7).DBType,country) | String.IsEqual(ListItemPosition(7).Property(DBType),country)">$INFO[ListItemPosition(7).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(ListItemPosition(7).DBType,genre) | String.IsEqual(ListItemPosition(7).Property(DBType),genre)">$INFO[ListItemPosition(7).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(7).Art(thumb))">$INFO[ListItemPosition(7).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(7).Icon)">$INFO[ListItemPosition(7).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_LIP_8">
+        <value condition="!String.IsEmpty(ListItemPosition(8).Art(fanart)) + [String.IsEqual(ListItemPosition(8).DBType,movie) | String.IsEqual(ListItemPosition(8).DBType,tvshow) | String.IsEqual(ListItemPosition(8).DBType,season) | String.IsEqual(ListItemPosition(8).DBType,set)]">$INFO[ListItemPosition(8).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(8).Art(poster)) + [String.IsEqual(ListItemPosition(8).DBType,movie) | String.IsEqual(ListItemPosition(8).DBType,tvshow) | String.IsEqual(ListItemPosition(8).DBType,season) | String.IsEqual(ListItemPosition(8).DBType,set)]">$INFO[ListItemPosition(8).Art(poster)]</value>
+        <value condition="String.IsEqual(ListItemPosition(8).DBType,studio) | String.IsEqual(ListItemPosition(8).Property(DBType),studio)">$INFO[ListItemPosition(8).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(ListItemPosition(8).DBType,country) | String.IsEqual(ListItemPosition(8).Property(DBType),country)">$INFO[ListItemPosition(8).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(ListItemPosition(8).DBType,genre) | String.IsEqual(ListItemPosition(8).Property(DBType),genre)">$INFO[ListItemPosition(8).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(8).Art(thumb))">$INFO[ListItemPosition(8).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(8).Icon)">$INFO[ListItemPosition(8).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_LIP_9">
+        <value condition="!String.IsEmpty(ListItemPosition(9).Art(fanart)) + [String.IsEqual(ListItemPosition(9).DBType,movie) | String.IsEqual(ListItemPosition(9).DBType,tvshow) | String.IsEqual(ListItemPosition(9).DBType,season) | String.IsEqual(ListItemPosition(9).DBType,set)]">$INFO[ListItemPosition(9).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(9).Art(poster)) + [String.IsEqual(ListItemPosition(9).DBType,movie) | String.IsEqual(ListItemPosition(9).DBType,tvshow) | String.IsEqual(ListItemPosition(9).DBType,season) | String.IsEqual(ListItemPosition(9).DBType,set)]">$INFO[ListItemPosition(9).Art(poster)]</value>
+        <value condition="String.IsEqual(ListItemPosition(9).DBType,studio) | String.IsEqual(ListItemPosition(9).Property(DBType),studio)">$INFO[ListItemPosition(9).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(ListItemPosition(9).DBType,country) | String.IsEqual(ListItemPosition(9).Property(DBType),country)">$INFO[ListItemPosition(9).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(ListItemPosition(9).DBType,genre) | String.IsEqual(ListItemPosition(9).Property(DBType),genre)">$INFO[ListItemPosition(9).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(9).Art(thumb))">$INFO[ListItemPosition(9).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(9).Icon)">$INFO[ListItemPosition(9).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_LIP_10">
+        <value condition="!String.IsEmpty(ListItemPosition(10).Art(fanart)) + [String.IsEqual(ListItemPosition(10).DBType,movie) | String.IsEqual(ListItemPosition(10).DBType,tvshow) | String.IsEqual(ListItemPosition(10).DBType,season) | String.IsEqual(ListItemPosition(10).DBType,set)]">$INFO[ListItemPosition(10).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(10).Art(poster)) + [String.IsEqual(ListItemPosition(10).DBType,movie) | String.IsEqual(ListItemPosition(10).DBType,tvshow) | String.IsEqual(ListItemPosition(10).DBType,season) | String.IsEqual(ListItemPosition(10).DBType,set)]">$INFO[ListItemPosition(10).Art(poster)]</value>
+        <value condition="String.IsEqual(ListItemPosition(10).DBType,studio) | String.IsEqual(ListItemPosition(10).Property(DBType),studio)">$INFO[ListItemPosition(10).Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(ListItemPosition(10).DBType,country) | String.IsEqual(ListItemPosition(10).Property(DBType),country)">$INFO[ListItemPosition(10).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(ListItemPosition(10).DBType,genre) | String.IsEqual(ListItemPosition(10).Property(DBType),genre)">$INFO[ListItemPosition(10).Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(10).Art(thumb))">$INFO[ListItemPosition(10).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(ListItemPosition(10).Icon)">$INFO[ListItemPosition(10).Icon]</value>
+    </variable>
+    <variable name="Image_Overview_LIP">
+        <value condition="!String.IsEmpty(ListItem.Art(fanart)) + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,set)]">$INFO[ListItem.Art(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItem.Art(poster)) + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,set)]">$INFO[ListItem.Art(poster)]</value>
+        <value condition="String.IsEqual(ListItem.DBType,studio) | String.IsEqual(ListItem.Property(DBType),studio)">$INFO[ListItem.Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(ListItem.DBType,country) | String.IsEqual(ListItem.Property(DBType),country)">$INFO[ListItem.Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(ListItem.DBType,genre) | String.IsEqual(ListItem.Property(DBType),genre)">$INFO[ListItem.Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
+        <value condition="!String.IsEmpty(ListItem.Icon)">$INFO[ListItem.Icon]</value>
+    </variable>
     <variable name="Image_Icon_C50_-20">
         <value condition="String.IsEqual(Container(50).ListItem(-20).DBType,studio) | String.IsEqual(Container(50).ListItem(-20).Property(DBType),studio)">$INFO[Container(50).ListItem(-20).Label,resource://resource.images.studios.white/,.png]</value>
         <value condition="String.IsEqual(Container(50).ListItem(-20).DBType,country) | String.IsEqual(Container(50).ListItem(-20).Property(DBType),country)">$INFO[Container(50).ListItem(-20).Label,resource://resource.images.moviecountryicons.maps/,.png]</value>

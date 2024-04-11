@@ -168,6 +168,12 @@
             <size>26</size>
         </font>
         <font>
+            <name>font_tiny_plot</name>
+            <filename>RobotoCondensed-Regular.ttf</filename>
+            <linespacing>1.14</linespacing>
+            <size>22</size>
+        </font>
+        <font>
             <name>font_mini_cond</name>
             <filename>RobotoCondensed-Regular.ttf</filename>
             <linespacing>0.96</linespacing>
@@ -405,6 +411,12 @@
             <filename>RobotoNotoCondensed-Regular.ttf</filename>
             <linespacing>1.24</linespacing>
             <size>26</size>
+        </font>
+        <font>
+            <name>font_tiny_plot</name>
+            <filename>RobotoNotoCondensed-Regular.ttf</filename>
+            <linespacing>1.14</linespacing>
+            <size>22</size>
         </font>
         <font>
             <name>font_mini_cond</name>
@@ -670,6 +682,13 @@
             <aspect>0.89</aspect>
             <linespacing>1.24</linespacing>
             <size>26</size>
+        </font>
+        <font>
+            <name>font_tiny_plot</name>
+            <filename>resource://resource.font.robotocjksc/RobotoCJKSC-Regular.ttf</filename>
+            <aspect>0.89</aspect>
+            <linespacing>1.14</linespacing>
+            <size>22</size>
         </font>
         <font>
             <name>font_mini_cond</name>
