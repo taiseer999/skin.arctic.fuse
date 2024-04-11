@@ -20,6 +20,7 @@
         </rule>
         <rule>
             <condition>{item_widget_style}==Board</condition>
+            <condition>!Skin.HasSetting(Views.EnableBoardSize)</condition>
             <value>List_Board_Row</value>
         </rule>
         <rule>
@@ -63,6 +64,7 @@
         </rule>
         <rule>
             <condition>{parent_item_widget_style}==Board</condition>
+            <condition>!Skin.HasSetting(Views.EnableBoardSize)</condition>
             <value>List_Board_Row</value>
         </rule>
         <rule>
