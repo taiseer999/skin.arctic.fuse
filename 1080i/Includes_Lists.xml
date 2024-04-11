@@ -4,7 +4,7 @@
     <!-- ============= -->
     <!-- Movement Defs -->
     <!-- ============= -->
-    <!-- 8 Item: Icon -->
+    <!-- 9 Item: Icon -->
     <include name="List_Icon_Row_Movement">
         <movement>view_icon_movement</movement>
     </include>
