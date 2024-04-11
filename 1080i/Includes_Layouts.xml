@@ -2149,69 +2149,66 @@
         <param name="icon">$VAR[Image_Icon]</param>
         <param name="listitem">ListItem</param>
         <param name="progress">Progress</param>
+        <param name="textcolor">main_fg</param>
         <param name="affix" />
         <definition>
             <control type="group">
                 <nested />
                 <width>$PARAM[item_w]</width>
                 <height>$PARAM[item_h]</height>
-                <control type="group">
-                    <include content="Object_ItemBack">
-                        <param name="selected">$PARAM[selected]</param>
-                        <param name="shadow_colordiffuse">$PARAM[shadow_colordiffuse]</param>
-                    </include>
-                    <include content="Object_Control" condition="$PARAM[selected]">
-                        <param name="control">image</param>
-                        <include>Texture_Box_Highlight_V</include>
-                    </include>
+                <include content="Object_ItemBack">
+                    <param name="selected">$PARAM[selected]</param>
+                    <param name="shadow_colordiffuse">$PARAM[shadow_colordiffuse]</param>
+                </include>
+                <include content="Object_Control" condition="$PARAM[selected]">
+                    <param name="control">image</param>
+                    <include>Texture_Box_Highlight_V</include>
+                </include>
 
+                <control type="group">
+                    <!-- <bottom>80</bottom> -->
                     <include content="Object_SquareIcon">
                         <param name="diffuse">$PARAM[diffuse]</param>
                         <param name="icon">$PARAM[icon]</param>
                         <param name="listitem">$PARAM[listitem]</param>
                         <param name="icon_diffuse">$PARAM[diffuse]</param>
                     </include>
+                </control>
 
-                    <include content="Object_ProgressLine">
-                        <param name="progress">$PARAM[listitem].$PARAM[progress]</param>
-                    </include>
-                    <include content="Object_Indicator" condition="!$PARAM[selected]">
-                        <param name="affix">$PARAM[affix]</param>
-                        <param name="listitem">$PARAM[listitem]</param>
-                    </include>
-                    <include content="Object_SelectBox" condition="$PARAM[selected]">
-                        <param name="affix">$PARAM[affix]</param>
-                        <param name="indicator">true</param>
-                        <param name="focusbounce">true</param>
-                        <param name="listitem">$PARAM[listitem]</param>
-                    </include>
-                </control>
-                <control type="group">
-                    <visible>![$PARAM[variation]]</visible>
-                    <top>$PARAM[item_h]</top>
-                    <control type="textbox">
-                        <top>23</top>
-                        <label>$INFO[$PARAM[listitem].Label]</label>
-                        <textcolor>main_fg_70</textcolor>
-                        <font>font_mini</font>
-                        <textoffsetx>0</textoffsetx>
-                        <align>center</align>
-                        <height>64</height>
-                    </control>
-                </control>
-                <control type="group">
-                    <visible>[$PARAM[variation]]</visible>
-                    <top>$PARAM[item_h]</top>
-                    <control type="label">
-                        <top>17</top>
-                        <label>$INFO[$PARAM[listitem].Label]</label>
-                        <textcolor>main_fg_70</textcolor>
-                        <font>font_mini</font>
-                        <textoffsetx>0</textoffsetx>
-                        <align>center</align>
-                        <height>32</height>
-                    </control>
-                </control>
+                <include content="Layout_Landscape_Labels" condition="$PARAM[detailed] + Skin.HasSetting(Widgets.BoardLabels)">
+                    <param name="top">-82</param>
+                    <param name="left">20</param>
+                    <param name="right">20</param>
+                    <param name="item_h">$PARAM[item_h]</param>
+                    <param name="affix">$PARAM[affix]</param>
+                    <param name="listitem">$PARAM[listitem]</param>
+                    <param name="textcolor">$PARAM[textcolor]</param>
+                    <param name="fade">true</param>
+                    <!-- <param name="selected">$PARAM[selected]</param> -->
+                </include>
+
+                <include content="Object_ProgressLine">
+                    <param name="progress">$PARAM[listitem].$PARAM[progress]</param>
+                    <!-- <param name="always_visible">!$PARAM[detailed] + !$PARAM[variation]</param> -->
+                </include>
+                <include content="Object_Indicator" condition="!$PARAM[selected]">
+                    <param name="affix">$PARAM[affix]</param>
+                    <param name="listitem">$PARAM[listitem]</param>
+                </include>
+                <include content="Object_SelectBox" condition="$PARAM[selected]">
+                    <param name="affix">$PARAM[affix]</param>
+                    <param name="indicator">true</param>
+                    <param name="focusbounce">true</param>
+                    <param name="listitem">$PARAM[listitem]</param>
+                </include>
+
+                <include content="Layout_Landscape_Labels" condition="!$PARAM[detailed]">
+                    <param name="top">15</param>
+                    <param name="item_h">$PARAM[item_h]</param>
+                    <param name="affix">$PARAM[affix]</param>
+                    <param name="listitem">$PARAM[listitem]</param>
+                    <param name="textcolor">$PARAM[textcolor]</param>
+                </include>
             </control>
         </definition>
     </include>

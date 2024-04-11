@@ -474,9 +474,9 @@
                 <param name="detailed">$PARAM[detailed]</param>
                 <param name="orientation">horizontal</param>
                 <param name="control">fixedlist</param>
-                <param name="item_w">view_icon_item_w</param>
-                <param name="item_h">view_icon_item_w</param>
-                <param name="itemlayout_w">view_icon_itemlayout_w</param>
+                <param name="item_w">146.67</param>
+                <param name="item_h">146.67</param>
+                <param name="itemlayout_w">186.67</param>
                 <param name="itemlayout_h">view_icon_itemlayout_h</param>
                 <param name="itemlayout_include">Layout_Square</param>
                 <param name="variation">true</param>
