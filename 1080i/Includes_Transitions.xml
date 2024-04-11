@@ -49,6 +49,18 @@
     <constant name="transition_landscape_posx_8">3360</constant>
     <constant name="transition_landscape_posx_9">3780</constant>
 
+    <constant name="transition_boardsquare_posx_-1">-336</constant>
+    <constant name="transition_boardsquare_posx_0">0</constant>
+    <constant name="transition_boardsquare_posx_1">336</constant>
+    <constant name="transition_boardsquare_posx_2">672</constant>
+    <constant name="transition_boardsquare_posx_3">1008</constant>
+    <constant name="transition_boardsquare_posx_4">1344</constant>
+    <constant name="transition_boardsquare_posx_5">1680</constant>
+    <constant name="transition_boardsquare_posx_6">2016</constant>
+    <constant name="transition_boardsquare_posx_7">2352</constant>
+    <constant name="transition_boardsquare_posx_8">2688</constant>
+    <constant name="transition_boardsquare_posx_9">3024</constant>
+
     <constant name="transition_board_posx_-1">-560</constant>
     <constant name="transition_board_posx_0">0</constant>
     <constant name="transition_board_posx_1">560</constant>
@@ -135,6 +147,7 @@
                 <param name="id">$PARAM[id]</param>
                 <param name="selected">$PARAM[selected]</param>
                 <param name="detailed">$PARAM[detailed]</param>
+                <param name="variation">$PARAM[variation]</param>
                 <param name="diffuse">$PARAM[diffuse]</param>
 
                 <include content="Animation_ConditionalFade" condition="$PARAM[conditional_fade]">
@@ -170,6 +183,7 @@
         <definition>
             <include content="_Transitions_List_Row_Item">
                 <param name="detailed">$PARAM[detailed]</param>
+                <param name="variation">$PARAM[variation]</param>
                 <param name="diffuse">$PARAM[diffuse]</param>
                 <param name="pos">$PARAM[pos]</param>
                 <param name="content">$PARAM[content]</param>
@@ -198,6 +212,7 @@
             </include>
             <include content="_Transitions_List_Row_Item" condition="$PARAM[use_alternate]">
                 <param name="detailed">$PARAM[detailed]</param>
+                <param name="variation">$PARAM[variation]</param>
                 <param name="diffuse">$PARAM[diffuse]</param>
                 <param name="pos">$PARAM[pos]</param>
                 <param name="content">$PARAM[alt_content]</param>
@@ -241,6 +256,7 @@
                 <top>586</top>
                 <include content="Transitions_List_Row_Item" condition="!Skin.HasSetting(Views.DisableItemPeek)">
                     <param name="detailed">$PARAM[detailed]</param>
+                    <param name="variation">$PARAM[variation]</param>
                     <param name="diffuse">$PARAM[diffuse]</param>
                     <param name="pos">-1</param>
                     <param name="content">$PARAM[content]</param>
@@ -257,6 +273,7 @@
                 </include>
                 <include content="Transitions_List_Row_Item">
                     <param name="detailed">$PARAM[detailed]</param>
+                    <param name="variation">$PARAM[variation]</param>
                     <param name="diffuse">$PARAM[diffuse]</param>
                     <param name="pos">0</param>
                     <param name="content">$PARAM[content]</param>
@@ -278,6 +295,7 @@
                 </include>
                 <include content="Transitions_List_Row_Item" condition="[!Integer.IsGreater(Skin.String(SkinConstant.Numeric.01),$PARAM[item_count]) + [!Skin.HasSetting(Views.DisableItemPeek) | !Integer.IsEqual(Skin.String(SkinConstant.Numeric.01),$PARAM[item_count])]] | !String.IsEqual(Skin.AspectRatio,16:9)">
                     <param name="detailed">$PARAM[detailed]</param>
+                    <param name="variation">$PARAM[variation]</param>
                     <param name="diffuse">$PARAM[diffuse]</param>
                     <param name="pos">1</param>
                     <param name="content">$PARAM[content]</param>
@@ -299,6 +317,7 @@
                 </include>
                 <include content="Transitions_List_Row_Item" condition="[!Integer.IsGreater(Skin.String(SkinConstant.Numeric.02),$PARAM[item_count]) + [!Skin.HasSetting(Views.DisableItemPeek) | !Integer.IsEqual(Skin.String(SkinConstant.Numeric.02),$PARAM[item_count])]] | !String.IsEqual(Skin.AspectRatio,16:9)">
                     <param name="detailed">$PARAM[detailed]</param>
+                    <param name="variation">$PARAM[variation]</param>
                     <param name="diffuse">$PARAM[diffuse]</param>
                     <param name="pos">2</param>
                     <param name="content">$PARAM[content]</param>
@@ -320,6 +339,7 @@
                 </include>
                 <include content="Transitions_List_Row_Item" condition="[!Integer.IsGreater(Skin.String(SkinConstant.Numeric.03),$PARAM[item_count]) + [!Skin.HasSetting(Views.DisableItemPeek) | !Integer.IsEqual(Skin.String(SkinConstant.Numeric.03),$PARAM[item_count])]] | !String.IsEqual(Skin.AspectRatio,16:9)">
                     <param name="detailed">$PARAM[detailed]</param>
+                    <param name="variation">$PARAM[variation]</param>
                     <param name="diffuse">$PARAM[diffuse]</param>
                     <param name="pos">3</param>
                     <param name="content">$PARAM[content]</param>
@@ -341,6 +361,7 @@
                 </include>
                 <include content="Transitions_List_Row_Item" condition="[!Integer.IsGreater(Skin.String(SkinConstant.Numeric.04),$PARAM[item_count]) + [!Skin.HasSetting(Views.DisableItemPeek) | !Integer.IsEqual(Skin.String(SkinConstant.Numeric.04),$PARAM[item_count])]] | !String.IsEqual(Skin.AspectRatio,16:9)">
                     <param name="detailed">$PARAM[detailed]</param>
+                    <param name="variation">$PARAM[variation]</param>
                     <param name="diffuse">$PARAM[diffuse]</param>
                     <param name="pos">4</param>
                     <param name="content">$PARAM[content]</param>
@@ -362,6 +383,7 @@
                 </include>
                 <include content="Transitions_List_Row_Item" condition="[!Integer.IsGreater(Skin.String(SkinConstant.Numeric.05),$PARAM[item_count]) + [!Skin.HasSetting(Views.DisableItemPeek) | !Integer.IsEqual(Skin.String(SkinConstant.Numeric.05),$PARAM[item_count])]] | !String.IsEqual(Skin.AspectRatio,16:9)">
                     <param name="detailed">$PARAM[detailed]</param>
+                    <param name="variation">$PARAM[variation]</param>
                     <param name="diffuse">$PARAM[diffuse]</param>
                     <param name="pos">5</param>
                     <param name="content">$PARAM[content]</param>
@@ -383,6 +405,7 @@
                 </include>
                 <include content="Transitions_List_Row_Item" condition="[!Integer.IsGreater(Skin.String(SkinConstant.Numeric.06),$PARAM[item_count]) + [!Skin.HasSetting(Views.DisableItemPeek) | !Integer.IsEqual(Skin.String(SkinConstant.Numeric.06),$PARAM[item_count])]] | !String.IsEqual(Skin.AspectRatio,16:9)">
                     <param name="detailed">$PARAM[detailed]</param>
+                    <param name="variation">$PARAM[variation]</param>
                     <param name="diffuse">$PARAM[diffuse]</param>
                     <param name="pos">6</param>
                     <param name="content">$PARAM[content]</param>
@@ -405,6 +428,7 @@
 
                 <include content="Transitions_List_Row_Item" condition="[!Integer.IsGreater(Skin.String(SkinConstant.Numeric.07),$PARAM[item_count]) + [!Skin.HasSetting(Views.DisableItemPeek) | !Integer.IsEqual(Skin.String(SkinConstant.Numeric.07),$PARAM[item_count])]] | !String.IsEqual(Skin.AspectRatio,16:9)">
                     <param name="detailed">$PARAM[detailed]</param>
+                    <param name="variation">$PARAM[variation]</param>
                     <param name="diffuse">$PARAM[diffuse]</param>
                     <param name="pos">7</param>
                     <param name="content">$PARAM[content]</param>
@@ -427,6 +451,7 @@
 
                 <include content="Transitions_List_Row_Item" condition="[!Integer.IsGreater(Skin.String(SkinConstant.Numeric.08),$PARAM[item_count]) + [!Skin.HasSetting(Views.DisableItemPeek) | !Integer.IsEqual(Skin.String(SkinConstant.Numeric.08),$PARAM[item_count])]] | !String.IsEqual(Skin.AspectRatio,16:9)">
                     <param name="detailed">$PARAM[detailed]</param>
+                    <param name="variation">$PARAM[variation]</param>
                     <param name="diffuse">$PARAM[diffuse]</param>
                     <param name="pos">8</param>
                     <param name="content">$PARAM[content]</param>
@@ -449,6 +474,7 @@
 
                 <include content="Transitions_List_Row_Item" condition="[!Integer.IsGreater(Skin.String(SkinConstant.Numeric.09),$PARAM[item_count]) + [!Skin.HasSetting(Views.DisableItemPeek) | !Integer.IsEqual(Skin.String(SkinConstant.Numeric.09),$PARAM[item_count])]] | !String.IsEqual(Skin.AspectRatio,16:9)">
                     <param name="detailed">$PARAM[detailed]</param>
+                    <param name="variation">$PARAM[variation]</param>
                     <param name="diffuse">$PARAM[diffuse]</param>
                     <param name="pos">9</param>
                     <param name="content">$PARAM[content]</param>

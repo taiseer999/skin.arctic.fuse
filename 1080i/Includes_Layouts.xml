@@ -2141,6 +2141,59 @@
         </definition>
     </include>
 
+    <include name="Layout_Square_Detailed">
+        <control type="group">
+            <control type="group">
+                <visible>String.IsEqual($PARAM[listitem].DBType,genre) | String.IsEqual($PARAM[listitem].Property(DBType),genre) | String.IsEqual($PARAM[listitem].DBType,studio) | String.IsEqual($PARAM[listitem].Property(DBType),studio) | String.IsEqual($PARAM[listitem].DBType,country) | String.IsEqual($PARAM[listitem].Property(DBType),country) | [![String.IsEqual($PARAM[listitem].Icon,DefaultFolder.png) + String.IsEqual($PARAM[listitem].Label,$LOCALIZE[22082])] + String.StartsWith($PARAM[listitem].Icon,Default)]</visible>
+                <control type="group">
+                    <top>20</top>
+                    <bottom>100</bottom>
+                    <control type="group">
+                        <include content="Dimension_Padding">
+                            <param name="pad">$PARAM[misc]</param>
+                        </include>
+                        <include content="Object_SquareIcon">
+                            <param name="diffuse">$PARAM[diffuse]</param>
+                            <param name="icon">$PARAM[icon]</param>
+                            <param name="listitem">$PARAM[listitem]</param>
+                            <param name="icon_diffuse">$PARAM[diffuse]</param>
+                        </include>
+                    </control>
+                </control>
+                <include content="Layout_Landscape_Labels">
+                    <param name="top">-82</param>
+                    <param name="left">20</param>
+                    <param name="right">20</param>
+                    <param name="item_h">$PARAM[item_h]</param>
+                    <param name="affix">$PARAM[affix]</param>
+                    <param name="listitem">$PARAM[listitem]</param>
+                    <param name="textcolor">$PARAM[textcolor]</param>
+                    <param name="selected">$PARAM[selected]</param>
+                </include>
+            </control>
+
+            <control type="group">
+                <visible>![String.IsEqual($PARAM[listitem].DBType,genre) | String.IsEqual($PARAM[listitem].Property(DBType),genre) | String.IsEqual($PARAM[listitem].DBType,studio) | String.IsEqual($PARAM[listitem].Property(DBType),studio) | String.IsEqual($PARAM[listitem].DBType,country) | String.IsEqual($PARAM[listitem].Property(DBType),country) | [![String.IsEqual($PARAM[listitem].Icon,DefaultFolder.png) + String.IsEqual($PARAM[listitem].Label,$LOCALIZE[22082])] + String.StartsWith($PARAM[listitem].Icon,Default)]]</visible>
+                <include content="Object_SquareIcon">
+                    <param name="diffuse">$PARAM[diffuse]</param>
+                    <param name="icon">$PARAM[icon]</param>
+                    <param name="listitem">$PARAM[listitem]</param>
+                    <param name="icon_diffuse">$PARAM[diffuse]</param>
+                </include>
+                <include content="Layout_Landscape_Labels" condition="$PARAM[variation]">
+                    <param name="top">-82</param>
+                    <param name="left">20</param>
+                    <param name="right">20</param>
+                    <param name="item_h">$PARAM[item_h]</param>
+                    <param name="affix">$PARAM[affix]</param>
+                    <param name="listitem">$PARAM[listitem]</param>
+                    <param name="textcolor">$PARAM[textcolor]</param>
+                    <param name="fade">true</param>
+                </include>
+            </control>
+        </control>
+    </include>
+
     <include name="Layout_Square">
         <param name="diffuse">diffuse/square_w294_h294.png</param>
         <param name="selected">false</param>
@@ -2150,6 +2203,7 @@
         <param name="listitem">ListItem</param>
         <param name="progress">Progress</param>
         <param name="textcolor">main_fg</param>
+        <param name="misc">-20</param>
         <param name="affix" />
         <definition>
             <control type="group">
@@ -2165,26 +2219,23 @@
                     <include>Texture_Box_Highlight_V</include>
                 </include>
 
-                <control type="group">
-                    <!-- <bottom>80</bottom> -->
-                    <include content="Object_SquareIcon">
-                        <param name="diffuse">$PARAM[diffuse]</param>
-                        <param name="icon">$PARAM[icon]</param>
-                        <param name="listitem">$PARAM[listitem]</param>
-                        <param name="icon_diffuse">$PARAM[diffuse]</param>
-                    </include>
-                </control>
-
-                <include content="Layout_Landscape_Labels" condition="$PARAM[detailed] + $PARAM[variation]">
-                    <param name="top">-82</param>
-                    <param name="left">20</param>
-                    <param name="right">20</param>
+                <include content="Layout_Square_Detailed" condition="$PARAM[detailed]">
+                    <param name="icon_diffuse">$PARAM[diffuse]</param>
+                    <param name="diffuse">$PARAM[diffuse]</param>
+                    <param name="icon">$PARAM[icon]</param>
+                    <param name="listitem">$PARAM[listitem]</param>
+                    <param name="misc">$PARAM[misc]</param>
+                    <param name="selected">$PARAM[selected]</param>
                     <param name="item_h">$PARAM[item_h]</param>
                     <param name="affix">$PARAM[affix]</param>
-                    <param name="listitem">$PARAM[listitem]</param>
                     <param name="textcolor">$PARAM[textcolor]</param>
-                    <param name="fade">true</param>
-                    <!-- <param name="selected">$PARAM[selected]</param> -->
+                    <param name="variation">$PARAM[variation]</param>
+                </include>
+                <include content="Object_SquareIcon" condition="!$PARAM[detailed]">
+                    <param name="diffuse">$PARAM[diffuse]</param>
+                    <param name="icon">$PARAM[icon]</param>
+                    <param name="listitem">$PARAM[listitem]</param>
+                    <param name="icon_diffuse">$PARAM[diffuse]</param>
                 </include>
 
                 <include content="Object_ProgressLine">
@@ -2308,7 +2359,9 @@
                 <height>$PARAM[item_h]</height>
 
                 <control type="group">
-                    <bottom>80</bottom>
+                    <include content="Object_Bottom" condition="!$PARAM[variation]">
+                        <param name="bottom">80</param>
+                    </include>
 
                     <include content="Object_ItemBack">
                         <param name="selected">$PARAM[selected]</param>
@@ -2354,7 +2407,7 @@
                                 <aligny>center</aligny>
                                 <font>font_tiny_plot</font>
                                 <include condition="$PARAM[selected]">Color_SelectedText</include>
-                                <label>$VAR[Label_Landscape_Plot$PARAM[affix]]</label>
+                                <label fallback="19055">$VAR[Label_Landscape_Plot$PARAM[affix]]</label>
                                 <textcolor>$PARAM[textcolor]_70</textcolor>
                                 <autoscroll>false</autoscroll>
                             </control>
@@ -2377,16 +2430,23 @@
                         <param name="listitem">$PARAM[listitem]</param>
                     </include>
 
-                    <include content="Layout_Landscape_Labels">
+                    <include content="Layout_Landscape_Labels" condition="!$PARAM[variation]">
                         <param name="top">-65</param>
-                        <!-- <param name="top">-87</param>
-                        <param name="left">25</param>
-                        <param name="right">25</param> -->
                         <param name="item_h">$PARAM[item_h]</param>
                         <param name="affix">$PARAM[affix]</param>
                         <param name="listitem">$PARAM[listitem]</param>
                         <param name="textcolor">$PARAM[textcolor]</param>
-                        <!-- <param name="selected">$PARAM[selected]</param> -->
+                        <param name="fade">false</param>
+                    </include>
+                    <include content="Layout_Landscape_Labels" condition="$PARAM[variation]">
+                        <param name="top">-82</param>
+                        <param name="left">20</param>
+                        <param name="right">20</param>
+                        <param name="item_h">$PARAM[item_h]</param>
+                        <param name="affix">$PARAM[affix]</param>
+                        <param name="listitem">$PARAM[listitem]</param>
+                        <param name="textcolor">$PARAM[textcolor]</param>
+                        <param name="selected">$PARAM[selected]</param>
                         <param name="fade">false</param>
                     </include>
                 </control>
