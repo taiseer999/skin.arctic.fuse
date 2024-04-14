@@ -41,7 +41,6 @@
         <value condition="!String.IsEmpty({listitem}.AddonDescription)">$INFO[{listitem}.AddonDescription]</value>
         <value condition="!String.IsEmpty({listitem}.Plot)">$INFO[{listitem}.Plot]</value>
         <value condition="!String.IsEmpty({listitem}.Property(biography))">$INFO[{listitem}.Property(biography)]</value>
-        <value condition="!String.IsEmpty({listitem}.Label)">$INFO[{listitem}.Label]</value>
     </variable>
 
     <variable name="Label_Landscape_Lower" containers="51,513" start="-20" end="20" types="listitem,listitemposition">
