@@ -336,6 +336,7 @@
                     <include condition="[Skin.String(Furniture.BottomLeft.Enable,Library) | Skin.String(Furniture.BottomLeft.Enable,Always)]">View_Furniture_Bottom_PageCount_Footer</include>
                     <include condition="![Skin.String(Furniture.BottomLeft.Enable,Library) | Skin.String(Furniture.BottomLeft.Enable,Always)]">View_Furniture_Bottom_PageCount_Basic</include>
                 </control>
+                <include>View_Combined_Row_Horz_Selector</include>
             </control>
         </control>
     </include>
