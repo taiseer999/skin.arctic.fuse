@@ -68,9 +68,29 @@
     </variable>
 
     <variable name="Image_Widget_Style">
+        <!-- Landscape (Apps Convert) -->
+        <value condition="Skin.String(Furniture.BottomLeft.Enable,Always) + String.IsEqual(ListItem.Property(widget_style),Apps)">special://skin/extras/icons/view-landscape.png</value>
+        <!-- Square (Icon Convert) -->
+        <value condition="Skin.String(Furniture.BottomLeft.Enable,Always) + String.IsEqual(ListItem.Property(widget_style),Icon)">special://skin/extras/icons/view-square.png</value>
+        <!-- Board (Sign Convert) -->
+        <value condition="Skin.String(Furniture.BottomLeft.Enable,Always) + String.IsEqual(ListItem.Property(widget_style),Sign)">special://skin/extras/icons/window-maximize-regular.png</value>
+        <!-- Overview (Text Convert) -->
+        <value condition="Skin.String(Furniture.BottomLeft.Enable,Always) + String.IsEqual(ListItem.Property(widget_style),Text)">special://skin/extras/icons/window-maximize-regular.png</value>
+
+        <value condition="String.IsEqual(ListItem.Property(widget_style),Apps)">special://skin/extras/icons/view-landscape.png</value>
+        <value condition="String.IsEqual(ListItem.Property(widget_style),Icon)">special://skin/extras/icons/view-square.png</value>
+        <value condition="String.IsEqual(ListItem.Property(widget_style),Text)">special://skin/extras/icons/window-maximize-regular.png</value>
+        <value condition="String.IsEqual(ListItem.Property(widget_style),Sign)">special://skin/extras/icons/window-maximize-regular.png</value>
+
+        <value condition="String.IsEqual(ListItem.Property(widget_style),Landscape)">special://skin/extras/icons/view-landscape.png</value>
+        <value condition="String.IsEqual(ListItem.Property(widget_style),Square)">special://skin/extras/icons/view-square.png</value>
+        <value condition="String.IsEqual(ListItem.Property(widget_style),Board)">special://skin/extras/icons/window-maximize-regular.png</value>
+        <value condition="String.IsEqual(ListItem.Property(widget_style),Overview)">special://skin/extras/icons/window-maximize-regular.png</value>
+
         <value condition="String.IsEqual(ListItem.Property(widget_style),Poster)">special://skin/extras/icons/view-poster.png</value>
-        <value condition="String.IsEqual(ListItem.Property(widget_style),Landscape) | String.IsEqual(ListItem.Property(widget_style),Board) | String.IsEqual(ListItem.Property(widget_style),Apps)">special://skin/extras/icons/view-landscape.png</value>
-        <value condition="String.IsEqual(ListItem.Property(widget_style),Square) | String.IsEqual(ListItem.Property(widget_style),Icon)">special://skin/extras/icons/view-square.png</value>
+        <value condition="String.IsEqual(ListItem.Property(widget_style),Banner)">special://skin/extras/icons/window-maximize-regular.png</value>
+        <value condition="String.IsEqual(ListItem.Property(widget_style),Card)">special://skin/extras/icons/window-maximize-regular.png</value>
+
         <value>special://skin/extras/icons/window-maximize-regular.png</value>
     </variable>
 

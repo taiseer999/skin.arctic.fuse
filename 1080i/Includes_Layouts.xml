@@ -665,6 +665,8 @@
                             <texture background="true" fallback="special://skin/extras/icons/shapes.png">$VAR[Image_Widget_Style]</texture>
                         </control>
                         <control type="label">
+                            <left>-20</left>
+                            <right>-20</right>
                             <height>40</height>
                             <font>font_tiny</font>
                             <bottom>4</bottom>
