@@ -41,8 +41,5 @@
         <item>
             <datafile>generator/data/base/category_widgets.xml</datafile>
         </item>
-        <item>
-            <datafile>generator/data/base/category_selectors.xml</datafile>
-        </item>
     </items>
 </contents>

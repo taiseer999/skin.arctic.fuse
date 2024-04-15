@@ -709,9 +709,6 @@
 
                 <nested />
 
-                <include content="Object_Left" condition="!Skin.HasSetting(Furniture.DisableTrayViewLine)">
-                    <param name="left">400</param>
-                </include>
                 <left>160</left>
                 <height>160</height>
                 <top>-160</top>

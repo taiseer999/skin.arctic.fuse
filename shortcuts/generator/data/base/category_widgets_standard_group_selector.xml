@@ -1,7 +1,0 @@
-<contents>
-    <value name="comments">Widget Selector</value>
-    <template>generator/data/parts/endrow_fakeitems.xmltemplate</template>
-    <condition>Skin.HasSetting(Hub.{window_id}.WidgetSelector)</condition>
-    <condition>{item_global_widgets}==</condition>
-    <value name="endrow_visible">String.IsEmpty(Container({category_id}).ListItem.Property(global_widgets)) + String.IsEqual(Container({category_id}).ListItem.Property(guid),{item_guid})</value>
-</contents>

@@ -47,9 +47,7 @@
         <onup>300</onup>
         <ondown>$PARAM[ondown]</ondown>
         <onfocus>SetProperty(TMDbHelper.WidgetContainer,301,$PARAM[window_id])</onfocus>
-        <onfocus condition="!Skin.HasSetting(Navigation.EnableTopCategories)">SetProperty(TMDbHelper.WidgetContainer,301,$PARAM[window_id])</onfocus>
-        <onfocus condition="Skin.HasSetting(Navigation.EnableTopCategories)">SetProperty(TMDbHelper.WidgetContainer,$INFO[Container(300).ListItem.Property(item)]601,$PARAM[window_id])</onfocus>
-
+        <onfocus>SetProperty(TMDbHelper.WidgetContainer,301,$PARAM[window_id])</onfocus>
         <include content="Action_View_Movement_OnLeftRight">
             <param name="id">$PARAM[id]</param>
             <param name="onback">[Integer.IsEqual(Container($PARAM[id]).CurrentItem,1)]</param>
@@ -67,105 +65,33 @@
 
     </include>
 
-    <include name="Hub_Submenu_List_Definition_Fake">
-        <include content="Categories_Selector">
-            <param name="id">$PARAM[id]</param>
-            <param name="window_id">$PARAM[window_id]</param>
-            <param name="font">font_mini</param>
-            <param name="color_fo">$VAR[Hub_Submenu_Highlight]</param>
-            <param name="color_nf">main_fg_30</param>
-            <param name="hidden_button">$PARAM[hidden_button]</param>
-            <param name="hidden_button_prefix">$PARAM[hidden_button_prefix]</param>
-            <param name="slide">True</param>
-            <param name="hitrect_x">20</param>
-            <param name="hitrect_y">20</param>
-            <param name="hitrect_w">1080</param>
-            <param name="hitrect_h">120</param>
-            <param name="shorten">True</param>
-            <param name="scrolltime">0</param>
-
-            <include content="Hub_Submenu_List_Definition_Content">
-                <param name="window_id">$PARAM[window_id]</param>
-                <param name="ondown">$PARAM[ondown]</param>
-                <param name="id">$PARAM[id]</param>
-            </include>
-            <include content="Animation_ConditionalFade">
-                <param name="condition">true</param>
-            </include>
-            <nested />
-
-        </include>
-    </include>
-    <include name="Hub_Submenu_List_Definition_Real">
-        <include content="Categories_Selector">
-            <param name="id">$PARAM[id]</param>
-            <param name="window_id">$PARAM[window_id]</param>
-            <param name="font">font_mini</param>
-            <param name="color_fo">$VAR[Hub_Submenu_Highlight]</param>
-            <param name="color_nf">main_fg_30</param>
-            <param name="hidden_button">$PARAM[hidden_button]</param>
-            <param name="hidden_button_prefix">$PARAM[hidden_button_prefix]</param>
-            <param name="slide">True</param>
-            <param name="hitrect_x">20</param>
-            <param name="hitrect_y">20</param>
-            <param name="hitrect_w">1080</param>
-            <param name="hitrect_h">120</param>
-            <param name="shorten">True</param>
-            <param name="scrolltime">400</param>
-            <include content="Hub_Submenu_List_Definition_Content">
-                <param name="window_id">$PARAM[window_id]</param>
-                <param name="ondown">$PARAM[ondown]</param>
-                <param name="id">$PARAM[id]</param>
-            </include>
-            <nested />
-        </include>
-    </include>
-
-    <include name="Hub_Submenu_List_Definition">
-        <include content="Hub_Submenu_List_Definition_Fake" condition="!Skin.HasSetting(Views.DisableItemPeek)">
-            <param name="window_id">$PARAM[window_id]</param>
-            <param name="categories">$PARAM[categories]</param>
-        </include>
-        <include content="Hub_Submenu_List_Definition_Real" condition="Skin.HasSetting(Views.DisableItemPeek)">
-            <param name="window_id">$PARAM[window_id]</param>
-            <param name="categories">$PARAM[categories]</param>
-        </include>
-    </include>
-
     <include name="Hub_Submenu_List">
         <param name="ondown">340</param>
         <param name="hidden_button">List_ButtonMenu_Row_HiddenButton_View</param>
         <definition>
-            <include content="Hub_Submenu_List_Definition_Fake" condition="!Skin.HasSetting(Views.DisableItemPeek)">
+            <include content="Categories_Selector">
                 <param name="id">$PARAM[id]</param>
                 <param name="window_id">$PARAM[window_id]</param>
+                <param name="font">font_mini</param>
+                <param name="color_fo">$VAR[Hub_Submenu_Highlight]</param>
+                <param name="color_nf">main_fg_30</param>
                 <param name="hidden_button">$PARAM[hidden_button]</param>
                 <param name="hidden_button_prefix">$PARAM[hidden_button_prefix]</param>
-                <param name="ondown">$PARAM[ondown]</param>
-                <nested />
-            </include>
-            <include content="Hub_Submenu_List_Definition_Real" condition="Skin.HasSetting(Views.DisableItemPeek)">
-                <param name="id">$PARAM[id]</param>
-                <param name="window_id">$PARAM[window_id]</param>
-                <param name="hidden_button">$PARAM[hidden_button]</param>
-                <param name="hidden_button_prefix">$PARAM[hidden_button_prefix]</param>
-                <param name="ondown">$PARAM[ondown]</param>
+                <param name="slide">True</param>
+                <param name="hitrect_x">20</param>
+                <param name="hitrect_y">20</param>
+                <param name="hitrect_w">1080</param>
+                <param name="hitrect_h">120</param>
+                <param name="shorten">True</param>
+                <param name="scrolltime">400</param>
+                <include content="Hub_Submenu_List_Definition_Content">
+                    <param name="window_id">$PARAM[window_id]</param>
+                    <param name="ondown">$PARAM[ondown]</param>
+                    <param name="id">$PARAM[id]</param>
+                </include>
                 <nested />
             </include>
         </definition>
-    </include>
-
-    <include name="Hub_Submenu_Group_Selector_Fake">
-        <control type="group">
-            <left>-20</left>
-            <centertop>60</centertop>
-            <height>256</height>
-            <include>Hub_Categories_FadeIn</include>
-            <include content="Categories_Selector_Fake">
-                <param name="id">302</param>
-                <param name="include_five">true</param>
-            </include>
-        </control>
     </include>
 
     <include name="Hub_Submenu_Group">
@@ -178,10 +104,6 @@
             <left>160</left>
             <orientation>vertical</orientation>
             <include>Hub_WindowTransition_CategoriesSpotlight_OnWidgets</include>
-            <include condition="!Skin.HasSetting(Navigation.EnableTopCategories) + !Skin.HasSetting(Views.DisableItemPeek)">Hub_Submenu_Group_Selector_Fake</include>
-            <include content="Animation_ConditionalFade" condition="Skin.HasSetting(Navigation.EnableTopCategories)">
-                <param name="condition">true</param>
-            </include>
 
             <nested />
 
@@ -193,8 +115,7 @@
         <definition>
             <control type="group">
                 <include>Animation_Half_WindowChange_UpDown</include>
-                <include condition="Skin.HasSetting(Navigation.EnableTopCategories)">Hub_Slide_Group_OnCategories</include>
-                <include condition="!Skin.HasSetting(Navigation.EnableTopCategories)">Hub_Slide_Group_OnWidgets</include>
+                <include>Hub_Slide_Group_OnWidgets</include>
                 <nested />
             </control>
         </definition>
@@ -332,22 +253,16 @@
                 <include>Hub_Widgets_Group_Furniture</include>
                 <include>Animation_Group_Bumper</include>
 
-                <include condition="Skin.HasSetting(Navigation.EnableTopCategories)">Hub_Categories_Selector_Fake</include>
-
                 <control type="group">
                     <centertop>120</centertop>
                     <left>120</left>
                     <height>200</height>
-                    <!-- <left>-1080</left> -->
                     <width>1080</width>
                     <include condition="Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Topbar)">Hub_TopBar_Categories</include>
                 </control>
 
                 <control type="group">
-                    <include content="Animation_ConditionalFade" condition="Skin.HasSetting(Navigation.EnableTopCategories)">
-                        <param name="condition">[$EXP[Exp_Hubs_Categories_IsFocus] + $EXP[Exp_Hubs_Spotlight_IsFanart]] | Control.HasFocus(370)</param>
-                    </include>
-                    <include content="Animation_ConditionalFade" condition="!Skin.HasSetting(Navigation.EnableTopCategories)">
+                    <include content="Animation_ConditionalFade">
                         <param name="condition">[Control.HasFocus(370)]</param>
                     </include>
                     <include>Furniture_Top</include>
@@ -365,66 +280,6 @@
             <include>View_Dialog_VideoPIP</include>
             <include>View_Dialog_Plot</include>
         </definition>
-    </include>
-
-    <include name="Hub_Categories_Selector_Fake">
-        <control type="group">
-            <visible allowhiddenfocus="true">$EXP[Exp_Hubs_Categories_IsFocus]</visible>
-            <!-- <control type="group">
-                <centertop>100</centertop>
-                <height>40</height>
-                <include content="Info_Viewline">
-                    <param name="item_condition">true</param>
-                    <param name="library_condition">true</param>
-                    <param name="label">[CAPITALIZE]$VAR[Label_Header_Main][/CAPITALIZE]</param>
-                    <top>0</top>
-                </include>
-            </control> -->
-            <control type="grouplist">
-                <height>256</height>
-                <centertop>100</centertop>
-                <left>120</left>
-                <orientation>horizontal</orientation>
-                <itemgap>0</itemgap>
-                <control type="button">
-                    <align>left</align>
-                    <width>auto</width>
-                    <height>256</height>
-                    <centertop>50%</centertop>
-                    <!-- <font>font_main_black</font>
-                    <textcolor>00ffffff</textcolor> -->
-                    <font>font_midi_black</font>
-                    <textcolor>main_fg_100</textcolor>
-                    <label>[CAPITALIZE]$VAR[Label_Header_Main][/CAPITALIZE]</label>
-                    <textoffsetx>80</textoffsetx>
-                    <texturenofocus />
-                    <texturefocus />
-
-                </control>
-
-                <control type="group">
-                    <left>-80</left>
-                    <width>1080</width>
-                    <include content="Animation_ConditionalFade">
-                        <param name="condition">[Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) | ![Integer.IsEqual(Window.Property(Slide.WidgetContainer),300) | Control.HasFocus(300) | Integer.IsEqual(Container(302).NumItems,0)] | [Integer.IsEqual(Window.Property(Slide.WidgetContainer),302) | Control.HasFocus(302)]]</param>
-                    </include>
-                    <include content="Categories_Selector_Fake">
-                        <param name="id">300</param>
-                    </include>
-                </control>
-
-                <control type="group">
-                    <left>-1080</left>
-                    <width>1080</width>
-                    <include content="Animation_ConditionalFade">
-                        <param name="condition">[Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) | [Integer.IsEqual(Window.Property(Slide.WidgetContainer),300) | Control.HasFocus(300) | Integer.IsEqual(Container(302).NumItems,0)]]</param>
-                    </include>
-                    <include content="Categories_Selector_Fake">
-                        <param name="id">302</param>
-                    </include>
-                </control>
-            </control>
-        </control>
     </include>
 
     <include name="Hub_TopBar_Categories">
@@ -506,24 +361,13 @@
 
         <include content="Hub_Widgets_Group">
             <include>skinvariables-$PARAM[categories]-widgets</include>
-            <include condition="Skin.HasSetting(Navigation.EnableTopCategories)">Hub_WindowTransition_Group_OnCategories</include>
-            <include condition="!Skin.HasSetting(Navigation.EnableTopCategories)">Hub_WindowTransition_Group_OnWidgets</include>
+            <include>Hub_WindowTransition_Group_OnWidgets</include>
         </include>
 
         <include content="Hub_Widgets_Infopanel">
             <include content="Info_Panel">
                 <param name="container">Container.</param>
                 <param name="visible">!Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)</param>
-                <!-- <include content="Animation_Fade_In" condition="$EXP[Exp_Hubs_Spotlight_IsFanart]">
-                    <param name="condition">![Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) | $EXP[Exp_Hubs_Categories_IsFocus]]</param>
-                    <param name="delay">200</param>
-                </include>
-                <include content="Animation_ConditionalFade" condition="$EXP[Exp_Hubs_Spotlight_IsFanart]">
-                    <param name="condition">[Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) | $EXP[Exp_Hubs_Categories_IsFocus]]</param>
-                </include>
-                <include content="Animation_ConditionalFade" condition="!$EXP[Exp_Hubs_Spotlight_IsFanart]">
-                    <param name="condition">Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)</param>
-                </include> -->
             </include>
         </include>
     </include>
@@ -591,49 +435,12 @@
 
         <onfocus>SetProperty(TMDbHelper.WidgetContainer,301,$PARAM[window_id])</onfocus>
 
-        <onfocus condition="!Skin.HasSetting(Navigation.EnableTopCategories)">SetProperty(TMDbHelper.WidgetContainer,301,$PARAM[window_id])</onfocus>
-        <onfocus condition="Skin.HasSetting(Navigation.EnableTopCategories)">SetProperty(TMDbHelper.WidgetContainer,$INFO[Container(300).ListItem.Property(item)]601,$PARAM[window_id])</onfocus>
-
         <content>
             <include>skinvariables-$PARAM[categories]-staticitems</include>
         </content>
     </include>
 
-    <include name="Hub_Categories_Definition_Selector_Fake">
-        <control type="group">
-            <left>-20</left>
-            <centertop>60</centertop>
-            <height>256</height>
-            <include content="Categories_Selector_Fake">
-                <param name="id">300</param>
-                <param name="font">font_main_black</param>
-            </include>
-        </control>
-    </include>
-
-    <include name="Hub_Categories_Definition_Fake">
-        <include condition="!Skin.HasSetting(Navigation.EnableTopCategories)">Hub_Categories_Definition_Selector_Fake</include>
-        <include content="Categories_Selector">
-            <param name="window_id">$PARAM[window_id]</param>
-            <param name="hitrect_x">20</param>
-            <param name="hitrect_y">-20</param>
-            <param name="hitrect_w">1080</param>
-            <param name="hitrect_h">120</param>
-            <param name="shorten">True</param>
-            <param name="hidden_button_prefix">Item.$INFO[Container(300).ListItem.Property(item)]302.</param>
-            <param name="hidden_button">List_ButtonMenu_Row_HiddenButton_Home_Categories</param>
-            <param name="slide">True</param>
-            <param name="scrolltime">0</param>
-            <include content="Hub_Categories_Definition_Content">
-                <param name="window_id">$PARAM[window_id]</param>
-                <param name="categories">$PARAM[categories]</param>
-            </include>
-            <include content="Animation_ConditionalFade">
-                <param name="condition">true</param>
-            </include>
-        </include>
-    </include>
-    <include name="Hub_Categories_Definition_Real">
+    <include name="Hub_Categories_Definition">
         <include content="Categories_Selector">
             <param name="window_id">$PARAM[window_id]</param>
             <param name="hitrect_x">20</param>
@@ -649,17 +456,6 @@
                 <param name="window_id">$PARAM[window_id]</param>
                 <param name="categories">$PARAM[categories]</param>
             </include>
-        </include>
-    </include>
-
-    <include name="Hub_Categories_Definition">
-        <include content="Hub_Categories_Definition_Fake" condition="!Skin.HasSetting(Views.DisableItemPeek)">
-            <param name="window_id">$PARAM[window_id]</param>
-            <param name="categories">$PARAM[categories]</param>
-        </include>
-        <include content="Hub_Categories_Definition_Real" condition="Skin.HasSetting(Views.DisableItemPeek)">
-            <param name="window_id">$PARAM[window_id]</param>
-            <param name="categories">$PARAM[categories]</param>
         </include>
     </include>
 

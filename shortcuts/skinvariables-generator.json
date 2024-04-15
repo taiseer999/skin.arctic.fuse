@@ -28,7 +28,6 @@
         {"datafile": "generator/data/base/hubs_classichome.xml"},
         {"datafile": "generator/data/base/hubs_extendedhome.xml"},
         {"datafile": "generator/data/base/hubs_extendedglobal.xml"},
-        {"datafile": "generator/data/base/classic_selectors.xml"},
         {"datafile": "generator/data/base/power_main.xml"},
         {"datafile": "generator/data/base/power_side.xml"},
         {"datafile": "generator/data/base/options_tray.xml"},

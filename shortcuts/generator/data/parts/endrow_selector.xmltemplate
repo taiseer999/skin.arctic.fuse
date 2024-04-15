@@ -5,9 +5,6 @@
     <param name="topid">$MATH[{grouplist_item_x} * 1000 + 401]</param>
     <param name="window_id">{window_id}</param>
     <visible>{endrow_visible}</visible>
-    <include content="Animation_ConditionalFade">
-        <param name="condition">true</param>
-    </include>
     <content>
         {all_endrow_items}
     </content>

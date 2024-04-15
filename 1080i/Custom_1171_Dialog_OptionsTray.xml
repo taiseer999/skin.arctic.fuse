@@ -17,77 +17,62 @@
 
         <control type="group">
             <include>Animation_Group_Bumper</include>
+
             <control type="group">
+                <left>200</left>
+                <height>80</height>
                 <centerbottom>100</centerbottom>
-                <height>40</height>
-                <visible>!Skin.HasSetting(Furniture.DisableTrayViewLine)</visible>
-                <include content="Info_Viewline">
-                    <param name="label">$LOCALIZE[33063]</param>
-                    <top>0</top>
-                </include>
-            </control>
+                <width>700</width>
+                <control type="list" id="9000">
+                    <onup>Close</onup>
+                    <focusposition>2</focusposition>
+                    <movement>2</movement>
+                    <orientation>horizontal</orientation>
 
-            <control type="grouplist">
-                <include content="View_Combined_List_Horz_Grouplist_Definition">
-                    <param name="label">$LOCALIZE[33063]</param>
-                    <param name="include_trayicons_condition">False</param>
-                </include>
-                <control type="group">
-                    <left>40</left>
-                    <height>80</height>
-                    <centertop>50%</centertop>
-                    <width>700</width>
-                    <control type="list" id="9000">
-                        <onup>Close</onup>
-                        <focusposition>2</focusposition>
-                        <movement>2</movement>
-                        <orientation>horizontal</orientation>
+                    <ondown>SetProperty(Bumpers.OnDown,True,Home)</ondown>
+                    <ondown>SetFocus(330)</ondown>
 
-                        <ondown>SetProperty(Bumpers.OnDown,True,Home)</ondown>
-                        <ondown>SetFocus(330)</ondown>
+                    <itemlayout width="100" height="80">
+                        <include content="Layout_OptionTray">
+                            <param name="selected">false</param>
+                        </include>
+                    </itemlayout>
 
-                        <itemlayout width="100" height="80">
-                            <include content="Layout_OptionTray">
-                                <param name="selected">false</param>
-                            </include>
-                        </itemlayout>
+                    <focusedlayout width="100" height="80">
+                        <include content="Layout_OptionTray">
+                            <param name="selected">true</param>
+                        </include>
+                    </focusedlayout>
 
-                        <focusedlayout width="100" height="80">
-                            <include content="Layout_OptionTray">
-                                <param name="selected">true</param>
-                            </include>
-                        </focusedlayout>
+                    <content>
+                        <item>
+                            <icon>special://skin/extras/icons/bars.png</icon>
+                            <label>$LOCALIZE[33063]</label>
+                            <onclick>Dialog.Close(1171,true)</onclick>
+                            <onclick>ActivateWindow(shutdownmenu)</onclick>
+                            <visible>!Window.IsMedia</visible>
+                            <visible>!Window.IsVisible(1105)</visible>
+                        </item>
+                        <item>
+                            <icon>special://skin/extras/icons/right-left.png</icon>
+                            <label>$LOCALIZE[21483]</label>
+                            <onclick>Dialog.Close(1171,true)</onclick>
+                            <onclick>AlarmClock(refocus,SetFocus(64),00:00,silent)</onclick>
+                            <visible>Window.IsMedia</visible>
+                        </item>
+                        <item>
+                            <icon>special://skin/extras/icons/binoculars.png</icon>
+                            <label>$LOCALIZE[31066]</label>
+                            <onclick>Dialog.Close(1171,true)</onclick>
+                            <onclick>AlarmClock(refocus,SetFocus(64),00:00,silent)</onclick>
+                            <visible>Window.IsVisible(1105)</visible>
+                        </item>
+                    </content>
 
-                        <content>
-                            <item>
-                                <icon>special://skin/extras/icons/bars.png</icon>
-                                <label>$LOCALIZE[33063]</label>
-                                <onclick>Dialog.Close(1171,true)</onclick>
-                                <onclick>ActivateWindow(shutdownmenu)</onclick>
-                                <visible>!Window.IsMedia</visible>
-                                <visible>!Window.IsVisible(1105)</visible>
-                            </item>
-                            <item>
-                                <icon>special://skin/extras/icons/right-left.png</icon>
-                                <label>$LOCALIZE[21483]</label>
-                                <onclick>Dialog.Close(1171,true)</onclick>
-                                <onclick>AlarmClock(refocus,SetFocus(64),00:00,silent)</onclick>
-                                <visible>Window.IsMedia</visible>
-                            </item>
-                            <item>
-                                <icon>special://skin/extras/icons/binoculars.png</icon>
-                                <label>$LOCALIZE[31066]</label>
-                                <onclick>Dialog.Close(1171,true)</onclick>
-                                <onclick>AlarmClock(refocus,SetFocus(64),00:00,silent)</onclick>
-                                <visible>Window.IsVisible(1105)</visible>
-                            </item>
-                        </content>
+                    <content>
+                        <include>skinvariables-options-tray-staticitems</include>
+                    </content>
 
-                        <content>
-                            <include>skinvariables-options-tray-staticitems</include>
-                        </content>
-
-                    </control>
                 </control>
             </control>
         </control>

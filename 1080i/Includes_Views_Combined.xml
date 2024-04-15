@@ -247,94 +247,6 @@
         </definition>
     </include>
 
-    <include name="View_Combined_List_Horz_Fake_Viewline">
-        <control type="group">
-            <centerbottom>100</centerbottom>
-            <height>40</height>
-            <include content="Info_Viewline">
-                <param name="label">$PARAM[label]</param>
-                <param name="item_condition">true</param>
-                <param name="item_count">$INFO[Container($PARAM[id]).NumItems]</param>
-                <param name="item_updating">Container($PARAM[id]).IsUpdating</param>
-                <top>0</top>
-            </include>
-        </control>
-    </include>
-
-    <include name="View_Combined_List_Horz_Fake_Spacer">
-        <control type="button">
-            <align>left</align>
-            <width>auto</width>
-            <height>256</height>
-            <centertop>50%</centertop>
-            <font>font_main_black</font>
-            <textcolor>00ffffff</textcolor>
-            <focusedcolor>00ffffff</focusedcolor>
-            <selectedcolor>00ffffff</selectedcolor>
-            <disabledcolor>00ffffff</disabledcolor>
-            <label>$PARAM[label]</label>
-            <textoffsetx>80</textoffsetx>
-            <texturenofocus />
-            <texturefocus />
-            <visible>!Skin.HasSetting(Furniture.DisableTrayViewLine)</visible>
-        </control>
-    </include>
-
-    <include name="View_Combined_List_Horz_Grouplist_Definition">
-        <param name="include_trayicons_condition">Skin.HasSetting(Furniture.EnableViewLineIcons)</param>
-        <definition>
-            <height>256</height>
-            <centerbottom>100</centerbottom>
-            <left>120</left>
-            <orientation>horizontal</orientation>
-            <itemgap>0</itemgap>
-
-            <include content="View_Combined_List_Horz_Fake_Spacer" condition="!Skin.HasSetting(Furniture.DisableTrayViewLine)">
-                <param name="label">$PARAM[label]</param>
-            </include>
-
-            <control type="group">
-                <include content="Object_Left" condition="Skin.HasSetting(Furniture.DisableTrayViewLine)">
-                    <param name="left">20</param>
-                </include>
-                <include content="Object_Left" condition="!Skin.HasSetting(Furniture.DisableTrayViewLine) + $PARAM[include_trayicons_condition]">
-                    <param name="left">0</param>
-                </include>
-                <left>-80</left>
-                <width>0</width>
-            </control>
-        </definition>
-    </include>
-
-    <include name="View_Combined_List_Horz_Fake">
-        <param name="label">[CAPITALIZE]$INFO[Container.Content][/CAPITALIZE]</param>
-        <param name="visible">true</param>
-        <param name="id" />
-        <param name="groupid" />
-        <definition>
-            <control type="group">
-                <visible>$PARAM[visible]</visible>
-                <animation effect="fade" start="100" end="0" delay="400" reversible="false" time="200" condition="$EXP[Exp_InfoDialogs]">Conditional</animation>
-
-                <include content="View_Combined_List_Horz_Fake_Viewline" condition="!Skin.HasSetting(Furniture.DisableTrayViewLine)">
-                    <param name="id">$PARAM[id]</param>
-                    <param name="label">$PARAM[label]</param>
-                </include>
-
-                <control type="grouplist">
-                    <include content="View_Combined_List_Horz_Grouplist_Definition">
-                        <param name="label">$PARAM[label]</param>
-                    </include>
-                    <include content="Categories_Selector_Fake">
-                        <param name="include_five">true</param>
-                        <param name="id">$PARAM[id]</param>
-                        <param name="width">$PARAM[width]</param>
-                    </include>
-                </control>
-            </control>
-        </definition>
-    </include>
-
     <include name="View_Combined_List_Horz_Selector_Content">
         <include content="Action_View_Movement_OnBack" condition="$EXP[Exp_HomeMenu_DontHide]">
             <param name="id">$PARAM[id]2</param>
@@ -373,61 +285,28 @@
 
             <animation effect="fade" start="100" end="0" delay="400" time="1" reversible="true">Hidden</animation>
             <animation effect="fade" start="0" end="100" delay="400" time="1" reversible="false">Visible</animation>
-
-            <include content="View_Combined_List_Horz_Fake" condition="!Skin.HasSetting(Views.DisableItemPeek)">
-                <param name="id">$PARAM[id]2</param>
-                <param name="label">[CAPITALIZE]$INFO[Container.Content][/CAPITALIZE]</param>
-                <param name="visible">$PARAM[visible]</param>
-            </include>
-
             <control type="group">
                 <visible>$PARAM[visible]</visible>
                 <animation effect="fade" start="100" end="0" delay="400" reversible="false" time="200" condition="$EXP[Exp_InfoDialogs]">Conditional</animation>
 
-                <include content="View_Combined_List_Horz_Fake_Viewline" condition="!Skin.HasSetting(Furniture.DisableTrayViewLine)">
-                    <param name="id">$PARAM[id]2</param>
-                    <param name="label">[CAPITALIZE]$INFO[Container.Content][/CAPITALIZE]</param>
-                </include>
-
-                <control type="grouplist">
-                    <include content="View_Combined_List_Horz_Grouplist_Definition">
-                        <param name="label">[CAPITALIZE]$INFO[Container.Content][/CAPITALIZE]</param>
+                <control type="group">
+                    <left>120</left>
+                    <centerbottom>100</centerbottom>
+                    <height>120</height>
+                    <include content="Categories_Selector">
+                        <param name="id">$PARAM[id]2</param>
+                        <param name="font">font_mini</param>
+                        <param name="hitrect_x">0</param>
+                        <param name="hitrect_y">0</param>
+                        <param name="hitrect_w">1080</param>
+                        <param name="hitrect_h">120</param>
+                        <param name="scrolltime">400</param>
+                        <include content="View_Combined_List_Horz_Selector_Content">
+                            <param name="id">$PARAM[id]</param>
+                            <param name="visible">$PARAM[visible]</param>
+                            <param name="viewtype_label">$PARAM[viewtype_label]</param>
+                        </include>
                     </include>
-                    <control type="group">
-                        <height>120</height>
-                        <centertop>50%</centertop>
-                        <include content="Categories_Selector" condition="Skin.HasSetting(Views.DisableItemPeek)">
-                            <param name="id">$PARAM[id]2</param>
-                            <param name="font">font_mini</param>
-                            <param name="hitrect_x">0</param>
-                            <param name="hitrect_y">0</param>
-                            <param name="hitrect_w">1080</param>
-                            <param name="hitrect_h">120</param>
-                            <param name="scrolltime">400</param>
-                            <include content="View_Combined_List_Horz_Selector_Content">
-                                <param name="id">$PARAM[id]</param>
-                                <param name="visible">$PARAM[visible]</param>
-                                <param name="viewtype_label">$PARAM[viewtype_label]</param>
-                            </include>
-                        </include>
-                        <include content="Categories_Selector" condition="!Skin.HasSetting(Views.DisableItemPeek)">
-                            <param name="id">$PARAM[id]2</param>
-                            <param name="font">font_mini</param>
-                            <param name="hitrect_x">0</param>
-                            <param name="hitrect_y">0</param>
-                            <param name="hitrect_w">1080</param>
-                            <param name="hitrect_h">120</param>
-                            <param name="scrolltime">0</param>
-                            <include content="View_Combined_List_Horz_Selector_Content">
-                                <param name="id">$PARAM[id]</param>
-                                <param name="visible">$PARAM[visible]</param>
-                                <param name="viewtype_label">$PARAM[viewtype_label]</param>
-                            </include>
-                            <include content="Animation_ConditionalFade">
-                                <param name="condition">true</param>
-                            </include>
-                        </include>
-                    </control>
                 </control>
             </control>
         </control>
