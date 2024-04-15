@@ -101,7 +101,7 @@
             <include>Transitions_Lower_Visibility</include>
             <top>hub_submenuwidget_t</top>
             <height>hub_submenuwidget_h</height>
-            <left>160</left>
+            <left>180</left>
             <orientation>vertical</orientation>
             <include>Hub_WindowTransition_CategoriesSpotlight_OnWidgets</include>
 
@@ -488,7 +488,7 @@
                 </include>
                 <control type="group">
                     <include>Hub_Categories_FadeIn</include>
-                    <left>160</left>
+                    <left>180</left>
                     <height>hub_categorieswidget_h</height>
                     <top>hub_categorieswidget_t</top>
                     <include content="Hub_Categories_Definition">
