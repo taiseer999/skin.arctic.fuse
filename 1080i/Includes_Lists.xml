@@ -475,7 +475,7 @@
                 <param name="orientation">horizontal</param>
                 <param name="control">fixedlist</param>
                 <param name="item_w">146.67</param>
-                <param name="item_h">146.67</param>
+                <param name="item_h">view_icon_item_h</param>
                 <param name="itemlayout_w">186.67</param>
                 <param name="itemlayout_h">view_icon_itemlayout_h</param>
                 <param name="itemlayout_include">Layout_Square</param>
@@ -633,7 +633,7 @@
     
     <include name="List_Square_Row">
         <param name="item_w">view_poster_item_w</param>
-        <param name="item_h">view_poster_item_w</param>
+        <param name="item_h">view_poster_item_h</param>
         <param name="itemlayout_w">view_poster_itemlayout_w</param>
         <param name="itemlayout_h">view_poster_itemlayout_h</param>
         <param name="orientation">horizontal</param>
