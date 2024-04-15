@@ -18,7 +18,6 @@
 
     <!-- Set Default Config -->
     <include>Action_ButtonMenu_Onload</include>
-    <onload>Skin.SetString(SkinVariables.SkinUser.ExecuteBuiltIn,"RunScript($VAR[Action_Var_BuildTextures],get_values=true,reload=Home)")</onload>
     <onload condition="String.IsEmpty(Skin.String(Navigation.Global.OnDown))">Skin.SetString(Navigation.Global.OnDown,Search)</onload>
     <onload condition="String.IsEmpty(Skin.String(Navigation.Global.OnUp))">Skin.SetString(Navigation.Global.OnUp,Bump)</onload>
     <onload condition="String.IsEmpty(Skin.String(Navigation.OnLeftRight))">Skin.SetString(Navigation.OnLeftRight,Loop)</onload>
@@ -77,6 +76,7 @@
     <!-- Build includes for textures / views / menus -->
     <onload condition="String.IsEmpty(Window.Property(ReloadDone)) + ![Skin.HasSetting(SkinUserLogin.StartupLoginScreen) + !Skin.HasSetting(SkinUserLogin.Disabled) + String.IsEmpty(Window(Home).Property(StartupReplaceWindow))]">RunScript($VAR[Action_Var_BuildTextures],get_values=true)</onload>
     <onload condition="String.IsEmpty(Window.Property(ReloadDone))">RunScript(script.skinvariables,action=buildviews,no_reload)</onload>
+    <onload condition="String.IsEmpty(Window.Property(ReloadDone))">Skin.SetString(SkinVariables.SkinUser.ExecuteBuiltIn,"RunScript($VAR[Action_Var_BuildTextures],get_values=true,reload=Home)")</onload>
     <onload condition="!String.IsEmpty(Window.Property(ReloadDone))">SetProperty(InitStatus,$LOCALIZE[31248])</onload>
     <onload>SetProperty(ReloadDone,1)</onload>
     <onload>SetProperty(ReloadDone,1,Home)</onload>
