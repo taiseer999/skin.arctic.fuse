@@ -803,12 +803,7 @@
 
     <variable name="Action_Shortcut_SetWidgetStyle_LargeSize">
         <value condition="String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=searchmenu)" />
-        <value>&amp;Banner&amp;Card&amp;Overview</value>
-    </variable>
-
-    <variable name="Action_Shortcut_SetWidgetStyle_BoardSize">
-        <value condition="Skin.HasSetting(Views.EnableBoardSize)" />
-        <value>&amp;Board</value>
+        <value>&amp;Banner&amp;Card&amp;Overview&amp;Board</value>
     </variable>
 
     <variable name="Action_Shortcut_SetWidgetStyle_SmallSize">

@@ -456,53 +456,6 @@
                             <onclick>Skin.ToggleSetting(Widgets.DisableShowMore)</onclick>
                             <selected>!Skin.HasSetting(Widgets.DisableShowMore)</selected>
                         </include>
-                        <include content="Settings_Button" description="Use larger board style widgets">
-                            <param name="id">3042</param>
-                            <param name="control">radiobutton</param>
-                            <label>$LOCALIZE[31419]</label>
-                            <visible>Container(3).HasFocus(3)</visible>
-                            <onclick>Skin.ToggleSetting(Views.EnableBoardSize)</onclick>
-                            <onclick>ReloadSkin()</onclick>
-                            <onclick>AlarmClock(refocus1,SetFocus(3,2),00:00,silent)</onclick>
-                            <onclick>AlarmClock(refocus2,SetFocus(3042),00:00,silent)</onclick>
-                            <selected>Skin.HasSetting(Views.EnableBoardSize)</selected>
-                        </include>
-                        <include content="Settings_Button" description="Landscape Labels">
-                            <param name="id">3043</param>
-                            <param name="control">radiobutton</param>
-                            <label> - $LOCALIZE[31045] [LOWERCASE]$LOCALIZE[31425][/LOWERCASE]</label>
-                            <visible>Container(3).HasFocus(3)</visible>
-                            <onclick>Skin.ToggleSetting(Views.Board.DisableLandscapeText)</onclick>
-                            <selected>!Skin.HasSetting(Views.Board.DisableLandscapeText)</selected>
-                            <visible>Skin.HasSetting(Views.EnableBoardSize)</visible>
-                        </include>
-                        <include content="Settings_Button" description="Apps Labels">
-                            <param name="id">3044</param>
-                            <param name="control">radiobutton</param>
-                            <label> - $LOCALIZE[31420] [LOWERCASE]$LOCALIZE[31425][/LOWERCASE]</label>
-                            <visible>Container(3).HasFocus(3)</visible>
-                            <onclick>Skin.ToggleSetting(Views.Board.DisableAppsText)</onclick>
-                            <selected>!Skin.HasSetting(Views.Board.DisableAppsText)</selected>
-                            <visible>Skin.HasSetting(Views.EnableBoardSize)</visible>
-                        </include>
-                        <include content="Settings_Button" description="Square Labels">
-                            <param name="id">3045</param>
-                            <param name="control">radiobutton</param>
-                            <label> - $LOCALIZE[31320] [LOWERCASE]$LOCALIZE[31425][/LOWERCASE]</label>
-                            <visible>Container(3).HasFocus(3)</visible>
-                            <onclick>Skin.ToggleSetting(Views.Board.DisableSquareText)</onclick>
-                            <selected>!Skin.HasSetting(Views.Board.DisableSquareText)</selected>
-                            <visible>Skin.HasSetting(Views.EnableBoardSize)</visible>
-                        </include>
-                        <include content="Settings_Button" description="Icon Labels">
-                            <param name="id">3046</param>
-                            <param name="control">radiobutton</param>
-                            <label> - $LOCALIZE[31274] [LOWERCASE]$LOCALIZE[31425][/LOWERCASE]</label>
-                            <visible>Container(3).HasFocus(3)</visible>
-                            <onclick>Skin.ToggleSetting(Views.Board.DisableIconText)</onclick>
-                            <selected>!Skin.HasSetting(Views.Board.DisableIconText)</selected>
-                            <visible>Skin.HasSetting(Views.EnableBoardSize)</visible>
-                        </include>
 
                         <include content="Settings_Label" description="Content">
                             <param name="id">4021</param>

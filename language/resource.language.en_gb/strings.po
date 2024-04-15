@@ -1971,11 +1971,6 @@ msgid "Selector tray label"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31419"
-msgid "Use larger board style widgets with enclosed text"
-msgstr ""
-
-#: /1080i/SkinSettings.xml
 msgctxt "#31420"
 msgid "Apps"
 msgstr ""

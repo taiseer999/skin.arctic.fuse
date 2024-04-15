@@ -1481,7 +1481,6 @@
     </variable>
 
     <variable name="Label_Widget_Style">
-        <value condition="Skin.HasSetting(Views.EnableBoardSize) + String.IsEqual(ListItem.Property(widget_style),Board)">Landscape</value>
         <value condition="Skin.String(Furniture.BottomLeft.Enable,Always) + String.IsEqual(ListItem.Property(widget_style),Apps)">Landscape</value>
         <value condition="Skin.String(Furniture.BottomLeft.Enable,Always) + String.IsEqual(ListItem.Property(widget_style),Icon)">Square</value>
         <value condition="Skin.String(Furniture.BottomLeft.Enable,Always) + String.IsEqual(ListItem.Property(widget_style),Text)">Overview</value>
