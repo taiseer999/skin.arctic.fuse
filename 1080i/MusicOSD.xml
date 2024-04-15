@@ -176,7 +176,7 @@
                     </include>
 
                     <!-- Button 6 -->
-                    <control type="button" id="6001">
+                    <control type="button" id="6006">
                         <include>Defs_OSD_Button</include>
                         <onclick>PlayerControl(Repeat)</onclick>
                         <onfocus>SetProperty(OSDArtistDetails,1,Home)</onfocus>
