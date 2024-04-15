@@ -471,7 +471,7 @@
         <definition>
             <include content="List_Core">
                 <param name="id">$PARAM[id]</param>
-                <param name="detailed">$PARAM[detailed]</param>
+                <param name="detailed">true</param>
                 <param name="orientation">horizontal</param>
                 <param name="control">fixedlist</param>
                 <param name="item_w">146.67</param>
