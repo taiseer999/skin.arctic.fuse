@@ -15,6 +15,10 @@
             <value>List_Square_Row</value>
         </rule>
         <rule>
+            <condition>{item_widget_style}==Circle</condition>
+            <value>List_Circle_Row</value>
+        </rule>
+        <rule>
             <condition>{item_widget_style}==Card</condition>
             <value>List_Card_Row</value>
         </rule>
@@ -71,6 +75,16 @@
             <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
         </rule>
         <rule>
+            <condition>{item_widget_style}==Ring</condition>
+            <value>List_Ring_Row</value>
+            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+        </rule>
+        <rule>
+            <condition>{item_widget_style}==Ring</condition>
+            <value>List_Ring_Row</value>
+            <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+        </rule>
+        <rule>
             <condition>{parent_item_widget_style}==Landscape</condition>
             <value>List_Landscape_Row</value>
         </rule>
@@ -81,6 +95,10 @@
         <rule>
             <condition>{parent_item_widget_style}==Square</condition>
             <value>List_Square_Row</value>
+        </rule>
+        <rule>
+            <condition>{parent_item_widget_style}==Circle</condition>
+            <value>List_Circle_Row</value>
         </rule>
         <rule>
             <condition>{parent_item_widget_style}==Card</condition>
@@ -136,6 +154,16 @@
         <rule>
             <condition>{parent_item_widget_style}==Sign</condition>
             <value>List_Board_Row</value>
+            <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+        </rule>
+        <rule>
+            <condition>{parent_item_widget_style}==Ring</condition>
+            <value>List_Ring_Row</value>
+            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+        </rule>
+        <rule>
+            <condition>{parent_item_widget_style}==Ring</condition>
+            <value>List_Circle_Row</value>
             <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
         </rule>
         <rule>

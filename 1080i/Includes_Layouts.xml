@@ -2252,7 +2252,7 @@
     </include>
 
     <include name="Layout_Circle">
-        <param name="diffuse">diffuse/circle_200.png</param>
+        <param name="diffuse">circle_200</param>
         <param name="selected">false</param>
         <param name="detailed">false</param>
         <param name="variation">false</param>
@@ -2270,8 +2270,10 @@
                 <control type="group">
                     <height>$PARAM[item_w]</height>
                     <control type="image">
-                        <include>Texture_Shadow_Circle_200</include>
-                        <texture colordiffuse="main_fg_12">$PARAM[diffuse]</texture>
+                        <include content="Dimension_Padding"><param name="pad">-40</param></include>
+                        <bordersize>40</bordersize>
+                        <bordertexture colordiffuse="shadow_hard">shadows/$PARAM[diffuse]-shadow-40.png</bordertexture>
+                        <texture colordiffuse="main_fg_12">diffuse/$PARAM[diffuse].png</texture>
                     </control>
                     <include>Object_Circle_200_Outline</include>
 
@@ -2282,9 +2284,10 @@
                     </include>
 
                     <include content="Object_SquareIcon">
-                        <param name="diffuse">$PARAM[diffuse]</param>
+                        <param name="diffuse">diffuse/$PARAM[diffuse].png</param>
                         <param name="icon">$PARAM[icon]</param>
                         <param name="listitem">$PARAM[listitem]</param>
+                        <param name="aspectratio">scale</param>
                     </include>
                 </control>
                 <control type="group">

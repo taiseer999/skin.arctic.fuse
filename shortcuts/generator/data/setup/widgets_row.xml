@@ -177,6 +177,11 @@
             <value>True</value>
         </rule>
         <rule>
+            <condition>{item_widget_style}==Ring</condition>
+            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <value>True</value>
+        </rule>
+        <rule>
             <condition>{item_widget_style}==</condition>
             <condition>{parent_item_widget_style}==Apps</condition>
             <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
@@ -201,6 +206,12 @@
             <value>True</value>
         </rule>
         <rule>
+            <condition>{item_widget_style}==</condition>
+            <condition>{parent_item_widget_style}==Ring</condition>
+            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <value>True</value>
+        </rule>
+        <rule>
             <condition>True</condition>
             <value>False</value>
         </rule>
@@ -217,6 +228,10 @@
         <rule>
             <condition>{item_widget_style}==Square</condition>
             <value>List_Square_Row</value>
+        </rule>
+        <rule>
+            <condition>{item_widget_style}==Circle</condition>
+            <value>List_Circle_Row</value>
         </rule>
         <rule>
             <condition>{item_widget_style}==Card</condition>
@@ -275,6 +290,16 @@
             <value>List_Board_Row</value>
         </rule>
         <rule>
+            <condition>{item_widget_style}==Ring</condition>
+            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <value>List_Ring_Row</value>
+        </rule>
+        <rule>
+            <condition>{item_widget_style}==Ring</condition>
+            <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <value>List_Circle_Row</value>
+        </rule>
+        <rule>
             <condition>{parent_item_widget_style}==Landscape</condition>
             <value>List_Landscape_Row</value>
         </rule>
@@ -285,6 +310,10 @@
         <rule>
             <condition>{parent_item_widget_style}==Square</condition>
             <value>List_Square_Row</value>
+        </rule>
+        <rule>
+            <condition>{parent_item_widget_style}==Circle</condition>
+            <value>List_Circle_Row</value>
         </rule>
         <rule>
             <condition>{parent_item_widget_style}==Card</condition>
@@ -341,6 +370,16 @@
             <condition>{parent_item_widget_style}==Sign</condition>
             <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
             <value>List_Board_Row</value>
+        </rule>
+        <rule>
+            <condition>{parent_item_widget_style}==Ring</condition>
+            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <value>List_Ring_Row</value>
+        </rule>
+        <rule>
+            <condition>{parent_item_widget_style}==Ring</condition>
+            <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <value>List_Circle_Row</value>
         </rule>
         <rule>
             <condition>True</condition>

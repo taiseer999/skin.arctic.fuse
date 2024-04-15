@@ -34,12 +34,6 @@
         <bordertexture colordiffuse="shadow_hard">shadows/circle_provider.png</bordertexture>
     </include>
 
-    <include name="Texture_Shadow_Circle_200">
-        <include content="Dimension_Padding"><param name="pad">-40</param></include>
-        <bordersize>40</bordersize>
-        <bordertexture colordiffuse="shadow_hard">shadows/circle_200-shadow-40.png</bordertexture>
-    </include>
-
     <include file="script-skinvariables-generator-textures-includes.xml" condition="!Skin.HasSetting(EnableMonochromeHighlight) + Skin.HasSetting(TextureMaker.Built)" />
     <include file="Includes_Textures_Native.xml" />
 

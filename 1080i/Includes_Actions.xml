@@ -803,12 +803,12 @@
 
     <variable name="Action_Shortcut_SetWidgetStyle_LargeSize">
         <value condition="String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=searchmenu)" />
-        <value>&amp;$LOCALIZE[20020]=Banner&amp;$LOCALIZE[31423]=Card&amp;$LOCALIZE[31419]=Overview&amp;$LOCALIZE[31424]=Board</value>
+        <value>&amp;$LOCALIZE[20020]=Banner&amp;$LOCALIZE[31423]=Card&amp;$LOCALIZE[31419]=Overview&amp;$LOCALIZE[31424]=Board&amp;$LOCALIZE[31431]=Circle</value>
     </variable>
 
     <variable name="Action_Shortcut_SetWidgetStyle_SmallSize">
         <value condition="Skin.String(Furniture.BottomLeft.Enable,Always)" />
-        <value>&amp;$LOCALIZE[31419] (S)=Text&amp;$LOCALIZE[31045] (S)=Apps&amp;$LOCALIZE[31320] (S)=Icon&amp;$LOCALIZE[31424] (S)=Sign</value>
+        <value>&amp;$LOCALIZE[31419] (S)=Text&amp;$LOCALIZE[31045] (S)=Apps&amp;$LOCALIZE[31320] (S)=Icon&amp;$LOCALIZE[31424] (S)=Sign&amp;$LOCALIZE[31431] (S)=Ring</value>
     </variable>
 
     <variable name="Action_Shortcut_SetWidgetStyle">
