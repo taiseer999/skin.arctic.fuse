@@ -2194,11 +2194,13 @@
                 <control type="group">
                     <top>$PARAM[item_w]</top>
                     <control type="textbox">
-                        <top>20</top>
-                        <font>font_mini_plot</font>
+                        <top>18</top>
+                        <bottom>-5</bottom>
+                        <font>font_tiny</font>
                         <label>$INFO[ListItem.Label]</label>
                         <textcolor>main_fg_70</textcolor>
                         <align>center</align>
+                        <autoscroll>false</autoscroll>
                     </control>
                 </control>
 
