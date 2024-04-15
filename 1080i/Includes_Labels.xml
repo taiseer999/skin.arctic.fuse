@@ -1480,4 +1480,11 @@
         <value>$INFO[System.Time][CR]$INFO[System.Date(dd mmm yyyy)]</value> -->
     </variable>
 
+    <variable name="Label_Widget_Style">
+        <value condition="String.IsEqual(ListItem.Property(widget_style),Board) + Skin.HasSetting(Views.EnableBoardSize)">$LOCALIZE[571]</value>
+        <value condition="Skin.String(Furniture.BottomLeft.Enable,Always) + [String.IsEqual(ListItem.Property(widget_style),Apps) | String.IsEqual(ListItem.Property(widget_style),Icon) | String.IsEqual(ListItem.Property(widget_style),Text)]">$LOCALIZE[571]</value>
+        <value condition="String.IsEmpty(ListItem.Property(widget_style))">$LOCALIZE[571]</value>
+        <value>$INFO[ListItem.Property(widget_style),[CAPITALIZE],[/CAPITALIZE]]</value>
+    </variable>
+
 </includes>

@@ -671,7 +671,7 @@
                             <include condition="$PARAM[selected]">Color_SelectedText</include>
                             <textcolor>$PARAM[textcolor]</textcolor>
                             <selectedcolor>$PARAM[textcolor]</selectedcolor>
-                            <label fallback="Default">$INFO[ListItem.Property(widget_style),[CAPITALIZE],[/CAPITALIZE]]</label>
+                            <label>$VAR[Label_Widget_Style]</label>
                             <align>center</align>
                         </control>
                     </control>

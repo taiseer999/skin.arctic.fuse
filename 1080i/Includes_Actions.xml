@@ -800,4 +800,24 @@
         <onclick>RunScript(plugin.video.themoviedb.helper,blur_image=$VAR[Image_SimpleBackground])</onclick>
         <onclick>AlarmClock(buildtexture,runscript($VAR[Action_Var_BuildTextures],reload=$PARAM[window_id]),00:00,silent)</onclick>
     </include>
+
+    <variable name="Action_Shortcut_SetWidgetStyle_LargeSize">
+        <value condition="String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=searchmenu)" />
+        <value>&amp;Banner&amp;Card&amp;Overview</value>
+    </variable>
+
+    <variable name="Action_Shortcut_SetWidgetStyle_BoardSize">
+        <value condition="Skin.HasSetting(Views.EnableBoardSize)" />
+        <value>&amp;Board</value>
+    </variable>
+
+    <variable name="Action_Shortcut_SetWidgetStyle_SmallSize">
+        <value condition="Skin.String(Furniture.BottomLeft.Enable,Always)" />
+        <value>&amp;Text&amp;Apps&amp;Icon</value>
+    </variable>
+
+    <variable name="Action_Shortcut_SetWidgetStyle">
+        <value condition="String.IsEmpty(Container(22001).ListItem.Property(url))" />
+        <value>RunPlugin($INFO[Container(22001).ListItem.Property(url)]&amp;func=do_edit&amp;&amp;widget_style&amp;&amp;Poster&amp;Landscape&amp;Square$VAR[Action_Shortcut_SetWidgetStyle_LargeSize]$VAR[Action_Shortcut_SetWidgetStyle_BoardSize]$VAR[Action_Shortcut_SetWidgetStyle_SmallSize]&amp;&amp;Style&amp;&amp;True)</value>
+    </variable>
 </includes>
