@@ -1481,8 +1481,10 @@
     </variable>
 
     <variable name="Label_Widget_Style">
-        <value condition="String.IsEqual(ListItem.Property(widget_style),Board) + Skin.HasSetting(Views.EnableBoardSize)">$LOCALIZE[571]</value>
-        <value condition="Skin.String(Furniture.BottomLeft.Enable,Always) + [String.IsEqual(ListItem.Property(widget_style),Apps) | String.IsEqual(ListItem.Property(widget_style),Icon) | String.IsEqual(ListItem.Property(widget_style),Text)]">$LOCALIZE[571]</value>
+        <value condition="Skin.HasSetting(Views.EnableBoardSize) + String.IsEqual(ListItem.Property(widget_style),Board)">Landscape</value>
+        <value condition="Skin.String(Furniture.BottomLeft.Enable,Always) + String.IsEqual(ListItem.Property(widget_style),Apps)">Landscape</value>
+        <value condition="Skin.String(Furniture.BottomLeft.Enable,Always) + String.IsEqual(ListItem.Property(widget_style),Icon)">Square</value>
+        <value condition="Skin.String(Furniture.BottomLeft.Enable,Always) + String.IsEqual(ListItem.Property(widget_style),Text)">Overview</value>
         <value condition="String.IsEmpty(ListItem.Property(widget_style))">$LOCALIZE[571]</value>
         <value>$INFO[ListItem.Property(widget_style),[CAPITALIZE],[/CAPITALIZE]]</value>
     </variable>

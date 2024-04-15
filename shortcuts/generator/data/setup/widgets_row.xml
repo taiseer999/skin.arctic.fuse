@@ -217,6 +217,11 @@
             <value>List_Board_Row</value>
         </rule>
         <rule>
+            <condition>{item_widget_style}==Board</condition>
+            <condition>Skin.HasSetting(Views.EnableBoardSize)</condition>
+            <value>List_Landscape_Row</value>
+        </rule>
+        <rule>
             <condition>{item_widget_style}==Overview</condition>
             <value>List_Overview_Row</value>
         </rule>
@@ -230,14 +235,29 @@
             <value>List_Apps_Row</value>
         </rule>
         <rule>
+            <condition>{item_widget_style}==Apps</condition>
+            <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <value>List_Landscape_Row</value>
+        </rule>
+        <rule>
             <condition>{item_widget_style}==Icon</condition>
             <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
             <value>List_Icon_Row</value>
         </rule>
         <rule>
+            <condition>{item_widget_style}==Icon</condition>
+            <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <value>List_Square_Row</value>
+        </rule>
+        <rule>
             <condition>{item_widget_style}==Text</condition>
             <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
             <value>List_Text_Row</value>
+        </rule>
+        <rule>
+            <condition>{item_widget_style}==Text</condition>
+            <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <value>List_Overview_Row</value>
         </rule>
         <rule>
             <condition>{parent_item_widget_style}==Landscape</condition>
@@ -261,6 +281,11 @@
             <value>List_Board_Row</value>
         </rule>
         <rule>
+            <condition>{parent_item_widget_style}==Board</condition>
+            <condition>Skin.HasSetting(Views.EnableBoardSize)</condition>
+            <value>List_Landscape_Row</value>
+        </rule>
+        <rule>
             <condition>{parent_item_widget_style}==Overview</condition>
             <value>List_Overview_Row</value>
         </rule>
@@ -274,14 +299,29 @@
             <value>List_Apps_Row</value>
         </rule>
         <rule>
+            <condition>{parent_item_widget_style}==Apps</condition>
+            <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <value>List_Landscape_Row</value>
+        </rule>
+        <rule>
             <condition>{parent_item_widget_style}==Icon</condition>
             <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
             <value>List_Icon_Row</value>
         </rule>
         <rule>
+            <condition>{parent_item_widget_style}==Icon</condition>
+            <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <value>List_Square_Row</value>
+        </rule>
+        <rule>
             <condition>{parent_item_widget_style}==Text</condition>
             <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
             <value>List_Text_Row</value>
+        </rule>
+        <rule>
+            <condition>{parent_item_widget_style}==Text</condition>
+            <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <value>List_Overview_Row</value>
         </rule>
         <rule>
             <condition>True</condition>
