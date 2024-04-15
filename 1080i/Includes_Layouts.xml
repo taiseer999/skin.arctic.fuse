@@ -2208,6 +2208,89 @@
         </definition>
     </include>
 
+    <include name="Layout_Circle">
+        <param name="diffuse">diffuse/circle_200.png</param>
+        <param name="selected">false</param>
+        <param name="detailed">false</param>
+        <param name="variation">false</param>
+        <param name="icon">$VAR[Image_Icon]</param>
+        <param name="listitem">ListItem</param>
+        <param name="progress">Progress</param>
+        <param name="textcolor">main_fg</param>
+        <param name="misc">-20</param>
+        <param name="affix" />
+        <definition>
+            <control type="group">
+                <nested />
+                <width>$PARAM[item_w]</width>
+                <height>$PARAM[item_h]</height>
+                <control type="group">
+                    <height>$PARAM[item_w]</height>
+                    <control type="image">
+                        <include>Texture_Shadow_Circle_200</include>
+                        <texture colordiffuse="main_fg_12">$PARAM[diffuse]</texture>
+                    </control>
+                    <include>Object_Circle_200_Outline</include>
+
+                    <include content="Object_Control" condition="$PARAM[selected]">
+                        <param name="control">image</param>
+                        <bordersize>-6</bordersize>
+                        <include>Texture_Circle_Highlight_V</include>
+                    </include>
+
+                    <include content="Object_SquareIcon">
+                        <param name="diffuse">$PARAM[diffuse]</param>
+                        <param name="icon">$PARAM[icon]</param>
+                        <param name="listitem">$PARAM[listitem]</param>
+                    </include>
+                </control>
+                <control type="group">
+                    <top>$PARAM[item_w]</top>
+                    <!-- <control type="group">
+                        <top>29</top>
+                        <height>80</height>
+
+                        <control type="group">
+                            <include content="Object_InfoCircle_Text_Top">
+                                <label>$INFO[$PARAM[listitem].Label]</label>
+                                <align>center</align>
+                                <textcolor>main_fg_90</textcolor>
+                                <selectedcolor>main_fg_90</selectedcolor>
+                                <visible>String.IsEmpty($PARAM[listitem].Title) | String.IsEmpty($PARAM[listitem].ChannelNumberLabel)</visible>
+                            </include>
+                            <include content="Object_InfoCircle_Text_Top">
+                                <label>$INFO[$PARAM[listitem].Title]</label>
+                                <textcolor>main_fg_90</textcolor>
+                                <selectedcolor>main_fg_90</selectedcolor>
+                                <align>center</align>
+                                <visible>!String.IsEmpty($PARAM[listitem].Title) + !String.IsEmpty($PARAM[listitem].ChannelNumberLabel)</visible>
+                            </include>
+                        </control>
+
+                        <control type="group">
+                            <include content="Object_InfoCircle_Text_Sub">
+                                <label>$VAR[Label_Landscape_Lower$PARAM[affix]]</label>
+                                <textcolor>main_fg_70</textcolor>
+                                <selectedcolor>main_fg_70</selectedcolor>
+                                <align>center</align>
+                            </include>
+                        </control>
+                    </control> -->
+                    <control type="textbox">
+                        <top>18</top>
+                        <bottom>-5</bottom>
+                        <font>font_tiny</font>
+                        <label>$INFO[ListItem.Label]</label>
+                        <textcolor>main_fg_70</textcolor>
+                        <align>center</align>
+                        <autoscroll>false</autoscroll>
+                    </control>
+                </control>
+
+            </control>
+        </definition>
+    </include>
+
     <include name="Layout_Landscape_Labels">
         <param name="fade">false</param>
         <param name="selected">false</param>

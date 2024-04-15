@@ -231,6 +231,13 @@
         </include>
     </include>
 
+    <include name="Object_Circle_200_Outline">
+        <include content="Object_Control" condition="Skin.HasSetting(Glass.EnableBorders)">
+            <param name="control">image</param>
+            <texture colordiffuse="main_fg_12">common/circle_200-outline.png.png</texture>
+        </include>
+    </include>
+
     <include name="Object_ItemBack">
         <param name="selected">false</param>
         <param name="shadow_include">Texture_Shadow_40</param>

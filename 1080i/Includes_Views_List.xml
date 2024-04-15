@@ -18,15 +18,6 @@
             <include>View_MediaList_SquareLandscape</include>
         </include>
     </include>
-    <include name="View_500_Square_MediaList">
-        <include content="View_MediaList_Include">
-            <param name="id">500</param>
-            <param name="viewtype_label">$LOCALIZE[31168]</param>
-            <param name="visible">$EXP[Exp_View_500]</param>
-            <param name="right">view_poster_itemlayout_h</param>
-            <include>View_MediaList_Square</include>
-        </include>
-    </include>
     <include name="View_516_Landscape_MediaList">
         <include content="View_MediaList_Include">
             <param name="id">516</param>

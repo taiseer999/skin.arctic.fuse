@@ -31,6 +31,16 @@
         </include>
     </include>
 
+    <!-- Circle Row -->
+    <include name="View_500_Circle_Row">
+        <include content="View_Row_Include">
+            <param name="id">500</param>
+            <param name="include">List_Circle_Row</param>
+            <param name="viewtype_label">$LOCALIZE[31418]</param>
+            <param name="visible">$EXP[Exp_View_500]</param>
+        </include>
+    </include>
+
     <!-- Row Template View -->
     <include name="View_Row_Include">
         <definition>

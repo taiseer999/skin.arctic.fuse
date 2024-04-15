@@ -154,9 +154,9 @@
         <include condition="$EXP[Exp_View_50_Include]">View_050_Square_Row</include>
         <include condition="$EXP[Exp_View_51_Include]">View_051_Landscape_Row</include>
         <include condition="$EXP[Exp_View_52_Include]">View_052_Poster_Row</include>
+        <include condition="$EXP[Exp_View_500_Include]">View_500_Circle_Row</include>
         <include condition="$EXP[Exp_View_56_Include]">View_056_MediaList</include>
         <include condition="$EXP[Exp_View_516_Include]">View_516_Landscape_MediaList</include>
-        <include condition="$EXP[Exp_View_500_Include]">View_500_Square_MediaList</include>
     </include>
 
     <include name="View_Row_Items_FavouritesViews">
