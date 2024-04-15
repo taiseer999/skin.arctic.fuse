@@ -38,7 +38,7 @@
         <param name="hitrect_w">0</param>
         <param name="hitrect_h">0</param>
         <param name="itemlayout_w">200</param>
-        <param name="scrolltime">0</param>
+        <param name="scrolltime">400</param>
         <definition>
             <include content="List_ButtonMenu_Row">
                 <param name="id">$PARAM[id]</param>
