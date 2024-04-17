@@ -2493,7 +2493,7 @@
                             <textcolor>$PARAM[textcolor]_90</textcolor>
                             <align>center</align>
                             <selectedcolor>$PARAM[textcolor]_90</selectedcolor>
-                            <visible>String.IsEmpty($PARAM[listitem].Title) + String.IsEmpty($PARAM[listitem].ChannelNumberLabel)</visible>
+                            <visible>String.IsEmpty($PARAM[listitem].Title)</visible>
                         </include>
                         <include content="Object_InfoCircle_Text_Top">
                             <label>$INFO[$PARAM[listitem].Title]</label>
