@@ -1066,6 +1066,7 @@
                         <control type="group">
                             <animation effect="fade" start="100" end="0" condition="[Control.HasFocus($PARAM[id]) | $PARAM[altfocus]]">Conditional</animation>
                             <include content="$PARAM[itemlayout_include]">
+                                <param name="focusedlayout">true</param>
                                 <param name="selected">false</param>
                                 <param name="item_w">$PARAM[item_w]</param>
                                 <param name="item_h">$PARAM[item_h]</param>
@@ -1083,6 +1084,7 @@
                         <control type="group">
                             <animation effect="fade" start="100" end="0" condition="![Control.HasFocus($PARAM[id]) | $PARAM[altfocus]]">Conditional</animation>
                             <include content="$PARAM[itemlayout_include]">
+                                <param name="focusedlayout">true</param>
                                 <param name="selected">true</param>
                                 <param name="item_w">$PARAM[item_w]</param>
                                 <param name="item_h">$PARAM[item_h]</param>
