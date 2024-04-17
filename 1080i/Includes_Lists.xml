@@ -615,6 +615,7 @@
                 <param name="itemlayout_include">Layout_Landscape</param>
                 <param name="diffuse">diffuse/landscape_w520_h294.png</param>
                 <param name="detailed">true</param>
+                <param name="variation">$PARAM[variation]</param>
                 <param name="icon">$PARAM[icon]</param>
                 <param name="textcolor">$PARAM[textcolor]</param>
                 <param name="offset_x">$PARAM[offset_x]</param>
@@ -645,6 +646,7 @@
                 <param name="itemlayout_include">Layout_Landscape</param>
                 <param name="diffuse">diffuse/landscape_w380_h214.png</param>
                 <param name="detailed">true</param>
+                <param name="variation">$PARAM[variation]</param>
                 <param name="icon">$PARAM[icon]</param>
                 <param name="textcolor">$PARAM[textcolor]</param>
                 <param name="offset_x">$PARAM[offset_x]</param>
