@@ -115,7 +115,8 @@
                 <animation effect="slide" start="$PARAM[slide_x]" end="0" tween="quadratic" easing="out" time="400" reversible="false" condition="[Control.HasFocus($PARAM[id]3) | Control.HasFocus(60) | Control.HasFocus(332) | Control.HasFocus(68) | Control.HasFocus(62) | [Control.HasFocus(330) + Integer.IsEqual(Window.Property(List.ViewContainer),$PARAM[id]3)]]">Conditional</animation>
                 <animation effect="slide" start="0" end="$PARAM[slide_x]" tween="quadratic" easing="out" time="400" reversible="false" condition="![Control.HasFocus($PARAM[id]3) | Control.HasFocus(60) | Control.HasFocus(332) | Control.HasFocus(68) | Control.HasFocus(62) | [Control.HasFocus(330) + Integer.IsEqual(Window.Property(List.ViewContainer),$PARAM[id]3)]]">Conditional</animation>
                 <visible>Control.IsVisible($PARAM[id]2)</visible>
-                <include content="Transitions_List_Group">
+                <control type="group">
+                    <include>Transitions_List_Visibility</include>
                     <include content="$PARAM[include]">
                         <param name="id">$PARAM[id]3</param>
                         <height>divider_bottom</height>
@@ -176,7 +177,7 @@
                         </animation>
                         <visible>!Control.HasFocus($PARAM[id]3)</visible>
                     </include>
-                </include>
+                </control>
                 <include content="Transitions_$PARAM[include]">
                     <param name="id">$PARAM[id]3</param>
                     <param name="affix">_C$PARAM[id]3</param>
@@ -190,7 +191,8 @@
         <definition>
             <control type="group">
                 <visible>Control.IsVisible($PARAM[id]2)</visible>
-                <include content="Transitions_List_Group">
+                <control type="group">
+                    <include>Transitions_List_Visibility</include>
                     <include content="$PARAM[include]">
                         <param name="id">$PARAM[id]3</param>
                         <height>divider_bottom</height>
@@ -238,7 +240,7 @@
                         <bottom>46</bottom>
                         <left>200</left>
                     </include>
-                </include>
+                </control>
                 <include content="Transitions_$PARAM[include]">
                     <param name="id">$PARAM[id]3</param>
                     <param name="affix">_C$PARAM[id]3</param>

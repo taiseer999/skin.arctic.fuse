@@ -842,11 +842,4 @@
         </definition>
     </include>
 
-    <include name="Transitions_List_Group">
-        <control type="group">
-            <include>Transitions_List_Visibility</include>
-            <nested />
-        </control>
-    </include>
-
 </includes>

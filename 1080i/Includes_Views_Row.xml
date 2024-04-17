@@ -46,7 +46,8 @@
         <definition>
             <control type="group">
                 <visible>Control.IsVisible($PARAM[id])</visible>
-                <include content="Transitions_List_Group">
+                <control type="group">
+                    <include>Transitions_List_Visibility</include>
                     <include content="$PARAM[include]">
                         <param name="id">$PARAM[id]</param>
                         <height>divider_bottom</height>
@@ -68,7 +69,7 @@
                             <param name="h">view_poster_item_h</param>
                         </include>
                     </include>
-                </include>
+                </control>
                 <include>Transitions_$PARAM[include]</include>
             </control>
         </definition>

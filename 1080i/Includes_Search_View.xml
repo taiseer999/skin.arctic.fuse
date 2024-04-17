@@ -170,7 +170,8 @@
             <include content="MediaWall_View_Transition" condition="$EXP[Exp_FilterWall_IsEnabled]">
                 <param name="condition">$EXP[Exp_MediaFilter_IsActive]</param>
             </include>
-            <include content="Transitions_List_Group">
+            <control type="group">
+                <include>Transitions_List_Visibility</include>
                 <include content="List_Square_Row">
                     <param name="id">50</param>
                     <height>divider_bottom</height>
@@ -227,7 +228,7 @@
                     <pagecontrol>60</pagecontrol>
                     <onfocus>SetProperty(TMDbHelper.WidgetContainer,52)</onfocus>
                 </include>
-            </include>
+            </control>
             <include>Transitions_List_Poster_Row</include>
         </control>
 
