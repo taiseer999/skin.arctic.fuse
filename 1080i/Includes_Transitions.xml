@@ -764,6 +764,28 @@
         </definition>
     </include>
 
+    <include name="Transitions_List_Placard_Row">
+        <param name="visible">$EXP[Exp_InfoDialogs]</param>
+        <definition>
+            <include content="Transitions_List_Row">
+                <param name="visible">$PARAM[visible]</param>
+                <param name="id">$PARAM[id]</param>
+                <param name="content">Layout_Landscape</param>
+                <param name="icon_base_var">Image_Landscape</param>
+                <param name="item_w">view_board_item_w</param>
+                <param name="item_h">view_poster_item_h</param>
+                <param name="prefix">transition_board</param>
+                <param name="detailed">true</param>
+                <param name="variation">true</param>
+                <param name="diffuse">diffuse/landscape_w520_h294.png</param>
+                <param name="affix">_LIP$PARAM[affix]</param>
+                <param name="positional_listitem">ListItemPosition</param>
+                <param name="conditional_listitem">ListItemPosition</param>
+                <param name="item_count">3</param>
+            </include>
+        </definition>
+    </include>
+
     <include name="Transitions_List_Overview_Row">
         <param name="visible">$EXP[Exp_InfoDialogs]</param>
         <definition>

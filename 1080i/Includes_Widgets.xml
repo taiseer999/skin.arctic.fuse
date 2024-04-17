@@ -663,6 +663,10 @@
             <include>Transitions_List_Board_Row</include>
         </control>
         <control type="group">
+            <visible>String.IsEqual(Window(Home).Property(Transition.WidgetStyle),List_Placard_Row)</visible>
+            <include>Transitions_List_Placard_Row</include>
+        </control>
+        <control type="group">
             <visible>String.IsEqual(Window(Home).Property(Transition.WidgetStyle),List_Poster_Row)</visible>
             <include>Transitions_List_Poster_Row</include>
         </control>
