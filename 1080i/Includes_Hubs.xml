@@ -95,8 +95,6 @@
 
     <include name="Hub_Submenu_Group">
         <control type="group" id="3000">
-            <visible>!$EXP[Exp_InfoDialogs]</visible>
-            <include>Animation_Transition_InfoPanel_Hide</include>
             <include>Transitions_Lower_Visibility</include>
             <top>hub_submenuwidget_t</top>
             <height>hub_submenuwidget_h</height>
@@ -499,23 +497,14 @@
     </include>
 
     <include name="Hub_Categories_FadeIn">
-        <param name="no_fanart_condition">True</param>
         <definition>
 
-            <include content="Animation_Fade_In" condition="!$EXP[Exp_Hubs_Spotlight_IsFanart]">
-                <param name="condition">[Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) | $EXP[Exp_Hubs_Categories_IsFocus]] + $PARAM[no_fanart_condition]</param>
+            <include content="Animation_Fade_In">
+                <param name="condition">[Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) | $EXP[Exp_Hubs_Categories_IsFocus]]</param>
                 <param name="delay">0</param>
             </include>
-            <include content="Animation_ConditionalFade" condition="!$EXP[Exp_Hubs_Spotlight_IsFanart]">
-                <param name="condition">![[Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) | $EXP[Exp_Hubs_Categories_IsFocus]] + $PARAM[no_fanart_condition]]</param>
-            </include>
-
-            <include content="Animation_Fade_In" condition="$EXP[Exp_Hubs_Spotlight_IsFanart]">
-                <param name="condition">$EXP[Exp_Hubs_Categories_IsFocus] | $EXP[Exp_InfoDialogs]</param>
-                <param name="delay">0</param>
-            </include>
-            <include content="Animation_ConditionalFade" condition="$EXP[Exp_Hubs_Spotlight_IsFanart]">
-                <param name="condition">![[$EXP[Exp_Hubs_Categories_IsFocus] | $EXP[Exp_InfoDialogs]] + !$EXP[Exp_Hubs_SlideDown_Spotlight]]</param>
+            <include content="Animation_ConditionalFade">
+                <param name="condition">![[Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) | $EXP[Exp_Hubs_Categories_IsFocus]]]</param>
             </include>
         </definition>
 
