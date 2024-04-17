@@ -532,7 +532,7 @@ msgstr "Coleções"
 #: /1080i/SkinSettings.xml
 msgctxt "#31109"
 msgid "Viewline"
-msgstr "Viewline"
+msgstr "Linha de Exibição"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31110"
@@ -588,7 +588,7 @@ msgstr "Somente widgets"
 
 msgctxt "#31121"
 msgid "Square List"
-msgstr "Square List"
+msgstr "Lista Quadrada"
 
 #: /1080i/Includes_MediaFilter.xml
 msgctxt "#31122"
@@ -802,17 +802,17 @@ msgstr "Voltar"
 #: /1080i/SkinSettings.xml
 msgctxt "#31167"
 msgid "Wall"
-msgstr ""
+msgstr "Parede"
 
 #: /1080i/Includes_Views_List.xml
 msgctxt "#31168"
 msgid "List Square"
-msgstr ""
+msgstr "Lista Quadrada"
 
 #: /1080i/Includes_Views_List.xml
 msgctxt "#31169"
 msgid "List Wall"
-msgstr ""
+msgstr "Lista Parede"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31170"
@@ -864,7 +864,7 @@ msgstr "Palavra-chave"
 
 msgctxt "#31180"
 msgid "Furniture"
-msgstr "Furniture"
+msgstr "Mobília"
 
 #: /1080i/Includes_DialogInfo.xml
 msgctxt "#31181"
@@ -892,7 +892,7 @@ msgstr "Rolagem automática"
 
 msgctxt "#31186"
 msgid "Behaviour"
-msgstr "Behaviour"
+msgstr "Comportamento"
 
 msgctxt "#31187"
 msgid "Autoscroll time interval"
@@ -1182,7 +1182,7 @@ msgstr "Cor de destaque"
 
 msgctxt "#31248"
 msgid "Building includes"
-msgstr "Building includes"
+msgstr "Construção inclui"
 
 msgctxt "#31249"
 msgid "Waiting for PVR"
@@ -1200,7 +1200,7 @@ msgstr "Relógio analógico"
 
 msgctxt "#31252"
 msgid "Catch-up"
-msgstr "Catch-up"
+msgstr "Recuperação"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31253"
@@ -1210,7 +1210,7 @@ msgstr "Mover entre grupos de widgets"
 #: /1080i/Includes_Labels.xml
 msgctxt "#31254"
 msgid "Performance"
-msgstr "Performance"
+msgstr "Desempenho"
 
 msgctxt "#31255"
 msgid "Customise startup image"
@@ -1450,12 +1450,12 @@ msgstr "Foco na segunda posição"
 #: /1080i/Includes_DialogInfo.xml
 msgctxt "#31307"
 msgid "Instrument"
-msgstr ""
+msgstr "Instrumento"
 
 #: /1080i/Includes_DialogInfo.xml
 msgctxt "#31308"
 msgid "Mood"
-msgstr ""
+msgstr "Humor"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31309"
@@ -1475,7 +1475,7 @@ msgstr "Semanalmente"
 #: /1080i/SkinSettings.xml
 msgctxt "#31312"
 msgid "Spinner"
-msgstr ""
+msgstr "Girador"
 
 #: /1080i/Custom_1116_Dialog_Shortcuts.xml
 msgctxt "#31313"
@@ -1495,7 +1495,7 @@ msgstr "INFO[Container(22001).ListItem.Label,, ]visibilidade"
 #: /1080i/Custom_1116_Dialog_Shortcuts.xml
 msgctxt "#31316"
 msgid "Link visibility"
-msgstr ""
+msgstr "Visibilidade do link"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31317"
@@ -1510,22 +1510,22 @@ msgstr "Utilizar grupo de widgets globais"
 #: /1080i/Includes_MediaFilter.xml
 msgctxt "#31319"
 msgid "View"
-msgstr "Visualização"
+msgstr "Exibição"
 
 #: /1080i/Includes_Views.xml
 msgctxt "#31320"
 msgid "Square"
-msgstr "Square"
+msgstr "Quadrado"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31321"
 msgid "Configure viewtypes"
-msgstr "Configurar tipos de visualização"
+msgstr "Configurar tipos de exibição"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31322"
 msgid "Wall view"
-msgstr "Wall view"
+msgstr "Exibição de parede"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31323"
@@ -1565,7 +1565,7 @@ msgstr "Texto"
 #: /1080i/Includes_Labels.xml
 msgctxt "#31330"
 msgid "Crop"
-msgstr "Clearlogo"
+msgstr "Cortado"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31331"
@@ -1629,17 +1629,17 @@ msgstr "Mais indisponível"
 #: /1080i/SkinSettings.xml
 msgctxt "#31343"
 msgid "Disables next widget peek"
-msgstr ""
+msgstr "Desativa a próxima espiada do widget"
 
 #: /1080i/Includes_MediaFilter.xml
 msgctxt "#31344"
 msgid "Sort letter"
-msgstr ""
+msgstr "Ordenar letra"
 
 #: /1080i/Includes_MediaFilter.xml
 msgctxt "#31345"
 msgid "Direction"
-msgstr "Ordem"
+msgstr "Direção"
 
 msgctxt "#31346"
 msgid "Press down for more by this artist"
@@ -1648,7 +1648,7 @@ msgstr "Pressione para baixo para ver mais deste artista"
 #: /1080i/Includes_Items.xml
 msgctxt "#31347"
 msgid "Group focus indicator"
-msgstr ""
+msgstr "Indicador de foco do grupo"
 
 msgctxt "#31348"
 msgid "Press down for channel EPG"
@@ -1657,7 +1657,7 @@ msgstr "Pressione para baixo para ver a programação dos canais"
 #: /1080i/SkinSettings.xml
 msgctxt "#31349"
 msgid "Replace close button with menu"
-msgstr ""
+msgstr "Substituir o botão Fechar pelo menu"
 
 msgctxt "#31350"
 msgid "Thanks"
@@ -1666,12 +1666,12 @@ msgstr "Obrigado"
 #: /1080i/SkinSettings.xml
 msgctxt "#31351"
 msgid "Hubs"
-msgstr ""
+msgstr "Hubs"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31352"
 msgid "Topbar"
-msgstr ""
+msgstr "Barra Superior"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31353"
@@ -1750,7 +1750,7 @@ msgstr "Instalar via zip"
 
 msgctxt "#31378"
 msgid "Foreign"
-msgstr "Estranho"
+msgstr "Estrangeiro"
 
 msgctxt "#31380"
 msgid "Forecast"
@@ -1758,7 +1758,7 @@ msgstr "Previsão"
 
 msgctxt "#31381"
 msgid "Returning"
-msgstr "Retornado"
+msgstr "Retornando"
 
 msgctxt "#31382"
 msgid "All items"
@@ -1770,7 +1770,7 @@ msgstr "Produção"
 
 msgctxt "#31390"
 msgid "Release Year"
-msgstr "Ano de lançamento"
+msgstr "Ano de Lançamento"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31391"
@@ -1790,87 +1790,87 @@ msgstr "Flutuante"
 #: /1080i/Includes_Labels.xml
 msgctxt "#31395"
 msgid "Tabbed"
-msgstr "Com separador"
+msgstr "Tabulado"
 
 msgctxt "#31396"
 msgid "Recent Movies"
-msgstr "Filmes recentes"
+msgstr "Filmes Recentes"
 
 msgctxt "#31397"
 msgid "Recent Tv Shows"
-msgstr "Seriados recentes"
+msgstr "Seriados Recentes"
 
 msgctxt "#31398"
 msgid "New Movies"
-msgstr "Novos filmes"
+msgstr "Novos Filmes"
 
 msgctxt "#31399"
 msgid "New TV Shows"
-msgstr "Novos seriados"
+msgstr "Novos Seriados"
 
 msgctxt "#31400"
 msgid "New Episodes"
-msgstr "Novos episódios"
+msgstr "Novos Episódios"
 
 msgctxt "#31401"
 msgid "New Artists"
-msgstr "Novos artistas"
+msgstr "Novos Artistas"
 
 msgctxt "#31402"
 msgid "New Albums"
-msgstr "Novos álbuns"
+msgstr "Novos Álbuns"
 
 msgctxt "#31403"
 msgid "In-Progress TV Shows"
-msgstr "Seriados em andamento"
+msgstr "Seriados em Andamento"
 
 msgctxt "#31404"
 msgid "In-Progress Movies"
-msgstr "Filmes em andamento"
+msgstr "Filmes em Andamento"
 
 msgctxt "#31405"
 msgid "Top Albums"
-msgstr "Melhores álbuns"
+msgstr "Melhores Álbuns"
 
 msgctxt "#31406"
 msgid "Top Rated Movies"
-msgstr "Filmes mais bem avaliados"
+msgstr "Filmes Melhor Avaliados"
 
 msgctxt "#31407"
 msgid "Top Rated TV Shows"
-msgstr "Seriados mais bem avaliados"
+msgstr "Seriados Melhor Avaliados"
 
 msgctxt "#31408"
 msgid "Random Movies"
-msgstr "Filmes aleatórios"
+msgstr "Filmes Aleatórios"
 
 msgctxt "#31409"
 msgid "Random TV Shows"
-msgstr "Seriados aleatórios"
+msgstr "Seriados Aleatórios"
 
 msgctxt "#31410"
 msgid "Random Episodes"
-msgstr "Episódios aleatórios"
+msgstr "Episódios Aleatórios"
 
 msgctxt "#31411"
 msgid "Random Songs"
-msgstr "Músicas aleatórias"
+msgstr "Músicas Aleatórias"
 
 msgctxt "#31412"
 msgid "Random Albums"
-msgstr "Álbuns aleatórios"
+msgstr "Álbuns Aleatórios"
 
 msgctxt "#31413"
 msgid "All Movies"
-msgstr "Todos os filmes"
+msgstr "Todos os Filmes"
 
 msgctxt "#31414"
 msgid "All TV Shows"
-msgstr "Todos os seriados"
+msgstr "Todos os Seriados"
 
 msgctxt "#31415"
 msgid "Movies and TV Shows"
-msgstr "Filmes e seriados"
+msgstr "Filmes e Seriados"
 
 msgctxt "#31416"
 msgid "Side menu"
@@ -1878,7 +1878,7 @@ msgstr "Menu lateral"
 
 msgctxt "#31417"
 msgid "Random Artists"
-msgstr "Artistas aleatórios"
+msgstr "Artistas Aleatórios"
 
 msgctxt "#31421"
 msgid "Choose submenu list"
@@ -1887,7 +1887,7 @@ msgstr "Selecionar lista de submenu"
 #: /1080i/Includes_Labels.xml
 msgctxt "#31425"
 msgid "Labels"
-msgstr "Etiquetas"
+msgstr "Rótulos"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31426"
@@ -2001,7 +2001,7 @@ msgstr "Monocromático"
 #: /1080i/SkinSettings.xml
 msgctxt "#31459"
 msgid "Ratings style"
-msgstr "Estilo da classificação"
+msgstr "Estilo da avaliação"
 
 #: /1080i/MusicOSD.xml
 msgctxt "#31460"
@@ -2071,12 +2071,12 @@ msgstr "por"
 #: /1080i/Includes_Views_List.xml
 msgctxt "#31479"
 msgid "List Media"
-msgstr "Lista de mídia"
+msgstr "Lista de Mídia"
 
 #: /1080i/Includes_Views_List.xml
 msgctxt "#31480"
 msgid "List Landscape"
-msgstr "Lista Landscape"
+msgstr "Lista em Paisagem"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31481"
@@ -2091,7 +2091,7 @@ msgstr "Trailers"
 #: /1080i/Custom_1123_Dialog_Trailer.xml
 msgctxt "#31483"
 msgid "Replay"
-msgstr "Replay"
+msgstr "Repetir"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31484"
@@ -2121,7 +2121,7 @@ msgstr "Diversos"
 #: /1080i/Includes_Actions.xml
 msgctxt "#31492"
 msgid "Add-ons hub"
-msgstr "Centro de add-ons"
+msgstr "Centro de addons"
 
 #: /1080i/Custom_1115_Dialog_Shortcuts.xml
 msgctxt "#31494"
