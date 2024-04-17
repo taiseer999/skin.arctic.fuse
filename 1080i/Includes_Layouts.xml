@@ -2290,10 +2290,11 @@
                     <height>80</height>
                     <centertop>50%</centertop>
                     <left>-20</left>
-                    <include content="Object_Right" condition="$PARAM[selected]">
+                    <!-- <include content="Object_Right" condition="$PARAM[selected]">
                         <param name="right">30</param>
                     </include>
-                    <right>10</right>
+                    <right>10</right> -->
+                    <right>20</right>
                     <control type="group">
                         <visible>![$EXP[Exp_IsGenre] | $EXP[Exp_IsStudio] | $EXP[Exp_IsCountry]]</visible>
                         <include content="Object_InfoCircle" condition="!$PARAM[selected]">
