@@ -1,3 +1,4 @@
+
 # Kodi Media Center language file
 # Addon Name: Arctic Fuse
 # Addon Name: skin.arctic.fuse
@@ -1431,7 +1432,7 @@ msgstr "تفعيل"
 #: /1080i/SkinSettings.xml
 msgctxt "#31303"
 msgid "Customise fallback image folder"
-msgstr "المجلد المخصص لصور الخلفيات المحصص"
+msgstr "المجلد المخصص لصور الخلفيات"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31304"
@@ -1640,7 +1641,7 @@ msgstr ""
 #: /1080i/Includes_MediaFilter.xml
 msgctxt "#31345"
 msgid "Direction"
-msgstr ""
+msgstr "الاتجاه"
 
 msgctxt "#31346"
 msgid "Press down for more by this artist"
@@ -1658,7 +1659,7 @@ msgstr ""
 #: /1080i/SkinSettings.xml
 msgctxt "#31349"
 msgid "Replace close button with menu"
-msgstr ""
+msgstr "استبدل زر الاغلاق بزر القائمة"
 
 msgctxt "#31350"
 msgid "Thanks"
@@ -1672,7 +1673,7 @@ msgstr ""
 #: /1080i/Includes_Labels.xml
 msgctxt "#31352"
 msgid "Topbar"
-msgstr ""
+msgstr "البار العلوي"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31353"
@@ -1734,7 +1735,7 @@ msgstr "قائمة مخصصة Node"
 #: /1080i/SkinSettings.xml
 msgctxt "#31367"
 msgid "Episode thumb for info dialog background"
-msgstr ""
+msgstr "صورة الثمب في الخلفية للحقلة"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31369"
@@ -1881,6 +1882,11 @@ msgctxt "#31417"
 msgid "Random Artists"
 msgstr ""
 
+#: /1080i/Includes_Views_Row.xml
+msgctxt "#31418"
+msgid "Circle Row"
+msgstr "صف دائري"
+
 msgctxt "#31421"
 msgid "Choose submenu list"
 msgstr "اختيار قائمة فرعية"
@@ -1914,6 +1920,11 @@ msgstr "فصول الفيديو"
 msgctxt "#31430"
 msgid "Customise video OSD widgets"
 msgstr "تخصيص واجهة عرض الفيديو"
+
+#: /1080i/Includes_Views_Row.xml
+msgctxt "#31431"
+msgid "Circle"
+msgstr "دائرة"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31432"
