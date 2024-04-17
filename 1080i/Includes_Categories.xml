@@ -13,14 +13,14 @@
         <include content="Categories_Selector_Movement_Position">
             <param name="id">$PARAM[id]</param>
         </include>
-        <width>840</width>
+        <width>1210</width>
         <!-- <width>1040</width> -->
     </include>
     <include name="Categories_Selector_Movement_Mainmenu">
         <include content="Categories_Selector_Movement_Position">
             <param name="id">$PARAM[id]</param>
         </include>
-        <width>840</width>
+        <width>976</width>
     </include>
 
     <include name="Categories_Iconic_Selector">
@@ -42,7 +42,9 @@
                 <param name="hidden_button_enabled">true</param>
                 <param name="hidden_button_prefix">$PARAM[hidden_button_prefix]</param>
                 <param name="hidden_button">$PARAM[hidden_button]</param>
+                <param name="detailed">$PARAM[detailed]</param>
                 <preloaditems>0</preloaditems>
+                <hitrect x="40" y="80" w="1360" h="80" />
                 <nested />
                 <width>1360</width>
                 <movement>2</movement>
@@ -68,7 +70,7 @@
         <param name="hitrect_y">0</param>
         <param name="hitrect_w">0</param>
         <param name="hitrect_h">0</param>
-        <param name="itemlayout_w">200</param>
+        <param name="itemlayout_w">234</param>
         <param name="scrolltime">400</param>
         <definition>
             <include content="List_ButtonMenu_Row">

@@ -2300,6 +2300,7 @@
                             <param name="icon">$VAR[Image_Layout_CombinedIcon]</param>
                             <param name="name">$VAR[Label_VideoInfo_DetailsItem]</param>
                             <param name="role">$INFO[ListItem.Label]</param>
+                            <param name="include_labels">false</param>
                             <include content="Object_InfoCircle_Image">
                                 <param name="colordiffuse">white</param>
                                 <param name="icon">$VAR[Image_Layout_CombinedThumb]</param>
@@ -2309,6 +2310,7 @@
                             <param name="icon">$VAR[Image_Layout_CombinedIcon]</param>
                             <param name="name">$VAR[Label_VideoInfo_DetailsItem]</param>
                             <param name="role">$INFO[ListItem.Label]</param>
+                            <param name="include_labels">false</param>
                             <param name="textcolor_top">$VAR[ColorSelected]</param>
                             <param name="textcolor_sub">$VAR[ColorSelected]</param>
                             <include content="Object_InfoCircle_Image">
@@ -2327,6 +2329,7 @@
                             <param name="fallback">folder.png</param>
                             <param name="name">$VAR[Label_VideoInfo_DetailsItem]</param>
                             <param name="role">$INFO[ListItem.Label]</param>
+                            <param name="include_labels">false</param>
                             <param name="aspectratio">keep</param>
                         </include>
                         <include content="Object_InfoCircle" condition="$PARAM[selected]">
@@ -2336,6 +2339,7 @@
                             <param name="fallback">folder.png</param>
                             <param name="name">$VAR[Label_VideoInfo_DetailsItem]</param>
                             <param name="role">$INFO[ListItem.Label]</param>
+                            <param name="include_labels">false</param>
                             <param name="textcolor_top">$VAR[ColorSelected]</param>
                             <param name="textcolor_sub">$VAR[ColorSelected]</param>
                             <param name="aspectratio">keep</param>
@@ -2349,6 +2353,7 @@
                             <param name="fallback">special://skin/extras/icons/folder.png</param>
                             <param name="name">$VAR[Label_VideoInfo_DetailsItem]</param>
                             <param name="role">$INFO[ListItem.Label]</param>
+                            <param name="include_labels">false</param>
                             <param name="aspectratio">keep</param>
                         </include>
                         <include content="Object_InfoCircle" condition="$PARAM[selected]">
@@ -2357,11 +2362,40 @@
                             <param name="fallback">special://skin/extras/icons/folder.png</param>
                             <param name="name">$VAR[Label_VideoInfo_DetailsItem]</param>
                             <param name="role">$INFO[ListItem.Label]</param>
+                            <param name="include_labels">false</param>
                             <param name="textcolor_top">$VAR[ColorSelected]</param>
                             <param name="textcolor_sub">$VAR[ColorSelected]</param>
                             <param name="aspectratio">keep</param>
                         </include>
                     </control>
+
+                    <control type="textbox">
+                        <left>110</left>
+                        <height>72</height>
+                        <centertop>50%</centertop>
+                        <include condition="$PARAM[selected]">Color_SelectedText</include>
+                        <label>$INFO[ListItem.Label]</label>
+                        <font>font_mini</font>
+                        <textcolor>main_fg_70</textcolor>
+                        <selectedcolor>main_fg_70</selectedcolor>
+                        <aligny>center</aligny>
+                        <autoscroll>false</autoscroll>
+                        <visible>![$PARAM[detailed]]</visible>
+                    </control>
+                    <control type="textbox">
+                        <left>110</left>
+                        <height>72</height>
+                        <centertop>50%</centertop>
+                        <include condition="$PARAM[selected]">Color_SelectedText</include>
+                        <label>$INFO[ListItem.Label]</label>
+                        <font>font_mini_black</font>
+                        <textcolor>main_fg_90</textcolor>
+                        <selectedcolor>main_fg_90</selectedcolor>
+                        <aligny>center</aligny>
+                        <autoscroll>false</autoscroll>
+                        <visible>$PARAM[detailed]</visible>
+                    </control>
+
                 </control>
             </control>
         </definition>

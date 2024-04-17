@@ -723,6 +723,7 @@
     </variable>
 
     <variable name="Label_VideoInfo_DetailsItem">
+        <value condition="!String.IsEmpty(ListItem.Property(sublabel))">$INFO[ListItem.Property(sublabel)]</value>
         <value condition="ListItem.IsCollection">$LOCALIZE[31236]</value>
         <value condition="String.IsEqual(ListItem.DBType,season) + !String.IsEmpty(ListItem.Property(totalepisodes)) + !String.IsEmpty(ListItem.Property(watchedepisodes))">$INFO[ListItem.Property(watchedepisodes),, $LOCALIZE[1443] ]$INFO[ListItem.Property(totalepisodes),, [LOWERCASE]$LOCALIZE[16102][/LOWERCASE]]</value>
         <value condition="String.IsEqual(ListItem.DBType,season) + !String.IsEmpty(ListItem.Episode)">$INFO[ListItem.Episode,, $LOCALIZE[20453]]</value>

@@ -682,6 +682,7 @@
         <param name="textcolor_sub">main_fg_70</param>
         <param name="font_top">font_mini_bold</param>
         <param name="font_sub">font_mini</param>
+        <param name="include_labels">true</param>
         <definition>
             <control type="group">
                 <height>80</height>
@@ -706,13 +707,13 @@
                 </control>
                 <nested />
                 <left>40</left>
-                <include content="Object_InfoCircle_Text_Top">
+                <include content="Object_InfoCircle_Text_Top" condition="$PARAM[include_labels]">
                     <left>80</left>
                     <textcolor>$PARAM[textcolor_top]</textcolor>
                     <selectedcolor>$PARAM[textcolor_top]</selectedcolor>
                     <label>$PARAM[role]</label>
                 </include>
-                <include content="Object_InfoCircle_Text_Sub">
+                <include content="Object_InfoCircle_Text_Sub" condition="$PARAM[include_labels]">
                     <left>80</left>
                     <textcolor>$PARAM[textcolor_sub]</textcolor>
                     <selectedcolor>$PARAM[textcolor_sub]</selectedcolor>
