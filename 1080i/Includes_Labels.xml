@@ -15,7 +15,7 @@
     </variable>
 
     <variable name="Label_NextBump">
-        <!-- <value>Kodi</value> -->
+        <value condition="Window.IsMedia">$LOCALIZE[31135]$INFO[Container.CurrentPage, , $LOCALIZE[20163] ]$INFO[Container.NumPages]</value>
         <value>Kodi$INFO[System.BuildVersionCode, v,]</value>
     </variable>
 
@@ -24,7 +24,7 @@
         <value condition="Skin.String(Navigation.Global.OnDown,Options)">$LOCALIZE[33063]</value>
         <value condition="Skin.String(Navigation.Global.OnDown,Discover)">$LOCALIZE[31066]</value>
         <value condition="Skin.String(Navigation.Global.OnDown,Search) + !Skin.String(Navigation.Global.OnUp,Search)">$LOCALIZE[137]</value>
-        <value condition="Skin.String(Navigation.Global.OnDown,Filter) + [Window.IsMedia | Window.IsVisible(1105)]">$LOCALIZE[587]</value>
+        <!-- <value condition="Skin.String(Navigation.Global.OnDown,Filter) + [Window.IsMedia | Window.IsVisible(1105)]">$LOCALIZE[587]</value> -->
         <value>$VAR[Label_NextBump]</value>
     </variable>
 
@@ -1119,14 +1119,14 @@
 
     <variable name="Label_MediaList_Sub">
         <value condition="!String.IsEmpty(ListItem.Director)">$INFO[ListItem.Director,[COLOR=main_fg_30]$LOCALIZE[31478][/COLOR] ,]</value>
-        <value condition="!String.IsEmpty(ListItem.Property(totalepisodes))">$INFO[ListItem.Property(watchedepisodes),[COLOR=main_fg_30]—[/COLOR] $LOCALIZE[16102] , $LOCALIZE[1443] ]$INFO[ListItem.Property(totalepisodes),, $LOCALIZE[20453]]</value>
+        <value condition="!String.IsEmpty(ListItem.Property(totalepisodes))">$INFO[ListItem.Property(watchedepisodes),$LOCALIZE[16102] , $LOCALIZE[1443] ]$INFO[ListItem.Property(totalepisodes),, $LOCALIZE[20453]]</value>
         <value condition="!String.IsEmpty(ListItem.Artist) + !String.IsEqual(ListItem.DBType,artist)">$INFO[ListItem.Artist,[COLOR=main_fg_30]$LOCALIZE[31478][/COLOR] ,]</value>
         <value condition="!String.IsEmpty(ListItem.AlbumArtist) + !String.IsEqual(ListItem.DBType,artist)">$INFO[ListItem.AlbumArtist,[COLOR=main_fg_30]$LOCALIZE[31478][/COLOR] ,]</value>
-        <value condition="!String.IsEmpty(ListItem.Property(Artist_Genre))">$INFO[ListItem.Property(Artist_Genre),[COLOR=main_fg_30]—[/COLOR] ,]</value>
-        <value condition="!String.IsEmpty(ListItem.Property(Artist_YearsActive))">$INFO[ListItem.Property(Artist_YearsActive),[COLOR=main_fg_30]—[/COLOR] ,]</value>
-        <value condition="!String.IsEmpty(ListItem.DBType)">$INFO[ListItem.DBType,[COLOR=main_fg_30]—[/COLOR] [CAPITALIZE],[/CAPITALIZE]]</value>
-        <value condition="ListItem.IsFolder">[COLOR=main_fg_30]—[/COLOR] $LOCALIZE[20334]</value>
-        <value>[COLOR=main_fg_30]—[/COLOR] $LOCALIZE[31025]</value>
+        <value condition="!String.IsEmpty(ListItem.Property(Artist_Genre))">$INFO[ListItem.Property(Artist_Genre),,]</value>
+        <value condition="!String.IsEmpty(ListItem.Property(Artist_YearsActive))">$INFO[ListItem.Property(Artist_YearsActive),,]</value>
+        <value condition="!String.IsEmpty(ListItem.DBType)">$INFO[ListItem.DBType,[CAPITALIZE],[/CAPITALIZE]]</value>
+        <value condition="ListItem.IsFolder">$LOCALIZE[20334]</value>
+        <value>$LOCALIZE[31025]</value>
     </variable>
 
     <variable name="Label_MediaList_Rating">
@@ -1310,9 +1310,9 @@
         <value condition="Window.IsMedia + String.IsEqual(Container.FolderName,Skin Variables) + !String.IsEmpty(Window.Property(MediaFilter.BaseDir.Name))">$INFO[Window.Property(MediaFilter.BaseDir.Name)]</value>
 
         <!-- Combined View Labels -->
-        <value condition="Window.IsMedia + Control.IsVisible(502)">$INFO[Container(502).ListItem.Label]</value>
-        <value condition="Window.IsMedia + Control.IsVisible(512)">$INFO[Container(512).ListItem.Label]</value>
-        <value condition="Window.IsMedia + Control.IsVisible(522)">$INFO[Container(522).ListItem.Label]</value>
+        <value condition="Window.IsMedia + Control.IsVisible(502) + [!Control.HasFocus(502) | !$EXP[Exp_Views_UseAltCombined]]">$INFO[Container(502).ListItem.Label]</value>
+        <value condition="Window.IsMedia + Control.IsVisible(512) + [!Control.HasFocus(512) | !$EXP[Exp_Views_UseAltCombined]]">$INFO[Container(512).ListItem.Label]</value>
+        <value condition="Window.IsMedia + Control.IsVisible(522) + [!Control.HasFocus(522) | !$EXP[Exp_Views_UseAltCombined]]">$INFO[Container(522).ListItem.Label]</value>
 
         <!-- Playlist label -->
         <value condition="Window.IsVisible(videoplaylist)">$LOCALIZE[10025]</value>

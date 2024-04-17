@@ -237,6 +237,17 @@
                 <texture colordiffuse="cyan">common/white.png</texture>
             </control>
 
+            <control type="image">
+                <bottom>113</bottom>
+                <height>1</height>
+                <texture colordiffuse="cyan">common/white.png</texture>
+            </control>
+            <control type="image">
+                <bottom>87</bottom>
+                <height>1</height>
+                <texture colordiffuse="cyan">common/white.png</texture>
+            </control>
+
             <!-- Center Lines -->
             <control type="image">
                 <centertop>50%</centertop>

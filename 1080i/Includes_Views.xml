@@ -179,7 +179,6 @@
                 <control type="group">
                     <include>Animation_Half_WindowChange_UpDown</include>
                     <include>$PARAM[include_combinedviews]</include>
-
                     <control type="group">
                         <include>MediaWall_View_Transition</include>
                         <include>$PARAM[include_standardviews]</include>
@@ -192,9 +191,6 @@
                             <left>200</left>
                         </include>
                     </control>
-
-                    <include>View_Row_Items_ViewLine</include>
-                    <include>View_Row_Items_NextItem</include>
                 </control>
 
 
@@ -257,7 +253,7 @@
             <control type="group">
                 <visible>!Window.IsVisible(1171)</visible>
                 <control type="group">
-                    <visible>![[Container.Scrolling + $EXP[Exp_FurnitureFooter_Left_IsVisible]] | !String.IsEmpty(Window.Property(MediaFilterBase)) | !String.IsEmpty(Window.Property(MediaFilterWall))]</visible>
+                    <visible>![[[Container.Scrolling | [$EXP[Exp_Views_UseAltCombined] + [Control.HasFocus(502) | Control.HasFocus(512) | Control.HasFocus(522)] + [[Control.IsVisible(502) | Control.IsVisible(512) | Control.IsVisible(522)]]]] + $EXP[Exp_FurnitureFooter_Left_IsVisible]] | !String.IsEmpty(Window.Property(MediaFilterBase)) | !String.IsEmpty(Window.Property(MediaFilterWall))]</visible>
                     <animation effect="fade" start="100" end="0" delay="400" time="1" reversible="true">Hidden</animation>
                     <animation effect="fade" start="0" end="100" delay="400" time="1" reversible="false">Visible</animation>
                     <include>$PARAM[include]</include>
@@ -299,7 +295,6 @@
         <control type="group">
             <animation effect="fade" start="100" end="30" condition="true">Conditional</animation>
             <control type="group">
-                <top>-15</top>
                 <height>35</height>
                 <include content="Info_Viewline">
                     <param name="library_condition">false</param>
@@ -326,10 +321,10 @@
             <control type="group">
                 <visible>!Window.IsVisible(1171)</visible>
                 <control type="group">
-                    <visible>[[Container.Scrolling + $EXP[Exp_FurnitureFooter_Left_IsVisible]] | !String.IsEmpty(Window.Property(MediaFilterBase)) | !String.IsEmpty(Window.Property(MediaFilterWall))]</visible>
+                    <visible>[[[Container.Scrolling | [$EXP[Exp_Views_UseAltCombined] + [Control.HasFocus(502) | Control.HasFocus(512) | Control.HasFocus(522)] + [[Control.IsVisible(502) | Control.IsVisible(512) | Control.IsVisible(522)]]]] + $EXP[Exp_FurnitureFooter_Left_IsVisible]] | !String.IsEmpty(Window.Property(MediaFilterBase)) | !String.IsEmpty(Window.Property(MediaFilterWall))]</visible>
                     <animation effect="fade" start="0" end="100" delay="400" time="1" reversible="true">Visible</animation>
                     <animation effect="fade" start="100" end="0" delay="400" time="1" reversible="false">Hidden</animation>
-                    <height>scrollbar_w</height>
+                    <height>40</height>
                     <centerbottom>100</centerbottom>
                     <left>view_side</left>
                     <right>view_pad</right>
@@ -395,6 +390,14 @@
         <control type="group">
             <include>Animation_Group_Bumper</include>
             <include>Animation_View_WindowChange</include>
+            <control type="group">
+                <include>Animation_Half_WindowChange_UpDown</include>
+                <control type="group">
+                    <include>View_Row_Items_KeyboardSlide</include>
+                    <include>View_Row_Items_ViewLine</include>
+                </control>
+                <include>View_Row_Items_NextItem</include>
+            </control>
             <include>View_Row_Header</include>
             <include>View_Furniture_Bottom</include>
             <include>View_Hidden_Buttons</include>
