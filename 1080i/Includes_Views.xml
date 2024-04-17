@@ -253,7 +253,7 @@
             <control type="group">
                 <visible>!Window.IsVisible(1171)</visible>
                 <control type="group">
-                    <visible>![[[Container.Scrolling | [$EXP[Exp_Views_UseAltCombined] + [Control.HasFocus(502) | Control.HasFocus(512) | Control.HasFocus(522)] + [[Control.IsVisible(502) | Control.IsVisible(512) | Control.IsVisible(522)]]]] + $EXP[Exp_FurnitureFooter_Left_IsVisible]] | !String.IsEmpty(Window.Property(MediaFilterBase)) | !String.IsEmpty(Window.Property(MediaFilterWall))]</visible>
+                    <visible>![[Container.Scrolling + $EXP[Exp_FurnitureFooter_Left_IsVisible]] | !String.IsEmpty(Window.Property(MediaFilterBase)) | !String.IsEmpty(Window.Property(MediaFilterWall))]</visible>
                     <animation effect="fade" start="100" end="0" delay="400" time="1" reversible="true">Hidden</animation>
                     <animation effect="fade" start="0" end="100" delay="400" time="1" reversible="false">Visible</animation>
                     <include>$PARAM[include]</include>
@@ -268,11 +268,12 @@
             <height>50</height>
             <centertop>50%</centertop>
             <include content="Info_FooterItemIcon">
-                <param name="icon">special://skin/extras/icons/_none.png</param>
+                <param name="icon">special://skin/extras/icons/kodi.png</param>
                 <param name="centered">true</param>
                 <param name="size">50</param>
+                <param name="bordersize">1</param>
             </include>
-            <control type="label">
+            <!-- <control type="label">
                 <centerleft>50%</centerleft>
                 <centertop>50%</centertop>
                 <align>center</align>
@@ -282,7 +283,7 @@
                 <textcolor>main_bg_90</textcolor>
                 <font>font_mini_black</font>
                 <label>$INFO[ListItem.SortLetter]</label>
-            </control>
+            </control> -->
         </control>
         <control type="label">
             <label>$LOCALIZE[31135] $INFO[Container.CurrentPage,[COLOR=main_fg_90][B],[/B][/COLOR] $LOCALIZE[20163] ]$INFO[Container.NumPages,[COLOR=main_fg_90][B],[/B][/COLOR]]</label>
@@ -321,7 +322,7 @@
             <control type="group">
                 <visible>!Window.IsVisible(1171)</visible>
                 <control type="group">
-                    <visible>[[[Container.Scrolling | [$EXP[Exp_Views_UseAltCombined] + [Control.HasFocus(502) | Control.HasFocus(512) | Control.HasFocus(522)] + [[Control.IsVisible(502) | Control.IsVisible(512) | Control.IsVisible(522)]]]] + $EXP[Exp_FurnitureFooter_Left_IsVisible]] | !String.IsEmpty(Window.Property(MediaFilterBase)) | !String.IsEmpty(Window.Property(MediaFilterWall))]</visible>
+                    <visible>[[Container.Scrolling + $EXP[Exp_FurnitureFooter_Left_IsVisible]] | !String.IsEmpty(Window.Property(MediaFilterBase)) | !String.IsEmpty(Window.Property(MediaFilterWall))]</visible>
                     <animation effect="fade" start="0" end="100" delay="400" time="1" reversible="true">Visible</animation>
                     <animation effect="fade" start="100" end="0" delay="400" time="1" reversible="false">Hidden</animation>
                     <height>40</height>

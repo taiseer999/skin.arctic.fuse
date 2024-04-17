@@ -15,7 +15,7 @@
     </variable>
 
     <variable name="Label_NextBump">
-        <value condition="Window.IsMedia">$LOCALIZE[31135]$INFO[Container.CurrentPage, , $LOCALIZE[20163] ]$INFO[Container.NumPages]</value>
+        <!-- <value condition="Window.IsMedia">$LOCALIZE[31135]$INFO[Container.CurrentPage, , $LOCALIZE[20163] ]$INFO[Container.NumPages]</value> -->
         <value>Kodi$INFO[System.BuildVersionCode, v,]</value>
     </variable>
 
@@ -529,7 +529,6 @@
     </variable>
 
     <variable name="Label_Setting_CombinedStyle">
-        <value condition="$EXP[Exp_Views_UseAltCombined] + Skin.HasSetting(Views.AltCombined.Detailed)">$LOCALIZE[31137]</value>
         <value condition="$EXP[Exp_Views_UseAltCombined]">$LOCALIZE[31163]</value>
         <value>$LOCALIZE[31164]</value>
     </variable>
