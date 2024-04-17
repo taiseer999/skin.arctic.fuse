@@ -117,6 +117,7 @@
                 <!-- <include content="Object_Top" condition="$EXP[Exp_Hubs_Spotlight_IsFanart]">
                     <param name="top">hub_spotlight_fanart_t</param>
                 </include> -->
+                <left>-5</left>
                 <top>hub_spotlight_t</top>
                 <height>hub_spotlight_h</height>
 
@@ -192,11 +193,11 @@
 
                     <control type="button" id="311">
                         <left>-60</left>
-                        <font>font_mini_black</font>
-                        <textcolor>main_fg_70</textcolor>
-                        <focusedcolor>main_fg_100</focusedcolor>
+                        <font />
+                        <textcolor>main_fg_90</textcolor>
+                        <focusedcolor>main_fg_90</focusedcolor>
                         <label>$VAR[Label_FullscreenWidget_PlayButton]</label>
-                        <width>300</width>
+                        <width>180</width>
                         <align>left</align>
                         <width>auto</width>
                         <textoffsetx>80</textoffsetx>
@@ -238,7 +239,7 @@
                         <param name="vertical">false</param>
                         <param name="itemgap">0</param>
                         <param name="center">true</param>
-                        <param name="icon_colordiffuse">main_fg_70</param>
+                        <param name="icon_colordiffuse">main_fg_90</param>
                     </include>
 
                     <control type="button" id="313">
@@ -261,7 +262,7 @@
                         <param name="vertical">false</param>
                         <param name="itemgap">0</param>
                         <param name="center">true</param>
-                        <param name="icon_colordiffuse">main_fg_70</param>
+                        <param name="icon_colordiffuse">main_fg_90</param>
                     </include>
 
                     <control type="button" id="314">
@@ -286,8 +287,50 @@
                         <param name="vertical">false</param>
                         <param name="itemgap">0</param>
                         <param name="center">true</param>
-                        <param name="icon_colordiffuse">main_fg_70</param>
+                        <param name="icon_colordiffuse">main_fg_90</param>
                     </include>
+
+                    <!-- <control type="button" id="314">
+                        <left>20</left>
+                        <include>Defs_OSD_Button</include>
+                        <centertop>50%</centertop>
+                        <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">Control.Move(301,-1)</onclick>
+                        <onclick condition="!$EXP[Exp_Hubs_Spotlight_HasItems]">Control.Move(99971,-1)</onclick>
+                        <include content="Spotlight_Main_Button_Standard">
+                            <param name="id">314</param>
+                            <param name="window_id">$PARAM[window_id]</param>
+                        </include>
+                    </control>
+                    <include content="OSD_Button_Icon_Overlay">
+                        <param name="icon">special://skin/extras/icons/arrow-up.png</param>
+                        <param name="id">314</param>
+                        <param name="groupid">324</param>
+                        <param name="vertical">false</param>
+                        <param name="itemgap">0</param>
+                        <param name="center">true</param>
+                        <param name="icon_colordiffuse">main_fg_90</param>
+                    </include>
+
+                    <control type="button" id="315">
+                        <left>20</left>
+                        <include>Defs_OSD_Button</include>
+                        <centertop>50%</centertop>
+                        <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">Control.Move(301,1)</onclick>
+                        <onclick condition="!$EXP[Exp_Hubs_Spotlight_HasItems]">Control.Move(99971,1)</onclick>
+                        <include content="Spotlight_Main_Button_Standard">
+                            <param name="id">315</param>
+                            <param name="window_id">$PARAM[window_id]</param>
+                        </include>
+                    </control>
+                    <include content="OSD_Button_Icon_Overlay">
+                        <param name="icon">special://skin/extras/icons/arrow-down.png</param>
+                        <param name="id">315</param>
+                        <param name="groupid">324</param>
+                        <param name="vertical">false</param>
+                        <param name="itemgap">0</param>
+                        <param name="center">true</param>
+                        <param name="icon_colordiffuse">main_fg_90</param>
+                    </include> -->
 
                 </control>
             </control>

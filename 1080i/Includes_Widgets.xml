@@ -626,6 +626,29 @@
         </definition>
     </include>
 
+    <include name="Widget_Transitions_Small">
+        <control type="group">
+            <visible>String.IsEqual(Window(Home).Property(Transition.WidgetStyle),List_Text_Row)</visible>
+            <include>Transitions_List_Text_Row</include>
+        </control>
+        <control type="group">
+            <visible>String.IsEqual(Window(Home).Property(Transition.WidgetStyle),List_Sign_Row)</visible>
+            <include>Transitions_List_Sign_Row</include>
+        </control>
+        <control type="group">
+            <visible>String.IsEqual(Window(Home).Property(Transition.WidgetStyle),List_Apps_Row)</visible>
+            <include>Transitions_List_Apps_Row</include>
+        </control>
+        <control type="group">
+            <visible>String.IsEqual(Window(Home).Property(Transition.WidgetStyle),List_Icon_Row)</visible>
+            <include>Transitions_List_Icon_Row</include>
+        </control>
+        <control type="group">
+            <visible>String.IsEqual(Window(Home).Property(Transition.WidgetStyle),List_Ring_Row)</visible>
+            <include>Transitions_List_Ring_Row</include>
+        </control>
+    </include>
+
     <include name="Widget_Transitions">
         <control type="group">
             <visible>String.IsEqual(Window(Home).Property(Transition.WidgetStyle),List_Banner_Row)</visible>
@@ -659,26 +682,7 @@
             <visible>String.IsEqual(Window(Home).Property(Transition.WidgetStyle),List_Circle_Row)</visible>
             <include>Transitions_List_Circle_Row</include>
         </control>
-        <control type="group">
-            <visible>String.IsEqual(Window(Home).Property(Transition.WidgetStyle),List_Text_Row)</visible>
-            <include>Transitions_List_Text_Row</include>
-        </control>
-        <control type="group">
-            <visible>String.IsEqual(Window(Home).Property(Transition.WidgetStyle),List_Sign_Row)</visible>
-            <include>Transitions_List_Sign_Row</include>
-        </control>
-        <control type="group">
-            <visible>String.IsEqual(Window(Home).Property(Transition.WidgetStyle),List_Apps_Row)</visible>
-            <include>Transitions_List_Apps_Row</include>
-        </control>
-        <control type="group">
-            <visible>String.IsEqual(Window(Home).Property(Transition.WidgetStyle),List_Icon_Row)</visible>
-            <include>Transitions_List_Icon_Row</include>
-        </control>
-        <control type="group">
-            <visible>String.IsEqual(Window(Home).Property(Transition.WidgetStyle),List_Ring_Row)</visible>
-            <include>Transitions_List_Ring_Row</include>
-        </control>
+        <include condition="!Skin.String(Furniture.BottomLeft.Enable,Always)">Widget_Transitions_Small</include>
     </include>
 
     <include name="Widget_EndRow_Selector">

@@ -69,7 +69,7 @@
         <param name="ondown">340</param>
         <param name="hidden_button">List_ButtonMenu_Row_HiddenButton_View</param>
         <definition>
-            <include content="Categories_Selector">
+            <include content="Categories_Iconic_Selector">
                 <param name="id">$PARAM[id]</param>
                 <param name="window_id">$PARAM[window_id]</param>
                 <param name="font">font_mini</param>
@@ -98,7 +98,7 @@
             <include>Transitions_Lower_Visibility</include>
             <top>hub_submenuwidget_t</top>
             <height>hub_submenuwidget_h</height>
-            <left>180</left>
+            <left>160</left>
             <orientation>vertical</orientation>
             <include>Hub_WindowTransition_CategoriesSpotlight_OnWidgets</include>
 
@@ -427,6 +427,9 @@
             <param name="tbarid">311</param>
         </include>
 
+        <movement>2</movement>
+        <width>1030</width>
+
         <onup>311</onup>
         <ondown>302</ondown>
 
@@ -438,7 +441,7 @@
     </include>
 
     <include name="Hub_Categories_Definition">
-        <include content="Categories_Selector">
+        <include content="Categories_Iconic_Selector">
             <param name="window_id">$PARAM[window_id]</param>
             <param name="hitrect_x">20</param>
             <param name="hitrect_y">-20</param>
@@ -479,12 +482,17 @@
             </control>
             <control type="group">
                 <include>Transitions_Lower_Visibility</include>
-                <include content="Spotlight_Main">
-                    <param name="window_id">$PARAM[window_id]</param>
-                </include>
+                <control type="group">
+                    <!-- <include content="Animation_ConditionalFade">
+                        <param name="condition">true</param>
+                    </include> -->
+                    <include content="Spotlight_Main">
+                        <param name="window_id">$PARAM[window_id]</param>
+                    </include>
+                </control>
                 <control type="group">
                     <include>Hub_Categories_FadeIn</include>
-                    <left>180</left>
+                    <left>160</left>
                     <height>hub_categorieswidget_h</height>
                     <top>hub_categorieswidget_t</top>
                     <include content="Hub_Categories_Definition">

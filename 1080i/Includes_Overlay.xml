@@ -221,6 +221,22 @@
                 </control>
             </control>
 
+            <control type="image">
+                <bottom>494</bottom>
+                <height>1</height>
+                <texture colordiffuse="cyan">common/white.png</texture>
+            </control>
+            <control type="image">
+                <bottom>280</bottom>
+                <height>1</height>
+                <texture colordiffuse="cyan">common/white.png</texture>
+            </control>
+            <control type="image">
+                <bottom>200</bottom>
+                <height>1</height>
+                <texture colordiffuse="cyan">common/white.png</texture>
+            </control>
+
             <!-- Center Lines -->
             <control type="image">
                 <centertop>50%</centertop>

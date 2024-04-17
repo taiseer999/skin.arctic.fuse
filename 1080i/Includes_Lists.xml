@@ -991,6 +991,7 @@
             <control type="$PARAM[control]" id="$PARAM[id]">
                 <nested />
                 <include content="$PARAM[hidden_button]_OnFocus" condition="$PARAM[hidden_button_enabled]">
+                    <param name="prefix">$PARAM[hidden_button_prefix]</param>
                     <param name="container">Container($PARAM[id]).</param>
                     <param name="id">$PARAM[id]</param>
                 </include>
@@ -1024,6 +1025,7 @@
                     <param name="height">$PARAM[itemlayout_h]</param>
                     <include condition="$PARAM[hidden_button_enabled]" content="$PARAM[hidden_button]">
                         <param name="id">$PARAM[id]</param>
+                        <param name="prefix">$PARAM[hidden_button_prefix]</param>
                     </include>
                     <control type="group">
                         <left>$PARAM[offset_x]</left>
