@@ -2151,7 +2151,7 @@
                 <top>18</top>
                 <bottom>-5</bottom>
                 <font>font_tiny</font>
-                <label>$INFO[ListItem.Label]</label>
+                <label>$INFO[$PARAM[listitem].Label]</label>
                 <textcolor>main_fg_70</textcolor>
                 <align>center</align>
                 <autoscroll>false</autoscroll>
@@ -2197,13 +2197,13 @@
                     <include content="Object_ProgressLine">
                         <param name="progress">$PARAM[listitem].$PARAM[progress]</param>
                     </include>
-                    <include content="Object_Indicator" condition="!$PARAM[selected]">
+                    <include content="Object_Indicator" condition="!$PARAM[selected] + ![$PARAM[detailed]]">
                         <param name="affix">$PARAM[affix]</param>
                         <param name="listitem">$PARAM[listitem]</param>
                     </include>
                     <include content="Object_SelectBox" condition="$PARAM[selected]">
                         <param name="affix">$PARAM[affix]</param>
-                        <param name="indicator">true</param>
+                        <param name="indicator">![$PARAM[detailed]]</param>
                         <param name="focusbounce">true</param>
                         <param name="listitem">$PARAM[listitem]</param>
                     </include>

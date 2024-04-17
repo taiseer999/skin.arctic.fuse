@@ -651,6 +651,34 @@
             <visible>String.IsEqual(Window(Home).Property(Transition.WidgetStyle),List_Square_Row)</visible>
             <include>Transitions_List_Square_Row</include>
         </control>
+        <control type="group">
+            <visible>String.IsEqual(Window(Home).Property(Transition.WidgetStyle),List_Overview_Row)</visible>
+            <include>Transitions_List_Overview_Row</include>
+        </control>
+        <control type="group">
+            <visible>String.IsEqual(Window(Home).Property(Transition.WidgetStyle),List_Circle_Row)</visible>
+            <include>Transitions_List_Circle_Row</include>
+        </control>
+        <control type="group">
+            <visible>String.IsEqual(Window(Home).Property(Transition.WidgetStyle),List_Text_Row)</visible>
+            <include>Transitions_List_Text_Row</include>
+        </control>
+        <control type="group">
+            <visible>String.IsEqual(Window(Home).Property(Transition.WidgetStyle),List_Sign_Row)</visible>
+            <include>Transitions_List_Sign_Row</include>
+        </control>
+        <control type="group">
+            <visible>String.IsEqual(Window(Home).Property(Transition.WidgetStyle),List_Apps_Row)</visible>
+            <include>Transitions_List_Apps_Row</include>
+        </control>
+        <control type="group">
+            <visible>String.IsEqual(Window(Home).Property(Transition.WidgetStyle),List_Icon_Row)</visible>
+            <include>Transitions_List_Icon_Row</include>
+        </control>
+        <control type="group">
+            <visible>String.IsEqual(Window(Home).Property(Transition.WidgetStyle),List_Ring_Row)</visible>
+            <include>Transitions_List_Ring_Row</include>
+        </control>
     </include>
 
     <include name="Widget_EndRow_Selector">

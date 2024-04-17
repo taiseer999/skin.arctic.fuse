@@ -49,17 +49,29 @@
     <constant name="transition_landscape_posx_8">3360</constant>
     <constant name="transition_landscape_posx_9">3780</constant>
 
-    <constant name="transition_boardsquare_posx_-1">-336</constant>
-    <constant name="transition_boardsquare_posx_0">0</constant>
-    <constant name="transition_boardsquare_posx_1">336</constant>
-    <constant name="transition_boardsquare_posx_2">672</constant>
-    <constant name="transition_boardsquare_posx_3">1008</constant>
-    <constant name="transition_boardsquare_posx_4">1344</constant>
-    <constant name="transition_boardsquare_posx_5">1680</constant>
-    <constant name="transition_boardsquare_posx_6">2016</constant>
-    <constant name="transition_boardsquare_posx_7">2352</constant>
-    <constant name="transition_boardsquare_posx_8">2688</constant>
-    <constant name="transition_boardsquare_posx_9">3024</constant>
+    <constant name="transition_apps_posx_-1">-280</constant>
+    <constant name="transition_apps_posx_0">0</constant>
+    <constant name="transition_apps_posx_1">280</constant>
+    <constant name="transition_apps_posx_2">560</constant>
+    <constant name="transition_apps_posx_3">840</constant>
+    <constant name="transition_apps_posx_4">1120</constant>
+    <constant name="transition_apps_posx_5">1400</constant>
+    <constant name="transition_apps_posx_6">1680</constant>
+    <constant name="transition_apps_posx_7">1960</constant>
+    <constant name="transition_apps_posx_8">2240</constant>
+    <constant name="transition_apps_posx_9">2520</constant>
+
+    <constant name="transition_icon_posx_-1">-186.67</constant>
+    <constant name="transition_icon_posx_0">0</constant>
+    <constant name="transition_icon_posx_1">186.67</constant>
+    <constant name="transition_icon_posx_2">373.34</constant>
+    <constant name="transition_icon_posx_3">560</constant>
+    <constant name="transition_icon_posx_4">746.67</constant>
+    <constant name="transition_icon_posx_5">933.34</constant>
+    <constant name="transition_icon_posx_6">1120</constant>
+    <constant name="transition_icon_posx_7">1306.67</constant>
+    <constant name="transition_icon_posx_8">1493.34</constant>
+    <constant name="transition_icon_posx_9">1680</constant>
 
     <constant name="transition_board_posx_-1">-560</constant>
     <constant name="transition_board_posx_0">0</constant>
@@ -147,6 +159,7 @@
                 <param name="id">$PARAM[id]</param>
                 <param name="selected">$PARAM[selected]</param>
                 <param name="detailed">$PARAM[detailed]</param>
+                <param name="misc">$PARAM[misc]</param>
                 <param name="variation">$PARAM[variation]</param>
                 <param name="diffuse">$PARAM[diffuse]</param>
 
@@ -183,6 +196,7 @@
         <definition>
             <include content="_Transitions_List_Row_Item">
                 <param name="detailed">$PARAM[detailed]</param>
+                <param name="misc">$PARAM[misc]</param>
                 <param name="variation">$PARAM[variation]</param>
                 <param name="diffuse">$PARAM[diffuse]</param>
                 <param name="pos">$PARAM[pos]</param>
@@ -212,6 +226,7 @@
             </include>
             <include content="_Transitions_List_Row_Item" condition="$PARAM[use_alternate]">
                 <param name="detailed">$PARAM[detailed]</param>
+                <param name="misc">$PARAM[misc]</param>
                 <param name="variation">$PARAM[variation]</param>
                 <param name="diffuse">$PARAM[diffuse]</param>
                 <param name="pos">$PARAM[pos]</param>
@@ -256,6 +271,7 @@
                 <top>586</top>
                 <include content="Transitions_List_Row_Item" condition="!Skin.HasSetting(Views.DisableItemPeek)">
                     <param name="detailed">$PARAM[detailed]</param>
+                    <param name="misc">$PARAM[misc]</param>
                     <param name="variation">$PARAM[variation]</param>
                     <param name="diffuse">$PARAM[diffuse]</param>
                     <param name="pos">-1</param>
@@ -273,6 +289,7 @@
                 </include>
                 <include content="Transitions_List_Row_Item">
                     <param name="detailed">$PARAM[detailed]</param>
+                    <param name="misc">$PARAM[misc]</param>
                     <param name="variation">$PARAM[variation]</param>
                     <param name="diffuse">$PARAM[diffuse]</param>
                     <param name="pos">0</param>
@@ -295,6 +312,7 @@
                 </include>
                 <include content="Transitions_List_Row_Item" condition="[!Integer.IsGreater(Skin.String(SkinConstant.Numeric.01),$PARAM[item_count]) + [!Skin.HasSetting(Views.DisableItemPeek) | !Integer.IsEqual(Skin.String(SkinConstant.Numeric.01),$PARAM[item_count])]] | !String.IsEqual(Skin.AspectRatio,16:9)">
                     <param name="detailed">$PARAM[detailed]</param>
+                    <param name="misc">$PARAM[misc]</param>
                     <param name="variation">$PARAM[variation]</param>
                     <param name="diffuse">$PARAM[diffuse]</param>
                     <param name="pos">1</param>
@@ -317,6 +335,7 @@
                 </include>
                 <include content="Transitions_List_Row_Item" condition="[!Integer.IsGreater(Skin.String(SkinConstant.Numeric.02),$PARAM[item_count]) + [!Skin.HasSetting(Views.DisableItemPeek) | !Integer.IsEqual(Skin.String(SkinConstant.Numeric.02),$PARAM[item_count])]] | !String.IsEqual(Skin.AspectRatio,16:9)">
                     <param name="detailed">$PARAM[detailed]</param>
+                    <param name="misc">$PARAM[misc]</param>
                     <param name="variation">$PARAM[variation]</param>
                     <param name="diffuse">$PARAM[diffuse]</param>
                     <param name="pos">2</param>
@@ -339,6 +358,7 @@
                 </include>
                 <include content="Transitions_List_Row_Item" condition="[!Integer.IsGreater(Skin.String(SkinConstant.Numeric.03),$PARAM[item_count]) + [!Skin.HasSetting(Views.DisableItemPeek) | !Integer.IsEqual(Skin.String(SkinConstant.Numeric.03),$PARAM[item_count])]] | !String.IsEqual(Skin.AspectRatio,16:9)">
                     <param name="detailed">$PARAM[detailed]</param>
+                    <param name="misc">$PARAM[misc]</param>
                     <param name="variation">$PARAM[variation]</param>
                     <param name="diffuse">$PARAM[diffuse]</param>
                     <param name="pos">3</param>
@@ -361,6 +381,7 @@
                 </include>
                 <include content="Transitions_List_Row_Item" condition="[!Integer.IsGreater(Skin.String(SkinConstant.Numeric.04),$PARAM[item_count]) + [!Skin.HasSetting(Views.DisableItemPeek) | !Integer.IsEqual(Skin.String(SkinConstant.Numeric.04),$PARAM[item_count])]] | !String.IsEqual(Skin.AspectRatio,16:9)">
                     <param name="detailed">$PARAM[detailed]</param>
+                    <param name="misc">$PARAM[misc]</param>
                     <param name="variation">$PARAM[variation]</param>
                     <param name="diffuse">$PARAM[diffuse]</param>
                     <param name="pos">4</param>
@@ -383,6 +404,7 @@
                 </include>
                 <include content="Transitions_List_Row_Item" condition="[!Integer.IsGreater(Skin.String(SkinConstant.Numeric.05),$PARAM[item_count]) + [!Skin.HasSetting(Views.DisableItemPeek) | !Integer.IsEqual(Skin.String(SkinConstant.Numeric.05),$PARAM[item_count])]] | !String.IsEqual(Skin.AspectRatio,16:9)">
                     <param name="detailed">$PARAM[detailed]</param>
+                    <param name="misc">$PARAM[misc]</param>
                     <param name="variation">$PARAM[variation]</param>
                     <param name="diffuse">$PARAM[diffuse]</param>
                     <param name="pos">5</param>
@@ -405,6 +427,7 @@
                 </include>
                 <include content="Transitions_List_Row_Item" condition="[!Integer.IsGreater(Skin.String(SkinConstant.Numeric.06),$PARAM[item_count]) + [!Skin.HasSetting(Views.DisableItemPeek) | !Integer.IsEqual(Skin.String(SkinConstant.Numeric.06),$PARAM[item_count])]] | !String.IsEqual(Skin.AspectRatio,16:9)">
                     <param name="detailed">$PARAM[detailed]</param>
+                    <param name="misc">$PARAM[misc]</param>
                     <param name="variation">$PARAM[variation]</param>
                     <param name="diffuse">$PARAM[diffuse]</param>
                     <param name="pos">6</param>
@@ -428,6 +451,7 @@
 
                 <include content="Transitions_List_Row_Item" condition="[!Integer.IsGreater(Skin.String(SkinConstant.Numeric.07),$PARAM[item_count]) + [!Skin.HasSetting(Views.DisableItemPeek) | !Integer.IsEqual(Skin.String(SkinConstant.Numeric.07),$PARAM[item_count])]] | !String.IsEqual(Skin.AspectRatio,16:9)">
                     <param name="detailed">$PARAM[detailed]</param>
+                    <param name="misc">$PARAM[misc]</param>
                     <param name="variation">$PARAM[variation]</param>
                     <param name="diffuse">$PARAM[diffuse]</param>
                     <param name="pos">7</param>
@@ -451,6 +475,7 @@
 
                 <include content="Transitions_List_Row_Item" condition="[!Integer.IsGreater(Skin.String(SkinConstant.Numeric.08),$PARAM[item_count]) + [!Skin.HasSetting(Views.DisableItemPeek) | !Integer.IsEqual(Skin.String(SkinConstant.Numeric.08),$PARAM[item_count])]] | !String.IsEqual(Skin.AspectRatio,16:9)">
                     <param name="detailed">$PARAM[detailed]</param>
+                    <param name="misc">$PARAM[misc]</param>
                     <param name="variation">$PARAM[variation]</param>
                     <param name="diffuse">$PARAM[diffuse]</param>
                     <param name="pos">8</param>
@@ -474,6 +499,7 @@
 
                 <include content="Transitions_List_Row_Item" condition="[!Integer.IsGreater(Skin.String(SkinConstant.Numeric.09),$PARAM[item_count]) + [!Skin.HasSetting(Views.DisableItemPeek) | !Integer.IsEqual(Skin.String(SkinConstant.Numeric.09),$PARAM[item_count])]] | !String.IsEqual(Skin.AspectRatio,16:9)">
                     <param name="detailed">$PARAM[detailed]</param>
+                    <param name="misc">$PARAM[misc]</param>
                     <param name="variation">$PARAM[variation]</param>
                     <param name="diffuse">$PARAM[diffuse]</param>
                     <param name="pos">9</param>
@@ -577,6 +603,24 @@
         </definition>
     </include>
 
+    <include name="Transitions_List_Circle_Row">
+        <param name="visible">$EXP[Exp_InfoDialogs]</param>
+        <definition>
+            <include content="Transitions_List_Row">
+                <param name="visible">$PARAM[visible]</param>
+                <param name="id">$PARAM[id]</param>
+                <param name="content">Layout_Circle</param>
+                <param name="icon_base_var">Image_Icon</param>
+                <param name="item_w">view_poster_item_w</param>
+                <param name="item_h">view_poster_item_h</param>
+                <param name="prefix">transition_poster</param>
+                <param name="affix">_LIP$PARAM[affix]</param>
+                <param name="positional_listitem">ListItemPosition</param>
+                <param name="conditional_listitem">ListItemPosition</param>
+            </include>
+        </definition>
+    </include>
+
     <include name="Transitions_List_Landscape_Row">
         <param name="visible">$EXP[Exp_InfoDialogs]</param>
         <definition>
@@ -585,6 +629,109 @@
                 <param name="id">$PARAM[id]</param>
                 <param name="content">Layout_Landscape</param>
                 <param name="icon_base_var">Image_Landscape</param>
+                <param name="item_w">view_landscape_item_w</param>
+                <param name="item_h">view_landscape_item_h</param>
+                <param name="prefix">transition_landscape</param>
+                <param name="affix">_LIP$PARAM[affix]</param>
+                <param name="positional_listitem">ListItemPosition</param>
+                <param name="conditional_listitem">ListItemPosition</param>
+                <param name="item_count">4</param>
+            </include>
+        </definition>
+    </include>
+
+    <include name="Transitions_List_Icon_Row">
+        <param name="visible">$EXP[Exp_InfoDialogs]</param>
+        <definition>
+            <include content="Transitions_List_Row">
+                <param name="visible">$PARAM[visible]</param>
+                <param name="id">$PARAM[id]</param>
+                <param name="content">Layout_Square</param>
+                <param name="icon_base_var">Image_Icon</param>
+                <param name="item_w">view_icon_item_w</param>
+                <param name="item_h">view_icon_item_h</param>
+                <param name="diffuse">diffuse/square_w170_h170.png</param>
+                <param name="prefix">transition_icon</param>
+                <param name="detailed">true</param>
+                <param name="affix">_LIP$PARAM[affix]</param>
+                <param name="positional_listitem">ListItemPosition</param>
+                <param name="conditional_listitem">ListItemPosition</param>
+                <param name="item_count">9</param>
+            </include>
+        </definition>
+    </include>
+
+    <include name="Transitions_List_Ring_Row">
+        <param name="visible">$EXP[Exp_InfoDialogs]</param>
+        <definition>
+            <include content="Transitions_List_Row">
+                <param name="visible">$PARAM[visible]</param>
+                <param name="id">$PARAM[id]</param>
+                <param name="content">Layout_Circle</param>
+                <param name="icon_base_var">Image_Icon</param>
+                <param name="item_w">view_icon_item_w</param>
+                <param name="item_h">view_icon_item_h</param>
+                <param name="diffuse">circle_146</param>
+                <param name="prefix">transition_icon</param>
+                <param name="detailed">true</param>
+                <param name="affix">_LIP$PARAM[affix]</param>
+                <param name="positional_listitem">ListItemPosition</param>
+                <param name="conditional_listitem">ListItemPosition</param>
+                <param name="item_count">9</param>
+            </include>
+        </definition>
+    </include>
+
+    <include name="Transitions_List_Apps_Row">
+        <param name="visible">$EXP[Exp_InfoDialogs]</param>
+        <definition>
+            <include content="Transitions_List_Row">
+                <param name="visible">$PARAM[visible]</param>
+                <param name="id">$PARAM[id]</param>
+                <param name="content">Layout_Landscape</param>
+                <param name="icon_base_var">Image_Landscape</param>
+                <param name="item_w">view_apps_item_w</param>
+                <param name="item_h">view_apps_item_h</param>
+                <param name="prefix">transition_apps</param>
+                <param name="diffuse">diffuse/landscape_w200_h112.png</param>
+                <param name="affix">_LIP$PARAM[affix]</param>
+                <param name="positional_listitem">ListItemPosition</param>
+                <param name="conditional_listitem">ListItemPosition</param>
+                <param name="item_count">6</param>
+            </include>
+        </definition>
+    </include>
+
+    <include name="Transitions_List_Text_Row">
+        <param name="visible">$EXP[Exp_InfoDialogs]</param>
+        <definition>
+            <include content="Transitions_List_Row">
+                <param name="visible">$PARAM[visible]</param>
+                <param name="id">$PARAM[id]</param>
+                <param name="content">Layout_Detailed</param>
+                <param name="icon_base_var">Image_Overview</param>
+                <param name="item_w">view_landscape_item_w</param>
+                <param name="item_h">view_landscape_item_h</param>
+                <param name="prefix">transition_landscape</param>
+                <param name="misc">94</param>
+                <param name="affix">_LIP$PARAM[affix]</param>
+                <param name="positional_listitem">ListItemPosition</param>
+                <param name="conditional_listitem">ListItemPosition</param>
+                <param name="item_count">4</param>
+            </include>
+        </definition>
+    </include>
+
+    <include name="Transitions_List_Sign_Row">
+        <param name="visible">$EXP[Exp_InfoDialogs]</param>
+        <definition>
+            <include content="Transitions_List_Row">
+                <param name="visible">$PARAM[visible]</param>
+                <param name="id">$PARAM[id]</param>
+                <param name="content">Layout_Landscape</param>
+                <param name="diffuse">diffuse/landscape_w380_h214.png</param>
+                <param name="icon_base_var">Image_Landscape</param>
+                <param name="detailed">true</param>
                 <param name="item_w">view_landscape_item_w</param>
                 <param name="item_h">view_landscape_item_h</param>
                 <param name="prefix">transition_landscape</param>
@@ -609,6 +756,27 @@
                 <param name="prefix">transition_board</param>
                 <param name="detailed">true</param>
                 <param name="diffuse">diffuse/landscape_w520_h294.png</param>
+                <param name="affix">_LIP$PARAM[affix]</param>
+                <param name="positional_listitem">ListItemPosition</param>
+                <param name="conditional_listitem">ListItemPosition</param>
+                <param name="item_count">3</param>
+            </include>
+        </definition>
+    </include>
+
+    <include name="Transitions_List_Overview_Row">
+        <param name="visible">$EXP[Exp_InfoDialogs]</param>
+        <definition>
+            <include content="Transitions_List_Row">
+                <param name="visible">$PARAM[visible]</param>
+                <param name="id">$PARAM[id]</param>
+                <param name="content">Layout_Detailed</param>
+                <param name="icon_base_var">Image_Overview</param>
+                <param name="item_w">view_board_item_w</param>
+                <param name="item_h">view_poster_item_h</param>
+                <param name="prefix">transition_board</param>
+                <param name="detailed">true</param>
+                <param name="misc">174</param>
                 <param name="affix">_LIP$PARAM[affix]</param>
                 <param name="positional_listitem">ListItemPosition</param>
                 <param name="conditional_listitem">ListItemPosition</param>
