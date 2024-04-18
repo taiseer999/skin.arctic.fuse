@@ -860,14 +860,17 @@
                         <animation effect="fadediffuse" start="FFFFFFFF" end="FFFF0000" condition="String.IsEqual(ListItem.Property(disabled),True)">Conditional</animation>
                         <left>$PARAM[offset_x]</left>
                         <right>-$PARAM[offset_x]</right>
+                        <height>120</height>
                         <control type="group">
                             <right>40</right>
                             <height>40</height>
                             <centertop>50%</centertop>
                             <control type="label">
-                                <!-- <height>35</height> -->
+                                <height>72</height>
+                                <centertop>50%</centertop>
+                                <left>10</left>
+                                <right>10</right>
                                 <aligny>center</aligny>
-                                <textoffsetx>0</textoffsetx>
                                 <align>center</align>
                                 <font>$PARAM[font]</font>
                                 <textcolor>$PARAM[color_nf]</textcolor>
@@ -876,19 +879,27 @@
                         </control>
                     </control>
                 </itemlayout>
-                <focusedlayout height="120" width="$PARAM[itemlayout_w]" condition="![Control.HasFocus($PARAM[id]) | $PARAM[altfocus]]">
+                <focusedlayout height="120" width="$PARAM[itemlayout_w]">
+                    <include content="$PARAM[hidden_button]">
+                        <param name="id">$PARAM[id]</param>
+                        <param name="prefix">$PARAM[hidden_button_prefix]</param>
+                    </include>
                     <control type="group">
-                        <animation effect="fadediffuse" start="FFFFFFFF" end="FFFF0000" condition="String.IsEqual(ListItem.Property(disabled),True)">Conditional</animation>
                         <left>$PARAM[offset_x]</left>
                         <right>-$PARAM[offset_x]</right>
+                        <height>120</height>
                         <control type="group">
                             <right>40</right>
                             <height>40</height>
                             <centertop>50%</centertop>
+                            <visible>![Control.HasFocus($PARAM[id]) | $PARAM[altfocus]]</visible>
+                            <animation effect="fadediffuse" start="FFFFFFFF" end="FFFF0000" condition="String.IsEqual(ListItem.Property(disabled),True)">Conditional</animation>
                             <control type="label">
-                                <!-- <height>35</height> -->
+                                <height>72</height>
+                                <centertop>50%</centertop>
+                                <left>10</left>
+                                <right>10</right>
                                 <aligny>center</aligny>
-                                <textoffsetx>0</textoffsetx>
                                 <align>center</align>
                                 <font>$PARAM[font]</font>
                                 <textcolor>$PARAM[color_fo]</textcolor>
@@ -896,9 +907,11 @@
                                 <visible>$PARAM[label_fo]</visible>
                             </control>
                             <control type="label">
-                                <!-- <height>35</height> -->
+                                <height>72</height>
+                                <centertop>50%</centertop>
+                                <left>10</left>
+                                <right>10</right>
                                 <aligny>center</aligny>
-                                <textoffsetx>0</textoffsetx>
                                 <align>center</align>
                                 <font>$PARAM[font]</font>
                                 <textcolor>$PARAM[color_nf]</textcolor>
@@ -914,33 +927,26 @@
                                 <height>scrollbar_w</height>
                             </include>
                         </control>
-                    </control>
-                </focusedlayout>
-                <focusedlayout height="120" width="$PARAM[itemlayout_w]" condition="[Control.HasFocus($PARAM[id]) | $PARAM[altfocus]]">
-                    <include content="$PARAM[hidden_button]">
-                        <param name="id">$PARAM[id]</param>
-                        <param name="prefix">$PARAM[hidden_button_prefix]</param>
-                    </include>
-                    <control type="group">
-                        <left>$PARAM[offset_x]</left>
-                        <right>-$PARAM[offset_x]</right>
                         <control type="group">
                             <right>40</right>
                             <height>40</height>
+                            <visible>[Control.HasFocus($PARAM[id]) | $PARAM[altfocus]]</visible>
                             <centertop>50%</centertop>
                             <control type="group">
                                 <centertop>50%</centertop>
                                 <height>256</height>
-                                <left>-60</left>
-                                <right>-60</right>
+                                <left>-50</left>
+                                <right>-50</right>
                                 <control type="image">
                                     <include>Texture_MainMenu_Highlight_V</include>
                                 </control>
                             </control>
                             <control type="label">
-                                <!-- <height>35</height> -->
+                                <height>72</height>
+                                <centertop>50%</centertop>
+                                <left>10</left>
+                                <right>10</right>
                                 <aligny>center</aligny>
-                                <textoffsetx>0</textoffsetx>
                                 <align>center</align>
                                 <font>$PARAM[font]</font>
                                 <include>Color_SelectedText</include>
@@ -966,7 +972,6 @@
                                     <visible>[Container($PARAM[id]).Position(0) + !Integer.IsEqual(Container($PARAM[id]).NumItems,1)] | [Container($PARAM[id]).Position(1) + Integer.IsGreater(Container($PARAM[id]).NumItems,2)] | [Container($PARAM[id]).Position(2) + False]</visible>
                                 </control>
                             </control>
-
                         </control>
                     </control>
                 </focusedlayout>

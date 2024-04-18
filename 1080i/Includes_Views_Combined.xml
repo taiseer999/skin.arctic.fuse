@@ -292,7 +292,7 @@
                 <animation effect="fade" start="100" end="0" delay="400" reversible="false" time="200" condition="$EXP[Exp_InfoDialogs]">Conditional</animation>
 
                 <control type="group">
-                    <left>160</left>
+                    <left>0</left>
                     <centerbottom>100</centerbottom>
                     <height>120</height>
                     <include content="Categories_Selector">

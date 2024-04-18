@@ -2150,6 +2150,16 @@
                     </include>
                 </control>
             </control>
+            <!-- <control type="textbox">
+                <top>29</top>
+                <bottom>-4</bottom>
+                <font>font_mini_plot</font>
+                <label>$INFO[$PARAM[listitem].Label]</label>
+                <textcolor>main_fg_70</textcolor>
+                <align>center</align>
+                <autoscroll>false</autoscroll>
+                <visible>![$PARAM[detailed]]</visible>
+            </control> -->
             <control type="textbox">
                 <top>17</top>
                 <bottom>-4</bottom>
