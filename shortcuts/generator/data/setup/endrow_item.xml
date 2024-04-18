@@ -38,55 +38,27 @@
             <condition>{item_widget_style}==Banner</condition>
             <value>List_Banner_Row</value>
         </rule>
-        <rule>
-            <condition>{item_widget_style}==Apps</condition>
-            <value>List_Apps_Row</value>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
-        </rule>
+
+        <!-- Always convert small widgets -->
         <rule>
             <condition>{item_widget_style}==Apps</condition>
             <value>List_Landscape_Row</value>
-            <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
-        </rule>
-        <rule>
-            <condition>{item_widget_style}==Text</condition>
-            <value>List_Text_Row</value>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
         </rule>
         <rule>
             <condition>{item_widget_style}==Text</condition>
             <value>List_Overview_Row</value>
-            <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
-        </rule>
-        <rule>
-            <condition>{item_widget_style}==Icon</condition>
-            <value>List_Icon_Row</value>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
         </rule>
         <rule>
             <condition>{item_widget_style}==Icon</condition>
             <value>List_Square_Row</value>
-            <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
-        </rule>
-        <rule>
-            <condition>{item_widget_style}==Sign</condition>
-            <value>List_Sign_Row</value>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
         </rule>
         <rule>
             <condition>{item_widget_style}==Sign</condition>
             <value>List_Board_Row</value>
-            <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
         </rule>
         <rule>
             <condition>{item_widget_style}==Ring</condition>
-            <value>List_Ring_Row</value>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
-        </rule>
-        <rule>
-            <condition>{item_widget_style}==Ring</condition>
-            <value>List_Ring_Row</value>
-            <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <value>List_Circle_Row</value>
         </rule>
         <rule>
             <condition>{parent_item_widget_style}==Landscape</condition>
@@ -126,53 +98,23 @@
         </rule>
         <rule>
             <condition>{parent_item_widget_style}==Apps</condition>
-            <value>List_Apps_Row</value>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
-        </rule>
-        <rule>
-            <condition>{parent_item_widget_style}==Apps</condition>
             <value>List_Landscape_Row</value>
-            <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
-        </rule>
-        <rule>
-            <condition>{parent_item_widget_style}==Text</condition>
-            <value>List_Text_Row</value>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
         </rule>
         <rule>
             <condition>{parent_item_widget_style}==Text</condition>
             <value>List_Overview_Row</value>
-            <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
-        </rule>
-        <rule>
-            <condition>{parent_item_widget_style}==Icon</condition>
-            <value>List_Icon_Row</value>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
         </rule>
         <rule>
             <condition>{parent_item_widget_style}==Icon</condition>
             <value>List_Square_Row</value>
-            <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
-        </rule>
-        <rule>
-            <condition>{parent_item_widget_style}==Sign</condition>
-            <value>List_Sign_Row</value>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
         </rule>
         <rule>
             <condition>{parent_item_widget_style}==Sign</condition>
             <value>List_Board_Row</value>
-            <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
-        </rule>
-        <rule>
-            <condition>{parent_item_widget_style}==Ring</condition>
-            <value>List_Ring_Row</value>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
         </rule>
         <rule>
             <condition>{parent_item_widget_style}==Ring</condition>
             <value>List_Circle_Row</value>
-            <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
         </rule>
         <rule>
             <condition>True</condition>

@@ -158,57 +158,57 @@
     <rules name="widget_shortstack">
         <rule>
             <condition>{item_widget_style}==Apps</condition>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <condition>![Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.HasSetting(Hub.{window_id}.WidgetSelector)]</condition>
             <value>True</value>
         </rule>
         <rule>
             <condition>{item_widget_style}==Icon</condition>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <condition>![Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.HasSetting(Hub.{window_id}.WidgetSelector)]</condition>
             <value>True</value>
         </rule>
         <rule>
             <condition>{item_widget_style}==Text</condition>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <condition>![Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.HasSetting(Hub.{window_id}.WidgetSelector)]</condition>
             <value>True</value>
         </rule>
         <rule>
             <condition>{item_widget_style}==Sign</condition>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <condition>![Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.HasSetting(Hub.{window_id}.WidgetSelector)]</condition>
             <value>True</value>
         </rule>
         <rule>
             <condition>{item_widget_style}==Ring</condition>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <condition>![Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.HasSetting(Hub.{window_id}.WidgetSelector)]</condition>
             <value>True</value>
         </rule>
         <rule>
             <condition>{item_widget_style}==</condition>
             <condition>{parent_item_widget_style}==Apps</condition>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <condition>![Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.HasSetting(Hub.{window_id}.WidgetSelector)]</condition>
             <value>True</value>
         </rule>
         <rule>
             <condition>{item_widget_style}==</condition>
             <condition>{parent_item_widget_style}==Icon</condition>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <condition>![Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.HasSetting(Hub.{window_id}.WidgetSelector)]</condition>
             <value>True</value>
         </rule>
         <rule>
             <condition>{item_widget_style}==</condition>
             <condition>{parent_item_widget_style}==Text</condition>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <condition>![Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.HasSetting(Hub.{window_id}.WidgetSelector)]</condition>
             <value>True</value>
         </rule>
         <rule>
             <condition>{item_widget_style}==</condition>
             <condition>{parent_item_widget_style}==Sign</condition>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <condition>![Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.HasSetting(Hub.{window_id}.WidgetSelector)]</condition>
             <value>True</value>
         </rule>
         <rule>
             <condition>{item_widget_style}==</condition>
             <condition>{parent_item_widget_style}==Ring</condition>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <condition>![Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.HasSetting(Hub.{window_id}.WidgetSelector)]</condition>
             <value>True</value>
         </rule>
         <rule>
@@ -255,52 +255,52 @@
         </rule>
         <rule>
             <condition>{item_widget_style}==Apps</condition>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <condition>![Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.HasSetting(Hub.{window_id}.WidgetSelector)]</condition>
             <value>List_Apps_Row</value>
         </rule>
         <rule>
             <condition>{item_widget_style}==Apps</condition>
-            <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <condition>[Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.HasSetting(Hub.{window_id}.WidgetSelector)]</condition>
             <value>List_Landscape_Row</value>
         </rule>
         <rule>
             <condition>{item_widget_style}==Icon</condition>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <condition>![Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.HasSetting(Hub.{window_id}.WidgetSelector)]</condition>
             <value>List_Icon_Row</value>
         </rule>
         <rule>
             <condition>{item_widget_style}==Icon</condition>
-            <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <condition>[Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.HasSetting(Hub.{window_id}.WidgetSelector)]</condition>
             <value>List_Square_Row</value>
         </rule>
         <rule>
             <condition>{item_widget_style}==Text</condition>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <condition>![Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.HasSetting(Hub.{window_id}.WidgetSelector)]</condition>
             <value>List_Text_Row</value>
         </rule>
         <rule>
             <condition>{item_widget_style}==Text</condition>
-            <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <condition>[Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.HasSetting(Hub.{window_id}.WidgetSelector)]</condition>
             <value>List_Overview_Row</value>
         </rule>
         <rule>
             <condition>{item_widget_style}==Sign</condition>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <condition>![Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.HasSetting(Hub.{window_id}.WidgetSelector)]</condition>
             <value>List_Sign_Row</value>
         </rule>
         <rule>
             <condition>{item_widget_style}==Sign</condition>
-            <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <condition>[Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.HasSetting(Hub.{window_id}.WidgetSelector)]</condition>
             <value>List_Board_Row</value>
         </rule>
         <rule>
             <condition>{item_widget_style}==Ring</condition>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <condition>![Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.HasSetting(Hub.{window_id}.WidgetSelector)]</condition>
             <value>List_Ring_Row</value>
         </rule>
         <rule>
             <condition>{item_widget_style}==Ring</condition>
-            <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <condition>[Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.HasSetting(Hub.{window_id}.WidgetSelector)]</condition>
             <value>List_Circle_Row</value>
         </rule>
         <rule>
@@ -341,52 +341,52 @@
         </rule>
         <rule>
             <condition>{parent_item_widget_style}==Apps</condition>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <condition>![Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.HasSetting(Hub.{window_id}.WidgetSelector)]</condition>
             <value>List_Apps_Row</value>
         </rule>
         <rule>
             <condition>{parent_item_widget_style}==Apps</condition>
-            <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <condition>[Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.HasSetting(Hub.{window_id}.WidgetSelector)]</condition>
             <value>List_Landscape_Row</value>
         </rule>
         <rule>
             <condition>{parent_item_widget_style}==Icon</condition>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <condition>![Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.HasSetting(Hub.{window_id}.WidgetSelector)]</condition>
             <value>List_Icon_Row</value>
         </rule>
         <rule>
             <condition>{parent_item_widget_style}==Icon</condition>
-            <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <condition>[Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.HasSetting(Hub.{window_id}.WidgetSelector)]</condition>
             <value>List_Square_Row</value>
         </rule>
         <rule>
             <condition>{parent_item_widget_style}==Text</condition>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <condition>![Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.HasSetting(Hub.{window_id}.WidgetSelector)]</condition>
             <value>List_Text_Row</value>
         </rule>
         <rule>
             <condition>{parent_item_widget_style}==Text</condition>
-            <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <condition>[Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.HasSetting(Hub.{window_id}.WidgetSelector)]</condition>
             <value>List_Overview_Row</value>
         </rule>
         <rule>
             <condition>{parent_item_widget_style}==Sign</condition>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <condition>![Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.HasSetting(Hub.{window_id}.WidgetSelector)]</condition>
             <value>List_Sign_Row</value>
         </rule>
         <rule>
             <condition>{parent_item_widget_style}==Sign</condition>
-            <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <condition>[Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.HasSetting(Hub.{window_id}.WidgetSelector)]</condition>
             <value>List_Board_Row</value>
         </rule>
         <rule>
             <condition>{parent_item_widget_style}==Ring</condition>
-            <condition>!Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <condition>![Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.HasSetting(Hub.{window_id}.WidgetSelector)]</condition>
             <value>List_Ring_Row</value>
         </rule>
         <rule>
             <condition>{parent_item_widget_style}==Ring</condition>
-            <condition>Skin.String(Furniture.BottomLeft.Enable,Always)</condition>
+            <condition>[Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.HasSetting(Hub.{window_id}.WidgetSelector)]</condition>
             <value>List_Circle_Row</value>
         </rule>
         <rule>
