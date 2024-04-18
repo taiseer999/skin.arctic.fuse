@@ -304,7 +304,6 @@
         <param name="selected">false</param>
         <definition>
             <control type="group">
-                <nested />
                 <right>20</right>
                 <left>20</left>
                 <include content="Object_Control" condition="$PARAM[selected]">
@@ -1466,7 +1465,6 @@
         <param name="affix" />
         <definition>
             <control type="group">
-                <nested />
                 <width>$PARAM[item_w]</width>
                 <height>$PARAM[item_h]</height>
                 <control type="group">
@@ -1518,7 +1516,6 @@
         <param name="listitem">ListItem</param>
         <definition>
             <control type="group">
-                <nested />
                 <width>$PARAM[item_w]</width>
                 <height>$PARAM[item_h]</height>
                 <control type="group">
@@ -1569,7 +1566,6 @@
         <param name="listitem">ListItem</param>
         <definition>
             <control type="group">
-                <nested />
                 <width>$PARAM[item_w]</width>
                 <height>$PARAM[item_h]</height>
 
@@ -1799,38 +1795,45 @@
         </definition>
     </include>
 
+    <include name="Layout_Home_Menu_Icon_FadeDiffuse">
+        <animation effect="fadediffuse" start="FFFFFFFF" end="FFFF0000" condition="String.IsEqual(ListItem.Property(disabled),True)">Conditional</animation>
+    </include>
+
     <include name="Layout_Home_Menu_Icon_Def">
-        <control type="image">
-            <nested />
-            <aspectratio>keep</aspectratio>
-            <bordersize>icon_home_bordersize</bordersize>
-            <colordiffuse>$PARAM[color]</colordiffuse>
-            <texture>$INFO[ListItem.Icon]</texture>
-            <visible>String.IsEmpty(ListItem.Property(showlabel))</visible>
-        </control>
-        <control type="image">
-            <nested />
-            <top>-10</top>
-            <bottom>10</bottom>
-            <aspectratio>keep</aspectratio>
-            <bordersize>icon_home_bordersize</bordersize>
-            <colordiffuse>$PARAM[color]</colordiffuse>
-            <texture>$INFO[ListItem.Icon]</texture>
-            <visible>![String.IsEmpty(ListItem.Property(showlabel))]</visible>
-        </control>
-        <control type="label">
-            <nested />
-            <top>25</top>
-            <height>10</height>
-            <label>$INFO[ListItem.Label]</label>
-            <textcolor>$PARAM[color]</textcolor>
-            <font>font_hint_button</font>
-            <align>center</align>
-            <aligny>top</aligny>
-            <left>-40</left>
-            <right>-40</right>
-            <visible>![String.IsEmpty(ListItem.Property(showlabel))]</visible>
-        </control>
+        <param name="include_fadediffuse">false</param>
+        <definition>
+            <control type="image">
+                <include condition="$PARAM[include_fadediffuse]">Layout_Home_Menu_Icon_FadeDiffuse</include>
+                <aspectratio>keep</aspectratio>
+                <bordersize>icon_home_bordersize</bordersize>
+                <colordiffuse>$PARAM[color]</colordiffuse>
+                <texture>$INFO[ListItem.Icon]</texture>
+                <visible>String.IsEmpty(ListItem.Property(showlabel))</visible>
+            </control>
+            <control type="image">
+                <include condition="$PARAM[include_fadediffuse]">Layout_Home_Menu_Icon_FadeDiffuse</include>
+                <top>-10</top>
+                <bottom>10</bottom>
+                <aspectratio>keep</aspectratio>
+                <bordersize>icon_home_bordersize</bordersize>
+                <colordiffuse>$PARAM[color]</colordiffuse>
+                <texture>$INFO[ListItem.Icon]</texture>
+                <visible>![String.IsEmpty(ListItem.Property(showlabel))]</visible>
+            </control>
+            <control type="label">
+                <include condition="$PARAM[include_fadediffuse]">Layout_Home_Menu_Icon_FadeDiffuse</include>
+                <top>25</top>
+                <height>10</height>
+                <label>$INFO[ListItem.Label]</label>
+                <textcolor>$PARAM[color]</textcolor>
+                <font>font_hint_button</font>
+                <align>center</align>
+                <aligny>top</aligny>
+                <left>-40</left>
+                <right>-40</right>
+                <visible>![String.IsEmpty(ListItem.Property(showlabel))]</visible>
+            </control>
+        </definition>
     </include>
 
     <variable name="Layout_Home_Menu_Color_NF">
@@ -1893,7 +1896,7 @@
                     </control>
                     <include content="Layout_Home_Menu_Icon_Def">
                         <param name="color">$VAR[ColorSelected]</param>
-                        <animation effect="fadediffuse" start="FFFFFFFF" end="FFFF0000" condition="String.IsEqual(ListItem.Property(disabled),True)">Conditional</animation>
+                        <param name="include_fadediffuse">true</param>
                     </include>
                 </control>
             </control>
@@ -2173,7 +2176,6 @@
         <param name="affix" />
         <definition>
             <control type="group">
-                <nested />
                 <width>$PARAM[item_w]</width>
                 <height>$PARAM[item_h]</height>
                 <control type="group">
@@ -2234,7 +2236,6 @@
         <param name="affix" />
         <definition>
             <control type="group">
-                <nested />
                 <width>$PARAM[item_w]</width>
                 <height>$PARAM[item_h]</height>
                 <control type="group">
@@ -2415,7 +2416,6 @@
         <param name="affix" />
         <definition>
             <control type="group">
-                <nested />
                 <width>$PARAM[item_w]</width>
                 <height>$PARAM[item_h]</height>
                 <control type="group">
@@ -2636,7 +2636,6 @@
         <param name="affix" />
         <definition>
             <control type="group">
-                <nested />
                 <width>$PARAM[item_w]</width>
                 <height>$PARAM[item_h]</height>
 
@@ -2735,7 +2734,7 @@
         <param name="affix" />
         <definition>
             <control type="group">
-                <nested />
+
                 <width>$PARAM[item_w]</width>
                 <height>$PARAM[item_h]</height>
 
@@ -2821,7 +2820,6 @@
         <param name="affix" />
         <definition>
             <control type="group">
-                <nested />
                 <width>$PARAM[item_w]</width>
                 <height>$PARAM[item_h]</height>
                 <include content="Object_ItemBack">
