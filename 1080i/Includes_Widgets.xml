@@ -313,6 +313,15 @@
         </control>
     </include>
 
+    <include name="Widget_Fake_Row_PreItem_Animation">
+        <include content="Animation_Fade_In">
+            <param name="type">Visible</param>
+        </include>
+        <include content="Animation_Fade_Out">
+            <param name="type">Hidden</param>
+        </include>
+    </include>
+
     <include name="Widget_Fake_Row">
         <param name="content">Layout_Landscape</param>
         <param name="icon_base_var">Image_Landscape</param>
@@ -341,14 +350,8 @@
                     <param name="prefix">$PARAM[prefix]</param>
                     <param name="affix">$PARAM[affix]</param>
                     <param name="transition_animation">false</param>
-                    <include content="Animation_Fade_In">
-                        <param name="type">Visible</param>
-                        <param name="delay">0</param>
-                    </include>
-                    <include content="Animation_Fade_Out">
-                        <param name="type">Hidden</param>
-                    </include>
-                    <visible>Control.HasFocus($PARAM[id]) | $PARAM[overhang_visible]</visible>
+                    <param name="visible">Control.HasFocus($PARAM[id]) | $PARAM[overhang_visible]</param>
+                    <param name="include_animation">Widget_Fake_Row_PreItem_Animation</param>
                 </include>
 
                 <!-- Focus -->
@@ -363,7 +366,7 @@
                     <param name="affix">$PARAM[affix]</param>
                     <param name="transition_animation">false</param>
                     <param name="selected">true</param>
-                    <visible>Control.HasFocus($PARAM[id])</visible>
+                    <param name="visible">Control.HasFocus($PARAM[id])</param>
                 </include>
                 <include content="Transitions_List_Row_Item">
                     <param name="pos">0</param>
@@ -376,7 +379,7 @@
                     <param name="affix">$PARAM[affix]</param>
                     <param name="transition_animation">false</param>
                     <param name="selected">false</param>
-                    <visible>![Control.HasFocus($PARAM[id])]</visible>
+                    <param name="visible">![Control.HasFocus($PARAM[id])]</param>
                 </include>
 
                 <!-- Rest of Items -->

@@ -205,26 +205,29 @@
         <param name="item_w">view_poster_item_w</param>
         <param name="item_h">view_poster_item_h</param>
         <param name="selected">false</param>
+        <param name="conditionalfade_condition">false</param>
         <definition>
-            <include content="$PARAM[layout_include]">
-                <param name="icon">$VAR[$PARAM[icon_base_var]_C$PARAM[id]_$PARAM[mod]$PARAM[pos]]</param>
-                <param name="item_w">$PARAM[item_w]</param>
-                <param name="item_h">$PARAM[item_h]</param>
-                <param name="affix">_C$PARAM[id]_$PARAM[mod]$PARAM[pos]</param>
-                <param name="listitem">Container($PARAM[id]).ListItem($PARAM[mod]$PARAM[pos])</param>
-                <param name="selected">$PARAM[selected]</param>
-                <param name="id">$PARAM[id]</param>
-
-                <nested />
+            <control type="group">
+                <include content="$PARAM[layout_include]">
+                    <param name="icon">$VAR[$PARAM[icon_base_var]_C$PARAM[id]_$PARAM[mod]$PARAM[pos]]</param>
+                    <param name="item_w">$PARAM[item_w]</param>
+                    <param name="item_h">$PARAM[item_h]</param>
+                    <param name="affix">_C$PARAM[id]_$PARAM[mod]$PARAM[pos]</param>
+                    <param name="listitem">Container($PARAM[id]).ListItem($PARAM[mod]$PARAM[pos])</param>
+                    <param name="selected">$PARAM[selected]</param>
+                    <param name="id">$PARAM[id]</param>
+                </include>
 
                 <include content="Animation_ConditionalFade">
-                    <param name="condition">String.IsEmpty(Container($PARAM[id]).ListItemNoWrap($PARAM[mod]$PARAM[pos]).CurrentItem)</param>
+                    <param name="condition">String.IsEmpty(Container($PARAM[id]).ListItemNoWrap($PARAM[mod]$PARAM[pos]).CurrentItem) | [$PARAM[conditionalfade_condition]]</param>
                 </include>
 
                 <left>$PARAM[mod]$PARAM[prefix]_end_x_$PARAM[col]</left>
                 <top>$PARAM[prefix]_end_y_$PARAM[row]</top>
                 <visible>$PARAM[visible]</visible>
                 <visible>Control.IsVisible($PARAM[id])</visible>
+                <width>$PARAM[item_w]</width>
+                <height>$PARAM[item_h]</height>
 
                 <include content="$PARAM[visible_animation_include]">
                     <param name="col">$PARAM[col]</param>
@@ -245,8 +248,7 @@
                     <param name="visible">$PARAM[visible]</param>
                     <param name="prefix">$PARAM[prefix]</param>
                 </include>
-
-            </include>
+            </control>
         </definition>
     </include>
 
@@ -278,7 +280,7 @@
                 <param name="pos">$PARAM[p_0]</param>
                 <param name="row">$PARAM[row]</param>
                 <param name="col">0</param>
-                <animation effect="fade" start="100" end="0" condition="$PARAM[selected]">Conditional</animation>
+                <param name="conditionalfade_condition">$PARAM[selected]</param>
             </include>
             <include content="MediaWall_Poster" condition="$PARAM[enable_0]">
                 <param name="layout_include">$PARAM[layout_include]</param>
@@ -294,7 +296,7 @@
                 <param name="row">$PARAM[row]</param>
                 <param name="col">0</param>
                 <param name="selected">true</param>
-                <animation effect="fade" start="100" end="0" condition="![$PARAM[selected]]">Conditional</animation>
+                <param name="conditionalfade_condition">![$PARAM[selected]]</param>
             </include>
 
             <!-- Positive -->

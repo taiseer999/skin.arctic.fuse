@@ -149,32 +149,51 @@
         <param name="selected">false</param>
         <param name="positional_listitem">ListItem</param>
         <param name="conditional_listitem">ListItemNoWrap</param>
+        <param name="use_alternate">false</param>
         <definition>
-            <include content="$PARAM[content]">
-                <param name="icon">$VAR[$PARAM[icon_base_var]$PARAM[affix]_$PARAM[pos]]</param>
-                <param name="item_w">$PARAM[item_w]</param>
-                <param name="item_h">$PARAM[item_h]</param>
-                <param name="affix">$PARAM[affix]_$PARAM[pos]</param>
-                <param name="listitem">Container($PARAM[id]).$PARAM[positional_listitem]($PARAM[pos])</param>
-                <param name="id">$PARAM[id]</param>
-                <param name="selected">$PARAM[selected]</param>
-                <param name="detailed">$PARAM[detailed]</param>
-                <param name="misc">$PARAM[misc]</param>
-                <param name="variation">$PARAM[variation]</param>
-                <param name="diffuse">$PARAM[diffuse]</param>
+            <control type="group">
+
+                <include content="$PARAM[content]">
+                    <param name="icon">$VAR[$PARAM[icon_base_var]$PARAM[affix]_$PARAM[pos]]</param>
+                    <param name="item_w">$PARAM[item_w]</param>
+                    <param name="item_h">$PARAM[item_h]</param>
+                    <param name="affix">$PARAM[affix]_$PARAM[pos]</param>
+                    <param name="listitem">Container($PARAM[id]).$PARAM[positional_listitem]($PARAM[pos])</param>
+                    <param name="id">$PARAM[id]</param>
+                    <param name="selected">$PARAM[selected]</param>
+                    <param name="detailed">$PARAM[detailed]</param>
+                    <param name="misc">$PARAM[misc]</param>
+                    <param name="variation">$PARAM[variation]</param>
+                    <param name="diffuse">$PARAM[diffuse]</param>
+                </include>
 
                 <include content="Animation_ConditionalFade" condition="$PARAM[conditional_fade]">
                     <param name="condition">String.IsEmpty(Container($PARAM[id]).$PARAM[conditional_listitem]($PARAM[pos]).CurrentItem)</param>
                 </include>
-
                 <include content="Transitions_List_Row_Animation" condition="$PARAM[transition_animation]">
                     <param name="col">$PARAM[pos]</param>
                 </include>
 
                 <left>$PARAM[prefix]_posx_$PARAM[pos]</left>
+                <width>$PARAM[item_w]</width>
+                <height>$PARAM[item_h]</height>
 
-                <nested />
-            </include>
+                <visible>$PARAM[visible]</visible>
+
+                <include content="Transitions_List_Row_Item_Alt_Visible" condition="$PARAM[use_alternate]">
+                    <param name="id">$PARAM[id]</param>
+                    <param name="pos">$PARAM[pos]</param>
+                    <param name="condition_prefix">$PARAM[use_alternate_condition_prefix]</param>
+                </include>
+                <include content="Transitions_List_Row_Item_Alt_Slide" condition="$PARAM[use_alternate]">
+                    <param name="id">$PARAM[id]</param>
+                    <param name="pos">$PARAM[pos]</param>
+                    <param name="end">$PARAM[alt_slide]</param>
+                </include>
+
+                <include>$PARAM[include_animation]</include>
+
+            </control>
         </definition>
     </include>
 
@@ -212,17 +231,10 @@
                 <param name="transition_animation">$PARAM[transition_animation]</param>
                 <param name="conditional_fade">$PARAM[conditional_fade]</param>
                 <param name="selected">$PARAM[selected]</param>
-                <include content="Transitions_List_Row_Item_Alt_Visible" condition="$PARAM[use_alternate]">
-                    <param name="id">$PARAM[id]</param>
-                    <param name="pos">$PARAM[pos]</param>
-                    <param name="condition_prefix">!</param>
-                </include>
-                <include content="Transitions_List_Row_Item_Alt_Slide" condition="$PARAM[use_alternate]">
-                    <param name="id">$PARAM[id]</param>
-                    <param name="pos">$PARAM[pos]</param>
-                    <param name="end">$PARAM[alt_slide]</param>
-                </include>
-                <nested />
+                <param name="visible">$PARAM[visible]</param>
+                <param name="include_animation">$PARAM[include_animation]</param>
+                <param name="use_alternate">$PARAM[use_alternate]</param>
+                <param name="use_alternate_condition_prefix">!</param>
             </include>
             <include content="_Transitions_List_Row_Item" condition="$PARAM[use_alternate]">
                 <param name="detailed">$PARAM[detailed]</param>
@@ -242,16 +254,10 @@
                 <param name="transition_animation">$PARAM[transition_animation]</param>
                 <param name="conditional_fade">$PARAM[conditional_fade]</param>
                 <param name="selected">$PARAM[selected]</param>
-                <include content="Transitions_List_Row_Item_Alt_Visible">
-                    <param name="id">$PARAM[id]</param>
-                    <param name="pos">$PARAM[pos]</param>
-                </include>
-                <include content="Transitions_List_Row_Item_Alt_Slide">
-                    <param name="id">$PARAM[id]</param>
-                    <param name="pos">$PARAM[pos]</param>
-                    <param name="end">$PARAM[alt_slide]</param>
-                </include>
-                <nested />
+                <param name="visible">$PARAM[visible]</param>
+                <param name="include_animation">$PARAM[include_animation]</param>
+                <param name="alt_slide">$PARAM[alt_slide]</param>
+                <param name="use_alternate">$PARAM[use_alternate]</param>
             </include>
         </definition>
     </include>
@@ -285,7 +291,7 @@
                     <param name="positional_listitem">$PARAM[positional_listitem]</param>
                     <param name="conditional_listitem">$PARAM[conditional_listitem]</param>
                     <param name="use_alternate">False</param>
-                    <visible>$PARAM[visible]</visible>
+                    <param name="visible">$PARAM[visible]</param>
                 </include>
                 <include content="Transitions_List_Row_Item">
                     <param name="detailed">$PARAM[detailed]</param>
@@ -308,7 +314,7 @@
                     <param name="conditional_listitem">$PARAM[conditional_listitem]</param>
                     <param name="use_alternate">$PARAM[use_alternate]</param>
                     <param name="alt_slide">$PARAM[alt_slide]</param>
-                    <visible>$PARAM[visible]</visible>
+                    <param name="visible">$PARAM[visible]</param>
                 </include>
                 <include content="Transitions_List_Row_Item" condition="[!Integer.IsGreater(Skin.String(SkinConstant.Numeric.01),$PARAM[item_count]) + [!Skin.HasSetting(Views.DisableItemPeek) | !Integer.IsEqual(Skin.String(SkinConstant.Numeric.01),$PARAM[item_count])]] | !String.IsEqual(Skin.AspectRatio,16:9)">
                     <param name="detailed">$PARAM[detailed]</param>
@@ -331,7 +337,7 @@
                     <param name="conditional_listitem">$PARAM[conditional_listitem]</param>
                     <param name="use_alternate">$PARAM[use_alternate]</param>
                     <param name="alt_slide">$PARAM[alt_slide]</param>
-                    <visible>$PARAM[visible]</visible>
+                    <param name="visible">$PARAM[visible]</param>
                 </include>
                 <include content="Transitions_List_Row_Item" condition="[!Integer.IsGreater(Skin.String(SkinConstant.Numeric.02),$PARAM[item_count]) + [!Skin.HasSetting(Views.DisableItemPeek) | !Integer.IsEqual(Skin.String(SkinConstant.Numeric.02),$PARAM[item_count])]] | !String.IsEqual(Skin.AspectRatio,16:9)">
                     <param name="detailed">$PARAM[detailed]</param>
@@ -354,7 +360,7 @@
                     <param name="conditional_listitem">$PARAM[conditional_listitem]</param>
                     <param name="use_alternate">$PARAM[use_alternate]</param>
                     <param name="alt_slide">$PARAM[alt_slide]</param>
-                    <visible>$PARAM[visible]</visible>
+                    <param name="visible">$PARAM[visible]</param>
                 </include>
                 <include content="Transitions_List_Row_Item" condition="[!Integer.IsGreater(Skin.String(SkinConstant.Numeric.03),$PARAM[item_count]) + [!Skin.HasSetting(Views.DisableItemPeek) | !Integer.IsEqual(Skin.String(SkinConstant.Numeric.03),$PARAM[item_count])]] | !String.IsEqual(Skin.AspectRatio,16:9)">
                     <param name="detailed">$PARAM[detailed]</param>
@@ -377,7 +383,7 @@
                     <param name="conditional_listitem">$PARAM[conditional_listitem]</param>
                     <param name="use_alternate">$PARAM[use_alternate]</param>
                     <param name="alt_slide">$PARAM[alt_slide]</param>
-                    <visible>$PARAM[visible]</visible>
+                    <param name="visible">$PARAM[visible]</param>
                 </include>
                 <include content="Transitions_List_Row_Item" condition="[!Integer.IsGreater(Skin.String(SkinConstant.Numeric.04),$PARAM[item_count]) + [!Skin.HasSetting(Views.DisableItemPeek) | !Integer.IsEqual(Skin.String(SkinConstant.Numeric.04),$PARAM[item_count])]] | !String.IsEqual(Skin.AspectRatio,16:9)">
                     <param name="detailed">$PARAM[detailed]</param>
@@ -400,7 +406,7 @@
                     <param name="conditional_listitem">$PARAM[conditional_listitem]</param>
                     <param name="use_alternate">$PARAM[use_alternate]</param>
                     <param name="alt_slide">$PARAM[alt_slide]</param>
-                    <visible>$PARAM[visible]</visible>
+                    <param name="visible">$PARAM[visible]</param>
                 </include>
                 <include content="Transitions_List_Row_Item" condition="[!Integer.IsGreater(Skin.String(SkinConstant.Numeric.05),$PARAM[item_count]) + [!Skin.HasSetting(Views.DisableItemPeek) | !Integer.IsEqual(Skin.String(SkinConstant.Numeric.05),$PARAM[item_count])]] | !String.IsEqual(Skin.AspectRatio,16:9)">
                     <param name="detailed">$PARAM[detailed]</param>
@@ -423,7 +429,7 @@
                     <param name="conditional_listitem">$PARAM[conditional_listitem]</param>
                     <param name="use_alternate">$PARAM[use_alternate]</param>
                     <param name="alt_slide">$PARAM[alt_slide]</param>
-                    <visible>$PARAM[visible]</visible>
+                    <param name="visible">$PARAM[visible]</param>
                 </include>
                 <include content="Transitions_List_Row_Item" condition="[!Integer.IsGreater(Skin.String(SkinConstant.Numeric.06),$PARAM[item_count]) + [!Skin.HasSetting(Views.DisableItemPeek) | !Integer.IsEqual(Skin.String(SkinConstant.Numeric.06),$PARAM[item_count])]] | !String.IsEqual(Skin.AspectRatio,16:9)">
                     <param name="detailed">$PARAM[detailed]</param>
@@ -446,7 +452,7 @@
                     <param name="conditional_listitem">$PARAM[conditional_listitem]</param>
                     <param name="use_alternate">$PARAM[use_alternate]</param>
                     <param name="alt_slide">$PARAM[alt_slide]</param>
-                    <visible>$PARAM[visible]</visible>
+                    <param name="visible">$PARAM[visible]</param>
                 </include>
 
                 <include content="Transitions_List_Row_Item" condition="[!Integer.IsGreater(Skin.String(SkinConstant.Numeric.07),$PARAM[item_count]) + [!Skin.HasSetting(Views.DisableItemPeek) | !Integer.IsEqual(Skin.String(SkinConstant.Numeric.07),$PARAM[item_count])]] | !String.IsEqual(Skin.AspectRatio,16:9)">
@@ -470,7 +476,7 @@
                     <param name="conditional_listitem">$PARAM[conditional_listitem]</param>
                     <param name="use_alternate">$PARAM[use_alternate]</param>
                     <param name="alt_slide">$PARAM[alt_slide]</param>
-                    <visible>$PARAM[visible]</visible>
+                    <param name="visible">$PARAM[visible]</param>
                 </include>
 
                 <include content="Transitions_List_Row_Item" condition="[!Integer.IsGreater(Skin.String(SkinConstant.Numeric.08),$PARAM[item_count]) + [!Skin.HasSetting(Views.DisableItemPeek) | !Integer.IsEqual(Skin.String(SkinConstant.Numeric.08),$PARAM[item_count])]] | !String.IsEqual(Skin.AspectRatio,16:9)">
@@ -494,7 +500,7 @@
                     <param name="conditional_listitem">$PARAM[conditional_listitem]</param>
                     <param name="use_alternate">$PARAM[use_alternate]</param>
                     <param name="alt_slide">$PARAM[alt_slide]</param>
-                    <visible>$PARAM[visible]</visible>
+                    <param name="visible">$PARAM[visible]</param>
                 </include>
 
                 <include content="Transitions_List_Row_Item" condition="[!Integer.IsGreater(Skin.String(SkinConstant.Numeric.09),$PARAM[item_count]) + [!Skin.HasSetting(Views.DisableItemPeek) | !Integer.IsEqual(Skin.String(SkinConstant.Numeric.09),$PARAM[item_count])]] | !String.IsEqual(Skin.AspectRatio,16:9)">
@@ -518,7 +524,7 @@
                     <param name="conditional_listitem">$PARAM[conditional_listitem]</param>
                     <param name="use_alternate">$PARAM[use_alternate]</param>
                     <param name="alt_slide">$PARAM[alt_slide]</param>
-                    <visible>$PARAM[visible]</visible>
+                    <param name="visible">$PARAM[visible]</param>
                 </include>
             </control>
         </definition>
