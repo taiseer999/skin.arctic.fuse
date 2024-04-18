@@ -127,6 +127,7 @@
                 <visible>!$EXP[Shortcuts_Window_Exp_WidgetsOnly]</visible>
             </include> -->
             <include content="Categories_Iconic_Selector">
+                <param name="detailed">true</param>
                 <param name="id">300</param>
                 <param name="itemlayout_w">view_button_item_w</param>
                 <param name="offset_x">view_button_offset_x</param>
@@ -139,9 +140,8 @@
                 <param name="underline">true</param>
                 <param name="altfocus">[Integer.IsEqual(Window.Property(list_id),300) + [ControlGroup(3000).HasFocus() | ControlGroup(39000).HasFocus()]]</param>
                 <preloaditems>0</preloaditems>
-                <!-- <focusposition>1</focusposition>
-                <movement>1</movement> -->
-                <width>1020</width>
+                <movement>1</movement>
+                <width>1060</width>
                 <top>-40</top>
                 <!-- <top>20</top> -->
                 <height>hub_categorieswidget_h</height>
@@ -170,6 +170,7 @@
             <visible>!$EXP[Shortcuts_Window_Exp_WidgetsOnly]</visible>
 
             <include content="Categories_Iconic_Selector">
+                <param name="detailed">true</param>
                 <param name="id">302</param>
                 <param name="itemlayout_w">view_button_item_w</param>
                 <param name="offset_x">view_button_offset_x</param>
@@ -182,9 +183,8 @@
                 <param name="hidden_button">Items_Null</param>
                 <param name="altfocus">[Integer.IsEqual(Window.Property(list_id),302) + [ControlGroup(3000).HasFocus() | ControlGroup(39000).HasFocus()]]</param>
                 <preloaditems>0</preloaditems>
-                <!-- <focusposition>1</focusposition>
-                <movement>1</movement> -->
-                <width>1020</width>
+                <movement>1</movement>
+                <width>1060</width>
                 <onup>300</onup>
                 <top>-40</top>
                 <left>-25</left>

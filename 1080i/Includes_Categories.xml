@@ -46,7 +46,7 @@
                 <preloaditems>0</preloaditems>
                 <hitrect x="40" y="80" w="1360" h="80" />
                 <nested />
-                <width>1360</width>
+                <width>1460</width>
                 <movement>2</movement>
                 <onfocus condition="$PARAM[slide]">SetProperty(Slide.WidgetContainer,$PARAM[id],$PARAM[window_id])</onfocus>
                 <onfocus condition="![$PARAM[slide]]">ClearProperty(Slide.WidgetContainer,$PARAM[window_id])</onfocus>

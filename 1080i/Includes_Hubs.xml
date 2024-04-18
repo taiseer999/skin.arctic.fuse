@@ -478,6 +478,7 @@
             <param name="hidden_button_prefix">Item.$INFO[Container(300).ListItem.Property(item)]302.</param>
             <param name="hidden_button">List_ButtonMenu_Row_HiddenButton_Home_Categories</param>
             <param name="slide">True</param>
+            <width>1080</width>
             <include content="Hub_Categories_Definition_Content">
                 <param name="window_id">$PARAM[window_id]</param>
                 <param name="categories">$PARAM[categories]</param>
