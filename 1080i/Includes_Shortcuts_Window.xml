@@ -102,11 +102,10 @@
                 <label>$LOCALIZE[31105]$VAR[Label_Shortcut_HubSpotlight_Window_Path,: ,]</label>
                 <width max="920">auto</width>
                 <align>left</align>
-                <aligny>top</aligny>
+                <aligny>center</aligny>
                 <textcolor>main_fg_70</textcolor>
                 <textoffsetx>40</textoffsetx>
-                <textoffsety>17</textoffsety>
-                <font>font_main</font>
+                <font>font_mini</font>
                 <height>80</height>
                 <onup>306</onup>
                 <ondown>300</ondown>
@@ -127,7 +126,7 @@
                 <label>$LOCALIZE[31026] > $INFO[Window.Property(hub_prefix)] > $LOCALIZE[31150] ($INFO[Container(300).NumItems]$INFO[Container(302).NumItems, (,)])</label>
                 <visible>!$EXP[Shortcuts_Window_Exp_WidgetsOnly]</visible>
             </include> -->
-            <include content="List_ButtonMenu_Row">
+            <include content="Categories_Iconic_Selector">
                 <param name="id">300</param>
                 <param name="itemlayout_w">view_button_item_w</param>
                 <param name="offset_x">view_button_offset_x</param>
@@ -140,16 +139,19 @@
                 <param name="underline">true</param>
                 <param name="altfocus">[Integer.IsEqual(Window.Property(list_id),300) + [ControlGroup(3000).HasFocus() | ControlGroup(39000).HasFocus()]]</param>
                 <preloaditems>0</preloaditems>
-                <focusposition>1</focusposition>
-                <movement>1</movement>
+                <!-- <focusposition>1</focusposition>
+                <movement>1</movement> -->
                 <width>1020</width>
-                <!-- <top>0</top> -->
-                <top>20</top>
+                <top>-40</top>
+                <!-- <top>20</top> -->
                 <height>hub_categorieswidget_h</height>
                 <onup>301</onup>
                 <onleft>303</onleft>
                 <ondown>302</ondown>
-                <animation effect="slide" end="-240" condition="Integer.IsLess(Container(300).NumItems,3)">Conditional</animation>
+
+                <left>-25</left>
+
+                <!-- <animation effect="slide" end="-240" condition="Integer.IsLess(Container(300).NumItems,3)">Conditional</animation> -->
 
                 <onclick>SetFocus(1300)</onclick>
 
@@ -167,7 +169,7 @@
             <height>hub_categorieswidget_h</height>
             <visible>!$EXP[Shortcuts_Window_Exp_WidgetsOnly]</visible>
 
-            <include content="List_ButtonMenu_Row">
+            <include content="Categories_Iconic_Selector">
                 <param name="id">302</param>
                 <param name="itemlayout_w">view_button_item_w</param>
                 <param name="offset_x">view_button_offset_x</param>
@@ -180,13 +182,15 @@
                 <param name="hidden_button">Items_Null</param>
                 <param name="altfocus">[Integer.IsEqual(Window.Property(list_id),302) + [ControlGroup(3000).HasFocus() | ControlGroup(39000).HasFocus()]]</param>
                 <preloaditems>0</preloaditems>
-                <focusposition>1</focusposition>
-                <movement>1</movement>
+                <!-- <focusposition>1</focusposition>
+                <movement>1</movement> -->
                 <width>1020</width>
                 <onup>300</onup>
+                <top>-40</top>
+                <left>-25</left>
                 <onleft>303</onleft>
                 <ondown>304</ondown>
-                <animation effect="slide" end="-240" condition="Integer.IsLess(Container(302).NumItems,3)">Conditional</animation>
+                <!-- <animation effect="slide" end="-240" condition="Integer.IsLess(Container(302).NumItems,3)">Conditional</animation> -->
                 <onclick>SetFocus(1302)</onclick>
                 <visible>String.IsEmpty(Container(300).ListItem.Property(submenulist_path))</visible>
                 <visible>!String.IsEmpty(Container(300).ListItem.Property(guid))</visible>
@@ -195,16 +199,15 @@
 
             <control type="label">
                 <left>0</left>
-                <top>20</top>
+                <top>40</top>
                 <visible>!String.IsEmpty(Container(300).ListItem.Property(submenulist_path))</visible>
                 <label>$LOCALIZE[31003]$INFO[Container(300).ListItem.Property(submenulist_path),: ,]</label>
                 <width max="1080">auto</width>
                 <align>left</align>
-                <aligny>top</aligny>
+                <aligny>center</aligny>
                 <textcolor>main_fg_70</textcolor>
                 <textoffsetx>40</textoffsetx>
-                <textoffsety>17</textoffsety>
-                <font>font_main</font>
+                <font>font_mini</font>
                 <height>80</height>
             </control>
         </control>

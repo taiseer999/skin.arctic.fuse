@@ -88,6 +88,7 @@
                     <param name="ondown">$PARAM[ondown]</param>
                     <param name="id">$PARAM[id]</param>
                 </include>
+                <left>5</left>
                 <nested />
             </include>
         </definition>
@@ -456,6 +457,7 @@
                 <param name="window_id">$PARAM[window_id]</param>
                 <param name="categories">$PARAM[categories]</param>
             </include>
+            <left>5</left>
         </include>
     </include>
 
