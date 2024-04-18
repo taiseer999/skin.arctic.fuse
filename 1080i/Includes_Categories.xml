@@ -33,9 +33,9 @@
                 <param name="orientation">horizontal</param>
                 <param name="control">fixedlist</param>
                 <param name="id">$PARAM[id]</param>
-                <param name="item_w">310</param>
+                <param name="item_w">335</param>
                 <param name="item_h">80</param>
-                <param name="itemlayout_w">330</param>
+                <param name="itemlayout_w">355</param>
                 <param name="itemlayout_h">120</param>
                 <param name="itemlayout_include">Layout_Info_Selector</param>
                 <param name="offset_x">view_button_offset_x</param>

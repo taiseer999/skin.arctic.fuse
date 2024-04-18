@@ -69,7 +69,8 @@
         <param name="ondown">340</param>
         <param name="hidden_button">List_ButtonMenu_Row_HiddenButton_View</param>
         <definition>
-            <include content="Categories_Iconic_Selector">
+            <include content="Categories_Iconic_Selector" condition="$EXP[Exp_Views_UseAltCombined]">
+                <param name="detailed">true</param>
                 <param name="id">$PARAM[id]</param>
                 <param name="window_id">$PARAM[window_id]</param>
                 <param name="font">font_mini</param>
@@ -88,7 +89,31 @@
                     <param name="ondown">$PARAM[ondown]</param>
                     <param name="id">$PARAM[id]</param>
                 </include>
-                <left>5</left>
+                <left>-20</left>
+                <top>-5</top>
+                <nested />
+            </include>
+            <include content="Categories_Selector" condition="!$EXP[Exp_Views_UseAltCombined]">
+                <param name="id">$PARAM[id]</param>
+                <param name="window_id">$PARAM[window_id]</param>
+                <param name="font">font_mini</param>
+                <param name="color_fo">$VAR[Hub_Submenu_Highlight]</param>
+                <param name="color_nf">main_fg_30</param>
+                <param name="hidden_button">$PARAM[hidden_button]</param>
+                <param name="hidden_button_prefix">$PARAM[hidden_button_prefix]</param>
+                <param name="slide">True</param>
+                <param name="hitrect_x">20</param>
+                <param name="hitrect_y">70</param>
+                <param name="hitrect_w">1080</param>
+                <param name="hitrect_h">100</param>
+                <param name="shorten">True</param>
+                <include content="Hub_Submenu_List_Definition_Content">
+                    <param name="window_id">$PARAM[window_id]</param>
+                    <param name="ondown">$PARAM[ondown]</param>
+                    <param name="id">$PARAM[id]</param>
+                </include>
+                <!-- <hitrectcolor>7fffff00</hitrectcolor> -->
+                <top>40</top>
                 <nested />
             </include>
         </definition>
@@ -442,7 +467,8 @@
     </include>
 
     <include name="Hub_Categories_Definition">
-        <include content="Categories_Iconic_Selector">
+        <include content="Categories_Iconic_Selector" condition="$EXP[Exp_Views_UseAltCombined]">
+            <param name="detailed">true</param>
             <param name="window_id">$PARAM[window_id]</param>
             <param name="hitrect_x">20</param>
             <param name="hitrect_y">-20</param>
@@ -456,7 +482,25 @@
                 <param name="window_id">$PARAM[window_id]</param>
                 <param name="categories">$PARAM[categories]</param>
             </include>
-            <left>5</left>
+            <left>-20</left>
+            <top>-5</top>
+        </include>
+        <include content="Categories_Selector" condition="!$EXP[Exp_Views_UseAltCombined]">
+            <param name="window_id">$PARAM[window_id]</param>
+            <param name="hitrect_x">20</param>
+            <param name="hitrect_y">50</param>
+            <param name="hitrect_w">1080</param>
+            <param name="hitrect_h">100</param>
+            <param name="shorten">True</param>
+            <param name="hidden_button_prefix">Item.$INFO[Container(300).ListItem.Property(item)]302.</param>
+            <param name="hidden_button">List_ButtonMenu_Row_HiddenButton_Home_Categories</param>
+            <param name="slide">True</param>
+            <include content="Hub_Categories_Definition_Content">
+                <param name="window_id">$PARAM[window_id]</param>
+                <param name="categories">$PARAM[categories]</param>
+            </include>
+            <!-- <hitrectcolor>7fff00ff</hitrectcolor> -->
+            <top>60</top>
         </include>
     </include>
 

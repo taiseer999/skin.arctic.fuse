@@ -529,13 +529,13 @@
     </variable>
 
     <variable name="Label_Setting_CombinedStyle">
-        <value condition="$EXP[Exp_Views_UseAltCombined]">$LOCALIZE[31163]</value>
-        <value>$LOCALIZE[31164]</value>
+        <value condition="$EXP[Exp_Views_UseAltCombined]">$LOCALIZE[31137]</value>
+        <value>$LOCALIZE[10036]</value>
     </variable>
 
     <variable name="Label_Setting_EPGChannelsStyle">
         <value condition="!Skin.HasSetting(Views.UseHalfPVRGuide)">$LOCALIZE[10036]</value>
-        <value>$LOCALIZE[19033]</value>
+        <value>$LOCALIZE[31137]</value>
     </variable>
 
     <variable name="Label_Player_Plot">
