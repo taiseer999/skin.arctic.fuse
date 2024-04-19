@@ -103,13 +103,13 @@
     <expression name="Exp_View_513">$EXP[Exp_View_512]</expression>
     <expression name="Exp_View_523">$EXP[Exp_View_522]</expression>
 
-    <expression name="Exp_Views_UseAltCombined">[Skin.HasSetting(Views.UseAltCombined)]</expression>
+    <expression name="Exp_Views_UseVertCombined">[Skin.HasSetting(Views.UseVertCombined)]</expression>
 
     <!-- Scrollbar -->
     <expression name="Exp_ScrollbarVisible_H">[Control.HasFocus(60) | [Control.HasFocus(330) + Integer.IsEqual(Window.Property(List.ViewContainer),60)]]</expression>
     <expression name="Exp_ScrollbarVisible_V">[Control.HasFocus(61) | Control.HasFocus(65)]</expression>
 
-    <expression name="Exp_FurnitureFooter_Left_IsVisible">[![$EXP[Exp_View_502] | $EXP[Exp_View_512] | $EXP[Exp_View_522]] | $EXP[Exp_Views_UseAltCombined]]</expression>
+    <expression name="Exp_FurnitureFooter_Left_IsVisible">[![$EXP[Exp_View_502] | $EXP[Exp_View_512] | $EXP[Exp_View_522]] | $EXP[Exp_Views_UseVertCombined]]</expression>
 
 
     <!-- Filter Walls -->
@@ -119,7 +119,7 @@
 
     <expression name="Exp_FilterWall_IsEnabled">[[Window.IsMedia | Window.IsVisible(1105)] + Skin.HasSetting(Navigation.MediaFilterWall) + !Skin.HasSetting(Views.DisableItemPeek)]</expression>
 
-    <expression name="Exp_FilterWall_IsViewtype">[Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(52) | [[Control.IsVisible(502) | Control.IsVisible(512) | Control.IsVisible(522)] + !$EXP[Exp_Views_UseAltCombined]]]</expression>
+    <expression name="Exp_FilterWall_IsViewtype">[Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(52) | [[Control.IsVisible(502) | Control.IsVisible(512) | Control.IsVisible(522)] + !$EXP[Exp_Views_UseVertCombined]]]</expression>
 
     <expression name="Exp_BackgroundArtwork_IsHidden">[$EXP[Exp_FilterWall_IsActive] | Window.IsVisible(favouritesbrowser)]</expression>
 

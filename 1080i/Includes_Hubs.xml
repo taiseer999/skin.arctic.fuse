@@ -69,8 +69,7 @@
         <param name="ondown">340</param>
         <param name="hidden_button">List_ButtonMenu_Row_HiddenButton_View</param>
         <definition>
-            <include content="Categories_Iconic_Selector" condition="$EXP[Exp_Views_UseAltCombined]">
-                <param name="detailed">true</param>
+            <include content="Categories_Iconic_Selector" condition="Skin.HasSetting(Views.UseAltCombined)">
                 <param name="id">$PARAM[id]</param>
                 <param name="window_id">$PARAM[window_id]</param>
                 <param name="font">font_mini</param>
@@ -93,7 +92,7 @@
                 <top>-5</top>
                 <nested />
             </include>
-            <include content="Categories_Selector" condition="!$EXP[Exp_Views_UseAltCombined]">
+            <include content="Categories_Selector" condition="!Skin.HasSetting(Views.UseAltCombined)">
                 <param name="id">$PARAM[id]</param>
                 <param name="window_id">$PARAM[window_id]</param>
                 <param name="font">font_mini</param>
@@ -467,8 +466,7 @@
     </include>
 
     <include name="Hub_Categories_Definition">
-        <include content="Categories_Iconic_Selector" condition="$EXP[Exp_Views_UseAltCombined]">
-            <param name="detailed">true</param>
+        <include content="Categories_Iconic_Selector" condition="Skin.HasSetting(Views.UseAltCombined)">
             <param name="window_id">$PARAM[window_id]</param>
             <param name="hitrect_x">20</param>
             <param name="hitrect_y">-20</param>
@@ -486,7 +484,7 @@
             <left>-20</left>
             <top>-5</top>
         </include>
-        <include content="Categories_Selector" condition="!$EXP[Exp_Views_UseAltCombined]">
+        <include content="Categories_Selector" condition="!Skin.HasSetting(Views.UseAltCombined)">
             <param name="window_id">$PARAM[window_id]</param>
             <param name="hitrect_x">20</param>
             <param name="hitrect_y">50</param>

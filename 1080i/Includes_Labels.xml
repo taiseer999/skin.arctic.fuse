@@ -529,7 +529,7 @@
     </variable>
 
     <variable name="Label_Setting_CombinedStyle">
-        <value condition="$EXP[Exp_Views_UseAltCombined]">$LOCALIZE[31137]</value>
+        <value condition="Skin.HasSetting(Views.UseAltCombined)">$LOCALIZE[31137]</value>
         <value>$LOCALIZE[10036]</value>
     </variable>
 
@@ -758,6 +758,7 @@
         <value condition="String.StartsWith(ListItem.FolderPath,library://)">$LOCALIZE[14022]</value>
         <value condition="String.StartsWith(ListItem.FolderPath,videodb://)">$LOCALIZE[14022]</value>
         <value condition="String.StartsWith(ListItem.FolderPath,pvr://)">$LOCALIZE[31000]</value>
+        <value condition="String.StartsWith(ListItem.FolderPath,plugin://)">$LOCALIZE[24000]</value>
         <value condition="ListItem.IsFolder">$LOCALIZE[20334]</value>
         <value>$LOCALIZE[31025]</value>
     </variable>
@@ -1328,9 +1329,9 @@
         <value condition="Window.IsMedia + String.IsEqual(Container.FolderName,Skin Variables) + !String.IsEmpty(Window.Property(MediaFilter.BaseDir.Name))">$INFO[Window.Property(MediaFilter.BaseDir.Name)]</value>
 
         <!-- Combined View Labels -->
-        <value condition="Window.IsMedia + Control.IsVisible(502) + [!Control.HasFocus(502) | !$EXP[Exp_Views_UseAltCombined]]">$INFO[Container(502).ListItem.Label]</value>
-        <value condition="Window.IsMedia + Control.IsVisible(512) + [!Control.HasFocus(512) | !$EXP[Exp_Views_UseAltCombined]]">$INFO[Container(512).ListItem.Label]</value>
-        <value condition="Window.IsMedia + Control.IsVisible(522) + [!Control.HasFocus(522) | !$EXP[Exp_Views_UseAltCombined]]">$INFO[Container(522).ListItem.Label]</value>
+        <value condition="Window.IsMedia + Control.IsVisible(502) + [!Control.HasFocus(502) | !$EXP[Exp_Views_UseVertCombined]]">$INFO[Container(502).ListItem.Label]</value>
+        <value condition="Window.IsMedia + Control.IsVisible(512) + [!Control.HasFocus(512) | !$EXP[Exp_Views_UseVertCombined]]">$INFO[Container(512).ListItem.Label]</value>
+        <value condition="Window.IsMedia + Control.IsVisible(522) + [!Control.HasFocus(522) | !$EXP[Exp_Views_UseVertCombined]]">$INFO[Container(522).ListItem.Label]</value>
 
         <!-- Playlist label -->
         <value condition="Window.IsVisible(videoplaylist)">$LOCALIZE[10025]</value>

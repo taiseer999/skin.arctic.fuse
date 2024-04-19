@@ -2397,13 +2397,13 @@
                         <include condition="$PARAM[selected]">Color_SelectedText</include>
                         <label>$INFO[ListItem.Label]</label>
 
-                        <!-- <font>font_mini</font>
+                        <font>font_mini</font>
                         <textcolor>main_fg_70</textcolor>
-                        <selectedcolor>main_fg_70</selectedcolor> -->
+                        <selectedcolor>main_fg_70</selectedcolor>
 
-                        <font>font_mini_black</font>
+                        <!-- <font>font_mini_black</font>
                         <textcolor>main_fg_90</textcolor>
-                        <selectedcolor>main_fg_90</selectedcolor>
+                        <selectedcolor>main_fg_90</selectedcolor> -->
 
                         <aligny>center</aligny>
                         <autoscroll>false</autoscroll>

@@ -8,6 +8,7 @@
     <property name="listid">$NUMBER[{endrow_widget_id}]</property>
     <property name="onfocus_one">SetProperty(TMDbHelper.WidgetContainer,{endrow_widget_id})</property>
     <property name="onfocus_two">SetProperty(Transition.WidgetStyle,{endrow_widget_include},Home)</property>
+    <property name="sublabel">{parts_sublabel}</property>
     {parts_onclick}
     {parts_additional}
     <visible>{parts_visible}</visible>

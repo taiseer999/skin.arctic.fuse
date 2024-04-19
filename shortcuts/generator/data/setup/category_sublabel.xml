@@ -13,6 +13,14 @@
             <value>$LOCALIZE[24001]</value>
         </rule>
         <rule>
+            <condition>{item_path}&lt;&lt;plugin://</condition>
+            <value>$LOCALIZE[24000]</value>
+        </rule>
+        <rule>
+            <condition>{item_path}&lt;&lt;.xsp</condition>
+            <value>$LOCALIZE[559]</value>
+        </rule>
+        <rule>
             <condition>{item_path}&lt;&lt;library://video/movies/</condition>
             <condition>{item_path}!=library://video/movies/</condition>
             <value>$LOCALIZE[342]</value>

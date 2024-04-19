@@ -42,7 +42,7 @@
                 <param name="hidden_button_enabled">true</param>
                 <param name="hidden_button_prefix">$PARAM[hidden_button_prefix]</param>
                 <param name="hidden_button">$PARAM[hidden_button]</param>
-                <param name="detailed">$PARAM[detailed]</param>
+                <param name="detailed">true</param>
                 <preloaditems>0</preloaditems>
                 <hitrect x="40" y="80" w="1360" h="80" />
                 <nested />
