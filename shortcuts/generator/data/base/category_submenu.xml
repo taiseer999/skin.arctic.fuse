@@ -16,15 +16,37 @@
                         <include content="Action_SkinVariables_ShortcutList_Onclick">
                             <param name="id">302</param>
                         </include>
-                        <content>plugin://script.skinvariables/?info=get_shortcuts_node&amp;skin=$VAR[Path_SkinVariables_SkinFolder]&amp;menu={item_menu}&amp;guid={item_guid}$INFO[Window(Home).Property(SkinVariables.ShortcutsNode.Reload),&amp;reload=,]</content>
-                        <visible>{parts_visible}</visible>
+                        <content>{parts_content}</content>
+                        <visible>String.IsEqual(Container(300).ListItem.Property(guid),{item_guid})</visible>
                     </include>
                     ]]>
                 </template>
                 <datafile>generator/data/setup/submenu_row.xml</datafile>
                 <condition>{item_submenulist_path}==</condition>
-                <value name="parts_visible">
-                    <template>String.IsEqual(Container(300).ListItem.Property(guid),{item_guid})</template>
+                <value name="parts_content">
+                    <!-- <template>plugin://script.skinvariables/?info=get_shortcuts_node&amp;skin=$VAR[Path_SkinVariables_SkinFolder]&amp;menu={item_menu}&amp;guid={item_guid}$INFO[Window(Home).Property(SkinVariables.ShortcutsNode.Reload),&amp;reload=,]</template> -->
+                    <items menu="{item_menu}" item="{item_x}" mode="submenu">
+                        <item>
+                            <template>generator/data/parts/menu_item.xmltemplate</template>
+                            <datafile>generator/data/setup/onclick_path.xml</datafile>
+                            <condition>{item_disabled}!=True</condition>
+                            <value name="parts_visible">True</value>
+                            <value name="parts_additional">
+                                <template>
+                                    <![CDATA[
+                                    <property name="widget_style">{item_widget_style}</property>
+                                    <property name="widget_sortby">{item_widget_sortby}</property>
+                                    <property name="widget_sortorder">{item_widget_sortorder}</property>
+                                    <property name="widget_limit">{item_widget_limit}</property>
+                                    <property name="widget_path">{item_widget_path}</property>
+                                    <property name="sublabel">{parts_sublabel}</property>
+                                    <onclick>Dialog.Close(1170,true)</onclick>
+                                    ]]>
+                                </template>
+                                <datafile>generator/data/setup/category_sublabel.xml</datafile>
+                            </value>
+                        </item>
+                    </items>
                 </value>
             </item>
             <item>

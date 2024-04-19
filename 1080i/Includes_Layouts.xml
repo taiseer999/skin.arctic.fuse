@@ -739,7 +739,7 @@
                     <include content="Object_InfoCircle" condition="!$PARAM[selected]">
                         <param name="icon">$VAR[Image_Layout_CombinedIcon]</param>
                         <param name="role">$VAR[Label_MediaList_Title]</param>
-                        <param name="name">$VAR[Label_MediaList_Sub]</param>
+                        <param name="name">$VAR[Label_VideoInfo_DetailsItem]</param>
                         <include content="Object_Right" condition="$PARAM[variation]">
                             <param name="right">60</param>
                         </include>
@@ -771,7 +771,7 @@
                         <param name="textcolor_top">$VAR[ColorSelected]</param>
                         <param name="textcolor_sub">$VAR[ColorSelected]</param>
                         <param name="role">$VAR[Label_MediaList_Title]</param>
-                        <param name="name">$VAR[Label_MediaList_Sub]</param>
+                        <param name="name">$VAR[Label_VideoInfo_DetailsItem]</param>
                         <include content="Object_Right" condition="$PARAM[variation]">
                             <param name="right">60</param>
                         </include>
@@ -827,7 +827,7 @@
                         <param name="diffuse">-</param>
                         <param name="fallback">folder.png</param>
                         <param name="role">$VAR[Label_MediaList_Title]</param>
-                        <param name="name">$VAR[Label_MediaList_Sub]</param>
+                        <param name="name">$VAR[Label_VideoInfo_DetailsItem]</param>
                         <right>60</right>
                     </include>
                     <include content="Object_InfoCircle" condition="$PARAM[selected]">
@@ -836,7 +836,7 @@
                         <param name="diffuse">-</param>
                         <param name="fallback">folder.png</param>
                         <param name="role">$VAR[Label_MediaList_Title]</param>
-                        <param name="name">$VAR[Label_MediaList_Sub]</param>
+                        <param name="name">$VAR[Label_VideoInfo_DetailsItem]</param>
                         <param name="textcolor_top">$VAR[ColorSelected]</param>
                         <param name="textcolor_sub">$VAR[ColorSelected]</param>
                         <right>60</right>

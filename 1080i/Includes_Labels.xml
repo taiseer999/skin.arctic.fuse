@@ -725,12 +725,41 @@
     <variable name="Label_VideoInfo_DetailsItem">
         <value condition="!String.IsEmpty(ListItem.Property(sublabel))">$INFO[ListItem.Property(sublabel)]</value>
         <value condition="ListItem.IsCollection">$LOCALIZE[31236]</value>
-        <value condition="String.IsEqual(ListItem.DBType,season) + !String.IsEmpty(ListItem.Property(totalepisodes)) + !String.IsEmpty(ListItem.Property(watchedepisodes))">$INFO[ListItem.Property(watchedepisodes),, $LOCALIZE[1443] ]$INFO[ListItem.Property(totalepisodes),, [LOWERCASE]$LOCALIZE[16102][/LOWERCASE]]</value>
-        <value condition="String.IsEqual(ListItem.DBType,season) + !String.IsEmpty(ListItem.Episode)">$INFO[ListItem.Episode,, $LOCALIZE[20453]]</value>
+        <value condition="[String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode)] + !String.IsEmpty(ListItem.Director)">$INFO[ListItem.Director,[COLOR=main_fg_30]$LOCALIZE[31478][/COLOR] ,]</value>
+        <value condition="[String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)] + !String.IsEmpty(ListItem.Property(totalepisodes)) + !String.IsEmpty(ListItem.Property(watchedepisodes))">$INFO[ListItem.Property(watchedepisodes),, $LOCALIZE[1443] ]$INFO[ListItem.Property(totalepisodes),, [LOWERCASE]$LOCALIZE[16102][/LOWERCASE]]</value>
+        <value condition="[String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)] + !String.IsEmpty(ListItem.Episode)">$INFO[ListItem.Episode,, $LOCALIZE[20453]]</value>
+        <value condition="!String.IsEmpty(ListItem.Artist) + !String.IsEqual(ListItem.DBType,artist)">$INFO[ListItem.Artist,[COLOR=main_fg_30]$LOCALIZE[31478][/COLOR] ,]</value>
+        <value condition="!String.IsEmpty(ListItem.AlbumArtist) + !String.IsEqual(ListItem.DBType,artist)">$INFO[ListItem.AlbumArtist,[COLOR=main_fg_30]$LOCALIZE[31478][/COLOR] ,]</value>
+        <value condition="!String.IsEmpty(ListItem.Property(Artist_Genre))">$INFO[ListItem.Property(Artist_Genre),,]</value>
+        <value condition="!String.IsEmpty(ListItem.Property(Artist_YearsActive))">$INFO[ListItem.Property(Artist_YearsActive),,]</value>
         <value condition="!String.IsEmpty(ListItem.Property(role))">$INFO[ListItem.Property(role),[COLOR=main_fg_30]$LOCALIZE[20347][/COLOR] ,]</value>
         <value condition="!String.IsEmpty(ListItem.Label2)">$INFO[ListItem.Label2]</value>
         <value condition="!String.IsEmpty(ListItem.DBType)">[CAPITALIZE]$INFO[ListItem.DBType][/CAPITALIZE]</value>
-        <value>$LOCALIZE[20334]</value>
+
+        <value condition="String.IsEqual(ListItem.FolderPath,library://video/movies/)">$LOCALIZE[14022]</value>
+        <value condition="String.IsEqual(ListItem.FolderPath,videodb://movies/)">$LOCALIZE[14022]</value>
+        <value condition="String.IsEqual(ListItem.FolderPath,library://video/tvshows/)">$LOCALIZE[14022]</value>
+        <value condition="String.IsEqual(ListItem.FolderPath,videodb://tvshows/)">$LOCALIZE[14022]</value>
+
+        <value condition="String.Contains(ListItem.FolderPath,/years/) + !String.EndsWith(ListItem.FolderPath,/years/)">$LOCALIZE[345]</value>
+
+        <value condition="String.StartsWith(ListItem.FolderPath,library://video/movies/)">$LOCALIZE[20342]</value>
+        <value condition="String.StartsWith(ListItem.FolderPath,videodb://movies/)">$LOCALIZE[20342]</value>
+        <value condition="String.StartsWith(ListItem.FolderPath,library://video/tvshows/)">$LOCALIZE[20343]</value>
+        <value condition="String.StartsWith(ListItem.FolderPath,videodb://tvshows/)">$LOCALIZE[20343]</value>
+
+        <value condition="String.EndsWith(ListItem.FolderPath,/addons.xml/)">$LOCALIZE[24001]</value>
+        <value condition="String.StartsWith(ListItem.FolderPath,addons://)">$LOCALIZE[24001]</value>
+
+        <value condition="String.EndsWith(ListItem.FolderPath,.xsp)">$LOCALIZE[559]</value>
+
+        <value condition="String.StartsWith(ListItem.FolderPath,library://music/)">$LOCALIZE[249]</value>
+        <value condition="String.StartsWith(ListItem.FolderPath,musicdb://)">$LOCALIZE[249]</value>
+        <value condition="String.StartsWith(ListItem.FolderPath,library://)">$LOCALIZE[14022]</value>
+        <value condition="String.StartsWith(ListItem.FolderPath,videodb://)">$LOCALIZE[14022]</value>
+        <value condition="String.StartsWith(ListItem.FolderPath,pvr://)">$LOCALIZE[31000]</value>
+        <value condition="ListItem.IsFolder">$LOCALIZE[20334]</value>
+        <value>$LOCALIZE[31025]</value>
     </variable>
 
     <variable name="Label_OSD_HintText">
@@ -1117,17 +1146,6 @@
         <value condition="!String.IsEmpty(ListItem.Label)">$INFO[ListItem.Label]</value>
     </variable>
 
-    <variable name="Label_MediaList_Sub">
-        <value condition="!String.IsEmpty(ListItem.Director)">$INFO[ListItem.Director,[COLOR=main_fg_30]$LOCALIZE[31478][/COLOR] ,]</value>
-        <value condition="!String.IsEmpty(ListItem.Property(totalepisodes))">$INFO[ListItem.Property(watchedepisodes),$LOCALIZE[16102] , $LOCALIZE[1443] ]$INFO[ListItem.Property(totalepisodes),, $LOCALIZE[20453]]</value>
-        <value condition="!String.IsEmpty(ListItem.Artist) + !String.IsEqual(ListItem.DBType,artist)">$INFO[ListItem.Artist,[COLOR=main_fg_30]$LOCALIZE[31478][/COLOR] ,]</value>
-        <value condition="!String.IsEmpty(ListItem.AlbumArtist) + !String.IsEqual(ListItem.DBType,artist)">$INFO[ListItem.AlbumArtist,[COLOR=main_fg_30]$LOCALIZE[31478][/COLOR] ,]</value>
-        <value condition="!String.IsEmpty(ListItem.Property(Artist_Genre))">$INFO[ListItem.Property(Artist_Genre),,]</value>
-        <value condition="!String.IsEmpty(ListItem.Property(Artist_YearsActive))">$INFO[ListItem.Property(Artist_YearsActive),,]</value>
-        <value condition="!String.IsEmpty(ListItem.DBType)">$INFO[ListItem.DBType,[CAPITALIZE],[/CAPITALIZE]]</value>
-        <value condition="ListItem.IsFolder">$LOCALIZE[20334]</value>
-        <value>$LOCALIZE[31025]</value>
-    </variable>
 
     <variable name="Label_MediaList_Rating">
         <value condition="!String.IsEmpty(ListItem.TrackNumber)">$INFO[ListItem.TrackNumber,#,]</value>
