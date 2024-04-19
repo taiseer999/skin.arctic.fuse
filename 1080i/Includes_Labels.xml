@@ -15,7 +15,7 @@
     </variable>
 
     <variable name="Label_NextBump">
-        <!-- <value condition="Window.IsMedia">$LOCALIZE[31135]$INFO[Container.CurrentPage, , $LOCALIZE[20163] ]$INFO[Container.NumPages]</value> -->
+        <value condition="Window.IsMedia">$LOCALIZE[31135]$INFO[Container.CurrentPage, , $LOCALIZE[20163] ]$INFO[Container.NumPages]</value>
         <value>Kodi$INFO[System.BuildVersionCode, v,]</value>
     </variable>
 
