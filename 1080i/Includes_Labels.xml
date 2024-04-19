@@ -1329,9 +1329,9 @@
         <value condition="Window.IsMedia + String.IsEqual(Container.FolderName,Skin Variables) + !String.IsEmpty(Window.Property(MediaFilter.BaseDir.Name))">$INFO[Window.Property(MediaFilter.BaseDir.Name)]</value>
 
         <!-- Combined View Labels -->
-        <value condition="Window.IsMedia + Control.IsVisible(502) + [!Control.HasFocus(502) | !$EXP[Exp_Views_UseVertCombined]]">$INFO[Container(502).ListItem.Label]</value>
-        <value condition="Window.IsMedia + Control.IsVisible(512) + [!Control.HasFocus(512) | !$EXP[Exp_Views_UseVertCombined]]">$INFO[Container(512).ListItem.Label]</value>
-        <value condition="Window.IsMedia + Control.IsVisible(522) + [!Control.HasFocus(522) | !$EXP[Exp_Views_UseVertCombined]]">$INFO[Container(522).ListItem.Label]</value>
+        <value condition="Window.IsMedia + Control.IsVisible(502)">$INFO[Container(502).ListItem.Label]</value>
+        <value condition="Window.IsMedia + Control.IsVisible(512)">$INFO[Container(512).ListItem.Label]</value>
+        <value condition="Window.IsMedia + Control.IsVisible(522)">$INFO[Container(522).ListItem.Label]</value>
 
         <!-- Playlist label -->
         <value condition="Window.IsVisible(videoplaylist)">$LOCALIZE[10025]</value>
