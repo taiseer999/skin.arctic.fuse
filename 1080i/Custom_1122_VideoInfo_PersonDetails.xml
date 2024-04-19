@@ -39,7 +39,7 @@
 
             <control type="grouplist" id="5000">
                 <top>500</top>
-                <onup>Close</onup>
+                <onup>4002</onup>
                 <ondown>330</ondown>
                 <include>Animation_Down_Delay</include>
                 <orientation>vertical</orientation>
@@ -91,6 +91,8 @@
 
         <include content="DialogInfo_ButtonGroup_Basic">
             <param name="include">Items_PersonCredits_MenuBar</param>
+            <onup>Close</onup>
+            <ondown>5000</ondown>
             <onleft condition="!String.IsEmpty(Window.Property(TMDbHelper.WidgetContainer))">SetFocus($INFO[Window.Property(TMDbHelper.WidgetContainer)],99999,absolute)</onleft>
             <onright condition="!String.IsEmpty(Window.Property(TMDbHelper.WidgetContainer))">SetFocus($INFO[Window.Property(TMDbHelper.WidgetContainer)],0,absolute)</onright>
         </include>

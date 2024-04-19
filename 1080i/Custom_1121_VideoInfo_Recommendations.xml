@@ -11,6 +11,7 @@
         <include content="DialogInfo_Recommendations_Group">
             <include>DialogInfo_Recommendations_InfoPanel</include>
             <include content="DialogInfo_Recommendations_Widgets_Grouplist">
+                <param name="onup">SetFocus(303,1)</param>
                 <control type="button" id="5098">
                     <height>0</height>
                     <texturefocus />
