@@ -290,6 +290,11 @@
         <value condition="Skin.String(VideoInfo.PersonCredits.SortKey,date)">&amp;sort_key=first_air_date</value>
     </variable>
 
+    <variable name="Path_Param_SortKey">
+        <value condition="String.IsEqual(Window.Property(Item_Type),type=tv)">$VAR[Path_Param_SortKey_TVShowCredits]</value>
+        <value>$VAR[Path_Param_SortKey_MovieCredits]</value>
+    </variable>
+
     <variable name="Path_Param_Query">
         <value condition="[String.IsEqual(Container(99950).ListItem.DBType,movie) | String.IsEqual(Container(99950).ListItem.DBType,tvshow)] + !String.IsEmpty(Container(99950).ListItem.Property(tmdb_id))">&amp;tmdb_id=$INFO[Container(99950).ListItem.Property(tmdb_id)]</value>
         <value condition="[String.IsEqual(Container(99950).ListItem.DBType,season) | String.IsEqual(Container(99950).ListItem.DBType,episode)] + !String.IsEmpty(Container(99950).ListItem.Property(tvshow.tmdb_id))">&amp;tmdb_id=$INFO[Container(99950).ListItem.Property(tvshow.tmdb_id)]</value>
