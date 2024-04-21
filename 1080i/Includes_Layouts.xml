@@ -2021,7 +2021,7 @@
     <include name="Layout_Reviews">
         <param name="selected">false</param>
         <param name="detailed">false</param>
-        <param name="icon">$INFO[ListItem.Icon]</param>
+        <param name="icon">$VAR[Image_Reviews]</param>
         <definition>
             <control type="group">
                 <width>$PARAM[item_w]</width>
@@ -2039,14 +2039,14 @@
                     <control type="group">
                         <left>-40</left>
                         <include content="Object_InfoCircle" condition="$PARAM[selected]">
-                            <param name="icon">special://skin/extras/icons/person.png</param>
+                            <param name="icon">$PARAM[icon]</param>
                             <param name="role">$INFO[ListItem.Label]</param>
                             <param name="name">$INFO[ListItem.Rating,, - ]$INFO[ListItem.Premiered]$INFO[ListItem.Property(sublabel)]</param>
                             <param name="textcolor_top">$VAR[ColorSelected]</param>
                             <param name="textcolor_sub">$VAR[ColorSelected]</param>
                         </include>
                         <include content="Object_InfoCircle" condition="!$PARAM[selected]">
-                            <param name="icon">special://skin/extras/icons/person.png</param>
+                            <param name="icon">$PARAM[icon]</param>
                             <param name="role">$INFO[ListItem.Label]</param>
                             <param name="name">$INFO[ListItem.Rating,, - ]$INFO[ListItem.Premiered]$INFO[ListItem.Property(sublabel)]</param>
                         </include>
