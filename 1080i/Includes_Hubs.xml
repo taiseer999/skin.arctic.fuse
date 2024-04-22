@@ -62,7 +62,6 @@
             <param name="tbarid">311</param>
         </include>
         <include>Hub_Categories_FadeIn</include>
-
     </include>
 
     <include name="Hub_Submenu_List">
@@ -111,7 +110,7 @@
                     <param name="ondown">$PARAM[ondown]</param>
                     <param name="id">$PARAM[id]</param>
                 </include>
-                <!-- <hitrectcolor>7fffff00</hitrectcolor> -->
+                <width>1250</width>
                 <top>40</top>
                 <nested />
             </include>
@@ -452,9 +451,6 @@
             <param name="tbarid">311</param>
         </include>
 
-        <movement>2</movement>
-        <width>1030</width>
-
         <onup>311</onup>
         <ondown>302</ondown>
 
@@ -476,11 +472,12 @@
             <param name="hidden_button_prefix">Item.$INFO[Container(300).ListItem.Property(item)]302.</param>
             <param name="hidden_button">List_ButtonMenu_Row_HiddenButton_Home_Categories</param>
             <param name="slide">True</param>
-            <width>1095</width>
             <include content="Hub_Categories_Definition_Content">
                 <param name="window_id">$PARAM[window_id]</param>
                 <param name="categories">$PARAM[categories]</param>
             </include>
+            <movement>2</movement>
+            <width>1095</width>
             <left>-20</left>
             <top>-5</top>
         </include>
@@ -498,7 +495,7 @@
                 <param name="window_id">$PARAM[window_id]</param>
                 <param name="categories">$PARAM[categories]</param>
             </include>
-            <!-- <hitrectcolor>7fff00ff</hitrectcolor> -->
+            <movement>3</movement>
             <top>60</top>
         </include>
     </include>

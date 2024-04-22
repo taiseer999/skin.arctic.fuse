@@ -13,14 +13,13 @@
         <include content="Categories_Selector_Movement_Position">
             <param name="id">$PARAM[id]</param>
         </include>
-        <width>1210</width>
-        <!-- <width>1040</width> -->
+        <width>1250</width>
     </include>
     <include name="Categories_Selector_Movement_Mainmenu">
         <include content="Categories_Selector_Movement_Position">
             <param name="id">$PARAM[id]</param>
         </include>
-        <width>976</width>
+        <width>1010</width>
     </include>
 
     <include name="Categories_Iconic_Selector">

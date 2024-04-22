@@ -868,8 +868,8 @@
                             <control type="label">
                                 <height>72</height>
                                 <centertop>50%</centertop>
-                                <left>10</left>
-                                <right>10</right>
+                                <!-- <left>10</left>
+                                <right>10</right> -->
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <font>$PARAM[font]</font>
@@ -897,8 +897,8 @@
                             <control type="label">
                                 <height>72</height>
                                 <centertop>50%</centertop>
-                                <left>10</left>
-                                <right>10</right>
+                                <!-- <left>10</left>
+                                <right>10</right> -->
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <font>$PARAM[font]</font>
@@ -909,8 +909,8 @@
                             <control type="label">
                                 <height>72</height>
                                 <centertop>50%</centertop>
-                                <left>10</left>
-                                <right>10</right>
+                                <!-- <left>10</left>
+                                <right>10</right> -->
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <font>$PARAM[font]</font>
@@ -936,8 +936,8 @@
                             <control type="label">
                                 <height>72</height>
                                 <centertop>50%</centertop>
-                                <left>10</left>
-                                <right>10</right>
+                                <!-- <left>10</left>
+                                <right>10</right> -->
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <font>$PARAM[font]</font>
