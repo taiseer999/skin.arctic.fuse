@@ -529,8 +529,9 @@
     </variable>
 
     <variable name="Label_Setting_CombinedStyle">
-        <value condition="Skin.HasSetting(Views.UseAltCombined)">$LOCALIZE[31137]</value>
-        <value>$LOCALIZE[10036]</value>
+        <value condition="!Skin.HasSetting(Views.UseAltCombined)">$LOCALIZE[10036]</value>
+        <value condition="!Skin.HasSetting(Views.UseAltCombined.Detailed)">$LOCALIZE[31274]</value>
+        <value>$LOCALIZE[31137]</value>
     </variable>
 
     <variable name="Label_Setting_EPGChannelsStyle">
