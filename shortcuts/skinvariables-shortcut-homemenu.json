@@ -117,8 +117,7 @@
         "submenulist_path": "special://skin/extras/hub/movies/titles/",
         "submenulist_icon": "special://skin/extras/icons/folder.png",
         "submenulist_target": "videos",
-        "use_as_widget": "True",
-        "global_widgets": ""
+        "use_as_widget": "True"
     },
     {
         "label": "Genres",
@@ -144,8 +143,7 @@
         "submenulist_path": "library://video/movies/years.xml/",
         "submenulist_icon": "special://skin/extras/icons/year.png",
         "submenulist_target": "videos",
-        "use_as_widget": "True",
-        "global_widgets": ""
+        "use_as_widget": "True"
     },
     {
         "label": "Studios",
@@ -158,8 +156,7 @@
         "submenulist_path": "library://video/movies/studios.xml/",
         "submenulist_icon": "special://skin/extras/icons/director.png",
         "submenulist_target": "videos",
-        "use_as_widget": "True",
-        "global_widgets": ""
+        "use_as_widget": "True"
     },
     {
         "label": "Titles",

@@ -10,10 +10,6 @@
                 <condition>{item_disabled}!=True</condition>
                 <rules name="widget_group_id">
                     <rule>
-                        <condition>{item_global_widgets}==True</condition>
-                        <value>99</value>
-                    </rule>
-                    <rule>
                         <condition>True</condition>
                         <value>{item_x}</value>
                     </rule>

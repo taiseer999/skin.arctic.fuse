@@ -221,12 +221,10 @@
 
     <variable name="Shortcuts_Window_OnlyWidgets_Path">
         <value condition="$EXP[Shortcuts_Window_Exp_WidgetsOnly] + !String.IsEqual(Window.Property(categories_menu),menu=homemenu)">plugin://script.skinvariables/?info=get_shortcuts_node&amp;edit=True&amp;skin=$VAR[Path_SkinVariables_SkinFolder]$INFO[Window.Property(categories_menu),&amp;,-widgetsonly]$INFO[Window(Home).Property(SkinVariables.ShortcutsNode.Reload),&amp;reload=,]</value>
-        <value condition="!String.IsEmpty(Container(303).ListItem.Property(global_widgets))">plugin://script.skinvariables/?info=get_shortcuts_node&amp;edit=True&amp;skin=$VAR[Path_SkinVariables_SkinFolder]$INFO[Window.Property(categories_menu),&amp;,-globalwidgets]$INFO[Window(Home).Property(SkinVariables.ShortcutsNode.Reload),&amp;reload=,]</value>
         <value>plugin://script.skinvariables/?info=get_shortcuts_node&amp;edit=True&amp;mode=widgets&amp;skin=$VAR[Path_SkinVariables_SkinFolder]$INFO[Container(303).ListItem.Property(menu),&amp;menu=,]$INFO[Container(303).ListItem.Property(guid),&amp;guid=,]$INFO[Window(Home).Property(SkinVariables.ShortcutsNode.Reload),&amp;reload=,]</value>
     </variable>
 
     <variable name="Shortcuts_Window_CategoryWidgets_Path">
-        <value condition="!String.IsEmpty(Container(300).ListItem.Property(global_widgets))">plugin://script.skinvariables/?info=get_shortcuts_node&amp;edit=True&amp;skin=$VAR[Path_SkinVariables_SkinFolder]$INFO[Container(300).ListItem.Property(menu),&amp;menu=,-globalwidgets]$INFO[Window(Home).Property(SkinVariables.ShortcutsNode.Reload),&amp;reload=,]</value>
         <value>plugin://script.skinvariables/?info=get_shortcuts_node&amp;edit=True&amp;mode=widgets&amp;skin=$VAR[Path_SkinVariables_SkinFolder]$INFO[Container(300).ListItem.Property(menu),&amp;menu=,]$INFO[Container(300).ListItem.Property(guid),&amp;guid=,]$INFO[Window(Home).Property(SkinVariables.ShortcutsNode.Reload),&amp;reload=,]</value>
     </variable>
 
@@ -393,22 +391,6 @@
 
             <include content="Dialog_Side_Button">
                 <param name="vertical">false</param>
-                <param name="id">07</param>
-                <param name="baseid">35</param>
-                <param name="textcolor">main_fg</param>
-                <param name="nf_opacity">70</param>
-                <param name="db_opacity">12</param>
-                <param name="label">$VAR[Shortcuts_Window_Var_Label_GlobalMode]</param>
-                <param name="icon">$VAR[Shortcuts_Window_Var_Image_GlobalMode]</param>
-                <param name="visible">!$EXP[Shortcuts_Window_Exp_WidgetsOnly] | [Skin.HasSetting(Hub.Home.DisableSubmenu) + String.IsEqual(Window.Property(categories_menu),menu=homemenu)]</param>
-
-                <onclick condition="$EXP[Shortcuts_Window_Exp_WidgetsOnly]">RunPlugin($INFO[Container(303).ListItem.Property(url),,&amp;func=do_toggle&amp;&amp;global_widgets])</onclick>
-                <onclick condition="!$EXP[Shortcuts_Window_Exp_WidgetsOnly]">RunPlugin($INFO[Container(300).ListItem.Property(url),,&amp;func=do_toggle&amp;&amp;global_widgets])</onclick>
-
-            </include>
-
-            <include content="Dialog_Side_Button">
-                <param name="vertical">false</param>
                 <param name="id">01</param>
                 <param name="baseid">35</param>
                 <param name="textcolor">main_fg</param>
@@ -528,18 +510,6 @@
         <value condition="String.IsEqual(Container(2804).ListItem.Property(value),Hub.1108) + !String.IsEmpty(Skin.String(Navigation.Hub.1108.OnDown))">$INFO[Skin.String(Navigation.Hub.1108.OnDown)]</value>
         <value condition="String.IsEqual(Container(2804).ListItem.Property(value),Hub.1109) + !String.IsEmpty(Skin.String(Navigation.Hub.1109.OnDown))">$INFO[Skin.String(Navigation.Hub.1109.OnDown)]</value>
         <value>$LOCALIZE[571]$INFO[Skin.String(Navigation.Global.OnDown), (,)]</value>
-    </variable>
-
-    <variable name="Shortcuts_Window_Var_Label_GlobalMode">
-        <value condition="$EXP[Shortcuts_Window_Exp_WidgetsOnly] + !String.IsEmpty(Container(303).ListItem.Property(global_widgets))">$LOCALIZE[31031]</value>
-        <value condition="!$EXP[Shortcuts_Window_Exp_WidgetsOnly] + !String.IsEmpty(Container(300).ListItem.Property(global_widgets))">$LOCALIZE[31031]</value>
-        <value>$LOCALIZE[31036]</value>
-    </variable>
-
-    <variable name="Shortcuts_Window_Var_Image_GlobalMode">
-        <value condition="$EXP[Shortcuts_Window_Exp_WidgetsOnly] + !String.IsEmpty(Container(303).ListItem.Property(global_widgets))">special://skin/extras/icons/box.png</value>
-        <value condition="!$EXP[Shortcuts_Window_Exp_WidgetsOnly] + !String.IsEmpty(Container(300).ListItem.Property(global_widgets))">special://skin/extras/icons/box.png</value>
-        <value>special://skin/extras/icons/boxes-stacked.png</value>
     </variable>
 
     <variable name="Shortcuts_Window_Var_Label_ClassicMode">

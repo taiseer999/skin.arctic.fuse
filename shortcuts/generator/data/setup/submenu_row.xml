@@ -1,10 +1,6 @@
 <contents>
     <rules name="submenu_item_x">
         <rule>
-            <condition>{item_global_widgets}==True</condition>
-            <value>99</value>
-        </rule>
-        <rule>
             <condition>True</condition>
             <value>{item_x}</value>
         </rule>

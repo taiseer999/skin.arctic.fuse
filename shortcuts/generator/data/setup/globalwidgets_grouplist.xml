@@ -1,4 +1,0 @@
-<contents>
-    <value name="grouplist_item_x">99</value>
-    <value name="grouplist_visible">!String.IsEmpty(Container(300).ListItem.Property(global_widgets))</value>
-</contents>
