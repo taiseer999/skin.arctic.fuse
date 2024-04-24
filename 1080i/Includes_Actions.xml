@@ -497,8 +497,6 @@
         <param name="window_id">1182</param>
         <definition>
             <ondown condition="$PARAM[condition]">ClearProperty(Hubs.ExtendedWidgetGUID,Home)</ondown>
-            <ondown condition="$PARAM[condition] + Window.IsVisible(home) + String.IsEmpty(Container(303).ListItem.Property(global_extended_widgets)) + !Skin.String(Home.SideMenuCollapse,Topbar) + !Skin.HasSetting(Hub.Home.DisableSubmenu)">SetProperty(Hubs.ExtendedWidgetGUID,$INFO[Container(303).ListItem.Property(guid)],Home)</ondown>
-            <ondown condition="$PARAM[condition] + Window.IsVisible(home) + String.IsEmpty(Container(370).ListItem.Property(global_extended_widgets)) + Skin.String(Home.SideMenuCollapse,Topbar) + !Skin.HasSetting(Hub.Home.DisableSubmenu)">SetProperty(Hubs.ExtendedWidgetGUID,$INFO[Container(370).ListItem.Property(guid)],Home)</ondown>
             <ondown condition="$PARAM[condition] + Window.IsVisible(home)">SetProperty(Hubs.ExtendedWidgetBase,homemenu,Home)</ondown>
             <ondown condition="$PARAM[condition] + Window.IsVisible(1101)">SetProperty(Hubs.ExtendedWidgetBase,1101menu,Home)</ondown>
             <ondown condition="$PARAM[condition] + Window.IsVisible(1102)">SetProperty(Hubs.ExtendedWidgetBase,1102menu,Home)</ondown>
@@ -508,8 +506,6 @@
             <ondown condition="$PARAM[condition] + Window.IsVisible(1107)">SetProperty(Hubs.ExtendedWidgetBase,1107menu,Home)</ondown>
             <ondown condition="$PARAM[condition] + Window.IsVisible(1108)">SetProperty(Hubs.ExtendedWidgetBase,1108menu,Home)</ondown>
             <ondown condition="$PARAM[condition] + Window.IsVisible(1109)">SetProperty(Hubs.ExtendedWidgetBase,1109menu,Home)</ondown>
-
-
             <ondown condition="$PARAM[condition]">ActivateWindow($PARAM[window_id])</ondown>
         </definition>
     </include>

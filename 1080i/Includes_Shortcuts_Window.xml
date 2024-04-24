@@ -452,17 +452,12 @@
                 <param name="icon">special://skin/extras/icons/shapes.png</param>
                 <param name="visible">[[String.IsEqual(Container(2804).ListItem.Property(value),Hub.Home) + Skin.String(Navigation.Hub.Home.OnDown,Explore)] | [String.IsEqual(Container(2804).ListItem.Property(value),Hub.Home) + String.IsEmpty(Skin.String(Navigation.Hub.Home.OnDown)) + Skin.String(Navigation.Global.OnDown,Explore)]]</param>
 
-                <!-- Local Widgets -->
-                <onclick condition="![Skin.HasSetting(Hub.Home.DisableSubmenu) | !String.IsEmpty(Container(303).ListItem.Property(global_extended_widgets))]">SetProperty(Shortcuts.EditGUID,guid=$INFO[Container(303).ListItem.Property(guid)],Home)</onclick>
-                <onclick condition="![Skin.HasSetting(Hub.Home.DisableSubmenu) | !String.IsEmpty(Container(303).ListItem.Property(global_extended_widgets))]">SetProperty(Shortcuts.EditMenu,menu=$INFO[Container(303).ListItem.Property(menu)],Home)</onclick>
-                <onclick condition="![Skin.HasSetting(Hub.Home.DisableSubmenu) | !String.IsEmpty(Container(303).ListItem.Property(global_extended_widgets))]">SetProperty(Shortcuts.EditMode,mode=widgets,Home)</onclick>
-                <onclick condition="![Skin.HasSetting(Hub.Home.DisableSubmenu) | !String.IsEmpty(Container(303).ListItem.Property(global_extended_widgets))]">ClearProperty(Shortcuts.Category,Home)</onclick>
 
                 <!-- Global Widgets -->
-                <onclick condition="Skin.HasSetting(Hub.Home.DisableSubmenu) | !String.IsEmpty(Container(303).ListItem.Property(global_extended_widgets))">ClearProperty(Shortcuts.EditGUID,Home)</onclick>
-                <onclick condition="Skin.HasSetting(Hub.Home.DisableSubmenu) | !String.IsEmpty(Container(303).ListItem.Property(global_extended_widgets))">SetProperty(Shortcuts.EditMenu,menu=homemenu-extendedwidgets,Home)</onclick>
-                <onclick condition="Skin.HasSetting(Hub.Home.DisableSubmenu) | !String.IsEmpty(Container(303).ListItem.Property(global_extended_widgets))">ClearProperty(Shortcuts.EditMode,Home)</onclick>
-                <onclick condition="Skin.HasSetting(Hub.Home.DisableSubmenu) | !String.IsEmpty(Container(303).ListItem.Property(global_extended_widgets))">ClearProperty(Shortcuts.Category,Home)</onclick>
+                <onclick>ClearProperty(Shortcuts.EditGUID,Home)</onclick>
+                <onclick>SetProperty(Shortcuts.EditMenu,menu=homemenu-extendedwidgets,Home)</onclick>
+                <onclick>ClearProperty(Shortcuts.EditMode,Home)</onclick>
+                <onclick>ClearProperty(Shortcuts.Category,Home)</onclick>
 
                 <onclick>ActivateWindow(1116)</onclick>
 

@@ -510,7 +510,28 @@
                                         <include content="Settings_Button">
                                             <param name="dialog">true</param>
                                             <param name="id">23093</param>
-                                            <label>$LOCALIZE[31328] ($LOCALIZE[31148])</label>
+                                            <label>$LOCALIZE[31433] $INFO[Container(22001).ListItem.Label,(,)]</label>
+                                            <visible>[!String.IsEqual(Container(22001).ListItem.Property(disabled),True) + !String.IsEqual(Container(22001).ListItem.Property(blank),True)]</visible>
+                                            <visible>[String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=sidemenu) + String.IsEmpty(Window(Home).Property(Shortcuts.EditMode)) + String.IsEmpty(Window(Home).Property(Shortcuts.EditGUID))]</visible>
+
+                                            <onclick>SetProperty(Shortcuts.EditMenu.Previous,$INFO[Window(Home).Property(Shortcuts.EditMenu)],Home)</onclick>
+                                            <onclick>SetProperty(Shortcuts.EditMode.Previous,$INFO[Window(Home).Property(Shortcuts.EditMode)],Home)</onclick>
+                                            <onclick>SetProperty(Shortcuts.EditGUID.Previous,$INFO[Window(Home).Property(Shortcuts.EditGUID)],Home)</onclick>
+                                            <onclick>SetProperty(Shortcuts.Category.Previous,$INFO[Window(Home).Property(Shortcuts.Category)],Home)</onclick>
+
+                                            <onclick>SetProperty(Shortcuts.EditGUID,guid=$INFO[Container(22001).ListItem.Property(guid)],Home)</onclick>
+                                            <onclick>SetProperty(Shortcuts.EditMenu,menu=$INFO[Container(22001).ListItem.Property(menu)],Home)</onclick>
+                                            <onclick>SetProperty(Shortcuts.EditMode,mode=widgets,Home)</onclick>
+                                            <onclick>ClearProperty(Shortcuts.Category,Home)</onclick>
+
+                                            <onback>29999</onback>
+                                        </include>
+
+                                        <!-- SideMenu: Edit explore widgets -->
+                                        <include content="Settings_Button">
+                                            <param name="dialog">true</param>
+                                            <param name="id">23094</param>
+                                            <label>$LOCALIZE[31436]</label>
                                             <visible>[!String.IsEqual(Container(22001).ListItem.Property(disabled),True) + !String.IsEqual(Container(22001).ListItem.Property(blank),True)]</visible>
                                             <visible>[String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=sidemenu) + String.IsEmpty(Window(Home).Property(Shortcuts.EditMode)) + String.IsEmpty(Window(Home).Property(Shortcuts.EditGUID))]</visible>
                                             <visible>[[String.IsEmpty(Skin.String(Navigation.Hub.Home.OnDown)) + Skin.String(Navigation.Global.OnDown,Explore)] | Skin.String(Navigation.Hub.Home.OnDown,Explore)]</visible>
@@ -520,33 +541,11 @@
                                             <onclick>SetProperty(Shortcuts.EditGUID.Previous,$INFO[Window(Home).Property(Shortcuts.EditGUID)],Home)</onclick>
                                             <onclick>SetProperty(Shortcuts.Category.Previous,$INFO[Window(Home).Property(Shortcuts.Category)],Home)</onclick>
 
-                                            <!-- Local Widgets -->
-                                            <onclick condition="![Skin.HasSetting(Hub.Home.DisableSubmenu) | !String.IsEmpty(Container(22001).ListItem.Property(global_extended_widgets))]">SetProperty(Shortcuts.EditGUID,guid=$INFO[Container(22001).ListItem.Property(guid)],Home)</onclick>
-                                            <onclick condition="![Skin.HasSetting(Hub.Home.DisableSubmenu) | !String.IsEmpty(Container(22001).ListItem.Property(global_extended_widgets))]">SetProperty(Shortcuts.EditMenu,menu=$INFO[Container(22001).ListItem.Property(menu)],Home)</onclick>
-                                            <onclick condition="![Skin.HasSetting(Hub.Home.DisableSubmenu) | !String.IsEmpty(Container(22001).ListItem.Property(global_extended_widgets))]">SetProperty(Shortcuts.EditMode,mode=widgets,Home)</onclick>
-                                            <onclick condition="![Skin.HasSetting(Hub.Home.DisableSubmenu) | !String.IsEmpty(Container(22001).ListItem.Property(global_extended_widgets))]">ClearProperty(Shortcuts.Category,Home)</onclick>
+                                            <onclick>ClearProperty(Shortcuts.EditGUID,Home)</onclick>
+                                            <onclick>SetProperty(Shortcuts.EditMenu,menu=homemenu-extendedwidgets,Home)</onclick>
+                                            <onclick>ClearProperty(Shortcuts.EditMode,Home)</onclick>
+                                            <onclick>ClearProperty(Shortcuts.Category,Home)</onclick>
 
-                                            <!-- Global Widgets -->
-                                            <onclick condition="Skin.HasSetting(Hub.Home.DisableSubmenu) | !String.IsEmpty(Container(22001).ListItem.Property(global_extended_widgets))">ClearProperty(Shortcuts.EditGUID,Home)</onclick>
-                                            <onclick condition="Skin.HasSetting(Hub.Home.DisableSubmenu) | !String.IsEmpty(Container(22001).ListItem.Property(global_extended_widgets))">SetProperty(Shortcuts.EditMenu,menu=homemenu-extendedwidgets,Home)</onclick>
-                                            <onclick condition="Skin.HasSetting(Hub.Home.DisableSubmenu) | !String.IsEmpty(Container(22001).ListItem.Property(global_extended_widgets))">ClearProperty(Shortcuts.EditMode,Home)</onclick>
-                                            <onclick condition="Skin.HasSetting(Hub.Home.DisableSubmenu) | !String.IsEmpty(Container(22001).ListItem.Property(global_extended_widgets))">ClearProperty(Shortcuts.Category,Home)</onclick>
-
-                                            <onback>29999</onback>
-                                        </include>
-
-                                        <!-- SideMenu: Use global extended widgets -->
-                                        <include content="Settings_Button">
-                                            <param name="dialog">true</param>
-                                            <param name="id">23094</param>
-                                            <param name="control">radiobutton</param>
-                                            <label>$LOCALIZE[31318]</label>
-                                            <selected>!String.IsEmpty(Container(22001).ListItem.Property(global_extended_widgets))</selected>
-                                            <visible>[!String.IsEqual(Container(22001).ListItem.Property(disabled),True) + !String.IsEqual(Container(22001).ListItem.Property(blank),True)]</visible>
-                                            <visible>[String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=sidemenu) + String.IsEmpty(Window(Home).Property(Shortcuts.EditMode)) + String.IsEmpty(Window(Home).Property(Shortcuts.EditGUID))]</visible>
-                                            <visible>[[String.IsEmpty(Skin.String(Navigation.Hub.Home.OnDown)) + Skin.String(Navigation.Global.OnDown,Explore)] | Skin.String(Navigation.Hub.Home.OnDown,Explore)]</visible>
-                                            <visible>!Skin.HasSetting(Hub.Home.DisableSubmenu)</visible>
-                                            <onclick>RunPlugin($INFO[Container(22001).ListItem.Property(url),,&amp;func=do_toggle&amp;&amp;global_extended_widgets])</onclick>
                                             <onback>29999</onback>
                                         </include>
 
@@ -605,6 +604,54 @@
                                             <!-- <onclick condition="!String.IsEmpty(Container(22001).ListItem.Property(global_widgets))">ClearProperty(Shortcuts.EditGUID,Home)</onclick>
                                             <onclick condition="!String.IsEmpty(Container(22001).ListItem.Property(global_widgets))">SetProperty(Shortcuts.EditMenu,menu=$INFO[Container(22001).ListItem.Property(menu)]-globalwidgets,Home)</onclick>
                                             <onclick condition="!String.IsEmpty(Container(22001).ListItem.Property(global_widgets))">ClearProperty(Shortcuts.EditMode,Home)</onclick> -->
+
+                                            <onclick>ClearProperty(Shortcuts.Category,Home)</onclick>
+
+                                            <onback>29999</onback>
+                                        </include>
+
+                                        <!-- Category: Edit sidemenu widgets -->
+                                        <include content="Settings_Button">
+                                            <param name="dialog">true</param>
+                                            <param name="id">23065</param>
+                                            <label>$LOCALIZE[31433] $INFO[Container(29313).Listitem.Label,(,)]</label>
+
+                                            <visible>[String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=homemenu) + String.IsEmpty(Window(Home).Property(Shortcuts.EditMode)) + String.IsEmpty(Window(Home).Property(Shortcuts.EditGUID)) + !String.IsEmpty(Container(29313).ListItem.Property(guid))]</visible>
+                                            <visible>[!String.IsEqual(Container(22001).ListItem.Property(disabled),True) + !String.IsEqual(Container(22001).ListItem.Property(blank),True)]</visible>
+                                            <visible>!$EXP[Shortcuts_Dialog_Exp_WidgetsOnly]</visible>
+
+                                            <onclick>SetProperty(Shortcuts.EditMenu.Previous,$INFO[Window(Home).Property(Shortcuts.EditMenu)],Home)</onclick>
+                                            <onclick>SetProperty(Shortcuts.EditMode.Previous,$INFO[Window(Home).Property(Shortcuts.EditMode)],Home)</onclick>
+                                            <onclick>SetProperty(Shortcuts.EditGUID.Previous,$INFO[Window(Home).Property(Shortcuts.EditGUID)],Home)</onclick>
+                                            <onclick>SetProperty(Shortcuts.Category.Previous,$INFO[Window(Home).Property(Shortcuts.Category)],Home)</onclick>
+
+                                            <onclick>SetProperty(Shortcuts.EditGUID,guid=$INFO[Container(29313).ListItem.Property(guid)],Home)</onclick>
+                                            <onclick>SetProperty(Shortcuts.EditMenu,menu=sidemenu,Home)</onclick>
+                                            <onclick>SetProperty(Shortcuts.EditMode,mode=widgets,Home)</onclick>
+
+                                            <onclick>ClearProperty(Shortcuts.Category,Home)</onclick>
+
+                                            <onback>29999</onback>
+                                        </include>
+
+                                        <!-- Category: Edit global widgets -->
+                                        <include content="Settings_Button">
+                                            <param name="dialog">true</param>
+                                            <param name="id">23066</param>
+                                            <label>$LOCALIZE[31521]</label>
+
+                                            <visible>[[String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=homemenu) | String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=1101menu) | String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=1102menu) | String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=1103menu) | String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=1104menu) | String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=1106menu) | String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=1107menu) | String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=1108menu) | String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=1109menu)] + String.IsEmpty(Window(Home).Property(Shortcuts.EditMode)) + String.IsEmpty(Window(Home).Property(Shortcuts.EditGUID))]</visible>
+                                            <visible>[!String.IsEqual(Container(22001).ListItem.Property(disabled),True) + !String.IsEqual(Container(22001).ListItem.Property(blank),True)]</visible>
+                                            <visible>!$EXP[Shortcuts_Dialog_Exp_WidgetsOnly]</visible>
+
+                                            <onclick>SetProperty(Shortcuts.EditMenu.Previous,$INFO[Window(Home).Property(Shortcuts.EditMenu)],Home)</onclick>
+                                            <onclick>SetProperty(Shortcuts.EditMode.Previous,$INFO[Window(Home).Property(Shortcuts.EditMode)],Home)</onclick>
+                                            <onclick>SetProperty(Shortcuts.EditGUID.Previous,$INFO[Window(Home).Property(Shortcuts.EditGUID)],Home)</onclick>
+                                            <onclick>SetProperty(Shortcuts.Category.Previous,$INFO[Window(Home).Property(Shortcuts.Category)],Home)</onclick>
+
+                                            <onclick>ClearProperty(Shortcuts.EditGUID,Home)</onclick>
+                                            <onclick>SetProperty(Shortcuts.EditMenu,menu=$INFO[Container(22001).ListItem.Property(menu)]-globalwidgets,Home)</onclick>
+                                            <onclick>ClearProperty(Shortcuts.EditMode,Home)</onclick>
 
                                             <onclick>ClearProperty(Shortcuts.Category,Home)</onclick>
 
