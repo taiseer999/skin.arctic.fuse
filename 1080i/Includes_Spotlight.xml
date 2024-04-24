@@ -269,7 +269,7 @@
                         <param name="icon_colordiffuse">main_fg_90</param>
                     </include>
 
-                    <control type="button" id="314">
+                    <!-- <control type="button" id="314">
                         <left>20</left>
                         <include>Defs_OSD_Button</include>
                         <centertop>50%</centertop>
@@ -292,9 +292,9 @@
                         <param name="itemgap">0</param>
                         <param name="center">true</param>
                         <param name="icon_colordiffuse">main_fg_90</param>
-                    </include>
+                    </include> -->
 
-                    <!-- <control type="button" id="314">
+                    <control type="button" id="314">
                         <left>20</left>
                         <include>Defs_OSD_Button</include>
                         <centertop>50%</centertop>
@@ -334,7 +334,7 @@
                         <param name="itemgap">0</param>
                         <param name="center">true</param>
                         <param name="icon_colordiffuse">main_fg_90</param>
-                    </include> -->
+                    </include>
 
                 </control>
             </control>

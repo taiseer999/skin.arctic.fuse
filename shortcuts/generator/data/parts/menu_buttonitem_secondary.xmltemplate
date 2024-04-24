@@ -24,10 +24,10 @@
     <visible>Skin.String(SideMenu.SecondaryButton,Options)</visible>
 </item>
 
-<!-- View: Discover -->
+<!-- View: Discover (Filter) -->
 <item>
-    <label>$LOCALIZE[31066]</label>
-    <icon>special://skin/extras/icons/binoculars.png</icon>
+    <label>$LOCALIZE[587]</label>
+    <icon>special://skin/extras/icons/filter.png</icon>
     <property name="showlabel">True</property>
     <property name="path">SetFocus(64)</property>
     <property name="guid">{item_guid}</property>
@@ -66,10 +66,12 @@
     <visible>![Skin.String(SideMenu.SecondaryButton,Menu) | Skin.String(SideMenu.SecondaryButton,Options)]</visible>
 </item>
 
-<!-- View: Media -->
+<!-- View: Media (Filter) -->
 <item>
-    <label>$LOCALIZE[31319]</label>
-    <icon>special://skin/extras/icons/right-left.png</icon>
+    <label>$LOCALIZE[587]</label>
+    <icon>special://skin/extras/icons/filter.png</icon>
+    <!-- <label>$LOCALIZE[31319]</label>
+    <icon>special://skin/extras/icons/right-left.png</icon> -->
     <property name="showlabel">True</property>
     <property name="path">SetFocus(64)</property>
     <property name="guid">{item_guid}</property>
@@ -80,7 +82,7 @@
     <visible>![Skin.String(SideMenu.SecondaryButton,Menu) | Skin.String(SideMenu.SecondaryButton,Options)]</visible>
 </item>
 
-<!-- Contextual: Discover -->
+<!-- View: Discover -->
 <item>
     <label>$LOCALIZE[31066]</label>
     <icon>special://skin/extras/icons/binoculars.png</icon>

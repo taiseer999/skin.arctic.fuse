@@ -103,7 +103,7 @@
         <texture border="20" colordiffuse="$VAR[ColorHighlight]">common/selectbox_thin.png</texture>
     </include>
     <include name="Texture_KeyboardButton">
-        <texturefocus border="40" colordiffuse="$VAR[ColorHighlight]">common/circle.png</texturefocus>
+        <texturefocus colordiffuse="$VAR[ColorHighlight]">common/circle.png</texturefocus>
     </include>
     <include name="Texture_Button">
         <texturenofocus colordiffuse="main_fg_12" border="40">common/menu.png</texturenofocus>
