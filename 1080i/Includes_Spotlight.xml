@@ -122,7 +122,7 @@
                 <height>hub_spotlight_h</height>
 
                 <!-- Animation for Slides -->
-                <!-- <include condition="$EXP[Exp_Hubs_Spotlight_IsFanart]">Spotlight_Animation</include> -->
+                <include condition="$EXP[Exp_Hubs_Spotlight_IsFanart]">Spotlight_Animation</include>
                 <!-- <include content="Animation_Fade_In" condition="!$EXP[Exp_Hubs_Spotlight_IsFanart]">
                     <param name="condition">Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)</param>
                     <param name="delay">200</param>

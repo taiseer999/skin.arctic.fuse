@@ -85,12 +85,14 @@
 
     <expression name="Exp_Hubs_SlideDown_Widgets">[String.IsEmpty(Window.Property(Slide.WidgetContainer)) | $EXP[Exp_Hubs_Categories_IsFocus]]</expression>
 
-    <expression name="Exp_Hubs_SlideDown_Categories">[String.IsEmpty(Window.Property(Slide.WidgetContainer))]</expression>
+    <!-- <expression name="Exp_Hubs_SlideDown_Categories">[String.IsEmpty(Window.Property(Slide.WidgetContainer))]</expression> -->
+    <expression name="Exp_Hubs_SlideDown_Categories">[False]</expression>
 
     <expression name="Exp_Hubs_Categories_IsFocus">[Integer.IsEqual(Window.Property(Slide.WidgetContainer),300) | Integer.IsEqual(Window.Property(Slide.WidgetContainer),302) | Control.HasFocus(300) | Control.HasFocus(302)]</expression>
 
 
     <expression name="Exp_Hubs_Spotlight_IsFanart">[Skin.HasSetting(Background.EnableSpotlightFanart)]</expression>
+    <expression name="Exp_Hubs_Spotlight_IsEnabled">[!Skin.HasSetting(Background.DisableSpotlight)]</expression>
 
     <!-- ============== -->
     <!-- Standard Views -->

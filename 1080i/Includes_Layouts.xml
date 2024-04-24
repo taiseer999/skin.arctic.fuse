@@ -2284,7 +2284,66 @@
         </definition>
     </include>
 
-     <include name="Layout_Info_Selector">
+    <include name="Layout_Spotlight_Selector">
+        <param name="selected">false</param>
+        <param name="detailed">false</param>
+        <param name="misc">$VAR[Label_VideoInfo_DetailsItem]</param>
+        <param name="focusedlayout">false</param>
+        <definition>
+            <control type="group">
+                <width>$PARAM[item_w]</width>
+                <height>$PARAM[item_h]</height>
+
+                <control type="group">
+                    <left>20</left>
+                    <control type="group">
+                        <height>$PARAM[item_h]</height>
+                        <width>$PARAM[item_h]</width>
+                        <control type="group">
+                            <visible>!$PARAM[selected]</visible>
+                            <control type="image">
+                                <texture colordiffuse="$VAR[Spotlight_NF_Color_BG]">common/circle.png</texture>
+                            </control>
+                            <control type="image">
+                                <bordersize>20</bordersize>
+                                <texture colordiffuse="$VAR[Spotlight_NF_Color_FG]">$VAR[Image_Layout_CombinedIcon]</texture>
+                            </control>
+                        </control>
+                        <control type="group">
+                            <visible>$PARAM[selected]</visible>
+                            <control type="image">
+                                <include>Texture_Circle_Highlight_V</include>
+                            </control>
+                            <control type="image">
+                                <bordersize>20</bordersize>
+                                <texture colordiffuse="$VAR[ColorSelected]">$VAR[Image_Layout_CombinedIcon]</texture>
+                            </control>
+                        </control>
+                    </control>
+
+                    <control type="group">
+                        <left>$PARAM[item_h]</left>
+                        <height>80</height>
+                        <centertop>50%</centertop>
+                        <include content="Object_InfoCircle_Text_Top">
+                            <left>30</left>
+                            <textcolor>main_fg_90</textcolor>
+                            <selectedcolor>main_fg_90</selectedcolor>
+                            <label>$INFO[ListItem.Label]</label>
+                        </include>
+                        <include content="Object_InfoCircle_Text_Sub">
+                            <left>30</left>
+                            <textcolor>main_fg_70</textcolor>
+                            <selectedcolor>main_fg_70</selectedcolor>
+                            <label>$PARAM[misc]</label>
+                        </include>
+                    </control>
+                </control>
+            </control>
+        </definition>
+    </include>
+
+    <include name="Layout_Info_Selector">
         <param name="selected">false</param>
         <param name="detailed">false</param>
         <param name="misc">$VAR[Label_VideoInfo_DetailsItem]</param>

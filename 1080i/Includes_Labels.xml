@@ -411,8 +411,9 @@
     </variable>
 
     <variable name="Label_Setting_SpotlightStyle">
-        <value condition="$EXP[Exp_Hubs_Spotlight_IsFanart]">$LOCALIZE[20445]</value>
-        <value>$LOCALIZE[571]</value>
+        <value condition="!$EXP[Exp_Hubs_Spotlight_IsEnabled]">$LOCALIZE[13106]</value>
+        <value condition="!$EXP[Exp_Hubs_Spotlight_IsFanart]">$LOCALIZE[571]</value>
+        <value>$LOCALIZE[20445]</value>
     </variable>
 
     <variable name="Label_Setting_ColourPreset">

@@ -656,7 +656,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31136"
-msgid "Categories and combined style"
+msgid "Categories style"
 msgstr ""
 
 #: /1080i/Includes_Labels.xml
