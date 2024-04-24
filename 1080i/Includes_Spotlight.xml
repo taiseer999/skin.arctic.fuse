@@ -306,7 +306,8 @@
                         </include>
                     </control>
                     <include content="OSD_Button_Icon_Overlay">
-                        <param name="icon">special://skin/extras/icons/arrow-up.png</param>
+                        <param name="icon">special://skin/extras/icons/caret-left.png</param>
+                        <param name="bordersize">0</param>
                         <param name="id">314</param>
                         <param name="groupid">324</param>
                         <param name="vertical">false</param>
@@ -314,6 +315,8 @@
                         <param name="center">true</param>
                         <param name="icon_colordiffuse">main_fg_90</param>
                     </include>
+
+
 
                     <control type="button" id="315">
                         <left>20</left>
@@ -327,9 +330,10 @@
                         </include>
                     </control>
                     <include content="OSD_Button_Icon_Overlay">
-                        <param name="icon">special://skin/extras/icons/arrow-down.png</param>
+                        <param name="icon">special://skin/extras/icons/caret-right.png</param>
+                        <param name="bordersize">0</param>
                         <param name="id">315</param>
-                        <param name="groupid">324</param>
+                        <param name="groupid">325</param>
                         <param name="vertical">false</param>
                         <param name="itemgap">0</param>
                         <param name="center">true</param>

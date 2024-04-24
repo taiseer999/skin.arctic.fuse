@@ -2190,6 +2190,7 @@
 
     <include name="Object_Circle_Counter">
         <control type="group">
+            <left>$PARAM[left]</left>
             <visible>$PARAM[visible]</visible>
             <centertop>50%</centertop>
             <width>10</width>
