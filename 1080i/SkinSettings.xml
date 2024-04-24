@@ -159,30 +159,25 @@
                             <onclick condition="!Skin.String(Home.SideMenuCollapse,Library) + !Skin.String(Home.SideMenuCollapse,Always) + !Skin.String(Home.SideMenuCollapse,Hubs) + !Skin.String(Home.SideMenuCollapse,Never)">Skin.SetString(Home.SideMenuCollapse,Never)</onclick>
                             <visible>Container(3).HasFocus(1)</visible>
                         </include>
-                        <include content="Settings_Button" description="Primary Menu Button">
-                            <param name="id">1020</param>
-                            <param name="dialog">false</param>
-                            <param name="control">button</param>
-                            <label>$LOCALIZE[31416] > $LOCALIZE[13014] > $LOCALIZE[31386]</label>
-                            <label2>$VAR[Label_Setting_MenuButton_Primary]</label2>
-                            <onclick condition="![String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Path)) | Skin.String(SideMenu.CustomShortcut.Path,noop)]">Skin.Reset(SideMEnu.CustomShortcut.Path)</onclick>
-                            <onclick condition="![String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Path)) | Skin.String(SideMenu.CustomShortcut.Path,noop)]">Skin.Reset(SideMEnu.CustomShortcut.Icon)</onclick>
-                            <onclick condition="![String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Path)) | Skin.String(SideMenu.CustomShortcut.Path,noop)]">Skin.Reset(SideMEnu.CustomShortcut.Label)</onclick>
-                            <onclick>Skin.ToggleSetting(SideMenu.DisableSearchButton)</onclick>
-                            <onclick>ReloadSkin()</onclick>
-                            <onclick>AlarmClock(refocusblura,SetFocus(3,0,absolute),00:00,silent)</onclick>
-                            <onclick>AlarmClock(refocusblurb,SetFocus(1020),00:00,silent)</onclick>
-                            <visible>Container(3).HasFocus(1)</visible>
-                        </include>
+
                         <include content="Settings_Button" description="Primary Menu Customise Action">
                             <param name="id">1021</param>
                             <param name="dialog">false</param>
                             <param name="control">button</param>
-                            <label> - $LOCALIZE[15217]</label>
-                            <label2>$VAR[Label_Setting_MenuButton_Primary_Action]</label2>
-                            <onclick>SetProperty(Shortcuts.Groupings.Links,Links,Home)</onclick>
-                            <onclick>RunScript(script.skinvariables,set_shortcut=SideMenu.CustomShortcut)</onclick>
-                            <visible>Skin.HasSetting(SideMenu.DisableSearchButton)</visible>
+                            <label>$LOCALIZE[31416] > $LOCALIZE[13014] > $LOCALIZE[31386]</label>
+                            <label2>$VAR[Label_Setting_MenuButton_Primary]</label2>
+
+                            <onclick condition="![String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Path)) | Skin.String(SideMenu.CustomShortcut.Path,noop)]">Skin.Reset(SideMenu.CustomShortcut.Path)</onclick>
+                            <onclick condition="![String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Path)) | Skin.String(SideMenu.CustomShortcut.Path,noop)]">Skin.Reset(SideMenu.CustomShortcut.Icon)</onclick>
+                            <onclick condition="![String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Path)) | Skin.String(SideMenu.CustomShortcut.Path,noop)]">Skin.Reset(SideMenu.CustomShortcut.Label)</onclick>
+                            <onclick condition="![String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Path)) | Skin.String(SideMenu.CustomShortcut.Path,noop)]">ReloadSkin()</onclick>
+                            <onclick condition="![String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Path)) | Skin.String(SideMenu.CustomShortcut.Path,noop)]">AlarmClock(refocusblura,SetFocus(3,0,absolute),00:00,silent)</onclick>
+                            <onclick condition="![String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Path)) | Skin.String(SideMenu.CustomShortcut.Path,noop)]">AlarmClock(refocusblurb,SetFocus(1021),00:00,silent)</onclick>
+
+
+                            <onclick condition="String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Path)) | Skin.String(SideMenu.CustomShortcut.Path,noop)">SetProperty(Shortcuts.Groupings.Links,Links,Home)</onclick>
+                            <onclick condition="String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Path)) | Skin.String(SideMenu.CustomShortcut.Path,noop)">RunScript(script.skinvariables,set_shortcut=SideMenu.CustomShortcut)</onclick>
+
                             <visible>Container(3).HasFocus(1)</visible>
                         </include>
                         <include content="Settings_Button" description="Primary Menu Customise Label">
@@ -192,7 +187,6 @@
                             <label> - $LOCALIZE[21899]</label>
                             <label2>$INFO[Skin.String(SideMenu.CustomShortcut.Label)]</label2>
                             <onclick>Skin.SetString(SideMenu.CustomShortcut.Label)</onclick>
-                            <visible>Skin.HasSetting(SideMenu.DisableSearchButton)</visible>
                             <visible>![String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Path)) | Skin.String(SideMenu.CustomShortcut.Path,noop)]</visible>
                             <visible>Container(3).HasFocus(1)</visible>
                         </include>
@@ -204,7 +198,6 @@
                             <param name="icon">$INFO[Skin.String(SideMenu.CustomShortcut.Icon)]</param>
                             <label> - $LOCALIZE[31274]</label>
                             <onclick>Skin.SetImage(SideMenu.CustomShortcut.Icon,special://skin/extras/icons/)</onclick>
-                            <visible>Skin.HasSetting(SideMenu.DisableSearchButton)</visible>
                             <visible>![String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Path)) | Skin.String(SideMenu.CustomShortcut.Path,noop)]</visible>
                             <visible>Container(3).HasFocus(1)</visible>
                         </include>
@@ -214,13 +207,18 @@
                             <param name="control">button</param>
                             <label>$LOCALIZE[31416] > $LOCALIZE[13014] > $LOCALIZE[31385]</label>
                             <label2>$VAR[Label_Setting_MenuButton_Secondary]</label2>
-                            <onclick>Skin.ToggleSetting(SideMenu.EnableOptionsButton)</onclick>
+
+                            <onclick condition="Skin.String(SideMenu.SecondaryButton,Menu)">Skin.SetString(SideMenu.SecondaryButton,Options)</onclick>
+                            <onclick condition="Skin.String(SideMenu.SecondaryButton,Options)">Skin.Reset(SideMenu.SecondaryButton)</onclick>
+                            <onclick condition="![Skin.String(SideMenu.SecondaryButton,Menu) | Skin.String(SideMenu.SecondaryButton,Options)]">Skin.SetString(SideMenu.SecondaryButton,Menu)</onclick>
+
                             <onclick>ReloadSkin()</onclick>
                             <onclick>AlarmClock(refocusblura,SetFocus(3,0,absolute),00:00,silent)</onclick>
                             <onclick>AlarmClock(refocusblurb,SetFocus(1014),00:00,silent)</onclick>
                             <visible>Container(3).HasFocus(1)</visible>
                             <visible>!Skin.String(Home.SideMenuCollapse,Topbar)</visible>
                         </include>
+
                         <include content="Settings_Button" description="Home group indicator">
                             <param name="id">1006</param>
                             <param name="dialog">false</param>

@@ -498,18 +498,14 @@
     </variable>
 
     <variable name="Label_Setting_MenuButton_Primary">
-        <value condition="!Skin.HasSetting(SideMenu.DisableSearchButton)">$LOCALIZE[31387]</value>
-        <value>$LOCALIZE[636]</value>
-    </variable>
-
-    <variable name="Label_Setting_MenuButton_Primary_Action">
         <value condition="![String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Path)) | Skin.String(SideMenu.CustomShortcut.Path,noop)]">$INFO[Skin.String(SideMenu.CustomShortcut.Path)]</value>
         <value>$LOCALIZE[15067] / $LOCALIZE[13012]</value>
     </variable>
 
     <variable name="Label_Setting_MenuButton_Secondary">
-        <value condition="Skin.HasSetting(SideMenu.EnableOptionsButton)">$LOCALIZE[33063]</value>
-        <value>$LOCALIZE[33061]</value>
+        <value condition="Skin.String(SideMenu.SecondaryButton,Options)">$LOCALIZE[33063]</value>
+        <value condition="Skin.String(SideMenu.SecondaryButton,Menu)">$LOCALIZE[33061]</value>
+        <value>$LOCALIZE[31387]</value>
     </variable>
 
     <variable name="Label_Setting_OptionalInfoLine">
