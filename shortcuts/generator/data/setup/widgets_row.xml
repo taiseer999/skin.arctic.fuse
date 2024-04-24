@@ -12,7 +12,7 @@
     <value name="widget_busy_isupdating">True</value>
     <value name="widget_id">$MATH[{grouplist_item_x} * 1000 + 600 + {enum_x}]</value>
     <value name="widget_group_id">$MATH[{grouplist_item_x} * 1000 + 700 + {enum_x}]</value>
-    <value name="widget_selector_id">$MATH[{grouplist_item_x} * 1000 + 419]</value>
+    <value name="widget_selector_id">419</value>
     <value name="widget_shortstack_id">$MATH[{grouplist_item_x} * 1000 + 800 + {enum_x}]</value>
     <value name="widget_next_id">$MATH[{grouplist_item_x} * 1000 + 600 + {enum_x} + 1]</value>
     <value name="widget_nextnext_id">$MATH[{grouplist_item_x} * 1000 + 600 + {enum_x} + 2]</value>

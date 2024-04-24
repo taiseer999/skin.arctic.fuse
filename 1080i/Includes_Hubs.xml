@@ -47,13 +47,19 @@
         <onup>300</onup>
         <ondown>$PARAM[ondown]</ondown>
         <onfocus>SetProperty(TMDbHelper.WidgetContainer,301,$PARAM[window_id])</onfocus>
-        <onfocus>SetProperty(TMDbHelper.WidgetContainer,301,$PARAM[window_id])</onfocus>
+
+        <!-- Reset Widget Group Position -->
+        <include content="Action_Widgets_ResetPosition_OnFocus">
+            <param name="condition">[Skin.HasSetting(Hub.$PARAM[window_id].WidgetSelector) + !Integer.IsEqual(Container(419).CurrentItem,1)] | Container(400).HasPrevious</param>
+        </include>
+
         <include content="Action_View_Movement_OnLeftRight">
             <param name="id">$PARAM[id]</param>
             <param name="onback">[Integer.IsEqual(Container($PARAM[id]).CurrentItem,1)]</param>
             <param name="backid">320</param>
             <param name="include_onback">false</param>
         </include>
+
         <include content="Action_View_Movement_OnBack">
             <param name="id">$PARAM[id]</param>
             <param name="onback">[Integer.IsEqual(Container($PARAM[id]).CurrentItem,1)]</param>
@@ -61,6 +67,7 @@
             <param name="menuid">311</param>
             <param name="tbarid">311</param>
         </include>
+
         <include>Hub_Categories_FadeIn</include>
     </include>
 
@@ -326,6 +333,15 @@
                     <param name="property">ReverseTransition</param>
                 </include>
 
+                <!-- Reset Widget Group Position -->
+                <onfocus>SetProperty(TMDbHelper.WidgetContainer,301,Home)</onfocus>
+                <onfocus>ClearProperty(Slide.WidgetContainer,Home)</onfocus>
+                <onfocus>SetProperty(List.ViewContainer,311,Home)</onfocus>
+
+                <include content="Action_Widgets_ResetPosition_OnFocus">
+                    <param name="condition">[Skin.HasSetting(Hub.Home.WidgetSelector) + !Integer.IsEqual(Container(419).CurrentItem,1)] | Container(400).HasPrevious</param>
+                </include>
+
                 <ondown>SetFocus(303,0,absolute)</ondown>
 
                 <include>Home_Menu_List_OnBackInfo</include>
@@ -455,6 +471,11 @@
         <ondown>302</ondown>
 
         <onfocus>SetProperty(TMDbHelper.WidgetContainer,301,$PARAM[window_id])</onfocus>
+
+        <!-- Reset Widget Group Position -->
+        <include content="Action_Widgets_ResetPosition_OnFocus">
+            <param name="condition">[Skin.HasSetting(Hub.$PARAM[window_id].WidgetSelector) + !Integer.IsEqual(Container(419).CurrentItem,1)] | Container(400).HasPrevious</param>
+        </include>
 
         <content>
             <include>skinvariables-$PARAM[categories]-staticitems</include>

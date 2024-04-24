@@ -327,6 +327,31 @@
         <value>5000</value>
     </variable>
 
+    <include name="Action_HomeMenu_OnDown">
+        <param name="onlist">320</param>
+        <param name="c_bump">[!String.IsEmpty(Window.Property(List.ViewContainer.Bump))]</param>
+        <param name="c_wosf">[Window.IsVisible(Home) + Skin.HasSetting(Hub.Home.DisableSubmenu) + !String.IsEmpty(Container(303).ListItem.Property(widgets_setfocus))]</param>
+        <param name="i_wosf">$INFO[Container(303).ListItem.Property(widgets_setfocus)]</param>
+        <param name="c_left">[!String.IsEmpty(Window.Property(List.ViewContainer.Left))]</param>
+        <param name="i_left">$INFO[Window.Property(List.ViewContainer.Left)]</param>
+        <param name="c_view">[!String.IsEmpty(Window.Property(List.ViewContainer))]</param>
+        <param name="i_view">$INFO[Window.Property(List.ViewContainer)]</param>
+        <param name="c_tmdb">[!String.IsEmpty(Window.Property(TMDbHelper.WidgetContainer)) + !Integer.IsEqual(Window.Property(TMDbHelper.WidgetContainer),301)]</param>
+        <param name="i_tmdb">$INFO[Window.Property(TMDbHelper.WidgetContainer)]</param>
+        <param name="c_menu">[!Skin.HasSetting(Navigation.DisableOptionsOnLeft)]</param>
+        <definition>
+
+            <ondown condition="$PARAM[c_view]">SetFocus($PARAM[i_view])</ondown>
+            <ondown condition="!$PARAM[c_view] + $PARAM[c_tmdb]">SetFocus($PARAM[i_tmdb])</ondown>
+            <ondown condition="!$PARAM[c_view] + !$PARAM[c_tmdb] + $PARAM[c_wosf]">$PARAM[i_wosf]</ondown>
+            <ondown condition="!$PARAM[c_view] + !$PARAM[c_tmdb] + !$PARAM[c_wosf]">$PARAM[onlist]</ondown>
+            <ondown>ClearProperty(List.ViewContainer)</ondown>
+            <ondown>ClearProperty(List.ViewContainer.Left)</ondown>
+            <ondown>ClearProperty(List.ViewContainer.Bump)</ondown>
+
+        </definition>
+    </include>
+
     <include name="Action_HomeMenu_OnRightLeft">
         <param name="onlist">320</param>
         <param name="c_bump">[!String.IsEmpty(Window.Property(List.ViewContainer.Bump))]</param>
@@ -336,7 +361,7 @@
         <param name="i_left">$INFO[Window.Property(List.ViewContainer.Left)]</param>
         <param name="c_view">[!String.IsEmpty(Window.Property(List.ViewContainer))]</param>
         <param name="i_view">$INFO[Window.Property(List.ViewContainer)]</param>
-        <param name="c_tmdb">[!String.IsEmpty(Window.Property(TMDbHelper.WidgetContainer))]</param>
+        <param name="c_tmdb">[!String.IsEmpty(Window.Property(TMDbHelper.WidgetContainer)) + !Integer.IsEqual(Window.Property(TMDbHelper.WidgetContainer),301)]</param>
         <param name="i_tmdb">$INFO[Window.Property(TMDbHelper.WidgetContainer)]</param>
         <param name="c_menu">[!Skin.HasSetting(Navigation.DisableOptionsOnLeft)]</param>
         <definition>
@@ -634,6 +659,14 @@
 
             <onright condition="$PARAM[onwrap]">$PARAM[id]</onright>
 
+        </definition>
+    </include>
+
+    <include name="Action_Widgets_ResetPosition_OnFocus">
+        <param name="condition">true</param>
+        <definition>
+            <onfocus condition="$PARAM[condition]">SetProperty(Widgets.ResetPosition,1)</onfocus>
+            <onfocus condition="$PARAM[condition]">AlarmClock(WidgetsResetPosition,ClearProperty(Widgets.ResetPosition),00:00,silent)</onfocus>
         </definition>
     </include>
 

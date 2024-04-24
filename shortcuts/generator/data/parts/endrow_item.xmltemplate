@@ -11,5 +11,5 @@
     <label2>{parts_sublabel}</label2>
     {parts_onclick}
     {parts_additional}
-    <visible>{parts_visible}</visible>
+    <visible>[{parts_visible}] + String.IsEmpty(Window.Property(Widgets.ResetPosition))</visible>
 </item>

@@ -20,7 +20,8 @@
     },
     "global": {
         "parts_visible": {"template": "True"},
-        "widget_include_condition": {"template": "True"}
+        "widget_include_condition": {"template": "True"},
+        "widget_category_visible": {"template": "True"}
     },
     "genxml": [
         {"datafile": "generator/data/base/hubs_complex.xml"},

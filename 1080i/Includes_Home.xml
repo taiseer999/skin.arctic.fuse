@@ -144,9 +144,6 @@
                     <include content="Home_Menu_List_OnUp_ActivateSearch" condition="!$EXP[Exp_HomeMenu_DontHide] + Skin.String(Navigation.Global.OnUp,Search) + ![Window.IsVisible(Home) | Window.IsVisible(1185) | Window.IsVisible(1181) | Window.IsVisible(1182) | Window.IsVisible(1130) | Window.IsVisible(1131) | Window.IsVisible(1132)]">
                     </include>
 
-                    <ondown condition="!$EXP[Exp_HomeMenu_DontHide]">$PARAM[onlist]</ondown>
-                    <ondown condition="!$EXP[Exp_HomeMenu_DontHide]">SetFocus($PARAM[onlist])</ondown>
-
                     <include>Home_Menu_List_OnBackInfo</include>
                     <onfocus>ClearProperty(WidgetGroup.Movement)</onfocus>
 
@@ -166,6 +163,10 @@
                     <include content="Action_HomeMenu_OnRightLeft">
                         <param name="onlist">$PARAM[onlist]</param>
                     </include>
+                    <include content="Action_HomeMenu_OnDown" condition="!$EXP[Exp_HomeMenu_DontHide]">
+                        <param name="onlist">$PARAM[onlist]</param>
+                    </include>
+
                     <orientation>vertical</orientation>
                     <scrolltime tween="quadratic">400</scrolltime>
 

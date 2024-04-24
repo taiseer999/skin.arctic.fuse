@@ -7,9 +7,10 @@
     <param name="widgets_only">{grouplist_widgets_only}</param>
     <param name="window_id">{window_id}</param>
     <param name="visible">{grouplist_visible}</param>
-    {all_content_adapative_widgets}
-    {all_adapative_widgets}
+    {all_adaptive_widgets}
     {all_submenu_widgets}
     {all_standard_widgets}
+    {all_sidemenu_widgets}
+    {all_global_widgets}
     {all_endrow_selector}
 </include>

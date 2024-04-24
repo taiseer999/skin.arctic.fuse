@@ -212,6 +212,10 @@
                             <param name="id">311</param>
                             <param name="window_id">$PARAM[window_id]</param>
                         </include>
+                        <!-- Reset Widget Group Position -->
+                        <include content="Action_Widgets_ResetPosition_OnFocus">
+                            <param name="condition">[Skin.HasSetting(Hub.$PARAM[window_id].WidgetSelector) + !Integer.IsEqual(Container(419).CurrentItem,1)] | Container(400).HasPrevious</param>
+                        </include>
                     </control>
 
                     <control type="group" id="319">
