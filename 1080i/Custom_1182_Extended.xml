@@ -14,7 +14,6 @@
             </include>
             <include content="DialogInfo_Recommendations_Widgets_Grouplist">
 
-                <include condition="String.IsEqual(Window(Home).Property(Hubs.ExtendedWidgetBase),homemenu)">skinvariables-homemenu-extended</include>
                 <include condition="String.IsEqual(Window(Home).Property(Hubs.ExtendedWidgetBase),homemenu)">skinvariables-homemenu-extended-global</include>
                 <include condition="String.IsEqual(Window(Home).Property(Hubs.ExtendedWidgetBase),1101menu)">skinvariables-1101menu-extended-global</include>
                 <include condition="String.IsEqual(Window(Home).Property(Hubs.ExtendedWidgetBase),1102menu)">skinvariables-1102menu-extended-global</include>
