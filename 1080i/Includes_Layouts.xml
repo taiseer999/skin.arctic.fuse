@@ -2161,14 +2161,26 @@
                 <autoscroll>false</autoscroll>
                 <visible>![$PARAM[detailed]]</visible>
             </control> -->
+
+            <!-- <control type="textbox">
+                <top>14</top>
+                <bottom>-8</bottom>
+                <font>font_tiny_black</font>
+                <label>$INFO[$PARAM[listitem].Label]</label>
+                <textcolor>main_fg_90</textcolor>
+                <align>center</align>
+                <align>$PARAM[align]</align>
+                <autoscroll>false</autoscroll>
+                <visible>$PARAM[detailed]</visible>
+            </control> -->
             <control type="textbox">
-                <top>17</top>
-                <bottom>-4</bottom>
-                <font>font_tiny</font>
+                <top>14</top>
+                <bottom>-8</bottom>
+                <font>font_tiny_plot</font>
                 <label>$INFO[$PARAM[listitem].Label]</label>
                 <textcolor>main_fg_70</textcolor>
                 <align>center</align>
-                <!-- <align>$PARAM[align]</align> -->
+                <align>$PARAM[align]</align>
                 <autoscroll>false</autoscroll>
                 <visible>$PARAM[detailed]</visible>
             </control>
@@ -2275,10 +2287,11 @@
                 </control>
                 <control type="group">
                     <top>$PARAM[item_w]</top>
-                    <include content="Layout_Square_Labels">
+                    <include content="Layout_Square_Labels" condition="![$PARAM[variation]]">
                         <param name="detailed">$PARAM[detailed]</param>
                         <param name="listitem">$PARAM[listitem]</param>
                         <param name="affix">$PARAM[affix]</param>
+                        <!-- <param name="align">center</param> -->
                     </include>
                 </control>
 
