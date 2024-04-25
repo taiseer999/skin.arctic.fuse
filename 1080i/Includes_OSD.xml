@@ -716,7 +716,10 @@
             <left>view_side</left>
             <width>info_panel_w</width>
             <height>320</height>
-            <include content="Object_Bottom" condition="!Skin.HasSetting(TMDbHelper.EnableCrop) + Skin.HasSetting(Info.DisableDetailsLine)">
+            <include content="Object_Bottom" condition="Skin.HasSetting(Info.DisableDetailsLine)">
+                <param name="bottom">80</param>
+            </include>
+            <!-- <include content="Object_Bottom" condition="!Skin.HasSetting(TMDbHelper.EnableCrop) + Skin.HasSetting(Info.DisableDetailsLine)">
                 <param name="bottom">0</param>
             </include>
             <include content="Object_Bottom" condition="!Skin.HasSetting(TMDbHelper.EnableCrop) + !Skin.HasSetting(Info.DisableDetailsLine)">
@@ -724,11 +727,18 @@
             </include>
             <include content="Object_Bottom" condition="Skin.HasSetting(TMDbHelper.EnableCrop) + Skin.HasSetting(Info.DisableDetailsLine)">
                 <param name="bottom">80</param>
-            </include>
+            </include> -->
             <bottom>120</bottom>
             <orientation>vertical</orientation>
 
-            <include content="OSD_Progress_Details_Animation" condition="!Skin.HasSetting(TMDbHelper.EnableCrop) + Skin.HasSetting(Info.DisableDetailsLine)">
+            <include content="OSD_Progress_Details_Animation" condition="Skin.HasSetting(Info.DisableDetailsLine)">
+                <param name="posy">-140</param>
+            </include>
+            <include content="OSD_Progress_Details_Animation" condition="!Skin.HasSetting(Info.DisableDetailsLine)">
+                <param name="posy">-100</param>
+            </include>
+
+            <!-- <include content="OSD_Progress_Details_Animation" condition="!Skin.HasSetting(TMDbHelper.EnableCrop) + Skin.HasSetting(Info.DisableDetailsLine)">
                 <param name="posy">-220</param>
             </include>
             <include content="OSD_Progress_Details_Animation" condition="!Skin.HasSetting(TMDbHelper.EnableCrop) + !Skin.HasSetting(Info.DisableDetailsLine)">
@@ -739,7 +749,7 @@
             </include>
             <include content="OSD_Progress_Details_Animation" condition="Skin.HasSetting(TMDbHelper.EnableCrop) + !Skin.HasSetting(Info.DisableDetailsLine)">
                 <param name="posy">-100</param>
-            </include>
+            </include> -->
 
             <control type="group" description="Avoid grouplist chop with spacer">
                 <height>20</height>
@@ -769,9 +779,9 @@
             </include>
             <include content="Info_Ratings" condition="!Skin.HasSetting(Info.DisableAllRatings)">
                 <param name="is_player">true</param>
-                <include content="Object_Top" condition="!Skin.HasSetting(TMDbHelper.EnableCrop)">
+                <!-- <include content="Object_Top" condition="!Skin.HasSetting(TMDbHelper.EnableCrop)">
                     <param name="top">82</param>
-                </include>
+                </include> -->
                 <top>2</top>
                 <left>0</left>
                 <visible>!VideoPlayer.Content(livetv)</visible>

@@ -37,26 +37,30 @@
                 <width>$PARAM[width]</width>
                 <height>$PARAM[height]</height>
                 <control type="group">
-                    <centertop>20</centertop>
+                    <centertop>30</centertop>
                     <height>40</height>
-                    <control type="image">
-                        <centertop>20</centertop>
+                    <!-- <control type="image">
                         <height>40</height>
                         <width>40</width>
-                        <bordersize>-8</bordersize>
+                        <bordersize>2</bordersize>
+                        <texture colordiffuse="main_fg_100">common/circle.png</texture>
+                    </control> -->
+                    <!-- <control type="image">
+                        <height>40</height>
+                        <width>40</width>
+                        <bordersize>-10</bordersize>
                         <texture colordiffuse="$VAR[ColorHighlight]">special://skin/extras/icons/kodi.png</texture>
                     </control>
                     <control type="image">
-                        <centertop>20</centertop>
                         <height>40</height>
                         <width>40</width>
-                        <bordersize>-8</bordersize>
+                        <bordersize>-10</bordersize>
                         <texture colordiffuse="$VAR[ColorGradient]">special://skin/extras/icons/kodi.png</texture>
                         <animation effect="fade" end="33" condition="true">Conditional</animation>
-                    </control>
+                    </control> -->
                     <control type="label">
-                        <left>46</left>
-                        <centertop>21.4</centertop>
+                        <!-- <top>1</top> -->
+                        <!-- <left>50</left> -->
                         <height>40</height>
                         <textcolor>$PARAM[colordiffuse]_100</textcolor>
                         <font>font_logo</font>
@@ -65,7 +69,7 @@
                 </control>
                 <control type="label">
                     <wrapmultiline>$PARAM[wrapmultiline]</wrapmultiline>
-                    <height>90</height>
+                    <height>84</height>
                     <bottom>0</bottom>
                     <aligny>center</aligny>
                     <label>$PARAM[label]</label>
@@ -104,20 +108,26 @@
         <definition>
             <control type="group">
                 <width>$PARAM[width]</width>
-                <include content="Object_Height" condition="!Skin.HasSetting(TMDbHelper.EnableCrop)">
+                <!-- <include content="Object_Height" condition="!Skin.HasSetting(TMDbHelper.EnableCrop)">
                     <param name="height">40</param>
-                </include>
+                </include> -->
                 <height>120</height>
                 <nested />
                 <control type="group">
                     <right>80</right>
                     <!-- Title Only -->
-                    <include content="Info_Title_Label" condition="!Skin.HasSetting(TMDbHelper.EnableCrop)">
+                    <include content="Info_Title_LogoLabel" condition="!Skin.HasSetting(TMDbHelper.EnableCrop)">
+                        <param name="label">$PARAM[label]</param>
+                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                        <param name="height">132</param>
+                        <param name="visible">True</param>
+                    </include>
+                    <!-- <include content="Info_Title_Label" condition="!Skin.HasSetting(TMDbHelper.EnableCrop)">
                         <param name="label">$PARAM[label]</param>
                         <param name="colordiffuse">$PARAM[colordiffuse]</param>
                         <param name="wrapmultiline">false</param>
                         <param name="height">42</param>
-                    </include>
+                    </include> -->
                     <!-- Other -->
                     <include content="Info_Title_Logo" condition="Skin.HasSetting(TMDbHelper.EnableCrop)">
                         <param name="label">$PARAM[label]</param>
@@ -3166,9 +3176,9 @@
                     <include content="Object_Top" condition="Skin.HasSetting(Info.DisableDetailsLine)">
                         <param name="top">-40</param>
                     </include>
-                    <include content="Object_Bottom" condition="!Skin.HasSetting(TMDbHelper.EnableCrop)">
+                    <!-- <include content="Object_Bottom" condition="!Skin.HasSetting(TMDbHelper.EnableCrop)">
                         <param name="bottom">-80</param>
-                    </include>
+                    </include> -->
                     <include content="Info_Panel_Rating_Visible" condition="$PARAM[check_ratings]">
                         <param name="container">$PARAM[container]</param>
                     </include>
@@ -3183,9 +3193,9 @@
                     <include content="Object_Top" condition="Skin.HasSetting(Info.DisableDetailsLine)">
                         <param name="top">-40</param>
                     </include>
-                    <include content="Object_Bottom" condition="!Skin.HasSetting(TMDbHelper.EnableCrop)">
+                    <!-- <include content="Object_Bottom" condition="!Skin.HasSetting(TMDbHelper.EnableCrop)">
                         <param name="bottom">-120</param>
-                    </include>
+                    </include> -->
                     <bottom>-40</bottom>
                     <include content="Info_Panel_Rating_Visible" condition="$PARAM[check_ratings]">
                         <param name="mod">!</param>
@@ -3258,9 +3268,9 @@
 
                     <include content="Info_Ratings" condition="$PARAM[ratings]">
                         <param name="$PARAM[container]">$PARAM[container]</param>
-                        <include content="Object_Top" condition="!Skin.HasSetting(TMDbHelper.EnableCrop)">
+                        <!-- <include content="Object_Top" condition="!Skin.HasSetting(TMDbHelper.EnableCrop)">
                             <param name="top">80</param>
-                        </include>
+                        </include> -->
                         <top>0</top>
                         <left>0</left>
                         <visible>$PARAM[details]</visible>
