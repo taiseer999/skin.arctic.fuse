@@ -384,8 +384,8 @@
     </variable>
 
     <variable name="Label_Setting_ForegroundLogo">
-        <value condition="!Skin.HasSetting(TMDbHelper.EnableCrop)">$LOCALIZE[31329] ($LOCALIZE[31254])</value>
-        <value>$LOCALIZE[31330] ($LOCALIZE[31267])</value>
+        <value condition="!Skin.HasSetting(TMDbHelper.EnableCrop)">$LOCALIZE[31329]</value>
+        <value>$LOCALIZE[31330]</value>
     </variable>
 
     <variable name="Label_Setting_RatingsStyle">
@@ -412,6 +412,7 @@
 
     <variable name="Label_Setting_SpotlightStyle">
         <value condition="!$EXP[Exp_Hubs_Spotlight_IsEnabled]">$LOCALIZE[13106]</value>
+        <value condition="!$EXP[Exp_Hubs_Spotlight_IsStatic]">Slide</value>
         <value condition="!$EXP[Exp_Hubs_Spotlight_IsFanart]">$LOCALIZE[571]</value>
         <value>$LOCALIZE[20445]</value>
     </variable>
@@ -1231,6 +1232,7 @@
     <variable name="Label_Header_Main_Home">
         <!-- <value condition="!Skin.HasSetting(Hub.Home.DisableSubmenu) + !String.IsEmpty(Container(300).ListItem.Label) + !Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) + !Integer.IsEqual(Window.Property(Slide.WidgetContainer),300)">$INFO[Container(300).ListItem.Label]</value> -->
         <value condition="!Skin.HasSetting(Home.SideMenu.DisableIndicator) + Skin.String(Home.SideMenuCollapse,Topbar) + Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)">$LOCALIZE[10000]</value>
+        <value condition="$EXP[Exp_Hubs_Categories_IsSlide]">$LOCALIZE[10000]</value>
         <value condition="!Skin.HasSetting(Home.SideMenu.DisableIndicator) + $EXP[Exp_HomeMenu_DontHide] + !String.IsEmpty(Container(303).ListItem.Label)">$INFO[Container(303).ListItem.Label]</value>
         <value condition="!Skin.HasSetting(Home.SideMenu.DisableIndicator) + Skin.String(Home.SideMenuCollapse,Topbar) + !String.IsEmpty(Container(370).ListItem.Label)">$INFO[Container(370).ListItem.Label]</value>
         <value condition="!String.IsEmpty(Skin.String(Home.Label))">$INFO[Skin.String(Home.Label)]</value>

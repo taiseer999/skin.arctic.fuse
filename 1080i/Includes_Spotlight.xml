@@ -27,9 +27,15 @@
     </include>
 
     <include name="Spotlight_HideDetails">
-        <include content="Animation_ConditionalFade">
-            <param name="condition">$EXP[Exp_Hubs_Spotlight_IsMini]</param>
+        <include content="Animation_ConditionalFade" condition="$EXP[Exp_Hubs_Spotlight_IsMini]">
+            <param name="condition">True</param>
         </include>
+        <include condition="!$EXP[Exp_Hubs_Spotlight_IsStatic]">Spotlight_Animation</include>
+    </include>
+
+    <include name="Spotlight_HidePanel">
+        <animation effect="fade" start="0" end="100" reversible="false" condition="$EXP[Exp_Hubs_Spotlight_IsVisible]">Conditional</animation>
+        <animation effect="fade" start="100" end="0" delay="399" time="1" reversible="false" condition="!$EXP[Exp_Hubs_Spotlight_IsVisible]">Conditional</animation>
     </include>
 
     <include name="Spotlight_Info">
@@ -42,7 +48,7 @@
                 <param name="visible">Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)</param>
                 <param name="details_include">Spotlight_HideDetails</param>
             </include>
-            <include condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">Spotlight_Animation</include>
+            <include condition="!$EXP[Exp_Hubs_Spotlight_IsStatic]">Spotlight_HidePanel</include>
         </include>
     </include>
 
@@ -128,7 +134,7 @@
                 <height>hub_spotlight_h</height>
 
                 <!-- Animation for Slides -->
-                <include condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">Spotlight_Animation</include>
+                <include condition="!$EXP[Exp_Hubs_Spotlight_IsStatic]">Spotlight_Animation</include>
                 <!-- <include content="Animation_Fade_In" condition="!$EXP[Exp_Hubs_Spotlight_IsFanart]">
                     <param name="condition">Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)</param>
                     <param name="delay">200</param>
