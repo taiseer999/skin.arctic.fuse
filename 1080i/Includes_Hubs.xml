@@ -476,7 +476,12 @@
             <param name="tbarid">311</param>
         </include>
 
-        <onup>311</onup>
+        <include content="Action_Widget_Top" condition="!Skin.String(Home.SideMenuCollapse,Topbar) + !$EXP[Exp_Hubs_Spotlight_IsEnabled]">
+            <param name="id">300</param>
+        </include>
+        <onup condition="Skin.String(Home.SideMenuCollapse,Topbar) + !$EXP[Exp_Hubs_Spotlight_IsEnabled]">SetFocus(370)</onup>
+        <onup condition="$EXP[Exp_Hubs_Spotlight_IsEnabled]">311</onup>
+
         <ondown>302</ondown>
 
         <onfocus>SetProperty(TMDbHelper.WidgetContainer,301,$PARAM[window_id])</onfocus>
