@@ -216,18 +216,17 @@
         </include>
 
         <include content="Settings_Side_Button" condition="!System.AddonIsEnabled(service.libreelec.settings) + ![Skin.String(SideMenu.SecondaryButton,Menu) | Skin.String(SideMenu.SecondaryButton,Options)]">
-            <param name="id">02</param>
+            <param name="id">01</param>
             <param name="label">$LOCALIZE[5]</param>
             <param name="icon">special://skin/extras/icons/toolbox.png</param>
             <onclick>SetFocus(30040)</onclick>
         </include>
         <include content="Settings_Side_Button" condition="System.AddonIsEnabled(service.libreelec.settings) + ![Skin.String(SideMenu.SecondaryButton,Menu) | Skin.String(SideMenu.SecondaryButton,Options)]">
-            <param name="id">02</param>
+            <param name="id">01</param>
             <param name="label">LibreELEC</param>
             <param name="icon">special://skin/extras/icons/libreelec.png</param>
             <onclick>RunAddon(service.libreelec.settings)</onclick>
         </include>
-
         <include content="Settings_Side_Button" condition="Skin.String(SideMenu.SecondaryButton,Menu)">
             <param name="id">01</param>
             <param name="label">$LOCALIZE[33061]</param>
