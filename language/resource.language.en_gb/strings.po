@@ -655,9 +655,7 @@ msgid "Page"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31136"
-msgid "Categories style"
-msgstr ""
+
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31137"
@@ -990,10 +988,10 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31207"
-msgid "Codec style"
+msgid "Codecs"
 msgstr ""
 
-#: /1080i/SkinSettings.xml
+#: /1080i/SkinSettings.xml /1080i/SkinSettings.xml
 msgctxt "#31208"
 msgid "Header"
 msgstr ""
@@ -1285,9 +1283,7 @@ msgid "Image folder"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31272"
-msgid "Foreground logo"
-msgstr ""
+
 
 #: /1080i/Includes_MediaFilter.xml
 msgctxt "#31273"
@@ -2128,12 +2124,7 @@ msgctxt "#31458"
 msgid "Monochrome"
 msgstr ""
 
-#: /1080i/SkinSettings.xml
-msgctxt "#31459"
-msgid "Ratings style"
-msgstr ""
-
-#: /1080i/MusicOSD.xml
+#: /1080i/SkinSettings.xml /1080i/MusicOSD.xml
 msgctxt "#31460"
 msgid "Customise visualisation"
 msgstr ""
@@ -2184,9 +2175,7 @@ msgid "Radar"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31474"
-msgid "Spotlight style"
-msgstr ""
+
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31477"

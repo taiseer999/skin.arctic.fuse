@@ -657,9 +657,7 @@ msgid "Page"
 msgstr "صفحة"
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31136"
-msgid "Combined style"
-msgstr "شكل مجمع"
+
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31137"
@@ -991,9 +989,7 @@ msgid "Item count"
 msgstr "عدد العناصر"
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31207"
-msgid "Codec style"
-msgstr "نوعية الترميز Codec"
+
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31208"
@@ -1287,9 +1283,7 @@ msgid "Image folder"
 msgstr "ملف الصور"
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31272"
-msgid "Foreground logo"
-msgstr "طريقة عرض اسم الفلم / المسلسل"
+
 
 #: /1080i/Includes_MediaFilter.xml
 msgctxt "#31273"
@@ -2011,9 +2005,7 @@ msgid "Monochrome"
 msgstr "غير ملون"
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31459"
-msgid "Ratings style"
-msgstr "Ratings طريقة التصنيف"
+
 
 #: /1080i/MusicOSD.xml
 msgctxt "#31460"
@@ -2066,9 +2058,7 @@ msgid "Radar"
 msgstr "رادار"
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31474"
-msgid "Spotlight style"
-msgstr " Spotlight تخصيص منطقة عرض الوسائط"
+
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31477"

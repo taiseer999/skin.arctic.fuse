@@ -718,9 +718,7 @@ msgid "Page"
 msgstr "Страница"
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31136"
-msgid "Combined style"
-msgstr "Объединенный стиль"
+
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31137"
@@ -1153,9 +1151,7 @@ msgid "Item count"
 msgstr "Количество элементов"
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31207"
-msgid "Codec style"
-msgstr "Стиль кодеков"
+
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31208"
@@ -1449,9 +1445,7 @@ msgid "Image folder"
 msgstr "Папка с изображениями"
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31272"
-msgid "Foreground logo"
-msgstr "Логотип"
+
 
 #: /1080i/Includes_MediaFilter.xml
 msgctxt "#31273"
@@ -2254,9 +2248,7 @@ msgid "Monochrome"
 msgstr "Монохромный"
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31459"
-msgid "Ratings style"
-msgstr "Стиль оценок"
+
 
 #: /1080i/MusicOSD.xml
 msgctxt "#31460"
@@ -2309,9 +2301,7 @@ msgid "Radar"
 msgstr "Радар"
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31474"
-msgid "Spotlight style"
-msgstr "Стиль cпотлайта"
+
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31477"

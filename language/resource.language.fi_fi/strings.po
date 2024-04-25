@@ -655,9 +655,7 @@ msgid "Page"
 msgstr "Sivu"
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31136"
-msgid "Categories and combined style"
-msgstr "Kategoriat ja yhdistetty tyyli"
+
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31137"
@@ -989,9 +987,7 @@ msgid "Item count"
 msgstr "Kohteiden määrä"
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31207"
-msgid "Codec style"
-msgstr "Koodekkien tyyli"
+
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31208"
@@ -1285,9 +1281,7 @@ msgid "Image folder"
 msgstr "Kuvakansio"
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31272"
-msgid "Foreground logo"
-msgstr "Etualan logo"
+
 
 #: /1080i/Includes_MediaFilter.xml
 msgctxt "#31273"
@@ -2119,9 +2113,7 @@ msgid "Monochrome"
 msgstr "Yksivärinen"
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31459"
-msgid "Ratings style"
-msgstr "Arvioiden tyyli"
+
 
 #: /1080i/MusicOSD.xml
 msgctxt "#31460"
@@ -2174,9 +2166,7 @@ msgid "Radar"
 msgstr "Tutka"
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31474"
-msgid "Spotlight style"
-msgstr "Poiminnan tyyli"
+
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31477"

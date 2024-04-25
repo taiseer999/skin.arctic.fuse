@@ -655,9 +655,7 @@ msgid "Page"
 msgstr "页"
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31136"
-msgid "Combined style"
-msgstr "组合风格"
+
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31137"
@@ -989,9 +987,7 @@ msgid "Item count"
 msgstr "项目计数"
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31207"
-msgid "Codec style"
-msgstr "编解码器风格"
+
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31208"
@@ -1285,9 +1281,7 @@ msgid "Image folder"
 msgstr "图像文件夹"
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31272"
-msgid "Foreground logo"
-msgstr "前景标志"
+
 
 #: /1080i/Includes_MediaFilter.xml
 msgctxt "#31273"
@@ -1999,9 +1993,7 @@ msgid "Monochrome"
 msgstr "单色画"
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31459"
-msgid "Ratings style"
-msgstr "评级风格"
+
 
 #: /1080i/MusicOSD.xml
 msgctxt "#31460"
@@ -2054,9 +2046,7 @@ msgid "Radar"
 msgstr "雷达"
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31474"
-msgid "Spotlight style"
-msgstr "聚光灯风格"
+
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31477"

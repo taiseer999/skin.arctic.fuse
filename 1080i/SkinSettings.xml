@@ -70,7 +70,7 @@
                                     <label>$LOCALIZE[480]</label>
                                 </item>
                                 <item id="3">
-                                    <label>$LOCALIZE[31044]</label>
+                                    <label>$LOCALIZE[14206]</label>
                                 </item>
                                 <item id="4">
                                     <label>$LOCALIZE[31174]</label>
@@ -310,71 +310,6 @@
                             <onclick>ActivateWindow(1118)</onclick>
                             <visible>Container(3).HasFocus(2)</visible>
                         </include>
-                        <include content="Settings_Button" description="Title logos">
-                            <param name="id">2013</param>
-                            <param name="control">button</param>
-                            <label>$LOCALIZE[31272]</label>
-                            <label2>$VAR[Label_Setting_ForegroundLogo]</label2>
-                            <onclick>Skin.ToggleSetting(TMDbHelper.EnableCrop)</onclick>
-                            <onclick>ReloadSkin()</onclick>
-                            <onclick>AlarmClock(refocusblura,SetFocus(3,1,absolute),00:00,silent)</onclick>
-                            <onclick>AlarmClock(refocusblurb,SetFocus(2013),00:00,silent)</onclick>
-                            <visible>Container(3).HasFocus(2)</visible>
-                        </include>
-                        <include content="Settings_Button" description="Colour ratings">
-                            <param name="id">2014</param>
-                            <param name="control">button</param>
-                            <label>$LOCALIZE[31459]</label>
-                            <label2>$VAR[Label_Setting_RatingsStyle]</label2>
-                            <onclick>Skin.ToggleSetting(Furniture.EnableColourRatings)</onclick>
-                            <visible>Container(3).HasFocus(2)</visible>
-                        </include>
-                        <include content="Settings_Button" description="Colour codecs">
-                            <param name="id">2015</param>
-                            <param name="control">button</param>
-                            <label>$LOCALIZE[31207]</label>
-                            <label2>$VAR[Label_Setting_CodecStyle]</label2>
-                            <onclick condition="Skin.String(Furniture.CodecStyle,Text) | String.IsEmpty(Skin.String(Furniture.CodecStyle))">Skin.SetString(Furniture.CodecStyle,Monochrome)</onclick>
-                            <onclick condition="Skin.String(Furniture.CodecStyle,Monochrome)">Skin.SetString(Furniture.CodecStyle,Colour)</onclick>
-                            <onclick condition="Skin.String(Furniture.CodecStyle,Colour)">Skin.SetString(Furniture.CodecStyle,Basic)</onclick>
-                            <onclick condition="Skin.String(Furniture.CodecStyle,Basic)">Skin.SetString(Furniture.CodecStyle,Text)</onclick>
-                            <visible>Container(3).HasFocus(2)</visible>
-                        </include>
-                        <include content="Settings_Button" description="Info line style">
-                            <param name="id">2016</param>
-                            <param name="control">button</param>
-                            <label>Info line style</label>
-                            <label2>$VAR[Label_Setting_InfoLineStyle]</label2>
-                            <onclick>Skin.ToggleSetting(Info.EnablePillboxStyle)</onclick>
-                            <visible>Container(3).HasFocus(2)</visible>
-                        </include>
-
-                        <include content="Settings_Button" description="Spotlight Style">
-                            <param name="id">2017</param>
-                            <param name="control">button</param>
-                            <label>$LOCALIZE[31474]</label>
-                            <label2>$VAR[Label_Setting_SpotlightStyle]</label2>
-                            <visible>Container(3).HasFocus(2)</visible>
-                            <onclick>Skin.ToggleSetting(Background.EnableSpotlightFanart)</onclick>
-                        </include>
-
-                        <include content="Settings_Button" description="Categories Style">
-                            <param name="id">2018</param>
-                            <param name="control">button</param>
-                            <label>$LOCALIZE[31136]</label>
-                            <label2>$VAR[Label_Setting_CombinedStyle]</label2>
-                            <visible>Container(3).HasFocus(2)</visible>
-
-                            <onclick condition="Skin.HasSetting(Views.UseAltCombined) + Skin.HasSetting(Views.UseAltCombined.Detailed)">Skin.Reset(Views.UseAltCombined)</onclick>
-                            <onclick condition="Skin.HasSetting(Views.UseAltCombined) + Skin.HasSetting(Views.UseAltCombined.Detailed)">Skin.Reset(Views.UseAltCombined.Detailed)</onclick>
-
-                            <onclick condition="Skin.HasSetting(Views.UseAltCombined) + !Skin.HasSetting(Views.UseAltCombined.Detailed)">Skin.SetBool(Views.UseAltCombined)</onclick>
-                            <onclick condition="Skin.HasSetting(Views.UseAltCombined) + !Skin.HasSetting(Views.UseAltCombined.Detailed)">Skin.SetBool(Views.UseAltCombined.Detailed)</onclick>
-
-                            <onclick condition="!Skin.HasSetting(Views.UseAltCombined) + !Skin.HasSetting(Views.UseAltCombined.Detailed)">Skin.SetBool(Views.UseAltCombined)</onclick>
-                            <onclick condition="!Skin.HasSetting(Views.UseAltCombined) + !Skin.HasSetting(Views.UseAltCombined.Detailed)">Skin.Reset(Views.UseAltCombined.Detailed)</onclick>
-                        </include>
-
 
                         <include content="Settings_Button" description="Border Style">
                             <param name="id">2019</param>
@@ -423,20 +358,81 @@
                             <visible>Container(3).HasFocus(3)</visible>
                             <onclick>runscript(script.skinvariables,action=buildviews,configure)</onclick>
                         </include>
+                        <include content="Settings_Button" description="TV Channels">
+                            <param name="id">3012</param>
+                            <param name="control">button</param>
+                            <label>$LOCALIZE[19023]</label>
+                            <label2>$VAR[Label_Setting_EPGChannelsStyle]</label2>
+                            <visible>Container(3).HasFocus(3)</visible>
+                            <onclick>Skin.ToggleSetting(Views.UseHalfPVRGuide)</onclick>
+                        </include>
 
-                        <include content="Settings_Label" description="Combined viewtype style">
+                        <include content="Settings_Label" description="Style">
                             <param name="id">3020</param>
                             <label>$LOCALIZE[736]</label>
                             <visible>Container(3).HasFocus(3)</visible>
                         </include>
-
-                        <include content="Settings_Button" description="PVR Style combined">
+                        <include content="Settings_Button" description="Spotlight Style">
+                            <param name="id">3021</param>
+                            <param name="control">button</param>
+                            <label>$LOCALIZE[31105]</label>
+                            <label2>$VAR[Label_Setting_SpotlightStyle]</label2>
+                            <visible>Container(3).HasFocus(3)</visible>
+                            <onclick>Skin.ToggleSetting(Background.EnableSpotlightFanart)</onclick>
+                        </include>
+                        <include content="Settings_Button" description="Categories">
                             <param name="id">3022</param>
                             <param name="control">button</param>
-                            <label>$LOCALIZE[31182]</label>
-                            <label2>$VAR[Label_Setting_EPGChannelsStyle]</label2>
+                            <label>$LOCALIZE[31150]</label>
+                            <label2>$VAR[Label_Setting_CombinedStyle]</label2>
                             <visible>Container(3).HasFocus(3)</visible>
-                            <onclick>Skin.ToggleSetting(Views.UseHalfPVRGuide)</onclick>
+
+                            <onclick condition="Skin.HasSetting(Views.UseAltCombined) + Skin.HasSetting(Views.UseAltCombined.Detailed)">Skin.Reset(Views.UseAltCombined)</onclick>
+                            <onclick condition="Skin.HasSetting(Views.UseAltCombined) + Skin.HasSetting(Views.UseAltCombined.Detailed)">Skin.Reset(Views.UseAltCombined.Detailed)</onclick>
+
+                            <onclick condition="Skin.HasSetting(Views.UseAltCombined) + !Skin.HasSetting(Views.UseAltCombined.Detailed)">Skin.SetBool(Views.UseAltCombined)</onclick>
+                            <onclick condition="Skin.HasSetting(Views.UseAltCombined) + !Skin.HasSetting(Views.UseAltCombined.Detailed)">Skin.SetBool(Views.UseAltCombined.Detailed)</onclick>
+
+                            <onclick condition="!Skin.HasSetting(Views.UseAltCombined) + !Skin.HasSetting(Views.UseAltCombined.Detailed)">Skin.SetBool(Views.UseAltCombined)</onclick>
+                            <onclick condition="!Skin.HasSetting(Views.UseAltCombined) + !Skin.HasSetting(Views.UseAltCombined.Detailed)">Skin.Reset(Views.UseAltCombined.Detailed)</onclick>
+                        </include>
+                        <include content="Settings_Button" description="Title">
+                            <param name="id">3023</param>
+                            <param name="control">button</param>
+                            <label>$LOCALIZE[369]</label>
+                            <label2>$VAR[Label_Setting_ForegroundLogo]</label2>
+                            <onclick>Skin.ToggleSetting(TMDbHelper.EnableCrop)</onclick>
+                            <onclick>ReloadSkin()</onclick>
+                            <onclick>AlarmClock(refocusblura,SetFocus(3,2,absolute),00:00,silent)</onclick>
+                            <onclick>AlarmClock(refocusblurb,SetFocus(3023),00:00,silent)</onclick>
+                            <visible>Container(3).HasFocus(3)</visible>
+                        </include>
+                        <include content="Settings_Button" description="Info line">
+                            <param name="id">3024</param>
+                            <param name="control">button</param>
+                            <label>$LOCALIZE[31178]</label>
+                            <label2>$VAR[Label_Setting_InfoLineStyle]</label2>
+                            <onclick>Skin.ToggleSetting(Info.EnablePillboxStyle)</onclick>
+                            <visible>Container(3).HasFocus(3)</visible>
+                        </include>
+                        <include content="Settings_Button" description="Ratings">
+                            <param name="id">3025</param>
+                            <param name="control">button</param>
+                            <label>$LOCALIZE[31202]</label>
+                            <label2>$VAR[Label_Setting_RatingsStyle]</label2>
+                            <onclick>Skin.ToggleSetting(Furniture.EnableColourRatings)</onclick>
+                            <visible>Container(3).HasFocus(3)</visible>
+                        </include>
+                        <include content="Settings_Button" description="Codecs">
+                            <param name="id">3026</param>
+                            <param name="control">button</param>
+                            <label>$LOCALIZE[31207]</label>
+                            <label2>$VAR[Label_Setting_CodecStyle]</label2>
+                            <onclick condition="Skin.String(Furniture.CodecStyle,Text) | String.IsEmpty(Skin.String(Furniture.CodecStyle))">Skin.SetString(Furniture.CodecStyle,Monochrome)</onclick>
+                            <onclick condition="Skin.String(Furniture.CodecStyle,Monochrome)">Skin.SetString(Furniture.CodecStyle,Colour)</onclick>
+                            <onclick condition="Skin.String(Furniture.CodecStyle,Colour)">Skin.SetString(Furniture.CodecStyle,Basic)</onclick>
+                            <onclick condition="Skin.String(Furniture.CodecStyle,Basic)">Skin.SetString(Furniture.CodecStyle,Text)</onclick>
+                            <visible>Container(3).HasFocus(3)</visible>
                         </include>
 
                         <include content="Settings_Label" description="Widgets">
