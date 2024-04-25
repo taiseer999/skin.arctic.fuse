@@ -122,7 +122,7 @@
 
     <include name="Dimension_Object_InfoCircle_Text_Top">
         <height>10</height>
-        <centertop>25</centertop>
+        <centertop>24</centertop>
     </include>
 
     <include name="Dimension_Object_InfoCircle_Text_Sub">

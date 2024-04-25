@@ -2118,7 +2118,7 @@
 
     <include name="Layout_Square_Labels">
         <param name="detailed">false</param>
-        <param name="align">center</param>
+        <param name="align">left</param>
         <definition>
             <control type="group">
                 <visible>![$PARAM[detailed]]</visible>
@@ -2152,8 +2152,8 @@
                 </control>
             </control>
             <!-- <control type="textbox">
-                <top>29</top>
-                <bottom>-4</bottom>
+                <top>28</top>
+                <bottom>-8</bottom>
                 <font>font_mini_plot</font>
                 <label>$INFO[$PARAM[listitem].Label]</label>
                 <textcolor>main_fg_70</textcolor>
@@ -2167,7 +2167,8 @@
                 <font>font_tiny</font>
                 <label>$INFO[$PARAM[listitem].Label]</label>
                 <textcolor>main_fg_70</textcolor>
-                <align>$PARAM[align]</align>
+                <align>center</align>
+                <!-- <align>$PARAM[align]</align> -->
                 <autoscroll>false</autoscroll>
                 <visible>$PARAM[detailed]</visible>
             </control>
@@ -2525,7 +2526,7 @@
     <include name="Layout_Landscape_Labels">
         <param name="fade">false</param>
         <param name="selected">false</param>
-        <param name="align">center</param>
+        <param name="align">left</param>
         <definition>
             <control type="image">
                 <texture border="12" colordiffuse="e7ffffff">diffuse/poster_fade.png</texture>
