@@ -1,7 +1,7 @@
 blank_issues_enabled: false
 contact_links:
   - name: Feature Requests
-    url: https://github.com/jurialmunkey/skin.arctic.fuse/discussions/categories/feature-requests
+    url: https://github.com/jurialmunkey/skin.arctic.fuse/discussions/new?category=feature-requests
     about: Request a new feature or changes to an existing feature
   - name: Q&A Discussions
     url: https://github.com/jurialmunkey/skin.arctic.fuse/discussions/categories/q-a
