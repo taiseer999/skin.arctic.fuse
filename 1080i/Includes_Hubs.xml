@@ -96,7 +96,7 @@
                 </include>
                 <left>-20</left>
                 <include content="Object_Top" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
-                    <param name="top">0</param>
+                    <param name="top">40</param>
                 </include>
                 <top>-5</top>
                 <nested />
@@ -121,6 +121,9 @@
                     <param name="id">$PARAM[id]</param>
                 </include>
                 <width>1250</width>
+                <include content="Object_Top" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
+                    <param name="top">80</param>
+                </include>
                 <top>40</top>
                 <nested />
             </include>
@@ -507,7 +510,7 @@
             <width>1095</width>
             <left>-20</left>
             <include content="Object_Top" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
-                <param name="top">0</param>
+                <param name="top">40</param>
             </include>
             <top>-5</top>
         </include>
@@ -526,6 +529,9 @@
                 <param name="categories">$PARAM[categories]</param>
             </include>
             <movement>3</movement>
+            <include content="Object_Top" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
+                <param name="top">100</param>
+            </include>
             <top>60</top>
         </include>
     </include>
@@ -568,18 +574,25 @@
                     <left>160</left>
                     <height>hub_categorieswidget_h</height>
                     <top>hub_categorieswidget_t</top>
-                    <!-- <control type="group">
+                    <control type="group">
                         <top>-20</top>
                         <left>40</left>
-                        <include content="Info_Title_LogoLabel" condition="!$EXP[Exp_Hubs_Spotlight_IsEnabled]">
-                            <param name="label">Categories</param>
+                        <include content="Animation_Fade_In">
+                            <param name="condition">!$EXP[Exp_Hubs_SlideDown_Categories]</param>
+                            <param name="delay">200</param>
+                        </include>
+                        <include content="Animation_ConditionalFade">
+                            <param name="condition">$EXP[Exp_Hubs_SlideDown_Categories]</param>
+                        </include>
+                        <include content="Info_Title_LogoLabel" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
+                            <param name="label">$INFO[Container(303).ListItem.Label]</param>
                             <param name="wrapmultiline">false</param>
                             <param name="visible">true</param>
                             <param name="width">info_plot_w</param>
                             <param name="height">132</param>
                             <param name="colordiffuse">main_fg</param>
                         </include>
-                    </control> -->
+                    </control>
                     <include content="Hub_Categories_Definition">
                         <param name="window_id">$PARAM[window_id]</param>
                         <param name="categories">$PARAM[categories]</param>

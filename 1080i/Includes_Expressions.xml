@@ -85,16 +85,15 @@
 
     <expression name="Exp_Hubs_SlideDown_Widgets">[String.IsEmpty(Window.Property(Slide.WidgetContainer)) | $EXP[Exp_Hubs_Categories_IsFocus]]</expression>
 
-    <expression name="Exp_Hubs_SlideDown_Categories">[String.IsEmpty(Window.Property(Slide.WidgetContainer))]</expression>
+    <!-- <expression name="Exp_Hubs_SlideDown_Categories">[String.IsEmpty(Window.Property(Slide.WidgetContainer))]</expression> -->
+    <expression name="Exp_Hubs_SlideDown_Categories">[String.IsEmpty(Window.Property(Slide.WidgetContainer)) + $EXP[Exp_Hubs_Spotlight_IsEnabled]]</expression>
 
     <expression name="Exp_Hubs_Categories_IsFocus">[Integer.IsEqual(Window.Property(Slide.WidgetContainer),300) | Integer.IsEqual(Window.Property(Slide.WidgetContainer),302) | Control.HasFocus(300) | Control.HasFocus(302)]</expression>
 
-
     <expression name="Exp_Hubs_Spotlight_IsFanart">[Skin.HasSetting(Background.EnableSpotlightFanart)]</expression>
     <expression name="Exp_Hubs_Spotlight_IsEnabled">[True]</expression>
-    <expression name="Exp_Hubs_Spotlight_IsSlide">[False]</expression>
-    <expression name="Exp_Hubs_Spotlight_IsMini">[True]</expression>
-    <!-- <expression name="Exp_Hubs_Spotlight_IsEnabled">[!Skin.HasSetting(Background.DisableSpotlight)]</expression> -->
+    <expression name="Exp_Hubs_Spotlight_IsSlide">[!$EXP[Exp_Hubs_Spotlight_IsEnabled]]</expression>
+    <expression name="Exp_Hubs_Spotlight_IsMini">[False]</expression>
 
     <!-- ============== -->
     <!-- Standard Views -->
@@ -123,7 +122,7 @@
 
     <expression name="Exp_FilterWall_IsViewtype">[Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(52) | [[Control.IsVisible(502) | Control.IsVisible(512) | Control.IsVisible(522)]]]</expression>
 
-    <expression name="Exp_BackgroundArtwork_IsHidden">[$EXP[Exp_FilterWall_IsActive] | Window.IsVisible(favouritesbrowser)]</expression>
+    <expression name="Exp_BackgroundArtwork_IsHidden">[$EXP[Exp_FilterWall_IsActive] | Window.IsVisible(favouritesbrowser) | [$EXP[Exp_Window_IsHub] + $EXP[Exp_Hubs_Spotlight_IsSlide] + [$EXP[Exp_Hubs_Categories_IsFocus] | Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)]]]</expression>
 
     <expression name="Exp_MediaFilter_IsActive">[!String.IsEmpty(Window.Property(MediaFilterBase))]</expression>
 
