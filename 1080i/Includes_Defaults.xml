@@ -466,7 +466,7 @@
                     <param name="condition">true</param>
                 </include>
             </include>
-            <include content="Object_Control" condition="Skin.HasSetting(Background.ExtraFanart)">
+            <!-- <include content="Object_Control" condition="Skin.HasSetting(Background.ExtraFanart)">
                 <param name="control">fadelabel</param>
                 <param name="id">99973</param>
                 <description>Randomizer for plugin-free multiple fanart</description>
@@ -504,7 +504,7 @@
                 <scroll>false</scroll>
                 <scrollout>false</scrollout>
                 <resetonlabelchange>true</resetonlabelchange>
-            </include>
+            </include> -->
         </definition>
     </include>
 
