@@ -178,6 +178,7 @@
 
     <!-- Widgets -->
     <constant name="hub_spotlight_fanart_t">400</constant>
+    <constant name="hub_spotlight_mini_t">260</constant>
     <constant name="hub_spotlight_t">460</constant>
     <constant name="hub_spotlight_h">40</constant>
     <constant name="hub_categorieswidget_t">660</constant>

@@ -93,6 +93,7 @@
     <expression name="Exp_Hubs_Spotlight_IsFanart">[Skin.HasSetting(Background.EnableSpotlightFanart)]</expression>
     <expression name="Exp_Hubs_Spotlight_IsEnabled">[True]</expression>
     <expression name="Exp_Hubs_Spotlight_IsSlide">[False]</expression>
+    <expression name="Exp_Hubs_Spotlight_IsMini">[True]</expression>
     <!-- <expression name="Exp_Hubs_Spotlight_IsEnabled">[!Skin.HasSetting(Background.DisableSpotlight)]</expression> -->
 
     <!-- ============== -->
