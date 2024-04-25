@@ -412,9 +412,16 @@
 
     <variable name="Label_Setting_SpotlightStyle">
         <value condition="!$EXP[Exp_Hubs_Spotlight_IsEnabled]">$LOCALIZE[13106]</value>
-        <value condition="!$EXP[Exp_Hubs_Spotlight_IsStatic]">Slide</value>
+        <value condition="!$EXP[Exp_Hubs_Spotlight_IsStatic]">$LOCALIZE[31136]</value>
         <value condition="!$EXP[Exp_Hubs_Spotlight_IsFanart]">$LOCALIZE[571]</value>
         <value>$LOCALIZE[20445]</value>
+    </variable>
+
+    <variable name="Label_Setting_SpotlightStyle_Preselect">
+        <value condition="!$EXP[Exp_Hubs_Spotlight_IsEnabled]">3</value>
+        <value condition="!$EXP[Exp_Hubs_Spotlight_IsStatic]">2</value>
+        <value condition="!$EXP[Exp_Hubs_Spotlight_IsFanart]">0</value>
+        <value>1</value>
     </variable>
 
     <variable name="Label_Setting_ColourPreset">

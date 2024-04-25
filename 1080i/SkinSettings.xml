@@ -369,7 +369,11 @@
                             <label>$LOCALIZE[31105]</label>
                             <label2>$VAR[Label_Setting_SpotlightStyle]</label2>
                             <visible>Container(3).HasFocus(3)</visible>
-                            <onclick>Skin.ToggleSetting(Background.EnableSpotlightFanart)</onclick>
+
+                            <onclick>RunScript(script.skinvariables,run_dialog=select,preselect=$VAR[Label_Setting_SpotlightStyle_Preselect],heading=$LOCALIZE[31105],separator=||,list=$LOCALIZE[571]||$LOCALIZE[20445],"executebuiltin_0=Skin.Reset(Background.DisableSpotlight)||Skin.Reset(Background.EnableSpotlightFanart)||Skin.Reset(Background.EnableSpotlightSlide)","executebuiltin_1=Skin.Reset(Background.DisableSpotlight)||Skin.SetBool(Background.EnableSpotlightFanart)||Skin.Reset(Background.EnableSpotlightSlide)","executebuiltin_2=Skin.Reset(Background.DisableSpotlight)||Skin.SetBool(Background.EnableSpotlightFanart)||Skin.SetBool(Background.EnableSpotlightSlide)","executebuiltin_3=Skin.SetBool(Background.DisableSpotlight)||Skin.Reset(Background.EnableSpotlightFanart)||Skin.Reset(Background.EnableSpotlightSlide)")</onclick>
+
+                            <!-- <onclick>RunScript(script.skinvariables,run_dialog=select,preselect=$VAR[Label_Setting_SpotlightStyle_Preselect],heading=$LOCALIZE[31105],separator=||,list=$LOCALIZE[571]||$LOCALIZE[20445]||$LOCALIZE[31136]||$LOCALIZE[13106],"executebuiltin_0=Skin.Reset(Background.DisableSpotlight)||Skin.Reset(Background.EnableSpotlightFanart)||Skin.Reset(Background.EnableSpotlightSlide)","executebuiltin_1=Skin.Reset(Background.DisableSpotlight)||Skin.SetBool(Background.EnableSpotlightFanart)||Skin.Reset(Background.EnableSpotlightSlide)","executebuiltin_2=Skin.Reset(Background.DisableSpotlight)||Skin.SetBool(Background.EnableSpotlightFanart)||Skin.SetBool(Background.EnableSpotlightSlide)","executebuiltin_3=Skin.SetBool(Background.DisableSpotlight)||Skin.Reset(Background.EnableSpotlightFanart)||Skin.Reset(Background.EnableSpotlightSlide)")</onclick> -->
+
                         </include>
                         <include content="Settings_Button" description="Categories">
                             <param name="id">3022</param>
