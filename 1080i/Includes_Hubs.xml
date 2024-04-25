@@ -96,7 +96,7 @@
                 </include>
                 <left>-20</left>
                 <include content="Object_Top" condition="!$EXP[Exp_Hubs_Spotlight_IsEnabled]">
-                    <param name="top">40</param>
+                    <param name="top">0</param>
                 </include>
                 <top>-5</top>
                 <nested />
@@ -121,9 +121,6 @@
                     <param name="id">$PARAM[id]</param>
                 </include>
                 <width>1250</width>
-                <include content="Object_Top" condition="!$EXP[Exp_Hubs_Spotlight_IsEnabled]">
-                    <param name="top">100</param>
-                </include>
                 <top>40</top>
                 <nested />
             </include>
@@ -510,7 +507,7 @@
             <width>1095</width>
             <left>-20</left>
             <include content="Object_Top" condition="!$EXP[Exp_Hubs_Spotlight_IsEnabled]">
-                <param name="top">40</param>
+                <param name="top">0</param>
             </include>
             <top>-5</top>
         </include>
@@ -529,9 +526,6 @@
                 <param name="categories">$PARAM[categories]</param>
             </include>
             <movement>3</movement>
-            <include content="Object_Top" condition="!$EXP[Exp_Hubs_Spotlight_IsEnabled]">
-                <param name="top">120</param>
-            </include>
             <top>60</top>
         </include>
     </include>
@@ -554,7 +548,7 @@
                 <param name="item_condition">true</param>
                 <param name="item_count">$INFO[Container(301).NumItems]</param>
                 <top>60</top>
-                <include condition="$EXP[Exp_Hubs_Spotlight_IsFanart]">Spotlight_Animation</include>
+                <!-- <include condition="$EXP[Exp_Hubs_Spotlight_IsFanart]">Spotlight_Animation</include> -->
             </include>
         </control>
     </include>
@@ -574,7 +568,7 @@
                     <left>160</left>
                     <height>hub_categorieswidget_h</height>
                     <top>hub_categorieswidget_t</top>
-                    <control type="group">
+                    <!-- <control type="group">
                         <top>-20</top>
                         <left>40</left>
                         <include content="Info_Title_LogoLabel" condition="!$EXP[Exp_Hubs_Spotlight_IsEnabled]">
@@ -585,7 +579,7 @@
                             <param name="height">132</param>
                             <param name="colordiffuse">main_fg</param>
                         </include>
-                    </control>
+                    </control> -->
                     <include content="Hub_Categories_Definition">
                         <param name="window_id">$PARAM[window_id]</param>
                         <param name="categories">$PARAM[categories]</param>
