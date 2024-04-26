@@ -90,7 +90,7 @@
     </variable>
 
     <variable name="Path_Spotlight_Default_ViewContainer">
-        <value condition="!$EXP[Exp_Hubs_Spotlight_IsEnabled]">300</value>
+        <value condition="$EXP[Exp_Hubs_Spotlight_IsDisabled]">300</value>
         <value condition="!String.IsEmpty(Container(300).ListItem.Property(spotlight_path))">311</value>
         <value condition="Window.IsVisible(Home) + !String.IsEmpty(Container(303).ListItem.Property(spotlight_path))">311</value>
         <value condition="Window.IsVisible(Home) + !String.IsEmpty(Container(370).ListItem.Property(spotlight_path))">311</value>

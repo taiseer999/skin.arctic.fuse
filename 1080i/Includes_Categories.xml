@@ -19,7 +19,7 @@
         <include content="Categories_Selector_Movement_Position">
             <param name="id">$PARAM[id]</param>
         </include>
-        <width>1010</width>
+        <width>1000</width>
     </include>
 
     <include name="Categories_Iconic_Selector">

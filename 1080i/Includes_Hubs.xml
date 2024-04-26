@@ -71,6 +71,18 @@
         <include>Hub_Categories_FadeIn</include>
     </include>
 
+    <include name="Hub_Categories_Spotlight_Slide_Animation">
+        <top>$PARAM[top]</top>
+        <animation effect="slide" start="0" end="0,$PARAM[y]" reversible="false" time="400" tween="quadratic" condition="$EXP[Exp_Hubs_Spotlight_IsVisible]">Conditional</animation>
+        <animation effect="slide" start="0,$PARAM[y]" end="0" reversible="false" time="400" tween="quadratic" condition="!$EXP[Exp_Hubs_Spotlight_IsVisible]">Conditional</animation>
+    </include>
+    <include name="Hub_Categories_Spotlight_Slide">
+        <top>$PARAM[top]</top>
+        <include content="Hub_Categories_Spotlight_Slide_Animation" condition="!$EXP[Exp_Hubs_Spotlight_IsStatic]">
+            <param name="y">$PARAM[y]</param>
+        </include>
+    </include>
+
     <include name="Hub_Submenu_List">
         <param name="ondown">340</param>
         <param name="hidden_button">List_ButtonMenu_Row_HiddenButton_View</param>
@@ -95,8 +107,9 @@
                     <param name="id">$PARAM[id]</param>
                 </include>
                 <left>-20</left>
-                <include content="Object_Top" condition="!$EXP[Exp_Hubs_Spotlight_IsStatic]">
+                <include content="Hub_Categories_Spotlight_Slide" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
                     <param name="top">40</param>
+                    <param name="y">-45</param>
                 </include>
                 <top>-5</top>
                 <nested />
@@ -114,15 +127,15 @@
                 <param name="hitrect_y">70</param>
                 <param name="hitrect_w">1080</param>
                 <param name="hitrect_h">100</param>
-                <param name="shorten">True</param>
+                <param name="shorten">False</param>
                 <include content="Hub_Submenu_List_Definition_Content">
                     <param name="window_id">$PARAM[window_id]</param>
                     <param name="ondown">$PARAM[ondown]</param>
                     <param name="id">$PARAM[id]</param>
                 </include>
-                <width>1250</width>
-                <include content="Object_Top" condition="!$EXP[Exp_Hubs_Spotlight_IsStatic]">
+                <include content="Hub_Categories_Spotlight_Slide" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
                     <param name="top">80</param>
+                    <param name="y">-40</param>
                 </include>
                 <top>40</top>
                 <nested />
@@ -137,8 +150,8 @@
             <height>hub_submenuwidget_h</height>
             <left>160</left>
             <orientation>vertical</orientation>
-            <include condition="$EXP[Exp_Hubs_Spotlight_IsStatic]">Hub_WindowTransition_CategoriesSpotlight_OnWidgets</include>
-            <include condition="!$EXP[Exp_Hubs_Spotlight_IsStatic]">Hub_WindowTransition_CategoriesSpotlight_OnCategories</include>
+            <include condition="!$EXP[Exp_Hubs_Spotlight_IsSlide]">Hub_WindowTransition_CategoriesSpotlight_OnWidgets</include>
+            <include condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">Hub_WindowTransition_CategoriesSpotlight_OnCategories</include>
 
             <nested />
 
@@ -150,8 +163,8 @@
         <definition>
             <control type="group">
                 <include>Animation_Half_WindowChange_UpDown</include>
-                <include condition="$EXP[Exp_Hubs_Spotlight_IsStatic]">Hub_Slide_Group_OnWidgets</include>
-                <include condition="!$EXP[Exp_Hubs_Spotlight_IsStatic]">Hub_Slide_Group_OnCategories</include>
+                <include condition="!$EXP[Exp_Hubs_Spotlight_IsSlide]">Hub_Slide_Group_OnWidgets</include>
+                <include condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">Hub_Slide_Group_OnCategories</include>
                 <nested />
             </control>
         </definition>
@@ -234,17 +247,17 @@
             <include condition="![$PARAM[widgets_only]]">Spotlight_Fallback_Slideshow</include>
             <include>Defs_TMDbHelper_Loader</include>
 
-            <include content="Background_Main" condition="$EXP[Exp_Hubs_Spotlight_IsFanart] + $EXP[Exp_Hubs_Spotlight_IsEnabled]">
+            <include content="Background_Main" condition="$EXP[Exp_Hubs_Spotlight_IsFanart] + !$EXP[Exp_Hubs_Spotlight_IsDisabled]">
                 <param name="include_layer">Hub_SpotlightFanart</param>
             </include>
-            <include condition="!$EXP[Exp_Hubs_Spotlight_IsFanart] | !$EXP[Exp_Hubs_Spotlight_IsEnabled]">Background_Main</include>
+            <include condition="!$EXP[Exp_Hubs_Spotlight_IsFanart] | $EXP[Exp_Hubs_Spotlight_IsDisabled]">Background_Main</include>
 
             <include>Background_Transition</include>
 
             <include content="Hub_Main_Group">
                 <param name="widgets_only">[$PARAM[widgets_only]]</param>
 
-                <include condition="$EXP[Exp_Hubs_Spotlight_IsFanart] + !Skin.HasSetting(Hub.$PARAM[window_id].DisableSubmenu) + $EXP[Exp_Hubs_Spotlight_IsEnabled]">Hub_Slide_Spotlight_OnFanart</include>
+                <include condition="$EXP[Exp_Hubs_Spotlight_IsFanart] + !Skin.HasSetting(Hub.$PARAM[window_id].DisableSubmenu) + !$EXP[Exp_Hubs_Spotlight_IsDisabled]">Hub_Slide_Spotlight_OnFanart</include>
 
                 <include content="Hub_Menu_Group" condition="![$PARAM[widgets_only]]">
                     <include content="Hub_Categories">
@@ -252,7 +265,7 @@
                         <param name="window_id">$PARAM[window_id]</param>
                     </include>
                 </include>
-                <include content="Spotlight_List" condition="![$PARAM[widgets_only]] + $EXP[Exp_Hubs_Spotlight_IsEnabled]">
+                <include content="Spotlight_List" condition="![$PARAM[widgets_only]] + !$EXP[Exp_Hubs_Spotlight_IsDisabled]">
                     <param name="window_id">$PARAM[window_id]</param>
                     <param name="sortby">$PARAM[fullscreen_sortby]</param>
                     <param name="sortorder">$PARAM[fullscreen_sortorder]</param>
@@ -401,13 +414,13 @@
             </include>
         </include>
 
-        <include condition="Window.IsVisible(Home) + $EXP[Exp_Hubs_Spotlight_IsEnabled]">skinvariables-sidemenu-spotlight</include>
-        <include condition="$EXP[Exp_Hubs_Spotlight_IsEnabled]">skinvariables-$PARAM[categories]-spotlight</include>
+        <include condition="Window.IsVisible(Home) + !$EXP[Exp_Hubs_Spotlight_IsDisabled]">skinvariables-sidemenu-spotlight</include>
+        <include condition="!$EXP[Exp_Hubs_Spotlight_IsDisabled]">skinvariables-$PARAM[categories]-spotlight</include>
 
         <include content="Hub_Widgets_Group">
             <include>skinvariables-$PARAM[categories]-widgets</include>
-            <include condition="$EXP[Exp_Hubs_Spotlight_IsStatic]">Hub_WindowTransition_Group_OnWidgets</include>
-            <include condition="!$EXP[Exp_Hubs_Spotlight_IsStatic]">Hub_WindowTransition_Group_OnCategories</include>
+            <include condition="!$EXP[Exp_Hubs_Spotlight_IsSlide]">Hub_WindowTransition_Group_OnWidgets</include>
+            <include condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">Hub_WindowTransition_Group_OnCategories</include>
         </include>
 
         <include content="Hub_Widgets_Infopanel">
@@ -423,7 +436,7 @@
             <include>Animation_View_WindowChange</include>
             <include>Animation_Group_Bumper</include>
             <nested />
-            <include condition="![$PARAM[widgets_only]] + $EXP[Exp_Hubs_Spotlight_IsEnabled]">Spotlight_Info</include>
+            <include condition="![$PARAM[widgets_only]] + !$EXP[Exp_Hubs_Spotlight_IsDisabled]">Spotlight_Info</include>
         </control>
     </include>
 
@@ -476,11 +489,11 @@
             <param name="tbarid">311</param>
         </include>
 
-        <include content="Action_Widget_Top" condition="!Skin.String(Home.SideMenuCollapse,Topbar) + !$EXP[Exp_Hubs_Spotlight_IsEnabled]">
+        <include content="Action_Widget_Top" condition="!Skin.String(Home.SideMenuCollapse,Topbar) + $EXP[Exp_Hubs_Spotlight_IsDisabled]">
             <param name="id">300</param>
         </include>
-        <onup condition="Skin.String(Home.SideMenuCollapse,Topbar) + !$EXP[Exp_Hubs_Spotlight_IsEnabled]">SetFocus(370)</onup>
-        <onup condition="$EXP[Exp_Hubs_Spotlight_IsEnabled]">311</onup>
+        <onup condition="Skin.String(Home.SideMenuCollapse,Topbar) + $EXP[Exp_Hubs_Spotlight_IsDisabled]">SetFocus(370)</onup>
+        <onup condition="!$EXP[Exp_Hubs_Spotlight_IsDisabled]">311</onup>
 
         <ondown>302</ondown>
 
@@ -514,8 +527,9 @@
             <movement>2</movement>
             <width>1095</width>
             <left>-20</left>
-            <include content="Object_Top" condition="!$EXP[Exp_Hubs_Spotlight_IsStatic]">
+            <include content="Hub_Categories_Spotlight_Slide" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
                 <param name="top">40</param>
+                <param name="y">-45</param>
             </include>
             <top>-5</top>
         </include>
@@ -533,9 +547,9 @@
                 <param name="window_id">$PARAM[window_id]</param>
                 <param name="categories">$PARAM[categories]</param>
             </include>
-            <movement>3</movement>
-            <include content="Object_Top" condition="!$EXP[Exp_Hubs_Spotlight_IsStatic]">
+            <include content="Hub_Categories_Spotlight_Slide" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
                 <param name="top">100</param>
+                <param name="y">-40</param>
             </include>
             <top>60</top>
         </include>
@@ -559,7 +573,7 @@
                 <param name="item_condition">true</param>
                 <param name="item_count">$INFO[Container(301).NumItems]</param>
                 <top>60</top>
-                <include condition="!$EXP[Exp_Hubs_Spotlight_IsStatic]">Spotlight_Animation</include>
+                <include condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">Spotlight_Animation</include>
             </include>
         </control>
     </include>
@@ -590,12 +604,12 @@
 
     <include name="Hub_Categories">
         <control type="group">
-            <include condition="$EXP[Exp_Hubs_Spotlight_IsStatic]">Hub_WindowTransition_CategoriesSpotlight_OnWidgets</include>
-            <include condition="!$EXP[Exp_Hubs_Spotlight_IsStatic]">Hub_WindowTransition_CategoriesSpotlight_OnCategories</include>
-            <include condition="$EXP[Exp_Hubs_Spotlight_IsEnabled] + !$EXP[Exp_Hubs_Spotlight_IsMini]">Hub_Categories_Spotlight_Viewline</include>
+            <include condition="!$EXP[Exp_Hubs_Spotlight_IsSlide]">Hub_WindowTransition_CategoriesSpotlight_OnWidgets</include>
+            <include condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">Hub_WindowTransition_CategoriesSpotlight_OnCategories</include>
+            <include condition="!$EXP[Exp_Hubs_Spotlight_IsDisabled] + !$EXP[Exp_Hubs_Spotlight_IsMini]">Hub_Categories_Spotlight_Viewline</include>
             <control type="group">
                 <include>Transitions_Lower_Visibility</include>
-                <include content="Spotlight_Main" condition="$EXP[Exp_Hubs_Spotlight_IsEnabled]">
+                <include content="Spotlight_Main" condition="!$EXP[Exp_Hubs_Spotlight_IsDisabled]">
                     <param name="window_id">$PARAM[window_id]</param>
                 </include>
                 <control type="group">
@@ -603,7 +617,7 @@
                     <left>160</left>
                     <height>hub_categorieswidget_h</height>
                     <top>hub_categorieswidget_t</top>
-                    <include condition="!$EXP[Exp_Hubs_Spotlight_IsStatic]">Hub_Categories_Header</include>
+                    <include condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">Hub_Categories_Header</include>
                     <include content="Hub_Categories_Definition">
                         <param name="window_id">$PARAM[window_id]</param>
                         <param name="categories">$PARAM[categories]</param>

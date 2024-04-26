@@ -86,14 +86,15 @@
     <expression name="Exp_Hubs_SlideDown_Widgets">[String.IsEmpty(Window.Property(Slide.WidgetContainer)) | $EXP[Exp_Hubs_Categories_HasFocus]]</expression>
 
     <!-- <expression name="Exp_Hubs_SlideDown_Categories">[String.IsEmpty(Window.Property(Slide.WidgetContainer))]</expression> -->
-    <expression name="Exp_Hubs_SlideDown_Categories">[String.IsEmpty(Window.Property(Slide.WidgetContainer)) + $EXP[Exp_Hubs_Spotlight_IsEnabled]]</expression>
+    <expression name="Exp_Hubs_SlideDown_Categories">[String.IsEmpty(Window.Property(Slide.WidgetContainer)) + !$EXP[Exp_Hubs_Spotlight_IsDisabled]]</expression>
 
     <expression name="Exp_Hubs_Categories_HasFocus">[Integer.IsEqual(Window.Property(Slide.WidgetContainer),300) | Integer.IsEqual(Window.Property(Slide.WidgetContainer),302) | Control.HasFocus(300) | Control.HasFocus(302)]</expression>
-    <expression name="Exp_Hubs_Categories_IsSlide">[$EXP[Exp_Window_IsHub] + !$EXP[Exp_Hubs_Spotlight_IsStatic] + [$EXP[Exp_Hubs_Categories_HasFocus] | [Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) + !$EXP[Exp_Hubs_Spotlight_IsEnabled]]]]</expression>
+    <expression name="Exp_Hubs_Categories_IsSlide">[$EXP[Exp_Window_IsHub] + $EXP[Exp_Hubs_Spotlight_IsSlide] + [$EXP[Exp_Hubs_Categories_HasFocus] | [Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) + $EXP[Exp_Hubs_Spotlight_IsDisabled]]]]</expression>
 
-    <expression name="Exp_Hubs_Spotlight_IsEnabled">[!Skin.HasSetting(Background.DisableSpotlight)]</expression>
-    <expression name="Exp_Hubs_Spotlight_IsStatic">[$EXP[Exp_Hubs_Spotlight_IsEnabled] + !Skin.HasSetting(Background.EnableSpotlightSlide)]</expression>
-    <expression name="Exp_Hubs_Spotlight_IsFanart">[[$EXP[Exp_Hubs_Spotlight_IsEnabled] + Skin.HasSetting(Background.EnableSpotlightFanart)] | !$EXP[Exp_Hubs_Spotlight_IsStatic]]</expression>
+    <expression name="Exp_Hubs_Spotlight_IsDisabled">[Skin.HasSetting(Background.DisableSpotlight)]</expression>
+    <expression name="Exp_Hubs_Spotlight_IsFanart">[!$EXP[Exp_Hubs_Spotlight_IsDisabled] + Skin.HasSetting(Background.EnableSpotlightFanart)]</expression>
+    <expression name="Exp_Hubs_Spotlight_IsSlide">[[!$EXP[Exp_Hubs_Spotlight_IsDisabled] + Skin.HasSetting(Background.EnableSpotlightSlide)] | $EXP[Exp_Hubs_Spotlight_IsFanart] | $EXP[Exp_Hubs_Spotlight_IsDisabled]]</expression>
+    <expression name="Exp_Hubs_Spotlight_IsStatic">[Skin.HasSetting(Background.DisableSpotlight) | Skin.HasSetting(Background.EnableSpotlightFanart)]</expression>
     <expression name="Exp_Hubs_Spotlight_IsMini">[False]</expression>
 
     <!-- ============== -->
