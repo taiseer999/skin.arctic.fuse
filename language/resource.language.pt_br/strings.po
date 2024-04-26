@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: Ícaro Maicon\n"
+"Last-Translator: Ícaro Maicon, Havokdan\n"
 "Language-Team: \n"
 "Language: pt-br\n"
 "MIME-Version: 1.0\n"
@@ -52,12 +52,12 @@ msgstr "Localização"
 #: /1080i/Includes_Shortcuts_Pallette.xml
 msgctxt "#31007"
 msgid "Up"
-msgstr "Cima"
+msgstr "Subir"
 
 #: /1080i/Includes_Shortcuts_Pallette.xml
 msgctxt "#31008"
 msgid "Down"
-msgstr "Baixo"
+msgstr "Descer"
 
 #: /1080i/Includes_Shortcuts_Window.xml
 msgctxt "#31009"
@@ -123,7 +123,7 @@ msgstr "Repositórios"
 
 msgctxt "#31022"
 msgid "items"
-msgstr "Itens"
+msgstr "itens"
 
 msgctxt "#31023"
 msgid "Loading"
@@ -150,7 +150,7 @@ msgstr "Grupo de Widgets"
 
 msgctxt "#31028"
 msgid "Outline"
-msgstr "Cotorno"
+msgstr "Contorno"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31029"
@@ -393,7 +393,7 @@ msgstr "Usar esta opção substituirá partes da sua configuração existente."
 #: /1080i/Includes_Labels.xml
 msgctxt "#31080"
 msgid "Rebuilding forces Skin Variables to generate the skin XML files for your current configuration."
-msgstr "A reconstrução força das Variáveis ​​de Skin a gerar os arquivos XML de skin para sua configuração atual."
+msgstr "A reconstrução força das Variáveis da Skin irá gerar os arquivos XML de skin para sua configuração atual."
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31081"
@@ -417,7 +417,7 @@ msgstr "Os itens de menu carregados dinamicamente permitem a edição em tempo r
 
 msgctxt "#31085"
 msgid "Live TV"
-msgstr "Tv Ao Vivo"
+msgstr "TV Ao Vivo"
 
 msgctxt "#31086"
 msgid "Customise options"
@@ -480,7 +480,7 @@ msgstr "O modo clássico oferece um layout simplificado apenas de widgets."
 #: /1080i/Includes_Labels.xml
 msgctxt "#31098"
 msgid "Complex mode offers more advanced layout options including spotlights, categories, and adaptive submenus."
-msgstr "O modo complexo oferece opções de layout mais avançadas, incluindo destaques, categorias e submenus adaptáveis."
+msgstr "O modo complexo oferece opções de layout mais avançados, incluindo destaques, categorias e submenus adaptáveis."
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31099"
@@ -655,7 +655,9 @@ msgid "Page"
 msgstr "Página"
 
 #: /1080i/SkinSettings.xml
-
+msgctxt "#31136"
+msgid "Combined style"
+msgstr "Estilo combinado"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31137"
@@ -987,7 +989,9 @@ msgid "Item count"
 msgstr "Número de itens"
 
 #: /1080i/SkinSettings.xml
-
+msgctxt "#31207"
+msgid "Codec style"
+msgstr "Estilo do codec"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31208"
@@ -1233,8 +1237,8 @@ msgid "AR"
 msgstr "AR"
 
 msgctxt "#31261"
-msgid "PX"
-msgstr "PX"
+msgid "px"
+msgstr "px"
 
 msgctxt "#31262"
 msgid "Hz"
@@ -1281,7 +1285,9 @@ msgid "Image folder"
 msgstr "Pasta de imagens"
 
 #: /1080i/SkinSettings.xml
-
+msgctxt "#31272"
+msgid "Foreground logo"
+msgstr "Logotipo em primeiro plano"
 
 #: /1080i/Includes_MediaFilter.xml
 msgctxt "#31273"
@@ -1348,7 +1354,7 @@ msgstr "Classificação (MPAA)"
 
 msgctxt "#31286"
 msgid "Won"
-msgstr "Ganho"
+msgstr "Ganhou"
 
 msgctxt "#31287"
 msgid "Nominated for"
@@ -1362,7 +1368,7 @@ msgstr "Pressione para a direita para acessar as opções de filtro"
 #: /1080i/SkinSettings.xml
 msgctxt "#31289"
 msgid "Touch mode"
-msgstr "Modo touch"
+msgstr "Modo de toque"
 
 #: /1080i/script-wikipedia.xml
 msgctxt "#31290"
@@ -1415,7 +1421,7 @@ msgstr "Personalizar o fundo da janela"
 
 msgctxt "#31301"
 msgid "Kiosk Mode"
-msgstr "Modo Kiosk"
+msgstr "Modo Quiosque"
 
 msgctxt "#31302"
 msgid "Management options"
@@ -1618,7 +1624,7 @@ msgstr "Combinar pilha de widgets"
 #: /1080i/Custom_1181_VideoInfo_Recommendations.xml
 msgctxt "#31342"
 msgid "More Unavailable"
-msgstr "Mais indisponível"
+msgstr "Mais Indisponível"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31343"
@@ -1696,6 +1702,11 @@ msgctxt "#31358"
 msgid "Waiting for plugins"
 msgstr "Esperando pelos add-ons"
 
+#: /shortcuts/generator/data/setup/powermainmenu_item.xml
+msgctxt "#31359"
+msgid "Switch user"
+msgstr "Trocar de usuário"
+
 msgctxt "#31360"
 msgid "Disable all ratings"
 msgstr "Desativar todas as classificações"
@@ -1724,27 +1735,72 @@ msgctxt "#31365"
 msgid "Node"
 msgstr "Node"
 
+#: /1080i/Includes_Labels.xml
+msgctxt "#31366"
+msgid "Uncropped"
+msgstr "Não Cortado"
+
 #: /1080i/SkinSettings.xml
 msgctxt "#31367"
 msgid "Episode thumb for info dialog background"
-msgstr "Plano de fundo da caixa de diálogo de informações do episódio"
+msgstr "Plano de fundo da caixa de diálogo de informações do episódio
+
+#: /1080i/Includes_Search_View.xml
+msgctxt "#31368"
+msgid "Searching for"
+msgstr "Pesquisando por"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31369"
 msgid "Video file"
-msgstr "Arquivo de vídeo"
+msgstr "Arquivo de vídeo
+
+#: /1080i/Custom_1172_Dialog_SideMenu.xml
+msgctxt "#31370"
+msgid "Switch profile"
+msgstr "Trocar de perfil"
 
 msgctxt "#31371"
 msgid "Sorted by"
 msgstr "Ordenado por"
 
+#: /1080i/Includes_Items.xml
+msgctxt "#31372"
+msgid "Options tray"
+msgstr "Opções de bandeja"
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31373"
+msgid "Stacked"
+msgstr "Empilhado"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31374"
+msgid "Reset skin settings to defaults"
+msgstr "Restaurar as configurações da skin para os padrões"
+
 msgctxt "#31375"
 msgid "Install zip"
 msgstr "Instalar via zip"
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31376"
+msgid "Reset discover search history"
+msgstr "Restaurar histórico de pesquisa de descoberta "
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31377"
+msgid "Next window"
+msgstr "Próxima janela"
+
 msgctxt "#31378"
 msgid "Foreign"
 msgstr "Estrangeiro"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31379"
+msgid "Edit categories"
+msgstr "Editar categorias"
 
 msgctxt "#31380"
 msgid "Forecast"
@@ -1762,6 +1818,36 @@ msgctxt "#31383"
 msgid "Production"
 msgstr "Produção"
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31384"
+msgid "Tray labels"
+msgstr "Rótulos da bandeja"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31385"
+msgid "Secondary"
+msgstr "Secundário"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31386"
+msgid "Primary"
+msgstr "Primário"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31387"
+msgid "Contextual"
+msgstr "Contextual"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31388"
+msgid "Seed"
+msgstr "Semente"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31389"
+msgid "Parent widget"
+msgstr "Widget pai"
+
 msgctxt "#31390"
 msgid "Release Year"
 msgstr "Ano de Lançamento"
@@ -1770,6 +1856,11 @@ msgstr "Ano de Lançamento"
 msgctxt "#31391"
 msgid "Minimal"
 msgstr "Mínimo"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31392"
+msgid "Explore Widgets"
+msgstr "Explorar Widgets"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31393"
@@ -1874,9 +1965,39 @@ msgctxt "#31417"
 msgid "Random Artists"
 msgstr "Artistas Aleatórios"
 
+#: /1080i/Includes_Views_Row.xml
+msgctxt "#31418"
+msgid "Circle Row"
+msgstr "Linha Circular"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31419"
+msgid "Overview"
+msgstr "Visão Geral"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31420"
+msgid "Apps"
+msgstr "Aplicativos"
+
 msgctxt "#31421"
 msgid "Choose submenu list"
 msgstr "Selecionar lista de submenu"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31422"
+msgid "Categories style"
+msgstr "Estilo de categorias"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31423"
+msgid "Card"
+msgstr "Cartão"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31424"
+msgid "Board"
+msgstr "Painel"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31425"
@@ -1907,6 +2028,11 @@ msgstr "Capítulos"
 msgctxt "#31430"
 msgid "Customise video OSD widgets"
 msgstr "Personalizar widgets do vídeo OSD"
+
+#: /1080i/Includes_Views_Row.xml
+msgctxt "#31431"
+msgid "Circle"
+msgstr "Circular"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31432"
@@ -1993,7 +2119,9 @@ msgid "Monochrome"
 msgstr "Monocromático"
 
 #: /1080i/SkinSettings.xml
-
+msgctxt "#31459"
+msgid "Ratings style"
+msgstr "Estilo da avaliação"
 
 #: /1080i/MusicOSD.xml
 msgctxt "#31460"
@@ -2046,7 +2174,9 @@ msgid "Radar"
 msgstr "Radar"
 
 #: /1080i/SkinSettings.xml
-
+msgctxt "#31474"
+msgid "Spotlight style"
+msgstr "Estilo do destaque"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31477"
