@@ -655,7 +655,9 @@ msgid "Page"
 msgstr "Сторінка"
 
 #: /1080i/SkinSettings.xml
-
+msgctxt "#31136"
+msgid "Categories and combined style"
+msgstr "Стиль категорій та комбінованих елементів"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31137"
@@ -987,7 +989,9 @@ msgid "Item count"
 msgstr "Кількість елементів"
 
 #: /1080i/SkinSettings.xml
-
+msgctxt "#31207"
+msgid "Codec style"
+msgstr "Стиль кодеків"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31208"
@@ -1281,7 +1285,9 @@ msgid "Image folder"
 msgstr "Тека зображень"
 
 #: /1080i/SkinSettings.xml
-
+msgctxt "#31272"
+msgid "Foreground logo"
+msgstr "Логотип"
 
 #: /1080i/Includes_MediaFilter.xml
 msgctxt "#31273"
@@ -1959,9 +1965,39 @@ msgctxt "#31417"
 msgid "Random Artists"
 msgstr "Випадкові виконавці"
 
+#: /1080i/Includes_Views_Row.xml
+msgctxt "#31418"
+msgid "Circle Row"
+msgstr "Ряд кіл"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31419"
+msgid "Overview"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31420"
+msgid "Apps"
+msgstr "Застосунки"
+
 msgctxt "#31421"
 msgid "Choose submenu list"
 msgstr "Список підменю"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31422"
+msgid "Categories style"
+msgstr "Стиль категорій"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31423"
+msgid "Card"
+msgstr "Картка"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31424"
+msgid "Board"
+msgstr "Дошка"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31425"
@@ -2078,7 +2114,9 @@ msgid "Monochrome"
 msgstr "Однотонні"
 
 #: /1080i/SkinSettings.xml
-
+msgctxt "#31459"
+msgid "Ratings style"
+msgstr "Стиль оцінок"
 
 #: /1080i/MusicOSD.xml
 msgctxt "#31460"
@@ -2131,7 +2169,9 @@ msgid "Radar"
 msgstr "Радар"
 
 #: /1080i/SkinSettings.xml
-
+msgctxt "#31474"
+msgid "Spotlight style"
+msgstr "Стиль сцени"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31477"
