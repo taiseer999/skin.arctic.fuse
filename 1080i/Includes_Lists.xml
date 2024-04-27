@@ -874,8 +874,6 @@
                             <control type="label">
                                 <height>20</height>
                                 <centertop>18</centertop>
-                                <!-- <left>10</left>
-                                <right>10</right> -->
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <font>$PARAM[font]</font>
@@ -903,8 +901,6 @@
                             <control type="label">
                                 <height>20</height>
                                 <centertop>18</centertop>
-                                <!-- <left>10</left>
-                                <right>10</right> -->
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <font>$PARAM[font]</font>
@@ -915,8 +911,6 @@
                             <control type="label">
                                 <height>20</height>
                                 <centertop>18</centertop>
-                                <!-- <left>10</left>
-                                <right>10</right> -->
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <font>$PARAM[font]</font>
@@ -940,8 +934,6 @@
                             <control type="label">
                                 <height>20</height>
                                 <centertop>18</centertop>
-                                <!-- <left>10</left>
-                                <right>10</right> -->
                                 <aligny>center</aligny>
                                 <align>center</align>
                                 <font>$PARAM[font]</font>
