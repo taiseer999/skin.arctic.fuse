@@ -51,14 +51,14 @@
                             <onclick>Dialog.Close(1171,true)</onclick>
                             <onclick>ActivateWindow(shutdownmenu)</onclick>
                             <visible>!Window.IsMedia</visible>
-                            <visible>![Window.IsVisible(1105) + [Skin.String(SideMenu.SecondaryButton,Menu) | Skin.String(SideMenu.SecondaryButton,Options)]]</visible>
+                            <visible>![Window.IsVisible(1105) + [Skin.String(SideMenu.SecondaryButton,Menu) | Skin.String(SideMenu.SecondaryButton,Options) | $EXP[Exp_HomeMenu_DontHide]]]</visible>
                         </item>
                         <item>
                             <icon>special://skin/extras/icons/filter.png</icon>
                             <label>$LOCALIZE[587]</label>
                             <onclick>Dialog.Close(1171,true)</onclick>
                             <onclick>AlarmClock(refocus,SetFocus(64),00:00,silent)</onclick>
-                            <visible>Window.IsMedia | [Window.IsVisible(1105) + [Skin.String(SideMenu.SecondaryButton,Menu) | Skin.String(SideMenu.SecondaryButton,Options)]]</visible>
+                            <visible>Window.IsMedia | [Window.IsVisible(1105) + [Skin.String(SideMenu.SecondaryButton,Menu) | Skin.String(SideMenu.SecondaryButton,Options) | $EXP[Exp_HomeMenu_DontHide]]]</visible>
                         </item>
                     </content>
 
