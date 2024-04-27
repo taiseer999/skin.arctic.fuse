@@ -866,8 +866,8 @@
                             <height>40</height>
                             <centertop>50%</centertop>
                             <control type="label">
-                                <height>72</height>
-                                <centertop>50%</centertop>
+                                <height>20</height>
+                                <centertop>18</centertop>
                                 <!-- <left>10</left>
                                 <right>10</right> -->
                                 <aligny>center</aligny>
@@ -895,8 +895,8 @@
                             <visible>![Control.HasFocus($PARAM[id]) | $PARAM[altfocus]]</visible>
                             <animation effect="fadediffuse" start="FFFFFFFF" end="FFFF0000" condition="String.IsEqual(ListItem.Property(disabled),True)">Conditional</animation>
                             <control type="label">
-                                <height>72</height>
-                                <centertop>50%</centertop>
+                                <height>20</height>
+                                <centertop>18</centertop>
                                 <!-- <left>10</left>
                                 <right>10</right> -->
                                 <aligny>center</aligny>
@@ -907,8 +907,8 @@
                                 <visible>$PARAM[label_fo]</visible>
                             </control>
                             <control type="label">
-                                <height>72</height>
-                                <centertop>50%</centertop>
+                                <height>20</height>
+                                <centertop>18</centertop>
                                 <!-- <left>10</left>
                                 <right>10</right> -->
                                 <aligny>center</aligny>
@@ -934,8 +934,8 @@
                                 </control>
                             </control>
                             <control type="label">
-                                <height>72</height>
-                                <centertop>50%</centertop>
+                                <height>20</height>
+                                <centertop>18</centertop>
                                 <!-- <left>10</left>
                                 <right>10</right> -->
                                 <aligny>center</aligny>

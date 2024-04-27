@@ -3,38 +3,38 @@
 
     <!-- SlideUp Categories = Disabled -->
     <include name="Hub_Slide_Group_OnCategories">
-        <animation effect="slide" time="400" end="0" start="0,hub_group_widgetup_s" tween="quadratic" easing="out" reversible="false" condition="$EXP[Exp_Hubs_SlideDown_Categories]">Conditional</animation>
-        <animation effect="slide" time="400" end="0,hub_group_widgetup_s" start="0" tween="quadratic" easing="out" reversible="false" condition="!$EXP[Exp_Hubs_SlideDown_Categories]">Conditional</animation>
+        <animation effect="slide" time="400" end="0" start="0,hub_group_widgetup_s" tween="quadratic" easing="out" reversible="false" condition="$EXP[Exp_Hubs_Categories_SlideDown]">Conditional</animation>
+        <animation effect="slide" time="400" end="0,hub_group_widgetup_s" start="0" tween="quadratic" easing="out" reversible="false" condition="!$EXP[Exp_Hubs_Categories_SlideDown]">Conditional</animation>
     </include>
     <include name="Hub_WindowTransition_Group_OnCategories">
-        <animation effect="slide" start="0" end="0,hub_group_widgetup_s" time="400" tween="quadratic" reversible="false" condition="$EXP[Exp_Hubs_SlideDown_Categories]">WindowClose</animation>
-        <animation effect="slide" end="0" start="0,hub_group_widgetup_s" time="400" tween="quadratic" reversible="false" condition="$EXP[Exp_Hubs_SlideDown_Categories]">WindowOpen</animation>
+        <animation effect="slide" start="0" end="0,hub_group_widgetup_s" time="400" tween="quadratic" reversible="false" condition="$EXP[Exp_Hubs_Categories_SlideDown]">WindowClose</animation>
+        <animation effect="slide" end="0" start="0,hub_group_widgetup_s" time="400" tween="quadratic" reversible="false" condition="$EXP[Exp_Hubs_Categories_SlideDown]">WindowOpen</animation>
     </include>
     <include name="Hub_WindowTransition_CategoriesSpotlight_OnCategories">
-        <animation effect="fade" start="100" end="0" time="200" tween="sine" easing="in" reversible="false" condition="$EXP[Exp_Hubs_SlideDown_Categories]">WindowClose</animation>
-        <animation effect="fade" end="100" start="0" time="400" tween="sine" easing="in" reversible="false" condition="$EXP[Exp_Hubs_SlideDown_Categories]">WindowOpen</animation>
+        <animation effect="fade" start="100" end="0" time="200" tween="sine" easing="in" reversible="false" condition="$EXP[Exp_Hubs_Categories_SlideDown]">WindowClose</animation>
+        <animation effect="fade" end="100" start="0" time="400" tween="sine" easing="in" reversible="false" condition="$EXP[Exp_Hubs_Categories_SlideDown]">WindowOpen</animation>
     </include>
 
     <!-- SlideUp Categories = Enabled -->
     <include name="Hub_Slide_Group_OnWidgets">
-        <animation effect="slide" time="400" end="0" start="0,hub_group_widgetup_s" tween="quadratic" easing="out" reversible="false" condition="$EXP[Exp_Hubs_SlideDown_Widgets]">Conditional</animation>
-        <animation effect="slide" time="400" end="0,hub_group_widgetup_s" start="0" tween="quadratic" easing="out" reversible="false" condition="!$EXP[Exp_Hubs_SlideDown_Widgets]">Conditional</animation>
+        <animation effect="slide" time="400" end="0" start="0,hub_group_widgetup_s" tween="quadratic" easing="out" reversible="false" condition="$EXP[Exp_Hubs_Widgets_SlideDown]">Conditional</animation>
+        <animation effect="slide" time="400" end="0,hub_group_widgetup_s" start="0" tween="quadratic" easing="out" reversible="false" condition="!$EXP[Exp_Hubs_Widgets_SlideDown]">Conditional</animation>
     </include>
     <include name="Hub_WindowTransition_Group_OnWidgets">
-        <animation effect="slide" start="0" end="0,hub_group_widgetup_s" time="400" tween="quadratic" reversible="false" condition="$EXP[Exp_Hubs_SlideDown_Widgets]">WindowClose</animation>
-        <animation effect="slide" end="0" start="0,hub_group_widgetup_s" time="400" tween="quadratic" reversible="false" condition="$EXP[Exp_Hubs_SlideDown_Widgets]">WindowOpen</animation>
+        <animation effect="slide" start="0" end="0,hub_group_widgetup_s" time="400" tween="quadratic" reversible="false" condition="$EXP[Exp_Hubs_Widgets_SlideDown]">WindowClose</animation>
+        <animation effect="slide" end="0" start="0,hub_group_widgetup_s" time="400" tween="quadratic" reversible="false" condition="$EXP[Exp_Hubs_Widgets_SlideDown]">WindowOpen</animation>
     </include>
     <include name="Hub_WindowTransition_CategoriesSpotlight_OnWidgets">
-        <animation effect="fade" start="100" end="0" time="200" tween="sine" easing="in" reversible="false" condition="$EXP[Exp_Hubs_SlideDown_Widgets]">WindowClose</animation>
-        <animation effect="fade" end="100" start="0" time="400" tween="sine" easing="in" reversible="false" condition="$EXP[Exp_Hubs_SlideDown_Widgets]">WindowOpen</animation>
+        <animation effect="fade" start="100" end="0" time="200" tween="sine" easing="in" reversible="false" condition="$EXP[Exp_Hubs_Widgets_SlideDown]">WindowClose</animation>
+        <animation effect="fade" end="100" start="0" time="400" tween="sine" easing="in" reversible="false" condition="$EXP[Exp_Hubs_Widgets_SlideDown]">WindowOpen</animation>
     </include>
 
     <!-- Fanart Spotlight = Enabled -->
     <include name="Hub_Slide_Spotlight_OnFanart">
-        <animation effect="slide" start="0" end="0,hub_group_fanartspotlight_s" time="400" tween="quadratic" reversible="false" condition="$EXP[Exp_Hubs_SlideDown_Spotlight]">Conditional</animation>
-        <animation effect="slide" end="0" start="0,hub_group_fanartspotlight_s" time="400" tween="quadratic" reversible="false" condition="!$EXP[Exp_Hubs_SlideDown_Spotlight]">Conditional</animation>
-        <animation effect="slide" start="0" end="0,-hub_group_fanartspotlight_s" time="400" tween="quadratic" reversible="false" condition="$EXP[Exp_Hubs_SlideDown_Spotlight]">WindowClose</animation>
-        <animation effect="slide" end="0" start="0,-hub_group_fanartspotlight_s" time="400" tween="quadratic" reversible="false" condition="$EXP[Exp_Hubs_SlideDown_Spotlight]">WindowOpen</animation>
+        <animation effect="slide" start="0" end="0,hub_group_fanartspotlight_s" time="400" tween="quadratic" reversible="false" condition="$EXP[Exp_Hubs_Spotlight_SlideDown]">Conditional</animation>
+        <animation effect="slide" end="0" start="0,hub_group_fanartspotlight_s" time="400" tween="quadratic" reversible="false" condition="!$EXP[Exp_Hubs_Spotlight_SlideDown]">Conditional</animation>
+        <animation effect="slide" start="0" end="0,-hub_group_fanartspotlight_s" time="400" tween="quadratic" reversible="false" condition="$EXP[Exp_Hubs_Spotlight_SlideDown]">WindowClose</animation>
+        <animation effect="slide" end="0" start="0,-hub_group_fanartspotlight_s" time="400" tween="quadratic" reversible="false" condition="$EXP[Exp_Hubs_Spotlight_SlideDown]">WindowOpen</animation>
     </include>
 
     <variable name="Hub_Submenu_Highlight">
@@ -73,12 +73,12 @@
 
     <include name="Hub_Categories_Spotlight_Slide_Animation">
         <top>$PARAM[top]</top>
-        <animation effect="slide" start="0" end="0,$PARAM[y]" reversible="false" time="400" tween="quadratic" condition="$EXP[Exp_Hubs_Spotlight_IsVisible]">Conditional</animation>
-        <animation effect="slide" start="0,$PARAM[y]" end="0" reversible="false" time="400" tween="quadratic" condition="!$EXP[Exp_Hubs_Spotlight_IsVisible]">Conditional</animation>
+        <animation effect="slide" start="0" end="0,$PARAM[y]" reversible="false" time="400" tween="quadratic" condition="$EXP[Exp_Hubs_Categories_SlideDown]">Conditional</animation>
+        <animation effect="slide" start="0,$PARAM[y]" end="0" reversible="false" time="400" tween="quadratic" condition="!$EXP[Exp_Hubs_Categories_SlideDown]">Conditional</animation>
     </include>
     <include name="Hub_Categories_Spotlight_Slide">
         <top>$PARAM[top]</top>
-        <include content="Hub_Categories_Spotlight_Slide_Animation" condition="!$EXP[Exp_Hubs_Spotlight_IsStatic]">
+        <include content="Hub_Categories_Spotlight_Slide_Animation" condition="!$EXP[Exp_Hubs_Spotlight_IsDisabled]">
             <param name="y">$PARAM[y]</param>
         </include>
     </include>
@@ -106,6 +106,7 @@
                     <param name="ondown">$PARAM[ondown]</param>
                     <param name="id">$PARAM[id]</param>
                 </include>
+                <movement>1</movement>
                 <left>-20</left>
                 <include content="Hub_Categories_Spotlight_Slide" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
                     <param name="top">40</param>
@@ -134,9 +135,13 @@
                     <param name="id">$PARAM[id]</param>
                 </include>
                 <include content="Hub_Categories_Spotlight_Slide" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
-                    <param name="top">80</param>
-                    <param name="y">-40</param>
+                    <param name="top">100</param>
+                    <param name="y">-60</param>
                 </include>
+                <include content="Object_Width" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
+                    <param name="width">760</param>
+                </include>
+                <movement>2</movement>
                 <top>40</top>
                 <nested />
             </include>
@@ -209,7 +214,7 @@
             </include>
             <animation effect="fade" start="0" end="100" time="background_fadetime" delay="background_fadetime">Visible</animation>
             <animation effect="fade" start="100" end="0" time="background_fadetime" delay="background_fadetime">Hidden</animation>
-            <visible>$EXP[Exp_Hubs_SlideDown_Spotlight]</visible>
+            <visible>$EXP[Exp_Hubs_Spotlight_SlideDown]</visible>
         </control>
     </include>
 
@@ -524,7 +529,7 @@
                 <param name="window_id">$PARAM[window_id]</param>
                 <param name="categories">$PARAM[categories]</param>
             </include>
-            <movement>2</movement>
+            <movement>1</movement>
             <width>1095</width>
             <left>-20</left>
             <include content="Hub_Categories_Spotlight_Slide" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
@@ -548,9 +553,16 @@
                 <param name="categories">$PARAM[categories]</param>
             </include>
             <include content="Hub_Categories_Spotlight_Slide" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
-                <param name="top">100</param>
-                <param name="y">-40</param>
+                <param name="top">120</param>
+                <param name="y">-60</param>
             </include>
+            <include content="Object_Width" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
+                <param name="width">760</param>
+            </include>
+            <include content="Object_Movement" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
+                <param name="movement">1</param>
+            </include>
+            <movement>2</movement>
             <top>60</top>
         </include>
     </include>
@@ -582,15 +594,8 @@
         <control type="group">
             <top>-20</top>
             <left>40</left>
-            <animation effect="fade" start="100" end="0" reversible="false" condition="$EXP[Exp_Hubs_SlideDown_Categories]">Conditional</animation>
-            <animation effect="fade" start="0" end="100" delay="399" time="1" reversible="false" condition="!$EXP[Exp_Hubs_SlideDown_Categories]">Conditional</animation>
-            <!-- <include content="Animation_Fade_In" condition="!$EXP[Exp_Hubs_Spotlight_IsFanart]">
-                <param name="condition">!$EXP[Exp_Hubs_SlideDown_Categories]</param>
-                <param name="delay">200</param>
-            </include>
-            <include content="Animation_ConditionalFade">
-                <param name="condition">$EXP[Exp_Hubs_SlideDown_Categories]</param>
-            </include> -->
+            <animation effect="fade" start="100" end="0" reversible="false" condition="$EXP[Exp_Hubs_Categories_SlideDown]">Conditional</animation>
+            <animation effect="fade" start="0" end="100" delay="399" time="1" reversible="false" condition="!$EXP[Exp_Hubs_Categories_SlideDown]">Conditional</animation>
             <include content="Info_Title_LogoLabel">
                 <param name="label">$INFO[Container(303).ListItem.Label]</param>
                 <param name="wrapmultiline">false</param>
@@ -617,7 +622,7 @@
                     <left>160</left>
                     <height>hub_categorieswidget_h</height>
                     <top>hub_categorieswidget_t</top>
-                    <include condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">Hub_Categories_Header</include>
+                    <include condition="$EXP[Exp_Hubs_Spotlight_IsDisabled]">Hub_Categories_Header</include>
                     <include content="Hub_Categories_Definition">
                         <param name="window_id">$PARAM[window_id]</param>
                         <param name="categories">$PARAM[categories]</param>
@@ -629,16 +634,14 @@
 
     <include name="Hub_Categories_FadeIn">
         <definition>
-
             <include content="Animation_Fade_In">
-                <param name="condition">[Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) | $EXP[Exp_Hubs_Categories_HasFocus]]</param>
+                <param name="condition">[Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) | $EXP[Exp_Hubs_Categories_HasFocus] | $EXP[Exp_Hubs_Submenu_HasFocus]]</param>
                 <param name="delay">0</param>
             </include>
             <include content="Animation_ConditionalFade">
-                <param name="condition">![[Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) | $EXP[Exp_Hubs_Categories_HasFocus]]]</param>
+                <param name="condition">![[Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) | $EXP[Exp_Hubs_Categories_HasFocus] | $EXP[Exp_Hubs_Submenu_HasFocus]]]</param>
             </include>
         </definition>
-
     </include>
 
     <include name="Hub_Widgets_Grouplist_Animation_Slide">

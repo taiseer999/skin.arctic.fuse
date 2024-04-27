@@ -18,11 +18,11 @@
 
     <include name="Spotlight_Animation">
         <include content="Animation_Fade_In">
-            <param name="condition">$EXP[Exp_Hubs_Spotlight_IsVisible]</param>
+            <param name="condition">$EXP[Exp_Hubs_Categories_SlideDown]</param>
             <param name="delay">200</param>
         </include>
         <include content="Animation_ConditionalFade">
-            <param name="condition">!$EXP[Exp_Hubs_Spotlight_IsVisible]</param>
+            <param name="condition">!$EXP[Exp_Hubs_Categories_SlideDown]</param>
         </include>
     </include>
 
@@ -34,8 +34,8 @@
     </include>
 
     <include name="Spotlight_HidePanel">
-        <animation effect="fade" start="0" end="100" reversible="false" condition="$EXP[Exp_Hubs_Spotlight_IsVisible]">Conditional</animation>
-        <animation effect="fade" start="100" end="0" delay="399" time="1" reversible="false" condition="!$EXP[Exp_Hubs_Spotlight_IsVisible]">Conditional</animation>
+        <animation effect="fade" start="0" end="100" reversible="false" condition="$EXP[Exp_Hubs_Categories_SlideDown]">Conditional</animation>
+        <animation effect="fade" start="100" end="0" delay="399" time="1" reversible="false" condition="!$EXP[Exp_Hubs_Categories_SlideDown]">Conditional</animation>
     </include>
 
     <include name="Spotlight_Info">
@@ -48,7 +48,7 @@
                 <param name="visible">Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)</param>
                 <param name="details_include">Spotlight_HideDetails</param>
             </include>
-            <include condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">Spotlight_HidePanel</include>
+            <!-- <include condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">Spotlight_HidePanel</include> -->
         </include>
     </include>
 
@@ -135,10 +135,7 @@
 
                 <!-- Animation for Slides -->
                 <include condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">Spotlight_Animation</include>
-                <!-- <include content="Animation_Fade_In" condition="!$EXP[Exp_Hubs_Spotlight_IsFanart]">
-                    <param name="condition">Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)</param>
-                    <param name="delay">200</param>
-                </include> -->
+
                 <include content="Animation_Fade_In">
                     <param name="condition">Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)</param>
                     <param name="delay">200</param>

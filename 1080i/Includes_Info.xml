@@ -37,7 +37,7 @@
                 <width>$PARAM[width]</width>
                 <height>$PARAM[height]</height>
                 <control type="group">
-                    <centertop>30</centertop>
+                    <centertop>25</centertop>
                     <height>40</height>
                     <!-- <control type="image">
                         <height>40</height>
@@ -70,7 +70,7 @@
                 <control type="label">
                     <wrapmultiline>$PARAM[wrapmultiline]</wrapmultiline>
                     <height>84</height>
-                    <bottom>0</bottom>
+                    <bottom>5</bottom>
                     <aligny>center</aligny>
                     <label>$PARAM[label]</label>
                     <textcolor>$PARAM[colordiffuse]_100</textcolor>

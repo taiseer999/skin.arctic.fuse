@@ -272,21 +272,56 @@
         </control>
     </include>
 
+    <include name="Overlay_InfoLabel_Status">
+        <param name="label_t">True</param>
+        <param name="label_f">False</param>
+        <definition>
+            <control type="grouplist">
+                <orientation>horizontal</orientation>
+                <height>40</height>
+                <include content="Overlay_InfoLabel">
+                    <label> -$PARAM[exp]:</label>
+                    <textcolor>yellowgreen</textcolor>
+                </include>
+                <include content="Overlay_InfoLabel">
+                    <label> $PARAM[label_t]</label>
+                    <textcolor>cyan</textcolor>
+                    <visible>$EXP[$PARAM[exp]]</visible>
+                </include>
+                <include content="Overlay_InfoLabel">
+                    <label> $PARAM[label_f]</label>
+                    <textcolor>magenta</textcolor>
+                    <visible>!$EXP[$PARAM[exp]]</visible>
+                </include>
+            </control>
+        </definition>
+    </include>
+
+    <include name="Overlay_Window_DebugInfo">
+        <control type="grouplist">
+            <align>top</align>
+            <orientation>vertical</orientation>
+            <include content="Overlay_InfoLabel_Status">
+                <param name="exp">Exp_Hubs_Categories_SlideDown</param>
+            </include>
+        </control>
+    </include>
+
     <include name="Overlay_DebugInfo">
         <control type="group">
             <control type="grouplist">
                 <align>top</align>
                 <orientation>vertical</orientation>
                 <include content="Overlay_InfoLabel">
-                    <label> --system.currentcontrolid: $INFO[System.CurrentControlID,, | ]$INFO[System.CurrentControl,, | ]$INFO[System.CurrentWindow]</label>
+                    <label> -system.currentcontrolid: $INFO[System.CurrentControlID,, | ]$INFO[System.CurrentControl,, | ]$INFO[System.CurrentWindow]</label>
                     <textcolor>yellowgreen</textcolor>
                 </include>
                 <include content="Overlay_InfoLabel">
-                    <label>   --tmdbhelper.windowmanager: $INFO[Window(Home).Property(TMDbHelper.Instance),instance: , ]$INFO[Window(Home).Property(TMDBHelper.Position),position: , ]$INFO[Window(Home).Property(Transition.WidgetStyle),transition_widget: , ]</label>
+                    <label> -tmdbhelper.windowmanager: $INFO[Window(Home).Property(TMDbHelper.Instance),instance: , ]$INFO[Window(Home).Property(TMDBHelper.Position),position: , ]$INFO[Window(Home).Property(Transition.WidgetStyle),transition_widget: , ]</label>
                     <textcolor>yellowgreen</textcolor>
                 </include>
                 <include content="Overlay_InfoLabel">
-                    <label>   --tmdbhelper.isupdating: $VAR[Overlay_InfoLabel_WidgetContainer,widget: , ]$INFO[Window(Home).Property(TMDBHelper.CurrentWindow),window: , ]$INFO[Window(Home).Property(TMDBHelper.IsUpdating),details: , ]$INFO[Window(Home).Property(TMDBHelper.IsUpdatingRatings),ratings: , ] -- $INFO[Window(Home).Property(TMDBHelper.WidgetContainer)]$INFO[Window(Home).Property(Slide.WidgetContainer), (,)]$INFO[Window(Home).Property(List.ViewContainer), (*,)]</label>
+                    <label> -tmdbhelper.isupdating: $VAR[Overlay_InfoLabel_WidgetContainer,widget: , ]$INFO[Window(Home).Property(TMDBHelper.CurrentWindow),window: , ]$INFO[Window(Home).Property(TMDBHelper.IsUpdating),details: , ]$INFO[Window(Home).Property(TMDBHelper.IsUpdatingRatings),ratings: , ] - $INFO[Window(Home).Property(TMDBHelper.WidgetContainer)]$INFO[Window(Home).Property(Slide.WidgetContainer), (,)]$INFO[Window(Home).Property(List.ViewContainer), (*,)]</label>
                     <textcolor>yellowgreen</textcolor>
                 </include>
             </control>
@@ -294,15 +329,15 @@
                 <align>bottom</align>
                 <orientation>vertical</orientation>
                 <include content="Overlay_InfoLabel">
-                    <label>       --content.dbtype:$INFO[Container.Content, container: , |]$INFO[ListItem.DBType, listitem: ,]$INFO[ListItem.Property(tmdb_type), (,)]$INFO[Container(99950).ListItem.DBType, | TMDbHelper: , ]$INFO[Container(99950).ListItem.Property(TMDB_Type),(,)]$INFO[Container(55).ListItem.Property(param.info)]</label>
+                    <label> -content.dbtype:$INFO[Container.Content, container: , |]$INFO[ListItem.DBType, listitem: ,]$INFO[ListItem.Property(tmdb_type), (,)]$INFO[Container(99950).ListItem.DBType, | TMDbHelper: , ]$INFO[Container(99950).ListItem.Property(TMDB_Type),(,)]$INFO[Container(55).ListItem.Property(param.info)]</label>
                     <textcolor>cyan</textcolor>
                 </include>
                 <include content="Overlay_InfoLabel">
-                    <label> --container.folderpath: $INFO[Container.FolderPath] </label>
+                    <label> -container.folderpath: $INFO[Container.FolderPath] </label>
                     <textcolor>magenta</textcolor>
                 </include>
                 <include content="Overlay_InfoLabel">
-                    <label>  --listitem.folderpath: $INFO[ListItem.FolderPath] </label>
+                    <label> -listitem.folderpath: $INFO[ListItem.FolderPath] </label>
                     <textcolor>blueviolet</textcolor>
                 </include>
             </control>

@@ -25,5 +25,7 @@
 
         <!-- Widget Splash -->
         <include>Hub_Widget_Splash</include>
+
+        <!-- <include>Overlay_Window_DebugInfo</include> -->
     </controls>
 </window>
