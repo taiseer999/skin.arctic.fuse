@@ -1284,6 +1284,11 @@ msgctxt "#31271"
 msgid "Image folder"
 msgstr ""
 
+#: /1080i/Includes_Search_View.xml
+msgctxt "#31272"
+msgid "Searching"
+msgstr ""
+
 #: /1080i/SkinSettings.xml /1080i/Includes_MediaFilter.xml
 msgctxt "#31273"
 msgid "Press down to access scrollbar"

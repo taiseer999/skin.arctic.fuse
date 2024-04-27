@@ -70,52 +70,61 @@
                 <left>200</left>
             </include>
         </control>
+
         <control type="grouplist">
-            <visible>!$EXP[Search_View_HasItems] | $EXP[Search_View_IsUpdating]</visible>
             <left>view_side</left>
             <right>view_side</right>
-            <top>-240</top>
+            <top>view_top</top>
             <bottom>view_pad</bottom>
             <orientation>vertical</orientation>
-            <align>center</align>
-            <control type="label">
-                <font>font_midi_black</font>
-                <label>$LOCALIZE[31046]$INFO[Container(5099).ListItem.Label,: ,]</label>
-                <align>left</align>
-                <height>30</height>
-                <textcolor>main_fg_100</textcolor>
-                <visible>!$EXP[Search_View_IsUpdating]</visible>
+            <visible>!$EXP[Search_View_HasItems]</visible>
+            <visible>!$EXP[Search_View_IsUpdating]</visible>
+            <control type="group">
+                <height>120</height>
+                <include content="Info_Title_LogoLabel">
+                    <param name="label">$LOCALIZE[31046]</param>
+                    <param name="wrapmultiline">false</param>
+                    <param name="visible">true</param>
+                    <param name="width">info_plot_w</param>
+                    <param name="height">132</param>
+                    <param name="colordiffuse">main_fg</param>
+                </include>
             </control>
             <control type="textbox">
-                <top>20</top>
+                <top>17</top>
                 <font>font_main_plot</font>
                 <label>$LOCALIZE[31500] "[CAPITALIZE]$VAR[Label_Search_HeadingFilter][/CAPITALIZE]".[CR]$LOCALIZE[31501].</label>
                 <align>left</align>
-                <aligny>center</aligny>
                 <height>90</height>
                 <textcolor>main_fg_30</textcolor>
-                <visible>!$EXP[Search_View_IsUpdating]</visible>
             </control>
-            <control type="label">
-                <font>font_midi_black</font>
-                <label>Searching...</label>
-                <align>left</align>
-                <height>30</height>
-                <textcolor>main_fg_100</textcolor>
-                <visible>$EXP[Search_View_IsUpdating]</visible>
+        </control>
+
+        <control type="grouplist">
+            <left>view_side</left>
+            <right>view_side</right>
+            <top>view_top</top>
+            <bottom>view_pad</bottom>
+            <orientation>vertical</orientation>
+            <visible>$EXP[Search_View_IsUpdating]</visible>
+            <control type="group">
+                <height>120</height>
+                <include content="Info_Title_LogoLabel">
+                    <param name="label">$LOCALIZE[31272]...</param>
+                    <param name="wrapmultiline">false</param>
+                    <param name="visible">true</param>
+                    <param name="width">info_plot_w</param>
+                    <param name="height">132</param>
+                    <param name="colordiffuse">main_fg</param>
+                </include>
             </control>
             <control type="textbox">
-                <top>20</top>
+                <top>17</top>
                 <font>font_main_plot</font>
                 <label>$LOCALIZE[31368] "[CAPITALIZE]$VAR[Label_Search_HeadingFilter][/CAPITALIZE]"$INFO[Container(5099).ListItem.Label, $LOCALIZE[1405] ,].</label>
                 <align>left</align>
-                <aligny>center</aligny>
                 <height>90</height>
                 <textcolor>main_fg_30</textcolor>
-                <visible>$EXP[Search_View_IsUpdating]</visible>
-            </control>
-            <control type="group">
-                <height>-25</height>
             </control>
         </control>
     </include>
@@ -150,7 +159,7 @@
             <visible>!$EXP[Exp_InfoDialogs]</visible>
             <include>Animation_Transition_InfoPanel_Hide</include>
             <control type="group">
-                <visible>$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]</visible>
+                <!-- <visible>$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]</visible> -->
                 <animation type="Conditional" reversible="false" condition="[$EXP[Exp_FilterWall_IsActive]]">
                     <effect type="slide" end="0,-334" start="0" time="400" delay="0" tween="cubic" easing="out" />
                 </animation>
