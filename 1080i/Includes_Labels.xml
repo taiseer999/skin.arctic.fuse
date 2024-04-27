@@ -1177,6 +1177,7 @@
         <value condition="Skin.String(Seekbar.TimeDisplay,Remaining)">$INFO[Player.TimeRemaining(hh:mm:ss)]</value>
         <value condition="Skin.String(Seekbar.TimeDisplay,Remaining) + PVR.IsPlayingTV + !String.IsEmpty(PVR.EpgEventRemainingTime)">$INFO[PVR.EpgEventRemainingTime(hh:mm:ss)]</value>
         <value condition="PVR.IsPlayingTV + !String.IsEmpty(PVR.EpgEventElapsedTime)">$INFO[PVR.EpgEventElapsedTime(hh:mm:ss)]</value>
+        <value condition="Player.Seeking + !String.IsEmpty(Player.SeekTime)">$INFO[Player.SeekTime(hh:mm:ss)]</value>
         <value>$INFO[Player.Time(hh:mm:ss)]</value>
     </variable>
 
