@@ -50,7 +50,7 @@
 
         <!-- Reset Widget Group Position -->
         <include content="Action_Widgets_ResetPosition_OnFocus">
-            <param name="condition">[Skin.HasSetting(Hub.$PARAM[window_id].WidgetSelector) + !Integer.IsEqual(Container(419).CurrentItem,1)] | Container(400).HasPrevious</param>
+            <param name="condition">[Control.IsVisible(419) + !Integer.IsEqual(Container(419).CurrentItem,1)] | Container(400).HasPrevious</param>
         </include>
 
         <include content="Action_View_Movement_OnLeftRight">
@@ -140,7 +140,7 @@
                     <param name="y">-60</param>
                 </include>
                 <include content="Object_Width" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
-                    <param name="width">760</param>
+                    <param name="width">1000</param>
                 </include>
                 <movement>2</movement>
                 <top>40</top>
@@ -507,7 +507,7 @@
 
         <!-- Reset Widget Group Position -->
         <include content="Action_Widgets_ResetPosition_OnFocus">
-            <param name="condition">[Skin.HasSetting(Hub.$PARAM[window_id].WidgetSelector) + !Integer.IsEqual(Container(419).CurrentItem,1)] | Container(400).HasPrevious</param>
+            <param name="condition">[Control.IsVisible(419) + !Integer.IsEqual(Container(419).CurrentItem,1)] | Container(400).HasPrevious</param>
         </include>
 
         <content>

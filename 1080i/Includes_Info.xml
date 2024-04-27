@@ -37,7 +37,7 @@
                 <width>$PARAM[width]</width>
                 <height>$PARAM[height]</height>
                 <control type="group">
-                    <centertop>25</centertop>
+                    <centertop>20</centertop>
                     <height>40</height>
                     <!-- <control type="image">
                         <height>40</height>

@@ -201,10 +201,6 @@
             <onfocus condition="String.IsEmpty(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock))">ClearProperty(List.ViewContainer.Left)</onfocus>
             <onfocus condition="String.IsEmpty(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock))">SetProperty(TMDbHelper.WidgetContainer,301)</onfocus>
             <onfocus condition="String.IsEmpty(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock))">ClearProperty(Slide.WidgetContainer)</onfocus>
-
-            <include content="List_ButtonMenu_Row_HiddenButton_Home_OnFocus">
-                <param name="prefix">Item.$INFO[Container(300).ListItem.Property(item)]302.</param>
-            </include>
         </control>
     </include>
 
