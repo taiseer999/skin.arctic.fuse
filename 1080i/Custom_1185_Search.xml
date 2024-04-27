@@ -21,12 +21,8 @@
                 <include content="DialogInfo_Recommendations_Widgets_Grouplist">
                     <param name="onup">9099</param>
                     <param name="ondown">noop</param>
-                    <ondown condition="!Skin.String(Navigation.Global.OnUp,Search)">SetProperty(List.ViewContainer,9099)</ondown>
-                    <ondown condition="!Skin.String(Navigation.Global.OnUp,Search)">SetFocus(330)</ondown>
-                    <ondown condition="Skin.String(Navigation.Global.OnUp,Search)">SetProperty($VAR[Path_Search_ReverseInhibit],True,Home)</ondown>
-                    <ondown condition="Skin.String(Navigation.Global.OnUp,Search)">AlarmClock(ClearReverseTransition,ClearProperty($VAR[Path_Search_ReverseInhibit],Home),00:00,silent)</ondown>
-                    <ondown condition="Skin.String(Navigation.Global.OnUp,Search)">Action(PreviousMenu)</ondown>
-
+                    <ondown>SetProperty(List.ViewContainer,9099)</ondown>
+                    <ondown>SetFocus(330)</ondown>
                     <include>skinvariables-searchmenu-widgets</include>
                     <control type="group" id="5099">
                         <height>0</height>
@@ -34,14 +30,9 @@
                             <visible>!Integer.IsEqual(Container(5000).NumItems,0)</visible>
                             <visible>!Integer.IsEqual(Container(5000).NumItems,1) | !Control.HasFocus(5098) | ControlGroup(5000).HasFocus()</visible>
                             <visible>!$EXP[Exp_InfoDialogs]</visible>
-                            <include content="Furniture_Bottom_WidgetGroups" condition="!Skin.String(Navigation.Global.OnUp,Search)">
+                            <include content="Furniture_Bottom_WidgetGroups">
                                 <param name="label">$VAR[Label_NextBump]</param>
                                 <param name="icon">special://skin/extras/icons/kodi.png</param>
-                                <param name="dim">[False]</param>
-                            </include>
-                            <include content="Furniture_Bottom_WidgetGroups" condition="Skin.String(Navigation.Global.OnUp,Search)">
-                                <param name="label">$INFO[Window.Property(PreviousWindow)]</param>
-                                <param name="icon">special://skin/extras/icons/arrow-down.png</param>
                                 <param name="dim">[False]</param>
                             </include>
                         </control>
@@ -87,14 +78,9 @@
                         <textcolor>main_fg_30</textcolor>
                     </control>
                 </control>
-                <include content="Furniture_Bottom_WidgetGroups" condition="!Skin.String(Navigation.Global.OnUp,Search)">
+                <include content="Furniture_Bottom_WidgetGroups">
                     <param name="label">$VAR[Label_NextBump]</param>
                     <param name="icon">special://skin/extras/icons/kodi.png</param>
-                    <param name="dim">[False]</param>
-                </include>
-                <include content="Furniture_Bottom_WidgetGroups" condition="Skin.String(Navigation.Global.OnUp,Search)">
-                    <param name="label">$INFO[Window.Property(PreviousWindow)]</param>
-                    <param name="icon">special://skin/extras/icons/arrow-down.png</param>
                     <param name="dim">[False]</param>
                 </include>
             </control>
@@ -128,16 +114,11 @@
                     <right>-80</right>
                     <textoffsetx>80</textoffsetx>
                     <align>left</align>
-                    <onup condition="Skin.String(Navigation.Global.OnUp,Search)">SetProperty(List.ViewContainer,9099)</onup>
-                    <onup condition="Skin.String(Navigation.Global.OnUp,Search)">SetFocus(330)</onup>
-                    <onup condition="!Skin.String(Navigation.Global.OnUp,Search)">Action(PreviousMenu)</onup>
+                    <onup>Action(PreviousMenu)</onup>
 
                     <ondown condition="![String.IsEmpty(Control.GetLabel(9099).index(1)) | Integer.IsEqual(Container(5000).NumItems,0)]">5001</ondown>
-                    <ondown condition="[String.IsEmpty(Control.GetLabel(9099).index(1)) | Integer.IsEqual(Container(5000).NumItems,0)] + !Skin.String(Navigation.Global.OnUp,Search)">SetProperty(List.ViewContainer,9099)</ondown>
-                    <ondown condition="[String.IsEmpty(Control.GetLabel(9099).index(1)) | Integer.IsEqual(Container(5000).NumItems,0)] + !Skin.String(Navigation.Global.OnUp,Search)">SetFocus(330)</ondown>
-                    <ondown condition="[String.IsEmpty(Control.GetLabel(9099).index(1)) | Integer.IsEqual(Container(5000).NumItems,0)] + Skin.String(Navigation.Global.OnUp,Search)">SetProperty($VAR[Path_Search_ReverseInhibit],True,Home)</ondown>
-                    <ondown condition="[String.IsEmpty(Control.GetLabel(9099).index(1)) | Integer.IsEqual(Container(5000).NumItems,0)] + Skin.String(Navigation.Global.OnUp,Search)">AlarmClock(ClearReverseTransition,ClearProperty($VAR[Path_Search_ReverseInhibit],Home),00:00,silent)</ondown>
-                    <ondown condition="[String.IsEmpty(Control.GetLabel(9099).index(1)) | Integer.IsEqual(Container(5000).NumItems,0)] + Skin.String(Navigation.Global.OnUp,Search)">Action(PreviousMenu)</ondown>
+                    <ondown condition="[String.IsEmpty(Control.GetLabel(9099).index(1)) | Integer.IsEqual(Container(5000).NumItems,0)]">SetProperty(List.ViewContainer,9099)</ondown>
+                    <ondown condition="[String.IsEmpty(Control.GetLabel(9099).index(1)) | Integer.IsEqual(Container(5000).NumItems,0)]">SetFocus(330)</ondown>
                     <visible allowhiddenfocus="true">Control.HasFocus(9099) + !Window.IsVisible(1171) + !Window.IsVisible(1170)</visible>
                 </control>
             </control>

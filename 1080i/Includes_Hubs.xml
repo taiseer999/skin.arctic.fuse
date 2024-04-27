@@ -350,14 +350,8 @@
             <control type="list" id="370">
                 <visible allowhiddenfocus="true">Control.HasFocus(370) | Control.HasFocus(333)</visible>
 
-                <include content="Home_Menu_List_OnUp_Bump" condition="!Skin.String(Navigation.Global.OnUp,Search)">
+                <include content="Home_Menu_List_OnUp_Bump">
                     <param name="id">370</param>
-                </include>
-                <include content="Home_Menu_List_OnUp_ActivateSearch" condition="Skin.String(Navigation.Global.OnUp,Search) + !$EXP[Exp_Window_IsClassicHub]">
-                    <param name="property">InhibitTransition</param>
-                </include>
-                <include content="Home_Menu_List_OnUp_ActivateSearch" condition="Skin.String(Navigation.Global.OnUp,Search) + $EXP[Exp_Window_IsClassicHub]">
-                    <param name="property">ReverseTransition</param>
                 </include>
 
                 <!-- Reset Widget Group Position -->

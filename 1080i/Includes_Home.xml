@@ -126,21 +126,6 @@
                         <param name="id">$PARAM[id]</param>
                     </include>
 
-                    <!-- <include content="Home_Menu_List_OnUp_Home" condition="!$EXP[Exp_HomeMenu_DontHide] + Window.IsVisible(Home)">
-                        <param name="id">$PARAM[id]</param>
-                    </include>
-                    <include content="Home_Menu_List_OnUp_Search" condition="!$EXP[Exp_HomeMenu_DontHide] + Window.IsVisible(1185)">
-                        <param name="id">$PARAM[id]</param>
-                    </include>
-                    <include content="Home_Menu_List_OnUp_Previous" condition="!$EXP[Exp_HomeMenu_DontHide] + [Window.IsVisible(1181) | Window.IsVisible(1182) | Window.IsVisible(1130) | Window.IsVisible(1131) | Window.IsVisible(1132)]">
-                        <param name="id">$PARAM[id]</param>
-                    </include>
-                    <include content="Home_Menu_List_OnUp_Bump" condition="!$EXP[Exp_HomeMenu_DontHide] + !Skin.String(Navigation.Global.OnUp,Search) + ![Window.IsVisible(Home) | Window.IsVisible(1185) | Window.IsVisible(1181) | Window.IsVisible(1182) | Window.IsVisible(1130) | Window.IsVisible(1131) | Window.IsVisible(1132)]">
-                        <param name="id">$PARAM[id]</param>
-                    </include>
-                    <include content="Home_Menu_List_OnUp_ActivateSearch" condition="!$EXP[Exp_HomeMenu_DontHide] + Skin.String(Navigation.Global.OnUp,Search) + ![Window.IsVisible(Home) | Window.IsVisible(1185) | Window.IsVisible(1181) | Window.IsVisible(1182) | Window.IsVisible(1130) | Window.IsVisible(1131) | Window.IsVisible(1132)]">
-                    </include> -->
-
                     <include>Home_Menu_List_OnBackInfo</include>
                     <onfocus>ClearProperty(WidgetGroup.Movement)</onfocus>
 

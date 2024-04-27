@@ -67,7 +67,6 @@
 
     <include name="Action_Media_Onload">
         <onload condition="String.IsEmpty(Skin.String(Navigation.Global.OnDown))">Skin.SetString(Navigation.Global.OnDown,Search)</onload>
-        <onload condition="String.IsEmpty(Skin.String(Navigation.Global.OnUp))">Skin.SetString(Navigation.Global.OnUp,Bump)</onload>
         <onload>RunScript(script.skinvariables,action=buildviews)</onload>
         <onload>ClearProperty(MediaFilterBase)</onload>
         <onload>ClearProperty(MediaFilterWall)</onload>
@@ -146,8 +145,6 @@
         <onload condition="!Skin.HasSetting(Hub.$PARAM[window_id].DisableSubmenu) + String.IsEmpty(Window($PARAM[window_id]).Property(TMDbHelper.WidgetContainer))">SetProperty(TMDbHelper.WidgetContainer,301,$PARAM[window_id])</onload>
         <onload condition="!Window.IsVisible(Home) + Skin.HasSetting(Hub.$PARAM[window_id].DisableSubmenu) + String.IsEmpty(Window($PARAM[window_id]).Property(TMDbHelper.WidgetContainer))">SetProperty(TMDbHelper.WidgetContainer,601,$PARAM[window_id])</onload>
         <onload condition="String.IsEmpty(Skin.String(Navigation.Global.OnDown))">Skin.SetString(Navigation.Global.OnDown,Search)</onload>
-        <onload condition="String.IsEmpty(Skin.String(Navigation.Global.OnUp))">Skin.SetString(Navigation.Global.OnUp,Bump)</onload>
-
         <onload condition="Skin.HasSetting(Hub.Home.DisableSubmenu)">SetProperty(Slide.WidgetContainer,True,Home)</onload>
         <onload condition="Skin.HasSetting(Hub.1101.DisableSubmenu)">SetProperty(Slide.WidgetContainer,True,1101)</onload>
         <onload condition="Skin.HasSetting(Hub.1102.DisableSubmenu)">SetProperty(Slide.WidgetContainer,True,1102)</onload>
@@ -215,18 +212,8 @@
             <onup condition="$PARAM[condition] + ![$PARAM[move]] + !$EXP[Exp_HomeMenu_DontHide]">SetFocus(303,1,absolute)</onup>
 
             <!-- Bump -->
-            <onup condition="$PARAM[condition] + ![$PARAM[move]] + $EXP[Exp_HomeMenu_DontHide] + !Skin.String(Navigation.Global.OnUp,Search)">SetProperty(List.ViewContainer,$NUMBER[$PARAM[id]])</onup>
-            <onup condition="$PARAM[condition] + ![$PARAM[move]] + $EXP[Exp_HomeMenu_DontHide] + !Skin.String(Navigation.Global.OnUp,Search)">333</onup>
-
-            <!-- Search -->
-            <include content="Home_Menu_List_OnUp_ActivateSearch" condition="Skin.String(Navigation.Global.OnUp,Search) + ![$PARAM[search_transition]]">
-                <param name="property">InhibitTransition</param>
-                <param name="condition">$PARAM[condition] + ![$PARAM[move]] + $EXP[Exp_HomeMenu_DontHide]</param>
-            </include>
-            <include content="Home_Menu_List_OnUp_ActivateSearch" condition="Skin.String(Navigation.Global.OnUp,Search) + $PARAM[search_transition]">
-                <param name="property">ReverseTransition</param>
-                <param name="condition">$PARAM[condition] + ![$PARAM[move]] + $EXP[Exp_HomeMenu_DontHide]</param>
-            </include>
+            <onup condition="$PARAM[condition] + ![$PARAM[move]] + $EXP[Exp_HomeMenu_DontHide]">SetProperty(List.ViewContainer,$NUMBER[$PARAM[id]])</onup>
+            <onup condition="$PARAM[condition] + ![$PARAM[move]] + $EXP[Exp_HomeMenu_DontHide]">333</onup>
 
         </definition>
     </include>

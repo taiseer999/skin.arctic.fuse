@@ -1397,8 +1397,8 @@
             <include content="Hub_Widgets_HintArrows" condition="Skin.HasSetting(Views.DisableItemPeek)">
                 <param name="id">$PARAM[onlist]</param>
                 <param name="visible">true</param>
-                <param name="visible_hasnext">[Window.IsVisible(1185) + Skin.String(Navigation.Global.OnUp,Search)]</param>
-                <param name="visible_hasprevious">[!Window.IsVisible(1185) | !Skin.String(Navigation.Global.OnUp,Search)]</param>
+                <param name="visible_hasnext">[False]</param>
+                <param name="visible_hasprevious">[True]</param>
                 <param name="bottom">0</param>
             </include>
         </definition>

@@ -479,28 +479,6 @@
                             <visible>Container(3).HasFocus(4)</visible>
                             <onclick>RunScript(script.skinvariables,run_dialog=select,preselect=$VAR[Path_PreSelect_Nav_OnDown],heading=$LOCALIZE[31324] > $LOCALIZE[31008],separator=||,list=Options||Search||Explore||Filter||Discover||Bump,"executebuiltin_0=Skin.SetString(Navigation.Global.OnDown,Options)","executebuiltin_1=Skin.SetString(Navigation.Global.OnDown,Search)","executebuiltin_2=Skin.SetString(Navigation.Global.OnDown,Explore)","executebuiltin_3=Skin.SetString(Navigation.Global.OnDown,Filter)","executebuiltin_4=Skin.SetString(Navigation.Global.OnDown,Discover)","executebuiltin_5=Skin.SetString(Navigation.Global.OnDown,Bump)")</onclick>
                         </include>
-
-                        <include content="Settings_Button" description="OnUp">
-                            <param name="id">4031</param>
-                            <param name="control">button</param>
-                            <label>$LOCALIZE[31324] > $LOCALIZE[31007]</label>
-                            <label2>$INFO[Skin.String(Navigation.Global.OnUp)]</label2>
-                            <visible>Container(3).HasFocus(4)</visible>
-                            <onclick condition="!Skin.String(Navigation.Global.OnUp,Search)">Skin.SetString(Navigation.Global.OnUp,Search)</onclick>
-                            <onclick condition="!Skin.String(Navigation.Global.OnUp,Search) + Skin.String(Navigation.Global.OnDown,Search)">Skin.SetString(Navigation.Global.OnDown,Bump)</onclick>
-                            <onclick condition="!Skin.String(Navigation.Global.OnUp,Search) + Skin.String(Navigation.Hub.Home.OnDown,Search)">Skin.Reset(Navigation.Hub.Home.OnDown)</onclick>
-                            <onclick condition="!Skin.String(Navigation.Global.OnUp,Search) + Skin.String(Navigation.Hub.1101.OnDown,Search)">Skin.Reset(Navigation.Hub.1101.OnDown)</onclick>
-                            <onclick condition="!Skin.String(Navigation.Global.OnUp,Search) + Skin.String(Navigation.Hub.1102.OnDown,Search)">Skin.Reset(Navigation.Hub.1102.OnDown)</onclick>
-                            <onclick condition="!Skin.String(Navigation.Global.OnUp,Search) + Skin.String(Navigation.Hub.1103.OnDown,Search)">Skin.Reset(Navigation.Hub.1103.OnDown)</onclick>
-                            <onclick condition="!Skin.String(Navigation.Global.OnUp,Search) + Skin.String(Navigation.Hub.1104.OnDown,Search)">Skin.Reset(Navigation.Hub.1104.OnDown)</onclick>
-                            <onclick condition="!Skin.String(Navigation.Global.OnUp,Search) + Skin.String(Navigation.Hub.1106.OnDown,Search)">Skin.Reset(Navigation.Hub.1106.OnDown)</onclick>
-                            <onclick condition="!Skin.String(Navigation.Global.OnUp,Search) + Skin.String(Navigation.Hub.1107.OnDown,Search)">Skin.Reset(Navigation.Hub.1107.OnDown)</onclick>
-                            <onclick condition="!Skin.String(Navigation.Global.OnUp,Search) + Skin.String(Navigation.Hub.1108.OnDown,Search)">Skin.Reset(Navigation.Hub.1108.OnDown)</onclick>
-                            <onclick condition="!Skin.String(Navigation.Global.OnUp,Search) + Skin.String(Navigation.Hub.1109.OnDown,Search)">Skin.Reset(Navigation.Hub.1109.OnDown)</onclick>
-                            <onclick condition="Skin.String(Navigation.Global.OnUp,Search)">Skin.SetString(Navigation.Global.OnUp,Bump)</onclick>
-                        </include>
-
-
                         <include content="Settings_Button" description="Menu options on left">
                             <param name="id">4034</param>
                             <param name="control">button</param>
@@ -517,7 +495,6 @@
                             <label2>$VAR[Label_Settings_NavigationHomeBack]</label2>
                             <visible>Container(3).HasFocus(4)</visible>
                             <onclick>Skin.ToggleSetting(Navigation.DisableOptionsOnBack)</onclick>
-                            <!-- <selected>!Skin.HasSetting(Navigation.DisableOptionsOnBack)</selected> -->
                         </include>
                         <include content="Settings_Button" description="Library Filter Wall">
                             <param name="id">4029</param>
