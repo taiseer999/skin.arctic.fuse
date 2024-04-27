@@ -2312,13 +2312,14 @@
                 <include content="Object_Control" condition="$PARAM[selected]">
                     <param name="control">image</param>
                     <include>Texture_Menu_Highlight_H</include>
+                    <right>-20</right>
                 </include>
 
                 <control type="group">
                     <height>80</height>
                     <centertop>50%</centertop>
                     <left>-20</left>
-                    <right>20</right>
+                    <right>0</right>
                     <control type="group">
                         <visible>![$EXP[Exp_IsGenre] | $EXP[Exp_IsStudio] | $EXP[Exp_IsCountry]]</visible>
                         <include content="Object_InfoCircle" condition="!$PARAM[selected]">

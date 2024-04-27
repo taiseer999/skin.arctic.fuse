@@ -106,11 +106,12 @@
                     <param name="ondown">$PARAM[ondown]</param>
                     <param name="id">$PARAM[id]</param>
                 </include>
-                <movement>1</movement>
+                <width>1700</width>
+                <movement>4</movement>
                 <left>-20</left>
                 <include content="Hub_Categories_Spotlight_Slide" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
-                    <param name="top">40</param>
-                    <param name="y">-45</param>
+                    <param name="top">45</param>
+                    <param name="y">-50</param>
                 </include>
                 <top>-5</top>
                 <nested />
@@ -529,12 +530,12 @@
                 <param name="window_id">$PARAM[window_id]</param>
                 <param name="categories">$PARAM[categories]</param>
             </include>
-            <movement>1</movement>
-            <width>1095</width>
+            <movement>4</movement>
+            <width>1700</width>
             <left>-20</left>
             <include content="Hub_Categories_Spotlight_Slide" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
-                <param name="top">40</param>
-                <param name="y">-45</param>
+                <param name="top">45</param>
+                <param name="y">-50</param>
             </include>
             <top>-5</top>
         </include>
@@ -558,9 +559,6 @@
             </include>
             <include content="Object_Width" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
                 <param name="width">760</param>
-            </include>
-            <include content="Object_Movement" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
-                <param name="movement">1</param>
             </include>
             <movement>2</movement>
             <top>60</top>
