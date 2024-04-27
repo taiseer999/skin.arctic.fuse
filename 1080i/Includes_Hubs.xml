@@ -611,7 +611,7 @@
         <control type="group">
             <include condition="!$EXP[Exp_Hubs_Spotlight_IsSlide]">Hub_WindowTransition_CategoriesSpotlight_OnWidgets</include>
             <include condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">Hub_WindowTransition_CategoriesSpotlight_OnCategories</include>
-            <include condition="!$EXP[Exp_Hubs_Spotlight_IsDisabled] + !$EXP[Exp_Hubs_Spotlight_IsMini]">Hub_Categories_Spotlight_Viewline</include>
+            <include condition="!$EXP[Exp_Hubs_Spotlight_IsDisabled] + !$EXP[Exp_Hubs_Spotlight_IsMini] + !$EXP[Exp_Hubs_Spotlight_IsFanart]">Hub_Categories_Spotlight_Viewline</include>
             <control type="group">
                 <include>Transitions_Lower_Visibility</include>
                 <include content="Spotlight_Main" condition="!$EXP[Exp_Hubs_Spotlight_IsDisabled]">
