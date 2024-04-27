@@ -135,7 +135,7 @@
                 <visible>$PARAM[visible]</visible>
                 <animation effect="fade" start="100" end="0" delay="400" reversible="false" time="200" condition="$EXP[Exp_InfoDialogs]">Conditional</animation>
 
-                <include content="Categories_Selector" condition="!Skin.HasSetting(Views.UseAltCombined)">
+                <include content="Categories_Selector" condition="!Skin.HasSetting(Views.UseAltCombined.Detailed)">
                     <param name="id">$PARAM[id]2</param>
                     <param name="font">font_mini</param>
                     <param name="hitrect_x">0</param>
@@ -149,7 +149,7 @@
                         <param name="viewtype_label">$PARAM[viewtype_label]</param>
                     </include>
                 </include>
-                <include content="Categories_Iconic_Selector" condition="Skin.HasSetting(Views.UseAltCombined)">
+                <include content="Categories_Iconic_Selector" condition="Skin.HasSetting(Views.UseAltCombined.Detailed)">
                     <param name="id">$PARAM[id]2</param>
                     <param name="font">font_mini</param>
                     <param name="hitrect_x">0</param>

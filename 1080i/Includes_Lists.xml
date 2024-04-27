@@ -839,6 +839,66 @@
         </control>
     </include>
 
+    <include name="List_ButtonMenu_Row_Icon">
+        <control type="group">
+            <centertop>50%</centertop>
+            <width>80</width>
+            <height>80</height>
+            <control type="group">
+                <left>-20</left>
+                <right>20</right>
+
+                <control type="group">
+                    <centertop>50%</centertop>
+                    <centerleft>50%</centerleft>
+                    <width>40</width>
+                    <height>40</height>
+                    <control type="group">
+                        <visible>![$EXP[Exp_IsGenre] | $EXP[Exp_IsStudio] | $EXP[Exp_IsCountry]]</visible>
+                        <control type="image">
+                            <visible>!String.IsEmpty(ListItem.Art(poster)) | !String.IsEmpty(ListItem.Art(tvshow.poster)) | [!String.IsEmpty(ListItem.Icon) + !String.StartsWith(ListItem.Icon,Default) + !String.StartsWith(ListItem.Icon,special://skin/extras/icons/)]</visible>
+                            <texture colordiffuse="$PARAM[colordiffuse]">diffuse/circle_50.png</texture>
+                        </control>
+                        <control type="image">
+                            <visible>![!String.IsEmpty(ListItem.Art(poster)) | !String.IsEmpty(ListItem.Art(tvshow.poster)) | [!String.IsEmpty(ListItem.Icon) + !String.StartsWith(ListItem.Icon,Default) + !String.StartsWith(ListItem.Icon,special://skin/extras/icons/)]]</visible>
+                            <bordersize>icon_home_bordersize</bordersize>
+                            <aspectratio scalediffuse="false">keep</aspectratio>
+                            <texture colordiffuse="$PARAM[colordiffuse]">$VAR[Image_Layout_CombinedIcon]</texture>
+                        </control>
+                        <control type="image">
+                            <visible>!String.IsEmpty(ListItem.Art(poster)) | !String.IsEmpty(ListItem.Art(tvshow.poster)) | [!String.IsEmpty(ListItem.Icon) + !String.StartsWith(ListItem.Icon,Default) + !String.StartsWith(ListItem.Icon,special://skin/extras/icons/)]</visible>
+                            <bordersize>2</bordersize>
+                            <aspectratio scalediffuse="false">keep</aspectratio>
+                            <texture colordiffuse="white" diffuse="diffuse/circle_50.png">$VAR[Image_Layout_CombinedThumb]</texture>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <visible>$EXP[Exp_IsGenre]</visible>
+                        <control type="image">
+                            <bordersize>6</bordersize>
+                            <aspectratio scalediffuse="false">keep</aspectratio>
+                            <include content="Object_ColorDiffuse" condition="$PARAM[selected]">
+                                <param name="colordiffuse">$VAR[ColorSelected]</param>
+                            </include>
+                            <texture colordiffuse="$PARAM[colordiffuse]" fallback="folder.png">$VAR[Image_ResourceIcon]</texture>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <visible>$EXP[Exp_IsStudio] | $EXP[Exp_IsCountry]</visible>
+                         <control type="image">
+                            <bordersize>-8</bordersize>
+                            <aspectratio scalediffuse="false">keep</aspectratio>
+                            <include content="Object_ColorDiffuse" condition="$PARAM[selected]">
+                                <param name="colordiffuse">$VAR[ColorSelected]</param>
+                            </include>
+                            <texture colordiffuse="$PARAM[colordiffuse]" fallback="special://skin/extras/icons/folder.png">$VAR[Image_ResourceIcon]</texture>
+                        </control>
+                    </control>
+                </control>
+            </control>
+        </control>
+    </include>
+
     <include name="List_ButtonMenu_Row">
         <param name="control">list</param>
         <param name="itemlayout_w">240</param>
@@ -851,6 +911,7 @@
         <param name="backing">false</param>
         <param name="label_fo">true</param>
         <param name="underline">false</param>
+        <param name="iconic">Skin.HasSetting(Views.UseAltCombined)</param>
         <definition>
             <control type="$PARAM[control]" id="$PARAM[id]">
                 <nested />
@@ -867,14 +928,27 @@
                         <left>$PARAM[offset_x]</left>
                         <right>-$PARAM[offset_x]</right>
                         <height>120</height>
+
                         <control type="group">
                             <right>40</right>
                             <height>40</height>
                             <centertop>50%</centertop>
+                            <include content="List_ButtonMenu_Row_Icon" condition="$PARAM[iconic]">
+                                <param name="listitem">ListItem</param>
+                                <param name="icon">$INFO[ListItem.Icon]</param>
+                                <param name="selected">False</param>
+                                <param name="colordiffuse">$PARAM[color_nf]</param>
+                            </include>
                             <control type="label">
                                 <height>20</height>
                                 <centertop>18</centertop>
                                 <aligny>center</aligny>
+                                <include content="Object_Align" condition="$PARAM[iconic]">
+                                    <param name="align">left</param>
+                                </include>
+                                <include content="Object_Left" condition="$PARAM[iconic]">
+                                    <param name="left">60</param>
+                                </include>
                                 <align>center</align>
                                 <font>$PARAM[font]</font>
                                 <textcolor>$PARAM[color_nf]</textcolor>
@@ -898,25 +972,54 @@
                             <centertop>50%</centertop>
                             <visible>![Control.HasFocus($PARAM[id]) | $PARAM[altfocus]]</visible>
                             <animation effect="fadediffuse" start="FFFFFFFF" end="FFFF0000" condition="String.IsEqual(ListItem.Property(disabled),True)">Conditional</animation>
-                            <control type="label">
-                                <height>20</height>
-                                <centertop>18</centertop>
-                                <aligny>center</aligny>
-                                <align>center</align>
-                                <font>$PARAM[font]</font>
-                                <textcolor>$PARAM[color_fo]</textcolor>
-                                <label>$INFO[ListItem.Label]</label>
+
+                            <control type="group">
                                 <visible>$PARAM[label_fo]</visible>
+                                <include content="List_ButtonMenu_Row_Icon" condition="$PARAM[iconic]">
+                                    <param name="listitem">ListItem</param>
+                                    <param name="icon">$INFO[ListItem.Icon]</param>
+                                    <param name="selected">False</param>
+                                    <param name="colordiffuse">$PARAM[color_fo]</param>
+                                </include>
+                                <control type="label">
+                                    <height>20</height>
+                                    <centertop>18</centertop>
+                                    <aligny>center</aligny>
+                                    <include content="Object_Align" condition="$PARAM[iconic]">
+                                        <param name="align">left</param>
+                                    </include>
+                                    <include content="Object_Left" condition="$PARAM[iconic]">
+                                        <param name="left">60</param>
+                                    </include>
+                                    <align>center</align>
+                                    <font>$PARAM[font]</font>
+                                    <textcolor>$PARAM[color_fo]</textcolor>
+                                    <label>$INFO[ListItem.Label]</label>
+                                </control>
                             </control>
-                            <control type="label">
-                                <height>20</height>
-                                <centertop>18</centertop>
-                                <aligny>center</aligny>
-                                <align>center</align>
-                                <font>$PARAM[font]</font>
-                                <textcolor>$PARAM[color_nf]</textcolor>
-                                <label>$INFO[ListItem.Label]</label>
+                            <control type="group">
                                 <visible>![$PARAM[label_fo]]</visible>
+                                <include content="List_ButtonMenu_Row_Icon" condition="$PARAM[iconic]">
+                                    <param name="listitem">ListItem</param>
+                                    <param name="icon">$INFO[ListItem.Icon]</param>
+                                    <param name="selected">False</param>
+                                    <param name="colordiffuse">$PARAM[color_nf]</param>
+                                </include>
+                                <control type="label">
+                                    <height>20</height>
+                                    <centertop>18</centertop>
+                                    <aligny>center</aligny>
+                                    <include content="Object_Align" condition="$PARAM[iconic]">
+                                        <param name="align">left</param>
+                                    </include>
+                                    <include content="Object_Left" condition="$PARAM[iconic]">
+                                        <param name="left">60</param>
+                                    </include>
+                                    <align>center</align>
+                                    <font>$PARAM[font]</font>
+                                    <textcolor>$PARAM[color_nf]</textcolor>
+                                    <label>$INFO[ListItem.Label]</label>
+                                </control>
                             </control>
                         </control>
                         <control type="group">
@@ -927,14 +1030,32 @@
                             <control type="image">
                                 <centertop>50%</centertop>
                                 <height>256</height>
+                                <include content="Object_Left" condition="$PARAM[iconic]">
+                                    <param name="left">-60</param>
+                                </include>
+                                <include content="Object_Right" condition="$PARAM[iconic]">
+                                    <param name="right">-60</param>
+                                </include>
                                 <left>-50</left>
                                 <right>-50</right>
                                 <include>Texture_MainMenu_Highlight_V</include>
                             </control>
+                            <include content="List_ButtonMenu_Row_Icon" condition="$PARAM[iconic]">
+                                <param name="listitem">ListItem</param>
+                                <param name="icon">$INFO[ListItem.Icon]</param>
+                                <param name="selected">True</param>
+                                <param name="colordiffuse">$VAR[ColorSelected]</param>
+                            </include>
                             <control type="label">
                                 <height>20</height>
                                 <centertop>18</centertop>
                                 <aligny>center</aligny>
+                                <include content="Object_Align" condition="$PARAM[iconic]">
+                                    <param name="align">left</param>
+                                </include>
+                                <include content="Object_Left" condition="$PARAM[iconic]">
+                                    <param name="left">60</param>
+                                </include>
                                 <align>center</align>
                                 <font>$PARAM[font]</font>
                                 <include>Color_SelectedText</include>

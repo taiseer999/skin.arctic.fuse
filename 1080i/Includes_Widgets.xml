@@ -731,7 +731,7 @@
         <param name="include_condition">true</param>
         <param name="widget_onback">true</param>
         <definition>
-            <include content="Categories_Selector" condition="!Skin.HasSetting(Views.UseAltCombined)">
+            <include content="Categories_Selector" condition="!Skin.HasSetting(Views.UseAltCombined.Detailed)">
                 <param name="id">$PARAM[id]</param>
                 <param name="window_id">$PARAM[window_id]</param>
                 <param name="offset_x">view_button_offset_x</param>
@@ -758,7 +758,7 @@
                 <height>160</height>
                 <top>-160</top>
             </include>
-            <include content="Categories_Iconic_Selector" condition="Skin.HasSetting(Views.UseAltCombined)">
+            <include content="Categories_Iconic_Selector" condition="Skin.HasSetting(Views.UseAltCombined.Detailed)">
                 <param name="id">$PARAM[id]</param>
                 <param name="window_id">$PARAM[window_id]</param>
                 <param name="offset_x">view_button_offset_x</param>

@@ -87,7 +87,7 @@
         <param name="ondown">340</param>
         <param name="hidden_button">List_ButtonMenu_Row_HiddenButton_View</param>
         <definition>
-            <include content="Categories_Iconic_Selector" condition="Skin.HasSetting(Views.UseAltCombined)">
+            <include content="Categories_Iconic_Selector" condition="Skin.HasSetting(Views.UseAltCombined.Detailed)">
                 <param name="id">$PARAM[id]</param>
                 <param name="window_id">$PARAM[window_id]</param>
                 <param name="font">font_mini</param>
@@ -116,7 +116,7 @@
                 <top>-5</top>
                 <nested />
             </include>
-            <include content="Categories_Selector" condition="!Skin.HasSetting(Views.UseAltCombined)">
+            <include content="Categories_Selector" condition="!Skin.HasSetting(Views.UseAltCombined.Detailed)">
                 <param name="id">$PARAM[id]</param>
                 <param name="window_id">$PARAM[window_id]</param>
                 <param name="font">font_mini</param>
@@ -129,7 +129,7 @@
                 <param name="hitrect_y">70</param>
                 <param name="hitrect_w">1080</param>
                 <param name="hitrect_h">100</param>
-                <param name="shorten">False</param>
+                <param name="small">$EXP[Exp_Hubs_Spotlight_IsSlide]</param>
                 <include content="Hub_Submenu_List_Definition_Content">
                     <param name="window_id">$PARAM[window_id]</param>
                     <param name="ondown">$PARAM[ondown]</param>
@@ -139,10 +139,6 @@
                     <param name="top">100</param>
                     <param name="y">-60</param>
                 </include>
-                <include content="Object_Width" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
-                    <param name="width">1000</param>
-                </include>
-                <movement>2</movement>
                 <top>40</top>
                 <nested />
             </include>
@@ -510,7 +506,7 @@
     </include>
 
     <include name="Hub_Categories_Definition">
-        <include content="Categories_Iconic_Selector" condition="Skin.HasSetting(Views.UseAltCombined)">
+        <include content="Categories_Iconic_Selector" condition="Skin.HasSetting(Views.UseAltCombined.Detailed)">
             <param name="window_id">$PARAM[window_id]</param>
             <param name="hitrect_x">20</param>
             <param name="hitrect_y">-20</param>
@@ -533,13 +529,13 @@
             </include>
             <top>-5</top>
         </include>
-        <include content="Categories_Selector" condition="!Skin.HasSetting(Views.UseAltCombined)">
+        <include content="Categories_Selector" condition="!Skin.HasSetting(Views.UseAltCombined.Detailed)">
             <param name="window_id">$PARAM[window_id]</param>
             <param name="hitrect_x">20</param>
             <param name="hitrect_y">50</param>
             <param name="hitrect_w">1080</param>
             <param name="hitrect_h">100</param>
-            <param name="shorten">True</param>
+            <param name="small">$EXP[Exp_Hubs_Spotlight_IsSlide]</param>
             <param name="hidden_button_prefix">Item.$INFO[Container(300).ListItem.Property(item)]302.</param>
             <param name="hidden_button">List_ButtonMenu_Row_HiddenButton_Home_Categories</param>
             <param name="slide">True</param>
@@ -551,10 +547,6 @@
                 <param name="top">120</param>
                 <param name="y">-60</param>
             </include>
-            <include content="Object_Width" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
-                <param name="width">760</param>
-            </include>
-            <movement>2</movement>
             <top>60</top>
         </include>
     </include>

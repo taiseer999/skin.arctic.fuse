@@ -128,7 +128,6 @@
             </include> -->
             <include content="Categories_Selector">
                 <param name="id">300</param>
-                <param name="itemlayout_w">view_button_item_w</param>
                 <param name="offset_x">view_button_offset_x</param>
                 <param name="control">fixedlist</param>
                 <param name="font">font_main_black</param>
@@ -136,18 +135,16 @@
                 <param name="color_nf">main_fg_70</param>
                 <param name="backing">true</param>
                 <param name="hidden_button">Items_Null</param>
+                <param name="small">true</param>
                 <param name="altfocus">[Integer.IsEqual(Window.Property(list_id),300) + [ControlGroup(3000).HasFocus() | ControlGroup(39000).HasFocus()]]</param>
                 <preloaditems>0</preloaditems>
                 <movement>1</movement>
-                <width>1060</width>
                 <top>20</top>
+                <left>0</left>
                 <height>hub_categorieswidget_h</height>
                 <onup>301</onup>
                 <onleft>303</onleft>
                 <ondown>302</ondown>
-
-                <left>-30</left>
-
                 <!-- <animation effect="slide" end="-240" condition="Integer.IsLess(Container(300).NumItems,3)">Conditional</animation> -->
 
                 <onclick>SetFocus(1300)</onclick>
@@ -168,7 +165,7 @@
 
             <include content="Categories_Selector">
                 <param name="id">302</param>
-                <param name="itemlayout_w">view_button_item_w</param>
+                <param name="small">true</param>
                 <param name="offset_x">view_button_offset_x</param>
                 <param name="control">fixedlist</param>
                 <param name="font">font_mini</param>
@@ -183,7 +180,7 @@
                 <width>1060</width>
                 <onup>300</onup>
                 <top>0</top>
-                <left>-30</left>
+                <left>0</left>
                 <onleft>303</onleft>
                 <ondown>304</ondown>
                 <!-- <animation effect="slide" end="-240" condition="Integer.IsLess(Container(302).NumItems,3)">Conditional</animation> -->
