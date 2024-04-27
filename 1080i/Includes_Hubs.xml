@@ -136,8 +136,8 @@
                     <param name="id">$PARAM[id]</param>
                 </include>
                 <include content="Hub_Categories_Spotlight_Slide" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
-                    <param name="top">90</param>
-                    <param name="y">-50</param>
+                    <param name="top">100</param>
+                    <param name="y">-60</param>
                 </include>
                 <top>40</top>
                 <nested />
@@ -544,8 +544,8 @@
                 <param name="categories">$PARAM[categories]</param>
             </include>
             <include content="Hub_Categories_Spotlight_Slide" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
-                <param name="top">110</param>
-                <param name="y">-50</param>
+                <param name="top">120</param>
+                <param name="y">-60</param>
             </include>
             <top>60</top>
         </include>
