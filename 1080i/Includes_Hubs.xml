@@ -284,7 +284,8 @@
                     <param name="window_id">$PARAM[window_id]</param>
                 </include>
                 <include content="Hub_Menu_Group" condition="![$PARAM[widgets_only]]">
-                    <bottom>-440</bottom>
+                    <top>hub_widgets_grouplist_t</top>
+                    <bottom>hub_widgets_grouplist_b</bottom>
                     <include>skinvariables-$PARAM[categories]-widgets-selector</include>
                 </include>
                 <include content="Hub_Widgets_Only" condition="$PARAM[widgets_only]">
@@ -704,81 +705,87 @@
     </include>
 
     <include name="Hub_Widgets_Grouplist">
-        <control type="grouplist" id="$PARAM[id]">
-            <top>hub_widgets_grouplist_t</top>
-            <bottom>hub_widgets_grouplist_b</bottom>
+        <param name="endrow_selector">false</param>
+        <param name="endrow_selector_id">419</param>
+        <definition>
+            <control type="grouplist" id="$PARAM[id]">
+                <top>hub_widgets_grouplist_t</top>
+                <bottom>hub_widgets_grouplist_b</bottom>
 
-            <include condition="![$PARAM[widgets_only]]">Hub_Widgets_Grouplist__Def_Layout_Expanded</include>
-            <include condition="[[$PARAM[widgets_only]]]" content="Hub_Widgets_Grouplist__Def_Layout_Basic">
-                <param name="id">$PARAM[id]</param>
-            </include>
+                <include condition="![$PARAM[widgets_only]]">Hub_Widgets_Grouplist__Def_Layout_Expanded</include>
+                <include condition="$PARAM[widgets_only]" content="Hub_Widgets_Grouplist__Def_Layout_Basic">
+                    <param name="id">$PARAM[id]</param>
+                </include>
 
-            <include content="Action_Widget_End">
-                <param name="topid">$PARAM[topid]</param>
-                <param name="id">$PARAM[id]</param>
-                <param name="window_id">$PARAM[window_id]</param>
-            </include>
+                <include content="Action_Widget_End" condition="![$PARAM[endrow_selector]]">
+                    <param name="topid">$PARAM[topid]</param>
+                    <param name="id">$PARAM[id]</param>
+                    <param name="window_id">$PARAM[window_id]</param>
+                </include>
 
-            <visible>$PARAM[visible]</visible>
+                <ondown condition="$PARAM[endrow_selector]">$PARAM[endrow_selector_id]</ondown>
 
-            <include content="Hub_Widgets_Grouplist_Animation_Slide" condition="Window.IsVisible(Home) + Skin.HasSetting(Hub.Home.DisableSubmenu)">
-                <param name="visible">$PARAM[visible]</param>
-            </include>
+                <visible>$PARAM[visible]</visible>
 
-            <control type="group" id="$PARAM[bumperid]">
-                <height>widget_tbump_h</height>
-            </control>
+                <include content="Hub_Widgets_Grouplist_Animation_Slide" condition="Window.IsVisible(Home) + Skin.HasSetting(Hub.Home.DisableSubmenu)">
+                    <param name="visible">$PARAM[visible]</param>
+                </include>
 
-            <control type="button" id="$PARAM[topid]">
-                <height>0</height>
-                <texturenofocus />
-                <texturefocus />
+                <control type="group" id="$PARAM[bumperid]">
+                    <height>widget_tbump_h</height>
+                </control>
 
-                <onleft>303</onleft>
-                <onback>303</onback>
-                <onright>303</onright>
+                <control type="button" id="$PARAM[topid]">
+                    <height>0</height>
+                    <texturenofocus />
+                    <texturefocus />
 
-                <onfocus condition="[Control.IsVisible($PARAM[topid]) + Control.IsVisible($PARAM[bottomid]) + !Integer.IsEqual(Container($PARAM[id]).NumItems,2)] | [!Control.IsVisible($PARAM[topid]) + Control.IsVisible($PARAM[bottomid]) + !Integer.IsEqual(Container($PARAM[id]).NumItems,1)] | [Control.IsVisible($PARAM[topid]) + !Control.IsVisible($PARAM[bottomid]) + !Integer.IsEqual(Container($PARAM[id]).NumItems,1)] | [!Control.IsVisible($PARAM[topid]) + !Control.IsVisible($PARAM[bottomid]) + !Integer.IsEqual(Container($PARAM[id]).NumItems,0)]">Action(Down)</onfocus>
+                    <onleft>303</onleft>
+                    <onback>303</onback>
+                    <onright>303</onright>
 
-                <visible>!ControlGroup($PARAM[id]).HasFocus() | Control.HasFocus($PARAM[topid])</visible>
-            </control>
+                    <onfocus condition="[Control.IsVisible($PARAM[topid]) + Control.IsVisible($PARAM[bottomid]) + !Integer.IsEqual(Container($PARAM[id]).NumItems,2)] | [!Control.IsVisible($PARAM[topid]) + Control.IsVisible($PARAM[bottomid]) + !Integer.IsEqual(Container($PARAM[id]).NumItems,1)] | [Control.IsVisible($PARAM[topid]) + !Control.IsVisible($PARAM[bottomid]) + !Integer.IsEqual(Container($PARAM[id]).NumItems,1)] | [!Control.IsVisible($PARAM[topid]) + !Control.IsVisible($PARAM[bottomid]) + !Integer.IsEqual(Container($PARAM[id]).NumItems,0)]">Action(Down)</onfocus>
 
-            <nested />
+                    <visible>!ControlGroup($PARAM[id]).HasFocus() | Control.HasFocus($PARAM[topid])</visible>
+                </control>
 
-            <control type="button" id="$PARAM[bottomid]">
-                <height>0</height>
-                <texturenofocus />
-                <texturefocus />
+                <nested />
 
-                <onleft>303</onleft>
-                <onback>303</onback>
-                <onright>303</onright>
+                <control type="button" id="$PARAM[bottomid]">
+                    <height>0</height>
+                    <texturenofocus />
+                    <texturefocus />
 
-                <onfocus condition="[Control.IsVisible($PARAM[topid]) + Control.IsVisible($PARAM[bottomid]) + !Integer.IsEqual(Container($PARAM[id]).NumItems,2)] | [!Control.IsVisible($PARAM[topid]) + Control.IsVisible($PARAM[bottomid]) + !Integer.IsEqual(Container($PARAM[id]).NumItems,1)] | [Control.IsVisible($PARAM[topid]) + !Control.IsVisible($PARAM[bottomid]) + !Integer.IsEqual(Container($PARAM[id]).NumItems,1)] | [!Control.IsVisible($PARAM[topid]) + !Control.IsVisible($PARAM[bottomid]) + !Integer.IsEqual(Container($PARAM[id]).NumItems,0)]">Action(Up)</onfocus>
+                    <onleft>303</onleft>
+                    <onback>303</onback>
+                    <onright>303</onright>
 
-                <visible>!ControlGroup($PARAM[id]).HasFocus() | Control.HasFocus($PARAM[bottomid])</visible>
-            </control>
+                    <onfocus condition="[Control.IsVisible($PARAM[topid]) + Control.IsVisible($PARAM[bottomid]) + !Integer.IsEqual(Container($PARAM[id]).NumItems,2)] | [!Control.IsVisible($PARAM[topid]) + Control.IsVisible($PARAM[bottomid]) + !Integer.IsEqual(Container($PARAM[id]).NumItems,1)] | [Control.IsVisible($PARAM[topid]) + !Control.IsVisible($PARAM[bottomid]) + !Integer.IsEqual(Container($PARAM[id]).NumItems,1)] | [!Control.IsVisible($PARAM[topid]) + !Control.IsVisible($PARAM[bottomid]) + !Integer.IsEqual(Container($PARAM[id]).NumItems,0)]">Action(Up)</onfocus>
 
-            <control type="group" id="$PARAM[furnitureid]">
-                <height>0</height>
-                <control type="group">
-                    <visible>!Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) | $EXP[Exp_Hubs_Spotlight_IsFanart]</visible>
-                    <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,0)</visible>
-                    <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,1) | [!Control.HasFocus($PARAM[topid]) + !Control.HasFocus($PARAM[bottomid])]</visible>
-                    <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,2) | ControlGroup($PARAM[id]).HasFocus()</visible>
-                    <visible>!$EXP[Exp_InfoDialogs]</visible>
-                    <include condition="!Skin.HasSetting(Hub.$PARAM[window_id].WidgetSelector)">Furniture_Bottom_WidgetGroups</include>
+                    <visible>!ControlGroup($PARAM[id]).HasFocus() | Control.HasFocus($PARAM[bottomid])</visible>
+                </control>
+
+                <control type="group" id="$PARAM[furnitureid]">
+                    <height>0</height>
+                    <control type="group">
+                        <visible>!Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) | $EXP[Exp_Hubs_Spotlight_IsFanart]</visible>
+                        <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,0)</visible>
+                        <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,1) | [!Control.HasFocus($PARAM[topid]) + !Control.HasFocus($PARAM[bottomid])]</visible>
+                        <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,2) | ControlGroup($PARAM[id]).HasFocus()</visible>
+                        <visible>!$EXP[Exp_InfoDialogs]</visible>
+                        <include condition="!Skin.HasSetting(Hub.$PARAM[window_id].WidgetSelector)">Furniture_Bottom_WidgetGroups</include>
+                    </control>
                 </control>
             </control>
-        </control>
 
-        <include content="Hub_Widgets_HintArrows" condition="Skin.HasSetting(Views.DisableItemPeek)">
-            <param name="id">$PARAM[id]</param>
-            <param name="visible">$PARAM[visible]</param>
-            <param name="visible_hasprevious">False</param>
-            <param name="visible_hasnext">!Skin.String(Navigation.Global.OnDown,Bump)</param>
-            <param name="bottom">hub_widgets_grouplist_b</param>
-        </include>
+            <include content="Hub_Widgets_HintArrows" condition="Skin.HasSetting(Views.DisableItemPeek)">
+                <param name="id">$PARAM[id]</param>
+                <param name="visible">$PARAM[visible]</param>
+                <param name="visible_hasprevious">False</param>
+                <param name="visible_hasnext">!Skin.String(Navigation.Global.OnDown,Bump)</param>
+                <param name="bottom">hub_widgets_grouplist_b</param>
+            </include>
+        </definition>
 
     </include>
 

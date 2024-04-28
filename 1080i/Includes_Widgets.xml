@@ -707,7 +707,11 @@
             <param name="onback">[Integer.IsEqual(Container($PARAM[id]).CurrentItem,1)]</param>
             <param name="backid">$PARAM[grouplistid]</param>
         </include>
+        <include content="Action_Widget_End">
+            <param name="window_id">$PARAM[window_id]</param>
+        </include>
 
+        <onup>$PARAM[grouplistid]</onup>
         <onleft>$PARAM[id]</onleft>
         <onright>$PARAM[id]</onright>
 
@@ -750,13 +754,14 @@
                 <include content="Widget_EndRow_Selector_Def">
                     <param name="id">$PARAM[id]</param>
                     <param name="grouplistid">$PARAM[grouplistid]</param>
+                    <param name="window_id">$PARAM[window_id]</param>
                 </include>
 
                 <nested />
 
                 <left>160</left>
                 <height>160</height>
-                <top>-160</top>
+                <bottom>40</bottom>
             </include>
             <include content="Categories_Iconic_Selector" condition="Skin.HasSetting(Views.UseAltCombined.Detailed)">
                 <param name="id">$PARAM[id]</param>
@@ -778,13 +783,14 @@
                 <include content="Widget_EndRow_Selector_Def">
                     <param name="id">$PARAM[id]</param>
                     <param name="grouplistid">$PARAM[grouplistid]</param>
+                    <param name="window_id">$PARAM[window_id]</param>
                 </include>
 
                 <nested />
 
                 <left>140</left>
                 <height>160</height>
-                <top>-220</top>
+                <bottom>60</bottom>
             </include>
         </definition>
     </include>

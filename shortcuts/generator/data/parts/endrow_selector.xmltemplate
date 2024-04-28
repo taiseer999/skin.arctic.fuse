@@ -6,7 +6,6 @@
     <param name="window_id">{window_id}</param>
     <visible>{endrow_visible}</visible>
     <content>
-        {all_endrow_items}
         {all_adaptive_widgets}
         {all_submenu_widgets}
         {all_standard_widgets}

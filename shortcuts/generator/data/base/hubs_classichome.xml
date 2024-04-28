@@ -30,7 +30,7 @@
                         <template>generator/data/parts/endrow_selector.xmltemplate</template>
                         <condition>Skin.HasSetting(Hub.{window_id}.WidgetSelector)</condition>
                         <value name="endrow_visible">String.IsEqual(Container({sidemenu_id}).ListItem.Property(guid),{item_guid})</value>
-                        <value name="all_endrow_items">
+                        <value name="all_standard_widgets">
                             <items mode="widgets" item="{item_x}" menu="{item_menu}">
                                 <item>
                                     <template>generator/data/parts/endrow_item.xmltemplate</template>
