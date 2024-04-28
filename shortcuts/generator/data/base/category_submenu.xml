@@ -1,6 +1,7 @@
 <contents>
     <value name="comments">Dynamic Submenus</value>
     <template>generator/data/parts/basic_include.xmltemplate</template>
+    <condition>!Skin.HasSetting(Hub.{window_id}.DisableSubmenu)</condition>
     <value name="includes_name">skinvariables-{item}-submenu</value>
     <value name="includes_part">
         <items menu="{item}">

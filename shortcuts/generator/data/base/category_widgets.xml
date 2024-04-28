@@ -20,6 +20,7 @@
             <value name="grouplist_endrow_selector">Skin.HasSetting(Hub.{window_id}.WidgetSelector)</value>
             <value name="grouplist_endrow_selector_id">419</value>
             <value name="all_adaptive_widgets">
+                <condition>!Skin.HasSetting(Hub.{window_id}.DisableSubmenu)</condition>
                 <items menu="{item}">
                     <item>
                         <template>generator/data/parts/basic_template.xmltemplate</template>
@@ -29,7 +30,7 @@
                         <value name="includes_part">
                             <template>generator/data/parts/widgets_row.xmltemplate</template>
                             <datafile>generator/data/setup/widgets_row.xml</datafile>
-                            <datafile>generator/data/setup/widgets_content_adaptive.xml</datafile>
+                            <datafile>generator/data/setup/widgets_adaptive.xml</datafile>
                             <condition>{item_use_as_widget}==True</condition>
                             <enumitem name="enum_x">widget_{item_menu}_{item_x}</enumitem>
                         </value>
@@ -38,6 +39,7 @@
             </value>
 
             <value name="all_submenu_widgets">
+                <condition>!Skin.HasSetting(Hub.{window_id}.DisableSubmenu)</condition>
                 <items menu="{item}">
                     <item>
                         <items menu="{item_menu}" item="{item_x}" mode="submenu">
@@ -64,6 +66,7 @@
             </value>
 
             <value name="all_standard_widgets">
+                <condition>!Skin.HasSetting(Hub.{window_id}.DisableSubmenu)</condition>
                 <items menu="{item}">
                     <item>
                         <template>generator/data/parts/basic_template.xmltemplate</template>
@@ -109,6 +112,7 @@
             </value>
 
             <value name="all_global_widgets">
+                <condition>!Skin.HasSetting(Hub.{window_id}.DisableSubmenu)</condition>
                 <value name="comments">Global Widgets for {item}</value>
                 <template>generator/data/parts/basic_template.xmltemplate</template>
                 <value name="widget_category_visible">True</value>

@@ -25,8 +25,6 @@
     },
     "genxml": [
         {"datafile": "generator/data/base/hubs_complex.xml"},
-        {"datafile": "generator/data/base/hubs_widgetsonly.xml"},
-        {"datafile": "generator/data/base/hubs_classichome.xml"},
         {"datafile": "generator/data/base/hubs_extended.xml"},
         {"datafile": "generator/data/base/power_main.xml"},
         {"datafile": "generator/data/base/power_side.xml"},

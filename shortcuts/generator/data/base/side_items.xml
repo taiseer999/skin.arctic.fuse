@@ -11,7 +11,7 @@
                 <rules name="widget_group_id">
                     <rule>
                         <condition>True</condition>
-                        <value>{item_x}</value>
+                        <value>$MATH[{item_x} + 100]</value>
                     </rule>
                 </rules>
                 <value name="parts_additional">

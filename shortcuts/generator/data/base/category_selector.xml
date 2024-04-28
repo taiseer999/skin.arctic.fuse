@@ -8,6 +8,7 @@
         <condition>Skin.HasSetting(Hub.{window_id}.WidgetSelector)</condition>
         <value name="endrow_visible">True</value>
         <value name="all_adaptive_widgets">
+            <condition>!Skin.HasSetting(Hub.{window_id}.DisableSubmenu)</condition>
             <items menu="{item}">
                 <item>
                     <template>generator/data/parts/basic_template.xmltemplate</template>
@@ -26,6 +27,7 @@
             </items>
         </value>
         <value name="all_submenu_widgets">
+            <condition>!Skin.HasSetting(Hub.{window_id}.DisableSubmenu)</condition>
             <items menu="{item}">
                 <item>
                     <items menu="{item_menu}" item="{item_x}" mode="submenu">
@@ -53,6 +55,7 @@
             </items>
         </value>
         <value name="all_standard_widgets">
+            <condition>!Skin.HasSetting(Hub.{window_id}.DisableSubmenu)</condition>
             <items menu="{item}">
                 <item>
                     <template>generator/data/parts/basic_template.xmltemplate</template>
@@ -100,6 +103,7 @@
             </items>
         </value>
         <value name="all_global_widgets">
+            <condition>!Skin.HasSetting(Hub.{window_id}.DisableSubmenu)</condition>
             <value name="comments">Global EndRow for {item}</value>
             <template>generator/data/parts/basic_template.xmltemplate</template>
             <value name="widget_category_visible">True</value>
