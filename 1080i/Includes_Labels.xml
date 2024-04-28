@@ -24,12 +24,10 @@
         <value condition="Skin.String(Navigation.Global.OnDown,Options)">$LOCALIZE[33063]</value>
         <value condition="Skin.String(Navigation.Global.OnDown,Discover)">$LOCALIZE[31066]</value>
         <value condition="Skin.String(Navigation.Global.OnDown,Search)">$LOCALIZE[137]</value>
-        <!-- <value condition="Skin.String(Navigation.Global.OnDown,Filter) + [Window.IsMedia | Window.IsVisible(1105)]">$LOCALIZE[587]</value> -->
         <value>$VAR[Label_NextBump]</value>
     </variable>
 
     <variable name="Label_NextWidget">
-        <value condition="!String.IsEmpty(Container(303).ListItemNoWrap(1).Label) + Window.IsVisible(Home) + Skin.HasSetting(Hub.Home.DisableSubmenu) + !Skin.HasSetting(Hub.Home.DisableMoveBetweenGroups)">$INFO[Container(303).ListItemNoWrap(1).Label]</value>
         <value condition="Window.IsVisible(Home) + Skin.String(Navigation.Hub.Home.OnDown,Explore)">$LOCALIZE[31148]</value>
         <value condition="Window.IsVisible(1101) + Skin.String(Navigation.Hub.1101.OnDown,Explore)">$LOCALIZE[31148]</value>
         <value condition="Window.IsVisible(1102) + Skin.String(Navigation.Hub.1102.OnDown,Explore)">$LOCALIZE[31148]</value>

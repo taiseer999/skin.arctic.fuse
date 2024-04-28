@@ -196,24 +196,17 @@
     </include>
 
     <include name="Action_Widget_Top">
-        <param name="move">Window.IsVisible(Home) + Skin.HasSetting(Hub.Home.DisableSubmenu) + $EXP[Exp_HomeMenu_DontHide] + !String.IsEmpty(Container(303).ListItemNoWrap(-1).Property(guid)) + !Skin.HasSetting(Hub.Home.DisableMoveBetweenGroups)</param>
-        <param name="search_transition">$EXP[Exp_Window_IsClassicHub]</param>
         <param name="condition">true</param>
         <definition>
 
-            <!-- Scroll classic home -->
-            <onup condition="$PARAM[condition] + $PARAM[move] + !String.IsEmpty(Container(303).ListItem.Property(widgets_tmdbh_id))">SetProperty($INFO[Container(303).ListItem.Property(widgets_tmdbh_id)],$INFO[Window.Property(TMDbHelper.WidgetContainer)],1198)</onup>
-            <onup condition="$PARAM[condition] + $PARAM[move] + !Skin.HasSetting(Hub.Home.WidgetSelector)">$INFO[Container(303).ListItem(-1).Property(widgets_setfocus_bottom)]</onup>
-            <onup condition="$PARAM[condition] + $PARAM[move] + Skin.HasSetting(Hub.Home.WidgetSelector)">$INFO[Container(303).ListItem(-1).Property(widgets_setfocus_top)]</onup>
-            <onup condition="$PARAM[condition] + $PARAM[move]">SetProperty(WidgetGroup.Movement,Up)</onup>
-            <onup condition="$PARAM[condition] + $PARAM[move]">Control.Move(303,-1)</onup>
+            <!-- Set Return ID -->
+            <onup condition="$PARAM[condition]">SetProperty(List.ViewContainer,$NUMBER[$PARAM[id]])</onup>
 
-            <onup condition="$PARAM[condition] + ![$PARAM[move]] + !$EXP[Exp_HomeMenu_DontHide]">SetProperty(List.ViewContainer,$NUMBER[$PARAM[id]])</onup>
-            <onup condition="$PARAM[condition] + ![$PARAM[move]] + !$EXP[Exp_HomeMenu_DontHide]">SetFocus(303,1,absolute)</onup>
+            <!-- Menu -->
+            <onup condition="$PARAM[condition] + !$EXP[Exp_HomeMenu_DontHide]">SetFocus(303,1,absolute)</onup>
 
             <!-- Bump -->
-            <onup condition="$PARAM[condition] + ![$PARAM[move]] + $EXP[Exp_HomeMenu_DontHide]">SetProperty(List.ViewContainer,$NUMBER[$PARAM[id]])</onup>
-            <onup condition="$PARAM[condition] + ![$PARAM[move]] + $EXP[Exp_HomeMenu_DontHide]">333</onup>
+            <onup condition="$PARAM[condition] + $EXP[Exp_HomeMenu_DontHide]">333</onup>
 
         </definition>
     </include>
@@ -222,9 +215,7 @@
         <param name="id">50</param>
         <definition>
             <include content="Action_Widget_Top">
-                <param name="move">False</param>
                 <param name="id">$PARAM[id]</param>
-                <param name="search_transition">True</param>
             </include>
         </definition>
     </include>
@@ -232,44 +223,36 @@
     <include name="Action_Widget_End">
         <param name="condition">true</param>
         <param name="bump_id">330</param>
-        <param name="move">Window.IsVisible(Home) + Skin.HasSetting(Hub.Home.DisableSubmenu) + $EXP[Exp_HomeMenu_DontHide] + !String.IsEmpty(Container(303).ListItemNoWrap(1).Property(guid)) + !Skin.HasSetting(Hub.Home.DisableMoveBetweenGroups)</param>
         <definition>
             <!-- EndRow Hack: Bump focus back up to widget first -->
-            <ondown condition="$PARAM[condition] + !String.IsEmpty(Window.Property(EndRow.HasFocus))">Action(Up)</ondown>
-
-            <!-- Scroll Classic Home -->
-            <ondown condition="$PARAM[condition] + $PARAM[move] + !String.IsEmpty(Container(303).ListItem.Property(widgets_tmdbh_id))">SetProperty($INFO[Container(303).ListItem.Property(widgets_tmdbh_id)],$INFO[Window.Property(TMDbHelper.WidgetContainer)],1198)</ondown>
-            <ondown condition="$PARAM[condition] + $PARAM[move] + !Skin.HasSetting(Hub.Home.WidgetSelector)">$INFO[Container(303).ListItem(1).Property(widgets_setfocus_top)]</ondown>
-            <ondown condition="$PARAM[condition] + $PARAM[move] + Skin.HasSetting(Hub.Home.WidgetSelector)">$INFO[Container(303).ListItem(1).Property(widgets_setfocus_bottom)]</ondown>
-            <ondown condition="$PARAM[condition] + $PARAM[move]">SetProperty(WidgetGroup.Movement,Down)</ondown>
-            <ondown condition="$PARAM[condition] + $PARAM[move]">Control.Move(303,1)</ondown>
+            <!-- <ondown condition="$PARAM[condition] + !String.IsEmpty(Window.Property(EndRow.HasFocus))">Action(Up)</ondown> -->
 
             <!-- Options -->
-            <ondown condition="$PARAM[condition] + ![$PARAM[move]] + String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Options)">ActivateWindow(1171)</ondown>
+            <ondown condition="$PARAM[condition] + String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Options)">ActivateWindow(1171)</ondown>
 
             <!-- Search -->
-            <ondown condition="$PARAM[condition] + ![$PARAM[move]] + [[String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Search)] | Skin.String(Navigation.Hub.$PARAM[window_id].OnDown,Search)]">ActivateWindow(1185)</ondown>
+            <ondown condition="$PARAM[condition] + [[String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Search)] | Skin.String(Navigation.Hub.$PARAM[window_id].OnDown,Search)]">ActivateWindow(1185)</ondown>
 
             <!-- Filter -->
-            <ondown condition="$PARAM[condition] + ![$PARAM[move]] + String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Filter)">SetProperty(List.ViewContainer,$INFO[System.CurrentControlId])</ondown>
-            <ondown condition="$PARAM[condition] + ![$PARAM[move]] + String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Filter)">SetFocus(330)</ondown>
+            <ondown condition="$PARAM[condition] + String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Filter)">SetProperty(List.ViewContainer,$INFO[System.CurrentControlId])</ondown>
+            <ondown condition="$PARAM[condition] + String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Filter)">SetFocus(330)</ondown>
 
             <!-- Discover -->
-            <ondown condition="$PARAM[condition] + ![$PARAM[move]] + String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Discover)">ActivateWindow(1105)</ondown>
+            <ondown condition="$PARAM[condition] + String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Discover)">ActivateWindow(1105)</ondown>
 
             <!-- Bump -->
-            <ondown condition="$PARAM[condition] + ![$PARAM[move]] + String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Bump)">SetProperty(List.ViewContainer,$INFO[System.CurrentControlId])</ondown>
-            <ondown condition="$PARAM[condition] + ![$PARAM[move]] + String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Bump)">SetFocus(330)</ondown>
+            <ondown condition="$PARAM[condition] + String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Bump)">SetProperty(List.ViewContainer,$INFO[System.CurrentControlId])</ondown>
+            <ondown condition="$PARAM[condition] + String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Bump)">SetFocus(330)</ondown>
 
             <!-- Explore -->
             <include content="Action_View_Explore_OnDown" condition="!Window.IsVisible(Home)">
-                <param name="condition">$PARAM[condition] + ![$PARAM[move]] + [[String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Explore)] | Skin.String(Navigation.Hub.$PARAM[window_id].OnDown,Explore)]</param>
+                <param name="condition">$PARAM[condition] + [[String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Explore)] | Skin.String(Navigation.Hub.$PARAM[window_id].OnDown,Explore)]</param>
                 <param name="window_id">1181</param>
             </include>
 
             <!-- Extended -->
             <include content="Action_View_Extend_OnDown" condition="Window.IsVisible(Home)">
-                <param name="condition">$PARAM[condition] + ![$PARAM[move]] + [[String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Explore)] | Skin.String(Navigation.Hub.$PARAM[window_id].OnDown,Explore)]</param>
+                <param name="condition">$PARAM[condition] + [[String.IsEmpty(Skin.String(Navigation.Hub.$PARAM[window_id].OnDown)) + Skin.String(Navigation.Global.OnDown,Explore)] | Skin.String(Navigation.Hub.$PARAM[window_id].OnDown,Explore)]</param>
                 <param name="window_id">1182</param>
             </include>
 

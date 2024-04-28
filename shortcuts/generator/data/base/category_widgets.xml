@@ -9,7 +9,7 @@
         <value name="includes_part">
             <template>generator/data/parts/widgets_grouplist.xmltemplate</template>
             <value name="grouplist_refocus">SetFocus(300)</value>
-            <value name="grouplist_widgets_only">False</value>
+            <value name="grouplist_widgets_only">Skin.HasSetting(Hub.{window_id}.DisableSubmenu)</value>
             <value name="grouplist_visible">True</value>
             <value name="grouplist_first_id">601</value>
             <value name="grouplist_top_widget_id">497</value>
