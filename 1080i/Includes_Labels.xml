@@ -314,7 +314,6 @@
         <value condition="String.IsEqual(Window.Property(hub_prefix),1107)">$INFO[Skin.String(Hub.1107.Spotlight.SortBy)]</value>
         <value condition="String.IsEqual(Window.Property(hub_prefix),1108)">$INFO[Skin.String(Hub.1108.Spotlight.SortBy)]</value>
         <value condition="String.IsEqual(Window.Property(hub_prefix),1109)">$INFO[Skin.String(Hub.1109.Spotlight.SortBy)]</value>
-
     </variable>
 
     <variable name="Label_Shortcut_HubSpotlight_Fallback">

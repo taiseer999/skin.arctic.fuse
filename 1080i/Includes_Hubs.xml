@@ -245,7 +245,7 @@
     <include name="Hub_Controls">
         <param name="fullscreen_content">$VAR[Path_Spotlight_Fallback_Content]</param>
         <param name="fullscreen_target">$VAR[Path_Spotlight_Fallback_Target]</param>
-        <param name="fullscreen_sortby">random</param>
+        <param name="fullscreen_sortby">$VAR[Path_Spotlight_Fallback_SortBy]</param>
         <param name="widgets_only">false</param>
         <param name="include">Hub_Standard</param>
         <definition>
