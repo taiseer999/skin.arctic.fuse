@@ -166,11 +166,6 @@
             <visible allowhiddenfocus="true">false</visible>
             <animation effect="fade" start="0" end="0" time="100" reversible="false">Focus</animation>
 
-            <!-- <onfocus condition="!String.IsEmpty(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock))">ClearProperty(TMDbHelper.WidgetContainer.UpdateLock,1198)</onfocus>
-            <onfocus condition="String.IsEmpty(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock))">ClearProperty(List.ViewContainer)</onfocus>
-            <onfocus condition="!String.IsEmpty(ListItem.Property(widgets_saved_id)) + String.IsEmpty(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock))">SetProperty(TMDbHelper.WidgetContainer,$INFO[ListItem.Property(widgets_saved_id)])</onfocus>
-            <onfocus condition="String.IsEmpty(ListItem.Property(widgets_saved_id)) + String.IsEmpty(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock))">SetProperty(TMDbHelper.WidgetContainer,$INFO[ListItem.Property(widgets_first_id)])</onfocus> -->
-
             <!-- Reset Widget Group Position -->
             <!-- <include content="Action_Widgets_ResetPosition_OnFocus" condition="Skin.HasSetting(Hub.Home.WidgetSelector)">
                 <param name="condition">String.IsEmpty(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock))</param>

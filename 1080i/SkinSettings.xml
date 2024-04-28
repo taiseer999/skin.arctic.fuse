@@ -511,6 +511,7 @@
                             <label>$LOCALIZE[10000] > $LOCALIZE[31253]</label>
                             <visible>Container(3).HasFocus(4)</visible>
                             <visible>Skin.HasSetting(Hub.Home.DisableSubmenu)</visible>
+                            <visible>!Skin.HasSetting(Hub.Home.WidgetSelector)</visible>
                             <onclick>Skin.ToggleSetting(Hub.Home.DisableMoveBetweenGroups)</onclick>
                             <selected>!Skin.HasSetting(Hub.Home.DisableMoveBetweenGroups)</selected>
                         </include>
