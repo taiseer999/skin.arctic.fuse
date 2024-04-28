@@ -65,16 +65,23 @@
             <onclick condition="Skin.HasSetting(Search.DisableDiscover)">ClearProperty(SearchDiscover.FilmSort)</onclick>
             <onclick condition="Skin.HasSetting(Search.DisableDiscover)">ClearProperty(SearchDiscover.ShowSort)</onclick>
             <onclick condition="Skin.HasSetting(Search.DisableDiscover)">ClearProperty(SearchDiscover.GenreLabel)</onclick>
+            <onclick condition="Skin.HasSetting(Search.DisableDiscover)">ClearProperty(SearchDiscover.FilmGenreID)</onclick>
+            <onclick condition="Skin.HasSetting(Search.DisableDiscover)">ClearProperty(SearchDiscover.ShowGenreID)</onclick>
             <onclick condition="Skin.HasSetting(Search.DisableDiscover)">ClearProperty(SearchDiscover.GenreID)</onclick>
             <onclick condition="Skin.HasSetting(Search.DisableDiscover)">ClearProperty(SearchDiscover.ProviderLabel)</onclick>
             <onclick condition="Skin.HasSetting(Search.DisableDiscover)">ClearProperty(SearchDiscover.ProviderID)</onclick>
-            <onclick condition="Skin.HasSetting(Search.DisableDiscover)">ClearProperty(SearchDiscover.PeopleLabel)</onclick>
-            <onclick condition="Skin.HasSetting(Search.DisableDiscover)">ClearProperty(SearchDiscover.PeopleID)</onclick>
+            <onclick condition="Skin.HasSetting(Search.DisableDiscover)">ClearProperty(SearchDiscover.CastLabel,1105)</onclick>
+            <onclick condition="Skin.HasSetting(Search.DisableDiscover)">ClearProperty(SearchDiscover.CastID,1105)</onclick>
+            <onclick condition="Skin.HasSetting(Search.DisableDiscover)">ClearProperty(SearchDiscover.CrewLabel,1105)</onclick>
+            <onclick condition="Skin.HasSetting(Search.DisableDiscover)">ClearProperty(SearchDiscover.CrewID,1105)</onclick>
+            <onclick condition="Skin.HasSetting(Search.DisableDiscover)">ClearProperty(SearchDiscover.PeopleLabel,1105)</onclick>
+            <onclick condition="Skin.HasSetting(Search.DisableDiscover)">ClearProperty(SearchDiscover.PeopleID,1105)</onclick>
             <onclick condition="Skin.HasSetting(Search.DisableDiscover)">ClearProperty(SearchDiscover.YearHigh)</onclick>
             <onclick condition="Skin.HasSetting(Search.DisableDiscover)">ClearProperty(SearchDiscover.YearLow)</onclick>
             <onclick condition="Skin.HasSetting(Search.DisableDiscover)">ClearProperty(SearchDiscover.RatingLow)</onclick>
             <onclick condition="Skin.HasSetting(Search.DisableDiscover)">ClearProperty(SearchDiscover.StudioLabel)</onclick>
             <onclick condition="Skin.HasSetting(Search.DisableDiscover)">ClearProperty(SearchDiscover.DirectorLabel)</onclick>
+            <onclick condition="Skin.HasSetting(Search.DisableDiscover)">ClearProperty(SearchDiscover.KeyWordLabel)</onclick>
             <onclick condition="Skin.HasSetting(Search.DisableDiscover)">ClearProperty(SearchDiscover.SortBy)</onclick>
             <onclick condition="Skin.HasSetting(Search.DisableDiscover)">ClearProperty(SearchDiscover.SortOrder)</onclick>
             <onclick condition="Skin.HasSetting(Search.DisableDiscover)">Skin.Reset(SearchDiscover.VoteLow)</onclick>
@@ -323,15 +330,22 @@
                                 <onclick>ClearProperty(SearchDiscover.ShowSort)</onclick>
                                 <onclick>ClearProperty(SearchDiscover.GenreLabel)</onclick>
                                 <onclick>ClearProperty(SearchDiscover.GenreID)</onclick>
+                                <onclick>ClearProperty(SearchDiscover.ShowGenreID)</onclick>
+                                <onclick>ClearProperty(SearchDiscover.FilmGenreID)</onclick>
                                 <onclick>ClearProperty(SearchDiscover.ProviderLabel)</onclick>
                                 <onclick>ClearProperty(SearchDiscover.ProviderID)</onclick>
-                                <onclick>ClearProperty(SearchDiscover.PeopleLabel)</onclick>
-                                <onclick>ClearProperty(SearchDiscover.PeopleID)</onclick>
+                                <onclick>ClearProperty(SearchDiscover.CastLabel,1105)</onclick>
+                                <onclick>ClearProperty(SearchDiscover.CastID,1105)</onclick>
+                                <onclick>ClearProperty(SearchDiscover.CrewLabel,1105)</onclick>
+                                <onclick>ClearProperty(SearchDiscover.CrewID,1105)</onclick>
+                                <onclick>ClearProperty(SearchDiscover.PeopleLabel,1105)</onclick>
+                                <onclick>ClearProperty(SearchDiscover.PeopleID,1105)</onclick>
                                 <onclick>ClearProperty(SearchDiscover.YearHigh)</onclick>
                                 <onclick>ClearProperty(SearchDiscover.YearLow)</onclick>
                                 <onclick>ClearProperty(SearchDiscover.RatingLow)</onclick>
                                 <onclick>ClearProperty(SearchDiscover.StudioLabel)</onclick>
                                 <onclick>ClearProperty(SearchDiscover.DirectorLabel)</onclick>
+                                <onclick>ClearProperty(SearchDiscover.KeywordLabel)</onclick>
                                 <onclick>ClearProperty(SearchDiscover.SortBy)</onclick>
                                 <onclick>ClearProperty(SearchDiscover.SortOrder)</onclick>
                                 <onclick>Skin.Reset(SearchDiscover.VoteLow)</onclick>
