@@ -2236,7 +2236,7 @@
                 </control>
                 <control type="group">
                     <top>$PARAM[item_w]</top>
-                    <include content="Layout_Square_Labels">
+                    <include content="Layout_Square_Labels" condition="![$PARAM[variation]]">
                         <param name="detailed">$PARAM[detailed]</param>
                         <param name="listitem">$PARAM[listitem]</param>
                         <param name="affix">$PARAM[affix]</param>

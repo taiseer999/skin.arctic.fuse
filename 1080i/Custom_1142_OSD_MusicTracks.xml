@@ -15,6 +15,7 @@
                 <param name="itemlayout_h">304</param>
                 <param name="offset_x">40</param>
                 <param name="use_movement">false</param>
+                <param name="variation">true</param>
                 <content>
                     <item>
                         <label>$LOCALIZE[559]</label>
