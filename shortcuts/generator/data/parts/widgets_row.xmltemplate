@@ -34,5 +34,6 @@
     </include>
 
     {widget_custom_onclick}
+    {widget_custom_onfocus}
 
 </include>

@@ -200,8 +200,8 @@
     </include>
 
     <include name="Home_Menu_List_ItemLayout">
-        <param name="layoutnf">[False]</param>
-        <param name="layoutfo">[$EXP[Exp_HomeMenu_DontHide] + !Skin.HasSetting(Home.SideMenu.DisableIndicator) + !Window.IsVisible(1172) + Window.IsVisible(Home)]</param>
+        <param name="layoutnf">[$EXP[Exp_HomeMenu_DontHide] + !Skin.HasSetting(Home.SideMenu.DisableIndicator) + !Window.IsVisible(1172) + Window.IsVisible(Home) + [Skin.HasSetting(Hub.Home.DisableSubmenu) + !Skin.HasSetting(Hub.Home.WidgetSelector) + !Skin.HasSetting(Hub.Home.DisableMoveBetweenGroups) + String.IsEqual(ListItem.Property(guid),Window.Property(SideMenu.CurrentGUID))]]</param>
+        <param name="layoutfo">[$EXP[Exp_HomeMenu_DontHide] + !Skin.HasSetting(Home.SideMenu.DisableIndicator) + !Window.IsVisible(1172) + Window.IsVisible(Home) + [[Skin.HasSetting(Hub.Home.DisableSubmenu) + !Skin.HasSetting(Hub.Home.WidgetSelector) + !Skin.HasSetting(Hub.Home.DisableMoveBetweenGroups) + String.IsEqual(ListItem.Property(guid),Window.Property(SideMenu.CurrentGUID))] | !Skin.HasSetting(Hub.Home.DisableSubmenu) | Skin.HasSetting(Hub.Home.WidgetSelector) | Skin.HasSetting(Hub.Home.DisableMoveBetweenGroups)]]</param>
         <param name="altfocus">false</param>
         <definition>
             <itemlayout height="100" width="100">
