@@ -5,6 +5,6 @@
         "skinstring_furniturebottomleft": "Skin.String(Furniture.BottomLeft.Enable)"
     },
     "actions": [
-        "route=action=buildtemplate&sidemenucollapse={skinstring_sidemenucollapse}&lastbuildtime={skinstring_lastbuildtime}&skinstring_furniturebottomleft={skinstring_furniturebottomleft}"
+        "route=action=buildtemplate&background=false&sidemenucollapse={skinstring_sidemenucollapse}&lastbuildtime={skinstring_lastbuildtime}&skinstring_furniturebottomleft={skinstring_furniturebottomleft}"
     ]
 }
