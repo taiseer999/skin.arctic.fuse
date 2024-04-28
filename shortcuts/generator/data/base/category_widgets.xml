@@ -94,7 +94,7 @@
                         <value name="comments">Sidemenu Widgets for {item} {item_x} {item_label}</value>
                         <condition>{item}==homemenu</condition>
                         <template>generator/data/parts/basic_template.xmltemplate</template>
-                        <value name="widget_category_visible">String.IsEqual(Container({sidemenu_id}).ListItem.Property(guid),{item_guid})</value>
+                        <value name="widget_category_visible">String.IsEqual(Container({sidemenu_id}).ListItem.Property(guid),{item_guid}) | [Skin.HasSetting(Hub.Home.DisableSubmenu) + !Skin.HasSetting(Hub.Home.WidgetSelector) + !Skin.HasSetting(Hub.Home.DisableMoveBetweenGroups)]</value>
                         <value name="grouplist_item_x">$MATH[{item_x} + 100]</value>
                         <value name="includes_part">
                             <items mode="widgets" item="{item_x}" menu="{item_menu}">
