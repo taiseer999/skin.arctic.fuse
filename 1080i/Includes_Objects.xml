@@ -557,20 +557,60 @@
         </definition>
     </include>
 
+    <include name="Object_CircleLayout_Image">
+        <control type="group">
+            <visible>![String.IsEmpty($PARAM[listitem].Art(discart)) + String.IsEmpty($PARAM[listitem].Art(album.discart)) + [String.IsEqual($PARAM[listitem].DBType,movie) | String.IsEqual($PARAM[listitem].DBType,album) | String.IsEqual($PARAM[listitem].DBType,song) | String.IsEqual($PARAM[listitem].DBType,season)]]</visible>
+            <include content="Object_Layout_Image">
+                <param name="diffuse">$PARAM[diffuse]</param>
+                <param name="icon">$PARAM[icon]</param>
+                <param name="listitem">$PARAM[listitem]</param>
+                <param name="aspectratio">$PARAM[aspectratio]</param>
+            </include>
+            <control type="image">
+                <aspectratio>keep</aspectratio>
+                <texture>diffuse/circle_200_overlay.png</texture>
+                <visible>String.IsEqual($PARAM[listitem].DBType,tvshow) | String.IsEqual($PARAM[listitem].DBType,episode) | String.IsEqual($PARAM[listitem].DBType,artist) | String.IsEqual($PARAM[listitem].DBType,video) | String.IsEqual($PARAM[listitem].DBType,set)</visible>
+            </control>
+        </control>
+        <control type="group">
+            <visible>String.IsEmpty($PARAM[listitem].Art(discart)) + String.IsEmpty($PARAM[listitem].Art(album.discart)) + [String.IsEqual($PARAM[listitem].DBType,movie) | String.IsEqual($PARAM[listitem].DBType,album) | String.IsEqual($PARAM[listitem].DBType,song) | String.IsEqual($PARAM[listitem].DBType,season)]</visible>
+            <include content="Object_Layout_Image">
+                <param name="diffuse">diffuse/discart.png</param>
+                <param name="icon">$PARAM[icon]</param>
+                <param name="listitem">$PARAM[listitem]</param>
+                <param name="aspectratio">scale</param>
+            </include>
+            <control type="image">
+                <aspectratio>keep</aspectratio>
+                <texture>diffuse/discart_overlay.png</texture>
+            </control>
+        </control>
+    </include>
+
     <include name="Object_SquareIcon">
         <param name="genre_bordersize">50</param>
         <param name="other_bordersize">20</param>
+        <param name="include_discart">false</param>
         <definition>
             <control type="group">
                 <visible>![String.IsEqual($PARAM[listitem].DBType,genre) | String.IsEqual($PARAM[listitem].Property(DBType),genre)]</visible>
                 <visible>![String.IsEqual($PARAM[listitem].DBType,studio) | String.IsEqual($PARAM[listitem].Property(DBType),studio)]</visible>
                 <visible>![String.IsEqual($PARAM[listitem].DBType,country) | String.IsEqual($PARAM[listitem].Property(DBType),country)]</visible>
-                <include content="Object_Layout_Image">
+
+                <include content="Object_CircleLayout_Image" condition="$PARAM[include_discart]">
                     <param name="diffuse">$PARAM[diffuse]</param>
                     <param name="icon">$PARAM[icon]</param>
                     <param name="listitem">$PARAM[listitem]</param>
                     <param name="aspectratio">$PARAM[aspectratio]</param>
                 </include>
+
+                <include content="Object_Layout_Image" condition="![$PARAM[include_discart]]">
+                    <param name="diffuse">$PARAM[diffuse]</param>
+                    <param name="icon">$PARAM[icon]</param>
+                    <param name="listitem">$PARAM[listitem]</param>
+                    <param name="aspectratio">$PARAM[aspectratio]</param>
+                </include>
+
             </control>
             <control type="image">
                 <texture background="true" diffuse="$PARAM[icon_diffuse]" colordiffuse="main_fg_100" fallback="DefaultGenres.png">$PARAM[icon]</texture>

@@ -2252,7 +2252,7 @@
         <param name="selected">false</param>
         <param name="detailed">false</param>
         <param name="variation">false</param>
-        <param name="icon">$VAR[Image_Icon]</param>
+        <param name="icon">$VAR[Image_Circle]</param>
         <param name="listitem">ListItem</param>
         <param name="progress">Progress</param>
         <param name="textcolor">main_fg</param>
@@ -2280,6 +2280,7 @@
 
                     <include content="Object_SquareIcon">
                         <param name="diffuse">diffuse/$PARAM[diffuse].png</param>
+                        <param name="include_discart">true</param>
                         <param name="icon">$PARAM[icon]</param>
                         <param name="listitem">$PARAM[listitem]</param>
                         <param name="aspectratio">scale</param>

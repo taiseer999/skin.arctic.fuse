@@ -36,6 +36,20 @@
         <value condition="!String.IsEmpty({listitem}.Icon)">$INFO[{listitem}.Icon]</value>
     </variable>
 
+    <variable name="Image_Circle" containers="500" start="-20" end="20" types="listitem,listitemposition">
+        <value condition="String.IsEqual({listitem}.DBType,studio) | String.IsEqual({listitem}.Property(DBType),studio)">$INFO[{listitem}.Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual({listitem}.DBType,country) | String.IsEqual({listitem}.Property(DBType),country)">$INFO[{listitem}.Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual({listitem}.DBType,genre) | String.IsEqual({listitem}.Property(DBType),genre)">$INFO[{listitem}.Label,genres/,.png]</value>
+        <value condition="!String.IsEmpty({listitem}.Art(discart))">$INFO[{listitem}.Art(discart)]</value>
+        <value condition="!String.IsEmpty({listitem}.Art(album.discart))">$INFO[{listitem}.Art(album.discart)]</value>
+        <value condition="!String.IsEmpty({listitem}.Art(thumb)) + !String.StartsWith({listitem}.Art(thumb),Default)">$INFO[{listitem}.Art(thumb)]</value>
+        <value condition="!String.IsEmpty({listitem}.Icon) + !String.StartsWith({listitem}.Icon,Default)">$INFO[{listitem}.Icon]</value>
+        <value condition="!String.IsEmpty({listitem}.Art(poster))">$INFO[{listitem}.Art(poster)]</value>
+        <value condition="!String.IsEmpty({listitem}.Art(landscape))">$INFO[{listitem}.Art(landscape)]</value>
+        <value condition="!String.IsEmpty({listitem}.Art(fanart))">$INFO[{listitem}.Art(fanart)]</value>
+        <value condition="!String.IsEmpty({listitem}.Icon)">$INFO[{listitem}.Icon]</value>
+    </variable>
+
     <variable name="Image_Poster" containers="52,523,553" start="-20" end="20" types="listitem,listitemposition">
         <value condition="!String.IsEmpty({listitem}.Art(poster))">$INFO[{listitem}.Art(poster)]</value>
         <value condition="!String.IsEmpty({listitem}.Art(tvshow.poster))">$INFO[{listitem}.Art(tvshow.poster)]</value>
