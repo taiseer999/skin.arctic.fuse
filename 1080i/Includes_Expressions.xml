@@ -85,8 +85,9 @@
 
     <expression name="Exp_Hubs_Widgets_SlideDown">[String.IsEmpty(Window.Property(Slide.WidgetContainer)) | $EXP[Exp_Hubs_Categories_HasFocus] | $EXP[Exp_Hubs_Submenu_HasFocus]]</expression>
 
-    <expression name="Exp_Hubs_Categories_SlideDown">[[String.IsEmpty(Window.Property(Slide.WidgetContainer))] + !$EXP[Exp_Hubs_Spotlight_IsDisabled]]</expression>
+    <!-- <expression name="Exp_Hubs_Categories_SlideDown">[[String.IsEmpty(Window.Property(Slide.WidgetContainer))] + !$EXP[Exp_Hubs_Spotlight_IsDisabled]]</expression> -->
     <!-- <expression name="Exp_Hubs_Categories_SlideDown">[[String.IsEmpty(Window.Property(Slide.WidgetContainer)) | [$EXP[Exp_Hubs_Categories_HasFocus] + $EXP[Exp_Hubs_Spotlight_IsFanart]]] + !$EXP[Exp_Hubs_Spotlight_IsDisabled]]</expression> -->
+    <expression name="Exp_Hubs_Categories_SlideDown">[[String.IsEmpty(Window.Property(Slide.WidgetContainer)) | $EXP[Exp_Hubs_Categories_HasFocus]] + !$EXP[Exp_Hubs_Spotlight_IsDisabled]]</expression>
 
     <expression name="Exp_Hubs_Categories_HasFocus">[Integer.IsEqual(Window.Property(Slide.WidgetContainer),300) | Control.HasFocus(300)]</expression>
     <expression name="Exp_Hubs_Submenu_HasFocus">[Integer.IsEqual(Window.Property(Slide.WidgetContainer),302) | Control.HasFocus(302)]</expression>

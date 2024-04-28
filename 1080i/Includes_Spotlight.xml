@@ -130,9 +130,9 @@
                 <include content="Object_Top" condition="$EXP[Exp_Hubs_Spotlight_IsMini]">
                     <param name="top">hub_spotlight_mini_t</param>
                 </include>
-                <include content="Object_Top" condition="$EXP[Exp_Hubs_Spotlight_IsFanart]">
+                <!-- <include content="Object_Top" condition="$EXP[Exp_Hubs_Spotlight_IsFanart]">
                     <param name="top">hub_spotlight_fanart_t</param>
-                </include>
+                </include> -->
                 <top>hub_spotlight_t</top>
                 <height>hub_spotlight_h</height>
 

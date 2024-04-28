@@ -110,8 +110,8 @@
                 <movement>4</movement>
                 <left>-20</left>
                 <include content="Hub_Categories_Spotlight_Slide" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
-                    <param name="top">45</param>
-                    <param name="y">-50</param>
+                    <param name="top">35</param>
+                    <param name="y">-40</param>
                 </include>
                 <top>-5</top>
                 <nested />
@@ -136,8 +136,8 @@
                     <param name="id">$PARAM[id]</param>
                 </include>
                 <include content="Hub_Categories_Spotlight_Slide" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
-                    <param name="top">100</param>
-                    <param name="y">-60</param>
+                    <param name="top">80</param>
+                    <param name="y">-40</param>
                 </include>
                 <top>40</top>
                 <nested />
@@ -527,8 +527,8 @@
             <width>1700</width>
             <left>-20</left>
             <include content="Hub_Categories_Spotlight_Slide" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
-                <param name="top">45</param>
-                <param name="y">-50</param>
+                <param name="top">35</param>
+                <param name="y">-40</param>
             </include>
             <top>-5</top>
         </include>
@@ -547,8 +547,8 @@
                 <param name="categories">$PARAM[categories]</param>
             </include>
             <include content="Hub_Categories_Spotlight_Slide" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
-                <param name="top">120</param>
-                <param name="y">-60</param>
+                <param name="top">100</param>
+                <param name="y">-40</param>
             </include>
             <top>60</top>
         </include>
@@ -598,7 +598,7 @@
         <control type="group">
             <include condition="!$EXP[Exp_Hubs_Spotlight_IsSlide]">Hub_WindowTransition_CategoriesSpotlight_OnWidgets</include>
             <include condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">Hub_WindowTransition_CategoriesSpotlight_OnCategories</include>
-            <include condition="!$EXP[Exp_Hubs_Spotlight_IsDisabled] + !$EXP[Exp_Hubs_Spotlight_IsMini] + !$EXP[Exp_Hubs_Spotlight_IsFanart]">Hub_Categories_Spotlight_Viewline</include>
+            <include condition="!$EXP[Exp_Hubs_Spotlight_IsDisabled] + !$EXP[Exp_Hubs_Spotlight_IsMini]">Hub_Categories_Spotlight_Viewline</include>
             <control type="group">
                 <include>Transitions_Lower_Visibility</include>
                 <include content="Spotlight_Main" condition="!$EXP[Exp_Hubs_Spotlight_IsDisabled]">
