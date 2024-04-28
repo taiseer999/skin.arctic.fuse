@@ -7,6 +7,15 @@
             <item>
                 <template>generator/data/parts/menu_buttonitem_primary.xmltemplate</template>
                 <condition>{item_x}==0</condition>
+                <rules name="widget_group_id">
+                    <rule>
+                        <condition>True</condition>
+                        <value>$MATH[{item_x} + 100]</value>
+                    </rule>
+                </rules>
+                <value name="parts_additional">
+                    <template>generator/data/parts/additional_sidemenu.xmltemplate</template>
+                </value>
             </item>
         </items>
     </value>

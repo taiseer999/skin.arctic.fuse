@@ -12,6 +12,7 @@
                 <rules name="parts_visible">
                     <rule>
                         <condition>{item_sidemenu_guid}!=</condition>
+                        <condition>{window_id}==Home</condition>
                         <value>String.IsEqual(Container({sidemenu_id}).ListItem.Property(guid),{item_sidemenu_guid})</value>
                     </rule>
                     <rule>
