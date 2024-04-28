@@ -7,9 +7,10 @@
     <visible>{endrow_visible}</visible>
     <content>
         {all_adaptive_widgets}
-        {all_submenu_widgets}
+        {all_submenus_widgets}
         {all_standard_widgets}
         {all_sidemenu_widgets}
-        {all_global_widgets}
+        {all_hubsmenu_widgets}
+        {all_constant_widgets}
     </content>
 </include>

@@ -26,7 +26,7 @@
                 </item>
             </items>
         </value>
-        <value name="all_submenu_widgets">
+        <value name="all_submenus_widgets">
             <condition>!Skin.HasSetting(Hub.{window_id}.DisableSubmenu)</condition>
             <items menu="{item}">
                 <item>
@@ -102,7 +102,29 @@
                 </item>
             </items>
         </value>
-        <value name="all_global_widgets">
+
+        <value name="all_hubsmenu_widgets">
+            <condition>Skin.HasSetting(Hub.{window_id}.DisableSubmenu)</condition>
+            <value name="comments">Classic Endrow for {item}</value>
+            <template>generator/data/parts/basic_template.xmltemplate</template>
+            <value name="widget_category_visible">True</value>
+            <value name="grouplist_item_x">100</value>
+            <value name="includes_part">
+                <items menu="{item}-widgetsonly">
+                    <item>
+                        <template>generator/data/parts/endrow_item.xmltemplate</template>
+                        <datafile>generator/data/setup/onclick_path.xml</datafile>
+                        <datafile>generator/data/setup/endrow_item.xml</datafile>
+                        <datafile>generator/data/setup/category_sublabel.xml</datafile>
+                        <condition>{item_path}!=</condition>
+                        <condition>{item_disabled}!=True</condition>
+                        <enumitem name="enum_x">endrow_{parent_item}_widgetsonly</enumitem>
+                    </item>
+                </items>
+            </value>
+        </value>
+
+        <value name="all_constant_widgets">
             <condition>!Skin.HasSetting(Hub.{window_id}.DisableSubmenu)</condition>
             <value name="comments">Global EndRow for {item}</value>
             <template>generator/data/parts/basic_template.xmltemplate</template>
