@@ -291,7 +291,7 @@
                 </include>
                 <include content="Hub_Menu_Group" condition="![$PARAM[widgets_only]]">
                     <top>hub_widgets_grouplist_t</top>
-                    <bottom>hub_widgets_grouplist_b</bottom>
+                    <bottom>hub_group_widgetup_s</bottom>
                     <include>skinvariables-$PARAM[categories]-widgets-selector</include>
                 </include>
                 <include content="Hub_Widgets_Only" condition="$PARAM[widgets_only]">
@@ -399,7 +399,7 @@
             <include>$PARAM[widgets_include]</include>
             <include content="Hub_Menu_Group">
                 <top>hub_widgets_grouplist_t</top>
-                <bottom>hub_widgets_grouplist_b</bottom>
+                <bottom>hub_group_widgetup_s</bottom>
                 <include>$PARAM[widgets_include]-selector</include>
             </include>
         </include>
@@ -444,7 +444,7 @@
     </include>
 
     <include name="Hub_Widgets_Group_Furniture">
-        <param name="visible">[!Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) + !String.IsEmpty(Window.Property(TMDBHelper.WidgetContainer)) + !String.IsEmpty(Window.Property(Slide.WidgetContainer))]</param>
+        <param name="visible">[!$EXP[Exp_Hubs_Categories_SlideDown]]</param>
         <param name="include_conditionalfade">true</param>
         <definition>
             <control type="group">

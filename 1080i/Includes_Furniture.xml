@@ -72,7 +72,7 @@
         <param name="label">$VAR[Label_NextWidget]</param>
         <param name="icon">$VAR[Image_NextWidget]</param>
         <definition>
-            <include content="Furniture_Bottombar_Group">
+            <include content="Furniture_Bottombar_Group" condition="!$EXP[Exp_Footer_BottomLeft_IsVisible]">
                 <include content="Furniture_Gutters">
                     <control type="group">
                         <visible>!Window.IsVisible(1171)</visible>

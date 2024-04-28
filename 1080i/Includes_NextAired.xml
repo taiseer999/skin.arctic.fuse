@@ -3,7 +3,8 @@
 
     <include name="NextAired_GroupList">
         <control type="grouplist" id="5000">
-            <top>500</top>
+            <top>hub_recommendations_widgets_grouplist_t</top>
+            <bottom>hub_recommendations_widgets_grouplist_b</bottom>
             <orientation>vertical</orientation>
             <include content="Animation_Half_WindowChange">
                 <param name="windowopen_up">!$EXP[Exp_SettingsDialogs_Prev] + !String.IsEmpty(Window(Home).Property(ReverseTransition))</param>

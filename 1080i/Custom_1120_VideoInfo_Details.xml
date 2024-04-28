@@ -34,7 +34,8 @@
                     <animation effect="slide" start="420" end="0" tween="quadratic" easing="out" time="400" reversible="false" condition="Control.HasFocus(513)">Conditional</animation>
                     <animation effect="slide" start="0" end="420" tween="quadratic" easing="out" time="400" reversible="false" condition="!Control.HasFocus(513)">Conditional</animation>
                     <control type="group" id="5000">
-                        <top>500</top>
+                        <top>hub_recommendations_widgets_grouplist_t</top>
+                        <bottom>hub_recommendations_widgets_grouplist_b</bottom>
                         <orientation>vertical</orientation>
 
                         <include content="Widget_Info_Row">

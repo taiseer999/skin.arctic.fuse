@@ -1421,8 +1421,9 @@
                 <control type="group" id="5999">
                     <height>widget_tbump_h</height>
                 </control>
+                <top>hub_recommendations_widgets_grouplist_t</top>
+                <bottom>hub_recommendations_widgets_grouplist_b</bottom>
                 <nested />
-                <top>500</top>
             </control>
         </definition>
     </include>

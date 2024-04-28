@@ -38,7 +38,8 @@
             </control>
 
             <control type="grouplist" id="5000">
-                <top>500</top>
+                <top>hub_recommendations_widgets_grouplist_t</top>
+                <bottom>hub_recommendations_widgets_grouplist_b</bottom>
                 <onup>4002</onup>
                 <ondown>330</ondown>
                 <include>Animation_Down_Delay</include>
@@ -96,9 +97,21 @@
             <onleft condition="!String.IsEmpty(Window.Property(TMDbHelper.WidgetContainer))">SetFocus($INFO[Window.Property(TMDbHelper.WidgetContainer)],99999,absolute)</onleft>
             <onright condition="!String.IsEmpty(Window.Property(TMDbHelper.WidgetContainer))">SetFocus($INFO[Window.Property(TMDbHelper.WidgetContainer)],0,absolute)</onright>
         </include>
-        <include content="Furniture_Top">
-            <param name="label">$INFO[Window.Property(Item_Title)]</param>
-        </include>
+
+        <control type="group">
+            <include>Animation_Group_Bumper</include>
+            <include>Animation_View_WindowChange</include>
+            <control type="group">
+                <include content="Furniture_Top">
+                    <param name="label">$INFO[Window.Property(Item_Title)]</param>
+                </include>
+            </control>
+            <include content="Hub_Widgets_Group_Furniture">
+                <param name="visible">true</param>
+                <param name="include_conditionalfade">false</param>
+            </include>
+        </control>
+
 
 
     </controls>
