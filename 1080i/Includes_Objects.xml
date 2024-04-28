@@ -100,20 +100,34 @@
         </item>
     </include>
 
+    <include name="Object_Hidden_Button_Definition">
+        <top>-3840</top>
+        <left>-3840</left>
+        <width>1</width>
+        <height>1</height>
+        <texturefocus />
+        <texturenofocus />
+        <font />
+    </include>
+
     <include name="Object_Hidden_Button">
         <param name="control">button</param>
         <definition>
             <control type="$PARAM[control]" id="$PARAM[id]">
                 <nested />
-                <top>-3840</top>
-                <left>-3840</left>
-                <width>1</width>
-                <height>1</height>
-                <texturefocus />
-                <texturenofocus />
-                <font />
+                <include>Object_Hidden_Button_Definition</include>
             </control>
         </definition>
+    </include>
+
+    <include name="Object_Hidden_List_Definition">
+        <top>-3840</top>
+        <left>-3840</left>
+        <width>1</width>
+        <height>1</height>
+        <itemlayout width="1" height="1" />
+        <focusedlayout width="1" height="1" />
+        <orientation>vertical</orientation>
     </include>
 
     <include name="Object_Hidden_List">
@@ -121,12 +135,7 @@
         <definition>
             <control type="$PARAM[control]" id="$PARAM[id]">
                 <nested />
-                <orientation>vertical</orientation>
-                <width>1</width>
-                <height>1</height>
-                <left>-3840</left>
-                <itemlayout width="1" height="1" />
-                <focusedlayout width="1" height="1" />
+                <include>Object_Hidden_List_Definition</include>
             </control>
         </definition>
     </include>

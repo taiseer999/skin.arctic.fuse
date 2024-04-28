@@ -157,7 +157,7 @@
 
         <include>Action_BuildShortcuts_OnLoad</include>
 
-        <onload condition="!String.IsEmpty(Window(Home).Property(Home.MenuFocus)) + $EXP[Exp_HomeMenu_DontHide]">SetFocus(303,$INFO[Window(Home).Property(Home.MenuFocus)])</onload>
+        <onload condition="!String.IsEmpty(Window(Home).Property(Home.MenuFocus)) + $EXP[Exp_HomeMenu_DontHide]">SetFocus($VAR[Action_Hubs_MenuID],$INFO[Window(Home).Property(Home.MenuFocus)])</onload>
         <onload>ClearProperty(Home.MenuFocus,Home)</onload>
 
         <onunload>CancelAlarm(playtrailer,silent)</onunload>
