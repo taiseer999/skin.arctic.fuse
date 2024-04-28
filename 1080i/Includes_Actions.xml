@@ -569,7 +569,7 @@
         <param name="backid">62</param>
         <param name="menuid">303</param>
         <param name="tbarid">370</param>
-        <param name="onbump">Skin.String(Navigation.OnLeftRight,Bump)</param>
+        <param name="onbump">False</param>
         <param name="enable">True</param>
         <param name="always">False</param>
         <definition>
@@ -588,9 +588,8 @@
 
     <include name="Action_View_Movement_OnLeft">
         <param name="onleft" />
-        <param name="onbump">Skin.String(Navigation.OnLeftRight,Bump)</param>
-        <param name="onwrap">[Skin.String(Navigation.OnLeftRight,Wrap) | [Skin.String(Navigation.OnLeftRight,Loop) + !Skin.HasSetting(Navigation.DisableOptionsOnLeft) + !$EXP[Exp_HomeMenu_DontHide]]]</param>
-        <!-- <param name="onwrap">Skin.String(Navigation.OnLeftRight,Wrap)</param> -->
+        <param name="onbump">[False]</param>
+        <param name="onwrap">[!$EXP[Exp_HomeMenu_DontHide]]</param>
         <param name="menuid">303</param>
         <definition>
             <onleft condition="![$PARAM[onwrap]] + $PARAM[onbump]">SetProperty(List.ViewContainer.Bump,True)</onleft>
@@ -607,8 +606,8 @@
 
     <include name="Action_View_Movement_OnRight">
         <param name="onleft" />
-        <param name="onbump">Skin.String(Navigation.OnLeftRight,Bump)</param>
-        <param name="onwrap">[Skin.String(Navigation.OnLeftRight,Wrap) | [Skin.String(Navigation.OnLeftRight,Loop) + !Skin.HasSetting(Navigation.DisableOptionsOnLeft)]]</param>
+        <param name="onbump">[!Skin.HasSetting(Navigation.DisableOptionsOnLeft) + $EXP[Exp_HomeMenu_DontHide]]</param>
+        <param name="onwrap">[!$EXP[Exp_HomeMenu_DontHide]]</param>
         <param name="menuid">303</param>
         <definition>
 

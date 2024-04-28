@@ -127,7 +127,7 @@
 
     <variable name="Label_Settings_NavigationMenuLeft">
         <value condition="!Skin.HasSetting(Navigation.DisableOptionsOnLeft)">$LOCALIZE[33063]</value>
-        <value>$INFO[Skin.String(Navigation.OnLeftRight)]</value>
+        <value>Loop</value>
     </variable>
 
     <variable name="Label_Settings_NavigationHomeBack">
