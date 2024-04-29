@@ -162,14 +162,15 @@
                         <param name="onback">Control.HasFocus(311)</param>
                     </include>
 
-                    <include content="Action_Widget_End">
+                    <ondown>300</ondown>
+
+                    <!-- <include content="Action_Widget_End">
                         <param name="condition">Integer.IsEqual(Container(300).NumItems,0)</param>
                         <param name="id">311</param>
                         <param name="bump_id">333</param>
                         <param name="window_id">$PARAM[window_id]</param>
                     </include>
-
-                    <ondown condition="!Integer.IsEqual(Container(300).NumItems,0)">300</ondown>
+                    <ondown condition="!Integer.IsEqual(Container(300).NumItems,0)">300</ondown> -->
 
                     <centertop>180</centertop>
                     <left>140</left>
