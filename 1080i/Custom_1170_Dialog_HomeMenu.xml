@@ -1,31 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog" id="1170">
     <defaultcontrol>7000</defaultcontrol>
-    <onload condition="String.IsEmpty(Window(Home).Property(Options.Menu.GUID))">SetFocus(7021)</onload>
-    <onload condition="!String.IsEmpty(Window(Home).Property(Options.Menu.GUID))">SetFocus(8000,0,absolute)</onload>
+    <onload>AlarmClock(refocus,SetFocus(7021),00:00,silent)</onload>
     <include>Action_ButtonMenu_Onload</include>
-    <onunload>ClearProperty(Options.Menu.GUID,Home)</onunload>
-    <onunload>ClearProperty(Options.Menu.Header,Home)</onunload>
     <controls>
-
-        <include content="Object_Hidden_List" condition="$EXP[Exp_HomeMenu_DontHide]">
-            <param name="id">303</param>
-            <content>
-                <item>
-                    <label>$INFO[Window(Home).Property(Options.Menu.Header)]</label>
-                    <property name="guid">$INFO[Window(Home).Property(Options.Menu.GUID)]</property>
-                </item>
-            </content>
-        </include>
-        <include content="Object_Hidden_List" condition="Skin.String(Home.SideMenuCollapse,Topbar) + Window.IsVisible(Home)">
-            <param name="id">370</param>
-            <content>
-                <item>
-                    <label>$INFO[Window(Home).Property(Options.Menu.Header)]</label>
-                    <property name="guid">$INFO[Window(Home).Property(Options.Menu.GUID)]</property>
-                </item>
-            </content>
-        </include>
 
         <control type="group">
             <include>Dimension_DialogSideMenu</include>
@@ -40,11 +18,7 @@
                 <param name="subline">false</param>
 
                 <!-- Header -->
-                <include content="Dialog_Head" condition="!String.IsEmpty(Window(Home).Property(Options.Menu.Header))">
-                    <param name="label">$LOCALIZE[33063]</param>
-                    <!-- <param name="label">$INFO[Window(Home).Property(Options.Menu.Header)]</param> -->
-                </include>
-                <include content="Dialog_Head" condition="String.IsEmpty(Window(Home).Property(Options.Menu.Header))">
+                <include content="Dialog_Head">
                     <param name="label">$LOCALIZE[33063]</param>
                 </include>
                 <include>Dialog_Head_CloseButton</include>
@@ -74,7 +48,7 @@
                             <!-- <visible>String.IsEmpty(Window(Home).Property(Options.Menu.GUID))</visible> -->
                         </control>
 
-                        <include content="List_DialogSelect" condition="String.IsEmpty(Window(Home).Property(Options.Menu.GUID))">
+                        <include content="List_DialogSelect">
                             <param name="id">8000</param>
                             <param name="itemlayout_include">Layout_MenuList</param>
                             <top>320</top>
@@ -87,22 +61,6 @@
                             <onright>-</onright>
                             <content>
                                 <include>skinvariables-powermainmenu-staticitems</include>
-                            </content>
-                        </include>
-
-                        <include content="List_DialogSelect" condition="!String.IsEmpty(Window(Home).Property(Options.Menu.GUID))">
-                            <param name="id">8000</param>
-                            <param name="itemlayout_include">Layout_MenuList</param>
-                            <top>320</top>
-                            <bottom>80</bottom>
-                            <onup>7020</onup>
-                            <!-- <onup>SetFocus(6000,2)</onup> -->
-                            <ondown>SetFocus(6000,2)</ondown>
-                            <onleft>Close</onleft>
-                            <oninfo>Close</oninfo>
-                            <onright>-</onright>
-                            <content>
-                                <include>skinvariables-homemenu-staticitems</include>
                             </content>
                         </include>
 
