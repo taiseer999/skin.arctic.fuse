@@ -157,8 +157,10 @@
 
         <include>Action_BuildShortcuts_OnLoad</include>
 
-        <onload condition="!String.IsEmpty(Window(Home).Property(Home.MenuFocus)) + $EXP[Exp_HomeMenu_DontHide]">SetFocus($VAR[Action_Hubs_MenuID],$INFO[Window(Home).Property(Home.MenuFocus)])</onload>
+        <onload condition="!String.IsEmpty(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock.OnLaunch)) + !String.IsEmpty(Window(Home).Property(Home.MenuFocus)) + $EXP[Exp_HomeMenu_DontHide]">SetFocus($VAR[Action_Hubs_MenuID],$INFO[Window(Home).Property(Home.MenuFocus)])</onload>
         <onload>ClearProperty(Home.MenuFocus,Home)</onload>
+
+        <onload condition="String.IsEmpty(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock.OnLaunch)) + Window.IsVisible(Home)">AlarmClock(refocuslaunch,SetFocus($VAR[Action_Hubs_MenuID],$VAR[Action_Default_HomeFocus],absolute),00:01,silent)</onload>
 
         <onunload>CancelAlarm(playtrailer,silent)</onunload>
     </include>
