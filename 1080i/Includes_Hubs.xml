@@ -444,7 +444,7 @@
     </include>
 
     <include name="Hub_Widgets_Group_Furniture">
-        <param name="visible">[!$EXP[Exp_Hubs_Categories_SlideDown]]</param>
+        <param name="visible">[![[$EXP[Exp_Hubs_Spotlight_IsSlide] + $EXP[Exp_Hubs_Categories_SlideDown]] | [!$EXP[Exp_Hubs_Spotlight_IsSlide] + $EXP[Exp_Hubs_Widgets_SlideDown]]]]</param>
         <param name="include_conditionalfade">true</param>
         <definition>
             <control type="group">

@@ -107,7 +107,7 @@
 
     <include name="Animation_Widget_FadeOut">
         <param name="condition">true</param>
-        <param name="dim">[$EXP[Exp_Hubs_Categories_SlideDown]]</param>
+        <param name="dim">[$EXP[Exp_Hubs_Spotlight_IsSlide] + $EXP[Exp_Hubs_Categories_SlideDown]] | [!$EXP[Exp_Hubs_Spotlight_IsSlide] + $EXP[Exp_Hubs_Widgets_SlideDown]]</param>
         <definition>
             <include content="_Animation_Widget_FadeOut" condition="!$EXP[Exp_Footer_BottomLeft_IsVisible]">
                 <param name="end">30</param>
