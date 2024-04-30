@@ -302,8 +302,6 @@
     <include name="Action_HomeMenu_OnDown">
         <param name="onlist">320</param>
         <param name="c_bump">[!String.IsEmpty(Window.Property(List.ViewContainer.Bump))]</param>
-        <param name="c_wosf">[Window.IsVisible(Home) + Skin.HasSetting(Hub.Home.DisableSubmenu) + !String.IsEmpty(Container(303).ListItem.Property(widgets_setfocus))]</param>
-        <param name="i_wosf">$INFO[Container(303).ListItem.Property(widgets_setfocus)]</param>
         <param name="c_left">[!String.IsEmpty(Window.Property(List.ViewContainer.Left))]</param>
         <param name="i_left">$INFO[Window.Property(List.ViewContainer.Left)]</param>
         <param name="c_view">[!String.IsEmpty(Window.Property(List.ViewContainer))]</param>
@@ -315,8 +313,7 @@
 
             <ondown condition="$PARAM[c_view]">SetFocus($PARAM[i_view])</ondown>
             <ondown condition="!$PARAM[c_view] + $PARAM[c_tmdb]">SetFocus($PARAM[i_tmdb])</ondown>
-            <ondown condition="!$PARAM[c_view] + !$PARAM[c_tmdb] + $PARAM[c_wosf]">$PARAM[i_wosf]</ondown>
-            <ondown condition="!$PARAM[c_view] + !$PARAM[c_tmdb] + !$PARAM[c_wosf]">$PARAM[onlist]</ondown>
+            <ondown condition="!$PARAM[c_view] + !$PARAM[c_tmdb]">$PARAM[onlist]</ondown>
             <ondown>ClearProperty(List.ViewContainer)</ondown>
             <ondown>ClearProperty(List.ViewContainer.Left)</ondown>
             <ondown>ClearProperty(List.ViewContainer.Bump)</ondown>
@@ -327,8 +324,6 @@
     <include name="Action_HomeMenu_OnRightLeft">
         <param name="onlist">320</param>
         <param name="c_bump">[!String.IsEmpty(Window.Property(List.ViewContainer.Bump))]</param>
-        <param name="c_wosf">[Window.IsVisible(Home) + Skin.HasSetting(Hub.Home.DisableSubmenu) + !String.IsEmpty(Container(303).ListItem.Property(widgets_setfocus))]</param>
-        <param name="i_wosf">$INFO[Container(303).ListItem.Property(widgets_setfocus)]</param>
         <param name="c_left">[!String.IsEmpty(Window.Property(List.ViewContainer.Left))]</param>
         <param name="i_left">$INFO[Window.Property(List.ViewContainer.Left)]</param>
         <param name="c_view">[!String.IsEmpty(Window.Property(List.ViewContainer))]</param>
@@ -344,8 +339,7 @@
             <onleft condition="![$PARAM[c_menu]] + !$PARAM[c_bump] + $PARAM[c_left]">SetFocus($PARAM[i_left],99999,absolute)</onleft>
             <onleft condition="![$PARAM[c_menu]] + !$PARAM[c_bump] + !$PARAM[c_left] + $PARAM[c_view]">SetFocus($PARAM[i_view],99999,absolute)</onleft>
             <onleft condition="![$PARAM[c_menu]] + !$PARAM[c_bump] + !$PARAM[c_left] + !$PARAM[c_view] + $PARAM[c_tmdb]">SetFocus($PARAM[i_tmdb])</onleft>
-            <onleft condition="![$PARAM[c_menu]] + !$PARAM[c_bump] + !$PARAM[c_left] + !$PARAM[c_view] + !$PARAM[c_tmdb] + $PARAM[c_wosf]">$PARAM[i_wosf]</onleft>
-            <onleft condition="![$PARAM[c_menu]] + !$PARAM[c_bump] + !$PARAM[c_left] + !$PARAM[c_view] + !$PARAM[c_tmdb] + !$PARAM[c_wosf]">$PARAM[onlist]</onleft>
+            <onleft condition="![$PARAM[c_menu]] + !$PARAM[c_bump] + !$PARAM[c_left] + !$PARAM[c_view] + !$PARAM[c_tmdb]">$PARAM[onlist]</onleft>
             <onleft condition="![$PARAM[c_menu]]">ClearProperty(List.ViewContainer)</onleft>
             <onleft condition="![$PARAM[c_menu]]">ClearProperty(List.ViewContainer.Left)</onleft>
             <onleft condition="![$PARAM[c_menu]]">ClearProperty(List.ViewContainer.Bump)</onleft>
@@ -353,8 +347,7 @@
             <onright condition="$PARAM[c_view] + !Skin.String(Navigation.OnBack,Menu)">SetFocus($PARAM[i_view],0,absolute)</onright>
             <onright condition="$PARAM[c_view] + Skin.String(Navigation.OnBack,Menu)">SetFocus($PARAM[i_view])</onright>
             <onright condition="!$PARAM[c_view] + $PARAM[c_tmdb]">SetFocus($PARAM[i_tmdb])</onright>
-            <onright condition="!$PARAM[c_view] + !$PARAM[c_tmdb] + $PARAM[c_wosf]">$PARAM[i_wosf]</onright>
-            <onright condition="!$PARAM[c_view] + !$PARAM[c_tmdb] + !$PARAM[c_wosf]">$PARAM[onlist]</onright>
+            <onright condition="!$PARAM[c_view] + !$PARAM[c_tmdb]">$PARAM[onlist]</onright>
             <onright>ClearProperty(List.ViewContainer)</onright>
             <onright>ClearProperty(List.ViewContainer.Left)</onright>
             <onright>ClearProperty(List.ViewContainer.Bump)</onright>
