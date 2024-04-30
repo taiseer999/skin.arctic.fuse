@@ -71,7 +71,7 @@
         <onload>ClearProperty(MediaFilterBase)</onload>
         <onload>ClearProperty(MediaFilterWall)</onload>
 
-        <onload condition="!String.IsEmpty(Window(Home).Property(Home.MenuFocus)) + $EXP[Exp_HomeMenu_DontHide]">SetFocus(303,$INFO[Window(Home).Property(Home.MenuFocus)])</onload>
+        <onload condition="!String.IsEmpty(Window(Home).Property(Home.MenuFocus)) + $EXP[Exp_HomeMenu_IsExpanded]">SetFocus(303,$INFO[Window(Home).Property(Home.MenuFocus)])</onload>
         <onload>ClearProperty(Home.MenuFocus,Home)</onload>
 
         <onunload>ClearProperty(MediaFilterBase)</onunload>
@@ -130,7 +130,7 @@
     </include>
 
     <variable name="Action_Default_HomeFocus">
-        <value condition="!$EXP[Exp_HomeMenu_DontHide] + ![Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Topbar)]">1</value>
+        <value condition="!$EXP[Exp_HomeMenu_IsExpanded] + ![Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Topbar)]">1</value>
         <value condition="!String.IsEmpty(Window(Home).Property(Home.MenuFocus))">$INFO[Window(Home).Property(Home.MenuFocus)]</value>
         <value condition="!Window.IsVisible(Home)">1</value>
         <value condition="!String.IsEmpty(Skin.String(Home.DefaultFocus))">$INFO[Skin.String(Home.DefaultFocus)]</value>
@@ -157,7 +157,7 @@
 
         <include>Action_BuildShortcuts_OnLoad</include>
 
-        <onload condition="!String.IsEmpty(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock.OnLaunch)) + !String.IsEmpty(Window(Home).Property(Home.MenuFocus)) + $EXP[Exp_HomeMenu_DontHide]">SetFocus($VAR[Action_Hubs_MenuID],$INFO[Window(Home).Property(Home.MenuFocus)])</onload>
+        <onload condition="!String.IsEmpty(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock.OnLaunch)) + !String.IsEmpty(Window(Home).Property(Home.MenuFocus)) + $EXP[Exp_HomeMenu_IsExpanded]">SetFocus($VAR[Action_Hubs_MenuID],$INFO[Window(Home).Property(Home.MenuFocus)])</onload>
         <onload>ClearProperty(Home.MenuFocus,Home)</onload>
 
         <onload condition="String.IsEmpty(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock.OnLaunch)) + Window.IsVisible(Home)">AlarmClock(refocuslaunch,SetFocus($VAR[Action_Hubs_MenuID],$VAR[Action_Default_HomeFocus],absolute),00:01,silent)</onload>
@@ -205,10 +205,10 @@
             <onup condition="$PARAM[condition]">SetProperty(List.ViewContainer,$NUMBER[$PARAM[id]])</onup>
 
             <!-- Menu -->
-            <onup condition="$PARAM[condition] + !$EXP[Exp_HomeMenu_DontHide]">SetFocus(303,1,absolute)</onup>
+            <onup condition="$PARAM[condition] + !$EXP[Exp_HomeMenu_IsExpanded]">SetFocus(303,1,absolute)</onup>
 
             <!-- Bump -->
-            <onup condition="$PARAM[condition] + $EXP[Exp_HomeMenu_DontHide]">333</onup>
+            <onup condition="$PARAM[condition] + $EXP[Exp_HomeMenu_IsExpanded]">333</onup>
 
         </definition>
     </include>
@@ -591,7 +591,7 @@
     <include name="Action_View_Movement_OnLeft">
         <param name="onleft" />
         <param name="onbump">[False]</param>
-        <param name="onwrap">[!$EXP[Exp_HomeMenu_DontHide]]</param>
+        <param name="onwrap">[!$EXP[Exp_HomeMenu_IsExpanded]]</param>
         <param name="menuid">303</param>
         <definition>
             <onleft condition="![$PARAM[onwrap]] + $PARAM[onbump]">SetProperty(List.ViewContainer.Bump,True)</onleft>
@@ -608,8 +608,8 @@
 
     <include name="Action_View_Movement_OnRight">
         <param name="onleft" />
-        <param name="onbump">[!Skin.HasSetting(Navigation.DisableOptionsOnLeft) + $EXP[Exp_HomeMenu_DontHide]]</param>
-        <param name="onwrap">[!$EXP[Exp_HomeMenu_DontHide]]</param>
+        <param name="onbump">[!Skin.HasSetting(Navigation.DisableOptionsOnLeft) + $EXP[Exp_HomeMenu_IsExpanded]]</param>
+        <param name="onwrap">[!$EXP[Exp_HomeMenu_IsExpanded]]</param>
         <param name="menuid">303</param>
         <definition>
 

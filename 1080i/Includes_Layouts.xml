@@ -1837,7 +1837,7 @@
     </include>
 
     <variable name="Layout_Home_Menu_Color_NF">
-        <value condition="[$EXP[Exp_HomeMenu_DontHide]] + !Skin.HasSetting(Home.SideMenu.DisableIndicator)">main_fg_30</value>
+        <value condition="[$EXP[Exp_HomeMenu_IsExpanded]] + !Skin.HasSetting(Home.SideMenu.DisableIndicator)">main_fg_30</value>
         <value>main_fg_70</value>
     </variable>
 
