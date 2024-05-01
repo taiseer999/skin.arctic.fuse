@@ -20,10 +20,8 @@
                     <include>Animation_Transition_InfoPanel_Hide</include>
                 </include>
                 <include content="DialogInfo_Recommendations_Widgets_Grouplist">
-                    <param name="onup">9099</param>
-                    <param name="ondown">noop</param>
-                    <ondown>SetProperty(List.ViewContainer,9099)</ondown>
-                    <ondown>SetFocus(330)</ondown>
+                    <param name="onup">4002</param>
+                    <param name="ondown">SetFocus(330)</param>
                     <include>skinvariables-searchmenu-widgets</include>
                     <control type="group" id="5099">
                         <height>0</height>
@@ -88,8 +86,20 @@
         </include>
         <control type="group">
             <visible>!$EXP[Exp_InfoDialogs]</visible>
+            <include content="DialogInfo_ButtonGroup_Basic">
+                <param name="id">303</param>
+                <param name="include">Items_SearchWindow_MenuBar</param>
+                <include content="Action_HomeMenu_OnRightLeft">
+                    <param name="onlist">5000</param>
+                </include>
+                <ondown condition="![String.IsEmpty(Control.GetLabel(9099).index(1)) | Integer.IsEqual(Container(5000).NumItems,0)]">5000</ondown>
+                <ondown condition="[String.IsEmpty(Control.GetLabel(9099).index(1)) | Integer.IsEqual(Container(5000).NumItems,0)]">SetProperty(List.ViewContainer,4002)</ondown>
+                <ondown condition="[String.IsEmpty(Control.GetLabel(9099).index(1)) | Integer.IsEqual(Container(5000).NumItems,0)]">SetFocus(330)</ondown>
+                <onup>9099</onup>
+            </include>
             <include content="DialogInfo_Recommendations_Furniture">
                 <param name="header">$LOCALIZE[137]$INFO[Control.GetLabel(9099).index(1), [COLOR=main_fg_30]›[/COLOR] [CAPITALIZE],[/CAPITALIZE]]</param>
+                <param name="include_homemenu">false</param>
             </include>
             <control type="group">
                 <include>Animation_Group_Bumper</include>
@@ -115,11 +125,9 @@
                     <right>-80</right>
                     <textoffsetx>80</textoffsetx>
                     <align>left</align>
+                    <onup condition="Window.Previous(1105)">SetProperty(CustomSearchTerm,$ESCINFO[Control.GetLabel(9099).index(1)],Home)</onup>
                     <onup>Action(PreviousMenu)</onup>
-
-                    <ondown condition="![String.IsEmpty(Control.GetLabel(9099).index(1)) | Integer.IsEqual(Container(5000).NumItems,0)]">5001</ondown>
-                    <ondown condition="[String.IsEmpty(Control.GetLabel(9099).index(1)) | Integer.IsEqual(Container(5000).NumItems,0)]">SetProperty(List.ViewContainer,9099)</ondown>
-                    <ondown condition="[String.IsEmpty(Control.GetLabel(9099).index(1)) | Integer.IsEqual(Container(5000).NumItems,0)]">SetFocus(330)</ondown>
+                    <ondown>SetFocus(4001)</ondown>
                     <visible allowhiddenfocus="true">Control.HasFocus(9099) + !Window.IsVisible(1171) + !Window.IsVisible(1170)</visible>
                 </control>
             </control>

@@ -550,6 +550,7 @@
             <ondown condition="$PARAM[condition] + Skin.String(Navigation.Global.OnDown,Options)">ActivateWindow(1171)</ondown>
 
             <!-- Search -->
+            <ondown condition="$PARAM[condition] + Skin.String(Navigation.Global.OnDown,Search) + Window.IsVisible(1105)">SetProperty(CustomSearchTerm,$ESCINFO[Control.GetLabel(9099).index(1)],Home)</ondown>
             <ondown condition="$PARAM[condition] + Skin.String(Navigation.Global.OnDown,Search)">ActivateWindow(1185)</ondown>
 
             <!-- Bump -->

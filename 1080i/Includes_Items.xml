@@ -773,6 +773,26 @@
         </include>
     </include>
 
+    <include name="Items_SearchWindow_MenuBar">
+        <include content="Dialog_Side_Button">
+            <param name="id">01</param>
+            <param name="baseid">4</param>
+            <param name="visible">true</param>
+            <param name="label">$LOCALIZE[15067]</param>
+            <param name="icon">special://skin/extras/icons/circle-xmark.png</param>
+            <onclick>PreviousMenu</onclick>
+        </include>
+        <include content="Dialog_Side_Button">
+            <param name="id">02</param>
+            <param name="baseid">4</param>
+            <param name="visible">true</param>
+            <param name="label">$LOCALIZE[31066]</param>
+            <param name="icon">special://skin/extras/icons/binoculars.png</param>
+            <onclick>SetProperty(CustomSearchTerm,$ESCINFO[Control.GetLabel(9099).index(1)],Home)</onclick>
+            <onclick>ActivateWindow(1105)</onclick>
+        </include>
+    </include>
+
     <include name="Items_DialogVideoInfo_MenuBar">
         <param name="zoom_in_include">!Window.IsVisible(1120)</param>
         <definition>
