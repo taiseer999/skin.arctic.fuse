@@ -226,7 +226,7 @@
             <animation effect="fade" start="0" end="0" time="100" reversible="false">Focus</animation>
             <include>Object_Hidden_Button_Definition</include>
 
-            <onfocus>ClearProperty(TMDbHelper.WidgetContainer.UpdateLock.OnLaunch,1198)</onfocus>
+            <onfocus>ClearProperty(TMDbHelper.WidgetContainer.UpdateLock.OnFocus,1198)</onfocus>
             <onfocus condition="Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Topbar)">SetFocus(370,$VAR[Action_Default_HomeFocus],absolute)</onfocus>
             <onfocus condition="!Window.IsVisible(Home) | !Skin.String(Home.SideMenuCollapse,Topbar)">SetFocus(303,$VAR[Action_Default_HomeFocus],absolute)</onfocus>
 
