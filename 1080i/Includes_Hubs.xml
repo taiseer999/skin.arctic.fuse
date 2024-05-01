@@ -60,12 +60,17 @@
             <param name="include_onback">false</param>
         </include>
 
-        <include content="Action_View_Movement_OnBack">
+        <include content="Action_View_Movement_OnBack" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
             <param name="id">$PARAM[id]</param>
             <param name="onback">[Integer.IsEqual(Container($PARAM[id]).CurrentItem,1)]</param>
             <param name="backid">320</param>
-            <param name="menuid">311</param>
-            <param name="tbarid">311</param>
+            <param name="menuid">300</param>
+            <param name="tbarid">300</param>
+        </include>
+        <include content="Action_View_Movement_OnBack" condition="!$EXP[Exp_Hubs_Spotlight_IsSlide]">
+            <param name="id">$PARAM[id]</param>
+            <param name="onback">[Integer.IsEqual(Container($PARAM[id]).CurrentItem,1)]</param>
+            <param name="backid">320</param>
         </include>
 
         <include>Hub_Categories_FadeIn</include>
@@ -484,12 +489,17 @@
             <param name="backid">320</param>
             <param name="include_onback">false</param>
         </include>
-        <include content="Action_View_Movement_OnBack">
+        <include content="Action_View_Movement_OnBack" condition="$EXP[Exp_Hubs_Spotlight_IsFanart]">
             <param name="id">300</param>
             <param name="onback">[Integer.IsEqual(Container(300).CurrentItem,1)]</param>
             <param name="backid">320</param>
             <param name="menuid">311</param>
             <param name="tbarid">311</param>
+        </include>
+        <include content="Action_View_Movement_OnBack" condition="!$EXP[Exp_Hubs_Spotlight_IsFanart]">
+            <param name="id">300</param>
+            <param name="onback">[Integer.IsEqual(Container(300).CurrentItem,1)]</param>
+            <param name="backid">320</param>
         </include>
 
         <include content="Action_Widget_Top" condition="!Skin.String(Home.SideMenuCollapse,Topbar) + $EXP[Exp_Hubs_Spotlight_IsDisabled]">
@@ -724,7 +734,6 @@
                 </include>
 
                 <include content="Action_Widget_End" condition="![$PARAM[endrow_selector]]">
-                    <param name="topid">$PARAM[topid]</param>
                     <param name="id">$PARAM[id]</param>
                     <param name="window_id">$PARAM[window_id]</param>
                 </include>
@@ -741,47 +750,13 @@
                     <height>widget_tbump_h</height>
                 </control>
 
-                <control type="button" id="$PARAM[topid]">
-                    <height>0</height>
-                    <texturenofocus />
-                    <texturefocus />
-
-                    <onleft>303</onleft>
-                    <onback>303</onback>
-                    <onright>303</onright>
-
-                    <onfocus condition="[Control.IsVisible($PARAM[topid]) + Control.IsVisible($PARAM[bottomid]) + !Integer.IsEqual(Container($PARAM[id]).NumItems,2)] | [!Control.IsVisible($PARAM[topid]) + Control.IsVisible($PARAM[bottomid]) + !Integer.IsEqual(Container($PARAM[id]).NumItems,1)] | [Control.IsVisible($PARAM[topid]) + !Control.IsVisible($PARAM[bottomid]) + !Integer.IsEqual(Container($PARAM[id]).NumItems,1)] | [!Control.IsVisible($PARAM[topid]) + !Control.IsVisible($PARAM[bottomid]) + !Integer.IsEqual(Container($PARAM[id]).NumItems,0)]">Action(Down)</onfocus>
-
-                    <visible>!ControlGroup($PARAM[id]).HasFocus() | Control.HasFocus($PARAM[topid])</visible>
-                </control>
-
                 <nested />
 
-                <control type="button" id="$PARAM[bottomid]">
-                    <height>0</height>
-                    <texturenofocus />
-                    <texturefocus />
+                <include content="Hubs_Widgets_Grouplist_FurnitureRow" condition="!Skin.HasSetting(Hub.$PARAM[window_id].WidgetSelector)">
+                    <param name="id">$PARAM[id]</param>
+                    <param name="furnitureid">$PARAM[furnitureid]</param>
+                </include>
 
-                    <onleft>303</onleft>
-                    <onback>303</onback>
-                    <onright>303</onright>
-
-                    <onfocus condition="[Control.IsVisible($PARAM[topid]) + Control.IsVisible($PARAM[bottomid]) + !Integer.IsEqual(Container($PARAM[id]).NumItems,2)] | [!Control.IsVisible($PARAM[topid]) + Control.IsVisible($PARAM[bottomid]) + !Integer.IsEqual(Container($PARAM[id]).NumItems,1)] | [Control.IsVisible($PARAM[topid]) + !Control.IsVisible($PARAM[bottomid]) + !Integer.IsEqual(Container($PARAM[id]).NumItems,1)] | [!Control.IsVisible($PARAM[topid]) + !Control.IsVisible($PARAM[bottomid]) + !Integer.IsEqual(Container($PARAM[id]).NumItems,0)]">Action(Up)</onfocus>
-
-                    <visible>!ControlGroup($PARAM[id]).HasFocus() | Control.HasFocus($PARAM[bottomid])</visible>
-                </control>
-
-                <control type="group" id="$PARAM[furnitureid]">
-                    <height>0</height>
-                    <control type="group">
-                        <visible>!Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) | $EXP[Exp_Hubs_Spotlight_IsFanart]</visible>
-                        <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,0)</visible>
-                        <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,1) | [!Control.HasFocus($PARAM[topid]) + !Control.HasFocus($PARAM[bottomid])]</visible>
-                        <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,2) | ControlGroup($PARAM[id]).HasFocus()</visible>
-                        <visible>!$EXP[Exp_InfoDialogs]</visible>
-                        <include condition="!Skin.HasSetting(Hub.$PARAM[window_id].WidgetSelector)">Furniture_Bottom_WidgetGroups</include>
-                    </control>
-                </control>
             </control>
 
             <include content="Hub_Widgets_HintArrows" condition="Skin.HasSetting(Views.DisableItemPeek)">
@@ -793,6 +768,18 @@
             </include>
         </definition>
 
+    </include>
+
+    <include name="Hubs_Widgets_Grouplist_FurnitureRow">
+        <control type="group" id="$PARAM[furnitureid]">
+            <height>0</height>
+            <control type="group">
+                <visible>!Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) | $EXP[Exp_Hubs_Spotlight_IsFanart]</visible>
+                <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,0)</visible>
+                <visible>!$EXP[Exp_InfoDialogs]</visible>
+                <include>Furniture_Bottom_WidgetGroups</include>
+            </control>
+        </control>
     </include>
 
     <include name="Hub_Widgets_Infopanel">

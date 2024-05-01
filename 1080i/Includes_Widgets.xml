@@ -696,17 +696,13 @@
         <onfocus>SetProperty(EndRow.HasFocus,$PARAM[id])</onfocus>
         <onunfocus>ClearProperty(EndRow.HasFocus)</onunfocus>
 
-        <!-- <include content="Action_View_Movement_OnBack" condition="$EXP[Exp_HomeMenu_IsExpanded]">
+        <include content="Action_Widget_OnBack">
             <param name="id">$PARAM[id]</param>
-            <param name="onback">[Integer.IsEqual(Container($PARAM[id]).CurrentItem,1)]</param>
-            <param name="backid">$PARAM[grouplistid]</param>
-            <param name="menuid">309</param>
-        </include> -->
-        <include content="Action_View_Movement_OnBack">
-            <param name="id">$PARAM[id]</param>
-            <param name="onback">[Integer.IsEqual(Container($PARAM[id]).CurrentItem,1)]</param>
-            <param name="backid">$PARAM[grouplistid]</param>
+            <param name="grouplistid">$PARAM[grouplistid]</param>
+            <param name="topwidgetid">$PARAM[id]</param>
+            <param name="refocus">$PARAM[grouplistid]</param>
         </include>
+
         <include content="Action_Widget_End">
             <param name="window_id">$PARAM[window_id]</param>
         </include>
@@ -731,7 +727,6 @@
         <param name="id">5099</param>
         <param name="groupid">5199</param>
         <param name="grouplistid">5000</param>
-        <param name="topid">5001</param>
         <param name="include_condition">true</param>
         <param name="widget_onback">true</param>
         <definition>

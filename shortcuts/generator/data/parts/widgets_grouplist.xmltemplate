@@ -1,7 +1,5 @@
 <include content="Hub_Widgets_Grouplist">
     <param name="id">{grouplist_id}</param>
-    <param name="topid">{grouplist_top_widget_id}</param>
-    <param name="bottomid">{grouplist_bottom_widget_id}</param>
     <param name="bumperid">{grouplist_widgets_bump_id}</param>
     <param name="furnitureid">{grouplist_furniture_widget_id}</param>
     <param name="widgets_only">{grouplist_widgets_only}</param>

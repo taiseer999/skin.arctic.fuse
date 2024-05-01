@@ -2,7 +2,6 @@
     <param name="id">419</param>
     <param name="groupid">429</param>
     <param name="grouplistid">400</param>
-    <param name="topid">401</param>
     <param name="window_id">{window_id}</param>
     <visible>{endrow_visible}</visible>
     <content>

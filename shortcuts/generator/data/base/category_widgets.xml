@@ -36,8 +36,6 @@
             </rules>
             <value name="grouplist_widgets_only">Skin.HasSetting(Hub.{window_id}.DisableSubmenu)</value>
             <value name="grouplist_visible">True</value>
-            <value name="grouplist_top_widget_id">497</value>
-            <value name="grouplist_bottom_widget_id">498</value>
             <value name="grouplist_furniture_widget_id">499</value>
             <value name="grouplist_id">400</value>
             <value name="grouplist_widgets_bump_id">401</value>
