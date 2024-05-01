@@ -789,7 +789,7 @@
             <param name="label">$LOCALIZE[31066]</param>
             <param name="icon">special://skin/extras/icons/binoculars.png</param>
             <onclick>SetProperty(CustomSearchTerm,$ESCINFO[Control.GetLabel(9099).index(1)],Home)</onclick>
-            <onclick>ActivateWindow(1105)</onclick>
+            <onclick>ReplaceWindow(1105)</onclick>
         </include>
     </include>
 
