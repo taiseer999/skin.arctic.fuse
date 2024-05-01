@@ -363,13 +363,13 @@
                 </include>
 
                 <!-- Reset Widget Group Position -->
+                <include content="Action_Widgets_ResetPosition_OnFocus">
+                    <param name="condition">[Control.IsVisible(419) + !Integer.IsEqual(Container(419).CurrentItem,1)] | Container(400).HasPrevious</param>
+                </include>
+
                 <onfocus>SetProperty(TMDbHelper.WidgetContainer,301,Home)</onfocus>
                 <onfocus>ClearProperty(Slide.WidgetContainer,Home)</onfocus>
                 <onfocus>SetProperty(List.ViewContainer,311,Home)</onfocus>
-
-                <include content="Action_Widgets_ResetPosition_OnFocus">
-                    <param name="condition">[Skin.HasSetting(Hub.Home.WidgetSelector) + !Integer.IsEqual(Container(419).CurrentItem,1)] | Container(400).HasPrevious</param>
-                </include>
 
                 <ondown>SetFocus(303,0,absolute)</ondown>
 
@@ -483,6 +483,12 @@
     </include>
 
     <include name="Hub_Categories_Definition_Content">
+
+        <!-- Reset Widget Group Position -->
+        <include content="Action_Widgets_ResetPosition_OnFocus">
+            <param name="condition">[Control.IsVisible(419) + !Integer.IsEqual(Container(419).CurrentItem,1)] | Container(400).HasPrevious</param>
+        </include>
+
         <include content="Action_View_Movement_OnLeftRight">
             <param name="id">300</param>
             <param name="onback">[Integer.IsEqual(Container(300).CurrentItem,1)]</param>
@@ -511,11 +517,6 @@
         <ondown>302</ondown>
 
         <onfocus>SetProperty(TMDbHelper.WidgetContainer,301,$PARAM[window_id])</onfocus>
-
-        <!-- Reset Widget Group Position -->
-        <include content="Action_Widgets_ResetPosition_OnFocus">
-            <param name="condition">[Control.IsVisible(419) + !Integer.IsEqual(Container(419).CurrentItem,1)] | Container(400).HasPrevious</param>
-        </include>
 
         <content>
             <include>skinvariables-$PARAM[categories]-staticitems</include>

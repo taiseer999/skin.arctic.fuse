@@ -128,6 +128,7 @@
 
                     <include>Home_Menu_List_OnBackInfo</include>
                     <onfocus>ClearProperty(WidgetGroup.Movement)</onfocus>
+                    <onfocus>ClearProperty(SideMenu.CurrentItem)</onfocus>
 
                     <onfocus condition="Window.IsVisible(Home) + !String.IsEmpty(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock.OnFocus))">SetProperty(TMDbHelper.WidgetContainer.UpdateLock,True,1198)</onfocus>
                     <onfocus condition="Window.IsVisible(Home) + String.IsEmpty(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock.OnFocus))">SetProperty(TMDbHelper.WidgetContainer.UpdateLock.OnFocus,True,1198)</onfocus>

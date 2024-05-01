@@ -547,7 +547,6 @@
 
     <include name="Widget_Row">
         <param name="grouplistid">5000</param>
-        <param name="topwidgetid">5001</param>
         <definition>
             <include content="_Widget_Row">
                 <param name="id">$PARAM[id]</param>
@@ -570,7 +569,6 @@
                 <include content="Action_Widget_OnBack">
                     <param name="id">$PARAM[id]</param>
                     <param name="grouplistid">$PARAM[grouplistid]</param>
-                    <param name="topwidgetid">$PARAM[topwidgetid]</param>
                     <param name="refocus">$PARAM[refocus]</param>
                 </include>
 
@@ -699,7 +697,6 @@
         <include content="Action_Widget_OnBack">
             <param name="id">$PARAM[id]</param>
             <param name="grouplistid">$PARAM[grouplistid]</param>
-            <param name="topwidgetid">$PARAM[id]</param>
             <param name="refocus">$PARAM[grouplistid]</param>
         </include>
 

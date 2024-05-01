@@ -7,7 +7,6 @@
     <param name="transition_include">true</param>
     <param name="transition_hidden">Control.HasFocus({widget_id})</param>
     <param name="grouplistid">{grouplist_id}</param>
-    <param name="topwidgetid">{grouplist_first_id}</param>
     <param name="refocus">{grouplist_refocus}</param>
     <param name="detailed">{widget_detailed}</param>
     <param name="visible">[{widget_category_visible}] + [{widget_visible}] + String.IsEmpty(Window.Property(Widgets.ResetPosition))</param>
