@@ -437,7 +437,7 @@
             <param name="condition">$PARAM[condition]</param>
         </include>
 
-        <onright condition="$PARAM[condition]">SetProperty(Episodes_Label,$INFO[ListItem.Property(watchedepisodes)]$INFO[ListItem.Property(totalepisodes), of ,] $LOCALIZE[16102],1122)</onright>
+        <onright condition="$PARAM[condition]">SetProperty(Episodes_Label,$INFO[ListItem.Property(watchedepisodes)]$INFO[ListItem.Property(totalepisodes), $LOCALIZE[1443] ,] $LOCALIZE[16102],1122)</onright>
 
         <onright condition="$PARAM[condition]">SetFocus(7001)</onright>
         <onright condition="$PARAM[condition]">ActivateWindow(1122)</onright>

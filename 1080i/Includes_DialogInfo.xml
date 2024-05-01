@@ -52,8 +52,21 @@
 
     <include name="DialogInfo_Onload">
         <onload>ClearProperty(TMDbHelper.WidgetContainer)</onload>
-        <onload>AlarmClock(reclear,ClearProperty(TMDbHelper.WidgetContainer),00:00,silent)</onload>
         <onload>SetProperty(TMDbHelper.Blur.SourceImage,$INFO[Window(home).Property(TMDbHelper.Blur.SourceImage)])</onload>
+        <onload>ClearProperty(CropImage,Home)</onload>
+        <onload>ClearProperty(BlurImage,Home)</onload>
+        <onload>ClearProperty(BlurImage.Original,Home)</onload>
+        <onload>ClearProperty(TMDbHelper.Image.Override,Home)</onload>
+        <onload>ClearProperty(ReviewsActive)</onload>
+
+        <onload condition="![String.IsEqual(ListItem.DBType,actor) | String.IsEqual(ListItem.DBType,director) | String.IsEqual(ListItem.Property(Param.TMDb_Type),person)]">AlarmClock(reclear,ClearProperty(TMDbHelper.WidgetContainer),00:00,silent)</onload>
+        <onload condition="![String.IsEqual(ListItem.DBType,actor) | String.IsEqual(ListItem.DBType,director) | String.IsEqual(ListItem.Property(Param.TMDb_Type),person)]">AlarmClock(Refocus,SetFocus(4001),00:00,silent)</onload>
+
+        <onload condition="[String.IsEqual(ListItem.DBType,actor) | String.IsEqual(ListItem.DBType,director) | String.IsEqual(ListItem.Property(Param.TMDb_Type),person)]">Dialog.Close(movieinformation,true)</onload>
+        <onload condition="[String.IsEqual(ListItem.DBType,actor) | String.IsEqual(ListItem.DBType,director) | String.IsEqual(ListItem.Property(Param.TMDb_Type),person)]">SetProperty(Item_Title,$INFO[ListItem.Label],1183)</onload>
+        <onload condition="[String.IsEqual(ListItem.DBType,actor) | String.IsEqual(ListItem.DBType,director) | String.IsEqual(ListItem.Property(Param.TMDb_Type),person)]">SetProperty(Item_Query,$INFO[ListItem.Label,&amp;query=,],1183)</onload>
+        <onload condition="[String.IsEqual(ListItem.DBType,actor) | String.IsEqual(ListItem.DBType,director) | String.IsEqual(ListItem.Property(Param.TMDb_Type),person)]">ActivateWindow(1183)</onload>
+
         <onunload>Dialog.Close(1120)</onunload>
         <onunload>Dialog.Close(1121)</onunload>
         <onunload>ClearProperty(DetailsView,12003)</onunload>
@@ -61,12 +74,6 @@
         <onunload>ClearProperty(BlurImage,Home)</onunload>
         <onunload>ClearProperty(BlurImage.Original,Home)</onunload>
         <onunload>ClearProperty(TMDbHelper.Image.Override,Home)</onunload>
-        <onload>ClearProperty(CropImage,Home)</onload>
-        <onload>ClearProperty(BlurImage,Home)</onload>
-        <onload>ClearProperty(BlurImage.Original,Home)</onload>
-        <onload>ClearProperty(TMDbHelper.Image.Override,Home)</onload>
-        <onload>ClearProperty(ReviewsActive)</onload>
-        <onload>AlarmClock(Refocus,SetFocus(4001),00:00,silent)</onload>
     </include>
 
     <include name="DialogInfo_List_Movement">
