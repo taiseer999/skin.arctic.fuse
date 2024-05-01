@@ -193,7 +193,7 @@
 
             <!-- Menu: Go to Menu -->
             <onback condition="$PARAM[enable] + Skin.String(Navigation.OnBack,Menu)">SetProperty(List.ViewContainer,$PARAM[id])</onback>
-            <onback condition="$PARAM[enable] + Skin.String(Navigation.OnBack,Menu)">ClearProperty(TMDbHelper.WidgetContainer.UpdateLock.OnFocus,1198)</onback>
+            <!-- <onback condition="$PARAM[enable] + Skin.String(Navigation.OnBack,Menu)">ClearProperty(TMDbHelper.WidgetContainer.UpdateLock.OnFocus,1198)</onback> -->
             <onback condition="$PARAM[enable] + Skin.String(Navigation.OnBack,Menu)">$PARAM[grouplistid]</onback>
             <onback condition="$PARAM[enable] + Skin.String(Navigation.OnBack,Menu)">AlarmClock(refocus2,SetFocus($VAR[Action_Hubs_MenuID]),00:00,silent)</onback>
 
@@ -588,7 +588,7 @@
     <include name="Action_View_Movement_OnLeft">
         <param name="onleft" />
         <param name="onbump">[False]</param>
-        <param name="onwrap">[!$EXP[Exp_HomeMenu_IsExpanded]]</param>
+        <param name="onwrap">[!$EXP[Exp_HomeMenu_IsExpanded] | Skin.String(Navigation.OnBack,Menu)]</param>
         <param name="menuid">303</param>
         <definition>
             <onleft condition="![$PARAM[onwrap]] + $PARAM[onbump]">SetProperty(List.ViewContainer.Bump,True)</onleft>
@@ -605,8 +605,8 @@
 
     <include name="Action_View_Movement_OnRight">
         <param name="onleft" />
-        <param name="onbump">[!Skin.HasSetting(Navigation.DisableOptionsOnLeft) + $EXP[Exp_HomeMenu_IsExpanded]]</param>
-        <param name="onwrap">[!$EXP[Exp_HomeMenu_IsExpanded]]</param>
+        <param name="onbump">[!Skin.HasSetting(Navigation.DisableOptionsOnLeft) + ![!$EXP[Exp_HomeMenu_IsExpanded] | Skin.String(Navigation.OnBack,Menu)]]</param>
+        <param name="onwrap">[!$EXP[Exp_HomeMenu_IsExpanded] | Skin.String(Navigation.OnBack,Menu)]</param>
         <param name="menuid">303</param>
         <definition>
 
