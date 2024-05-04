@@ -227,16 +227,14 @@
             <include>Object_Hidden_Button_Definition</include>
 
             <onfocus>ClearProperty(TMDbHelper.WidgetContainer.UpdateLock.OnFocus,1198)</onfocus>
-            <onfocus condition="Window.IsVisible(Home) + Skin.String(Home.SideMenuCollapse,Topbar)">SetFocus(370,$VAR[Action_Default_HomeFocus],absolute)</onfocus>
-            <onfocus condition="!Window.IsVisible(Home) | !Skin.String(Home.SideMenuCollapse,Topbar)">SetFocus(303,$VAR[Action_Default_HomeFocus],absolute)</onfocus>
-
-            <onleft>SetFocus($VAR[Action_Hubs_MenuID])</onleft>
-            <onright>SetFocus($VAR[Action_Hubs_MenuID])</onright>
-            <ondown>SetFocus($VAR[Action_Hubs_MenuID])</ondown>
-            <onup>SetFocus($VAR[Action_Hubs_MenuID])</onup>
-            <onclick>SetFocus($VAR[Action_Hubs_MenuID])</onclick>
+            <onfocus>$VAR[Action_Hubs_Menu_Default_SetFocus]</onfocus>
+            <onleft>$VAR[Action_Hubs_Menu_Default_SetFocus]</onleft>
+            <onright>$VAR[Action_Hubs_Menu_Default_SetFocus]</onright>
+            <ondown>$VAR[Action_Hubs_Menu_Default_SetFocus]</ondown>
+            <onup>$VAR[Action_Hubs_Menu_Default_SetFocus]</onup>
+            <onclick>$VAR[Action_Hubs_Menu_Default_SetFocus]</onclick>
             <onback>303</onback>
-            <onback>SetFocus($VAR[Action_Hubs_MenuID])</onback>
+            <onback>$VAR[Action_Hubs_Menu_Default_SetFocus]</onback>
 
         </control>
 

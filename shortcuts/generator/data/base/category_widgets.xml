@@ -14,12 +14,8 @@
                     <value>SetFocus(300)</value>
                 </rule>
                 <rule>
-                    <condition>{window_id}==Home</condition>
-                    <value>SetFocus($VAR[Action_Hubs_MenuID],$INFO[Window.Property(SideMenu.CurrentItem)],absolute)</value>
-                </rule>
-                <rule>
                     <condition>True</condition>
-                    <value>SetFocus($VAR[Action_Hubs_MenuID])</value>
+                    <value>$VAR[Action_Hubs_Menu_SetFocus]</value>
                 </rule>
             </rules>
             <value name="grouplist_widgets_only">Skin.HasSetting(Hub.{window_id}.DisableSubmenu)</value>
