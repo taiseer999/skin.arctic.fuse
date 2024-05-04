@@ -1039,7 +1039,7 @@
                         <param name="pad">-32</param>
                     </include>
                     <texture colordiffuse="$VAR[ColorHighlight]">indicator/circle-fo.png</texture>
-                    <bordertexture colordiffuse="shadow_hard">indicator/circle-fo-shadow.png]</bordertexture>
+                    <bordertexture colordiffuse="shadow_hard">indicator/circle-fo-shadow.png</bordertexture>
                     <bordersize>32</bordersize>
                 </control>
             </control>
