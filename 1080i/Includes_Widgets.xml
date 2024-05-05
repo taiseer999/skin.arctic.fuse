@@ -697,7 +697,9 @@
         <include content="Action_Widget_OnBack">
             <param name="id">$PARAM[id]</param>
             <param name="grouplistid">$PARAM[grouplistid]</param>
-            <param name="refocus">$PARAM[grouplistid]</param>
+            <param name="refocus">$PARAM[refocus]</param>
+            <param name="onprevious">[False]</param>
+            <param name="onparent">[Skin.String(Navigation.OnBack,Previous) | Skin.String(Navigation.OnBack,Parent)]</param>
         </include>
 
         <include content="Action_Widget_End">
@@ -746,6 +748,7 @@
                 <include content="Widget_EndRow_Selector_Def">
                     <param name="id">$PARAM[id]</param>
                     <param name="grouplistid">$PARAM[grouplistid]</param>
+                    <param name="refocus">$PARAM[refocus]</param>
                     <param name="window_id">$PARAM[window_id]</param>
                 </include>
 
@@ -775,6 +778,7 @@
                 <include content="Widget_EndRow_Selector_Def">
                     <param name="id">$PARAM[id]</param>
                     <param name="grouplistid">$PARAM[grouplistid]</param>
+                    <param name="refocus">$PARAM[refocus]</param>
                     <param name="window_id">$PARAM[window_id]</param>
                 </include>
 

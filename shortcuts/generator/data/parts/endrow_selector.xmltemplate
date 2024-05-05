@@ -2,6 +2,7 @@
     <param name="id">419</param>
     <param name="groupid">429</param>
     <param name="grouplistid">400</param>
+    <param name="refocus">{endrow_refocus}</param>
     <param name="window_id">{window_id}</param>
     <visible>{endrow_visible}</visible>
     <content>

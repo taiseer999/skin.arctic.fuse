@@ -7,6 +7,16 @@
         <template>generator/data/parts/endrow_selector.xmltemplate</template>
         <condition>Skin.HasSetting(Hub.{window_id}.WidgetSelector)</condition>
         <value name="endrow_visible">True</value>
+        <rules name="endrow_refocus">
+            <rule>
+                <condition>!Skin.HasSetting(Hub.{window_id}.DisableSubmenu)</condition>
+                <value>SetFocus(300)</value>
+            </rule>
+            <rule>
+                <condition>True</condition>
+                <value>$VAR[Action_Hubs_Menu_SetFocus]</value>
+            </rule>
+        </rules>
         <value name="all_adaptive_widgets">
             <condition>!Skin.HasSetting(Hub.{window_id}.DisableSubmenu)</condition>
             <items menu="{item}">
@@ -102,7 +112,6 @@
                 </item>
             </items>
         </value>
-
         <value name="all_hubsmenu_widgets">
             <condition>Skin.HasSetting(Hub.{window_id}.DisableSubmenu)</condition>
             <value name="comments">Classic Endrow for {item}</value>
@@ -123,7 +132,6 @@
                 </items>
             </value>
         </value>
-
         <value name="all_constant_widgets">
             <condition>!Skin.HasSetting(Hub.{window_id}.DisableSubmenu)</condition>
             <value name="comments">Global EndRow for {item}</value>
