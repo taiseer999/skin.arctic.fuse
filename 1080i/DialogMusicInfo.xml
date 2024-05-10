@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog">
-    <defaultcontrol always="true">4000</defaultcontrol>
+    <include content="Object_DefaultControl">
+        <param name="always">true</param>
+        <param name="defaultcontrol">4001</param>
+    </include>
+
     <menucontrol>4000</menucontrol>
     <include>DialogInfo_Onload</include>
 
@@ -24,16 +28,25 @@
                         <include>DialogInfo_MusicInfo</include>
                     </control>
                 </control>
-                <include>DialogInfo_ArtworkGallery</include>
+                <include condition="!Skin.String(Home.SideMenuCollapse,Topbar)">DialogInfo_ArtworkGallery</include>
             </control>
-
-            <include content="DialogInfo_ButtonGroup">
-                <param name="include">Items_DialogMusicInfo_MenuBar</param>
-            </include>
-
-            <include>DialogInfo_Furniture</include>
         </control>
 
+        <control type="group">
+            <include condition="Skin.String(Home.SideMenuCollapse,Topbar)">Animation_Home_Topbar</include>
+            <include condition="!Skin.String(Home.SideMenuCollapse,Topbar)">Animation_Home_SlideOver</include>
+            <include content="DialogInfo_ButtonGroup" condition="!Skin.String(Home.SideMenuCollapse,Topbar)">
+                <param name="include">Items_DialogMusicInfo_MenuBar</param>
+                <param name="vertical">true</param>
+            </include>
+            <include content="DialogInfo_ButtonGroup" condition="Skin.String(Home.SideMenuCollapse,Topbar)">
+                <param name="include">Items_DialogMusicInfo_MenuBar</param>
+                <param name="vertical">false</param>
+            </include>
+        </control>
+
+
+        <include>DialogInfo_Furniture</include>
         <include>TouchMode_Info_Zones</include>
         <include>DialogInfo_PlotBox</include>
 

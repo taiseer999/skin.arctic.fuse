@@ -229,6 +229,7 @@
                         <visible>$PARAM[visible]</visible>
                         <viewtype label="$PARAM[viewtype_label]">list</viewtype>
                         <onfocus>ClearProperty(TMDbHelper.WidgetContainer)</onfocus>
+                        <include>Action_View_SlideOver_OnFocus</include>
                     </include>
                 </control>
             </control>

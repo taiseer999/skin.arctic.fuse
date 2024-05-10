@@ -90,11 +90,17 @@
     </variable>
 
     <variable name="Label_Settings_SideMenuCollapse">
-        <value condition="Skin.String(Home.SideMenuCollapse,Topbar)">$LOCALIZE[10000] ($LOCALIZE[31068] $LOCALIZE[31352]) + $LOCALIZE[31351] + $LOCALIZE[14022] + $LOCALIZE[5]</value>
-        <value condition="Skin.String(Home.SideMenuCollapse,Always)">$LOCALIZE[10000] + $LOCALIZE[31351] + $LOCALIZE[14022] + $LOCALIZE[5]</value>
-        <value condition="Skin.String(Home.SideMenuCollapse,Library)">$LOCALIZE[31351] + $LOCALIZE[14022] + $LOCALIZE[5]</value>
-        <value condition="Skin.String(Home.SideMenuCollapse,Hubs)">$LOCALIZE[14022] + $LOCALIZE[5]</value>
-        <value condition="Skin.String(Home.SideMenuCollapse,Never)">$LOCALIZE[5]</value>
+        <value condition="Skin.String(Home.SideMenuCollapse,Topbar)">$LOCALIZE[31352]</value>
+        <value condition="Skin.String(Home.SideMenuCollapse,Always)">$LOCALIZE[34122]</value>
+        <value condition="Skin.String(Home.SideMenuCollapse,Library)">$LOCALIZE[14211]</value>
+        <value condition="Skin.String(Home.SideMenuCollapse,Hubs)">$LOCALIZE[14022]</value>
+        <value condition="Skin.String(Home.SideMenuCollapse,Never)">$LOCALIZE[34123]</value>
+    </variable>
+
+    <variable name="Label_Settings_NavigationOnBack">
+        <value condition="$EXP[Exp_Navigation_OnMenu]">$LOCALIZE[33061]</value>
+        <value condition="$EXP[Exp_Navigation_OnPrevious]">$LOCALIZE[210]</value>
+        <value condition="$EXP[Exp_Navigation_OnParent]">$LOCALIZE[31442]</value>
     </variable>
 
     <variable name="Label_Settings_LeftFooterVisibility">
@@ -409,14 +415,12 @@
 
     <variable name="Label_Setting_SpotlightStyle">
         <value condition="$EXP[Exp_Hubs_Spotlight_IsDisabled]">$LOCALIZE[1223]</value>
-        <value condition="$EXP[Exp_Hubs_Spotlight_IsFanart]">$LOCALIZE[20445]</value>
         <value condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">$LOCALIZE[31136]</value>
         <value>$LOCALIZE[571]</value>
     </variable>
 
     <variable name="Label_Setting_SpotlightStyle_Preselect">
         <value condition="$EXP[Exp_Hubs_Spotlight_IsDisabled]">0</value>
-        <value condition="$EXP[Exp_Hubs_Spotlight_IsFanart]">3</value>
         <value condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">2</value>
         <value>1</value>
     </variable>
@@ -501,17 +505,6 @@
         <value condition="$EXP[Exp_ColourTheme_IsGrey] + $EXP[Exp_DialogTheme_IsLight]">$LOCALIZE[768] $LOCALIZE[31426] (AH)</value>
         <value condition="$EXP[Exp_ColourTheme_IsBlack]">$LOCALIZE[465] (AF)</value>
         <value condition="$EXP[Exp_ColourTheme_IsGrey]">$LOCALIZE[768] (AH)</value>
-    </variable>
-
-    <variable name="Label_Setting_MenuButton_Primary">
-        <value condition="![String.IsEmpty(Skin.String(SideMenu.CustomShortcut.Path)) | Skin.String(SideMenu.CustomShortcut.Path,noop)]">$INFO[Skin.String(SideMenu.CustomShortcut.Path)]</value>
-        <value>$LOCALIZE[15067] / $LOCALIZE[13012]</value>
-    </variable>
-
-    <variable name="Label_Setting_MenuButton_Secondary">
-        <value condition="Skin.String(SideMenu.SecondaryButton,Options)">$LOCALIZE[33063]</value>
-        <value condition="Skin.String(SideMenu.SecondaryButton,Menu)">$LOCALIZE[33061]</value>
-        <value>$LOCALIZE[31387]</value>
     </variable>
 
     <variable name="Label_Setting_OptionalInfoLine">
@@ -682,6 +675,7 @@
         <value condition="String.IsEqual(Window.Property(DetailsView),Trailer)">$LOCALIZE[10025]</value>
         <value condition="String.IsEqual(Window.Property(DetailsView),Critics)">$LOCALIZE[31030]</value>
         <value condition="String.IsEqual(Window.Property(DetailsView),Timeline)">$LOCALIZE[19032]</value>
+        <value condition="String.IsEqual(Window.Property(DetailsView),Artwork)">$LOCALIZE[39123]</value>
         <value condition="String.IsEqual(Window.Property(DetailsView),Images)">$LOCALIZE[31029]</value>
         <value condition="String.IsEqual(Window.Property(DetailsView),Albums)">$LOCALIZE[132]</value>
         <value condition="String.IsEqual(Window.Property(DetailsView),Songs)">$LOCALIZE[134]</value>
@@ -1236,9 +1230,9 @@
 
     <variable name="Label_Header_Main_Home">
         <!-- <value condition="!Skin.HasSetting(Hub.Home.DisableSubmenu) + !String.IsEmpty(Container(300).ListItem.Label) + !Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) + !Integer.IsEqual(Window.Property(Slide.WidgetContainer),300)">$INFO[Container(300).ListItem.Label]</value> -->
-        <value condition="!Skin.HasSetting(Home.SideMenu.DisableIndicator) + Skin.String(Home.SideMenuCollapse,Topbar) + Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)">$LOCALIZE[10000]</value>
+        <!-- <value condition="!Skin.HasSetting(Home.SideMenu.DisableIndicator) + Skin.String(Home.SideMenuCollapse,Topbar) + Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)">$LOCALIZE[10000]</value> -->
         <value condition="[$EXP[Exp_Hubs_Spotlight_IsDisabled]]">$LOCALIZE[10000]</value>
-        <value condition="!String.IsEmpty(Window.Property(SideMenu.CurrentName)) + !Skin.HasSetting(Home.SideMenu.DisableIndicator) + $EXP[Exp_HomeMenu_IsExpanded]">$INFO[Window.Property(SideMenu.CurrentName)]</value>
+        <value condition="!String.IsEmpty(Window.Property(SideMenu.CurrentName)) + !Skin.HasSetting(Home.SideMenu.DisableIndicator)">$INFO[Window.Property(SideMenu.CurrentName)]</value>
         <value condition="!String.IsEmpty(Skin.String(Home.Label))">$INFO[Skin.String(Home.Label)]</value>
         <value>$LOCALIZE[10000]</value>
     </variable>
@@ -1299,6 +1293,8 @@
         <value condition="[Window.IsVisible(10025) | Window.IsVisible(10502)]">$LOCALIZE[14022]</value>
         <value condition="Window.IsVisible(tvchannels)">$LOCALIZE[10700]</value>
         <value condition="Window.IsVisible(tvguide)">$LOCALIZE[10702]</value>
+        <value condition="Window.IsVisible(tvrecordings)">$LOCALIZE[10701]</value>
+        <value condition="Window.IsVisible(tvsearch)">$LOCALIZE[10704]</value>
         <value condition="Window.IsVisible(1130)">$LOCALIZE[31019]</value>
         <value condition="Window.IsVisible(1131)">$LOCALIZE[31020]</value>
         <value condition="Window.IsVisible(1132)">$LOCALIZE[24001]</value>

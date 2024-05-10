@@ -8,6 +8,7 @@
         <definition>
             <control type="group">
                 <visible>!$EXP[Exp_InfoDialogs]</visible>
+                <include>Animation_Transition_InfoPanel_Hide</include>
                 <visible>!Window.IsVisible(DialogAddonSettings.xml)</visible>
                 <visible>!Window.IsVisible(DialogGameControllers.xml)</visible>
                 <visible>!Window.IsVisible(DialogPVRChannelManager.xml)</visible>
@@ -234,6 +235,7 @@
     <include name="View_Furniture_Bottom_Group">
         <control type="group">
             <visible>!$EXP[Exp_InfoDialogs]</visible>
+            <include>Animation_Transition_InfoPanel_Hide</include>
             <include condition="![Skin.String(Furniture.BottomLeft.Enable,Library) | Skin.String(Furniture.BottomLeft.Enable,Always)]">Animation_Transition_InfoPanel_Hide</include>
             <control type="group">
                 <visible>!Window.IsVisible(1171)</visible>
@@ -335,10 +337,6 @@
                 <include>View_Combined_Row_Horz_Selector</include>
             </control>
         </control>
-        <control type="group">
-            <include>Furniture_Bottom_Right</include>
-            <visible>!$EXP[Exp_InfoDialogs]</visible>
-        </control>
     </include>
 
     <include name="View_Bumper">
@@ -391,9 +389,9 @@
     </include>
 
     <include name="View_Furniture_Edges">
-        <include>Home_Fade</include>
         <control type="group">
             <include>Animation_Group_Bumper</include>
+            <include>Animation_View_SlideOver</include>
             <include>Animation_View_WindowChange</include>
             <control type="group">
                 <include>Animation_Half_WindowChange_UpDown</include>
@@ -407,7 +405,12 @@
             <include>View_Furniture_Bottom</include>
             <include>View_Hidden_Buttons</include>
         </control>
-        <include content="Home_Menu">
+        <control type="group">
+            <include>Furniture_Bottom_Right</include>
+            <visible>!$EXP[Exp_InfoDialogs]</visible>
+            <include>Animation_Transition_InfoPanel_Hide</include>
+        </control>
+        <include content="Home_Menu_Media">
             <param name="onlist">50</param>
         </include>
         <include condition="Window.IsVisible(MyVideoNav.xml)">MediaFilter_Discover_Node</include>
@@ -438,6 +441,7 @@
 
             <control type="group">
                 <include>Animation_Group_Bumper</include>
+                <include>Animation_View_SlideOver</include>
                 <include>Animation_View_WindowChange</include>
                 <include>View_MediaWall</include>
                 <include>View_Row_Items</include>

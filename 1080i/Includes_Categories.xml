@@ -11,7 +11,7 @@
     </include>
     <include name="Categories_Selector_Movement_LargeMenu">
         <focusposition>0</focusposition>
-        <movement>3</movement>
+        <movement>2</movement>
         <!-- <width>1480</width> -->
         <width>1000</width>
     </include>
@@ -29,7 +29,7 @@
     </include>
     <include name="Categories_Selector_Movement_Iconic_LargeMenu">
         <focusposition>0</focusposition>
-        <movement>3</movement>
+        <movement>2</movement>
         <!-- <width>1384</width> -->
         <width>1048</width>
     </include>
@@ -68,6 +68,7 @@
                 <nested />
                 <width>1364</width>
                 <movement>3</movement>
+                <include>Action_View_SlideOver_OnFocus</include>
                 <onfocus condition="$PARAM[slide]">SetProperty(Slide.WidgetContainer,$PARAM[id],$PARAM[window_id])</onfocus>
                 <onfocus condition="![$PARAM[slide]]">ClearProperty(Slide.WidgetContainer,$PARAM[window_id])</onfocus>
                 <hitrect x="$PARAM[hitrect_x]" y="$PARAM[hitrect_y]" w="$PARAM[hitrect_w]" h="$PARAM[hitrect_h]" />
@@ -116,7 +117,7 @@
                 <include>Categories_Selector_Movement_Iconic_BasicMenu</include>
 
                 <nested />
-
+                <include>Action_View_SlideOver_OnFocus</include>
                 <onfocus condition="$PARAM[slide]">SetProperty(Slide.WidgetContainer,$PARAM[id],$PARAM[window_id])</onfocus>
                 <onfocus condition="![$PARAM[slide]]">ClearProperty(Slide.WidgetContainer,$PARAM[window_id])</onfocus>
             </include>
@@ -141,7 +142,7 @@
                 <include>Categories_Selector_Movement_BasicMenu</include>
 
                 <nested />
-
+                <include>Action_View_SlideOver_OnFocus</include>
                 <onfocus condition="$PARAM[slide]">SetProperty(Slide.WidgetContainer,$PARAM[id],$PARAM[window_id])</onfocus>
                 <onfocus condition="![$PARAM[slide]]">ClearProperty(Slide.WidgetContainer,$PARAM[window_id])</onfocus>
             </include>

@@ -25,6 +25,7 @@
         </include>
 
         <control type="group">
+            <include>Animation_View_SlideOver</include>
             <include>Animation_View_WindowChange</include>
             <include>Animation_Group_Bumper</include>
             <control type="group">
@@ -38,6 +39,11 @@
                 <param name="interchange_condition">[$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]]</param>
             </include>
             <include>Search_View_Widgets_InfoPanel</include>
+        </control>
+        <control type="group">
+            <visible>!$EXP[Exp_InfoDialogs]</visible>
+            <include>Animation_Transition_InfoPanel_Hide</include>
+            <include>Furniture_Bottom_Right</include>
         </control>
     </include>
 
@@ -132,6 +138,7 @@
     <include name="Search_View_Widgets_Footer">
         <control type="group">
             <visible>!$EXP[Exp_InfoDialogs]</visible>
+            <include>Animation_Transition_InfoPanel_Hide</include>
             <control type="group">
                 <visible>String.IsEmpty(Window.Property(MediaFilterWall))</visible>
                 <visible>String.IsEmpty(Window.Property(MediaFilterBase))</visible>
@@ -139,7 +146,6 @@
                 <include condition="Skin.String(Furniture.BottomLeft.Enable,Library) | Skin.String(Furniture.BottomLeft.Enable,Always)">Furniture_Bottom_Left</include>
                 <include>View_Furniture_Bottom_Group_NextLabel</include>
             </control>
-            <include>Furniture_Bottom_Right</include>
         </control>
     </include>
 

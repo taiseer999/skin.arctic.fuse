@@ -112,7 +112,7 @@
     </variable>
 
     <variable name="ColorSettingsToggleButtonText">
-        <value condition="ControlGroup(30030).HasFocus() | ControlGroup(30000).HasFocus() | ControlGroup(30040).HasFocus() | ControlGroup(30700).HasFocus()">main_fg_70</value>
+        <value condition="ControlGroup(30030).HasFocus() | ControlGroup(30000).HasFocus() | ControlGroup(30040).HasFocus() | ControlGroup(30700).HasFocus()">dialog_fg_70</value>
         <value>$VAR[ColorSelected]</value>
     </variable>
 

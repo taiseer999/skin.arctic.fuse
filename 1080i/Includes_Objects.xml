@@ -16,6 +16,7 @@
     <include name="Object_Scroll"><scroll>$PARAM[scroll]</scroll></include>
     <include name="Object_AutoScroll"><autoscroll>$PARAM[autoscroll]</autoscroll></include>
     <include name="Object_Align"><align>$PARAM[align]</align></include>
+    <include name="Object_Orientation"><orientation>$PARAM[orientation]</orientation></include>
     <include name="Object_Visible"><visible allowhiddenfocus="$PARAM[allowhiddenfocus]">$PARAM[visible]</visible></include>
     <include name="Object_ColorDiffuse"><colordiffuse>$PARAM[colordiffuse]</colordiffuse></include>
     <include name="Object_TextColor"><textcolor>$PARAM[textcolor]</textcolor></include>
@@ -27,6 +28,7 @@
     <include name="Object_OnLeft"><onleft>$PARAM[onleft]</onleft></include>
     <include name="Object_OnRight"><onright>$PARAM[onright]</onright></include>
     <include name="Object_HitRect"><hitrect x="$PARAM[x]" y="$PARAM[y]" w="$PARAM[w]" h="$PARAM[h]" /></include>
+    <include name="Object_MenuControl"><menucontrol>$PARAM[menucontrol]</menucontrol></include>
     <include name="Object_DefaultControl"><defaultcontrol always="$PARAM[always]">$PARAM[defaultcontrol]</defaultcontrol></include>
     <include name="Object_Texture">
         <texture colordiffuse="$PARAM[colordiffuse]" flipx="$PARAM[flipx]" flipy="$PARAM[flipy]" background="$PARAM[background]" diffuse="$PARAM[diffuse]" border="$PARAM[border]">$PARAM[texture]</texture>

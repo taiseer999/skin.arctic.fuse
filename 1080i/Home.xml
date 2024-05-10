@@ -8,6 +8,8 @@
 
     <include content="Action_Hubs_Onload">
         <param name="window_id">Home</param>
+        <param name="defaultcontrol">309</param>
+        <param name="always">false</param>
     </include>
 
     <onload>ClearProperty(BlurImage,Home)</onload>

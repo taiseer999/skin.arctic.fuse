@@ -2,6 +2,8 @@
 <window type="dialog" id="1172">
     <defaultcontrol always="true">303</defaultcontrol>
     <onload>SetFocus(303,1,absolute)</onload>
+    <onunload condition="!String.IsEmpty(Window(1172).Property(PreviousMenu))">Action(PreviousMenu)</onunload>
+    <onunload condition="!String.IsEmpty(Window(1172).Property(PreviousMenu))">ClearProperty(PreviousMenu,1172)</onunload>
 
     <controls>
 
@@ -59,9 +61,9 @@
                             <param name="id">309</param>
                             <onup>SetFocus(303,9999,absolute)</onup>
                             <ondown>308</ondown>
-                            <onleft>Close</onleft>
-                            <onright>Close</onright>
-                            <onclick>Close</onclick>
+                            <onleft>Action(PreviousMenu)</onleft>
+                            <onright>Action(PreviousMenu)</onright>
+                            <onclick>Action(PreviousMenu)</onclick>
                             <onclick>ActivateWindow(shutdownmenu)</onclick>
                         </include>
                     </include>
@@ -87,8 +89,11 @@
                         <scrolltime tween="quadratic">400</scrolltime>
                         <onup>308</onup>
                         <ondown>309</ondown>
-                        <onleft>Close</onleft>
-                        <onright>Close</onright>
+                        <onleft>Action(PreviousMenu)</onleft>
+                        <onright>Action(PreviousMenu)</onright>
+
+                        <onback condition="$EXP[Exp_Navigation_OnMenu]">SetProperty(PreviousMenu,True)</onback>
+                        <onback condition="$EXP[Exp_Navigation_OnMenu]">Action(PreviousMenu)</onback>
 
                         <include content="Home_Menu_List_ItemLayout">
                             <param name="id">303</param>

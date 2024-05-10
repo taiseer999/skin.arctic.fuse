@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="window" id="1185">
-    <defaultcontrol>9099</defaultcontrol>
+    <include content="Object_DefaultControl" condition="![String.IsEmpty(Window(Home).Property(SideMenu.HasFocus)) | !Skin.HasSetting(SideMenu.EnableSearchAndOptions)]">
+        <param name="defaultcontrol">9097</param>
+    </include>
+    <include content="Object_DefaultControl" condition="[String.IsEmpty(Window(Home).Property(SideMenu.HasFocus)) | !Skin.HasSetting(SideMenu.EnableSearchAndOptions)]">
+        <param name="defaultcontrol">9098</param>
+    </include>
+
     <onload>ClearProperty(TMDbHelper.Image.Override,Home)</onload>
     <onload>SetFocus(5001)</onload>
-    <onload>SetFocus(9099)</onload>
-    <onload condition="!String.IsEmpty(Window(Home).Property(CustomSearchTerm))">AlarmClock(refocus,RunScript(script.skinvariables,set_editcontrol=9099,window_id=1185,setfocus=9099,text=$INFO[Window(Home).Property(CustomSearchTerm)]),00:00,silent)</onload>
-    <onload condition="String.IsEmpty(Window(Home).Property(CustomSearchTerm))">RunScript(script.skinvariables,set_editcontrol=9099,window_id=1185,setfocus=9099)</onload>
-
-    <onload>ClearProperty(CustomSearchTerm,Home)</onload>
+    <onload condition="![String.IsEmpty(Window(Home).Property(SideMenu.HasFocus)) | !Skin.HasSetting(SideMenu.EnableSearchAndOptions)]">SetFocus(9097)</onload>
+    <onload condition="![String.IsEmpty(Window(Home).Property(SideMenu.HasFocus)) | !Skin.HasSetting(SideMenu.EnableSearchAndOptions)]">AlarmClock(refocus,SetFocus(9097),00:00,silent)</onload>
+    <onload condition="[String.IsEmpty(Window(Home).Property(SideMenu.HasFocus)) | !Skin.HasSetting(SideMenu.EnableSearchAndOptions)]">SetFocus(9098)</onload>
+    <onload condition="[String.IsEmpty(Window(Home).Property(SideMenu.HasFocus)) | !Skin.HasSetting(SideMenu.EnableSearchAndOptions)]">AlarmClock(refocus,SetFocus(9098),00:00,silent)</onload>
     <include>Action_PreserveTransitionProp_Onload</include>
     <controls>
         <include>DialogInfo_Recommendations_BackgroundLoader</include>
@@ -20,8 +25,7 @@
                     <include>Animation_Transition_InfoPanel_Hide</include>
                 </include>
                 <include content="DialogInfo_Recommendations_Widgets_Grouplist">
-                    <param name="onup">4002</param>
-                    <param name="ondown">SetFocus(330)</param>
+                    <param name="onup">9098</param>
                     <include>skinvariables-searchmenu-widgets</include>
                     <control type="group" id="5099">
                         <height>0</height>
@@ -86,49 +90,75 @@
         </include>
         <control type="group">
             <visible>!$EXP[Exp_InfoDialogs]</visible>
-            <include content="DialogInfo_ButtonGroup_Basic">
-                <param name="id">303</param>
-                <param name="include">Items_SearchWindow_MenuBar</param>
-                <include content="Action_HomeMenu_OnRightLeft">
-                    <param name="onlist">5000</param>
-                </include>
-                <ondown condition="![String.IsEmpty(Control.GetLabel(9099).index(1)) | Integer.IsEqual(Container(5000).NumItems,0)]">5000</ondown>
-                <ondown condition="[String.IsEmpty(Control.GetLabel(9099).index(1)) | Integer.IsEqual(Container(5000).NumItems,0)]">SetProperty(List.ViewContainer,4002)</ondown>
-                <ondown condition="[String.IsEmpty(Control.GetLabel(9099).index(1)) | Integer.IsEqual(Container(5000).NumItems,0)]">SetFocus(330)</ondown>
-                <onup>9099</onup>
-            </include>
             <include content="DialogInfo_Recommendations_Furniture">
                 <param name="header">$LOCALIZE[137]$INFO[Control.GetLabel(9099).index(1), [COLOR=main_fg_30]›[/COLOR] [CAPITALIZE],[/CAPITALIZE]]</param>
-                <param name="include_homemenu">false</param>
             </include>
             <control type="group">
-                <include>Animation_Group_Bumper</include>
                 <centertop>100</centertop>
-                <width>560</width>
-                <left>view_side</left>
-                <height>80</height>
-                <control type="image">
-                    <left>-40</left>
-                    <right>-40</right>
-                    <texture colordiffuse="main_fg_12" border="40,0,40,0">common/menu.png</texture>
-                    <visible>Window.IsVisible(1171)</visible>
-                </control>
-                <control type="edit" id="9099">
-                    <height>256</height>
+                <height>120</height>
+                <itemgap>80</itemgap>
+                <visible allowhiddenfocus="true">Control.HasFocus(9097)</visible>
+                <include>Animation_Home_SlideOver</include>
+                <include>Animation_Group_Bumper</include>
+                <include content="Home_Menu_Button_Icon">
+                    <param name="id">9097</param>
+                    <param name="icon">special://skin/extras/icons/search.png</param>
+                    <param name="color_nf">main_fg_70</param>
                     <centertop>50%</centertop>
-                    <include>Texture_MainMenu_Highlight_ToggleButton_FakeFocus</include>
-                    <description>Search</description>
-                    <font>font_main_black</font>
-                    <textcolor>dialog_fg_90</textcolor>
-                    <focusedcolor>$VAR[ColorSelected]</focusedcolor>
-                    <left>-80</left>
-                    <right>-80</right>
-                    <textoffsetx>80</textoffsetx>
-                    <align>left</align>
-                    <onup condition="Window.Previous(1105)">SetProperty(CustomSearchTerm,$ESCINFO[Control.GetLabel(9099).index(1)],Home)</onup>
-                    <onup>Action(PreviousMenu)</onup>
-                    <ondown>SetFocus(4001)</ondown>
-                    <visible allowhiddenfocus="true">Control.HasFocus(9099) + !Window.IsVisible(1171) + !Window.IsVisible(1170)</visible>
+                    <left>view_menu</left>
+                    <include content="Home_Menu_Button_Back">
+                        <param name="id">9097</param>
+                        <onup>noop</onup>
+                        <ondown>Action(PreviousMenu)</ondown>
+                        <onleft>SetFocus(9098)</onleft>
+                        <onright>SetFocus(9098)</onright>
+                        <onclick>SetFocus(9098)</onclick>
+                        <include>Home_Menu_List_SlideOver_OnFocus</include>
+                    </include>
+                </include>
+            </control>
+            <control type="group">
+                <include>Animation_View_SlideOver</include>
+                <control type="group">
+                    <include>Animation_Group_Bumper</include>
+                    <centertop>100</centertop>
+                    <width>560</width>
+                    <left>view_side</left>
+                    <height>80</height>
+
+                    <control type="image">
+                        <left>-30</left>
+                        <right>-30</right>
+                        <texture colordiffuse="main_fg_12" border="40,0,40,0">common/menu.png</texture>
+                        <visible>Window.IsVisible(1171) | Control.HasFocus(9097)</visible>
+                    </control>
+
+                    <control type="button" id="9098">
+                        <include>Object_Hidden_Button_Definition</include>
+                        <include>Action_View_SlideOver_OnFocus</include>
+                        <onfocus>SetFocus(9099)</onfocus>
+                    </control>
+                    <control type="edit" id="9099">
+                        <height>256</height>
+                        <centertop>50%</centertop>
+                        <include>Texture_MainMenu_Highlight_ToggleButton_FakeFocus</include>
+                        <description>Search</description>
+                        <font>font_main_black</font>
+                        <textcolor>dialog_fg_90</textcolor>
+                        <focusedcolor>$VAR[ColorSelected]</focusedcolor>
+                        <left>-70</left>
+                        <right>-70</right>
+                        <textoffsetx>70</textoffsetx>
+                        <align>left</align>
+                        <onup condition="Window.Previous(1105)">SetProperty(CustomSearchTerm,$ESCINFO[Control.GetLabel(9099).index(1)],Home)</onup>
+                        <onleft condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions)">SetFocus(9097)</onleft>
+                        <onright condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions)">SetFocus(9097)</onright>
+                        <onup>Action(PreviousMenu)</onup>
+                        <ondown>5000</ondown>
+                        <!-- <ondown condition="String.IsEmpty(Control.GetLabel(9099).index(1)) | Integer.IsEqual(Container(5000).NumItems,0)">Action(PreviousMenu)</ondown>
+                        <ondown condition="![String.IsEmpty(Control.GetLabel(9099).index(1)) | Integer.IsEqual(Container(5000).NumItems,0)]">5000</ondown> -->
+                        <visible allowhiddenfocus="true">Control.HasFocus(9099) + !Window.IsVisible(1171) + !Window.IsVisible(1170)</visible>
+                    </control>
                 </control>
             </control>
         </control>

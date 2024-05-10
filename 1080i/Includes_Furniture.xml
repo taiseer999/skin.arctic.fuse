@@ -24,7 +24,7 @@
         <param name="shadowcolor_sublabel">main_bg_12</param>
         <definition>
             <include content="Furniture_Topbar_Group" condition="$PARAM[enabled]">
-                <nested />
+                <include condition="Skin.String(Home.SideMenuCollapse,Topbar) + !Window.ISVisible(1115)">Animation_View_Topbar</include>
                 <include content="Furniture_Gutters">
                     <control type="group">
                         <animation effect="slide" start="0" end="0,-15" condition="!Skin.HasSetting(Furniture.EnableClock) + [Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRChannels.xml) | $PARAM[clock]]">Conditional</animation>
@@ -50,7 +50,6 @@
         <definition>
             <include content="Furniture_Bottombar_Group" condition="$PARAM[enabled]">
                 <include content="Furniture_Gutters">
-
                     <control type="group">
                         <visible>Skin.HasSetting(Furniture.DisableNowPlaying) | !Player.HasMedia</visible>
                         <include content="Info_Studio" condition="![Skin.HasSetting(Furniture.EnableClock) | $EXP[Exp_Furniture_PVR]]">

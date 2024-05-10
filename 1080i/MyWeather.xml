@@ -17,9 +17,6 @@
         </control>
         <include>Background_Transition</include>
 
-        <include>Home_Fade</include>
-
-
         <control type="group">
             <include>Animation_View_WindowChange</include>
 
@@ -167,10 +164,11 @@
 
         </control>
 
-        <include>Home_Menu</include>
-        <include content="Furniture_Top">
+        <include>Home_Menu_Media</include>
+        <control type="group">
             <include>Animation_View_WindowChange</include>
-        </include>
+            <include>Furniture_Top</include>
+        </control>
 
 
         <include content="Furniture_Busy">

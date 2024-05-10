@@ -7,8 +7,6 @@
         <control type="group">
             <visible>!$EXP[Exp_InfoDialogs]</visible>
 
-            <!-- <include>Home_Fade</include>
-            <include>Home_Menu</include> -->
 
             <include content="DialogInfo_ButtonGroup">
                 <param name="include">Items_DialogVideoInfo_MenuBar</param>

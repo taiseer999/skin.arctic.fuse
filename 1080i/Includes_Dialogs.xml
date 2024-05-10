@@ -385,6 +385,7 @@
                     <param name="groupid">$PARAM[groupid]</param>
                     <param name="itemgap">0</param>
                     <param name="grouplist">false</param>
+                    <param name="icon_colordiffuse">dialog_fg_70</param>
                 </include>
             </control>
         </definition>
@@ -442,6 +443,7 @@
         <param name="id_prefix">0</param>
         <param name="groupid_prefix">1</param>
         <param name="baseid">9</param>
+        <param name="include_slide">false</param>
         <definition>
             <include content="DialogInfo_Button">
                 <param name="vertical">$PARAM[vertical]</param>
@@ -458,6 +460,7 @@
                 <param name="radioround">$PARAM[radioround]</param>
                 <param name="radiocross">$PARAM[radiocross]</param>
                 <param name="radiocheck">$PARAM[radiocheck]</param>
+                <param name="include_slide">$PARAM[include_slide]</param>
                 <include content="DialogInfo_Button_HintLabel">
                     <param name="textcolor">$PARAM[textcolor]</param>
                     <param name="label">$PARAM[label]</param>

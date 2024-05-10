@@ -60,7 +60,6 @@
         </control>
         <include>View_Bumper</include>
         <include>Widget_Transitions</include>
-        <include>Home_Fade</include>
         <include>Home_Menu</include>
 
         <control type="group">
