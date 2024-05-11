@@ -9,10 +9,10 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: Ícaro Maicon, Havokdan\n"
 "Language-Team: \n"
-"Language: pt-br\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: pt-br\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.4.1\n"
 
@@ -109,12 +109,12 @@ msgstr "Recomendações"
 #: /shortcuts/842.DATA.xml
 msgctxt "#31019"
 msgid "Next Aired Trakt"
-msgstr "Próximo Episódio do Trakt"
+msgstr "Próximo Episódio no Trakt"
 
 #: /shortcuts/842.DATA.xml
 msgctxt "#31020"
 msgid "Next Aired Library"
-msgstr "Próximo Episódio da Biblioteca"
+msgstr "Próximo Episódio na Biblioteca"
 
 #: /1080i/Custom_1132_Window_Addons.xml
 msgctxt "#31021"
@@ -150,7 +150,7 @@ msgstr "Grupo de Widgets"
 
 msgctxt "#31028"
 msgid "Outline"
-msgstr "Contorno"
+msgstr "Resumo"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31029"
@@ -225,7 +225,7 @@ msgstr "Plano (Sem Gradiente)"
 #: /1080i/SkinSettings.xml
 msgctxt "#31044"
 msgid "Viewtypes"
-msgstr "Tipos de Exibições"
+msgstr "Tipos de Exibição"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31045"
@@ -532,7 +532,7 @@ msgstr "Coleções"
 #: /1080i/SkinSettings.xml
 msgctxt "#31109"
 msgid "Viewline"
-msgstr "Linha de Exibição"
+msgstr "Linha de exibição"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31110"
@@ -545,7 +545,7 @@ msgstr "Linha de Pôsteres"
 
 msgctxt "#31112"
 msgid "Landscape Row"
-msgstr "Linha de paisagem"
+msgstr "Linha de Paisagem"
 
 msgctxt "#31113"
 msgid "Square Row"
@@ -654,10 +654,10 @@ msgctxt "#31135"
 msgid "Page"
 msgstr "Página"
 
-#: /1080i/SkinSettings.xml
+#: /1080i/Includes_Labels.xml
 msgctxt "#31136"
-msgid "Combined style"
-msgstr "Estilo combinado"
+msgid "Slide"
+msgstr "Deslizar"
 
 #: /1080i/SkinSettings.xml /1080i/Includes_Labels.xml
 msgctxt "#31137"
@@ -990,8 +990,8 @@ msgstr "Número de itens"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31207"
-msgid "Codec style"
-msgstr "Estilo do codec"
+msgid "Codecs and providers"
+msgstr "Codecs e provedores"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31208"
@@ -1165,7 +1165,7 @@ msgstr "Roxo midnight"
 
 msgctxt "#31244"
 msgid "Now playing"
-msgstr "Reproduzido agora"
+msgstr "Reproduzindo agora"
 
 msgctxt "#31245"
 msgid "Autoscroll labels"
@@ -1218,7 +1218,7 @@ msgstr "Personalizar a imagem da inicialização"
 
 msgctxt "#31256"
 msgid "Resource Usage"
-msgstr "Uso de recursos"
+msgstr "Uso dos recursos"
 
 msgctxt "#31257"
 msgid "Memory"
@@ -1245,7 +1245,7 @@ msgid "Hz"
 msgstr "Hz"
 
 msgctxt "#31263"
-msgid "Bits"
+msgid "bits"
 msgstr "Bits"
 
 msgctxt "#31264"
@@ -1283,6 +1283,11 @@ msgstr "Imagem única"
 msgctxt "#31271"
 msgid "Image folder"
 msgstr "Pasta de imagens"
+
+#: /1080i/Includes_Search_View.xml
+msgctxt "#31272"
+msgid "Searching"
+msgstr "Pesquisando"
 
 #: /1080i/Includes_MediaFilter.xml
 msgctxt "#31273"
@@ -1345,7 +1350,7 @@ msgstr "Pressione para baixo para acessar as opções de filtro"
 
 msgctxt "#31285"
 msgid "Classification (MPAA)"
-msgstr "Classificação (MPAA)"
+msgstr "Classificação Etária"
 
 msgctxt "#31286"
 msgid "Won"
@@ -1515,7 +1520,7 @@ msgstr "Quadrado"
 #: /1080i/SkinSettings.xml
 msgctxt "#31321"
 msgid "Configure viewtypes"
-msgstr "Configurar tipos de exibição"
+msgstr "Configurar os tipos de exibição"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31322"
@@ -2076,7 +2081,12 @@ msgstr "Extra grande"
 #: /1080i/Includes_Items.xml
 msgctxt "#31441"
 msgid "FlixArt Size"
-msgstr "FlixArt tamanho"
+msgstr "Tamanho da FlixArt"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31442"
+msgid "Parent"
+msgstr "Pai"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31448"
@@ -2321,7 +2331,7 @@ msgstr "Modo clássico"
 #: /1080i/Includes_Labels.xml
 msgctxt "#31513"
 msgid "Side Menu Icons"
-msgstr "Ícones do menu lateral"
+msgstr "Ícones do Menu Lateral"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31514"
@@ -2331,7 +2341,7 @@ msgstr "Widgets Globais"
 #: /1080i/Includes_Labels.xml
 msgctxt "#31515"
 msgid "Main Items"
-msgstr "Itens principais"
+msgstr "Itens Principais"
 
 #: /1080i/Custom_1115_Dialog_Shortcuts.xml
 msgctxt "#31516"
