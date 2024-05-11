@@ -7,12 +7,12 @@
         <animation effect="slide" time="400" end="0,hub_group_widgetup_s" start="0" tween="quadratic" easing="out" reversible="false" condition="!$EXP[Exp_Hubs_Categories_SlideDown]">Conditional</animation>
     </include>
     <include name="Hub_WindowTransition_Group_OnCategories">
-        <animation effect="slide" start="0" end="0,hub_group_widgetup_s" time="400" tween="quadratic" reversible="false" condition="$EXP[Exp_Hubs_Categories_SlideDown]">WindowClose</animation>
-        <animation effect="slide" end="0" start="0,hub_group_widgetup_s" time="400" tween="quadratic" reversible="false" condition="$EXP[Exp_Hubs_Categories_SlideDown]">WindowOpen</animation>
+        <!-- <animation effect="slide" start="0" end="0,hub_group_widgetup_s" time="400" tween="quadratic" reversible="false" condition="$EXP[Exp_Hubs_Categories_SlideDown]">WindowClose</animation>
+        <animation effect="slide" end="0" start="0,hub_group_widgetup_s" time="400" tween="quadratic" reversible="false" condition="$EXP[Exp_Hubs_Categories_SlideDown]">WindowOpen</animation> -->
     </include>
     <include name="Hub_WindowTransition_CategoriesSpotlight_OnCategories">
-        <animation effect="fade" start="100" end="0" time="200" tween="sine" easing="in" reversible="false" condition="$EXP[Exp_Hubs_Categories_SlideDown]">WindowClose</animation>
-        <animation effect="fade" end="100" start="0" time="400" tween="sine" easing="in" reversible="false" condition="$EXP[Exp_Hubs_Categories_SlideDown]">WindowOpen</animation>
+        <!-- <animation effect="fade" start="100" end="0" time="200" tween="sine" easing="in" reversible="false" condition="$EXP[Exp_Hubs_Categories_SlideDown]">WindowClose</animation>
+        <animation effect="fade" end="100" start="0" time="400" tween="sine" easing="in" reversible="false" condition="$EXP[Exp_Hubs_Categories_SlideDown]">WindowOpen</animation> -->
     </include>
 
     <!-- SlideUp Categories = Enabled -->
@@ -21,12 +21,12 @@
         <animation effect="slide" time="400" end="0,hub_group_widgetup_s" start="0" tween="quadratic" easing="out" reversible="false" condition="!$EXP[Exp_Hubs_Widgets_SlideDown]">Conditional</animation>
     </include>
     <include name="Hub_WindowTransition_Group_OnWidgets">
-        <animation effect="slide" start="0" end="0,hub_group_widgetup_s" time="400" tween="quadratic" reversible="false" condition="$EXP[Exp_Hubs_Widgets_SlideDown]">WindowClose</animation>
-        <animation effect="slide" end="0" start="0,hub_group_widgetup_s" time="400" tween="quadratic" reversible="false" condition="$EXP[Exp_Hubs_Widgets_SlideDown]">WindowOpen</animation>
+        <!-- <animation effect="slide" start="0" end="0,hub_group_widgetup_s" time="400" tween="quadratic" reversible="false" condition="$EXP[Exp_Hubs_Widgets_SlideDown]">WindowClose</animation>
+        <animation effect="slide" end="0" start="0,hub_group_widgetup_s" time="400" tween="quadratic" reversible="false" condition="$EXP[Exp_Hubs_Widgets_SlideDown]">WindowOpen</animation> -->
     </include>
     <include name="Hub_WindowTransition_CategoriesSpotlight_OnWidgets">
-        <animation effect="fade" start="100" end="0" time="200" tween="sine" easing="in" reversible="false" condition="$EXP[Exp_Hubs_Widgets_SlideDown]">WindowClose</animation>
-        <animation effect="fade" end="100" start="0" time="400" tween="sine" easing="in" reversible="false" condition="$EXP[Exp_Hubs_Widgets_SlideDown]">WindowOpen</animation>
+        <!-- <animation effect="fade" start="100" end="0" time="200" tween="sine" easing="in" reversible="false" condition="$EXP[Exp_Hubs_Widgets_SlideDown]">WindowClose</animation>
+        <animation effect="fade" end="100" start="0" time="400" tween="sine" easing="in" reversible="false" condition="$EXP[Exp_Hubs_Widgets_SlideDown]">WindowOpen</animation> -->
     </include>
 
     <!-- Fanart Spotlight = Enabled -->
@@ -325,10 +325,11 @@
             </control>
 
             <!-- SideMenu -->
-            <!-- <include content="Home_Menu" condition="Window.IsVisible(Home)">
+            <include content="Home_Menu_Media" condition="!Skin.HasSetting(Hub.$PARAM[window_id].DisableSubmenu)">
                 <param name="window_id">$PARAM[window_id]</param>
-            </include> -->
-            <include content="Home_Menu_Media">
+                <param name="onlist">320</param>
+            </include>
+            <include content="Home_Menu_Media" condition="Skin.HasSetting(Hub.$PARAM[window_id].DisableSubmenu)">
                 <param name="window_id">$PARAM[window_id]</param>
                 <param name="onlist">400</param>
             </include>
