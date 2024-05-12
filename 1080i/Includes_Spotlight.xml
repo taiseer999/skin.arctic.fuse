@@ -157,7 +157,7 @@
 
                     <include content="Action_View_Movement_OnLeftRight">
                         <param name="id">311</param>
-                        <param name="onleft">314</param>
+                        <param name="onleft">315</param>
                         <param name="backid">311</param>
                         <param name="onback">Control.HasFocus(311)</param>
                     </include>
