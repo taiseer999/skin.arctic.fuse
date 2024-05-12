@@ -25,7 +25,7 @@
             <value name="grouplist_widgets_bump_id">401</value>
             <value name="grouplist_endrow_selector">Skin.HasSetting(Hub.{window_id}.WidgetSelector)</value>
             <value name="grouplist_endrow_selector_id">419</value>
-            <value name="all_adaptive_widgets">
+            <value name="all_standard_widgets">
                 <condition>!Skin.HasSetting(Hub.{window_id}.DisableSubmenu)</condition>
                 <items menu="{item}">
                     <item>
@@ -41,12 +41,6 @@
                             <enumitem name="enum_x">widget_{item_menu}_{item_x}</enumitem>
                         </value>
                     </item>
-                </items>
-            </value>
-
-            <value name="all_submenus_widgets">
-                <condition>!Skin.HasSetting(Hub.{window_id}.DisableSubmenu)</condition>
-                <items menu="{item}">
                     <item>
                         <items menu="{item_menu}" item="{item_x}" mode="submenu">
                             <item>
@@ -68,12 +62,6 @@
                             </item>
                         </items>
                     </item>
-                </items>
-            </value>
-
-            <value name="all_standard_widgets">
-                <condition>!Skin.HasSetting(Hub.{window_id}.DisableSubmenu)</condition>
-                <items menu="{item}">
                     <item>
                         <template>generator/data/parts/basic_template.xmltemplate</template>
                         <value name="comments">Standard Widgets for Category {item_menu} {item_x} {item_label}</value>
