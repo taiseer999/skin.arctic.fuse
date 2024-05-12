@@ -730,127 +730,130 @@
             </include>
 
             <control type="group">
-                <height>80</height>
-                <centertop>50%</centertop>
-                <left>-20</left>
-                <include content="Object_Right" condition="$PARAM[variation] + ![$PARAM[indicator]]">
-                    <param name="right">0</param>
-                </include>
-                <right>60</right>
+                <left>$PARAM[misc]</left>
                 <control type="group">
-                    <visible>![$EXP[Exp_IsGenre] | $EXP[Exp_IsStudio] | $EXP[Exp_IsCountry]]</visible>
-                    <include content="Object_InfoCircle" condition="!$PARAM[selected]">
-                        <param name="icon">$VAR[Image_Layout_CombinedIcon]</param>
-                        <param name="role">$VAR[Label_MediaList_Title]</param>
-                        <param name="name">$VAR[Label_VideoInfo_DetailsItem]</param>
-                        <include content="Object_Right" condition="$PARAM[variation]">
-                            <param name="right">60</param>
+                    <height>80</height>
+                    <centertop>50%</centertop>
+                    <left>-20</left>
+                    <include content="Object_Right" condition="$PARAM[variation] + ![$PARAM[indicator]]">
+                        <param name="right">0</param>
+                    </include>
+                    <right>60</right>
+                    <control type="group">
+                        <visible>![$EXP[Exp_IsGenre] | $EXP[Exp_IsStudio] | $EXP[Exp_IsCountry]]</visible>
+                        <include content="Object_InfoCircle" condition="!$PARAM[selected]">
+                            <param name="icon">$VAR[Image_Layout_CombinedIcon]</param>
+                            <param name="role">$VAR[Label_MediaList_Title]</param>
+                            <param name="name">$VAR[Label_VideoInfo_DetailsItem]</param>
+                            <include content="Object_Right" condition="$PARAM[variation]">
+                                <param name="right">60</param>
+                            </include>
+                            <include content="Object_InfoCircle_Image">
+                                <param name="colordiffuse">white</param>
+                                <param name="icon">$VAR[Image_Layout_CombinedThumb]</param>
+                            </include>
+                            <control type="label">
+                                <right>120</right>
+                                <font>font_mini</font>
+                                <label>$VAR[Label_MediaList_Year]</label>
+                                <align>right</align>
+                                <visible>![$PARAM[detailed]]</visible>
+                                <visible>![$PARAM[variation]]</visible>
+                                <visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,video) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,musicvideo)</visible>
+                            </control>
+                            <control type="label">
+                                <left>80</left>
+                                <right>0</right>
+                                <font>font_mini</font>
+                                <visible>![$PARAM[variation]]</visible>
+                                <label>$VAR[Label_MediaList_Rating,            ,]</label>
+                                <align>right</align>
+                                <visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,video) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,musicvideo)</visible>
+                            </control>
                         </include>
-                        <include content="Object_InfoCircle_Image">
-                            <param name="colordiffuse">white</param>
-                            <param name="icon">$VAR[Image_Layout_CombinedThumb]</param>
+                        <include content="Object_InfoCircle" condition="$PARAM[selected]">
+                            <param name="icon">$VAR[Image_Layout_CombinedIcon]</param>
+                            <param name="textcolor_top">$VAR[ColorSelected]</param>
+                            <param name="textcolor_sub">$VAR[ColorSelected]</param>
+                            <param name="role">$VAR[Label_MediaList_Title]</param>
+                            <param name="name">$VAR[Label_VideoInfo_DetailsItem]</param>
+                            <include content="Object_Right" condition="$PARAM[variation]">
+                                <param name="right">60</param>
+                            </include>
+                            <include content="Object_InfoCircle_Image">
+                                <param name="colordiffuse">white</param>
+                                <param name="icon">$VAR[Image_Layout_CombinedThumb]</param>
+                            </include>
+                            <control type="label">
+                                <include>Color_SelectedText</include>
+                                <right>120</right>
+                                <label>$VAR[Label_MediaList_Year]</label>
+                                <align>right</align>
+                                <font>font_mini</font>
+                                <visible>![$PARAM[detailed]]</visible>
+                                <visible>![$PARAM[variation]]</visible>
+                                <visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,video) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,musicvideo)</visible>
+                            </control>
+                            <control type="label">
+                                <include>Color_SelectedText</include>
+                                <left>80</left>
+                                <right>0</right>
+                                <label>$VAR[Label_MediaList_Rating,            ,]</label>
+                                <align>right</align>
+                                <font>font_mini</font>
+                                <visible>![$PARAM[variation]]</visible>
+                                <visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,video) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,musicvideo)</visible>
+                            </control>
                         </include>
-                        <control type="label">
-                            <right>120</right>
-                            <font>font_mini</font>
-                            <label>$VAR[Label_MediaList_Year]</label>
-                            <align>right</align>
-                            <visible>![$PARAM[detailed]]</visible>
+                        <include condition="$PARAM[indicator]" content="Object_Indicator_List">
+                            <param name="affix">$PARAM[affix]</param>
+                            <param name="listitem">$PARAM[listitem]</param>
+                            <param name="selected">$PARAM[selected]</param>
+                            <centertop>50%</centertop>
+                            <centerright>80</centerright>
                             <visible>![$PARAM[variation]]</visible>
                             <visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,video) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,musicvideo)</visible>
-                        </control>
-                        <control type="label">
-                            <left>80</left>
-                            <right>0</right>
-                            <font>font_mini</font>
-                            <visible>![$PARAM[variation]]</visible>
-                            <label>$VAR[Label_MediaList_Rating,            ,]</label>
-                            <align>right</align>
-                            <visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,video) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,musicvideo)</visible>
-                        </control>
-                    </include>
-                    <include content="Object_InfoCircle" condition="$PARAM[selected]">
-                        <param name="icon">$VAR[Image_Layout_CombinedIcon]</param>
-                        <param name="textcolor_top">$VAR[ColorSelected]</param>
-                        <param name="textcolor_sub">$VAR[ColorSelected]</param>
-                        <param name="role">$VAR[Label_MediaList_Title]</param>
-                        <param name="name">$VAR[Label_VideoInfo_DetailsItem]</param>
-                        <include content="Object_Right" condition="$PARAM[variation]">
-                            <param name="right">60</param>
                         </include>
-                        <include content="Object_InfoCircle_Image">
-                            <param name="colordiffuse">white</param>
-                            <param name="icon">$VAR[Image_Layout_CombinedThumb]</param>
+                        <include condition="$PARAM[indicator]" content="Object_Indicator_List">
+                            <param name="affix">$PARAM[affix]</param>
+                            <param name="listitem">$PARAM[listitem]</param>
+                            <param name="selected">$PARAM[selected]</param>
+                            <centertop>50%</centertop>
+                            <centerright>15</centerright>
+                            <visible>![String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,video) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,musicvideo)] | $PARAM[variation]</visible>
                         </include>
-                        <control type="label">
-                            <include>Color_SelectedText</include>
-                            <right>120</right>
-                            <label>$VAR[Label_MediaList_Year]</label>
-                            <align>right</align>
-                            <font>font_mini</font>
-                            <visible>![$PARAM[detailed]]</visible>
-                            <visible>![$PARAM[variation]]</visible>
-                            <visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,video) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,musicvideo)</visible>
-                        </control>
-                        <control type="label">
-                            <include>Color_SelectedText</include>
-                            <left>80</left>
-                            <right>0</right>
-                            <label>$VAR[Label_MediaList_Rating,            ,]</label>
-                            <align>right</align>
-                            <font>font_mini</font>
-                            <visible>![$PARAM[variation]]</visible>
-                            <visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,video) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,musicvideo)</visible>
-                        </control>
-                    </include>
-                    <include condition="$PARAM[indicator]" content="Object_Indicator_List">
-                        <param name="affix">$PARAM[affix]</param>
-                        <param name="listitem">$PARAM[listitem]</param>
-                        <param name="selected">$PARAM[selected]</param>
-                        <centertop>50%</centertop>
-                        <centerright>80</centerright>
-                        <visible>![$PARAM[variation]]</visible>
-                        <visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,video) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,musicvideo)</visible>
-                    </include>
-                    <include condition="$PARAM[indicator]" content="Object_Indicator_List">
-                        <param name="affix">$PARAM[affix]</param>
-                        <param name="listitem">$PARAM[listitem]</param>
-                        <param name="selected">$PARAM[selected]</param>
-                        <centertop>50%</centertop>
-                        <centerright>15</centerright>
-                        <visible>![String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,video) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,musicvideo)] | $PARAM[variation]</visible>
-                    </include>
-                </control>
+                    </control>
 
-                <control type="group">
-                    <visible>$EXP[Exp_IsGenre] | $EXP[Exp_IsStudio] | $EXP[Exp_IsCountry]</visible>
-                    <include content="Object_InfoCircle" condition="!$PARAM[selected]">
-                        <param name="icon">$VAR[Image_ResourceIcon]</param>
-                        <param name="bordersize">11</param>
-                        <param name="diffuse">-</param>
-                        <param name="fallback">folder.png</param>
-                        <param name="role">$VAR[Label_MediaList_Title]</param>
-                        <param name="name">$VAR[Label_VideoInfo_DetailsItem]</param>
-                        <right>60</right>
-                    </include>
-                    <include content="Object_InfoCircle" condition="$PARAM[selected]">
-                        <param name="icon">$VAR[Image_ResourceIcon]</param>
-                        <param name="bordersize">11</param>
-                        <param name="diffuse">-</param>
-                        <param name="fallback">folder.png</param>
-                        <param name="role">$VAR[Label_MediaList_Title]</param>
-                        <param name="name">$VAR[Label_VideoInfo_DetailsItem]</param>
-                        <param name="textcolor_top">$VAR[ColorSelected]</param>
-                        <param name="textcolor_sub">$VAR[ColorSelected]</param>
-                        <right>60</right>
-                    </include>
-                    <include condition="$PARAM[indicator]" content="Object_Indicator_List">
-                        <param name="affix">$PARAM[affix]</param>
-                        <param name="listitem">$PARAM[listitem]</param>
-                        <param name="selected">$PARAM[selected]</param>
-                        <centertop>50%</centertop>
-                        <centerright>15</centerright>
-                    </include>
+                    <control type="group">
+                        <visible>$EXP[Exp_IsGenre] | $EXP[Exp_IsStudio] | $EXP[Exp_IsCountry]</visible>
+                        <include content="Object_InfoCircle" condition="!$PARAM[selected]">
+                            <param name="icon">$VAR[Image_ResourceIcon]</param>
+                            <param name="bordersize">11</param>
+                            <param name="diffuse">-</param>
+                            <param name="fallback">folder.png</param>
+                            <param name="role">$VAR[Label_MediaList_Title]</param>
+                            <param name="name">$VAR[Label_VideoInfo_DetailsItem]</param>
+                            <right>60</right>
+                        </include>
+                        <include content="Object_InfoCircle" condition="$PARAM[selected]">
+                            <param name="icon">$VAR[Image_ResourceIcon]</param>
+                            <param name="bordersize">11</param>
+                            <param name="diffuse">-</param>
+                            <param name="fallback">folder.png</param>
+                            <param name="role">$VAR[Label_MediaList_Title]</param>
+                            <param name="name">$VAR[Label_VideoInfo_DetailsItem]</param>
+                            <param name="textcolor_top">$VAR[ColorSelected]</param>
+                            <param name="textcolor_sub">$VAR[ColorSelected]</param>
+                            <right>60</right>
+                        </include>
+                        <include condition="$PARAM[indicator]" content="Object_Indicator_List">
+                            <param name="affix">$PARAM[affix]</param>
+                            <param name="listitem">$PARAM[listitem]</param>
+                            <param name="selected">$PARAM[selected]</param>
+                            <centertop>50%</centertop>
+                            <centerright>15</centerright>
+                        </include>
+                    </control>
                 </control>
             </control>
         </definition>

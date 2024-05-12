@@ -452,6 +452,43 @@
                                             <visible>!String.IsEqual(Container(22001).ListItem.Property(blank),True)</visible>
                                         </include>
 
+                                        <!-- Open In Dialog Item -->
+                                        <include content="Settings_Button">
+                                            <param name="dialog">true</param>
+                                            <param name="id">23002</param>
+                                            <param name="control">radiobutton</param>
+                                            <label>$LOCALIZE[31443]</label>
+
+                                            <selected>!String.IsEmpty(Container(22001).ListItem.Property(path_opendialog))</selected>
+                                            <onclick>RunPlugin($INFO[Container(22001).ListItem.Property(url),,&amp;func=do_toggle&amp;&amp;path_opendialog])</onclick>
+
+                                            <onback>29999</onback>
+
+                                            <visible>!String.IsEqual(Container(22001).ListItem.Property(blank),True)</visible>
+                                            <visible>!String.IsEmpty(Container(22001).ListItem.Property(path))</visible>
+                                            <visible>!String.IsEmpty(Container(22001).ListItem.Property(target))</visible>
+                                            <visible>!$EXP[Shortcuts_Dialog_Exp_IsWidgetMode]</visible>
+                                        </include>
+
+                                        <!-- Open In Expanded Dialog Item -->
+                                        <include content="Settings_Button">
+                                            <param name="dialog">true</param>
+                                            <param name="id">23004</param>
+                                            <param name="control">radiobutton</param>
+                                            <label> -- $LOCALIZE[39123]</label>
+
+                                            <selected>!String.IsEmpty(Container(22001).ListItem.Property(path_opendialog_expanded))</selected>
+                                            <onclick>RunPlugin($INFO[Container(22001).ListItem.Property(url),,&amp;func=do_toggle&amp;&amp;path_opendialog_expanded])</onclick>
+
+                                            <onback>29999</onback>
+
+                                            <visible>!String.IsEqual(Container(22001).ListItem.Property(blank),True)</visible>
+                                            <visible>!String.IsEmpty(Container(22001).ListItem.Property(path))</visible>
+                                            <visible>!String.IsEmpty(Container(22001).ListItem.Property(target))</visible>
+                                            <visible>!String.IsEmpty(Container(22001).ListItem.Property(path_opendialog))</visible>
+                                            <visible>!$EXP[Shortcuts_Dialog_Exp_IsWidgetMode]</visible>
+                                        </include>
+
                                         <!-- ================ -->
                                         <!-- SideMenu Options -->
                                         <!-- ================ -->
