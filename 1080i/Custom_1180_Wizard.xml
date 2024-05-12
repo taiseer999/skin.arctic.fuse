@@ -69,7 +69,7 @@
                                     <label>$LOCALIZE[31083]</label>
                                     <icon>special://skin/extras/screenshots/widgets/Combined.jpg</icon>
                                     <visible>String.IsEmpty(Window(Home).Property(WizardStep))</visible>
-                                    <onclick>RunScript(script.skinvariables,"run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-wizardcategories.json",use_rules,category=SetBool,combined=SetBool,hidemenu=Always,compound=Reset,expanded=Reset,shortcut=default_home,position=0)</onclick>
+                                    <onclick>RunScript(script.skinvariables,"run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-wizardcategories.json",use_rules,category=SetBool,combined=SetBool,hidemenu=Topbar,compound=Reset,expanded=Reset,shortcut=default_home,position=0)</onclick>
                                     <property name="selected">$VAR[Exp_Var_Layout_IsCombined]</property>
                                 </item>
                                 <item>
@@ -83,7 +83,7 @@
                                     <label>$LOCALIZE[31451]</label>
                                     <icon>special://skin/extras/screenshots/widgets/Compound.jpg</icon>
                                     <visible>String.IsEmpty(Window(Home).Property(WizardStep))</visible>
-                                    <onclick>RunScript(script.skinvariables,"run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-wizardcategories.json",use_rules,category=Reset,combined=Reset,hidemenu=Always,compound=Reset,expanded=Reset,shortcut=basic_library,position=2)</onclick>
+                                    <onclick>RunScript(script.skinvariables,"run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-wizardcategories.json",use_rules,category=Reset,combined=Reset,hidemenu=Topbar,compound=Reset,expanded=Reset,shortcut=basic_library,position=2)</onclick>
                                     <property name="selected">$VAR[Exp_Var_Layout_IsCompound]</property>
                                 </item>
                                 <item>
@@ -271,31 +271,29 @@
                                 <content>
                                     <item>
                                         <label>Basic layout</label>
-                                        <visible>String.IsEqual(Container(50).ListItem.Icon,special://skin/extras/screenshots/widgets/Classic.jpg)</visible>
+                                        <visible>String.IsEqual(Container(50).ListItem.Icon,special://skin/extras/screenshots/widgets/Classic.jpg) | String.IsEqual(Container(50).ListItem.Icon,special://skin/extras/screenshots/widgets/Combined.jpg)</visible>
                                         <description>Advanced layout options / Categories</description>
                                     </item>
                                     <item>
-                                        <label>Integrated layout</label>
-                                        <visible>String.IsEqual(Container(50).ListItem.Icon,special://skin/extras/screenshots/widgets/Combined.jpg)</visible>
-                                        <description>Advanced layout options / Categories</description>
-                                    </item>
-                                    <item>
-                                        <label>Spotlight</label>
+                                        <label>Advanced layout</label>
                                         <visible>String.IsEqual(Container(50).ListItem.Icon,special://skin/extras/screenshots/widgets/Categories.jpg) | String.IsEqual(Container(50).ListItem.Icon,special://skin/extras/screenshots/widgets/Compound.jpg)</visible>
+                                        <description>Advanced layout options / Categories</description>
                                     </item>
                                     <item>
                                         <label>Adapative submenus</label>
                                         <visible>String.IsEqual(Container(50).ListItem.Icon,special://skin/extras/screenshots/widgets/Categories.jpg) | String.IsEqual(Container(50).ListItem.Icon,special://skin/extras/screenshots/widgets/Compound.jpg)</visible>
                                     </item>
-
-
                                     <item>
-                                        <label>Widget groups</label>
-                                        <visible>String.IsEqual(Container(50).ListItem.Icon,special://skin/extras/screenshots/widgets/Classic.jpg)</visible>
+                                        <label>Grouped widgets</label>
+                                        <visible>String.IsEqual(Container(50).ListItem.Icon,special://skin/extras/screenshots/widgets/Classic.jpg) | String.IsEqual(Container(50).ListItem.Icon,special://skin/extras/screenshots/widgets/Combined.jpg)</visible>
                                     </item>
                                     <item>
-                                        <label>Stacked widgets</label>
-                                        <visible>String.IsEqual(Container(50).ListItem.Icon,special://skin/extras/screenshots/widgets/Classic.jpg) | String.IsEqual(Container(50).ListItem.Icon,special://skin/extras/screenshots/widgets/Categories.jpg) | String.IsEqual(Container(50).ListItem.Icon,special://skin/extras/screenshots/widgets/Compound.jpg)</visible>
+                                        <label>Static view</label>
+                                        <visible>String.IsEqual(Container(50).ListItem.Icon,special://skin/extras/screenshots/widgets/Combined.jpg)</visible>
+                                    </item>
+                                    <item>
+                                        <label>Spotlight</label>
+                                        <visible>String.IsEqual(Container(50).ListItem.Icon,special://skin/extras/screenshots/widgets/Categories.jpg) | String.IsEqual(Container(50).ListItem.Icon,special://skin/extras/screenshots/widgets/Compound.jpg)</visible>
                                     </item>
 
                                 </content>
@@ -317,34 +315,18 @@
                                 </focusedlayout>
                                 <content>
                                     <item>
-                                        <label>Advanced layout</label>
-                                        <visible>String.IsEqual(Container(50).ListItem.Icon,special://skin/extras/screenshots/widgets/Categories.jpg)</visible>
-                                        <description>Advanced layout options / Categories</description>
-                                    </item>
-
-                                    <item>
                                         <label>No spotlight</label>
                                         <visible>String.IsEqual(Container(50).ListItem.Icon,special://skin/extras/screenshots/widgets/Classic.jpg) | String.IsEqual(Container(50).ListItem.Icon,special://skin/extras/screenshots/widgets/Combined.jpg)</visible>
                                         <description>Advanced layout options / Categories</description>
                                     </item>
                                     <item>
-                                        <label>No widget groups</label>
-                                        <visible>String.IsEqual(Container(50).ListItem.Icon,special://skin/extras/screenshots/widgets/Combined.jpg)</visible>
-                                        <description>Advanced layout options / Categories</description>
-                                    </item>
-                                    <item>
-                                        <label>No stacked widgets</label>
-                                        <visible>String.IsEqual(Container(50).ListItem.Icon,special://skin/extras/screenshots/widgets/Combined.jpg)</visible>
-                                        <description>Advanced layout options / Categories</description>
-                                    </item>
-                                    <item>
                                         <label>No adapative submenus</label>
-                                        <visible>String.IsEqual(Container(50).ListItem.Icon,special://skin/extras/screenshots/widgets/Classic.jpg)</visible>
+                                        <visible>String.IsEqual(Container(50).ListItem.Icon,special://skin/extras/screenshots/widgets/Classic.jpg) | String.IsEqual(Container(50).ListItem.Icon,special://skin/extras/screenshots/widgets/Combined.jpg)</visible>
                                         <description>Advanced layout options / Categories</description>
                                     </item>
                                     <item>
                                         <label>No side menu</label>
-                                        <visible>String.IsEqual(Container(50).ListItem.Icon,special://skin/extras/screenshots/widgets/Compound.jpg)</visible>
+                                        <visible>String.IsEqual(Container(50).ListItem.Icon,special://skin/extras/screenshots/widgets/Compound.jpg) | String.IsEqual(Container(50).ListItem.Icon,special://skin/extras/screenshots/widgets/Combined.jpg)</visible>
                                         <description>Advanced layout options / Categories</description>
                                     </item>
                                 </content>
