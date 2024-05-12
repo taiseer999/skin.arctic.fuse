@@ -14,8 +14,11 @@
             <include>DialogInfo_Recommendations_InfoPanel</include>
             <include content="DialogInfo_Recommendations_Widgets_Grouplist">
                 <param name="onup">333</param>
+                <param name="ondown">noop</param>
                 <onleft condition="!Skin.String(Home.SideMenuCollapse,Topbar)">303</onleft>
                 <onright condition="!Skin.String(Home.SideMenuCollapse,Topbar)">332</onright>
+                <ondown condition="!Skin.String(Home.SideMenuCollapse,Topbar)">330</ondown>
+                <ondown condition="Skin.String(Home.SideMenuCollapse,Topbar)">303</ondown>
                 <control type="button" id="5098">
                     <height>0</height>
                     <texturefocus />
@@ -45,8 +48,9 @@
                 <param name="include">Items_PersonCredits_MenuBar</param>
                 <param name="vertical">false</param>
                 <param name="id">303</param>
-                <onup>61</onup>
-                <ondown>5000</ondown>
+                <param name="itemgap">0</param>
+                <ondown>330</ondown>
+                <onup>5000</onup>
             </include>
         </control>
 

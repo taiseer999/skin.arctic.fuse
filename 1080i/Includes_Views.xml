@@ -8,7 +8,7 @@
         <definition>
             <control type="group">
                 <visible>!$EXP[Exp_InfoDialogs]</visible>
-                <include>Animation_Transition_InfoPanel_Hide</include>
+                <!-- <include>Animation_Transition_InfoPanel_Hide</include> -->
                 <visible>!Window.IsVisible(DialogAddonSettings.xml)</visible>
                 <visible>!Window.IsVisible(DialogGameControllers.xml)</visible>
                 <visible>!Window.IsVisible(DialogPVRChannelManager.xml)</visible>
@@ -235,8 +235,7 @@
     <include name="View_Furniture_Bottom_Group">
         <control type="group">
             <visible>!$EXP[Exp_InfoDialogs]</visible>
-            <include>Animation_Transition_InfoPanel_Hide</include>
-            <include condition="![Skin.String(Furniture.BottomLeft.Enable,Library) | Skin.String(Furniture.BottomLeft.Enable,Always)]">Animation_Transition_InfoPanel_Hide</include>
+            <!-- <include>Animation_Transition_InfoPanel_Hide</include> -->
             <control type="group">
                 <visible>!Window.IsVisible(1171)</visible>
                 <control type="group">

@@ -150,7 +150,7 @@
 
     <expression name="Exp_WidgetSelect_IsEnabled">[[Skin.HasSetting(Hub.Home.WidgetSelector) + Window.IsVisible(Home)] | [Skin.HasSetting(Hub.1101.WidgetSelector) + Window.IsVisible(1101)] | [Skin.HasSetting(Hub.1102.WidgetSelector) + Window.IsVisible(1102)] | [Skin.HasSetting(Hub.1103.WidgetSelector) + Window.IsVisible(1103)] | [Skin.HasSetting(Hub.1104.WidgetSelector) + Window.IsVisible(1104)] | [Skin.HasSetting(Hub.1105.WidgetSelector) + Window.IsVisible(1105)] | [Skin.HasSetting(Hub.1106.WidgetSelector) + Window.IsVisible(1106)] | [Skin.HasSetting(Hub.1107.WidgetSelector) + Window.IsVisible(1107)] | [Skin.HasSetting(Hub.1108.WidgetSelector) + Window.IsVisible(1108)] | [Skin.HasSetting(Hub.1109.WidgetSelector) + Window.IsVisible(1109)]]</expression>
 
-    <expression name="Exp_Footer_BottomLeft_IsVisible">[[[!$EXP[Exp_WidgetSelect_IsEnabled] + Skin.String(Furniture.BottomLeft.Enable,Always) + !Window.IsMedia] | [[Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.String(Furniture.BottomLeft.Enable,Library)] + Window.IsMedia + !Window.IsVisible(1121) + !Window.IsVisible(1122)]]]</expression>
+    <expression name="Exp_Footer_BottomLeft_IsVisible">[[[!$EXP[Exp_WidgetSelect_IsEnabled] + Skin.String(Furniture.BottomLeft.Enable,Always) + !Window.IsMedia] | [[Skin.String(Furniture.BottomLeft.Enable,Always) | Skin.String(Furniture.BottomLeft.Enable,Library)] + Window.IsMedia]]]</expression>
 
     <!-- ================= -->
     <!-- Windows / Dialogs -->

@@ -285,7 +285,7 @@
                         <param name="itemlayout_include">Layout_InfoDialog_Details</param>
 
                         <onup condition="Skin.String(Home.SideMenuCollapse,Topbar)">Close</onup>
-                        <ondown condition="Skin.String(Home.SideMenuCollapse,Topbar)">noop</ondown>
+                        <ondown condition="Skin.String(Home.SideMenuCollapse,Topbar)">Close</ondown>
 
                         <onleft condition="!Skin.String(Home.SideMenuCollapse,Topbar)">Close</onleft>
                         <onright>SetFocus(5000)</onright>

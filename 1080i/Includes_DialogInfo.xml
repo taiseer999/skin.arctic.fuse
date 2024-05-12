@@ -41,11 +41,15 @@
         <control type="group">
             <include>Animation_View_SlideOver</include>
             <control type="group">
-                <include>Animation_Transition_InfoPanel_Open</include>
                 <control type="group">
-                    <include>Furniture_Top</include>
+                    <!-- <include condition="Skin.String(Home.SideMenuCollapse,Topbar)">Animation_View_Topbar</include> -->
+                    <!-- <include>Animation_Transition_InfoPanel_Open</include> -->
+                    <include content="Furniture_Top">
+                        <param name="include_topbar_animation">False</param>
+                    </include>
                 </control>
                 <control type="group">
+                    <include condition="Skin.String(Home.SideMenuCollapse,Topbar)">Animation_View_Topbar</include>
                     <include>Furniture_Bottom_Left</include>
                 </control>
             </control>
@@ -564,6 +568,9 @@
                     <onclick>SetProperty(Item_Label,$INFO[Container(5003).ListItem.Label],1122)</onclick>
                     <onclick>SetProperty(Item_Label2,$VAR[Label_VideoInfo_CastAge],1122)</onclick>
 
+                    <ondown condition="Skin.String(Home.SideMenuCollapse,Topbar)">4000</ondown>
+                    <onup condition="Skin.String(Home.SideMenuCollapse,Topbar)">4000</onup>
+
 
                     <!-- <onclick>SetProperty(CustomDialogSettingsTitle,$INFO[Container(5003).ListItem.Label],Home)</onclick>
                     <onclick>SetProperty(CustomDialogSettingsItems,Items_Settings_DialogInfo_ActorChoice,Home)</onclick>
@@ -686,16 +693,16 @@
                     <param name="onup_condition">false</param>
                 </include>
 
-                <onup>SetFocus(50,0,absolute)</onup>
-                <onup>4000</onup>
+                <ondown>SetFocus(50,0,absolute)</ondown>
+                <ondown>4000</ondown>
 
-                <ondown>SetProperty(Item_Title,$INFO[Container(50).ListItem.Label],1122)</ondown>
-                <ondown>SetProperty(Item_Query,$INFO[Container(50).ListItem.Label,&amp;query=,],1122)</ondown>
-                <ondown>SetProperty(Item_Icon,$INFO[Container(50).ListItem.Icon],1122)</ondown>
-                <ondown>SetProperty(Item_Plot,$VAR[Label_VideoInfo_CastBio_Prop],1122)</ondown>
-                <ondown>SetProperty(Item_Label,$INFO[Container(50).ListItem.Label],1122)</ondown>
-                <ondown>SetProperty(Item_Label2,$VAR[Label_VideoInfo_CastAge],1122)</ondown>
-                <ondown>ActivateWindow(1122)</ondown>
+                <onup>SetProperty(Item_Title,$INFO[Container(50).ListItem.Label],1122)</onup>
+                <onup>SetProperty(Item_Query,$INFO[Container(50).ListItem.Label,&amp;query=,],1122)</onup>
+                <onup>SetProperty(Item_Icon,$INFO[Container(50).ListItem.Icon],1122)</onup>
+                <onup>SetProperty(Item_Plot,$VAR[Label_VideoInfo_CastBio_Prop],1122)</onup>
+                <onup>SetProperty(Item_Label,$INFO[Container(50).ListItem.Label],1122)</onup>
+                <onup>SetProperty(Item_Label2,$VAR[Label_VideoInfo_CastAge],1122)</onup>
+                <onup>ActivateWindow(1122)</onup>
             </include>
         </include>
 
@@ -810,6 +817,7 @@
 
                 <include content="$PARAM[include]">
                     <param name="vertical">$PARAM[vertical]</param>
+                    <param name="itemgap">$PARAM[itemgap]</param>
                 </include>
 
                 <nested />
@@ -843,27 +851,27 @@
         <ondown condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions)">SetFocus(61)</ondown>
     </include>
 
-    <include name="DialogInfo_ButtonGroup_OnDown">
-        <include content="Action_VideoInfo_Main_OnDown" condition="Window.IsVisible(DialogVideoInfo.xml)">
+    <include name="DialogInfo_ButtonGroup_OnUp">
+        <include content="Action_VideoInfo_Main_OnUp" condition="Window.IsVisible(DialogVideoInfo.xml)">
             <param name="condition">![String.IsEqual(Window.Property(DetailsView),Cast) | String.IsEqual(Window.Property(DetailsView),Reviews) | String.IsEqual(Window.Property(DetailsView),Trailer) | String.IsEqual(Window.Property(DetailsView),Critics)]</param>
         </include>
 
         <!-- Cast -->
-        <ondown condition="[String.IsEqual(Window.Property(DetailsView),Cast) + !Integer.IsEqual(Container(5003).NumItems,0)]">SetFocus(5003)</ondown>
-        <ondown condition="[String.IsEqual(Window.Property(DetailsView),Cast) + !Integer.IsEqual(Container(50).NumItems,0)]">SetFocus(50)</ondown>
+        <onup condition="[String.IsEqual(Window.Property(DetailsView),Cast) + !Integer.IsEqual(Container(5003).NumItems,0)]">SetFocus(5003)</onup>
+        <onup condition="[String.IsEqual(Window.Property(DetailsView),Cast) + !Integer.IsEqual(Container(50).NumItems,0)]">SetFocus(50)</onup>
 
         <!-- Songs -->
-        <ondown condition="[String.IsEqual(Window.Property(DetailsView),Songs) + !Integer.IsEqual(Container(5050).NumItems,0)]">SetFocus(5050)</ondown>
-        <ondown condition="[String.IsEqual(Window.Property(DetailsView),Songs) + !Integer.IsEqual(Container(50).NumItems,0)]">SetFocus(50)</ondown>
+        <onup condition="[String.IsEqual(Window.Property(DetailsView),Songs) + !Integer.IsEqual(Container(5050).NumItems,0)]">SetFocus(5050)</onup>
+        <onup condition="[String.IsEqual(Window.Property(DetailsView),Songs) + !Integer.IsEqual(Container(50).NumItems,0)]">SetFocus(50)</onup>
 
         <!-- Videos / Trailers / Extras -->
-        <ondown condition="[String.IsEqual(Window.Property(DetailsView),Trailer) + !Integer.IsEqual(Container(5002).NumItems,0)]">SetFocus(5002)</ondown>
+        <onup condition="[String.IsEqual(Window.Property(DetailsView),Trailer) + !Integer.IsEqual(Container(5002).NumItems,0)]">SetFocus(5002)</onup>
 
         <!-- Reviews -->
-        <ondown condition="[String.IsEqual(Window.Property(DetailsView),Reviews) + !Integer.IsEqual(Container(5004).NumItems,0)]">SetFocus(5004)</ondown>
+        <onup condition="[String.IsEqual(Window.Property(DetailsView),Reviews) + !Integer.IsEqual(Container(5004).NumItems,0)]">SetFocus(5004)</onup>
 
         <!-- Albums -->
-        <ondown condition="[String.IsEqual(Window.Property(DetailsView),Albums) + !Integer.IsEqual(Container(5008).NumItems,0)]">SetFocus(5008)</ondown>
+        <onup condition="[String.IsEqual(Window.Property(DetailsView),Albums) + !Integer.IsEqual(Container(5008).NumItems,0)]">SetFocus(5008)</onup>
     </include>
 
     <!-- Button Group for DialogInfo -->
@@ -873,9 +881,9 @@
         <left>view_list</left>
     </include>
     <include name="DialogInfo_ButtonGroup_Horz">
-        <top>20</top>
+        <bottom>20</bottom>
         <height>160</height>
-        <left>30</left>
+        <left>45</left>
     </include>
 
     <include name="DialogInfo_ButtonGroup">
@@ -893,20 +901,20 @@
                         <param name="orientation">horizontal</param>
                     </include>
 
-
                     <include condition="$PARAM[vertical]">DialogInfo_ButtonGroup_Vert</include>
                     <include condition="![$PARAM[vertical]]">DialogInfo_ButtonGroup_Horz</include>
 
                     <onback>Dialog.Close(movieinformation)</onback>
 
                     <onleft condition="$PARAM[vertical]">61</onleft>
-                    <onup condition="![$PARAM[vertical]]">61</onup>
+                    <ondown condition="![$PARAM[vertical]]">61</ondown>
 
                     <include condition="$PARAM[vertical]">DialogInfo_ButtonGroup_OnRight</include>
-                    <include condition="![$PARAM[vertical]]">DialogInfo_ButtonGroup_OnDown</include>
+                    <include condition="![$PARAM[vertical]]">DialogInfo_ButtonGroup_OnUp</include>
 
                     <include content="$PARAM[include]">
                         <param name="vertical">$PARAM[vertical]</param>
+                        <param name="itemgap">$PARAM[itemgap]</param>
                     </include>
                 </control>
                 <nested />
@@ -1649,12 +1657,16 @@
                         <visible>$PARAM[header_visible]</visible>
                         <include content="Furniture_Top">
                             <param name="label">$PARAM[header]</param>
+                            <param name="include_topbar_animation">false</param>
                         </include>
                     </control>
-                    <include content="Hub_Widgets_Group_Furniture">
-                        <param name="visible">true</param>
-                        <param name="include_conditionalfade">false</param>
-                    </include>
+                    <control type="group">
+                        <include condition="Skin.String(Home.SideMenuCollapse,Topbar)">Animation_View_Topbar</include>
+                        <include content="Hub_Widgets_Group_Furniture">
+                            <param name="visible">true</param>
+                            <param name="include_conditionalfade">false</param>
+                        </include>
+                    </control>
                 </control>
                 <include>Furniture_Bottom_Right</include>
             </control>

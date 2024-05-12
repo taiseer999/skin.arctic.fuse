@@ -43,6 +43,7 @@
             <include content="DialogInfo_ButtonGroup" condition="Skin.String(Home.SideMenuCollapse,Topbar)">
                 <param name="include">Items_DialogVideoInfo_MenuBar</param>
                 <param name="vertical">false</param>
+                <param name="itemgap">0</param>
             </include>
         </control>
 

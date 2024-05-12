@@ -19,7 +19,7 @@
             <include>Animation_Group_Bumper</include>
             <include>Animation_View_SlideOver</include>
             <control type="group">
-                <left>180</left>
+                <left>185</left>
                 <height>80</height>
                 <centerbottom>100</centerbottom>
                 <width>700</width>

@@ -582,6 +582,7 @@
         </control>
         <include content="Furniture_Top">
             <param name="label">$LOCALIZE[21450]$INFO[Window.Property(hub_prefix),: ,]</param>
+            <param name="include_topbar_animation">False</param>
         </include>
     </include>
 
