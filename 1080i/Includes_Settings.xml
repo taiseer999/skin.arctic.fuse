@@ -282,7 +282,7 @@
             </include>
             <control type="group">
                 <left>160</left>
-                <top>100</top>
+                <top>120</top>
 
                 <include content="List_Core">
                     <param name="orientation">horizontal</param>
