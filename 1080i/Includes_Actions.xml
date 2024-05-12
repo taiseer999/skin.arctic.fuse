@@ -382,6 +382,7 @@
 
             <onup condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions) + !Window.IsVisible(1185)">ActivateWindow(1185)</onup>
             <onup condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions) + Window.IsVisible(1185)">SetFocus(9097)</onup>
+
             <ondown condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions)">ActivateWindow(1170)</ondown>
 
         </definition>

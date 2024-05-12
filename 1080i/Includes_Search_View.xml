@@ -5,6 +5,7 @@
 
         <include content="Object_Hidden_Button">
             <param name="id">64</param>
+            <include>Action_View_SlideOver_OnFocus</include>
             <onfocus>$VAR[Action_Var_Search_ToMediaFilter]</onfocus>
         </include>
 
@@ -16,6 +17,7 @@
 
         <include content="Object_Hidden_Button">
             <param name="id">68</param>
+            <include>Action_View_SlideOver_OnFocus</include>
             <onfocus condition="![$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]]">PreviousMenu</onfocus>
             <onfocus condition="$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]">SetProperty(List.Target,$INFO[Container(5099).ListItem.Property(target)])</onfocus>
             <onfocus condition="$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating] + String.IsEmpty(Window.Property(MediaFilterWall))">ClearProperty(MediaFilterBase)</onfocus>
@@ -200,6 +202,7 @@
                     </include>
 
                     <include>Action_View_Movement_OnDown</include>
+                    <include>Action_View_SlideOver_OnFocus</include>
 
                     <include content="Action_View_Movement_OnLeftRight">
                         <param name="id">50</param>
@@ -219,6 +222,7 @@
                         <param name="id">51</param>
                     </include>
                     <include>Action_View_Movement_OnDown</include>
+                    <include>Action_View_SlideOver_OnFocus</include>
                     <include content="Action_View_Movement_OnLeftRight">
                         <param name="id">51</param>
                         <param name="onback">[Integer.IsEqual(Container(51).CurrentItem,1)]</param>
@@ -236,6 +240,7 @@
                         <param name="id">52</param>
                     </include>
                     <include>Action_View_Movement_OnDown</include>
+                    <include>Action_View_SlideOver_OnFocus</include>
                     <include content="Action_View_Movement_OnLeftRight">
                         <param name="id">52</param>
                         <param name="onback">[Integer.IsEqual(Container(52).CurrentItem,1)]</param>
