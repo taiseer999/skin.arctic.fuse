@@ -138,7 +138,7 @@
 
             <include content="Object_DefaultControl" condition="Window.IsVisible(Home)">
                 <param name="defaultcontrol">309</param>
-                <param name="always">true</param>
+                <param name="always">false</param>
             </include>
             <include content="Object_DefaultControl" condition="!Window.IsVisible(Home) + Skin.HasSetting(Hub.$PARAM[window_id].DisableSubmenu)">
                 <param name="defaultcontrol">400</param>
