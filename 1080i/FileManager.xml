@@ -18,28 +18,29 @@
                 <include content="Settings_Left_Group">
                     <width>760</width>
                     <include content="Settings_Left_Content">
-                        <include content="List_AddonCategories">
-                            <param name="id">20</param>
-                            <param name="detailed">true</param>
-                            <param name="width" />
-                            <onright>60</onright>
-                            <onleft>30000</onleft>
-                            <pagecontrol>60</pagecontrol>
-                            <right>40</right>
-                            <bottom>80</bottom>
-                        </include>
                         <control type="scrollbar" id="60">
-                            <centerright>20</centerright>
+                            <centerleft>-20</centerleft>
                             <bottom>80</bottom>
                             <top>0</top>
                             <width>scrollbar_w</width>
                             <orientation>vertical</orientation>
-                            <texturesliderbackground colordiffuse="dialog_fg_12" border="4">scrollbar/scrollv_line.png</texturesliderbackground>
+                            <texturesliderbackground />
                             <texturesliderbar colordiffuse="main_logo" border="4">scrollbar/scrollv.png</texturesliderbar>
                             <include>Texture_Scrollbar_V</include>
-                            <onleft>20</onleft>
-                            <onright>21</onright>
+                            <onleft>30000</onleft>
+                            <onright>20</onright>
+                            <!-- <visible allowhiddenfocus="true">Control.HasFocus(60)</visible> -->
                         </control>
+                        <include content="List_AddonCategories">
+                            <param name="id">20</param>
+                            <param name="detailed">true</param>
+                            <param name="width" />
+                            <onleft>60</onleft>
+                            <onright>21</onright>
+                            <pagecontrol>60</pagecontrol>
+                            <right>40</right>
+                            <bottom>80</bottom>
+                        </include>
                     </include>
                     <!-- <control type="group">
                         <bottom>80</bottom>
@@ -67,7 +68,7 @@
                         <param name="id">21</param>
                         <param name="detailed">true</param>
                         <param name="width" />
-                        <onleft>60</onleft>
+                        <onleft>20</onleft>
                         <pagecontrol>61</pagecontrol>
                         <onright>61</onright>
                         <left>20</left>
@@ -76,12 +77,12 @@
                         <bottom>20</bottom>
                     </include>
                     <control type="scrollbar" id="61">
-                        <centerright>0</centerright>
+                        <centerright>-60</centerright>
                         <bottom>20</bottom>
                         <top>20</top>
                         <width>scrollbar_w</width>
                         <orientation>vertical</orientation>
-                        <texturesliderbackground colordiffuse="dialog_fg_12" border="4">scrollbar/scrollv_line.png</texturesliderbackground>
+                        <texturesliderbackground colordiffuse="main_fg_12" border="4">scrollbar/scrollv_line.png</texturesliderbackground>
                         <texturesliderbar colordiffuse="main_logo" border="4">scrollbar/scrollv.png</texturesliderbar>
                         <include>Texture_Scrollbar_V</include>
                         <onleft>21</onleft>
