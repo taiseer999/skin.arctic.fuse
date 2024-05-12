@@ -126,12 +126,12 @@
                     <left>view_side</left>
                     <height>80</height>
 
-                    <control type="image">
+                    <!-- <control type="image">
                         <left>-30</left>
                         <right>-30</right>
                         <texture colordiffuse="main_fg_12" border="40,0,40,0">common/menu.png</texture>
                         <visible>Window.IsVisible(1171) | Control.HasFocus(9097)</visible>
-                    </control>
+                    </control> -->
 
                     <control type="button" id="9098">
                         <include>Object_Hidden_Button_Definition</include>
