@@ -234,10 +234,10 @@
         <value condition="Skin.HasSetting(Hub.Home.DisableSubmenu) + !Skin.HasSetting(Hub.Home.WidgetSelector) + Skin.String(Home.SideMenuCollapse,Library)">True</value>
     </variable>
     <variable name="Exp_Var_Layout_IsCombined">
-        <value condition="Skin.HasSetting(Hub.Home.DisableSubmenu) + Skin.HasSetting(Hub.Home.WidgetSelector) + Skin.String(Home.SideMenuCollapse,Always)">True</value>
+        <value condition="Skin.HasSetting(Hub.Home.DisableSubmenu) + Skin.HasSetting(Hub.Home.WidgetSelector) + Skin.String(Home.SideMenuCollapse,Topbar)">True</value>
     </variable>
     <variable name="Exp_Var_Layout_IsCompound">
-        <value condition="!Skin.HasSetting(Hub.Home.DisableSubmenu) + !Skin.HasSetting(Hub.Home.WidgetSelector) + Skin.String(Home.SideMenuCollapse,Always)">True</value>
+        <value condition="!Skin.HasSetting(Hub.Home.DisableSubmenu) + !Skin.HasSetting(Hub.Home.WidgetSelector) + Skin.String(Home.SideMenuCollapse,Topbar)">True</value>
     </variable>
 
 </includes>
