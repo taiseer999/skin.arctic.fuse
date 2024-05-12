@@ -592,6 +592,7 @@
         <param name="control">button</param>
         <param name="dialog">false</param>
         <param name="enable">true</param>
+        <param name="toplabel_font">font_main</param>
         <definition>
             <control type="$PARAM[control]" id="$PARAM[id]">
                 <nested />
@@ -613,7 +614,7 @@
                 <control type="group">
                     <visible>!Control.HasFocus($PARAM[id])</visible>
                     <control type="label">
-                        <font>font_main</font>
+                        <font>$PARAM[toplabel_font]</font>
                         <label>$PARAM[toplabel]</label>
                         <textoffsetx>40</textoffsetx>
                         <textcolor>dialog_fg_70</textcolor>
@@ -631,7 +632,7 @@
                 <control type="group">
                     <visible>Control.HasFocus($PARAM[id])</visible>
                     <control type="label">
-                        <font>font_main</font>
+                        <font>$PARAM[toplabel_font]</font>
                         <label>$PARAM[toplabel]</label>
                         <include>Color_SelectedText</include>
                         <textoffsetx>40</textoffsetx>

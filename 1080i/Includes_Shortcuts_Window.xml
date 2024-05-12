@@ -37,6 +37,7 @@
         </include>
 
         <control type="group" id="340">
+            <right>800</right>
             <include>Shortcuts_Window_Content_Spotlight</include>
             <include>Shortcuts_Window_Content_Categories</include>
             <include>Shortcuts_Window_Content_Widgets</include>
@@ -48,7 +49,7 @@
 
     <include name="Shortcuts_Window_Help">
         <control type="group">
-            <left>1240</left>
+            <width>600</width>
             <bottom>view_top</bottom>
             <right>120</right>
             <top>view_top</top>
@@ -99,8 +100,9 @@
             <control type="button" id="301">
                 <left>0</left>
                 <!-- <top>20</top> -->
-                <label>$LOCALIZE[31105]$VAR[Label_Shortcut_HubSpotlight_Window_Path,: ,]</label>
-                <width max="920">auto</width>
+                <label>$LOCALIZE[31105]</label>
+                <label2>$VAR[Label_Shortcut_HubSpotlight_Window_Path]</label2>
+                <!-- <width>920</width> -->
                 <align>left</align>
                 <aligny>center</aligny>
                 <textcolor>main_fg_70</textcolor>
@@ -187,7 +189,7 @@
                 <onclick>SetFocus(1302)</onclick>
                 <visible>String.IsEmpty(Container(300).ListItem.Property(submenulist_path))</visible>
                 <visible>!String.IsEmpty(Container(300).ListItem.Property(guid))</visible>
-                <content>plugin://script.skinvariables/?info=get_shortcuts_node&amp;edit=True&amp;mode=submenu&amp;skin=$VAR[Path_SkinVariables_SkinFolder]$INFO[Container(300).ListItem.Property(menu),&amp;menu=,]$INFO[Container(300).ListItem.Property(guid),&amp;guid=,]$INFO[Window(Home).Property(SkinVariables.ShortcutsNode.Reload),&amp;reload=,]</content>
+                <content>plugin://script.skinvariables/?info=get_shortcuts_node&amp;mode=submenu&amp;skin=$VAR[Path_SkinVariables_SkinFolder]$INFO[Container(300).ListItem.Property(menu),&amp;menu=,]$INFO[Container(300).ListItem.Property(guid),&amp;guid=,]$INFO[Window(Home).Property(SkinVariables.ShortcutsNode.Reload),&amp;reload=,]</content>
             </include>
 
             <control type="label">
@@ -225,39 +227,146 @@
     </variable>
 
     <include name="Shortcuts_Window_Content_Widgets">
+
         <control type="group">
-            <left>160</left>
-            <top>600</top>
-            <bottom>100</bottom>
-            <include content="List_DialogSelect">
-                <param name="id">304</param>
-                <param name="item_height">100</param>
-                <param name="textcolor">main_fg_70</param>
-                <param name="itemlayout_include">Layout_Shortcuts</param>
-                <param name="altfocus">[Integer.IsEqual(Window.Property(list_id),304) + [ControlGroup(3000).HasFocus() | ControlGroup(39000).HasFocus()]]</param>
-                <param name="misc">0</param>
-                <param name="control">fixedlist</param>
-                <param name="detailed">True</param>
-                <focusposition>1</focusposition>
-                <movement>1</movement>
-                <content>$VAR[Shortcuts_Window_CategoryWidgets_Path]</content>
-                <left>0</left>
-                <!-- <top>20</top> -->
-                <top>-10</top>
-                <onup>302</onup>
-                <ondown>305</ondown>
-                <onleft>303</onleft>
-                <width>920</width>
-                <!-- <bottom>60</bottom> -->
-                <bottom>70</bottom>
-                <animation effect="slide" end="0,-100" condition="Integer.IsLess(Container(304).NumItems,3)">Conditional</animation>
-
-                <onclick>SetFocus(1304)</onclick>
-
-                <visible>!$EXP[Shortcuts_Window_Exp_WidgetsOnly]</visible>
-                <visible>!String.IsEmpty(Container(300).ListItem.Property(guid))</visible>
-
+            <visible>!$EXP[Shortcuts_Window_Exp_WidgetsOnly]</visible>
+            <!-- Submenu Widgets -->
+            <include content="Object_Hidden_List">
+                <param name="id">3141</param>
+                <content>plugin://script.skinvariables/?info=get_shortcuts_node&amp;mode=widgets&amp;skin=$VAR[Path_SkinVariables_SkinFolder]$INFO[Container(302).ListItem.Property(menu),&amp;menu=,]$INFO[Container(302).ListItem.Property(guid),&amp;guid=,]$INFO[Window(Home).Property(SkinVariables.ShortcutsNode.Reload),&amp;reload=,]</content>
+                <visible>String.IsEmpty(Container(302).ListItem.Property(blank))</visible>
             </include>
+            <!-- Category Widgets -->
+            <include content="Object_Hidden_List">
+                <param name="id">3142</param>
+                <content>plugin://script.skinvariables/?info=get_shortcuts_node&amp;mode=widgets&amp;skin=$VAR[Path_SkinVariables_SkinFolder]$INFO[Container(300).ListItem.Property(menu),&amp;menu=,]$INFO[Container(300).ListItem.Property(guid),&amp;guid=,]$INFO[Window(Home).Property(SkinVariables.ShortcutsNode.Reload),&amp;reload=,]</content>
+                <visible>String.IsEmpty(Container(300).ListItem.Property(blank))</visible>
+            </include>
+            <!-- Sidemenu Widgets -->
+            <include content="Object_Hidden_List">
+                <param name="id">3143</param>
+                <content>plugin://script.skinvariables/?info=get_shortcuts_node&amp;mode=widgets&amp;skin=$VAR[Path_SkinVariables_SkinFolder]$INFO[Container(303).ListItem.Property(menu),&amp;menu=,]$INFO[Container(303).ListItem.Property(guid),&amp;guid=,]$INFO[Window(Home).Property(SkinVariables.ShortcutsNode.Reload),&amp;reload=,]</content>
+                <visible>String.IsEqual(Window.Property(categories_menu),menu=homemenu)</visible>
+                <visible>String.IsEmpty(Container(303).ListItem.Property(blank))</visible>
+            </include>
+            <!-- Global Widgets -->
+            <include content="Object_Hidden_List">
+                <param name="id">3144</param>
+                <content>plugin://script.skinvariables/?info=get_shortcuts_node&amp;skin=$VAR[Path_SkinVariables_SkinFolder]$INFO[Window.Property(categories_menu),&amp;,-globalwidgets]$INFO[Window(Home).Property(SkinVariables.ShortcutsNode.Reload),&amp;reload=,]</content>
+            </include>
+        </control>
+
+        <control type="grouplist" id="304">
+            <left>160</left>
+            <visible>!$EXP[Shortcuts_Window_Exp_WidgetsOnly]</visible>
+            <orientation>vertical</orientation>
+            <top>560</top>
+            <onup>302</onup>
+            <ondown>305</ondown>
+            <onleft>303</onleft>
+            <control type="button" id="3041">
+
+                <label>Widgets (Submenu)</label>
+                <label2>$INFO[Container(3141).ListItemAbsolute(0).Label]$INFO[Container(3141).ListItemAbsolute(1).Label, | ,]$INFO[Container(3141).ListItemAbsolute(2).Label, | ,]$INFO[Container(3141).ListItemAbsolute(3).Label, | ,]$INFO[Container(3141).ListItemAbsolute(4).Label, | ,]$INFO[Container(3141).ListItemAbsolute(5).Label, | ,]$INFO[Container(3141).ListItemAbsolute(6).Label, | ,]$INFO[Container(3141).ListItemAbsolute(7).Label, | ,]$INFO[Container(3141).ListItemAbsolute(8).Label, | ,]$INFO[Container(3141).ListItemAbsolute(9).Label, | ,]</label2>
+                <!-- <width>920</width> -->
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>main_fg_70</textcolor>
+                <textoffsetx>40</textoffsetx>
+                <font>font_mini</font>
+                <height>80</height>
+                <texturenofocus />
+
+                <onclick>ClearProperty(Shortcuts.Category,Home)</onclick>
+                <onclick>SetProperty(Shortcuts.Position,0,Home)</onclick>
+                <onclick>SetProperty(Shortcuts.EditMenu,$INFO[Container(302).ListItem.Property(menu),menu=,],Home)</onclick>
+                <onclick>SetProperty(Shortcuts.EditMode,mode=widgets,Home)</onclick>
+                <onclick>SetProperty(Shortcuts.EditGUID,$INFO[Container(302).ListItem.Property(guid),guid=,],Home)</onclick>
+                <onclick>ActivateWindow(1116)</onclick>
+
+                <visible>!Integer.IsEqual(Container(302).NumItems,0)</visible>
+                <visible>!Container(302).IsUpdating</visible>
+                <visible>Control.IsVisible(302)</visible>
+                <visible>Control.IsVisible(3141)</visible>
+
+            </control>
+            <control type="button" id="3042">
+
+                <label>Widgets (Category)</label>
+                <label2>$INFO[Container(3142).ListItemAbsolute(0).Label]$INFO[Container(3142).ListItemAbsolute(1).Label, | ,]$INFO[Container(3142).ListItemAbsolute(2).Label, | ,]$INFO[Container(3142).ListItemAbsolute(3).Label, | ,]$INFO[Container(3142).ListItemAbsolute(4).Label, | ,]$INFO[Container(3142).ListItemAbsolute(5).Label, | ,]$INFO[Container(3142).ListItemAbsolute(6).Label, | ,]$INFO[Container(3142).ListItemAbsolute(7).Label, | ,]$INFO[Container(3142).ListItemAbsolute(8).Label, | ,]$INFO[Container(3142).ListItemAbsolute(9).Label, | ,]</label2>
+                <!-- <width>920</width> -->
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>main_fg_70</textcolor>
+                <textoffsetx>40</textoffsetx>
+                <font>font_mini</font>
+                <height>80</height>
+                <texturenofocus />
+
+                <onclick>ClearProperty(Shortcuts.Category,Home)</onclick>
+                <onclick>SetProperty(Shortcuts.Position,0,Home)</onclick>
+                <onclick>SetProperty(Shortcuts.EditMenu,$INFO[Container(300).ListItem.Property(menu),menu=,],Home)</onclick>
+                <onclick>SetProperty(Shortcuts.EditMode,mode=widgets,Home)</onclick>
+                <onclick>SetProperty(Shortcuts.EditGUID,$INFO[Container(300).ListItem.Property(guid),guid=,],Home)</onclick>
+                <onclick>ActivateWindow(1116)</onclick>
+
+                <visible>!Integer.IsEqual(Container(300).NumItems,0)</visible>
+                <visible>!Container(300).IsUpdating</visible>
+                <visible>Control.IsVisible(300)</visible>
+                <visible>Control.IsVisible(3142)</visible>
+
+            </control>
+            <control type="button" id="3043">
+
+                <label>Widgets (Sidemenu)</label>
+                <label2>$INFO[Container(3143).ListItemAbsolute(0).Label]$INFO[Container(3143).ListItemAbsolute(1).Label, | ,]$INFO[Container(3143).ListItemAbsolute(2).Label, | ,]$INFO[Container(3143).ListItemAbsolute(3).Label, | ,]$INFO[Container(3143).ListItemAbsolute(4).Label, | ,]$INFO[Container(3143).ListItemAbsolute(5).Label, | ,]$INFO[Container(3143).ListItemAbsolute(6).Label, | ,]$INFO[Container(3143).ListItemAbsolute(7).Label, | ,]$INFO[Container(3143).ListItemAbsolute(8).Label, | ,]$INFO[Container(3143).ListItemAbsolute(9).Label, | ,]</label2>
+                <!-- <width>920</width> -->
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>main_fg_70</textcolor>
+                <textoffsetx>40</textoffsetx>
+                <font>font_mini</font>
+                <height>80</height>
+                <texturenofocus />
+
+                <onclick>ClearProperty(Shortcuts.Category,Home)</onclick>
+                <onclick>SetProperty(Shortcuts.Position,0,Home)</onclick>
+                <onclick>SetProperty(Shortcuts.EditMenu,$INFO[Container(303).ListItem.Property(menu),menu=,],Home)</onclick>
+                <onclick>SetProperty(Shortcuts.EditMode,mode=widgets,Home)</onclick>
+                <onclick>SetProperty(Shortcuts.EditGUID,$INFO[Container(303).ListItem.Property(guid),guid=,],Home)</onclick>
+                <onclick>ActivateWindow(1116)</onclick>
+
+                <visible>!Integer.IsEqual(Container(303).NumItems,0)</visible>
+                <visible>!Container(303).IsUpdating</visible>
+                <visible>Control.IsVisible(303)</visible>
+                <visible>Control.IsVisible(3143)</visible>
+                <visible>String.IsEqual(Window.Property(categories_menu),menu=homemenu)</visible>
+
+            </control>
+            <control type="button" id="3044">
+
+                <label>Widgets (Global)</label>
+                <label2>$INFO[Container(3144).ListItemAbsolute(0).Label]$INFO[Container(3144).ListItemAbsolute(1).Label, | ,]$INFO[Container(3144).ListItemAbsolute(2).Label, | ,]$INFO[Container(3144).ListItemAbsolute(3).Label, | ,]$INFO[Container(3144).ListItemAbsolute(4).Label, | ,]$INFO[Container(3144).ListItemAbsolute(5).Label, | ,]$INFO[Container(3144).ListItemAbsolute(6).Label, | ,]$INFO[Container(3144).ListItemAbsolute(7).Label, | ,]$INFO[Container(3144).ListItemAbsolute(8).Label, | ,]$INFO[Container(3144).ListItemAbsolute(9).Label, | ,]</label2>
+
+                <!-- <width>920</width> -->
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>main_fg_70</textcolor>
+                <textoffsetx>40</textoffsetx>
+                <font>font_mini</font>
+                <height>80</height>
+                <texturenofocus />
+
+                <onclick>ClearProperty(Shortcuts.Category,Home)</onclick>
+                <onclick>SetProperty(Shortcuts.Position,0,Home)</onclick>
+                <onclick>SetProperty(Shortcuts.EditMenu,$INFO[Window.Property(categories_menu),,-globalwidgets],Home)</onclick>
+                <onclick>ClearProperty(Shortcuts.EditMode,Home)</onclick>
+                <onclick>ClearProperty(Shortcuts.EditGUID,Home)</onclick>
+                <onclick>ActivateWindow(1116)</onclick>
+
+                <visible>Control.IsVisible(3144)</visible>
+
+            </control>
         </control>
 
         <control type="group">
@@ -280,14 +389,10 @@
                 <onup>302</onup>
                 <ondown>305</ondown>
                 <onleft>303</onleft>
-                <width>920</width>
-                <!-- <bottom>60</bottom> -->
+                <!-- <width>920</width> -->
                 <bottom>70</bottom>
-
                 <onclick>SetFocus(1304)</onclick>
-
                 <visible>$EXP[Shortcuts_Window_Exp_WidgetsOnly]</visible>
-
             </include>
         </control>
     </include>
