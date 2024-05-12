@@ -393,7 +393,7 @@
             <control type="group">
 
                 <visible>!$EXP[Exp_InfoDialogs] | ![$PARAM[include_conditionalfade]]</visible>
-                <include condition="$PARAM[include_conditionalfade]">Animation_Transition_InfoPanel_Hide</include>
+                <!-- <include condition="$PARAM[include_conditionalfade]">Animation_Transition_InfoPanel_Hide</include> -->
 
                 <control type="group">
                     <include content="Animation_Fade_In">
