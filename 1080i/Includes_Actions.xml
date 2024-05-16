@@ -137,7 +137,7 @@
             <menucontrol>303</menucontrol>
 
             <include content="Object_DefaultControl" condition="Window.IsVisible(Home)">
-                <param name="defaultcontrol">309</param>
+                <param name="defaultcontrol">303</param>
                 <param name="always">false</param>
             </include>
             <include content="Object_DefaultControl" condition="!Window.IsVisible(Home) + Skin.HasSetting(Hub.$PARAM[window_id].DisableSubmenu)">
@@ -150,7 +150,7 @@
             </include>
 
             <onload condition="!Skin.HasSetting(Hub.$PARAM[window_id].DisableSubmenu) + String.IsEmpty(Window($PARAM[window_id]).Property(TMDbHelper.WidgetContainer))">SetProperty(TMDbHelper.WidgetContainer,301,$PARAM[window_id])</onload>
-            <onload condition="!Window.IsVisible(Home) + Skin.HasSetting(Hub.$PARAM[window_id].DisableSubmenu) + String.IsEmpty(Window($PARAM[window_id]).Property(TMDbHelper.WidgetContainer))">SetProperty(TMDbHelper.WidgetContainer,100601,$PARAM[window_id])</onload>
+            <onload condition="Skin.HasSetting(Hub.$PARAM[window_id].DisableSubmenu) + String.IsEmpty(Window($PARAM[window_id]).Property(TMDbHelper.WidgetContainer))">SetProperty(TMDbHelper.WidgetContainer,100601,$PARAM[window_id])</onload>
 
             <onload condition="Skin.HasSetting(Hub.Home.DisableSubmenu)">SetProperty(Slide.WidgetContainer,True,Home)</onload>
             <onload condition="Skin.HasSetting(Hub.1101.DisableSubmenu)">SetProperty(Slide.WidgetContainer,True,1101)</onload>
@@ -164,7 +164,7 @@
 
             <include>Action_BuildShortcuts_OnLoad</include>
 
-            <onload condition="Window.IsVisible(Home) + String.IsEmpty(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock.OnStartUp))">AlarmClock(refocuslaunch,$VAR[Action_Hubs_Menu_Default_SetFocus],00:01,silent)</onload>
+            <onload condition="Window.IsVisible(Home) + String.IsEmpty(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock.OnStartUp))">AlarmClock(refocuslaunch,SetFocus($VAR[Action_Hubs_MenuID],0,absolute),00:00,silent)</onload>
             <onload condition="Window.IsVisible(Home) + String.IsEmpty(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock.OnStartUp))">SetProperty(TMDbHelper.WidgetContainer.UpdateLock.OnStartUp,True,1198)</onload>
 
             <onunload>CancelAlarm(playtrailer,silent)</onunload>
@@ -183,12 +183,6 @@
     <variable name="Action_Hubs_Menu_SetFocus">
         <value condition="Window.IsVisible(Home) + !String.IsEmpty(Window.Property(SideMenu.CurrentItem))">SetFocus($VAR[Action_Hubs_MenuID],$INFO[Window.Property(SideMenu.CurrentItem)],absolute)</value>
         <value>SetFocus($VAR[Action_Hubs_MenuID])</value>
-    </variable>
-
-    <variable name="Action_Hubs_Menu_Default_SetFocus">
-        <value condition="!String.IsEmpty(Window(Home).Property(Home.MenuFocus))">SetFocus($VAR[Action_Hubs_MenuID],$INFO[Window(Home).Property(Home.MenuFocus)],absolute)</value>
-        <value condition="Window.IsVisible(Home) + !String.IsEmpty(Skin.String(Home.DefaultFocus))">SetFocus($VAR[Action_Hubs_MenuID],$INFO[Skin.String(Home.DefaultFocus)],absolute)</value>
-        <value>SetFocus($VAR[Action_Hubs_MenuID],0,absolute)</value>
     </variable>
 
     <include name="Action_Widget_OnBack">

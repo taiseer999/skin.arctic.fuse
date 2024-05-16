@@ -216,25 +216,6 @@
     </include>
 
     <include name="Hub_Refocus_Buttons">
-        <control type="button" id="309">
-            <visible allowhiddenfocus="true">false</visible>
-            <animation effect="fade" start="0" end="0" time="100" reversible="false">Focus</animation>
-            <include>Object_Hidden_Button_Definition</include>
-
-            <onfocus condition="!Skin.String(Home.SideMenuCollapse,Topbar)">SetProperty(SideMenu.HasFocus,True,Home)</onfocus>
-
-            <onfocus>ClearProperty(TMDbHelper.WidgetContainer.UpdateLock.OnFocus,1198)</onfocus>
-            <onfocus>$VAR[Action_Hubs_Menu_Default_SetFocus]</onfocus>
-            <onleft>$VAR[Action_Hubs_Menu_Default_SetFocus]</onleft>
-            <onright>$VAR[Action_Hubs_Menu_Default_SetFocus]</onright>
-            <ondown>$VAR[Action_Hubs_Menu_Default_SetFocus]</ondown>
-            <onup>$VAR[Action_Hubs_Menu_Default_SetFocus]</onup>
-            <onclick>$VAR[Action_Hubs_Menu_Default_SetFocus]</onclick>
-            <onback>303</onback>
-            <onback>$VAR[Action_Hubs_Menu_Default_SetFocus]</onback>
-
-        </control>
-
         <include content="Object_Hidden_Button">
             <param name="id">308</param>
             <onfocus>SetFocus(303)</onfocus>
