@@ -217,7 +217,7 @@
 
     <include name="Hub_Refocus_Buttons">
         <include content="Object_Hidden_Button">
-            <param name="id">308</param>
+            <param name="id">307</param>
             <onfocus>SetFocus(303)</onfocus>
             <onfocus>ActivateWindow(1170)</onfocus>
         </include>

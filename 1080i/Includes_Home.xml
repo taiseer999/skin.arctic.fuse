@@ -59,11 +59,9 @@
     </include>
 
     <include name="Home_Menu_List_OnBackInfo">
-        <!-- <oninfo condition="Window.IsMedia | Window.IsVisible(1105)">SetFocus(64)</oninfo>
-        <oninfo condition="!Window.IsVisible(1105) + !Window.IsMedia">ActivateWindow(1170)</oninfo> -->
         <oninfo>ActivateWindow(1170)</oninfo>
         <onback>CancelAlarm(SplashTimeOut,silent)</onback>
-        <onback condition="Window.IsVisible(Home) + !Skin.HasSetting(Navigation.DisableOptionsOnBack)">SetFocus(308)</onback>
+        <onback condition="Window.IsVisible(Home) + !Skin.HasSetting(Navigation.DisableOptionsOnBack)">SetFocus(307)</onback>
     </include>
 
     <include name="Home_Menu_List_Vert">
@@ -382,9 +380,24 @@
             <height>40</height>
             <centerleft>100</centerleft>
             <centertop>100</centertop>
+            <control type="button" id="309">
+                <texturenofocus />
+                <include>Texture_KeyboardButton</include>
+                <width>80</width>
+                <height>80</height>
+                <centerleft>50%</centerleft>
+                <centertop>50%</centertop>
+                <onclick>ActivateWindow(1185)</onclick>
+            </control>
             <control type="image">
                 <texture colordiffuse="$VAR[Layout_Home_Menu_Color_NF]">special://skin/extras/icons/search.png</texture>
                 <bordersize>icon_home_bordersize</bordersize>
+                <visible>!Control.HasFocus(309)</visible>
+            </control>
+            <control type="image">
+                <texture colordiffuse="$VAR[ColorSelected]">special://skin/extras/icons/search.png</texture>
+                <bordersize>icon_home_bordersize</bordersize>
+                <visible>Control.HasFocus(309)</visible>
             </control>
         </control>
         <control type="group">
@@ -392,9 +405,24 @@
             <height>40</height>
             <centerleft>100</centerleft>
             <centerbottom>100</centerbottom>
+            <control type="button" id="308">
+                <texturenofocus />
+                <include>Texture_KeyboardButton</include>
+                <width>80</width>
+                <height>80</height>
+                <centerleft>50%</centerleft>
+                <centertop>50%</centertop>
+                <onclick>ActivateWindow(1170)</onclick>
+            </control>
             <control type="image">
                 <texture colordiffuse="$VAR[Layout_Home_Menu_Color_NF]">special://skin/extras/icons/bars.png</texture>
                 <bordersize>icon_home_bordersize</bordersize>
+                <visible>!Control.HasFocus(308)</visible>
+            </control>
+            <control type="image">
+                <texture colordiffuse="$VAR[ColorSelected]">special://skin/extras/icons/bars.png</texture>
+                <bordersize>icon_home_bordersize</bordersize>
+                <visible>Control.HasFocus(308)</visible>
             </control>
         </control>
     </include>
