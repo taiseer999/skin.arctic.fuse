@@ -13,8 +13,12 @@
                 <value>SetFocus(300)</value>
             </rule>
             <rule>
-                <condition>True</condition>
+                <condition>{window_id}==Home</condition>
                 <value>$VAR[Action_Hubs_Menu_SetFocus]</value>
+            </rule>
+            <rule>
+                <condition>true</condition>
+                <value>$VAR[Action_Hubs_Classic_SetFocus]</value>
             </rule>
         </rules>
         <value name="all_standard_widgets">
