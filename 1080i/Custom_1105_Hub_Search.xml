@@ -5,6 +5,7 @@
 
     <include>Action_Blur_Onload</include>
 
+    <onload condition="String.IsEmpty(Window(Home).Property(CustomSearchTerm))">SetFocus(64)</onload>
     <onload condition="!String.IsEmpty(Window(Home).Property(CustomSearchTerm))">AlarmClock(refocus,RunScript(script.skinvariables,set_editcontrol=9099,window_id=1105,setfocus=64,text=$INFO[Window(Home).Property(CustomSearchTerm)]),00:01,silent)</onload>
     <onload>ClearProperty(CustomSearchTerm,Home)</onload>
 

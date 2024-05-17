@@ -465,11 +465,11 @@
     </include>
 
     <include name="Home_Menu_Media">
-        <include content="Home_Menu" condition="![$EXP[Exp_Navigation_OnMenu] + !$EXP[Exp_HomeMenu_IsExpanded] + !$EXP[Exp_HomeMenu_IsTopBar] + Skin.HasSetting(Navigation.OnBack.ExpandMenu)]">
+        <include content="Home_Menu" condition="![!$EXP[Exp_HomeMenu_IsExpanded] + !$EXP[Exp_HomeMenu_IsTopBar] + Skin.HasSetting(Navigation.OnBack.ExpandMenu)]">
             <param name="onlist">$PARAM[onlist]</param>
             <param name="window_id">$PARAM[window_id]</param>
         </include>
-        <include content="Object_Hidden_Button" condition="$EXP[Exp_Navigation_OnMenu] + !$EXP[Exp_HomeMenu_IsExpanded] + !$EXP[Exp_HomeMenu_IsTopBar] + Skin.HasSetting(Navigation.OnBack.ExpandMenu)">
+        <include content="Object_Hidden_Button" condition="!$EXP[Exp_HomeMenu_IsExpanded] + !$EXP[Exp_HomeMenu_IsTopBar] + Skin.HasSetting(Navigation.OnBack.ExpandMenu)">
             <param name="id">303</param>
             <onfocus>SetFocus($PARAM[onlist])</onfocus>
             <onfocus>ActivateWindow(1172)</onfocus>

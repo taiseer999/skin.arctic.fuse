@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog" id="1172">
     <defaultcontrol always="true">303</defaultcontrol>
-    <onload>SetFocus(303,1,absolute)</onload>
     <onunload condition="!String.IsEmpty(Window(1172).Property(PreviousMenu))">Action(PreviousMenu)</onunload>
     <onunload condition="!String.IsEmpty(Window(1172).Property(PreviousMenu))">ClearProperty(PreviousMenu,1172)</onunload>
 

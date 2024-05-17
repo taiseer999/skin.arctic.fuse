@@ -299,10 +299,6 @@
             <onclick condition="System.AddonIsEnabled(script.playalbum) + String.IsEqual(Container(5008).ListItem.DBType,album)">RunScript(script.playalbum,albumid=$INFO[Container(5008).ListItem.DBID])</onclick>
             <onclick condition="System.AddonIsEnabled(script.playalbum) + String.IsEqual(Container(5008).ListItem.DBType,song)">RunScript(script.playalbum,songid=$INFO[Container(5008).ListItem.DBID])</onclick>
 
-            <!-- <onclick>Dialog.Close(musicinformation,force)</onclick>
-            <onclick condition="Window.IsVisible(MyMusicNav.xml)">Container.Update($INFO[Container(5008).ListItem.FolderPath])</onclick>
-            <onclick condition="!Window.IsVisible(MyMusicNav.xml)">ActivateWindow(music,$INFO[Container(5008).ListItem.FolderPath],return)</onclick> -->
-
             <content target="music">musicdb://albums/?xsp={"rules":{"and":[{"field":"artist","operator":"contains","value":["$INFO[Window.Property(Encoded.ListItem.Artist)]"]}]},"type":"albums"}</content>
             <visible>String.IsEqual(Window.Property(DetailsView),Albums)</visible>
         </include>

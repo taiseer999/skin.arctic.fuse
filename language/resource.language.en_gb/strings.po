@@ -2094,6 +2094,11 @@ msgid "Open path in dialog"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
+msgctxt "#31444"
+msgid "Expand labels from minimised"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
 msgctxt "#31448"
 msgid "Show \"More\" item on limited widgets"
 msgstr ""
