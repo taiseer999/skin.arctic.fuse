@@ -29,7 +29,6 @@
             <include>Animation_View_SlideOver</include>
             <include>Animation_View_WindowChange</include>
             <visible>!$EXP[Exp_InfoDialogs]</visible>
-            <include>Animation_Transition_InfoPanel_Hide</include>
             <include content="Furniture_Top">
                 <param name="label">$VAR[Label_Setting_SearchStyle][CAPITALIZE]$INFO[Control.GetLabel(9099).index(1), [COLOR=main_fg_30]›[/COLOR] ,][/CAPITALIZE]</param>
             </include>
