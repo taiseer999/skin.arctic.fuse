@@ -14,6 +14,8 @@
                         <param name="hidden_button">List_ButtonMenu_Row_HiddenButton_Home</param>
                         <param name="hidden_button_prefix">Item.{submenu_item_x}302.</param>
                         <param name="window_id">{window_id}</param>
+                        <param name="submenu_widget_highlight">[$EXP[Exp_Hubs_Spotlight_IsSlide] + !$EXP[Exp_Hubs_Spotlight_IsDisabled]]</param>
+                        <param name="submenu_widget_id">{submenu_widget_id}</param>
                         <include content="Action_SkinVariables_ShortcutList_Onclick">
                             <param name="id">302</param>
                         </include>
@@ -59,6 +61,8 @@
                         <param name="hidden_button">List_ButtonMenu_Row_HiddenButton_Home</param>
                         <param name="hidden_button_prefix">Item.{submenu_item_x}302.</param>
                         <param name="window_id">{window_id}</param>
+                        <param name="submenu_widget_highlight">[$EXP[Exp_Hubs_Spotlight_IsSlide] + !$EXP[Exp_Hubs_Spotlight_IsDisabled]]</param>
+                        <param name="submenu_widget_id">{submenu_widget_id}</param>
                         <content target="{submenu_target}" sortby="{submenu_sortby}" sortorder="{submenu_sortorder}" limit="{submenu_limit}" browse="$VAR[Defs_BrowseLimitedLists]">{submenu_path}</content>
                         <visible>{parts_visible}</visible>
                     </include>

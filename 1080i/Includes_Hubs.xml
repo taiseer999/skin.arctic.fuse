@@ -42,7 +42,9 @@
     <include name="Hub_Submenu_List_Definition_Content">
         <onup>300</onup>
         <ondown>$PARAM[ondown]</ondown>
-        <onfocus>SetProperty(TMDbHelper.WidgetContainer,301,$PARAM[window_id])</onfocus>
+
+        <onfocus condition="![$PARAM[submenu_widget_highlight]]">SetProperty(TMDbHelper.WidgetContainer,301,$PARAM[window_id])</onfocus>
+        <onfocus condition="$PARAM[submenu_widget_highlight]">SetProperty(TMDbHelper.WidgetContainer,$PARAM[submenu_widget_id],$PARAM[window_id])</onfocus>
 
         <!-- Reset Widget Group Position -->
         <include content="Action_Widgets_ResetPosition_OnFocus">
@@ -86,6 +88,7 @@
     <include name="Hub_Submenu_List">
         <param name="ondown">340</param>
         <param name="hidden_button">List_ButtonMenu_Row_HiddenButton_View</param>
+        <param name="submenu_widget_highlight">false</param>
         <definition>
             <include content="Categories_Iconic_Selector" condition="Skin.HasSetting(Views.UseAltCombined.Detailed)">
                 <param name="id">$PARAM[id]</param>
@@ -95,6 +98,8 @@
                 <param name="color_nf">main_fg_30</param>
                 <param name="hidden_button">$PARAM[hidden_button]</param>
                 <param name="hidden_button_prefix">$PARAM[hidden_button_prefix]</param>
+                <param name="submenu_widget_highlight">$PARAM[submenu_widget_highlight]</param>
+                <param name="submenu_widget_id">$PARAM[submenu_widget_id]</param>
                 <param name="slide">True</param>
                 <param name="hitrect_x">20</param>
                 <param name="hitrect_y">20</param>
@@ -102,6 +107,8 @@
                 <param name="hitrect_h">120</param>
                 <param name="shorten">True</param>
                 <include content="Hub_Submenu_List_Definition_Content">
+                    <param name="submenu_widget_highlight">$PARAM[submenu_widget_highlight]</param>
+                    <param name="submenu_widget_id">$PARAM[submenu_widget_id]</param>
                     <param name="window_id">$PARAM[window_id]</param>
                     <param name="ondown">$PARAM[ondown]</param>
                     <param name="id">$PARAM[id]</param>
@@ -124,6 +131,8 @@
                 <param name="color_nf">main_fg_30</param>
                 <param name="hidden_button">$PARAM[hidden_button]</param>
                 <param name="hidden_button_prefix">$PARAM[hidden_button_prefix]</param>
+                <param name="submenu_widget_highlight">$PARAM[submenu_widget_highlight]</param>
+                <param name="submenu_widget_id">$PARAM[submenu_widget_id]</param>
                 <param name="slide">True</param>
                 <param name="hitrect_x">20</param>
                 <param name="hitrect_y">70</param>
@@ -132,6 +141,8 @@
                 <param name="large">$EXP[Exp_Hubs_Spotlight_IsSlide]</param>
                 <!-- <param name="small">$EXP[Exp_Hubs_Spotlight_IsSlide]</param> -->
                 <include content="Hub_Submenu_List_Definition_Content">
+                    <param name="submenu_widget_highlight">$PARAM[submenu_widget_highlight]</param>
+                    <param name="submenu_widget_id">$PARAM[submenu_widget_id]</param>
                     <param name="window_id">$PARAM[window_id]</param>
                     <param name="ondown">$PARAM[ondown]</param>
                     <param name="id">$PARAM[id]</param>
@@ -338,6 +349,16 @@
         <value>plugin://script.skinvariables/?info=get_shortcuts_node$INFO[Container(300).ListItem.Property(menu),&amp;menu=,]$INFO[Container(300).ListItem.Property(list),&amp;node=,]$INFO[Container(300).ListItem.Property(skin),&amp;skin=,]$INFO[Window(Home).Property(SkinVariables.ShortcutsNode.Reload),&amp;reload=,]</value>
     </variable>
 
+    <include name="Hub_Standard_SubmenuInfo_HideDetails">
+        <include content="Animation_Fade_In" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
+            <param name="condition">![$EXP[Exp_Hubs_Submenu_HasFocus]]</param>
+            <param name="delay">0</param>
+        </include>
+        <include content="Animation_ConditionalFade" condition="$EXP[Exp_Hubs_Spotlight_IsSlide]">
+            <param name="condition">$EXP[Exp_Hubs_Submenu_HasFocus]</param>
+        </include>
+    </include>
+
     <include name="Hub_Standard">
         <include content="Hub_Menu_Group">
             <include content="Hub_Submenu_Group">
@@ -356,6 +377,7 @@
             <include content="Info_Panel">
                 <param name="container">Container.</param>
                 <param name="visible">!Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)</param>
+                <param name="details_include">Hub_Standard_SubmenuInfo_HideDetails</param>
             </include>
         </include>
     </include>
