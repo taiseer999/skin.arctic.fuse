@@ -121,14 +121,33 @@
                 <width>40</width>
                 <height>40</height>
                 <visible>!$PARAM[detailed]</visible>
+
+
                 <control type="image">
-                    <aspectratio scalediffuse="false">keep</aspectratio>
                     <bordersize>icon_home_bordersize</bordersize>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <visible>String.IsEmpty(ListItem.Icon) | String.StartsWith(ListItem.Icon,special://skin/extras/icons)</visible>
                     <include content="Object_ColorDiffuse" condition="$PARAM[selected]">
                         <param name="colordiffuse">$VAR[ColorSelected]</param>
                     </include>
                     <colordiffuse>dialog_fg_70</colordiffuse>
-                    <texture diffuse="diffuse/circle_50.png">$INFO[ListItem.Icon]</texture>
+                    <texture background="true" diffuse="diffuse/circle_120.png">$INFO[ListItem.Icon]</texture>
+                </control>
+                <control type="image">
+                    <bordersize>icon_main_bordersize</bordersize>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <visible>String.StartsWith(ListItem.Icon,Default)</visible>
+                    <include content="Object_ColorDiffuse" condition="$PARAM[selected]">
+                        <param name="colordiffuse">$VAR[ColorSelected]</param>
+                    </include>
+                    <colordiffuse>dialog_fg_70</colordiffuse>
+                    <texture background="true" diffuse="diffuse/circle_120.png">$INFO[ListItem.Icon]</texture>
+                </control>
+                <control type="image">
+                    <bordersize>icon_item_bordersize</bordersize>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <visible>![String.IsEmpty(ListItem.Icon) | String.StartsWith(ListItem.Icon,special://skin/extras/icons) | String.StartsWith(ListItem.Icon,Default)]</visible>
+                    <texture background="true" diffuse="diffuse/circle_120.png" fallback="fallback/kodi-logo.png">$INFO[ListItem.Icon]</texture>
                 </control>
             </control>
 
@@ -525,13 +544,9 @@
                 <control type="group">
                     <centerleft>60</centerleft>
                     <centertop>50%</centertop>
-                    <width>80</width>
-                    <height>80</height>
+                    <width>40</width>
+                    <height>40</height>
                     <control type="image">
-                        <height>40</height>
-                        <width>40</width>
-                        <centertop>50%</centertop>
-                        <centerleft>50%</centerleft>
                         <bordersize>icon_home_bordersize</bordersize>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <visible>String.IsEmpty(ListItem.Icon) | String.StartsWith(ListItem.Icon,special://skin/extras/icons)</visible>
@@ -542,10 +557,6 @@
                         <texture background="true" diffuse="diffuse/circle_120.png" fallback="special://skin/extras/icons/shapes.png">$INFO[ListItem.Icon]</texture>
                     </control>
                     <control type="image">
-                        <height>40</height>
-                        <width>40</width>
-                        <centertop>50%</centertop>
-                        <centerleft>50%</centerleft>
                         <bordersize>icon_main_bordersize</bordersize>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <visible>String.StartsWith(ListItem.Icon,Default)</visible>
@@ -556,7 +567,7 @@
                         <texture background="true" diffuse="diffuse/circle_120.png" fallback="special://skin/extras/icons/shapes.png">$INFO[ListItem.Icon]</texture>
                     </control>
                     <control type="image">
-                        <bordersize>16</bordersize>
+                        <bordersize>icon_item_bordersize</bordersize>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <visible>![String.IsEmpty(ListItem.Icon) | String.StartsWith(ListItem.Icon,special://skin/extras/icons) | String.StartsWith(ListItem.Icon,Default)]</visible>
                         <texture background="true" diffuse="diffuse/circle_120.png" fallback="fallback/kodi-logo.png">$INFO[ListItem.Icon]</texture>

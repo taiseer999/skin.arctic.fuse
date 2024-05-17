@@ -50,9 +50,10 @@
                             </include>
                             <control type="group">
                                 <right>$PARAM[lines_right]</right>
-                                <!-- <include content="List_DialogSelect" condition="![$PARAM[include_artwork]]">
+                                <include content="List_DialogSelect" condition="![$PARAM[include_artwork]]">
                                     <param name="id">450</param>
                                     <param name="textcolor">dialog_fg</param>
+                                    <param name="itemlayout_include">Layout_MenuList</param>
                                     <pagecontrol>61</pagecontrol>
 
                                     <onright>61</onright>
@@ -62,9 +63,9 @@
                                     <onclick condition="!ListItem.IsFolder">PlayMedia($INFO[ListItem.FolderPath])</onclick>
                                     <content>$INFO[Window.Property(Path)]</content>
 
-                                </include> -->
+                                </include>
 
-                                <include content="List_DialogSelect">
+                                <include content="List_DialogSelect" condition="$PARAM[include_artwork]">
                                     <param name="id">450</param>
                                     <param name="detailed">True</param>
                                     <param name="item_height">100</param>
