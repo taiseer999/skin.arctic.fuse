@@ -848,7 +848,8 @@
         <onright condition="[String.IsEqual(Window.Property(DetailsView),Albums) + !Integer.IsEqual(Container(5008).NumItems,0)]">SetFocus(5008,0,absolute)</onright>
 
         <onup condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions)">SetFocus(61)</onup>
-        <ondown condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions)">SetFocus(61)</ondown>
+        <!-- <ondown condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions)">SetFocus(61)</ondown> -->
+        <ondown condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions)">SendClick(10)</ondown>
     </include>
 
     <include name="DialogInfo_ButtonGroup_OnUp">
