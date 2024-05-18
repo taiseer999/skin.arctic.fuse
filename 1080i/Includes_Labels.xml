@@ -14,6 +14,22 @@
         <value condition="String.IsEqual(Window(Home).Property(ColorPicker_Type),mid_season_finale)">$LOCALIZE[31218]</value>
     </variable>
 
+    <variable name="Label_SortLetter">
+        <value condition="String.IsEqual(Container.SortMethod,$LOCALIZE[568])">$INFO[ListItem.LastPlayed]</value>
+        <value condition="String.IsEqual(Container.SortMethod,$LOCALIZE[570])">$INFO[ListItem.DateAdded]</value>
+        <value condition="String.IsEqual(Container.SortMethod,$LOCALIZE[552])">$INFO[ListItem.Date]</value>
+        <value condition="String.IsEqual(Container.SortMethod,$LOCALIZE[563])">$INFO[ListItem.Rating]</value>
+        <value condition="String.IsEqual(Container.SortMethod,$LOCALIZE[562])">$INFO[ListItem.Year]</value>
+        <value condition="String.IsEqual(Container.SortMethod,$LOCALIZE[180])">$INFO[ListItem.Duration]</value>
+        <value condition="String.IsEqual(Container.SortMethod,$LOCALIZE[554])">$INFO[ListItem.TrackNumber]</value>
+        <value condition="String.IsEqual(Container.SortMethod,$LOCALIZE[38080])">$INFO[ListItem.BPM]</value>
+        <value condition="String.IsEqual(Container.SortMethod,$LOCALIZE[38079])">$INFO[ListItem.OriginalDate]</value>
+        <value condition="String.IsEqual(Container.SortMethod,$LOCALIZE[20359])">$INFO[ListItem.Episode]</value>
+        <value condition="String.IsEqual(Container.SortMethod,$LOCALIZE[20074])">$INFO[ListItem.MPAA]</value>
+        <value condition="String.IsEqual(Container.SortMethod,$LOCALIZE[38018])">$INFO[ListItem.UserRating]</value>
+        <value>$INFO[ListItem.SortLetter]</value>
+    </variable>
+
     <variable name="Label_NextBump">
         <value condition="Window.IsMedia">$LOCALIZE[31135]$INFO[Container.CurrentPage, , $LOCALIZE[20163] ]$INFO[Container.NumPages]</value>
         <value>Kodi$INFO[System.BuildVersionCode, v,]</value>

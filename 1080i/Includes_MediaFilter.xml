@@ -89,12 +89,27 @@
                             </control>
                         </control>
 
+                        <control type="group" id="9118">
+                            <height>80</height>
+                            <left>40</left>
+                            <right>40</right>
+                            <visible>!$EXP[Exp_IsAlphabetStrip]</visible>
+                            <control type="label">
+                                <textcolor>dialog_fg_70</textcolor>
+                                <align>left</align>
+                                <label>$INFO[Container.SortMethod]</label>
+                            </control>
+                            <control type="label">
+                                <textcolor>dialog_fg_70</textcolor>
+                                <align>right</align>
+                                <label fallback="231">$VAR[Label_SortLetter]</label>
+                            </control>
+                        </control>
+
                         <include content="Settings_Button">
                             <param name="id">9018</param>
                             <param name="control">button</param>
                             <param name="dialog">true</param>
-                            <!-- <onleft condition="Integer.IsEqual(Container.CurrentPage,1)">68</onleft> -->
-                            <!-- <texturefocus /> -->
                             <onclick>SetFocus(68)</onclick>
                             <onleft>SetFocus(50)</onleft>
                             <onleft>Action(prevletter)</onleft>
@@ -104,14 +119,13 @@
                             <onright>Action(nextletter)</onright>
                             <onright>SetFocus(9020,$VAR[Action_Letter_Position],absolute)</onright>
                             <onright>SetFocus(9018)</onright>
+                            <visible>$EXP[Exp_IsAlphabetStrip]</visible>
                         </include>
 
                         <include content="Settings_Button">
                             <param name="id">9012</param>
                             <param name="control">button</param>
                             <param name="dialog">true</param>
-                            <!-- <label>$LOCALIZE[31135]</label>
-                            <label2>$INFO[Container.CurrentPage]$INFO[Container.NumPages, $LOCALIZE[1443] ,]</label2> -->
                             <onclick>SetFocus(68)</onclick>
                             <onleft>pageup(60)</onleft>
                             <onleft>SetFocus(9020,$VAR[Action_Letter_Position],absolute)</onleft>
@@ -288,6 +302,8 @@
             <width>462</width>
             <centerleft>50%</centerleft>
 
+            <visible>$EXP[Exp_IsAlphabetStrip]</visible>
+
             <itemlayout width="42">
                 <control type="label">
                     <font>font_main</font>
@@ -298,30 +314,6 @@
             </itemlayout>
 
             <focusedlayout width="42">
-                <!-- <control type="group">
-                    <visible>Control.HasFocus(9018)</visible>
-                    <control type="label">
-                        <font>font_main_black</font>
-                        <label>$INFO[ListItem.Label]</label>
-                        <textcolor>$VAR[ColorSelected]</textcolor>
-                        <align>center</align>
-                    </control>
-                    <control type="image">
-                        <include>Texture_Highlight_Scrollbar_H</include>
-                        <height>scrollbar_w</height>
-                        <centerbottom>12</centerbottom>
-                        <width>75%</width>
-                        <centerleft>50%</centerleft>
-                    </control>
-                </control>
-                <control type="label">
-                    <font>font_main</font>
-                    <label>$INFO[ListItem.Label]</label>
-                    <textcolor>dialog_fg_70</textcolor>
-                    <align>center</align>
-                    <visible>![Control.HasFocus(9018)]</visible>
-                </control> -->
-
                 <control type="label">
                     <font>font_main_black</font>
                     <label>$INFO[ListItem.Label]</label>
