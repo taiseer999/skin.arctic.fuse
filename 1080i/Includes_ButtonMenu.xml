@@ -138,9 +138,6 @@
             <height>80</height>
             <bottom>-40</bottom>
             <left>20</left>
-
-            <animation effect="slide" end="-50" condition="String.IsEmpty(Container(6000).ListItemAbsolute(4).Icon) | String.IsEmpty(Container(6000).ListItemAbsolute(2).Icon)">Conditional</animation>
-
             <scrolltime tween="quadratic">400</scrolltime>
 
             <include>ButtonMenu_Tray_Movement</include>
