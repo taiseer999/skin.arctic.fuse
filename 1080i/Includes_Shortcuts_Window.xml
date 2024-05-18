@@ -6,7 +6,8 @@
         <include content="Object_Hidden_Button">
             <param name="id">1300</param>
             <onfocus>SetFocus(300)</onfocus>
-            <onfocus>SetProperty(Shortcuts.Category,$INFO[Container(303).ListItem.Property(guid)],Home)</onfocus>
+            <onfocus condition="String.IsEqual(Window.Property(categories_menu),menu=homemenu)">SetProperty(Shortcuts.Category,$INFO[Container(303).ListItem.Property(guid)],Home)</onfocus>
+            <onfocus condition="!String.IsEqual(Window.Property(categories_menu),menu=homemenu)">ClearProperty(Shortcuts.Category,Home)</onfocus>
             <onfocus>SetProperty(Shortcuts.Position,$INFO[Container(300).CurrentItem],Home)</onfocus>
             <onfocus>SetProperty(Shortcuts.EditMenu,$INFO[Container(300).ListItem.Property(menu),menu=,],Home)</onfocus>
             <onfocus>ClearProperty(Shortcuts.EditMode,Home)</onfocus>
@@ -121,6 +122,10 @@
         </control>
     </include>
 
+    <variable name="Shortcuts_Window_Content_Categories_List_Filter">
+        <value condition="String.IsEqual(Window.Property(categories_menu),menu=homemenu)">$INFO[Container(303).ListItem.Property(guid),&amp;filter_key=sidemenu_guid&amp;filter_value=,&amp;filter_empty=true]</value>
+    </variable>
+
     <include name="Shortcuts_Window_Content_Categories_List">
         <control type="group">
             <!-- <include content="Settings_Label">
@@ -151,7 +156,7 @@
 
                 <onclick>SetFocus(1300)</onclick>
 
-                <content>plugin://script.skinvariables/?info=get_shortcuts_node&amp;edit=True$INFO[Window.Property(categories_menu),&amp;,]$VAR[Path_SkinVariables_SkinFolder,&amp;skin=,]$INFO[Window(Home).Property(SkinVariables.ShortcutsNode.Reload),&amp;reload=,]&amp;filter_key=sidemenu_guid&amp;filter_value=$INFO[Container(303).ListItem.Property(guid)]&amp;filter_empty=true</content>
+                <content>plugin://script.skinvariables/?info=get_shortcuts_node&amp;edit=True$INFO[Window.Property(categories_menu),&amp;,]$VAR[Path_SkinVariables_SkinFolder,&amp;skin=,]$INFO[Window(Home).Property(SkinVariables.ShortcutsNode.Reload),&amp;reload=,]$VAR[Shortcuts_Window_Content_Categories_List_Filter]</content>
 
                 <visible>!$EXP[Shortcuts_Window_Exp_WidgetsOnly]</visible>
             </include>
