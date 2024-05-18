@@ -776,13 +776,14 @@
             <include content="Action_Widgets_ResetPosition_OnFocus">
                 <param name="condition">[Control.IsVisible(419) + !Integer.IsEqual(Container(419).CurrentItem,1)] | Container(400).HasPrevious</param>
             </include>
-            <onfocus>AlarmClock(SwitchAdaptiveWidget,RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-specialfolderpath.json,use_rules,condition=$PARAM[condition],prefix=$PARAM[prefix]),00:01,silent)</onfocus>
+            <onfocus>AlarmClock(SwitchAdaptiveWidget,RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-specialfolderpath.json,use_rules,condition=$PARAM[condition],prefix=$PARAM[prefix]),00:00,silent)</onfocus>
         </definition>
     </include>
 
     <include name="List_ButtonMenu_Row_HiddenButton_Home_Categories">
         <control type="button">
             <visible allowhiddenfocus="true">false</visible>
+            <animation effect="fade" start="0" end="0" time="400" reversible="false">Focus</animation>
             <include content="List_ButtonMenu_Row_HiddenButton_Home_Categories_OnFocus">
                 <param name="prefix">$PARAM[prefix]</param>
             </include>
