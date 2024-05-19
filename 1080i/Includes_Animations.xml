@@ -22,18 +22,18 @@
     </include>
 
     <include name="Animation_View_Topbar">
-        <animation type="Conditional" reversible="false" condition="![Control.HasFocus(303) | ControlGroup(4000).HasFocus() | ControlGroup(303).HasFocus()]">
+        <animation type="Conditional" reversible="false" condition="![Control.HasFocus(303) | ControlGroup(4000).HasFocus() | ControlGroup(303).HasFocus() | Control.HasFocus(308) | Control.HasFocus(309)]">
             <effect type="fade" start="0" end="100" delay="0" time="300" tween="sine" easing="in" />
         </animation>
-        <animation type="Conditional" reversible="false" condition="[Control.HasFocus(303) | ControlGroup(4000).HasFocus() | ControlGroup(303).HasFocus()]">
+        <animation type="Conditional" reversible="false" condition="[Control.HasFocus(303) | ControlGroup(4000).HasFocus() | ControlGroup(303).HasFocus() | Control.HasFocus(308) | Control.HasFocus(309)]">
             <effect type="fade" start="100" end="0" delay="0" time="150" tween="sine" easing="in" />
         </animation>
     </include>
     <include name="Animation_Home_Topbar">
-        <animation type="Conditional" reversible="false" condition="[Control.HasFocus(303) | ControlGroup(4000).HasFocus() | ControlGroup(303).HasFocus()]">
+        <animation type="Conditional" reversible="false" condition="[Control.HasFocus(303) | ControlGroup(4000).HasFocus() | ControlGroup(303).HasFocus() | Control.HasFocus(308) | Control.HasFocus(309)]">
             <effect type="fade" start="0" end="100" delay="0" time="300" tween="sine" easing="in" />
         </animation>
-        <animation type="Conditional" reversible="false" condition="![Control.HasFocus(303) | ControlGroup(4000).HasFocus() | ControlGroup(303).HasFocus()]">
+        <animation type="Conditional" reversible="false" condition="![Control.HasFocus(303) | ControlGroup(4000).HasFocus() | ControlGroup(303).HasFocus() | Control.HasFocus(308) | Control.HasFocus(309)]">
             <effect type="fade" start="100" end="0" delay="0" time="150" tween="sine" easing="in" />
         </animation>
     </include>

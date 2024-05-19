@@ -168,7 +168,6 @@
                             <onclick>Skin.ToggleSetting(SideMenu.EnableSearchAndOptions)</onclick>
                             <selected>Skin.HasSetting(SideMenu.EnableSearchAndOptions)</selected>
                             <visible>Container(3).HasFocus(1)</visible>
-                            <visible>!Skin.String(Home.SideMenuCollapse,Topbar)</visible>
                         </include>
 
                         <include content="Settings_Button" description="Home group indicator">

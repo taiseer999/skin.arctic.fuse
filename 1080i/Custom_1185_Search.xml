@@ -146,17 +146,17 @@
                         <font>font_main_black</font>
                         <textcolor>dialog_fg_90</textcolor>
                         <focusedcolor>$VAR[ColorSelected]</focusedcolor>
-                        <left>-70</left>
-                        <right>-70</right>
-                        <textoffsetx>70</textoffsetx>
+                        <left>-60</left>
+                        <right>-60</right>
+                        <textoffsetx>65</textoffsetx>
                         <align>left</align>
                         <onup condition="Window.Previous(1105)">SetProperty(CustomSearchTerm,$ESCINFO[Control.GetLabel(9099).index(1)],Home)</onup>
-                        <onleft condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions)">SetFocus(9097)</onleft>
-                        <onright condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions)">SetFocus(9097)</onright>
+                        <onleft condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions) + !$EXP[Exp_HomeMenu_IsTopBar]">SetFocus(9097)</onleft>
+                        <onright condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions) + !$EXP[Exp_HomeMenu_IsTopBar]">SetFocus(9097)</onright>
+                        <onleft condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions) + $EXP[Exp_HomeMenu_IsTopBar]">Action(PreviousMenu)</onleft>
+                        <onright condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions) + $EXP[Exp_HomeMenu_IsTopBar]">Action(PreviousMenu)</onright>
                         <onup>Action(PreviousMenu)</onup>
                         <ondown>5000</ondown>
-                        <!-- <ondown condition="String.IsEmpty(Control.GetLabel(9099).index(1)) | Integer.IsEqual(Container(5000).NumItems,0)">Action(PreviousMenu)</ondown>
-                        <ondown condition="![String.IsEmpty(Control.GetLabel(9099).index(1)) | Integer.IsEqual(Container(5000).NumItems,0)]">5000</ondown> -->
                         <visible allowhiddenfocus="true">Control.HasFocus(9099) + !Window.IsVisible(1171) + !Window.IsVisible(1170)</visible>
                     </control>
                 </control>

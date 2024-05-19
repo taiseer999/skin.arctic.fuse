@@ -72,6 +72,9 @@
     </include>
 
     <include name="Home_Menu_List_Horz">
+        <include content="Object_Left" condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions)">
+            <param name="left">120</param>
+        </include>
         <left>20</left>
         <centertop>100</centertop>
         <height>160</height>
@@ -374,62 +377,88 @@
         </control>
     </include>
 
-    <include name="Home_Menu_SearchAndOptions">
+    <include name="Home_Menu_SearchAndOptions_SearchButton">
+        <control type="button" id="309">
+            <texturenofocus />
+            <include>Texture_KeyboardButton</include>
+            <width>80</width>
+            <height>80</height>
+            <centerleft>50%</centerleft>
+            <centertop>50%</centertop>
+            <onclick>ActivateWindow(1185)</onclick>
+        </control>
+        <control type="image">
+            <texture colordiffuse="$VAR[Layout_Home_Menu_Color_NF]">special://skin/extras/icons/search.png</texture>
+            <bordersize>icon_home_bordersize</bordersize>
+            <visible>!Control.HasFocus(309)</visible>
+        </control>
+        <control type="image">
+            <texture colordiffuse="$VAR[ColorSelected]">special://skin/extras/icons/search.png</texture>
+            <bordersize>icon_home_bordersize</bordersize>
+            <visible>Control.HasFocus(309)</visible>
+        </control>
+    </include>
+
+    <include name="Home_Menu_SearchAndOptions_OptionButton">
+        <control type="button" id="308">
+            <texturenofocus />
+            <include>Texture_KeyboardButton</include>
+            <width>80</width>
+            <height>80</height>
+            <centerleft>50%</centerleft>
+            <centertop>50%</centertop>
+            <onclick>ActivateWindow(1170)</onclick>
+        </control>
+        <control type="image">
+            <texture colordiffuse="$VAR[Layout_Home_Menu_Color_NF]">special://skin/extras/icons/bars.png</texture>
+            <bordersize>icon_home_bordersize</bordersize>
+            <visible>!Control.HasFocus(308)</visible>
+        </control>
+        <control type="image">
+            <texture colordiffuse="$VAR[ColorSelected]">special://skin/extras/icons/bars.png</texture>
+            <bordersize>icon_home_bordersize</bordersize>
+            <visible>Control.HasFocus(308)</visible>
+        </control>
+    </include>
+
+    <include name="Home_Menu_SearchAndOptions_Vert">
         <control type="group">
             <width>40</width>
             <height>40</height>
             <centerleft>100</centerleft>
             <centertop>100</centertop>
-            <control type="button" id="309">
-                <texturenofocus />
-                <include>Texture_KeyboardButton</include>
-                <width>80</width>
-                <height>80</height>
-                <centerleft>50%</centerleft>
-                <centertop>50%</centertop>
-                <onclick>ActivateWindow(1185)</onclick>
-            </control>
-            <control type="image">
-                <texture colordiffuse="$VAR[Layout_Home_Menu_Color_NF]">special://skin/extras/icons/search.png</texture>
-                <bordersize>icon_home_bordersize</bordersize>
-                <visible>!Control.HasFocus(309)</visible>
-            </control>
-            <control type="image">
-                <texture colordiffuse="$VAR[ColorSelected]">special://skin/extras/icons/search.png</texture>
-                <bordersize>icon_home_bordersize</bordersize>
-                <visible>Control.HasFocus(309)</visible>
-            </control>
+            <include>Home_Menu_SearchAndOptions_SearchButton</include>
         </control>
         <control type="group">
             <width>40</width>
             <height>40</height>
             <centerleft>100</centerleft>
             <centerbottom>100</centerbottom>
-            <control type="button" id="308">
-                <texturenofocus />
-                <include>Texture_KeyboardButton</include>
-                <width>80</width>
-                <height>80</height>
-                <centerleft>50%</centerleft>
-                <centertop>50%</centertop>
-                <onclick>ActivateWindow(1170)</onclick>
-            </control>
-            <control type="image">
-                <texture colordiffuse="$VAR[Layout_Home_Menu_Color_NF]">special://skin/extras/icons/bars.png</texture>
-                <bordersize>icon_home_bordersize</bordersize>
-                <visible>!Control.HasFocus(308)</visible>
-            </control>
-            <control type="image">
-                <texture colordiffuse="$VAR[ColorSelected]">special://skin/extras/icons/bars.png</texture>
-                <bordersize>icon_home_bordersize</bordersize>
-                <visible>Control.HasFocus(308)</visible>
-            </control>
+            <include>Home_Menu_SearchAndOptions_OptionButton</include>
+        </control>
+    </include>
+
+    <include name="Home_Menu_SearchAndOptions_Horz">
+        <control type="group">
+            <width>40</width>
+            <height>40</height>
+            <centerleft>120</centerleft>
+            <centertop>100</centertop>
+            <include>Home_Menu_SearchAndOptions_SearchButton</include>
+        </control>
+        <control type="group">
+            <width>40</width>
+            <height>40</height>
+            <centerright>100</centerright>
+            <centertop>100</centertop>
+            <include>Home_Menu_SearchAndOptions_OptionButton</include>
         </control>
     </include>
 
     <include name="Home_Menu_Horz">
         <control type="group">
             <include>Animation_Home_Topbar</include>
+            <include condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions)">Home_Menu_SearchAndOptions_Horz</include>
             <include content="Home_Menu_List">
                 <param name="onlist">$PARAM[onlist]</param>
                 <param name="window_id">$PARAM[window_id]</param>
@@ -441,7 +470,7 @@
     <include name="Home_Menu_Vert">
         <control type="group">
             <include>Animation_Home_SlideOver</include>
-            <include condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions)">Home_Menu_SearchAndOptions</include>
+            <include condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions)">Home_Menu_SearchAndOptions_Vert</include>
             <include content="Home_Menu_List">
                 <param name="onlist">$PARAM[onlist]</param>
                 <param name="window_id">$PARAM[window_id]</param>
