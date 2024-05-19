@@ -363,6 +363,13 @@
         <include content="Hub_Menu_Group">
             <include content="Hub_Submenu_Group">
                 <include>skinvariables-$PARAM[categories]-submenu</include>
+                <include content="Hub_Submenu_List">
+                    <param name="id">302</param>
+                    <param name="ondown">400</param>
+                    <param name="window_id">$PARAM[window_id]</param>
+                    <param name="submenu_widget_highlight">False</param>
+                    <visible>False</visible>
+                </include>
             </include>
         </include>
 
