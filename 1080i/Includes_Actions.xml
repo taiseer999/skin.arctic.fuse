@@ -131,8 +131,6 @@
     </include>
 
     <include name="Action_Hubs_Onload">
-        <param name="defaultcontrol">400</param>
-        <param name="always">true</param>
         <definition>
             <menucontrol>303</menucontrol>
 
@@ -140,14 +138,26 @@
                 <param name="defaultcontrol">303</param>
                 <param name="always">false</param>
             </include>
-            <include content="Object_DefaultControl" condition="!Window.IsVisible(Home) + Skin.HasSetting(Hub.$PARAM[window_id].DisableSubmenu)">
+
+            <include content="Object_DefaultControl" condition="!Window.IsVisible(Home) + Skin.HasSetting(Hub.$PARAM[window_id].DisableSubmenu) + String.IsEmpty(Window($PARAM[window_id]).Property(Hub.ResetDefaultControl))">
+                <param name="defaultcontrol">400</param>
+                <param name="always">false</param>
+            </include>
+            <include content="Object_DefaultControl" condition="!Window.IsVisible(Home) + !Skin.HasSetting(Hub.$PARAM[window_id].DisableSubmenu) + String.IsEmpty(Window($PARAM[window_id]).Property(Hub.ResetDefaultControl))">
+                <param name="defaultcontrol">300</param>
+                <param name="always">false</param>
+            </include>
+
+            <include content="Object_DefaultControl" condition="!Window.IsVisible(Home) + Skin.HasSetting(Hub.$PARAM[window_id].DisableSubmenu) + !String.IsEmpty(Window($PARAM[window_id]).Property(Hub.ResetDefaultControl))">
                 <param name="defaultcontrol">400</param>
                 <param name="always">true</param>
             </include>
-            <include content="Object_DefaultControl" condition="!Window.IsVisible(Home) + !Skin.HasSetting(Hub.$PARAM[window_id].DisableSubmenu)">
+            <include content="Object_DefaultControl" condition="!Window.IsVisible(Home) + !Skin.HasSetting(Hub.$PARAM[window_id].DisableSubmenu) + !String.IsEmpty(Window($PARAM[window_id]).Property(Hub.ResetDefaultControl))">
                 <param name="defaultcontrol">300</param>
                 <param name="always">true</param>
             </include>
+
+            <onload>ClearProperty(Hub.ResetDefaultControl,$PARAM[window_id])</onload>
 
             <onload condition="!Skin.HasSetting(Hub.$PARAM[window_id].DisableSubmenu) + String.IsEmpty(Window($PARAM[window_id]).Property(TMDbHelper.WidgetContainer))">SetProperty(TMDbHelper.WidgetContainer,301,$PARAM[window_id])</onload>
             <onload condition="Skin.HasSetting(Hub.$PARAM[window_id].DisableSubmenu) + String.IsEmpty(Window($PARAM[window_id]).Property(TMDbHelper.WidgetContainer))">SetProperty(TMDbHelper.WidgetContainer,100601,$PARAM[window_id])</onload>
