@@ -2000,7 +2000,7 @@ msgstr "بطاقة"
 #: /1080i/Includes_Labels.xml
 msgctxt "#31424"
 msgid "Board"
-msgstr "سبورة"
+msgstr "صورة افقية كبيرة"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31425"
@@ -2010,7 +2010,7 @@ msgstr "العناوين"
 #: /1080i/Includes_Labels.xml
 msgctxt "#31426"
 msgid "Light dialogs"
-msgstr "خلفيات بيضاء"
+msgstr "خلفيات فاتحة"
 
 #: /1080i/Home.xml
 msgctxt "#31427"
@@ -2078,8 +2078,8 @@ msgstr "كبير"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31440"
-msgid "Extra Large"
-msgstr "ضخم"
+msgid "Expand labels from minimised"
+msgstr "اظهار المسميات غير الظاهرة"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31441"
@@ -2119,7 +2119,7 @@ msgstr "مركب١"
 #: /1080i/Includes_Labels.xml
 msgctxt "#31453"
 msgid "Choose colour theme"
-msgstr "اختيار ثيم الالوان"
+msgstr "اختيار نمط الالوان"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31454"
