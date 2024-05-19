@@ -26,6 +26,8 @@
                 </template>
                 <datafile>generator/data/setup/submenu_row.xml</datafile>
                 <condition>{item_submenulist_path}==</condition>
+                <condition>{item_disabled}!=True</condition>
+                <condition>$LOOKUP[disabled?menu=sidemenu&amp;filter_guid={item_sidemenu_guid}]!=True</condition>
                 <value name="parts_content">
                     <!-- <template>plugin://script.skinvariables/?info=get_shortcuts_node&amp;skin=$VAR[Path_SkinVariables_SkinFolder]&amp;menu={item_menu}&amp;guid={item_guid}$INFO[Window(Home).Property(SkinVariables.ShortcutsNode.Reload),&amp;reload=,]</template> -->
                     <items menu="{item_menu}" item="{item_x}" mode="submenu">
@@ -70,6 +72,8 @@
                 </template>
                 <datafile>generator/data/setup/submenu_row.xml</datafile>
                 <condition>{item_submenulist_path}!=</condition>
+                <condition>{item_disabled}!=True</condition>
+                <condition>$LOOKUP[disabled?menu=sidemenu&amp;filter_guid={item_sidemenu_guid}]!=True</condition>
                 <value name="parts_visible">
                     <template>String.IsEqual(Container(300).ListItem.Property(guid),{item_guid})</template>
                 </value>
