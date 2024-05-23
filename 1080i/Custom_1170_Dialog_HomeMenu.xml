@@ -47,7 +47,6 @@
                             <right>20</right>
                             <height>1</height>
                             <texture colordiffuse="dialog_fg_12">common/white.png</texture>
-                            <!-- <visible>String.IsEmpty(Window(Home).Property(Options.Menu.GUID))</visible> -->
                         </control>
 
                         <include content="List_DialogSelect">
