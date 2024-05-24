@@ -273,6 +273,7 @@
                         <videofilter>$INFO[ListItem.Property(game.videofilter)]</videofilter>
                         <stretchmode>$INFO[ListItem.Property(game.stretchmode)]</stretchmode>
                         <rotation>$INFO[ListItem.Property(game.videorotation)]</rotation>
+                        <visible>String.IsEmpty(ListItem.Art(screenshot))</visible>
                     </control>
                     <control type="image">
                         <aspectratio>scale</aspectratio>
@@ -316,8 +317,6 @@
                     <height>30</height>
                 </control>
             </control>
-
-
         </definition>
     </include>
 
