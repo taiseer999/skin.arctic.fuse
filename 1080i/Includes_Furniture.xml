@@ -446,6 +446,71 @@
         </definition>
     </include>
 
+    <include name="Furniture_Busy_Base">
+        <param name="hasspinner">false</param>
+        <param name="hasprogress">false</param>
+        <param name="hasicon">true</param>
+        <param name="spinspinner">false</param>
+        <param name="spinnervisible">true</param>
+        <param name="hasbackground">Skin.HasSetting(ToastNotifications.Tabbed)</param>
+        <param name="icon" />
+        <param name="progress" />
+        <param name="progress_id" />
+        <definition>
+            <include condition="$PARAM[hasbackground]">Furniture_Busy_Group_Background</include>
+            <include content="Furniture_Busy_Icon">
+                <param name="hasspinner">$PARAM[hasspinner]</param>
+                <param name="hasprogress">$PARAM[hasprogress]</param>
+                <param name="hasicon">$PARAM[hasicon]</param>
+                <param name="spinspinner">$PARAM[spinspinner]</param>
+                <param name="icon">$PARAM[icon]</param>
+                <param name="progress">$PARAM[progress]</param>
+                <param name="progress_id">$PARAM[progress_id]</param>
+                <param name="spinnervisible">$PARAM[spinnervisible]</param>
+                <right>20</right>
+            </include>
+        </definition>
+    </include>
+
+    <include name="Furniture_Busy_Main">
+        <param name="mainlabel">$LOCALIZE[20186]</param>
+        <param name="minilabel">$LOCALIZE[31023]...</param>
+        <param name="haslabel">true</param>
+        <param name="hasbackground">Skin.HasSetting(ToastNotifications.Tabbed)</param>
+        <param name="visible_delay" />
+        <param name="visible_condition" />
+        <param name="windowopen_delay" />
+        <param name="windowopen_condition" />
+        <param name="mainlabel_id" />
+        <param name="minilabel_id" />
+        <definition>
+
+            <include condition="$PARAM[hasbackground]">Dimension_FurnitureBusy_Tabbed</include>
+            <include condition="![$PARAM[hasbackground]]">Dimension_FurnitureBusy_Floating</include>
+
+            <include content="Animation_SlideIn_Dialog">
+                <param name="visible_delay">$PARAM[visible_delay]</param>
+                <param name="visible_condition">$PARAM[visible_condition]</param>
+                <param name="windowopen_delay">$PARAM[windowopen_delay]</param>
+                <param name="windowopen_condition">$PARAM[windowopen_condition]</param>
+            </include>
+
+            <include content="Furniture_Busy_Text" condition="$PARAM[haslabel] + $PARAM[hasbackground]">
+                <param name="mainlabel_id">$PARAM[mainlabel_id]</param>
+                <param name="mainlabel">$PARAM[mainlabel]</param>
+                <param name="minilabel_id">$PARAM[minilabel_id]</param>
+                <param name="minilabel">$PARAM[minilabel]</param>
+            </include>
+
+            <include content="Furniture_Busy_FloatingText" condition="$PARAM[haslabel] + ![$PARAM[hasbackground]]">
+                <param name="mainlabel_id">$PARAM[mainlabel_id]</param>
+                <param name="mainlabel">$PARAM[mainlabel]</param>
+                <param name="minilabel_id">$PARAM[minilabel_id]</param>
+                <param name="minilabel">$PARAM[minilabel]</param>
+            </include>
+        </definition>
+    </include>
+
     <include name="Furniture_Busy">
         <param name="mainlabel">$LOCALIZE[20186]</param>
         <param name="minilabel">$LOCALIZE[31023]...</param>
@@ -460,44 +525,31 @@
 
             <control type="group">
 
-                <include condition="$PARAM[hasbackground]">Furniture_Busy_Group_Background</include>
-
-                <include content="Furniture_Busy_Icon">
+                <include content="Furniture_Busy_Base">
                     <param name="hasspinner">$PARAM[hasspinner]</param>
                     <param name="hasprogress">$PARAM[hasprogress]</param>
                     <param name="hasicon">$PARAM[hasicon]</param>
                     <param name="spinspinner">$PARAM[spinspinner]</param>
+                    <param name="spinnervisible">$PARAM[spinnervisible]</param>
+                    <param name="hasbackground">$PARAM[hasbackground]</param>
                     <param name="icon">$PARAM[icon]</param>
                     <param name="progress">$PARAM[progress]</param>
                     <param name="progress_id">$PARAM[progress_id]</param>
-                    <param name="spinnervisible">$PARAM[spinnervisible]</param>
-                    <right>20</right>
                 </include>
 
                 <nested />
 
-                <include condition="$PARAM[hasbackground]">Dimension_FurnitureBusy_Tabbed</include>
-                <include condition="![$PARAM[hasbackground]]">Dimension_FurnitureBusy_Floating</include>
-
-                <include content="Animation_SlideIn_Dialog">
+                <include content="Furniture_Busy_Main">
+                    <param name="mainlabel">$PARAM[mainlabel]</param>
+                    <param name="minilabel">$PARAM[minilabel]</param>
+                    <param name="haslabel">$PARAM[haslabel]</param>
+                    <param name="hasbackground">$PARAM[hasbackground]</param>
                     <param name="visible_delay">$PARAM[visible_delay]</param>
                     <param name="visible_condition">$PARAM[visible_condition]</param>
                     <param name="windowopen_delay">$PARAM[windowopen_delay]</param>
                     <param name="windowopen_condition">$PARAM[windowopen_condition]</param>
-                </include>
-
-                <include content="Furniture_Busy_Text" condition="$PARAM[haslabel] + $PARAM[hasbackground]">
                     <param name="mainlabel_id">$PARAM[mainlabel_id]</param>
-                    <param name="mainlabel">$PARAM[mainlabel]</param>
                     <param name="minilabel_id">$PARAM[minilabel_id]</param>
-                    <param name="minilabel">$PARAM[minilabel]</param>
-                </include>
-
-                <include content="Furniture_Busy_FloatingText" condition="$PARAM[haslabel] + ![$PARAM[hasbackground]]">
-                    <param name="mainlabel_id">$PARAM[mainlabel_id]</param>
-                    <param name="mainlabel">$PARAM[mainlabel]</param>
-                    <param name="minilabel_id">$PARAM[minilabel_id]</param>
-                    <param name="minilabel">$PARAM[minilabel]</param>
                 </include>
             </control>
 
