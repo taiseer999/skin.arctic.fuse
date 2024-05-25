@@ -17,6 +17,9 @@
         <include content="Animation_Fade_In">
             <param name="type">WindowOpen</param>
         </include>
+        <!-- <include content="Animation_Fade_Out">
+            <param name="type">WindowClose</param>
+        </include> -->
         <visible>![Window.IsActive(1120) | Window.IsActive(1121) | Window.IsActive(1122)]</visible>
     </include>
 
@@ -41,17 +44,23 @@
         <control type="group">
             <include>Animation_View_SlideOver</include>
             <control type="group">
-                <control type="group">
-                    <!-- <include condition="Skin.String(Home.SideMenuCollapse,Topbar)">Animation_View_Topbar</include> -->
-                    <!-- <include>Animation_Transition_InfoPanel_Open</include> -->
-                    <include content="Furniture_Top">
-                        <param name="include_topbar_animation">False</param>
-                    </include>
-                </control>
-                <control type="group">
-                    <include condition="Skin.String(Home.SideMenuCollapse,Topbar)">Animation_View_Topbar</include>
-                    <include>Furniture_Bottom_Left</include>
-                </control>
+                <include>Animation_Transition_InfoPanel_Open</include>
+                <include content="Furniture_Top">
+                    <param name="include_topbar_animation">False</param>
+                </include>
+            </control>
+            <control type="group">
+                <include condition="Skin.String(Home.SideMenuCollapse,Topbar)">Animation_View_Topbar</include>
+                <include condition="$EXP[Exp_Footer_BottomLeft_IsVisible]">Animation_Transition_InfoPanel_Open</include>
+                <!-- <include content="Animation_Fade_Out" condition="!$EXP[Exp_Footer_BottomLeft_IsVisible]">
+                    <param name="type">WindowClose</param>
+                    <param name="delay">0</param>
+                </include> -->
+                <include content="Animation_Fade_In" condition="!$EXP[Exp_Footer_BottomLeft_IsVisible]">
+                    <param name="type">WindowOpen</param>
+                    <param name="delay">400</param>
+                </include>
+                <include>Furniture_Bottom_Left</include>
             </control>
         </control>
         <control type="group">

@@ -396,7 +396,7 @@
             <control type="group">
 
                 <visible>!$EXP[Exp_InfoDialogs] | ![$PARAM[include_conditionalfade]]</visible>
-                <!-- <include condition="$PARAM[include_conditionalfade]">Animation_Transition_InfoPanel_Hide</include> -->
+                <include condition="$PARAM[include_conditionalfade]">Animation_Transition_InfoPanel_Hide</include>
 
                 <control type="group">
                     <include content="Animation_Fade_In">
@@ -730,7 +730,6 @@
             <control type="group">
                 <visible>!Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) | $EXP[Exp_Hubs_Spotlight_IsFanart]</visible>
                 <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,0)</visible>
-                <visible>!$EXP[Exp_InfoDialogs]</visible>
                 <include>Furniture_Bottom_WidgetGroups</include>
             </control>
         </control>
