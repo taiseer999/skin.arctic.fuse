@@ -463,6 +463,7 @@
         <param name="progress_id" />
         <definition>
             <include condition="$PARAM[hasbackground]">Furniture_Busy_Group_Background</include>
+
             <include content="Furniture_Busy_Icon">
                 <param name="hasspinner">$PARAM[hasspinner]</param>
                 <param name="hasprogress">$PARAM[hasprogress]</param>
@@ -474,6 +475,7 @@
                 <param name="spinnervisible">$PARAM[spinnervisible]</param>
                 <right>20</right>
             </include>
+
         </definition>
     </include>
 
