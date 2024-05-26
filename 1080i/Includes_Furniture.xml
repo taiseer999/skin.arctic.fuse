@@ -528,6 +528,7 @@
         <param name="spinspinner">false</param>
         <param name="spinnervisible">true</param>
         <param name="hasbackground">Skin.HasSetting(ToastNotifications.Tabbed)</param>
+        <param name="visible">true</param>
         <definition>
 
             <control type="group">
@@ -544,7 +545,7 @@
                     <param name="progress_id">$PARAM[progress_id]</param>
                 </include>
 
-                <nested />
+                <visible>$PARAM[visible]</visible>
 
                 <include content="Furniture_Busy_Main">
                     <param name="mainlabel">$PARAM[mainlabel]</param>

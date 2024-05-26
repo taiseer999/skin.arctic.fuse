@@ -3,52 +3,38 @@
     <zorder>999</zorder>
     <controls>
 
-        <control type="group">
-            <include content="Furniture_Busy_Base">
-                <param name="hasprogress">true</param>
-                <param name="hasbackground">Skin.HasSetting(ToastNotifications.Tabbed)</param>
-                <param name="icon">special://skin/extras/icons/volume-low.png</param>
-                <param name="progress">Control.GetLabel(933)</param>
-                <param name="progress_id">933</param>
-            </include>
-            <include content="Furniture_Busy_Main">
-                <param name="mainlabel">$LOCALIZE[13376]$INFO[Control.GetLabel(933), ,%]</param>
-                <param name="minilabel">$INFO[Player.Volume]</param>
-                <param name="haslabel">Skin.HasSetting(ToastNotifications.Tabbed)</param>
-                <param name="hasbackground">Skin.HasSetting(ToastNotifications.Tabbed)</param>
-            </include>
-            <visible>!Player.Muted</visible>
-        </control>
+        <include content="Furniture_Busy">
+            <param name="hasprogress">true</param>
+            <param name="hasbackground">Skin.HasSetting(ToastNotifications.Tabbed)</param>
+            <param name="icon">special://skin/extras/icons/volume-low.png</param>
+            <param name="progress">Control.GetLabel(933)</param>
+            <param name="progress_id">933</param>
+            <param name="mainlabel">$LOCALIZE[13376]$INFO[Control.GetLabel(933), ,%]</param>
+            <param name="minilabel">$INFO[Player.Volume]</param>
+            <param name="haslabel">Skin.HasSetting(ToastNotifications.Tabbed)</param>
+            <param name="hasbackground">Skin.HasSetting(ToastNotifications.Tabbed)</param>
+            <param name="visible">!Player.Muted</param>
+        </include>
+
 
         <!-- Muted -->
+        <include content="Furniture_Busy" condition="!Skin.HasSetting(ToastNotifications.Tabbed)">
+            <param name="icon">special://skin/extras/icons/volume-xmark.png</param>
+            <param name="haslabel">false</param>
+            <param name="hasbackground">false</param>
+            <param name="visible">Player.Muted + !Window.IsActive(DialogBusy.xml) + !Window.IsActive(DialogNotification.xml) + !Window.IsActive(DialogExtendedProgressBar.xml)</param>
+        </include>
         <control type="group">
             <visible>Player.Muted</visible>
-
-            <control type="group">
-                <include content="Furniture_Busy_Base" condition="!Skin.HasSetting(ToastNotifications.Tabbed)">
-                    <param name="hasbackground">false</param>
-                    <param name="icon">special://skin/extras/icons/volume-xmark.png</param>
-                </include>
-                <include content="Furniture_Busy_Main" condition="!Skin.HasSetting(ToastNotifications.Tabbed)">
-                    <param name="haslabel">false</param>
-                    <param name="hasbackground">false</param>
-                </include>
-                <visible>!Window.IsActive(DialogBusy.xml)</visible>
-                <visible>!Window.IsActive(DialogNotification.xml)</visible>
-                <visible>!Window.IsActive(DialogExtendedProgressBar.xml)</visible>
-            </control>
-
-            <control type="group">
-                <include content="Furniture_Busy_Base" condition="Skin.HasSetting(ToastNotifications.Tabbed)">
-                    <param name="hasbackground">false</param>
-                    <param name="icon">special://skin/extras/icons/volume-xmark.png</param>
-                </include>
-                <right>0</right>
-                <include content="Furniture_Busy_Main" condition="Skin.HasSetting(ToastNotifications.Tabbed)">
-                    <param name="haslabel">false</param>
-                    <param name="hasbackground">false</param>
-                </include>
-            </control>
+            <include content="Furniture_Busy_Base" condition="Skin.HasSetting(ToastNotifications.Tabbed)">
+                <param name="hasbackground">false</param>
+                <param name="icon">special://skin/extras/icons/volume-xmark.png</param>
+            </include>
+            <right>0</right>
+            <include content="Furniture_Busy_Main" condition="Skin.HasSetting(ToastNotifications.Tabbed)">
+                <param name="haslabel">false</param>
+                <param name="hasbackground">false</param>
+            </include>
         </control>
 
         <control type="label" id="31">

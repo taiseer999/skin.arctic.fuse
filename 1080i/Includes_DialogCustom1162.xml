@@ -98,22 +98,6 @@
                     </include>
                 </include>
             </control>
-            <!-- <control type="group">
-                <right>90</right>
-                <centertop>100</centertop>
-                <height>40</height>
-                <width>40</width>
-                <include>Animation_Right_Delay</include>
-                <visible>Container(450).IsUpdating</visible>
-                <include content="Animation_Fade_In">
-                    <param name="type">visible</param>
-                    <param name="delay">400</param>
-                </include>
-                <include content="Furniture_Busy_Icon">
-                    <param name="hasspinner">true</param>
-                    <param name="spinspinner">true</param>
-                </include>
-            </control> -->
         </definition>
     </include>
 
