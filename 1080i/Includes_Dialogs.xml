@@ -88,11 +88,11 @@
             <control type="group">
                 <control type="image">
                     <texture colordiffuse="dialog_bg_100" border="20">common/dialog.png</texture>
+                    <include condition="$PARAM[shadow]">Texture_Shadow_80</include>
                 </control>
                 <control type="image">
                     <fadetime>background_fadetime</fadetime>
                     <aspectratio scalediffuse="false" align="left">scale</aspectratio>
-                    <include condition="$PARAM[shadow]">Texture_Shadow_80</include>
                     <texture flipy="$PARAM[flipy]" diffuse="$PARAM[diffuse]" colordiffuse="$VAR[Dialog_Background_Blur_Adaptive_ColorDiffuse]">$VAR[Dialog_Background_Blur_Adaptive_Texture]</texture>
                 </control>
                 <include content="Object_Control" condition="Skin.HasSetting(Glass.EnableBorders)">
