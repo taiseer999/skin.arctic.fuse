@@ -379,15 +379,15 @@
             <height>80</height>
             <centerleft>50%</centerleft>
             <centertop>50%</centertop>
-            <onclick>ActivateWindow(1185)</onclick>
+            <onclick>$VAR[Action_ActivateSearchDiscover]</onclick>
         </control>
         <control type="image">
-            <texture colordiffuse="$VAR[Layout_Home_Menu_Color_NF]">special://skin/extras/icons/search.png</texture>
+            <texture colordiffuse="$VAR[Layout_Home_Menu_Color_NF]">$VAR[Image_SearchDiscover]</texture>
             <bordersize>icon_home_bordersize</bordersize>
             <visible>!Control.HasFocus(309)</visible>
         </control>
         <control type="image">
-            <texture colordiffuse="$VAR[ColorSelected]">special://skin/extras/icons/search.png</texture>
+            <texture colordiffuse="$VAR[ColorSelected]">$VAR[Image_SearchDiscover]</texture>
             <bordersize>icon_home_bordersize</bordersize>
             <visible>Control.HasFocus(309)</visible>
         </control>

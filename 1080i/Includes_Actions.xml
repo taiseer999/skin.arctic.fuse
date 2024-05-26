@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
+    <variable name="Action_ActivateSearchDiscover">
+        <value condition="Skin.HasSetting(SideMenu.SwapSearchForDiscover)">ActivateWindow(1105)</value>
+        <value condition="!Window.IsVisible(1185)">ActivateWindow(1185)</value>
+        <value>SetFocus(9097)</value>
+    </variable>
+
     <include name="Action_ButtonMenu_Onload">
         <onload condition="String.IsEmpty(Skin.String(OptionsTiles.Layout))">Skin.SetString(OptionsTiles.Layout,$NUMBER[3])</onload>
 
@@ -346,7 +352,7 @@
             <ondown>ClearProperty(List.ViewContainer.Left)</ondown>
             <ondown>ClearProperty(List.ViewContainer.Bump)</ondown>
 
-            <onleft condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions)">ActivateWindow(1185)</onleft>
+            <onleft condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions)">$VAR[Action_ActivateSearchDiscover]</onleft>
             <onright condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions)">ActivateWindow(1170)</onright>
 
         </definition>
@@ -389,8 +395,7 @@
             <onback>ClearProperty(MediaFilterBase)</onback>
             <onback>ClearProperty(MediaFilterWall)</onback>
 
-            <onup condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions) + !Window.IsVisible(1185)">ActivateWindow(1185)</onup>
-            <onup condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions) + Window.IsVisible(1185)">SetFocus(9097)</onup>
+            <onup condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions)">$VAR[Action_ActivateSearchDiscover]</onup>
             <ondown condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions)">ActivateWindow(1170)</ondown>
 
         </definition>

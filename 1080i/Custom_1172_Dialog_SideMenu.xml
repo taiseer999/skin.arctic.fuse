@@ -76,7 +76,7 @@
                         <onleft>Action(PreviousMenu)</onleft>
                         <onright>Action(PreviousMenu)</onright>
                         <onclick>Action(PreviousMenu)</onclick>
-                        <onclick>ActivateWindow(1185)</onclick>
+                        <onclick>$VAR[Action_ActivateSearchDiscover]</onclick>
                     </include>
                 </include>
                 <control type="group">
