@@ -521,6 +521,11 @@
         <definition>
             <include content="Info_Line_Rating" condition="![$PARAM[is_player]]">
                 <param name="icon">flags/$VAR[Info_Line_Rating_Style]/ratings/user.png</param>
+                <param name="label">$INFO[Container(99950).ListItem.UserRating,,.0]</param>
+                <param name="visible">[$PARAM[visible]] + !String.IsEmpty(Container(99950).ListItem.UserRating) + String.IsEmpty($PARAM[container]ListItem.UserRating) + !String.IsEmpty(Window.Property(TMDBHelper.WidgetContainer))</param>
+            </include>
+            <include content="Info_Line_Rating" condition="![$PARAM[is_player]]">
+                <param name="icon">flags/$VAR[Info_Line_Rating_Style]/ratings/user.png</param>
                 <param name="label">$INFO[$PARAM[container]ListItem.UserRating,,.0]</param>
                 <param name="visible">[$PARAM[visible]] + !String.IsEmpty($PARAM[container]ListItem.UserRating)</param>
             </include>
