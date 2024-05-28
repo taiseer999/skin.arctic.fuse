@@ -1813,7 +1813,6 @@
                 <onclick>SetFocus($PARAM[edit_id])</onclick>
                 <include>Object_SearchLetter_Click_$PARAM[letter]</include>
                 <onclick>SetFocus($PARAM[base_id]$PARAM[this_row_id]$PARAM[pos])</onclick>
-                <include>Action_UpdateSearchTerm</include>
                 <nested />
             </include>
         </definition>

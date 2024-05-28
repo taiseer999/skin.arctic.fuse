@@ -7,7 +7,7 @@
         <onup condition="!Window.IsVisible(1170) + ![Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRChannels.xml)]">9009</onup>
         <ondown condition="Window.IsVisible(1170)">7010</ondown>
         <ondown condition="[Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRChannels.xml)]">9001</ondown>
-        <ondown condition="!Window.IsVisible(1170) + ![Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRChannels.xml)]">19</ondown>
+        <ondown condition="!Window.IsVisible(1170) + ![Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRChannels.xml)]">9019</ondown>
         <onback condition="!Window.IsVisible(1170)">68</onback>
         <oninfo>Close</oninfo>
     </include>

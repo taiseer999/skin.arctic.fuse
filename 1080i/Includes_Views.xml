@@ -13,9 +13,18 @@
                 <visible>!Window.IsVisible(DialogGameControllers.xml)</visible>
                 <visible>!Window.IsVisible(DialogPVRChannelManager.xml)</visible>
                 <visible>!Window.IsVisible(DialogPVRGroupManager.xml)</visible>
-                <include content="Furniture_Top">
-                    <param name="label">$PARAM[label]</param>
-                </include>
+                <control type="group">
+                    <visible allowhiddenfocus="true">![Control.HasFocus(19) | ControlGroup(9090).HasFocus() | Control.HasFocus(9992) | Control.HasFocus(9993) | !String.IsEmpty(Window.Property(MediaFilterBase)) | $EXP[Exp_FilterWall_IsActive]]</visible>
+                    <include content="Furniture_Top">
+                        <param name="label">$PARAM[label]</param>
+                    </include>
+                </control>
+                <control type="group">
+                    <visible allowhiddenfocus="true">Control.HasFocus(19) | ControlGroup(9090).HasFocus() | Control.HasFocus(9992) | Control.HasFocus(9993) | !String.IsEmpty(Window.Property(MediaFilterBase)) | $EXP[Exp_FilterWall_IsActive]</visible>
+                    <include content="Search_View_Edit">
+                        <param name="editid">19</param>
+                    </include>
+                </control>
             </control>
         </definition>
     </include>
@@ -85,6 +94,7 @@
         <include content="Object_Hidden_Button">
             <param name="id">64</param>
             <onfocus>$VAR[Action_Var_ToMediaFilter]</onfocus>
+            <onfocus>ClearProperty(FocusFilter)</onfocus>
         </include>
         <include content="Object_Hidden_Button">
             <param name="id">67</param>

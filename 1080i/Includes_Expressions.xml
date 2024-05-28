@@ -224,8 +224,6 @@
 
     <expression name="Exp_Halloween_Theme">[System.Date(10-30,11-01) + Skin.HasSetting(EnableHolidayTheme) + [[!Window.IsVisible(visualisation) + !VideoPlayer.IsFullscreen] | Window.IsActive(fullscreeninfo)]]</expression>
 
-
-
     <!-- ====== -->
     <!-- Wizard -->
     <!-- ====== -->
