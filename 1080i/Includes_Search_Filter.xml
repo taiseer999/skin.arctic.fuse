@@ -253,6 +253,13 @@
                         <include>Dimension_Dialog_Body_Group</include>
                         <content>
                             <item>
+                                <label>$LOCALIZE[369]</label>
+                                <label2>$INFO[Control.GetLabel(9099).index(1)]</label2>
+                                <onclick>SetFocus(9099)</onclick>
+                                <onclick>Action(Select)</onclick>
+                                <onclick>SetFocus(8000)</onclick>
+                            </item>
+                            <item>
                                 <label>$LOCALIZE[456]</label>
                                 <label2>$INFO[Container(5099).ListItem.Label]</label2>
                                 <onclick>SetFocus(5098)</onclick>
