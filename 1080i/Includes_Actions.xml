@@ -256,12 +256,7 @@
     <include name="Action_View_Movement_OnUp">
         <param name="id">50</param>
         <definition>
-            <onup>ClearProperty(FocusFilter)</onup>
-            <onup>SetFocus(64)</onup>
-            <!-- <include content="Action_Widget_Top">
-                <param name="id">$PARAM[id]</param>
-                <param name="condition">[true]</param>
-            </include> -->
+            <onup>SetFocus(9094)</onup>
         </definition>
     </include>
 
@@ -615,8 +610,7 @@
     </include>
 
     <variable name="Action_Var_Search_ToMediaFilter_ReturnID">
-        <value condition="!String.IsEmpty(Window.Property(FocusFilter))">8000</value>
-        <value>9090</value>
+        <value>8000</value>
     </variable>
 
     <variable name="Action_Var_Search_ToMediaFilter">
@@ -625,8 +619,7 @@
     </variable>
 
     <variable name="Action_Var_ToMediaFilter_ReturnID">
-        <value condition="!String.IsEmpty(Window.Property(FocusFilter))">9012</value>
-        <value>9090</value>
+        <value>9012</value>
     </variable>
 
     <variable name="Action_Var_ToMediaFilter">
@@ -643,7 +636,6 @@
             <ondown condition="$PARAM[condition] + Skin.String(Navigation.Global.OnDown,Explore)">SetFocus(67)</ondown>
 
             <!-- Filter -->
-            <ondown condition="$PARAM[condition] + Skin.String(Navigation.Global.OnDown,Filter)">SetProperty(FocusFilter,True)</ondown>
             <ondown condition="$PARAM[condition] + Skin.String(Navigation.Global.OnDown,Filter)">SetFocus(64)</ondown>
 
             <!-- Options -->

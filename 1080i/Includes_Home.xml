@@ -47,17 +47,6 @@
         </definition>
     </include>
 
-    <include name="Home_Menu_List_OnUp_ActivateSearch">
-        <param name="property">ReverseTransition</param>
-        <param name="condition">true</param>
-        <definition>
-            <onup condition="$PARAM[condition]">SetProperty(PreviousWindow,$VAR[Label_Header_Main],1185)</onup>
-            <onup condition="$PARAM[condition]">SetProperty($PARAM[property],True,Home)</onup>
-            <onup condition="$PARAM[condition]">AlarmClock(Clear$PARAM[property],ClearProperty($PARAM[property],Home),00:00,silent)</onup>
-            <onup condition="$PARAM[condition]">ActivateWindow(1185)</onup>
-        </definition>
-    </include>
-
     <include name="Home_Menu_List_OnBackInfo">
         <oninfo>ActivateWindow(1170)</oninfo>
         <onback>CancelAlarm(SplashTimeOut,silent)</onback>
@@ -121,6 +110,13 @@
 
                     <onfocus condition="!String.IsEmpty(Window.Property(List.ViewContainer.Prev))">SetProperty(List.ViewContainer,$INFO[Window.Property(List.ViewContainer.Prev)])</onfocus>
                     <onfocus condition="!String.IsEmpty(Window.Property(List.ViewContainer.Prev))">ClearProperty(List.ViewContainer.Prev)</onfocus>
+
+                    <include content="Object_HitRect" condition="![$PARAM[vertical]] + !$EXP[Exp_Window_IsHub]">
+                        <param name="x">0</param>
+                        <param name="y">0</param>
+                        <param name="w">0</param>
+                        <param name="h">0</param>
+                    </include>
 
                     <include content="Action_HomeMenu_OnRightLeft" condition="$PARAM[vertical]">
                         <param name="onlist">$PARAM[onlist]</param>
@@ -372,47 +368,65 @@
     </include>
 
     <include name="Home_Menu_SearchAndOptions_SearchButton">
-        <control type="button" id="309">
-            <texturenofocus />
-            <include>Texture_KeyboardButton</include>
-            <width>80</width>
-            <height>80</height>
-            <centerleft>50%</centerleft>
-            <centertop>50%</centertop>
-            <onclick>$VAR[Action_ActivateSearchDiscover]</onclick>
-        </control>
-        <control type="image">
-            <texture colordiffuse="$VAR[Layout_Home_Menu_Color_NF]">$VAR[Image_SearchDiscover]</texture>
-            <bordersize>icon_home_bordersize</bordersize>
-            <visible>!Control.HasFocus(309)</visible>
-        </control>
-        <control type="image">
-            <texture colordiffuse="$VAR[ColorSelected]">$VAR[Image_SearchDiscover]</texture>
-            <bordersize>icon_home_bordersize</bordersize>
-            <visible>Control.HasFocus(309)</visible>
-        </control>
+        <param name="vertical">false</param>
+        <definition>
+            <control type="button" id="309">
+                <texturenofocus />
+                <include>Texture_KeyboardButton</include>
+                <width>80</width>
+                <height>80</height>
+                <centerleft>50%</centerleft>
+                <centertop>50%</centertop>
+                <onclick>$VAR[Action_ActivateSearchDiscover]</onclick>
+                <include content="Object_HitRect" condition="![$PARAM[vertical]] + !$EXP[Exp_Window_IsHub]">
+                    <param name="x">0</param>
+                    <param name="y">0</param>
+                    <param name="w">0</param>
+                    <param name="h">0</param>
+                </include>
+            </control>
+            <control type="image">
+                <texture colordiffuse="$VAR[Layout_Home_Menu_Color_NF]">$VAR[Image_SearchDiscover]</texture>
+                <bordersize>icon_home_bordersize</bordersize>
+                <visible>!Control.HasFocus(309)</visible>
+            </control>
+            <control type="image">
+                <texture colordiffuse="$VAR[ColorSelected]">$VAR[Image_SearchDiscover]</texture>
+                <bordersize>icon_home_bordersize</bordersize>
+                <visible>Control.HasFocus(309)</visible>
+            </control>
+        </definition>
     </include>
 
     <include name="Home_Menu_SearchAndOptions_OptionButton">
-        <control type="button" id="308">
-            <texturenofocus />
-            <include>Texture_KeyboardButton</include>
-            <width>80</width>
-            <height>80</height>
-            <centerleft>50%</centerleft>
-            <centertop>50%</centertop>
-            <onclick>ActivateWindow(1170)</onclick>
-        </control>
-        <control type="image">
-            <texture colordiffuse="$VAR[Layout_Home_Menu_Color_NF]">special://skin/extras/icons/bars.png</texture>
-            <bordersize>icon_home_bordersize</bordersize>
-            <visible>!Control.HasFocus(308)</visible>
-        </control>
-        <control type="image">
-            <texture colordiffuse="$VAR[ColorSelected]">special://skin/extras/icons/bars.png</texture>
-            <bordersize>icon_home_bordersize</bordersize>
-            <visible>Control.HasFocus(308)</visible>
-        </control>
+        <param name="vertical">false</param>
+        <definition>
+            <control type="button" id="308">
+                <texturenofocus />
+                <include>Texture_KeyboardButton</include>
+                <width>80</width>
+                <height>80</height>
+                <centerleft>50%</centerleft>
+                <centertop>50%</centertop>
+                <onclick>ActivateWindow(1170)</onclick>
+                <include content="Object_HitRect" condition="![$PARAM[vertical]] + !$EXP[Exp_Window_IsHub]">
+                    <param name="x">0</param>
+                    <param name="y">0</param>
+                    <param name="w">0</param>
+                    <param name="h">0</param>
+                </include>
+            </control>
+            <control type="image">
+                <texture colordiffuse="$VAR[Layout_Home_Menu_Color_NF]">special://skin/extras/icons/bars.png</texture>
+                <bordersize>icon_home_bordersize</bordersize>
+                <visible>!Control.HasFocus(308)</visible>
+            </control>
+            <control type="image">
+                <texture colordiffuse="$VAR[ColorSelected]">special://skin/extras/icons/bars.png</texture>
+                <bordersize>icon_home_bordersize</bordersize>
+                <visible>Control.HasFocus(308)</visible>
+            </control>
+        </definition>
     </include>
 
     <include name="Home_Menu_SearchAndOptions_Vert">
@@ -421,14 +435,18 @@
             <height>40</height>
             <centerleft>100</centerleft>
             <centertop>100</centertop>
-            <include>Home_Menu_SearchAndOptions_SearchButton</include>
+            <include content="Home_Menu_SearchAndOptions_SearchButton">
+                <param name="vertical">true</param>
+            </include>
         </control>
         <control type="group">
             <width>40</width>
             <height>40</height>
             <centerleft>100</centerleft>
             <centerbottom>100</centerbottom>
-            <include>Home_Menu_SearchAndOptions_OptionButton</include>
+            <include content="Home_Menu_SearchAndOptions_OptionButton">
+                <param name="vertical">true</param>
+            </include>
         </control>
     </include>
 
@@ -438,14 +456,18 @@
             <height>40</height>
             <centerleft>120</centerleft>
             <centertop>100</centertop>
-            <include>Home_Menu_SearchAndOptions_SearchButton</include>
+            <include content="Home_Menu_SearchAndOptions_SearchButton">
+                <param name="vertical">false</param>
+            </include>
         </control>
         <control type="group">
             <width>40</width>
             <height>40</height>
             <centerright>100</centerright>
             <centertop>100</centertop>
-            <include>Home_Menu_SearchAndOptions_OptionButton</include>
+            <include content="Home_Menu_SearchAndOptions_OptionButton">
+                <param name="vertical">false</param>
+            </include>
         </control>
     </include>
 

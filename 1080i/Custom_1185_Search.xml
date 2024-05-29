@@ -8,6 +8,13 @@
         <param name="defaultcontrol">9098</param>
     </include>
 
+    <include content="Object_MenuControl" condition="![String.IsEmpty(Window(Home).Property(SideMenu.HasFocus)) | ![Skin.HasSetting(SideMenu.EnableSearchAndOptions) + !Skin.HasSetting(SideMenu.SwapSearchForDiscover)]]">
+        <param name="menucontrol">9097</param>
+    </include>
+    <include content="Object_MenuControl" condition="[String.IsEmpty(Window(Home).Property(SideMenu.HasFocus)) | ![Skin.HasSetting(SideMenu.EnableSearchAndOptions) + !Skin.HasSetting(SideMenu.SwapSearchForDiscover)]]">
+        <param name="menucontrol">303</param>
+    </include>
+
     <onload>ClearProperty(TMDbHelper.Image.Override,Home)</onload>
     <onload>SetFocus(5001)</onload>
     <onload condition="![String.IsEmpty(Window(Home).Property(SideMenu.HasFocus)) | ![Skin.HasSetting(SideMenu.EnableSearchAndOptions) + !Skin.HasSetting(SideMenu.SwapSearchForDiscover)]]">SetFocus(9097)</onload>
@@ -29,6 +36,7 @@
                 </include>
                 <include content="DialogInfo_Recommendations_Widgets_Grouplist">
                     <param name="onup">9098</param>
+                    <param name="widget_windowchange_animation">false</param>
                     <include>skinvariables-searchmenu-widgets</include>
                     <control type="group" id="5099">
                         <height>0</height>
@@ -50,12 +58,6 @@
                 </include>
             </control>
             <control type="group">
-                <!-- <include content="Animation_Half_WindowChange">
-                    <param name="windowopen_up">!$EXP[Exp_SettingsDialogs_Prev] + !String.IsEmpty(Window(Home).Property(ReverseTransition))</param>
-                    <param name="windowopen_down">!$EXP[Exp_SettingsDialogs_Prev] + String.IsEmpty(Window(Home).Property(ReverseTransition))</param>
-                    <param name="windowclose_up">!$EXP[Exp_SettingsDialogs_Next] + !String.IsEmpty(Window(Home).Property(ReverseTransition))</param>
-                    <param name="windowclose_down">!$EXP[Exp_SettingsDialogs_Next] + String.IsEmpty(Window(Home).Property(ReverseTransition))</param>
-                </include> -->
                 <visible>String.IsEmpty(Control.GetLabel(9099).index(1)) | Integer.IsEqual(Container(5000).NumItems,0)</visible>
                 <control type="grouplist">
                     <left>view_side</left>
