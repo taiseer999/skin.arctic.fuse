@@ -152,8 +152,6 @@
                             <visible>!Control.HaSfocus($PARAM[editid]) | Window.IsVisible(DialogKeyboard.xml)</visible>
                         </include>
                         <control type="edit" id="$PARAM[editid]">
-                            <height>40</height>
-                            <centertop>50%</centertop>
                             <texturefocus />
                             <texturenofocus />
                             <description>Search</description>
