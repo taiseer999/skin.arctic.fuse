@@ -42,42 +42,10 @@
             <include>Search_View_Widgets_InfoPanel</include>
             <include>Search_View_Edit</include>
         </control>
-        <include>Search_View_Edit_SideButton</include>
         <control type="group">
             <visible>!$EXP[Exp_InfoDialogs]</visible>
             <include>Animation_Transition_InfoPanel_Hide</include>
             <include>Furniture_Bottom_Right</include>
-        </control>
-    </include>
-
-    <include name="Search_View_Edit_SideButton">
-        <control type="group">
-            <centertop>100</centertop>
-            <height>120</height>
-            <itemgap>80</itemgap>
-            <visible>Control.HasFocus(9097)</visible>
-            <include>Animation_Home_SlideOver</include>
-            <include>Animation_Group_Bumper</include>
-            <include content="Home_Menu_Button_Icon">
-                <param name="id">9097</param>
-                <param name="icon">$VAR[Image_SearchDiscover]</param>
-                <param name="color_nf">main_fg_70</param>
-                <centertop>50%</centertop>
-                <left>view_menu</left>
-                <include content="Home_Menu_Button_Back">
-                    <param name="id">9097</param>
-                    <onup>noop</onup>
-                    <ondown>Action(PreviousMenu)</ondown>
-                    <onright>SetFocus(9098)</onright>
-                    <onclick condition="[Skin.HasSetting(SideMenu.SwapSearchForDiscover) + Window.IsVisible(1105)] | [!Skin.HasSetting(SideMenu.SwapSearchForDiscover) + Window.IsVisible(1185)]">SetFocus(9098)</onclick>
-
-                    <onclick condition="![[Skin.HasSetting(SideMenu.SwapSearchForDiscover) + Window.IsVisible(1105)] | [!Skin.HasSetting(SideMenu.SwapSearchForDiscover) + Window.IsVisible(1185)]] + Window.IsVisible(1185)">ActivateWindow(1105)</onclick>
-
-                    <onclick condition="![[Skin.HasSetting(SideMenu.SwapSearchForDiscover) + Window.IsVisible(1105)] | [!Skin.HasSetting(SideMenu.SwapSearchForDiscover) + Window.IsVisible(1185)]] + Window.IsVisible(1105)">ActivateWindow(1185)</onclick>
-
-                    <include>Home_Menu_List_SlideOver_OnFocus</include>
-                </include>
-            </include>
         </control>
     </include>
 
@@ -109,7 +77,13 @@
             <control type="button" id="9098">
                 <include>Object_Hidden_Button_Definition</include>
                 <include>Action_View_SlideOver_OnFocus</include>
-                <onfocus>SetFocus(9094)</onfocus>
+
+                <onfocus condition="Window.IsVisible(1105) + String.IsEmpty(Window(Home).Property(CustomSearchTerm))">SetFocus(52)</onfocus>
+                <onfocus condition="Window.IsVisible(1105) + !String.IsEmpty(Window(Home).Property(CustomSearchTerm))">AlarmClock(refocus,RunScript(script.skinvariables,set_editcontrol=9099,window_id=1105,setfocus=52,text=$INFO[Window(Home).Property(CustomSearchTerm)]),00:01,silent)</onfocus>
+
+                <onfocus>ClearProperty(CustomSearchTerm,Home)</onfocus>
+                <onfocus condition="!Window.IsVisible(1105)">SetFocus(9094)</onfocus>
+
                 <!-- <onfocus condition="Window.IsVisible(1105) | Window.IsMedia">SetFocus(64)</onfocus> -->
             </control>
             <control type="group" id="9990">
@@ -207,9 +181,8 @@
                 <control type="group">
                     <width>40</width>
                     <control type="button" id="9094">
-                        <onleft condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions) + !$EXP[Exp_Navigation_OnWrap]">SetFocus(9097)</onleft>
-                        <onleft condition="![Skin.HasSetting(SideMenu.EnableSearchAndOptions) + !$EXP[Exp_Navigation_OnWrap]]">SetFocus($PARAM[rowone],9999,absolute)</onleft>
-                        <onleft condition="![Skin.HasSetting(SideMenu.EnableSearchAndOptions) + !$EXP[Exp_Navigation_OnWrap]]">9092</onleft>
+                        <onleft>SetFocus($PARAM[rowone],9999,absolute)</onleft>
+                        <onleft>9092</onleft>
                         <onright>SetFocus($PARAM[rowone],0,absolute)</onright>
                         <onup>$PARAM[editid]</onup>
                         <ondown>$PARAM[rowtwo]</ondown>
@@ -497,9 +470,8 @@
                         <onup>$PARAM[editid]</onup>
                         <ondown>$PARAM[rowtwo]</ondown>
                         <onback condition="Window.IsMedia">$PARAM[ondown]</onback>
-                        <onright condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions) + !$EXP[Exp_Navigation_OnWrap]">SetFocus(9097)</onright>
-                        <onright condition="![Skin.HasSetting(SideMenu.EnableSearchAndOptions) + !$EXP[Exp_Navigation_OnWrap]]">SetFocus($PARAM[rowone],0,absolute)</onright>
-                        <onright condition="![Skin.HasSetting(SideMenu.EnableSearchAndOptions) + !$EXP[Exp_Navigation_OnWrap]]">9094</onright>
+                        <onright>SetFocus($PARAM[rowone],0,absolute)</onright>
+                        <onright>9094</onright>
                     </control>
                 </control>
 
@@ -757,13 +729,7 @@
 
                     <include>Action_View_SlideOver_OnFocus</include>
 
-                    <include content="Action_View_Movement_OnLeftRight" condition="[Skin.HasSetting(SideMenu.EnableSearchAndOptions) + Skin.HasSetting(SideMenu.SwapSearchForDiscover)]">
-                        <param name="id">52</param>
-                        <param name="onback">[Integer.IsEqual(Container(52).CurrentItem,1)]</param>
-                        <param name="menuid">9097</param>
-                    </include>
-
-                    <include content="Action_View_Movement_OnLeftRight" condition="![Skin.HasSetting(SideMenu.EnableSearchAndOptions) + Skin.HasSetting(SideMenu.SwapSearchForDiscover)]">
+                    <include content="Action_View_Movement_OnLeftRight">
                         <param name="id">52</param>
                         <param name="onback">[Integer.IsEqual(Container(52).CurrentItem,1)]</param>
                     </include>

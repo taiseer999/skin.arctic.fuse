@@ -1,36 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="window" id="1105">
-    <!-- <defaultcontrol always="true">52</defaultcontrol> -->
-    <!-- <menucontrol>303</menucontrol> -->
+    <defaultcontrol always="true">9098</defaultcontrol>
+    <menucontrol>303</menucontrol>
 
     <include>Action_Blur_Onload</include>
-
-    <include content="Object_DefaultControl" condition="![String.IsEmpty(Window(Home).Property(SideMenu.HasFocus)) | ![Skin.HasSetting(SideMenu.EnableSearchAndOptions) + Skin.HasSetting(SideMenu.SwapSearchForDiscover)]]">
-        <param name="defaultcontrol">9097</param>
-    </include>
-    <include content="Object_DefaultControl" condition="[String.IsEmpty(Window(Home).Property(SideMenu.HasFocus)) | ![Skin.HasSetting(SideMenu.EnableSearchAndOptions) + Skin.HasSetting(SideMenu.SwapSearchForDiscover)]]">
-        <param name="defaultcontrol">9098</param>
-    </include>
-
-    <include content="Object_MenuControl" condition="![String.IsEmpty(Window(Home).Property(SideMenu.HasFocus)) | ![Skin.HasSetting(SideMenu.EnableSearchAndOptions) + Skin.HasSetting(SideMenu.SwapSearchForDiscover)]]">
-        <param name="menucontrol">9097</param>
-    </include>
-    <include content="Object_MenuControl" condition="[String.IsEmpty(Window(Home).Property(SideMenu.HasFocus)) | ![Skin.HasSetting(SideMenu.EnableSearchAndOptions) + Skin.HasSetting(SideMenu.SwapSearchForDiscover)]]">
-        <param name="menucontrol">303</param>
-    </include>
-
     <onload>ClearProperty(TMDbHelper.Image.Override,Home)</onload>
-    <onload>SetFocus(5001)</onload>
-    <onload condition="![String.IsEmpty(Window(Home).Property(SideMenu.HasFocus)) | ![Skin.HasSetting(SideMenu.EnableSearchAndOptions) + Skin.HasSetting(SideMenu.SwapSearchForDiscover)]]">SetFocus(9097)</onload>
-    <onload condition="![String.IsEmpty(Window(Home).Property(SideMenu.HasFocus)) | ![Skin.HasSetting(SideMenu.EnableSearchAndOptions) + Skin.HasSetting(SideMenu.SwapSearchForDiscover)]]">AlarmClock(refocus,SetFocus(9097),00:00,silent)</onload>
-    <onload condition="[String.IsEmpty(Window(Home).Property(SideMenu.HasFocus)) | ![Skin.HasSetting(SideMenu.EnableSearchAndOptions) + Skin.HasSetting(SideMenu.SwapSearchForDiscover)]]">SetFocus(9098)</onload>
-    <onload condition="[String.IsEmpty(Window(Home).Property(SideMenu.HasFocus)) | ![Skin.HasSetting(SideMenu.EnableSearchAndOptions) + Skin.HasSetting(SideMenu.SwapSearchForDiscover)]]">AlarmClock(refocus,SetFocus(9098),00:00,silent)</onload>
-
+    <onload>SetFocus(9098)</onload>
+    <onload>AlarmClock(refocus,SetFocus(9098),00:00,silent)</onload>
     <include>Action_PreserveTransitionProp_Onload</include>
-
-    <!-- <onload condition="String.IsEmpty(Window(Home).Property(CustomSearchTerm)) + !$EXP[Exp_InfoPanelWindows_Prev_03]">SetFocus(52)</onload>
-    <onload condition="!String.IsEmpty(Window(Home).Property(CustomSearchTerm))">AlarmClock(refocus,RunScript(script.skinvariables,set_editcontrol=9099,window_id=1105,setfocus=52,text=$INFO[Window(Home).Property(CustomSearchTerm)]),00:01,silent)</onload>
-    <onload>ClearProperty(CustomSearchTerm,Home)</onload> -->
 
     <onunload condition="!String.IsEmpty(Control.GetLabel(9099).index(1))">RunScript(script.skinvariables,add_skinstring_history=SearchHistory,value=$VAR[Path_SearchTerm])</onunload>
     <onunload>ClearProperty(MediaFilterBase,1105)</onunload>

@@ -378,6 +378,12 @@
                 <centerleft>50%</centerleft>
                 <centertop>50%</centertop>
                 <onclick>$VAR[Action_ActivateSearchDiscover]</onclick>
+
+                <onup>308</onup>
+                <ondown>SetFocus(303,0,absolute)</ondown>
+                <onleft>308</onleft>
+                <onright>SetFocus(303,0,absolute)</onright>
+
                 <include content="Object_HitRect" condition="![$PARAM[vertical]] + !$EXP[Exp_Window_IsHub]">
                     <param name="x">0</param>
                     <param name="y">0</param>
@@ -409,6 +415,12 @@
                 <centerleft>50%</centerleft>
                 <centertop>50%</centertop>
                 <onclick>ActivateWindow(1170)</onclick>
+
+                <ondown>309</ondown>
+                <onup>SetFocus(303,9999,absolute)</onup>
+                <onright>309</onright>
+                <onleft>SetFocus(303,9999,absolute)</onleft>
+
                 <include content="Object_HitRect" condition="![$PARAM[vertical]] + !$EXP[Exp_Window_IsHub]">
                     <param name="x">0</param>
                     <param name="y">0</param>

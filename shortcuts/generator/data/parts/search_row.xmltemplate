@@ -10,14 +10,7 @@
     <param name="transition_hidden">Control.HasFocus({widget_id})</param>
     <param name="widgetfade_include">true</param>
 
-    <include content="Action_View_Movement_OnLeftRight" condition="[Skin.HasSetting(SideMenu.EnableSearchAndOptions) + !Skin.HasSetting(SideMenu.SwapSearchForDiscover)]">
-        <param name="id">{widget_id}</param>
-        <param name="backid">5000</param>
-        <param name="onback">[Integer.IsEqual(Container({widget_id}).CurrentItem,1)]</param>
-        <param name="menuid">9097</param>
-    </include>
-
-    <include content="Action_View_Movement_OnLeftRight" condition="![Skin.HasSetting(SideMenu.EnableSearchAndOptions) + !Skin.HasSetting(SideMenu.SwapSearchForDiscover)]">
+    <include content="Action_View_Movement_OnLeftRight">
         <param name="id">{widget_id}</param>
         <param name="backid">5000</param>
         <param name="onback">[Integer.IsEqual(Container({widget_id}).CurrentItem,1)]</param>

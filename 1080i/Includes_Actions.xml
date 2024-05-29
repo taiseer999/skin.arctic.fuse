@@ -4,7 +4,7 @@
     <variable name="Action_ActivateSearchDiscover">
         <value condition="Skin.HasSetting(SideMenu.SwapSearchForDiscover)">ActivateWindow(1105)</value>
         <value condition="!Window.IsVisible(1185)">ActivateWindow(1185)</value>
-        <value>SetFocus(9097)</value>
+        <value>SetFocus(9098)</value>
     </variable>
 
     <include name="Action_ButtonMenu_Onload">
@@ -389,8 +389,8 @@
             <onback>ClearProperty(MediaFilterBase)</onback>
             <onback>ClearProperty(MediaFilterWall)</onback>
 
-            <onup condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions)">$VAR[Action_ActivateSearchDiscover]</onup>
-            <ondown condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions)">ActivateWindow(1170)</ondown>
+            <onup condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions)">SetFocus(309)</onup>
+            <ondown condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions)">SetFocus(308)</ondown>
 
         </definition>
     </include>
