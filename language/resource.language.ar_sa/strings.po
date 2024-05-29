@@ -2097,9 +2097,9 @@ msgid "Open path in dialog"
 msgstr """
 
 #: /1080i/SkinSettings.xml
- msgctxt "#31446"
- msgid "Bump"
- msgstr "لا شئ"
+msgctxt "#31446"
+msgid "Bump"
+msgstr "لا شئ"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31448"
