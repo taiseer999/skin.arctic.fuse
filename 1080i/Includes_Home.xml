@@ -99,7 +99,6 @@
                     <movement>2</movement>
 
                     <include>Home_Menu_List_OnBackInfo</include>
-
                     <include>Home_Menu_List_SlideOver_OnFocus</include>
 
                     <onfocus>ClearProperty(WidgetGroup.Movement)</onfocus>
@@ -378,6 +377,9 @@
                 <centerleft>50%</centerleft>
                 <centertop>50%</centertop>
 
+                <include>Home_Menu_List_OnBackInfo</include>
+                <include>Home_Menu_List_SlideOver_OnFocus</include>
+
                 <onclick>SetProperty(SearchDiscover.FocusFilter,True,Home)</onclick>
                 <onclick>$VAR[Action_ActivateSearchDiscover]</onclick>
 
@@ -420,6 +422,10 @@
                 <centerleft>50%</centerleft>
                 <centertop>50%</centertop>
                 <onclick>ActivateWindow(1170)</onclick>
+
+                <include>Home_Menu_List_OnBackInfo</include>
+                <include>Home_Menu_List_SlideOver_OnFocus</include>
+
                 <onleft condition="$PARAM[vertical] + !Skin.HasSetting(Navigation.DisableOptionsOnLeft)">ActivateWindow(1170)</onleft>
                 <ondown condition="$PARAM[vertical]">309</ondown>
                 <onup condition="$PARAM[vertical]">SetFocus(303,9999,absolute)</onup>
