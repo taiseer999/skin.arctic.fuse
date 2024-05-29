@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
+    <variable name="Label_Setting_SideMenuInfoPosition">
+        <value condition="$EXP[Exp_HomeMenu_Info_IsHorizontal]">$LOCALIZE[31164]</value>
+        <value>$LOCALIZE[31163]</value>
+    </variable>
+
     <variable name="Label_ColorPicker_Type">
         <value condition="String.IsEqual(Window(Home).Property(ColorPicker_Type),Highlight)">$LOCALIZE[31250]</value>
         <value condition="String.IsEqual(Window(Home).Property(ColorPicker_Type),Gradient)">$LOCALIZE[31232]</value>

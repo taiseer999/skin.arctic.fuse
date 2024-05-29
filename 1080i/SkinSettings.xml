@@ -205,6 +205,18 @@
                             <visible>!Skin.String(Home.SideMenuCollapse,Never)</visible>
                         </include>
 
+                        <include content="Settings_Button" description="Info dialog position">
+                            <param name="dialog">true</param>
+                            <param name="id">1009</param>
+                            <param name="dialog">false</param>
+                            <param name="control">button</param>
+                            <label>$LOCALIZE[31416] > $LOCALIZE[14116]</label>
+                            <label2>$VAR[Label_Setting_SideMenuInfoPosition]</label2>
+                            <onclick>Skin.ToggleSetting(Sidemenu.SwapInfoPosition)</onclick>
+                            <selected>!Skin.HasSetting(Sidemenu.SwapInfoPosition)</selected>
+                            <visible>Container(3).HasFocus(1)</visible>
+                        </include>
+
                         <!-- Appearance -->
                         <include content="Settings_Label" description="LooknFeel Label">
                             <param name="id">2000</param>
