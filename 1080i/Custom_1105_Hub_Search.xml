@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="window" id="1105">
-    <defaultcontrol always="true">9098</defaultcontrol>
+    <defaultcontrol always="true">52</defaultcontrol>
     <menucontrol>303</menucontrol>
 
     <include>Action_Blur_Onload</include>
     <onload>ClearProperty(TMDbHelper.Image.Override,Home)</onload>
-    <onload>SetFocus(9098)</onload>
     <onload>AlarmClock(refocus,SetFocus(9098),00:00,silent)</onload>
     <include>Action_PreserveTransitionProp_Onload</include>
 

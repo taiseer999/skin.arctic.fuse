@@ -377,12 +377,17 @@
                 <height>80</height>
                 <centerleft>50%</centerleft>
                 <centertop>50%</centertop>
+
+                <onclick>SetProperty(SearchDiscover.FocusFilter,True,Home)</onclick>
                 <onclick>$VAR[Action_ActivateSearchDiscover]</onclick>
 
-                <onup>308</onup>
-                <ondown>SetFocus(303,0,absolute)</ondown>
-                <onleft>308</onleft>
-                <onright>SetFocus(303,0,absolute)</onright>
+                <onleft condition="$PARAM[vertical] + !Skin.HasSetting(Navigation.DisableOptionsOnLeft)">ActivateWindow(1170)</onleft>
+                <onup condition="$PARAM[vertical]">308</onup>
+                <ondown condition="$PARAM[vertical]">SetFocus(303,0,absolute)</ondown>
+                <onright condition="$PARAM[vertical]">Action(Select)</onright>
+
+                <onleft condition="![$PARAM[vertical]]">308</onleft>
+                <onright condition="![$PARAM[vertical]]">SetFocus(303,0,absolute)</onright>
 
                 <include content="Object_HitRect" condition="![$PARAM[vertical]] + !$EXP[Exp_Window_IsHub]">
                     <param name="x">0</param>
@@ -415,11 +420,13 @@
                 <centerleft>50%</centerleft>
                 <centertop>50%</centertop>
                 <onclick>ActivateWindow(1170)</onclick>
+                <onleft condition="$PARAM[vertical] + !Skin.HasSetting(Navigation.DisableOptionsOnLeft)">ActivateWindow(1170)</onleft>
+                <ondown condition="$PARAM[vertical]">309</ondown>
+                <onup condition="$PARAM[vertical]">SetFocus(303,9999,absolute)</onup>
+                <onright condition="$PARAM[vertical]">Action(Select)</onright>
 
-                <ondown>309</ondown>
-                <onup>SetFocus(303,9999,absolute)</onup>
-                <onright>309</onright>
-                <onleft>SetFocus(303,9999,absolute)</onleft>
+                <onright condition="![$PARAM[vertical]]">309</onright>
+                <onleft condition="![$PARAM[vertical]]">SetFocus(303,0,absolute)</onleft>
 
                 <include content="Object_HitRect" condition="![$PARAM[vertical]] + !$EXP[Exp_Window_IsHub]">
                     <param name="x">0</param>
@@ -451,6 +458,7 @@
                 <param name="vertical">true</param>
             </include>
         </control>
+
         <control type="group">
             <width>40</width>
             <height>40</height>

@@ -82,7 +82,6 @@
             <include content="DialogInfo_Recommendations_Furniture">
                 <param name="header_visible">false</param>
             </include>
-            <include>Search_View_Edit_SideButton</include>
             <control type="group">
                 <include>Animation_View_SlideOver</include>
                 <include>Animation_Group_Bumper</include>

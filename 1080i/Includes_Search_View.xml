@@ -78,10 +78,12 @@
                 <include>Object_Hidden_Button_Definition</include>
                 <include>Action_View_SlideOver_OnFocus</include>
 
-                <onfocus condition="Window.IsVisible(1105) + String.IsEmpty(Window(Home).Property(CustomSearchTerm))">SetFocus(52)</onfocus>
-                <onfocus condition="Window.IsVisible(1105) + !String.IsEmpty(Window(Home).Property(CustomSearchTerm))">AlarmClock(refocus,RunScript(script.skinvariables,set_editcontrol=9099,window_id=1105,setfocus=52,text=$INFO[Window(Home).Property(CustomSearchTerm)]),00:01,silent)</onfocus>
-
+                <onfocus condition="Window.IsVisible(1105) + String.IsEmpty(Window(Home).Property(SearchDiscover.FocusFilter)) + String.IsEmpty(Window(Home).Property(CustomSearchTerm))">SetFocus(52)</onfocus>
+                <onfocus condition="Window.IsVisible(1105) + String.IsEmpty(Window(Home).Property(SearchDiscover.FocusFilter)) + !String.IsEmpty(Window(Home).Property(CustomSearchTerm))">AlarmClock(refocus,RunScript(script.skinvariables,set_editcontrol=9099,window_id=1105,setfocus=52,text=$INFO[Window(Home).Property(CustomSearchTerm)]),00:01,silent)</onfocus>
+                <onfocus condition="Window.IsVisible(1105) + !String.IsEmpty(Window(Home).Property(SearchDiscover.FocusFilter)) + String.IsEmpty(Window(Home).Property(CustomSearchTerm))">SetFocus(9094)</onfocus>
+                <onfocus condition="Window.IsVisible(1105) + !String.IsEmpty(Window(Home).Property(SearchDiscover.FocusFilter)) + !String.IsEmpty(Window(Home).Property(CustomSearchTerm))">AlarmClock(refocus,RunScript(script.skinvariables,set_editcontrol=9099,window_id=1105,setfocus=9094,text=$INFO[Window(Home).Property(CustomSearchTerm)]),00:01,silent)</onfocus>
                 <onfocus>ClearProperty(CustomSearchTerm,Home)</onfocus>
+                <onfocus>ClearProperty(SearchDiscover.FocusFilter,Home)</onfocus>
                 <onfocus condition="!Window.IsVisible(1105)">SetFocus(9094)</onfocus>
 
                 <!-- <onfocus condition="Window.IsVisible(1105) | Window.IsMedia">SetFocus(64)</onfocus> -->
