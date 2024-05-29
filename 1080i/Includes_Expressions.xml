@@ -81,7 +81,7 @@
     <expression name="Exp_HomeMenu_IsExpanded">[[Skin.String(Home.SideMenuCollapse,Library) + [Window.IsVisible(Home) | [Window.Previous(Home) + [Window.IsVisible(1181) | Window.IsVisible(1182) | Window.IsVisible(1185)]]]] | [Skin.String(Home.SideMenuCollapse,Hubs) + [$EXP[Exp_Window_IsHub] | [$EXP[Exp_Window_IsHub_Prev] + [Window.IsVisible(1181) | Window.IsVisible(1182) | Window.IsVisible(1185)]]]] | [Skin.String(Home.SideMenuCollapse,Never)]]</expression>
 
     <!-- <expression name="Exp_HomeMenu_IsStatic">[[$EXP[Exp_HomeMenu_IsExpanded] + [!$EXP[Exp_InfoDialogs] | Skin.String(Info.SideMenuCollapse,Match)]] | [$EXP[Exp_InfoDialogs] + Skin.String(Info.SideMenuCollapse,Always)]]</expression> -->
-    <expression name="Exp_HomeMenu_IsStatic">[[$EXP[Exp_HomeMenu_IsExpanded] + !$EXP[Exp_InfoDialogs]] | [$EXP[Exp_InfoDialogs] + !Skin.String(Home.SideMenuCollapse,Topbar)]]</expression>
+    <expression name="Exp_HomeMenu_IsStatic">[[$EXP[Exp_HomeMenu_IsExpanded] + !$EXP[Exp_InfoDialogs]] | [$EXP[Exp_InfoDialogs] + !$EXP[Exp_HomeMenu_IsTopBar]]]</expression>
 
     <expression name="Exp_Window_IsHub">[Window.IsVisible(Home) | Window.IsVisible(1101) | Window.IsVisible(1102) | Window.IsVisible(1103) | Window.IsVisible(1104) | Window.IsVisible(1106) | Window.IsVisible(1107) | Window.IsVisible(1108) | Window.IsVisible(1109)]</expression>
 
@@ -110,7 +110,7 @@
     <expression name="Exp_Hubs_Submenu_HasFocus">[Integer.IsEqual(Window.Property(Slide.WidgetContainer),302) | Control.HasFocus(302)]</expression>
 
     <expression name="Exp_Hubs_Spotlight_IsDisabled">[Skin.HasSetting(Background.DisableSpotlight)]</expression>
-    <expression name="Exp_Hubs_Spotlight_IsFanart">[!$EXP[Exp_Hubs_Spotlight_IsDisabled] + Skin.HasSetting(Background.EnableSpotlightSlide) + Skin.String(Home.SideMenuCollapse,Topbar)]</expression>
+    <expression name="Exp_Hubs_Spotlight_IsFanart">[!$EXP[Exp_Hubs_Spotlight_IsDisabled] + Skin.HasSetting(Background.EnableSpotlightSlide) + $EXP[Exp_HomeMenu_IsTopBar]]</expression>
     <expression name="Exp_Hubs_Spotlight_IsSlide">[[!$EXP[Exp_Hubs_Spotlight_IsDisabled] + Skin.HasSetting(Background.EnableSpotlightSlide)] | $EXP[Exp_Hubs_Spotlight_IsFanart] | $EXP[Exp_Hubs_Spotlight_IsDisabled]]</expression>
     <expression name="Exp_Hubs_Spotlight_IsMini">[False]</expression>
 
@@ -234,10 +234,10 @@
         <value condition="Skin.HasSetting(Hub.Home.DisableSubmenu) + !Skin.HasSetting(Hub.Home.WidgetSelector) + Skin.String(Home.SideMenuCollapse,Library)">True</value>
     </variable>
     <variable name="Exp_Var_Layout_IsCombined">
-        <value condition="Skin.HasSetting(Hub.Home.DisableSubmenu) + Skin.HasSetting(Hub.Home.WidgetSelector) + Skin.String(Home.SideMenuCollapse,Topbar)">True</value>
+        <value condition="Skin.HasSetting(Hub.Home.DisableSubmenu) + Skin.HasSetting(Hub.Home.WidgetSelector) + $EXP[Exp_HomeMenu_IsTopBar]">True</value>
     </variable>
     <variable name="Exp_Var_Layout_IsCompound">
-        <value condition="!Skin.HasSetting(Hub.Home.DisableSubmenu) + !Skin.HasSetting(Hub.Home.WidgetSelector) + Skin.String(Home.SideMenuCollapse,Topbar)">True</value>
+        <value condition="!Skin.HasSetting(Hub.Home.DisableSubmenu) + !Skin.HasSetting(Hub.Home.WidgetSelector) + $EXP[Exp_HomeMenu_IsTopBar]">True</value>
     </variable>
 
 </includes>

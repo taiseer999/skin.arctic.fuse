@@ -82,8 +82,8 @@
     </include>
 
     <include name="Home_Menu_List_SlideOver_OnFocus">
-        <onfocus condition="!Skin.String(Home.SideMenuCollapse,Topbar)">SetProperty(SideMenu.HasFocus,True,Home)</onfocus>
-        <onfocus condition="Skin.String(Home.SideMenuCollapse,Topbar)">ClearProperty(SideMenu.HasFocus,Home)</onfocus>
+        <onfocus condition="!$EXP[Exp_HomeMenu_IsTopBar]">SetProperty(SideMenu.HasFocus,True,Home)</onfocus>
+        <onfocus condition="$EXP[Exp_HomeMenu_IsTopBar]">ClearProperty(SideMenu.HasFocus,Home)</onfocus>
         <onunfocus condition="!$EXP[Exp_HomeMenu_IsStatic]">ClearProperty(SideMenu.HasFocus,Home)</onunfocus>
         <onunfocus condition="$EXP[Exp_HomeMenu_IsStatic]">SetProperty(SideMenu.HasFocus,True,Home)</onunfocus>
     </include>
@@ -476,11 +476,11 @@
     <include name="Home_Menu">
         <control type="group">
             <visible>!$EXP[Exp_InfoDialogs]</visible>
-            <include content="Home_Menu_Vert" condition="!Skin.String(Home.SideMenuCollapse,Topbar)">
+            <include content="Home_Menu_Vert" condition="!$EXP[Exp_HomeMenu_IsTopBar]">
                 <param name="onlist">$PARAM[onlist]</param>
                 <param name="window_id">$PARAM[window_id]</param>
             </include>
-            <include content="Home_Menu_Horz" condition="Skin.String(Home.SideMenuCollapse,Topbar)">
+            <include content="Home_Menu_Horz" condition="$EXP[Exp_HomeMenu_IsTopBar]">
                 <param name="onlist">$PARAM[onlist]</param>
                 <param name="window_id">$PARAM[window_id]</param>
             </include>

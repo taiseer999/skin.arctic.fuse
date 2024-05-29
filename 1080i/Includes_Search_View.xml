@@ -121,7 +121,7 @@
                 <height>80</height>
                 <visible>!$EXP[Exp_InfoDialogs]</visible>
                 <include>Animation_Transition_InfoPanel_Hide</include>
-                <include condition="Skin.String(Home.SideMenuCollapse,Topbar)">Animation_View_Topbar</include>
+                <include condition="$EXP[Exp_HomeMenu_IsTopBar]">Animation_View_Topbar</include>
                 <control type="grouplist">
                     <orientation>horizontal</orientation>
                     <animation effect="slide" start="0" end="0,-15" condition="true">Conditional</animation>
