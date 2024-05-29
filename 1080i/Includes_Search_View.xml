@@ -114,69 +114,59 @@
                 <onfocus condition="Window.IsVisible(1185)">SetFocus(9094)</onfocus>
                 <onfocus condition="Window.IsVisible(1105) | Window.IsMedia">SetFocus(64)</onfocus>
             </control>
-            <control type="group">
+            <control type="group" id="9990">
+                <centertop>100</centertop>
+                <width>560</width>
+                <left>view_side</left>
+                <height>80</height>
                 <visible>!$EXP[Exp_InfoDialogs]</visible>
                 <include>Animation_Transition_InfoPanel_Hide</include>
-                <control type="group" id="9990">
-                    <centertop>100</centertop>
-                    <width>560</width>
-                    <left>view_side</left>
-                    <height>80</height>
-                    <!-- <control type="image">
-                        <left>-30</left>
-                        <right>-30</right>
-                        <include>Texture_Menu_Highlight_H</include>
-                        <visible>Control.HasFocus($PARAM[editid]) + !Window.IsVisible(1171) + !Window.IsVisible(1170) + !Window.IsVisible(DialogKeyboard.xml)</visible>
-                    </control> -->
-                    <control type="grouplist">
-                        <orientation>horizontal</orientation>
-                        <animation effect="slide" start="0" end="0,-15" condition="true">Conditional</animation>
-                        <include condition="Skin.String(Home.SideMenuCollapse,Topbar)">Animation_View_Topbar</include>
-                        <include content="Furniture_MainLabel">
-                            <aligny>center</aligny>
-                            <label>$VAR[Label_Setting_SearchStyle]</label>
-                            <width>auto</width>
-                        </include>
-                        <include content="Furniture_MainLabel">
-                            <aligny>center</aligny>
-                            <textcolor>main_fg_30</textcolor>
-                            <label> › </label>
-                            <width>auto</width>
-                            <visible>!String.IsEmpty(Control.GetLabel($PARAM[editid]).index(1)) | [Control.HaSfocus($PARAM[editid]) + !Window.IsVisible(DialogKeyboard.xml)]</visible>
-                        </include>
-                        <include content="Furniture_MainLabel">
-                            <aligny>center</aligny>
-                            <label>$INFO[Control.GetLabel($PARAM[editid]).index(1)]</label>
-                            <width>auto</width>
-                            <visible>!String.IsEmpty(Control.GetLabel($PARAM[editid]).index(1))</visible>
-                            <visible>!Control.HaSfocus($PARAM[editid]) | Window.IsVisible(DialogKeyboard.xml)</visible>
-                        </include>
-                        <control type="edit" id="$PARAM[editid]">
-                            <texturefocus />
-                            <texturenofocus />
-                            <description>Search</description>
-                            <font>font_midi_black</font>
-                            <textcolor>main_fg_100</textcolor>
-                            <focusedcolor>main_fg_100</focusedcolor>
-                            <align>left</align>
-                            <textoffsetx>0</textoffsetx>
-                            <width>400</width>
-                            <onback condition="!Window.IsVisible(1185)">$PARAM[ondown]</onback>
-                            <include>Search_View_Edit_Actions</include>
-                            <ondown>9090</ondown>
-                            <visible allowhiddenfocus="true">Control.HasFocus($PARAM[editid])</visible>
-                            <visible allowhiddenfocus="true">!Window.IsVisible(DialogKeyboard.xml)</visible>
-                        </control>
-                    </control>
-                    <include content="Search_View_Alphabet">
-                        <param name="editid">$PARAM[editid]</param>
-                        <param name="ondown">$PARAM[ondown]</param>
-                        <param name="rowone">$PARAM[rowone]</param>
-                        <param name="rowtwo">$PARAM[rowtwo]</param>
+                <include condition="Skin.String(Home.SideMenuCollapse,Topbar)">Animation_View_Topbar</include>
+                <control type="grouplist">
+                    <orientation>horizontal</orientation>
+                    <animation effect="slide" start="0" end="0,-15" condition="true">Conditional</animation>
+                    <include content="Furniture_MainLabel">
+                        <aligny>center</aligny>
+                        <label>$VAR[Label_Setting_SearchStyle]</label>
+                        <width>auto</width>
                     </include>
-
+                    <include content="Furniture_MainLabel">
+                        <aligny>center</aligny>
+                        <textcolor>main_fg_30</textcolor>
+                        <label> › </label>
+                        <width>auto</width>
+                        <visible>!String.IsEmpty(Control.GetLabel($PARAM[editid]).index(1)) | [Control.HaSfocus($PARAM[editid]) + !Window.IsVisible(DialogKeyboard.xml)]</visible>
+                    </include>
+                    <include content="Furniture_MainLabel">
+                        <aligny>center</aligny>
+                        <label>$INFO[Control.GetLabel($PARAM[editid]).index(1)]</label>
+                        <width>auto</width>
+                        <visible>!String.IsEmpty(Control.GetLabel($PARAM[editid]).index(1))</visible>
+                        <visible>!Control.HaSfocus($PARAM[editid]) | Window.IsVisible(DialogKeyboard.xml)</visible>
+                    </include>
+                    <control type="edit" id="$PARAM[editid]">
+                        <texturefocus />
+                        <texturenofocus />
+                        <description>Search</description>
+                        <font>font_midi_black</font>
+                        <textcolor>main_fg_100</textcolor>
+                        <focusedcolor>main_fg_100</focusedcolor>
+                        <align>left</align>
+                        <textoffsetx>0</textoffsetx>
+                        <width>400</width>
+                        <onback condition="!Window.IsVisible(1185)">$PARAM[ondown]</onback>
+                        <include>Search_View_Edit_Actions</include>
+                        <ondown>9090</ondown>
+                        <visible allowhiddenfocus="true">Control.HasFocus($PARAM[editid])</visible>
+                        <visible allowhiddenfocus="true">!Window.IsVisible(DialogKeyboard.xml)</visible>
+                    </control>
                 </control>
-
+                <include content="Search_View_Alphabet">
+                    <param name="editid">$PARAM[editid]</param>
+                    <param name="ondown">$PARAM[ondown]</param>
+                    <param name="rowone">$PARAM[rowone]</param>
+                    <param name="rowtwo">$PARAM[rowtwo]</param>
+                </include>
             </control>
 
         </definition>
@@ -216,10 +206,6 @@
                 <onback condition="!Window.IsVisible(1185)">$PARAM[ondown]</onback>
                 <include condition="Window.IsVisible(1185)">Search_View_Edit_Actions_1185</include>
                 <include condition="Window.IsVisible(1105)">Search_View_Edit_Actions_1105</include>
-                <!-- <visible allowhiddenfocus="true">!Window.IsVisible(DialogKeyboard.xml)</visible> -->
-                <!-- <visible allowhiddenfocus="true">!Control.HAsFocus($PARAM[editid])</visible> -->
-
-
                 <control type="group">
                     <width>40</width>
                     <control type="button" id="9094">
@@ -241,23 +227,6 @@
                         <onclick condition="Window.IsMedia">SetProperty(FocusFilter,True)</onclick>
                         <onclick condition="Window.IsMedia">SetFocus(64)</onclick>
                     </control>
-                    <!-- <width>44</width> -->
-                    <!-- <control type="button" id="9094">
-                        <description>Keyboard</description>
-                        <font>font_tiny_iconic</font>
-                        <textoffsety>14.5</textoffsety>
-                        <label>&#xe0d0;</label>
-                        <include>Search_View_Alphabet_Iconic_Def</include>
-                        <onclick>SetFocus($PARAM[editid])</onclick>
-                        <onclick>Action(Select)</onclick>
-                        <onclick>SetFocus(9094)</onclick>
-                        <onleft>SetFocus($PARAM[rowone],9999,absolute)</onleft>
-                        <onleft>9092</onleft>
-                        <onup>$PARAM[editid]</onup>
-                        <ondown>$PARAM[rowtwo]</ondown>
-                        <onback condition="!Window.IsVisible(1185)">$PARAM[ondown]</onback>
-                        <onright>SetFocus($PARAM[rowone],0,absolute)</onright>
-                    </control> -->
                 </control>
 
                 <control type="group">
@@ -482,25 +451,6 @@
                 </control>
 
                 <control type="group">
-                    <!-- <width>40</width> -->
-                    <!-- <control type="button" id="9093">
-                        <onleft>SetFocus($PARAM[rowone],9999,absolute)</onleft>
-                        <onup>$PARAM[editid]</onup>
-                        <ondown>$PARAM[rowtwo]</ondown>
-                        <onback condition="!Window.IsVisible(1185)">$PARAM[ondown]</onback>
-                        <onright>9091</onright>
-                        <description>Filter</description>
-                        <label>&#xe064;</label>
-                        <font>font_tiny_iconic</font>
-                        <textoffsety>14.5</textoffsety>
-                        <include>Search_View_Alphabet_Iconic_Def</include>
-                        <onclick condition="Window.IsVisible(1185)">ActivateWindow(1105)</onclick>
-                        <onclick condition="Window.IsVisible(1185)">SetProperty(FocusFilter,True,1105)</onclick>
-                        <onclick condition="Window.IsVisible(1185)">SetFocus(64)</onclick>
-                        <onclick condition="Window.IsVisible(1105)">SetFocus(8000)</onclick>
-                        <onclick condition="Window.IsMedia">SetProperty(FocusFilter,True)</onclick>
-                        <onclick condition="Window.IsMedia">SetFocus(64)</onclick>
-                    </control> -->
                     <width>44</width>
                     <control type="button" id="9093">
                         <onleft>SetFocus($PARAM[rowone],9999,absolute)</onleft>
@@ -578,15 +528,15 @@
                 <control type="togglebutton">
                     <include>Texture_Highlight_Underline_H</include>
                     <font>font_mini_black</font>
-                    <textcolor>main_fg_70</textcolor>
+                    <textcolor>main_fg_100</textcolor>
                     <focusedcolor>main_fg_100</focusedcolor>
                     <textoffsetx>0</textoffsetx>
-                    <label>$INFO[Container($PARAM[rowtwo]).ListItem.Label]</label>
-                    <altlabel>[COLOR=main_fg_100]$INFO[Container($PARAM[rowtwo]).ListItem.Label][/COLOR]</altlabel>
+                    <label>$INFO[Container($PARAM[rowtwo]).ListItem(0).Label]</label>
+                    <altlabel>$INFO[Container($PARAM[rowtwo]).ListItem(0).Label]</altlabel>
                     <width>auto</width>
                     <align>left</align>
                     <height>50</height>
-                    <usealttexture>Control.HasFocus($PARAM[rowtwo])</usealttexture>
+                    <usealttexture>True</usealttexture>
                     <visible>Control.HasFocus($PARAM[rowtwo])</visible>
                 </control>
                 <control type="label">
@@ -595,7 +545,7 @@
                     <width>auto</width>
                     <align>left</align>
                     <height>50</height>
-                    <label>$INFO[Container($PARAM[rowtwo]).ListItem.Label]</label>
+                    <label>$INFO[Container($PARAM[rowtwo]).ListItem(0).Label]</label>
                     <visible>!Control.HasFocus($PARAM[rowtwo])</visible>
                 </control>
                 <control type="label">
