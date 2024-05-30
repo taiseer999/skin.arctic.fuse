@@ -7,24 +7,19 @@
 
     <include name="DialogInfo_Body_Group">
         <include>Dimension_Info</include>
-        <include>Animation_Transition_InfoPanel_Open</include>
     </include>
 
     <include name="DialogInfo_InfoDetails_Group">
         <top>390</top>
         <left>-200</left>
         <right>-80</right>
-        <include content="Animation_Fade_In">
-            <param name="type">WindowOpen</param>
-        </include>
-        <!-- <include content="Animation_Fade_Out">
-            <param name="type">WindowClose</param>
-        </include> -->
+        <include>Animation_Transition_InfoPanel_Open_Fade</include>
         <visible>![Window.IsActive(1120) | Window.IsActive(1121) | Window.IsActive(1122)]</visible>
     </include>
 
     <include name="DialogInfo_InfoPanel_Group">
         <visible>!String.IsEqual(Window.Property(DetailsView),Artwork) | $EXP[Exp_HomeMenu_IsTopBar]</visible>
+        <include>Animation_Transition_InfoPanel_Open</include>
         <include content="Animation_Fade_In" condition="!$EXP[Exp_HomeMenu_IsTopBar]">
             <param name="type">Visible</param>
             <param name="delay">400</param>
@@ -52,14 +47,7 @@
             <control type="group">
                 <include condition="$EXP[Exp_HomeMenu_IsTopBar]">Animation_View_Topbar</include>
                 <include condition="$EXP[Exp_Footer_BottomLeft_IsVisible]">Animation_Transition_InfoPanel_Open</include>
-                <!-- <include content="Animation_Fade_Out" condition="!$EXP[Exp_Footer_BottomLeft_IsVisible]">
-                    <param name="type">WindowClose</param>
-                    <param name="delay">0</param>
-                </include> -->
-                <include content="Animation_Fade_In" condition="!$EXP[Exp_Footer_BottomLeft_IsVisible]">
-                    <param name="type">WindowOpen</param>
-                    <param name="delay">400</param>
-                </include>
+                <include condition="!$EXP[Exp_Footer_BottomLeft_IsVisible]">Animation_Transition_InfoPanel_Open_Fade</include>
                 <include>Furniture_Bottom_Left</include>
             </control>
         </control>
@@ -71,6 +59,14 @@
     </include>
 
     <include name="DialogInfo_Onload">
+
+        <onload>SetProperty(SideMenu.HasFocus.Prev,$INFO[Window(Home).Property(SideMenu.HasFocus)],Home)</onload>
+        <onload condition="!$EXP[Exp_HomeMenu_IsTopBar]">SetProperty(SideMenu.HasFocus,True,Home)</onload>
+        <onload condition="$EXP[Exp_HomeMenu_IsTopBar]">ClearProperty(SideMenu.HasFocus,Home)</onload>
+        <onunload>SetProperty(SideMenu.HasFocus,$INFO[Window(Home).Property(SideMenu.HasFocus.Prev)],Home)</onunload>
+        <onunload>ClearProperty(SideMenu.HasFocus.Prev,Home)</onunload>
+
+
         <onload>ClearProperty(TMDbHelper.WidgetContainer)</onload>
         <onload>SetProperty(TMDbHelper.Blur.SourceImage,$INFO[Window(home).Property(TMDbHelper.Blur.SourceImage)])</onload>
         <onload>ClearProperty(CropImage,Home)</onload>
@@ -95,11 +91,6 @@
         <onunload>ClearProperty(BlurImage,Home)</onunload>
         <onunload>ClearProperty(BlurImage.Original,Home)</onunload>
         <onunload>ClearProperty(TMDbHelper.Image.Override,Home)</onunload>
-
-        <onload>SetProperty(SideMenu.HasFocus.Prev,$INFO[Window(Home).Property(SideMenu.HasFocus)],Home)</onload>
-        <onload>SetProperty(SideMenu.HasFocus,True,Home)</onload>
-        <onunload>SetProperty(SideMenu.HasFocus,$INFO[Window(Home).Property(SideMenu.HasFocus.Prev)],Home)</onunload>
-        <onunload>ClearProperty(SideMenu.HasFocus.Prev,Home)</onunload>
     </include>
 
     <include name="DialogInfo_List_Movement">
