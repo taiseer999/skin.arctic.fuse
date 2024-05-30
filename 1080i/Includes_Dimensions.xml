@@ -8,6 +8,11 @@
         <bottom>20</bottom>
     </include>
 
+    <include name="Dimension_Furniture_Gutters">
+        <top>view_gutter</top>
+        <bottom>view_gutter</bottom>
+    </include>
+
     <include name="Dimension_UpNext">
         <left>view_side</left>
         <top>view_pad</top>

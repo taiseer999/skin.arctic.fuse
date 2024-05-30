@@ -346,20 +346,20 @@
                 <top>$PARAM[top]</top>
                 <left>$PARAM[left]</left>
                 <visible>$PARAM[visible]</visible>
-                <include content="Furniture_Gutters">
+                <control type="group">
+                    <include>Dimension_Furniture_Gutters</include>
                     <animation effect="slide" start="0" end="0,-15" condition="$PARAM[sublabel_visible] + $PARAM[sublabel_include]">Conditional</animation>
                     <include content="Furniture_MainLabel">
                         <param name="id">$PARAM[id]</param>
                         <param name="textcolor">$PARAM[textcolor]</param>
-                        <aligny>center</aligny>
-                        <label>$PARAM[label]</label>
+                        <param name="label">$PARAM[label]</param>
                     </include>
                     <include content="Furniture_DateLabel" condition="$PARAM[sublabel_include]">
                         <param name="label">$PARAM[sublabel]</param>
                         <param name="textcolor">$PARAM[sublabel_textcolor]</param>
                         <param name="visible">$PARAM[sublabel_visible]</param>
                     </include>
-                </include>
+                </control>
             </control>
         </definition>
     </include>

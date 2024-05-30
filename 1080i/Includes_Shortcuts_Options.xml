@@ -45,7 +45,8 @@
                     <height>view_bar</height>
                     <top>view_pad</top>
                     <left>view_pad</left>
-                    <include content="Furniture_Gutters">
+                    <control type="group">
+                        <include>Dimension_Furniture_Gutters</include>
                         <control type="label">
                             <font>font_midi_black</font>
                             <textcolor>dialog_fg_100</textcolor>
@@ -58,7 +59,7 @@
                             <label>$INFO[Window.Property(Options.Mode.Heading.Sublabel)]</label>
                             <top>40</top>
                         </control>
-                    </include>
+                    </control>
                 </control>
 
                 <!-- Content -->
