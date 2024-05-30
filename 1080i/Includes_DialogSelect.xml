@@ -134,8 +134,8 @@
     </include>
 
     <include name="DialogSelect_SideButtons_Games">
-        <include content="Dialog_Side_Grouplist">
-            <param name="id">9000</param>
+        <control type="grouplist" id="9000">
+            <include>Dialog_Side_Grouplist_Def</include>
             <onright>10811</onright>
             <include content="Dialog_Side_Button">
                 <param name="id">01</param>
@@ -143,7 +143,7 @@
                 <param name="icon">special://skin/extras/icons/circle-xmark.png</param>
                 <onclick>Close</onclick>
             </include>
-        </include>
+        </control>
     </include>
 
     <variable name="DialogSelect_SideButtons_Label_5">
@@ -170,13 +170,13 @@
 
 
     <include name="DialogSelect_SideButtons_Standard">
-        <include content="Dialog_Side_Grouplist">
-            <param name="id">9000</param>
+        <control type="grouplist" id="9000">
+            <include>Dialog_Side_Grouplist_Def</include>
             <onleft>Close</onleft>
             <onright condition="Control.IsVisible(3)">3</onright>
             <onright condition="Control.IsVisible(6)">6</onright>
             <include>Items_DialogSelect_Standard</include>
-        </include>
+        </control>
     </include>
 
     <include name="DialogSelect_SideButtons_Artwork">
@@ -224,12 +224,12 @@
                     <!-- Side Buttons -->
                     <control type="group">
                         <include>Dimension_Dialog_Body</include>
-                        <include content="Dialog_Side_Grouplist">
-                            <param name="id">9000</param>
+                        <control type="grouplist" id="9000">
+                            <include>Dialog_Side_Grouplist_Def</include>
                             <onleft>Close</onleft>
                             <onright>7000</onright>
                             <include>$PARAM[include_sidegrouplist_items]</include>
-                        </include>
+                        </control>
                     </control>
                 </include>
 

@@ -17,8 +17,8 @@
                 <!-- Side Buttons -->
                 <control type="group">
                     <include>Dimension_Dialog_Body</include>
-                    <include content="Dialog_Side_Grouplist">
-                        <param name="id">9000</param>
+                    <control type="grouplist" id="9000">
+                        <include>Dialog_Side_Grouplist_Def</include>
                         <onright>8000</onright>
                         <onleft>Close</onleft>
                         <include content="Dialog_Side_Button">
@@ -31,7 +31,7 @@
                             <onclick condition="!String.IsEmpty(Window(1105).Property(SearchDiscover.CrewSearch))">ClearProperty(SearchDiscover.CrewID,1105)</onclick>
                             <onclick>Close</onclick>
                         </include>
-                    </include>
+                    </control>
                 </control>
             </include>
 

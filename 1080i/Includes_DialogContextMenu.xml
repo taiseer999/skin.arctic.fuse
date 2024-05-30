@@ -9,8 +9,8 @@
             <!-- Side Buttons -->
             <control type="group">
                 <include>Dimension_Dialog_Body</include>
-                <include content="Dialog_Side_Grouplist">
-                    <param name="id">9000</param>
+                <control type="grouplist" id="9000">
+                    <include>Dialog_Side_Grouplist_Def</include>
                     <onleft>Close</onleft>
                     <onright>996</onright>
                     <include content="Dialog_Side_Button" condition="!$EXP[Exp_InfoDialogs]">
@@ -69,7 +69,7 @@
                         <onclick>SetFocus(50)</onclick>
                         <onclick>Addon.OpenSettings($INFO[Container.PluginName])</onclick>
                     </include>
-                </include>
+                </control>
             </control>
         </include>
     </include>

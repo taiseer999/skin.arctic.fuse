@@ -31,8 +31,8 @@
                 <!-- Side Buttons -->
                 <control type="group">
                     <include>Dimension_Dialog_Body</include>
-                    <include content="Dialog_Side_Grouplist">
-                        <param name="id">9000</param>
+                    <control type="grouplist" id="9000">
+                        <include>Dialog_Side_Grouplist_Def</include>
                         <onright>13</onright>
                         <onleft>Close</onleft>
                         <include content="DialogInfo_Button">
@@ -115,7 +115,7 @@
                                 <param name="label">$VAR[Label_PVRChannelMgrToggle]</param>
                             </include>
                         </include>
-                    </include>
+                    </control>
                 </control>
             </include>
 

@@ -426,8 +426,8 @@
                 <!-- Side Buttons -->
                 <control type="group">
                     <include>Dimension_Dialog_Body</include>
-                    <include content="Dialog_Side_Grouplist">
-                        <param name="id">550</param>
+                    <control type="grouplist" id="550">
+                        <include>Dialog_Side_Grouplist_Def</include>
                         <onright>55</onright>
                         <include content="Dialog_Side_Button">
                             <param name="baseid">55</param>
@@ -490,7 +490,7 @@
                             <param name="visible">true</param>
                             <onclick>Container.Update(plugin://plugin.video.themoviedb.helper/?info=user_discover&amp;method=save&amp;tmdb_type=movie)</onclick>
                         </include>
-                    </include>
+                    </control>
                 </control>
             </include>
 

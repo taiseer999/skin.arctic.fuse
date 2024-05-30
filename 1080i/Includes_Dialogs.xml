@@ -304,18 +304,12 @@
         </definition>
     </include>
 
-    <include name="Dialog_Side_Grouplist">
-        <param name="id">9000</param>
-        <definition>
-            <control type="grouplist" id="$PARAM[id]">
-                <nested />
-                <top>-30</top>
-                <itemgap>0</itemgap>
-                <orientation>vertical</orientation>
-                <width>160</width>
-                <left>-20</left>
-            </control>
-        </definition>
+    <include name="Dialog_Side_Grouplist_Def">
+        <top>-30</top>
+        <itemgap>0</itemgap>
+        <orientation>vertical</orientation>
+        <width>160</width>
+        <left>-20</left>
     </include>
 
     <include name="Dialog_Side_Button">

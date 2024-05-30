@@ -33,8 +33,8 @@
                 <!-- Side Buttons -->
                 <control type="group">
                     <include>Dimension_Dialog_Body</include>
-                    <include content="Dialog_Side_Grouplist">
-                        <param name="id">9000</param>
+                    <control type="grouplist" id="9000">
+                        <include>Dialog_Side_Grouplist_Def</include>
                         <onleft>Close</onleft>
                         <onright condition="Control.IsVisible(450)">450</onright>
                         <onright condition="Control.IsVisible(451)">451</onright>
@@ -69,7 +69,7 @@
                             <selected>!Skin.HasSetting(Dialog.DisableArtworkPreview)</selected>
                             <onclick>Skin.ToggleSetting(Dialog.DisableArtworkPreview)</onclick>
                         </include>
-                    </include>
+                    </control>
                 </control>
             </include>
 

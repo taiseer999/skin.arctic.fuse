@@ -26,8 +26,8 @@
                 <!-- Side Buttons -->
                 <control type="group">
                     <include>Dimension_Dialog_Body</include>
-                    <include content="Dialog_Side_Grouplist">
-                        <param name="id">9000</param>
+                    <control type="grouplist" id="9000">
+                        <include>Dialog_Side_Grouplist_Def</include>
                         <onleft>Close</onleft>
                         <onright>8000</onright>
                         <include content="Dialog_Side_Button">
@@ -43,7 +43,7 @@
                             <onclick>Close</onclick>
                             <onclick>RunPlugin($INFO[Window.Property(url),,&amp;func=do_icon&amp;&amp;icon_dir::])</onclick>
                         </include>
-                    </include>
+                    </control>
                 </control>
             </include>
 

@@ -101,8 +101,8 @@
                 <!-- Side Buttons -->
                 <control type="group">
                     <include>Dimension_Dialog_Body</include>
-                    <include content="Dialog_Side_Grouplist">
-                        <param name="id">9000</param>
+                    <control type="grouplist" id="9000">
+                        <include>Dialog_Side_Grouplist_Def</include>
                         <onleft>Close</onleft>
                         <onright>5</onright>
                         <include content="Dialog_Side_Button">
@@ -126,7 +126,7 @@
                             <param name="visible">Control.IsEnabled(30) + Control.IsVisible(30)</param>
                             <onclick>SendClick(30)</onclick>
                         </include>
-                    </include>
+                    </control>
                 </control>
             </include>
 
