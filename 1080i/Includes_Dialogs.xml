@@ -471,17 +471,6 @@
         </definition>
     </include>
 
-    <include name="Dialog_Textbox">
-        <param name="id">9</param>
-        <definition>
-            <control type="textbox" id="$PARAM[id]">
-                <nested />
-                <font>font_main_plot</font>
-                <textcolor>dialog_fg_70</textcolor>
-            </control>
-        </definition>
-    </include>
-
     <include name="Dialog_Menu_Button">
         <param name="bordersize">16</param>
         <definition>
