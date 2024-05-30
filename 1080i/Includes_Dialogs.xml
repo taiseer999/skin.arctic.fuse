@@ -1,72 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
-    <include name="Dialog_Background_Toast">
-        <param name="overlay_visible">true</param>
-        <param name="overlay_height">120</param>
-        <param name="diffuse">diffuse/landscape_w480_h270.png</param>
-        <definition>
-            <control type="group">
-                <include content="Dialog_Background_Blur">
-                    <param name="flipy">true</param>
-                    <param name="aspectratio">scale</param>
-                    <param name="diffuse">$PARAM[diffuse]</param>
-                    <param name="border">0</param>
-                </include>
-                <control type="image">
-                    <texture colordiffuse="dialog_fg_12" border="20">common/dialog.png</texture>
-                </control>
-                <control type="image">
-                    <height>$PARAM[overlay_height]</height>
-                    <texture colordiffuse="dialog_fg_12" border="20" flipy="true">common/dialog_overlay_v.png</texture>
-                    <visible>$PARAM[overlay_visible]</visible>
-                </control>
-                <nested />
-            </control>
-        </definition>
-    </include>
-
-    <include name="Dialog_Background_Toast_Nib">
-        <control type="image">
-            <top>-15</top>
-            <height>16</height>
-            <width>16</width>
-            <texture colordiffuse="ff55555f" flipy="false">arrows/arrow-menu-up.png</texture>
-            <nested />
-        </control>
-    </include>
-
-    <include name="Dialog_Background_Toast_Nib_Left">
-        <control type="image">
-            <left>-15</left>
-            <height>16</height>
-            <width>16</width>
-            <texture colordiffuse="ff55555f" flipx="false">arrows/arrow-menu.png</texture>
-            <nested />
-        </control>
-    </include>
-
     <include name="Dialog_Background_Blur_Standard">
         <param name="flipy">false</param>
         <param name="shadow">true</param>
         <param name="border">20</param>
         <definition>
-            <control type="group">
-                <control type="image">
-                    <aspectratio scalediffuse="false">$PARAM[aspectratio]</aspectratio>
-                    <include condition="$PARAM[shadow]">Texture_Shadow_80</include>
-                    <texture border="$PARAM[border]" flipy="$PARAM[flipy]" diffuse="$PARAM[diffuse]">$VAR[Image_SimpleDialogBackground]</texture>
-                </control>
-                <control type="image">
-                    <texture colordiffuse="dialog_overlay" border="20">common/dialog.png</texture>
-                </control>
-                <include content="Object_Control" condition="Skin.HasSetting(Glass.EnableBorders)">
-                    <param name="control">image</param>
-                    <bordersize>0</bordersize>
-                    <texture colordiffuse="dialog_fg_12" border="20">common/box-outline.png</texture>
-                </include>
-                <nested />
+            <control type="image">
+                <aspectratio scalediffuse="false">$PARAM[aspectratio]</aspectratio>
+                <include condition="$PARAM[shadow]">Texture_Shadow_80</include>
+                <texture border="$PARAM[border]" flipy="$PARAM[flipy]" diffuse="$PARAM[diffuse]">$VAR[Image_SimpleDialogBackground]</texture>
             </control>
+            <control type="image">
+                <texture colordiffuse="dialog_overlay" border="20">common/dialog.png</texture>
+            </control>
+            <include content="Object_Control" condition="Skin.HasSetting(Glass.EnableBorders)">
+                <param name="control">image</param>
+                <bordersize>0</bordersize>
+                <texture colordiffuse="dialog_fg_12" border="20">common/box-outline.png</texture>
+            </include>
         </definition>
     </include>
 
@@ -85,43 +37,41 @@
         <param name="shadow">true</param>
         <param name="diffuse">diffuse/dialog_w1000_h1000.png</param>
         <definition>
-            <control type="group">
-                <control type="image">
-                    <texture colordiffuse="dialog_bg_100" border="20">common/dialog.png</texture>
-                    <include condition="$PARAM[shadow]">Texture_Shadow_80</include>
-                </control>
-                <control type="image">
-                    <fadetime>background_fadetime</fadetime>
-                    <aspectratio scalediffuse="false" align="left">scale</aspectratio>
-                    <texture flipy="$PARAM[flipy]" diffuse="$PARAM[diffuse]" colordiffuse="$VAR[Dialog_Background_Blur_Adaptive_ColorDiffuse]">$VAR[Dialog_Background_Blur_Adaptive_Texture]</texture>
-                </control>
-                <include content="Object_Control" condition="Skin.HasSetting(Glass.EnableBorders)">
-                    <param name="control">image</param>
-                    <bordersize>0</bordersize>
-                    <texture colordiffuse="dialog_fg_12" border="20">common/box-outline.png</texture>
-                </include>
-                <nested />
+            <control type="image">
+                <texture colordiffuse="dialog_bg_100" border="20">common/dialog.png</texture>
+                <include condition="$PARAM[shadow]">Texture_Shadow_80</include>
             </control>
+            <control type="image">
+                <fadetime>background_fadetime</fadetime>
+                <aspectratio scalediffuse="false" align="left">scale</aspectratio>
+                <texture flipy="$PARAM[flipy]" diffuse="$PARAM[diffuse]" colordiffuse="$VAR[Dialog_Background_Blur_Adaptive_ColorDiffuse]">$VAR[Dialog_Background_Blur_Adaptive_Texture]</texture>
+            </control>
+            <include content="Object_Control" condition="Skin.HasSetting(Glass.EnableBorders)">
+                <param name="control">image</param>
+                <bordersize>0</bordersize>
+                <texture colordiffuse="dialog_fg_12" border="20">common/box-outline.png</texture>
+            </include>
         </definition>
     </include>
 
     <include name="Dialog_Background_Blur">
-        <include content="Dialog_Background_Blur_Standard" condition="!$EXP[Exp_DialogTheme_IsAdaptive]">
-            <param name="shadow">$PARAM[shadow]</param>
-            <param name="flipy">$PARAM[flipy]</param>
-            <param name="flipx">$PARAM[flipx]</param>
-            <param name="diffuse">$PARAM[diffuse]</param>
-            <param name="border">$PARAM[border]</param>
+        <control type="group">
+            <include content="Dialog_Background_Blur_Standard" condition="!$EXP[Exp_DialogTheme_IsAdaptive]">
+                <param name="shadow">$PARAM[shadow]</param>
+                <param name="flipy">$PARAM[flipy]</param>
+                <param name="flipx">$PARAM[flipx]</param>
+                <param name="diffuse">$PARAM[diffuse]</param>
+                <param name="border">$PARAM[border]</param>
+            </include>
+            <include content="Dialog_Background_Blur_Adaptive" condition="$EXP[Exp_DialogTheme_IsAdaptive]">
+                <param name="shadow">$PARAM[shadow]</param>
+                <param name="flipy">$PARAM[flipy]</param>
+                <param name="flipx">$PARAM[flipx]</param>
+                <param name="diffuse">$PARAM[diffuse]</param>
+                <param name="border">$PARAM[border]</param>
+            </include>
             <nested />
-        </include>
-        <include content="Dialog_Background_Blur_Adaptive" condition="$EXP[Exp_DialogTheme_IsAdaptive]">
-            <param name="shadow">$PARAM[shadow]</param>
-            <param name="flipy">$PARAM[flipy]</param>
-            <param name="flipx">$PARAM[flipx]</param>
-            <param name="diffuse">$PARAM[diffuse]</param>
-            <param name="border">$PARAM[border]</param>
-            <nested />
-        </include>
+        </control>
     </include>
 
     <include name="Dialog_Background_BlurDimension_DialogSideMenu">
@@ -214,8 +164,10 @@
                 <include content="Dimension_Padding">
                     <param name="pad">40</param>
                 </include>
-                <include condition="$EXP[Exp_DialogTheme_IsAdaptive]">Dialog_Background_Blur$PARAM[dialog_size]</include>
-                <include condition="!$EXP[Exp_DialogTheme_IsAdaptive]">Dialog_Background_Blur_Standard</include>
+                <control type="group">
+                    <include condition="$EXP[Exp_DialogTheme_IsAdaptive]">Dialog_Background_Blur$PARAM[dialog_size]</include>
+                    <include condition="!$EXP[Exp_DialogTheme_IsAdaptive]">Dialog_Background_Blur_Standard</include>
+                </control>
                 <include condition="$PARAM[include_glass]">Dialog_Background_Glass</include>
             </control>
         </definition>
