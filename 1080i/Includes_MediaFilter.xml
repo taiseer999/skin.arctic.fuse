@@ -45,7 +45,8 @@
                     <param name="onclick">SetFocus(68)</param>
                 </include>
 
-                <include content="Dialog_Body">
+                <control type="group">
+                    <include>Dimension_Dialog_Body</include>
                     <include content="Dialog_Body_Grouplist">
                         <param name="id">9000</param>
                         <bottom>-40</bottom>
@@ -272,7 +273,7 @@
 
                     <include>MediaFilter_Alphabet_Scroll</include>
 
-                </include>
+                </control>
 
 
             </include>
@@ -423,7 +424,8 @@
                 <param name="slide_condition">ControlGroup(550).HasFocus()</param>
                 <param name="dialog_size">Dimension_DialogSideMenu</param>
                 <!-- Side Buttons -->
-                <include content="Dialog_Body">
+                <control type="group">
+                    <include>Dimension_Dialog_Body</include>
                     <include content="Dialog_Side_Grouplist">
                         <param name="id">550</param>
                         <onright>55</onright>
@@ -489,7 +491,7 @@
                             <onclick>Container.Update(plugin://plugin.video.themoviedb.helper/?info=user_discover&amp;method=save&amp;tmdb_type=movie)</onclick>
                         </include>
                     </include>
-                </include>
+                </control>
             </include>
 
             <include content="Dialog_Foreground_Side">
@@ -505,18 +507,19 @@
                 </include>
 
                 <!-- Content -->
-                <include content="Dialog_Body">
+                <control type="group">
+                    <include>Dimension_Dialog_Body</include>
                     <include content="Dialog_Body_Group">
-                    <include content="List_DialogSelect">
-                        <param name="id">55</param>
-                        <param name="textcolor">dialog_fg</param>
-                        <movement>8</movement>
-                        <onleft>550</onleft>
-                        <visible>$EXP[Exp_View_55]</visible>
-                        <onfocus>SetProperty(TMDbHelper.WidgetContainer,553)</onfocus>
+                        <include content="List_DialogSelect">
+                            <param name="id">55</param>
+                            <param name="textcolor">dialog_fg</param>
+                            <movement>8</movement>
+                            <onleft>550</onleft>
+                            <visible>$EXP[Exp_View_55]</visible>
+                            <onfocus>SetProperty(TMDbHelper.WidgetContainer,553)</onfocus>
+                        </include>
                     </include>
-                </include>
-                </include>
+                </control>
             </include>
 
         </control>

@@ -1491,7 +1491,8 @@
                     </include>
 
                     <!-- Content -->
-                    <include content="Dialog_Body">
+                    <control type="group">
+                        <include>Dimension_Dialog_Body</include>
                         <include content="Dialog_Body_Group">
                             <include content="DialogInfo_PlotBox_Artwork">
                                 <param name="poster_visible">$PARAM[poster_visible]</param>
@@ -1521,7 +1522,7 @@
                             <include>$PARAM[include_movement]</include>
                             <include>Texture_Scrollbar_SliderBar_V</include>
                         </control>
-                    </include>
+                    </control>
                 </include>
 
             </control>

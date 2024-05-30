@@ -16,7 +16,8 @@
                 <param name="dialog_size">Dimension_DialogSideMenu</param>
 
                 <!-- Side Buttons -->
-                <include content="Dialog_Body">
+                <control type="group">
+                    <include>Dimension_Dialog_Body</include>
                     <include content="Dialog_Side_Grouplist">
                         <param name="id">9000</param>
                         <onright>8000</onright>
@@ -47,7 +48,7 @@
 
                         </include>
                     </include>
-                </include>
+                </control>
             </include>
 
             <include content="Dialog_Foreground_Side">
@@ -62,7 +63,8 @@
                 <include>Dialog_Head_CloseButton</include>
 
                 <!-- Content -->
-                <include content="Dialog_Body">
+                <control type="group">
+                    <include>Dimension_Dialog_Body</include>
                     <include content="Dialog_Body_Grouplist">
                         <param name="id">8000</param>
                         <onleft>9000</onleft>
@@ -115,7 +117,7 @@
                             <param name="content">TVShows</param>
                         </include>
                     </include>
-                </include>
+                </control>
             </include>
 
         </control>

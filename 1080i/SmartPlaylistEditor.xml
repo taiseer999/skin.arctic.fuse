@@ -14,7 +14,8 @@
                 <param name="slide_condition">True</param>
                 <param name="dialog_size">Dimension_DialogFullMenu</param>
                 <!-- Side Buttons -->
-                <include content="Dialog_Body">
+                <control type="group">
+                    <include>Dimension_Dialog_Body</include>
                     <include content="Dialog_Side_Grouplist">
                         <param name="id">9000</param>
                         <onleft>Close</onleft>
@@ -42,7 +43,7 @@
                             </include>
                         </include>
                     </include>
-                </include>
+                </control>
             </include>
 
             <include content="Dialog_Foreground_Side">
@@ -59,7 +60,8 @@
                 <include>Dialog_Head_CloseButton</include>
 
                 <!-- Content -->
-                <include content="Dialog_Body">
+                <control type="group">
+                    <include>Dimension_Dialog_Body</include>
                     <include content="Dialog_Body_Group">
                         <control type="group">
                             <!-- Left Group -->
@@ -177,7 +179,7 @@
                             </control>
                         </control>
                     </include>
-                </include>
+                </control>
             </include>
 
         </control>

@@ -7,7 +7,8 @@
             <param name="dialog_size">$PARAM[dialog_size]</param>
 
             <!-- Side Buttons -->
-            <include content="Dialog_Body">
+            <control type="group">
+                <include>Dimension_Dialog_Body</include>
                 <include content="Dialog_Side_Grouplist">
                     <param name="id">9000</param>
                     <onleft>Close</onleft>
@@ -69,7 +70,7 @@
                         <onclick>Addon.OpenSettings($INFO[Container.PluginName])</onclick>
                     </include>
                 </include>
-            </include>
+            </control>
         </include>
     </include>
 
@@ -89,7 +90,8 @@
     <include name="Dialog_ContextMenu_BodyContent">
         <param name="include_artwork">true</param>
         <definition>
-            <include content="Dialog_Body">
+            <control type="group">
+                <include>Dimension_Dialog_Body</include>
 
                 <include condition="$PARAM[include_artwork]">Dialog_ContextMenu_BodyContent_Artwork</include>
 
@@ -106,7 +108,7 @@
                     <param name="id">61</param>
                     <onleft>996</onleft>
                 </include>
-            </include>
+            </control>
         </definition>
     </include>
 

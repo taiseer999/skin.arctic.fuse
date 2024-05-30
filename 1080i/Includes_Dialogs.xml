@@ -228,45 +228,6 @@
         </definition>
     </include>
 
-    <include name="Dialog_Nib">
-        <param name="nib_pos">70</param>
-        <param name="use_side_nib">false</param>
-        <definition>
-            <!-- <include content="Dialog_Nib_T" condition="![$PARAM[use_side_nib]]">
-                <param name="nib_pos">$PARAM[nib_pos]</param>
-            </include>
-            <include content="Dialog_Nib_L" condition="$PARAM[use_side_nib]">
-                <param name="nib_pos">$PARAM[nib_pos]</param>
-            </include> -->
-        </definition>
-    </include>
-
-    <include name="Dialog_Nib_T">
-        <param name="nib_pos">70</param>
-        <definition>
-            <!-- <control type="image">
-                <top>-16</top>
-                <centerright>$PARAM[nib_pos]</centerright>
-                <height>16</height>
-                <width>16</width>
-                <texture colordiffuse="main_fg_100">arrows/arrow-menu-up.png</texture>
-            </control> -->
-        </definition>
-    </include>
-
-    <include name="Dialog_Nib_L">
-        <param name="nib_pos">70</param>
-        <definition>
-            <!-- <control type="image">
-                <left>-16</left>
-                <centertop>$PARAM[nib_pos]</centertop>
-                <height>16</height>
-                <width>16</width>
-                <texture colordiffuse="main_fg_100">arrows/arrow-menu.png</texture>
-            </control> -->
-        </definition>
-    </include>
-
     <include name="Dialog_Group">
         <param name="left">40</param>
         <param name="right">40</param>
@@ -339,18 +300,6 @@
                     <param name="grouplist">false</param>
                     <param name="icon_colordiffuse">dialog_fg_70</param>
                 </include>
-            </control>
-        </definition>
-    </include>
-
-    <include name="Dialog_Body">
-        <definition>
-            <control type="group">
-                <nested />
-                <top>160</top>
-                <bottom>80</bottom>
-                <left>40</left>
-                <right>40</right>
             </control>
         </definition>
     </include>

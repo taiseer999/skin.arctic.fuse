@@ -31,7 +31,8 @@
                 <param name="slide_condition">True</param>
                 <param name="dialog_size">Dimension_DialogWideMenu</param>
                 <!-- Side Buttons -->
-                <include content="Dialog_Body">
+                <control type="group">
+                    <include>Dimension_Dialog_Body</include>
                     <include content="Dialog_Side_Grouplist">
                         <param name="id">9000</param>
                         <onleft>Close</onleft>
@@ -69,7 +70,7 @@
                             <onclick>Skin.ToggleSetting(Dialog.DisableArtworkPreview)</onclick>
                         </include>
                     </include>
-                </include>
+                </control>
             </include>
 
             <include content="Dialog_Foreground_Side">
@@ -92,7 +93,8 @@
                 <include>Dialog_Head_CloseButton</include>
 
                 <!-- Content -->
-                <include content="Dialog_Body">
+                <control type="group">
+                    <include>Dimension_Dialog_Body</include>
                     <include content="Dialog_Body_Group">
                         <include content="List_DialogSelect">
                             <param name="id">450</param>
@@ -132,7 +134,7 @@
                         <visible>Control.IsVisible(451)</visible>
                         <onleft>451</onleft>
                     </include>
-                </include>
+                </control>
             </include>
 
         </control>

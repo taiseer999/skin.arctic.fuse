@@ -23,7 +23,8 @@
                 <include>Dialog_Head_CloseButton</include>
 
                 <!-- Content -->
-                <include content="Dialog_Body">
+                <control type="group">
+                    <include>Dimension_Dialog_Body</include>
                     <include content="Dialog_Body_Group">
                         <include content="Settings_Label">
                             <top>-20</top>
@@ -103,13 +104,11 @@
                             </include>
                         </control>
                     </include>
-
-
                     <include content="Dialog_Scrollbar">
                         <param name="id">61</param>
                         <onleft>8000</onleft>
                     </include>
-                </include>
+                </control>
             </include>
 
         </control>

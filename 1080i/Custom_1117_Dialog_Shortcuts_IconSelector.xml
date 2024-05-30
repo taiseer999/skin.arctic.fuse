@@ -24,7 +24,8 @@
                 <param name="dialog_size">Dimension_DialogHugeMenu</param>
 
                 <!-- Side Buttons -->
-                <include content="Dialog_Body">
+                <control type="group">
+                    <include>Dimension_Dialog_Body</include>
                     <include content="Dialog_Side_Grouplist">
                         <param name="id">9000</param>
                         <onleft>Close</onleft>
@@ -43,7 +44,7 @@
                             <onclick>RunPlugin($INFO[Window.Property(url),,&amp;func=do_icon&amp;&amp;icon_dir::])</onclick>
                         </include>
                     </include>
-                </include>
+                </control>
             </include>
 
             <include content="Dialog_Foreground_Side">
@@ -61,7 +62,8 @@
                 <include>Dialog_Head_CloseButton</include>
 
                 <!-- Content -->
-                <include content="Dialog_Body">
+                <control type="group">
+                    <include>Dimension_Dialog_Body</include>
                     <include content="Dialog_Body_Group">
                         <control type="group" id="8000">
                             <control type="grouplist" id="8200">
@@ -186,7 +188,7 @@
                         <param name="id">61</param>
                         <onleft>450</onleft>
                     </include>
-                </include>
+                </control>
             </include>
 
         </control>

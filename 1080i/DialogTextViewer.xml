@@ -23,7 +23,8 @@
                 <include>Dialog_Head_CloseButton</include>
 
                 <!-- Content -->
-                <include content="Dialog_Body">
+                <control type="group">
+                    <include>Dimension_Dialog_Body</include>
                     <include content="Dialog_Body_Group">
                         <control type="textbox" id="5">
                             <font>font_main_plot</font>
@@ -38,7 +39,7 @@
                     <include content="Dialog_Scrollbar">
                         <onleft>Close</onleft>
                     </include>
-                </include>
+                </control>
             </include>
 
         </control>

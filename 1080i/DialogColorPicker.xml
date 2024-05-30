@@ -15,7 +15,8 @@
                 <param name="slide_condition">ControlGroup(9000).HasFocus()</param>
                 <param name="dialog_size">Dimension_DialogWideMenu</param>
                 <!-- Side Buttons -->
-                <include content="Dialog_Body">
+                <control type="group">
+                    <include>Dimension_Dialog_Body</include>
                     <include content="Dialog_Side_Grouplist">
                         <param name="id">9000</param>
                         <onright>6</onright>
@@ -26,7 +27,7 @@
                             <onclick>Close</onclick>
                         </include>
                     </include>
-                </include>
+                </control>
             </include>
 
             <include content="Dialog_Foreground_Side">
@@ -40,7 +41,8 @@
                 <include>Dialog_Head</include>
 
                 <!-- Content -->
-                <include content="Dialog_Body">
+                <control type="group">
+                    <include>Dimension_Dialog_Body</include>
                     <control type="group">
                         <include content="Dialog_Group">
                             <param name="bottom">0</param>
@@ -118,7 +120,7 @@
                         <onleft>6</onleft>
                     </include>
 
-                </include>
+                </control>
             </include>
 
         </control>

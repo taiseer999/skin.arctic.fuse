@@ -63,7 +63,8 @@
                 <param name="slide_condition">True</param>
                 <param name="dialog_size">Dimension_DialogMainMenu</param>
                 <!-- Side Buttons -->
-                <include content="Dialog_Body">
+                <control type="group">
+                    <include>Dimension_Dialog_Body</include>
                     <include content="Dialog_Side_Grouplist">
                         <param name="id">9000</param>
                         <onright>22001</onright>
@@ -132,7 +133,7 @@
                             <onback>29999</onback>
                         </include>
                     </include>
-                </include>
+                </control>
             </include>
 
             <include content="Dialog_Foreground_Side">
@@ -209,7 +210,8 @@
 
 
                 <!-- Content -->
-                <include content="Dialog_Body">
+                <control type="group">
+                    <include>Dimension_Dialog_Body</include>
                     <include content="Dialog_Body_Group">
                         <control type="group">
                             <right>640</right>
@@ -1029,7 +1031,7 @@
                         <param name="id">61</param>
                         <onleft>23001</onleft>
                     </include>
-                </include>
+                </control>
             </include>
         </control>
 
@@ -1055,7 +1057,8 @@
                 </include>
                 <include>Dialog_Head_CloseButton</include>
                 <!-- Content -->
-                <include content="Dialog_Body">
+                <control type="group">
+                    <include>Dimension_Dialog_Body</include>
                     <include content="Dialog_Body_Group">
                         <include content="List_DialogSelect">
                             <param name="id">25001</param>
@@ -1097,7 +1100,7 @@
                             <onclick condition="String.IsEmpty(Window.Property(SideOptions.List))">SetFocus(25999)</onclick>
                         </include>
                     </include>
-                </include>
+                </control>
             </include>
         </control>
 

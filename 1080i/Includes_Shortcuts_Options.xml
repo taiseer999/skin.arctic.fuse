@@ -27,9 +27,6 @@
             <include content="Dialog_Background_Side">
                 <param name="slide_condition">ControlGroup(9000).HasFocus()</param>
                 <param name="dialog_size">Dimension_DialogSideMenu</param>
-                <!-- Side Buttons -->
-                <include content="Dialog_Body">
-                </include>
             </include>
 
             <include content="Dialog_Foreground_Side">
@@ -63,7 +60,8 @@
                 </control>
 
                 <!-- Content -->
-                <include content="Dialog_Body">
+                <control type="group">
+                    <include>Dimension_Dialog_Body</include>
                     <include content="Dialog_Body_Group">
                         <control type="grouplist" id="33000">
                             <onleft>23999</onleft>
@@ -268,7 +266,7 @@
                             </include>
                         </control>
                     </include>
-                </include>
+                </control>
             </include>
 
         </control>
