@@ -796,6 +796,7 @@
         <param name="id">4000</param>
         <param name="dim_visible">true</param>
         <param name="vertical">true</param>
+        <param name="visible">true</param>
         <definition>
             <control type="grouplist" id="$PARAM[id]">
                 <include content="Object_Orientation" condition="$PARAM[vertical]">
@@ -816,9 +817,48 @@
                     <param name="itemgap">$PARAM[itemgap]</param>
                 </include>
 
-                <nested />
+                <include>$PARAM[include_def]</include>
+                <visible>$PARAM[visible]</visible>
             </control>
         </definition>
+    </include>
+    <include name="DialogInfo_ButtonGroup_Recommendations">
+        <control type="group">
+            <include condition="$EXP[Exp_HomeMenu_IsTopBar]">Animation_Home_Topbar</include>
+            <include condition="!$EXP[Exp_HomeMenu_IsTopBar]">Animation_Home_SlideOver</include>
+            <include condition="!$EXP[Exp_HomeMenu_IsTopBar] + Skin.HasSetting(SideMenu.EnableSearchAndOptions)">Home_Menu_SearchAndOptions</include>
+            <include content="DialogInfo_ButtonGroup_Basic" condition="!$EXP[Exp_HomeMenu_IsTopBar]">
+                <param name="include">Items_PersonCredits_MenuBar</param>
+                <param name="vertical">true</param>
+                <param name="id">303</param>
+                <param name="include_def">DialogInfo_ButtonGroup_Basic__Def_Recommendations_Vert</param>
+            </include>
+            <include content="DialogInfo_ButtonGroup_Basic" condition="$EXP[Exp_HomeMenu_IsTopBar]">
+                <param name="include">Items_PersonCredits_MenuBar</param>
+                <param name="vertical">false</param>
+                <param name="id">303</param>
+                <param name="itemgap">0</param>
+                <param name="include_def">DialogInfo_ButtonGroup_Basic__Def_Recommendations_Horz</param>
+            </include>
+        </control>
+    </include>
+    <include name="DialogInfo_ButtonGroup_Basic__Def_Recommendations_Vert">
+        <onleft>61</onleft>
+        <onright>5000</onright>
+        <onup condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions)">SetFocus(61)</onup>
+        <ondown condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions)">SetFocus(61)</ondown>
+    </include>
+    <include name="DialogInfo_ButtonGroup_Basic__Def_Recommendations_Horz">
+        <ondown>330</ondown>
+        <onup>5000</onup>
+    </include>
+    <include name="DialogInfo_ButtonGroup_Basic__Def_1183_Person">
+        <include content="Action_HomeMenu_OnRightLeft">
+            <param name="onlist">5000</param>
+        </include>
+    </include>
+    <include name="DialogInfo_ButtonGroup_Basic__Def_MyMusicPlaylistEdit">
+        <onright>50</onright>
     </include>
 
     <include name="DialogInfo_ButtonGroup_OnRight">

@@ -433,7 +433,6 @@
                     <font>font_mini_black</font>
                     <align>right</align>
                     <label>$PARAM[mainlabel]</label>
-                    <!-- <font>font_main_black</font> -->
                     <textcolor>main_fg_100</textcolor>
                 </control>
                 <control type="label" id="$PARAM[minilabel_id]">
@@ -441,7 +440,6 @@
                     <font>font_tiny</font>
                     <align>right</align>
                     <label>$PARAM[minilabel]</label>
-                    <!-- <font>font_tiny_bold</font> -->
                     <shadowcolor>main_bg_12</shadowcolor>
                     <textcolor>main_fg_70</textcolor>
                 </control>
