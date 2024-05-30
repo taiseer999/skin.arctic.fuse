@@ -2234,6 +2234,7 @@
                     </include>
 
                     <include content="Object_SquareIcon">
+                        <param name="selected">$PARAM[selected]</param>
                         <param name="diffuse">$PARAM[diffuse]</param>
                         <param name="icon">$PARAM[icon]</param>
                         <param name="listitem">$PARAM[listitem]</param>
@@ -2299,6 +2300,7 @@
                     </include>
 
                     <include content="Object_SquareIcon">
+                        <param name="selected">$PARAM[selected]</param>
                         <param name="diffuse">diffuse/$PARAM[diffuse].png</param>
                         <param name="include_discart">true</param>
                         <param name="icon">$PARAM[icon]</param>
@@ -2679,6 +2681,7 @@
                                 <texture colordiffuse="main_bg_30">diffuse/circle_120.png</texture>
                             </control>
                             <include content="Object_SquareIcon">
+                                <param name="selected">$PARAM[selected]</param>
                                 <param name="diffuse">diffuse/circle_120.png</param>
                                 <param name="icon">$PARAM[icon]</param>
                                 <param name="listitem">$PARAM[listitem]</param>
