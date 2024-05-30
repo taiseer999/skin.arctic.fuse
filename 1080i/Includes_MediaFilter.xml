@@ -47,10 +47,9 @@
 
                 <control type="group">
                     <include>Dimension_Dialog_Body</include>
-                    <include content="Dialog_Body_Grouplist">
-                        <param name="id">9000</param>
+                    <control type="grouplist" id="9000">
                         <bottom>-40</bottom>
-
+                        <include>Dimension_Dialog_Body_Group</include>
                         <onleft>68</onleft>
                         <onback>68</onback>
                         <onup>SetFocus(6000,2)</onup>
@@ -221,7 +220,7 @@
                         </include>
 
 
-                    </include>
+                    </control>
 
                     <include content="Dialog_Body_Group">
                         <control type="group">

@@ -95,14 +95,14 @@
 
                 <include condition="$PARAM[include_artwork]">Dialog_ContextMenu_BodyContent_Artwork</include>
 
-                <include content="Dialog_Body_Grouplist">
-                    <param name="id">996</param>
+                <control type="grouplist" id="996">
+                    <include>Dimension_Dialog_Body_Group</include>
                     <onleft condition="!Integer.IsEqual(Container(9000).NumItems,0)">9000</onleft>
                     <onleft condition="Integer.IsEqual(Container(9000).NumItems,0)">Close</onleft>
                     <right>$PARAM[lines_right]</right>
                     <onright>61</onright>
                     <pagecontrol>61</pagecontrol>
-                </include>
+                </control>
 
                 <include content="Dialog_Scrollbar">
                     <param name="id">61</param>

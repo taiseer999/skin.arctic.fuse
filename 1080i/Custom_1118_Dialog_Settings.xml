@@ -25,13 +25,13 @@
                 <!-- Content -->
                 <control type="group">
                     <include>Dimension_Dialog_Body</include>
-                    <include content="Dialog_Body_Grouplist">
-                        <param name="id">8000</param>
+                    <control type="grouplist" id="8000">
                         <pagecontrol>61</pagecontrol>
                         <onleft>Close</onleft>
                         <onright>61</onright>
                         <include>Items_Settings_CustomDialog</include>
-                    </include>
+                        <include>Dimension_Dialog_Body_Group</include>
+                    </control>
 
                     <include content="Dialog_Scrollbar">
                         <param name="id">61</param>

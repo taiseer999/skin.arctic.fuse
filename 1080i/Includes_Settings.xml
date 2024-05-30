@@ -509,8 +509,8 @@
                 <!-- Content -->
                 <control type="group">
                     <include>Dimension_Dialog_Body</include>
-                    <include content="Dialog_Body_Grouplist">
-                        <param name="id">30040</param>
+                    <control type="grouplist" id="30040">
+                        <include>Dimension_Dialog_Body_Group</include>
                         <onleft condition="Window.IsVisible(settings)">50</onleft>
                         <onleft condition="Window.IsVisible(addonbrowser)">6000</onleft>
                         <onleft condition="Window.IsVisible(eventlog)">8000</onleft>
@@ -522,7 +522,7 @@
                         <onback condition="Window.IsVisible(filemanager)">20</onback>
                         <onback condition="!Window.IsVisible(addonbrowser) + !Window.IsVisible(eventlog)">3</onback>
                         <include>Items_Settings_SideChanger</include>
-                    </include>
+                    </control>
                 </control>
             </include>
 

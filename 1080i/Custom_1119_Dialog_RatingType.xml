@@ -65,8 +65,8 @@
                 <!-- Content -->
                 <control type="group">
                     <include>Dimension_Dialog_Body</include>
-                    <include content="Dialog_Body_Grouplist">
-                        <param name="id">8000</param>
+                    <control type="grouplist" id="8000">
+                        <include>Dimension_Dialog_Body_Group</include>
                         <onleft>9000</onleft>
                         <include content="Items_Dialog_RatingType" condition="String.IsEqual(Window(Home).Property(ConfigureRatingItem),Item01) + String.IsEqual(Window(Home).Property(ConfigureRatingContent),Movies)">
                             <param name="item">Item01</param>
@@ -116,7 +116,7 @@
                             <param name="item">Item06</param>
                             <param name="content">TVShows</param>
                         </include>
-                    </include>
+                    </control>
                 </control>
             </include>
 
