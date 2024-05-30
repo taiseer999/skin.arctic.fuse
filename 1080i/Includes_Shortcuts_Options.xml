@@ -62,7 +62,8 @@
                 <!-- Content -->
                 <control type="group">
                     <include>Dimension_Dialog_Body</include>
-                    <include content="Dialog_Body_Group">
+                    <control type="group">
+                        <include>Dimension_Dialog_Body_Group</include>
                         <control type="grouplist" id="33000">
                             <onleft>23999</onleft>
                             <onright>39000</onright>
@@ -265,7 +266,7 @@
                                 <onback>23999</onback>
                             </include>
                         </control>
-                    </include>
+                    </control>
                 </control>
             </include>
 

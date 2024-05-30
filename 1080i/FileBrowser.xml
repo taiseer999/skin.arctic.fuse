@@ -95,7 +95,8 @@
                 <!-- Content -->
                 <control type="group">
                     <include>Dimension_Dialog_Body</include>
-                    <include content="Dialog_Body_Group">
+                    <control type="group">
+                        <include>Dimension_Dialog_Body_Group</include>
                         <include content="List_DialogSelect">
                             <param name="id">450</param>
                             <param name="detailed">True</param>
@@ -122,7 +123,7 @@
                             <onright>62</onright>
                             <pagecontrol>62</pagecontrol>
                         </include>
-                    </include>
+                    </control>
 
                     <include content="Dialog_Scrollbar">
                         <param name="id">61</param>

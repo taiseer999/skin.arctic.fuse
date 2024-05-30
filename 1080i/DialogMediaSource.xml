@@ -54,7 +54,8 @@
                 <!-- Content -->
                 <control type="group">
                     <include>Dimension_Dialog_Body</include>
-                    <include content="Dialog_Body_Group">
+                    <control type="group">
+                        <include>Dimension_Dialog_Body_Group</include>
                         <include content="Object_Keyboard_Button" description="Text Entry">
                             <param name="id">12</param>
                             <param name="control">edit</param>
@@ -164,7 +165,7 @@
                                 </control>
                             </control>
                         </control>
-                    </include>
+                    </control>
                 </control>
             </include>
 

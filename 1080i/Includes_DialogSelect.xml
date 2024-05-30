@@ -43,7 +43,8 @@
                 <!-- Content -->
                 <control type="group">
                     <include>Dimension_Dialog_Body</include>
-                    <include content="Dialog_Body_Group">
+                    <control type="group">
+                        <include>Dimension_Dialog_Body_Group</include>
                         <include content="List_DialogSelect">
                             <param name="id">3</param>
                             <param name="textcolor">dialog_fg</param>
@@ -90,7 +91,7 @@
                                 <visible>Control.IsVisible(6)</visible>
                             </control>
                         </control>
-                    </include>
+                    </control>
 
                     <include content="Dialog_Scrollbar">
                         <param name="id">61</param>
@@ -248,7 +249,8 @@
                     <!-- Content -->
                     <control type="group">
                         <include>Dimension_Dialog_Body</include>
-                        <include content="Dialog_Body_Group">
+                        <control type="group">
+                            <include>Dimension_Dialog_Body_Group</include>
 
                             <include content="DialogInfo_PlotBox_Artwork">
                                 <param name="poster_icon">$PARAM[poster_icon]</param>
@@ -294,7 +296,7 @@
                                     </control>
                                 </control>
                             </control>
-                        </include>
+                        </control>
                         <include content="Dialog_Scrollbar">
                             <param name="id">62</param>
                             <onleft>7000</onleft>

@@ -25,7 +25,8 @@
                 <!-- Content -->
                 <control type="group">
                     <include>Dimension_Dialog_Body</include>
-                    <include content="Dialog_Body_Group">
+                    <control type="group">
+                        <include>Dimension_Dialog_Body_Group</include>
                         <control type="textbox" id="5">
                             <font>font_main_plot</font>
                             <textcolor>dialog_fg_70</textcolor>
@@ -35,7 +36,7 @@
                             </include>
                         </control>
 
-                    </include>
+                    </control>
                     <include content="Dialog_Scrollbar">
                         <onleft>Close</onleft>
                     </include>

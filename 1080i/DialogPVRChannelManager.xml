@@ -75,7 +75,8 @@
                 <!-- Content -->
                 <control type="group">
                     <include>Dimension_Dialog_Body</include>
-                    <include content="Dialog_Body_Group">
+                    <control type="group">
+                        <include>Dimension_Dialog_Body_Group</include>
                         <control type="group">
                             <!-- Left Group -->
                             <control type="group">
@@ -192,7 +193,7 @@
                                 </control>
                             </control>
                         </control>
-                    </include>
+                    </control>
                     <include content="Dialog_Scrollbar">
                         <onleft>8000</onleft>
                         <onback>9000</onback>

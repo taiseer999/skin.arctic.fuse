@@ -63,7 +63,8 @@
                 <!-- Content -->
                 <control type="group">
                     <include>Dimension_Dialog_Body</include>
-                    <include content="Dialog_Body_Group">
+                    <control type="group">
+                        <include>Dimension_Dialog_Body_Group</include>
                         <control type="grouplist" id="7000">
                             <onup>noop</onup>
                             <onleft>9000</onleft>
@@ -129,7 +130,7 @@
                                 </control>
                             </control>
                         </control>
-                    </include>
+                    </control>
                 </control>
             </include>
 

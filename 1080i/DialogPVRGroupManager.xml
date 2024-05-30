@@ -135,7 +135,8 @@
                 <!-- Content -->
                 <control type="group">
                     <include>Dimension_Dialog_Body</include>
-                    <include content="Dialog_Body_Group">
+                    <control type="group">
+                        <include>Dimension_Dialog_Body_Group</include>
 
                         <!-- Left Group -->
                         <control type="group">
@@ -270,7 +271,7 @@
                                 <texturesliderbackground colordiffuse="dialog_fg_12" border="4">scrollbar/scrollv_line.png</texturesliderbackground>
                             </include>
                         </control>
-                    </include>
+                    </control>
                 </control>
             </include>
 

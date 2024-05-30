@@ -212,7 +212,8 @@
                 <!-- Content -->
                 <control type="group">
                     <include>Dimension_Dialog_Body</include>
-                    <include content="Dialog_Body_Group">
+                    <control type="group">
+                        <include>Dimension_Dialog_Body_Group</include>
                         <control type="group">
                             <right>640</right>
 
@@ -1026,7 +1027,7 @@
                                 </control>
                             </include>
                         </control>
-                    </include>
+                    </control>
                     <include content="Dialog_Scrollbar">
                         <param name="id">61</param>
                         <onleft>23001</onleft>
@@ -1059,7 +1060,8 @@
                 <!-- Content -->
                 <control type="group">
                     <include>Dimension_Dialog_Body</include>
-                    <include content="Dialog_Body_Group">
+                    <control type="group">
+                        <include>Dimension_Dialog_Body_Group</include>
                         <include content="List_DialogSelect">
                             <param name="id">25001</param>
                             <!-- <param name="item_height">100</param> -->
@@ -1099,7 +1101,7 @@
                             <onclick condition="String.IsEqual(Window.Property(SideOptions.List),Filter)">SetFocus(25998)</onclick>
                             <onclick condition="String.IsEmpty(Window.Property(SideOptions.List))">SetFocus(25999)</onclick>
                         </include>
-                    </include>
+                    </control>
                 </control>
             </include>
         </control>

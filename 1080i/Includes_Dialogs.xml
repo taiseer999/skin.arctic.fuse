@@ -304,16 +304,6 @@
         </definition>
     </include>
 
-    <include name="Dialog_Body_Group">
-        <param name="control">group</param>
-        <definition>
-            <control type="$PARAM[control]" id="$PARAM[id]">
-                <nested />
-                <include>Dimension_Dialog_Body_Group</include>
-            </control>
-        </definition>
-    </include>
-
     <include name="Dialog_Side_Grouplist">
         <param name="id">9000</param>
         <definition>

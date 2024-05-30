@@ -60,8 +60,8 @@
                 <!-- Content -->
                 <control type="group">
                     <include>Dimension_Dialog_Body</include>
-                    <include content="Dialog_Body_Group">
-                        <param name="id">8000</param>
+                    <control type="group" id="8000">
+                        <include>Dimension_Dialog_Body_Group</include>
 
                         <include content="Object_Keyboard_Button" description="Text Entry">
                             <param name="id">9</param>
@@ -226,7 +226,7 @@
                                 </control>
                             </control>
                         </control>
-                    </include>
+                    </control>
                 </control>
             </include>
 

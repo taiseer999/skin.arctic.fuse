@@ -59,7 +59,8 @@
                         <include content="Dialog_Outline_InnerBox">
                             <left>40</left>
                             <right>40</right>
-                            <include content="Dialog_Body_Group">
+                            <control type="group">
+                                <include>Dimension_Dialog_Body_Group</include>
                                 <include content="List_DialogSelect">
                                     <param name="id">120</param>
                                     <param name="itemlayout_include">Layout_DialogSubtitles</param>
@@ -69,11 +70,12 @@
                                     <onright>61</onright>
                                     <pagecontrol>61</pagecontrol>
                                 </include>
-                            </include>
+                            </control>
                         </include>
                     </control>
 
-                    <include content="Dialog_Body_Group">
+                    <control type="group">
+                        <include>Dimension_Dialog_Body_Group</include>
 
                         <control type="group">
                             <width>settings_category_w</width>
@@ -118,7 +120,7 @@
                                 <textcolor>dialog_fg_70</textcolor>
                             </control>
                         </control>
-                    </include>
+                    </control>
 
                     <control type="group">
 

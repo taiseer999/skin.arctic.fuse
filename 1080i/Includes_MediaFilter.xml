@@ -222,7 +222,8 @@
 
                     </control>
 
-                    <include content="Dialog_Body_Group">
+                    <control type="group">
+                        <include>Dimension_Dialog_Body_Group</include>
                         <control type="group">
                             <visible>Player.HasMedia</visible>
                             <include>ButtonMenu_PlayerControls</include>
@@ -232,7 +233,7 @@
                             <visible>!Player.HasMedia</visible>
                             <include>ButtonMenu_OptionsTray</include>
                         </control>
-                    </include>
+                    </control>
 
                     <control type="group">
                         <height>40</height>
@@ -508,7 +509,8 @@
                 <!-- Content -->
                 <control type="group">
                     <include>Dimension_Dialog_Body</include>
-                    <include content="Dialog_Body_Group">
+                    <control type="group">
+                        <include>Dimension_Dialog_Body_Group</include>
                         <include content="List_DialogSelect">
                             <param name="id">55</param>
                             <param name="textcolor">dialog_fg</param>
@@ -517,7 +519,7 @@
                             <visible>$EXP[Exp_View_55]</visible>
                             <onfocus>SetProperty(TMDbHelper.WidgetContainer,553)</onfocus>
                         </include>
-                    </include>
+                    </control>
                 </control>
             </include>
 

@@ -135,7 +135,8 @@
                 <!-- Content -->
                 <control type="group">
                     <include>Dimension_Dialog_Body</include>
-                    <include content="Dialog_Body_Group">
+                    <control type="group">
+                        <include>Dimension_Dialog_Body_Group</include>
                         <control type="group">
                             <width>400</width>
                             <control type="image">
@@ -201,7 +202,7 @@
                                 <right>20</right>
                             </control>
                         </control>
-                    </include>
+                    </control>
 
                     <include content="Dialog_Scrollbar">
                         <onleft>5</onleft>

@@ -64,7 +64,8 @@
                 <!-- Content -->
                 <control type="group">
                     <include>Dimension_Dialog_Body</include>
-                    <include content="Dialog_Body_Group">
+                    <control type="group">
+                        <include>Dimension_Dialog_Body_Group</include>
                         <control type="group" id="8000">
                             <control type="grouplist" id="8200">
                                 <width>400</width>
@@ -182,7 +183,7 @@
                                 <onclick>Close</onclick>
                             </include>
                         </include>
-                    </include>
+                    </control>
 
                     <include content="Dialog_Scrollbar">
                         <param name="id">61</param>

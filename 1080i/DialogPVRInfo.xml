@@ -47,7 +47,8 @@
                 <!-- Content -->
                 <control type="group">
                     <include>Dimension_Dialog_Body</include>
-                    <include content="Dialog_Body_Group">
+                    <control type="group">
+                        <include>Dimension_Dialog_Body_Group</include>
                         <include content="DialogInfo_PlotBox_Artwork">
                             <param name="square_icon">$INFO[ListItem.Icon]</param>
                             <param name="landscape_icon">$VAR[Image_PVREpgLandscapeArt]</param>
@@ -64,7 +65,7 @@
                                 <pagecontrol>61</pagecontrol>
                             </control>
                         </control>
-                    </include>
+                    </control>
                     <include content="Dialog_Scrollbar">
                         <param name="id">61</param>
                         <onleft>9000</onleft>

@@ -1493,7 +1493,8 @@
                     <!-- Content -->
                     <control type="group">
                         <include>Dimension_Dialog_Body</include>
-                        <include content="Dialog_Body_Group">
+                        <control type="group">
+                            <include>Dimension_Dialog_Body_Group</include>
                             <include content="DialogInfo_PlotBox_Artwork">
                                 <param name="poster_visible">$PARAM[poster_visible]</param>
                                 <param name="poster_icon">$PARAM[poster_icon]</param>
@@ -1513,7 +1514,7 @@
                                     <param name="pad">20</param>
                                 </include>
                             </control>
-                        </include>
+                        </control>
                         <control type="scrollbar" id="61">
                             <centerright>-20</centerright>
                             <width>scrollbar_w</width>
