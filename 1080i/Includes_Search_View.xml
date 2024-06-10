@@ -197,6 +197,7 @@
 
                 <control type="group">
                     <width>408</width>
+                    <visible>Control.IsVisible($PARAM[rowtwo])</visible>
                     <control type="fixedlist" id="$PARAM[rowone]">
                         <orientation>horizontal</orientation>
                         <focusposition>2</focusposition>
@@ -418,12 +419,23 @@
 
                 <control type="group">
                     <width>44</width>
+                    <visible>!Control.IsVisible($PARAM[rowtwo])</visible>
+                    <control type="label">
+                        <description>AlphabetStrip</description>
+                        <label>&#xe0FC;</label>
+                        <textoffsety>10</textoffsety>
+                        <include>Search_View_Alphabet_Iconic_Def</include>
+                    </control>
+                </control>
+
+                <control type="group">
+                    <width>44</width>
                     <control type="button" id="9093">
                         <onleft>SetFocus($PARAM[rowone],9999,absolute)</onleft>
                         <onright>9091</onright>
                         <description>Keyboard</description>
-                        <font>font_tiny_iconic</font>
-                        <textoffsety>14.5</textoffsety>
+                        <!-- <font>font_tiny_iconic</font>
+                        <textoffsety>14.5</textoffsety> -->
                         <label>&#xe0d0;</label>
                         <include>Search_View_Alphabet_Iconic_Def</include>
                         <onclick>SetFocus($PARAM[editid])</onclick>
