@@ -266,6 +266,91 @@
                 <onback condition="Window.IsMedia">$PARAM[ondown]</onback>
                 <include condition="Window.IsVisible(1185)">Search_View_Edit_Actions_1185</include>
                 <include condition="Window.IsVisible(1105)">Search_View_Edit_Actions_1105</include>
+
+                <control type="group">
+                    <visible>!Control.IsVisible($PARAM[rowtwo])</visible>
+                    <width>108</width>
+                    <left>1</left>
+                    <control type="group">
+                        <centertop>51%</centertop>
+                        <height>26</height>
+                        <right>10</right>
+                        <left>10</left>
+                        <control type="image">
+                            <texture colordiffuse="main_fg_70" border="4">flags/quality/blank.png</texture>
+                        </control>
+                        <!-- <control type="label">
+                            <left>-12</left>
+                            <width>12</width>
+                            <align>center</align>
+                            <aligny>top</aligny>
+                            <textoffsety>-6</textoffsety>
+                            <font>font_tiny_black</font>
+                            <textcolor>main_fg_70</textcolor>
+                            <label>‹</label>
+                        </control>
+                        <control type="label">
+                            <right>-12</right>
+                            <width>12</width>
+                            <align>center</align>
+                            <aligny>top</aligny>
+                            <textoffsety>-6</textoffsety>
+                            <font>font_tiny_black</font>
+                            <textcolor>main_fg_70</textcolor>
+                            <label>›</label>
+                        </control> -->
+                        <control type="label">
+                            <right>32</right>
+                            <align>center</align>
+                            <aligny>top</aligny>
+                            <textoffsety>0.6</textoffsety>
+                            <font>font_hint_black</font>
+                            <textcolor>ff2a2a2a</textcolor>
+                            <shadowcolor>20ffffff</shadowcolor>
+                            <label>ABC</label>
+                        </control>
+
+                        <control type="group">
+                            <top>2</top>
+                            <bottom>2</bottom>
+                            <right>2</right>
+                            <width>32</width>
+                            <control type="image">
+                                <width>4</width>
+                                <texture colordiffuse="ff2a2a2a" border="4,0,0,0">flags/quality/blank-side.png</texture>
+                            </control>
+                            <control type="image">
+                                <right>0</right>
+                                <width>4</width>
+                                <texture colordiffuse="ff2a2a2a" border="4,0,0,0" flipx="true">flags/quality/blank-side.png</texture>
+                            </control>
+                            <control type="image">
+                                <left>4</left>
+                                <right>4</right>
+                                <height>2</height>
+                                <texture colordiffuse="ff2a2a2a">common/white.png</texture>
+                            </control>
+                            <control type="image">
+                                <left>4</left>
+                                <right>4</right>
+                                <height>2</height>
+                                <bottom>0</bottom>
+                                <texture colordiffuse="ff2a2a2a">common/white.png</texture>
+                            </control>
+                            <control type="label">
+                                <right>2.5</right>
+                                <align>right</align>
+                                <label>&#xe0d0;</label>
+                                <textoffsety>-3</textoffsety>
+                                <aligny>top</aligny>
+                                <textcolor>ff2a2a2a</textcolor>
+                                <font>font_mini_iconic</font>
+                            </control>
+                        </control>
+                    </control>
+                </control>
+
+
                 <control type="group">
                     <width>40</width>
                     <control type="button" id="9094">
@@ -506,19 +591,11 @@
                     </control>
                 </control>
 
-                <control type="group">
-                    <width>44</width>
-                    <visible>!Control.IsVisible($PARAM[rowtwo])</visible>
-                    <control type="label">
-                        <description>AlphabetStrip</description>
-                        <label>&#xe0FC;</label>
-                        <textoffsety>10</textoffsety>
-                        <include>Search_View_Alphabet_Iconic_Def</include>
-                    </control>
-                </control>
+
 
                 <control type="group">
                     <width>44</width>
+                    <visible>Control.IsVisible($PARAM[rowtwo])</visible>
                     <control type="button" id="9093">
                         <onleft>SetFocus($PARAM[rowone],9999,absolute)</onleft>
                         <onright>9091</onright>
@@ -538,6 +615,7 @@
 
                 <control type="group">
                     <width>44</width>
+                    <visible>Control.IsVisible($PARAM[rowtwo])</visible>
                     <control type="button" id="9091">
                         <description>Backspace</description>
                         <label>&#xe00e;</label>
