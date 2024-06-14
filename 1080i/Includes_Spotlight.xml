@@ -311,6 +311,10 @@
                         <left>20</left>
                         <include>Defs_OSD_Button</include>
                         <centertop>50%</centertop>
+                        <include content="Action_AutoTrailer_OnClick" condition="Skin.HasSetting(Trailers.EnableAutoPlayback)">
+                            <param name="id">301</param>
+                            <param name="pos">-1</param>
+                        </include>
                         <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">Control.Move(301,-1)</onclick>
                         <onclick condition="!$EXP[Exp_Hubs_Spotlight_HasItems]">Control.Move(99971,-1)</onclick>
                         <include content="Spotlight_Main_Button_Standard">
@@ -329,12 +333,14 @@
                         <param name="icon_colordiffuse">main_fg_90</param>
                     </include>
 
-
-
                     <control type="button" id="315">
                         <left>20</left>
                         <include>Defs_OSD_Button</include>
                         <centertop>50%</centertop>
+                        <include content="Action_AutoTrailer_OnClick" condition="Skin.HasSetting(Trailers.EnableAutoPlayback)">
+                            <param name="id">301</param>
+                            <param name="pos">1</param>
+                        </include>
                         <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">Control.Move(301,1)</onclick>
                         <onclick condition="!$EXP[Exp_Hubs_Spotlight_HasItems]">Control.Move(99971,1)</onclick>
                         <include content="Spotlight_Main_Button_Standard">

@@ -826,13 +826,15 @@
     </include>
 
     <include name="Action_AutoTrailer_OnClick">
-        <onclick condition="Player.HasVideo + String.IsEqual(Window.Property(AutoTrailer),Player.FileNameAndPath)">Action(Stop)</onclick>
-        <onclick condition="!String.IsEmpty(Container($PARAM[id]).ListItem.Trailer)">AlarmClock(autotrailer,SetProperty(AutoTrailer,$ESCINFO[Container($PARAM[id]).ListItem.Trailer]),00:05,silent)</onclick>
-        <onclick condition="!String.IsEmpty(Container($PARAM[id]).ListItem.Trailer)">AlarmClock(playtrailer,PlayMedia($ESCINFO[Container($PARAM[id]).ListItem.Trailer],1),00:05,silent)</onclick>
-        <onclick condition="String.IsEmpty(Container($PARAM[id]).ListItem.Trailer)">CancelAlarm(playtrailer,silent)</onclick>
-        <onclick condition="String.IsEmpty(Container($PARAM[id]).ListItem.Trailer)">CancelAlarm(autotrailer,silent)</onclick>
+        <param name="pos">0</param>
+        <definition>
+            <onclick condition="Player.HasVideo + String.IsEqual(Window.Property(AutoTrailer),Player.FileNameAndPath)">Action(Stop)</onclick>
+            <onclick condition="!String.IsEmpty(Container($PARAM[id]).ListItem($PARAM[pos]).Trailer)">AlarmClock(autotrailer,SetProperty(AutoTrailer,$ESCINFO[Container($PARAM[id]).ListItem($PARAM[pos]).Trailer]),00:05,silent)</onclick>
+            <onclick condition="!String.IsEmpty(Container($PARAM[id]).ListItem($PARAM[pos]).Trailer)">AlarmClock(playtrailer,PlayMedia($ESCINFO[Container($PARAM[id]).ListItem($PARAM[pos]).Trailer],1),00:05,silent)</onclick>
+            <onclick condition="String.IsEmpty(Container($PARAM[id]).ListItem($PARAM[pos]).Trailer)">CancelAlarm(playtrailer,silent)</onclick>
+            <onclick condition="String.IsEmpty(Container($PARAM[id]).ListItem($PARAM[pos]).Trailer)">CancelAlarm(autotrailer,silent)</onclick>
+        </definition>
     </include>
-
 
     <include name="Action_Scheme_Onclick_Miami">
         <onclick>Skin.Reset(focuscolor.name)</onclick>
