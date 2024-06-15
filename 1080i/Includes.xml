@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
+    <include file="Includes_Font.xml" />
+
     <include file="Includes_Home.xml" />
     <include file="Includes_MediaWall.xml" />
     <include file="Includes_MediaFilter.xml" />
