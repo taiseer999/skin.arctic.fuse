@@ -130,9 +130,11 @@
                             <align>left</align>
                             <textoffsetx>0</textoffsetx>
                             <width>200</width>
-                            <onright>SetFocus($PARAM[rowtwo])</onright>
+                            <onright>SetFocus($PARAM[rowtwo],0,absolute)</onright>
+                            <onback>SetFocus($PARAM[rowtwo],0,absolute)</onback>
                             <onback condition="Window.IsMedia">$PARAM[ondown]</onback>
                             <include>Search_View_Edit_Actions</include>
+                            <ondown>SetFocus($PARAM[rowtwo],0,absolute)</ondown>
                             <ondown>9090</ondown>
                             <visible allowhiddenfocus="true">Control.HasFocus($PARAM[editid])</visible>
                             <visible allowhiddenfocus="true">!Window.IsVisible(DialogKeyboard.xml)</visible>
@@ -665,13 +667,17 @@
                 <movement>0</movement>
                 <left>1</left>
                 <width>546</width>
+                <onback>SetFocus($PARAM[rowtwo],0,absolute)</onback>
                 <onback condition="Window.IsMedia">$PARAM[ondown]</onback>
                 <include>Search_View_Edit_Actions</include>
+                <ondown>SetFocus($PARAM[rowtwo],0,absolute)</ondown>
                 <ondown>$PARAM[rowone]</ondown>
+                <onleft>SetFocus($PARAM[rowtwo],0,absolute)</onleft>
                 <onleft>$PARAM[editid]</onleft>
                 <onright>noop</onright>
                 <visible>!$EXP[Exp_MediaFilter_IsActive]</visible>
                 <visible allowhiddenfocus="true">ControlGroup(9090).HasFocus() | Control.HasFocus($PARAM[rowtwo]) | Control.HasFocus($PARAM[editid])</visible>
+                <onclick>Setfocus($PARAM[rowtwo],0,absolute)</onclick>
                 <onclick>SetFocus($PARAM[editid])</onclick>
                 <onclick>RunScript(script.skinvariables,set_editcontrol=$PARAM[editid],window_id=1105,setfocus=9094,text=$INFO[Container($PARAM[rowtwo]).ListItem.Label])</onclick>
                 <itemlayout width="155" />
