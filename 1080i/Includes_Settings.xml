@@ -796,12 +796,14 @@
         <param name="override">false</param>
         <param name="heading">$VAR[Label_Settings_InfoText_Top]</param>
         <param name="align">left</param>
+        <param name="left">0</param>
+        <param name="bottom">-20</param>
+        <param name="right">320</param>
         <definition>
             <control type="group">
-                <nested />
-                <bottom>-20</bottom>
-                <left>0</left>
-                <right>320</right>
+                <bottom>$PARAM[bottom]</bottom>
+                <left>$PARAM[left]</left>
+                <right>$PARAM[right]</right>
                 <height>80</height>
                 <animation effect="fade" start="0" end="100" time="400" delay="200">Visible</animation>
                 <animation effect="fade" start="100" end="0" time="400">Hidden</animation>

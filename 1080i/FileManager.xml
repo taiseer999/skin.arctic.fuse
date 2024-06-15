@@ -42,23 +42,15 @@
                             <bottom>80</bottom>
                         </include>
                     </include>
-                    <!-- <control type="group">
-                        <bottom>80</bottom>
-                        <left>80</left>
-                        <height>80</height>
-                        <include>Settings_KodiVersion</include>
-                    </control> -->
                     <include content="Settings_InfoText">
                         <param name="id">9930</param>
                         <param name="heading">$INFO[Control.GetLabel(12)]</param>
                         <param name="override">true</param>
                         <param name="label">$INFO[Control.GetLabel(101)]</param>
-                        <!-- <param name="align">right</param> -->
                         <param name="dialog">true</param>
-                        <right>-60</right>
-                        <left>80</left>
-                        <!-- <left>360</left> -->
-                        <bottom>60</bottom>
+                        <param name="right">-60</param>
+                        <param name="left">80</param>
+                        <param name="bottom">60</param>
                     </include>
 
                 </include>
@@ -94,9 +86,9 @@
                         <param name="override">true</param>
                         <param name="label">$INFO[Control.GetLabel(102)]</param>
                         <param name="dialog">true</param>
-                        <left>40</left>
-                        <height>80</height>
-                        <bottom>-100</bottom>
+                        <param name="left">40</param>
+                        <param name="height">80</param>
+                        <param name="bottom">-100</param>
                     </include>
                 </include>
             </include>
