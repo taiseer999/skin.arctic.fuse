@@ -274,18 +274,13 @@
                 <!-- Keyboard Symbol Font -->
                 <font>
                     <name>font_main_iconic</name>
-                    <filename>iconmonstr-iconic-font.ttf</filename>
+                    <filename>fa-solid-900.ttf</filename>
                     <size>30</size>
                 </font>
                 <font>
                     <name>font_mini_iconic</name>
-                    <filename>iconmonstr-iconic-font.ttf</filename>
+                    <filename>fa-solid-900.ttf</filename>
                     <size>26</size>
-                </font>
-                <font>
-                    <name>font_tiny_iconic</name>
-                    <filename>iconmonstr-iconic-font.ttf</filename>
-                    <size>22</size>
                 </font>
 
                 <!-- Kodi Logo Font -->

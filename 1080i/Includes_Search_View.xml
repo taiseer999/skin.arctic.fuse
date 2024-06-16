@@ -90,7 +90,7 @@
             </control>
             <control type="group" id="9990">
                 <centertop>100</centertop>
-                <width>560</width>
+                <width>580</width>
                 <left>view_side</left>
                 <height>80</height>
                 <visible>!$EXP[Exp_InfoDialogs]</visible>
@@ -264,105 +264,60 @@
                 <orientation>horizontal</orientation>
                 <height>80</height>
                 <visible>!Control.IsVisible($PARAM[rowtwo])</visible>
+
+                <control type="group">
+                    <width>50</width>
+                    <control type="label">
+                        <description>Filter</description>
+                        <label>&#xf0b0;</label>
+                        <include>Search_View_Alphabet_Iconic_Def</include>
+                    </control>
+                </control>
+
                 <control type="group">
                     <width>108</width>
-                    <left>1</left>
+                    <left>-2</left>
+                    <!-- <left>1</left> -->
+
                     <control type="group">
-                        <centertop>51%</centertop>
+                        <centertop>52%</centertop>
                         <height>26</height>
                         <right>10</right>
                         <left>10</left>
                         <control type="image">
                             <texture colordiffuse="main_fg_70" border="4">flags/quality/blank.png</texture>
                         </control>
-                        <!-- <control type="label">
-                            <left>-12</left>
-                            <width>12</width>
-                            <align>center</align>
-                            <aligny>top</aligny>
-                            <textoffsety>-6</textoffsety>
-                            <font>font_tiny_black</font>
-                            <textcolor>main_fg_70</textcolor>
-                            <label>‹</label>
-                        </control>
-                        <control type="label">
-                            <right>-12</right>
-                            <width>12</width>
-                            <align>center</align>
-                            <aligny>top</aligny>
-                            <textoffsety>-6</textoffsety>
-                            <font>font_tiny_black</font>
-                            <textcolor>main_fg_70</textcolor>
-                            <label>›</label>
-                        </control> -->
+
                         <control type="label">
                             <right>32</right>
                             <align>center</align>
                             <aligny>top</aligny>
-                            <textoffsety>0.6</textoffsety>
+                            <textoffsety>0.5</textoffsety>
                             <font>font_hint_black</font>
-                            <textcolor>ff2a2a2a</textcolor>
-                            <shadowcolor>20ffffff</shadowcolor>
+                            <textcolor>main_bg_70</textcolor>
                             <label>ABC</label>
                         </control>
 
-                        <control type="group">
-                            <top>2</top>
-                            <bottom>2</bottom>
-                            <right>2</right>
-                            <width>32</width>
-                            <control type="image">
-                                <width>4</width>
-                                <texture colordiffuse="ff2a2a2a" border="4,0,0,0">flags/quality/blank-side.png</texture>
-                            </control>
-                            <control type="image">
-                                <right>0</right>
-                                <width>4</width>
-                                <texture colordiffuse="ff2a2a2a" border="4,0,0,0" flipx="true">flags/quality/blank-side.png</texture>
-                            </control>
-                            <control type="image">
-                                <left>4</left>
-                                <right>4</right>
-                                <height>2</height>
-                                <texture colordiffuse="ff2a2a2a">common/white.png</texture>
-                            </control>
-                            <control type="image">
-                                <left>4</left>
-                                <right>4</right>
-                                <height>2</height>
-                                <bottom>0</bottom>
-                                <texture colordiffuse="ff2a2a2a">common/white.png</texture>
-                            </control>
-                            <control type="label">
-                                <right>2.5</right>
-                                <align>right</align>
-                                <label>&#xe0d0;</label>
-                                <textoffsety>-3</textoffsety>
-                                <aligny>top</aligny>
-                                <textcolor>ff2a2a2a</textcolor>
-                                <font>font_mini_iconic</font>
-                            </control>
+                        <control type="label">
+                            <right>3</right>
+                            <align>right</align>
+                            <label>&#xf11c;</label>
+                            <textoffsety>-1.5</textoffsety>
+                            <aligny>top</aligny>
+                            <textcolor>main_bg_70</textcolor>
+                            <font>font_mini_iconic</font>
                         </control>
                     </control>
                 </control>
 
 
-                <control type="group">
-                    <width>40</width>
-                    <control type="label">
-                        <description>Filter</description>
-                        <label>&#xe064;</label>
-                        <font>font_tiny_iconic</font>
-                        <textoffsety>14.5</textoffsety>
-                        <include>Search_View_Alphabet_Iconic_Def</include>
-                    </control>
-                </control>
+
 
                 <control type="group">
-                    <width>44</width>
+                    <width>50</width>
                     <control type="label">
                         <description>Clear</description>
-                        <label>&#xe08d;</label>
+                        <label>&#xf071;</label>
                         <include>Search_View_Alphabet_Iconic_Def</include>
                     </control>
                 </control>
@@ -385,7 +340,7 @@
                 <visible allowhiddenfocus="true">Control.IsVisible($PARAM[rowtwo])</visible>
 
                 <control type="group">
-                    <width>40</width>
+                    <width>50</width>
                     <control type="button" id="9094">
                         <onleft>SetFocus($PARAM[rowone],9999,absolute)</onleft>
                         <onleft>9092</onleft>
@@ -394,15 +349,14 @@
                         <ondown>$PARAM[ondown]</ondown>
                         <onback condition="Window.IsMedia">$PARAM[ondown]</onback>
                         <description>Filter</description>
-                        <label>&#xe064;</label>
-                        <font>font_tiny_iconic</font>
-                        <textoffsety>14.5</textoffsety>
+                        <label>&#xf0b0;</label>
                         <include>Search_View_Alphabet_Iconic_Def</include>
                         <include>Search_Filter_MouseButton_OnClick</include>
                     </control>
                 </control>
 
                 <control type="group">
+                    <left>-4</left>
                     <width>408</width>
                     <control type="fixedlist" id="$PARAM[rowone]">
                         <orientation>horizontal</orientation>
@@ -623,15 +577,13 @@
                     </control>
                 </control>
 
-
-
                 <control type="group">
-                    <width>44</width>
+                    <width>50</width>
                     <control type="button" id="9093">
                         <onleft>SetFocus($PARAM[rowone],9999,absolute)</onleft>
                         <onright>9091</onright>
                         <description>Keyboard</description>
-                        <label>&#xe0d0;</label>
+                        <label>&#xf11c;</label>
                         <include>Search_View_Alphabet_Iconic_Def</include>
                         <onclick>SetFocus($PARAM[editid])</onclick>
                         <onclick>Action(Select)</onclick>
@@ -643,10 +595,10 @@
                 </control>
 
                 <control type="group">
-                    <width>44</width>
+                    <width>50</width>
                     <control type="button" id="9091">
                         <description>Backspace</description>
-                        <label>&#xe00e;</label>
+                        <label>&#xf55a;</label>
                         <include>Search_View_Alphabet_Iconic_Def</include>
                         <onclick>SetFocus($PARAM[editid])</onclick>
                         <include>Object_SearchLetter_Click_&lt;</include>
@@ -660,10 +612,10 @@
                 </control>
 
                 <control type="group">
-                    <width>44</width>
+                    <width>50</width>
                     <control type="button" id="9092">
                         <description>Clear</description>
-                        <label>&#xe08d;</label>
+                        <label>&#xf071;</label>
                         <include>Search_View_Alphabet_Iconic_Def</include>
                         <onclick>SetFocus($PARAM[editid])</onclick>
                         <include content="Search_Filter_Clear_OnClick">
