@@ -275,42 +275,41 @@
                 </control>
 
                 <control type="group">
-                    <width>108</width>
-                    <left>-2</left>
-                    <!-- <left>1</left> -->
-
-                    <control type="group">
-                        <centertop>52%</centertop>
-                        <height>26</height>
-                        <right>10</right>
-                        <left>10</left>
-                        <control type="image">
-                            <texture colordiffuse="main_fg_70" border="4">flags/quality/blank.png</texture>
-                        </control>
-
-                        <control type="label">
-                            <right>32</right>
-                            <align>center</align>
-                            <aligny>top</aligny>
-                            <textoffsety>0.5</textoffsety>
-                            <font>font_hint_black</font>
-                            <textcolor>main_bg_70</textcolor>
-                            <label>ABC</label>
-                        </control>
-
-                        <control type="label">
-                            <right>3</right>
-                            <align>right</align>
-                            <label>&#xf11c;</label>
-                            <textoffsety>-1.5</textoffsety>
-                            <aligny>top</aligny>
-                            <textcolor>main_bg_70</textcolor>
-                            <font>font_mini_iconic</font>
-                        </control>
+                    <left>-6</left>
+                    <width>56</width>
+                    <control type="label">
+                        <description>Alphabet</description>
+                        <label>ABC</label>
+                        <font>font_hint_iconic</font>
+                        <textoffsety>14</textoffsety>
+                        <include>Search_View_Alphabet_Iconic_Def</include>
+                    </control>
+                    <control type="label">
+                        <description>Alphabet</description>
+                        <label>&#x2190;</label>
+                        <font>font_itsy_iconic</font>
+                        <textoffsety>29</textoffsety>
+                        <centerleft>37%</centerleft>
+                        <include>Search_View_Alphabet_Iconic_Def</include>
+                    </control>
+                    <control type="label">
+                        <description>Alphabet</description>
+                        <label>&#x2192;</label>
+                        <font>font_itsy_iconic</font>
+                        <textoffsety>29</textoffsety>
+                        <centerleft>63%</centerleft>
+                        <include>Search_View_Alphabet_Iconic_Def</include>
                     </control>
                 </control>
 
-
+                <control type="group">
+                    <width>50</width>
+                    <control type="label">
+                        <description>Keyboard</description>
+                        <label>&#xf11c;</label>
+                        <include>Search_View_Alphabet_Iconic_Def</include>
+                    </control>
+                </control>
 
 
                 <control type="group">

@@ -282,6 +282,16 @@
                     <filename>fa-solid-900.ttf</filename>
                     <size>26</size>
                 </font>
+                <font>
+                    <name>font_hint_iconic</name>
+                    <filename>fa-solid-900.ttf</filename>
+                    <size>16</size>
+                </font>
+                <font>
+                    <name>font_itsy_iconic</name>
+                    <filename>fa-solid-900.ttf</filename>
+                    <size>12</size>
+                </font>
 
                 <!-- Kodi Logo Font -->
                 <font>
