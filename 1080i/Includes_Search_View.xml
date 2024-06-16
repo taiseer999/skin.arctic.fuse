@@ -257,20 +257,14 @@
         <param name="rowtwo">9993</param>
         <definition>
 
-            <control type="grouplist" id="9090">
+            <control type="grouplist">
                 <top>20</top>
                 <left>-10</left>
                 <right>-40</right>
                 <orientation>horizontal</orientation>
                 <height>80</height>
-                <onup>$PARAM[editid]</onup>
-                <ondown>$PARAM[ondown]</ondown>
-                <onback condition="Window.IsMedia">$PARAM[ondown]</onback>
-                <include condition="Window.IsVisible(1185)">Search_View_Edit_Actions_1185</include>
-                <include condition="Window.IsVisible(1105)">Search_View_Edit_Actions_1105</include>
-
+                <visible>!Control.IsVisible($PARAM[rowtwo])</visible>
                 <control type="group">
-                    <visible>!Control.IsVisible($PARAM[rowtwo])</visible>
                     <width>108</width>
                     <left>1</left>
                     <control type="group">
@@ -355,6 +349,43 @@
 
                 <control type="group">
                     <width>40</width>
+                    <control type="label">
+                        <description>Filter</description>
+                        <label>&#xe064;</label>
+                        <font>font_tiny_iconic</font>
+                        <textoffsety>14.5</textoffsety>
+                        <include>Search_View_Alphabet_Iconic_Def</include>
+                    </control>
+                </control>
+
+                <control type="group">
+                    <width>44</width>
+                    <control type="label">
+                        <description>Clear</description>
+                        <label>&#xe08d;</label>
+                        <include>Search_View_Alphabet_Iconic_Def</include>
+                    </control>
+                </control>
+
+
+            </control>
+
+            <control type="grouplist" id="9090">
+                <top>20</top>
+                <left>-10</left>
+                <right>-40</right>
+                <orientation>horizontal</orientation>
+                <height>80</height>
+                <onup>$PARAM[editid]</onup>
+                <ondown>$PARAM[ondown]</ondown>
+                <onback condition="Window.IsMedia">$PARAM[ondown]</onback>
+                <include condition="Window.IsVisible(1185)">Search_View_Edit_Actions_1185</include>
+                <include condition="Window.IsVisible(1105)">Search_View_Edit_Actions_1105</include>
+
+                <visible allowhiddenfocus="true">Control.IsVisible($PARAM[rowtwo])</visible>
+
+                <control type="group">
+                    <width>40</width>
                     <control type="button" id="9094">
                         <onleft>SetFocus($PARAM[rowone],9999,absolute)</onleft>
                         <onleft>9092</onleft>
@@ -373,7 +404,6 @@
 
                 <control type="group">
                     <width>408</width>
-                    <visible>Control.IsVisible($PARAM[rowtwo])</visible>
                     <control type="fixedlist" id="$PARAM[rowone]">
                         <orientation>horizontal</orientation>
                         <focusposition>2</focusposition>
@@ -597,13 +627,10 @@
 
                 <control type="group">
                     <width>44</width>
-                    <visible>Control.IsVisible($PARAM[rowtwo])</visible>
                     <control type="button" id="9093">
                         <onleft>SetFocus($PARAM[rowone],9999,absolute)</onleft>
                         <onright>9091</onright>
                         <description>Keyboard</description>
-                        <!-- <font>font_tiny_iconic</font>
-                        <textoffsety>14.5</textoffsety> -->
                         <label>&#xe0d0;</label>
                         <include>Search_View_Alphabet_Iconic_Def</include>
                         <onclick>SetFocus($PARAM[editid])</onclick>
@@ -617,7 +644,6 @@
 
                 <control type="group">
                     <width>44</width>
-                    <visible>Control.IsVisible($PARAM[rowtwo])</visible>
                     <control type="button" id="9091">
                         <description>Backspace</description>
                         <label>&#xe00e;</label>
@@ -654,8 +680,6 @@
                         <onright>9094</onright>
                     </control>
                 </control>
-
-
             </control>
 
             <control type="fixedlist" id="$PARAM[rowtwo]">
