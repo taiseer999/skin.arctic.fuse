@@ -36,6 +36,12 @@
                 <aspect>$PARAM[aspect_standard]</aspect>
             </font>
             <font>
+                <name>font_info_single_black</name>
+                <filename>$PARAM[font_black]</filename>
+                <size>98</size>
+                <aspect>$PARAM[aspect_standard]</aspect>
+            </font>
+            <font>
                 <name>font_info_double_black</name>
                 <filename>$PARAM[font_black]</filename>
                 <size>64</size>

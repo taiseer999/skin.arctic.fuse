@@ -40,12 +40,12 @@
 
 
                 <control type="group">
-                    <right>-40</right>
+                    <!-- <right>-40</right> -->
                     <control type="textbox" id="$PARAM[id_prefix]1">
                         <aligny>top</aligny>
                         <label>$PARAM[label]</label>
                         <textcolor>$PARAM[colordiffuse]_100</textcolor>
-                        <font>font_info_black</font>
+                        <font>font_info_single_black</font>
                         <top>-20</top>
                         <bottom>-20</bottom>
                         <visible>false</visible>
@@ -80,13 +80,11 @@
                         <aligny>center</aligny>
                         <label>$PARAM[label]</label>
                         <textcolor>$PARAM[colordiffuse]_100</textcolor>
-                        <font>font_info_black</font>
+                        <font>font_info_single_black</font>
                         <top>10</top>
                         <bottom>10</bottom>
                         <scroll>false</scroll>
                         <visible>!Container($PARAM[id_prefix]1).HasNext</visible>
-                        <visible>!Container($PARAM[id_prefix]2).HasNext</visible>
-                        <visible>!Container($PARAM[id_prefix]3).HasNext</visible>
                     </control>
                     <control type="label">
                         <wrapmultiline>true</wrapmultiline>
@@ -100,7 +98,6 @@
                         <scroll>false</scroll>
                         <visible>Container($PARAM[id_prefix]1).HasNext</visible>
                         <visible>!Container($PARAM[id_prefix]2).HasNext</visible>
-                        <visible>!Container($PARAM[id_prefix]3).HasNext</visible>
                     </control>
                     <control type="label">
                         <wrapmultiline>true</wrapmultiline>
