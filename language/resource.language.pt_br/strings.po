@@ -884,7 +884,7 @@ msgstr "vezes"
 #: /1080i/Includes_Info.xml
 msgctxt "#31184"
 msgid "Ends"
-msgstr "Termina às"
+msgstr "Termina"
 
 msgctxt "#31185"
 msgid "Autoscroll"
@@ -1156,12 +1156,12 @@ msgstr "Esquema de cores"
 #: /1080i/Includes_Items.xml
 msgctxt "#31242"
 msgid "Blue Slate"
-msgstr "Azul Escuro"
+msgstr "Ardósia Azul"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31243"
 msgid "Midnight Purple"
-msgstr "Roxo midnight"
+msgstr ""Meia-Noite Roxa"
 
 msgctxt "#31244"
 msgid "Now playing"
@@ -1430,7 +1430,7 @@ msgstr "Opções de gerenciamento"
 #: /1080i/SkinSettings.xml
 msgctxt "#31303"
 msgid "Customise fallback image folder"
-msgstr "Personalizar a pasta de imagens reserva"
+msgstr "Pasta de imagem substituta personalizada"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31304"
@@ -1440,7 +1440,7 @@ msgstr "Etiquetas expandidas em foco"
 #: /1080i/Includes_Items.xml
 msgctxt "#31305"
 msgid "Slide up on focus"
-msgstr "deslizamento para cima em foco"
+msgstr "Deslize para cima no foco"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31306"
@@ -2446,7 +2446,7 @@ msgstr "Widgets dentro do $INFO[Container(22001).ListItem.Label,[LOWERCASE],[/LO
 #: /1080i/Custom_1115_Dialog_Shortcuts.xml
 msgctxt "#31532"
 msgid "Disables hub spotlight and categories"
-msgstr "Desativa o destaque e as categorias do hub"
+msgstr "Desativam os destaques e as categorias do hub"
 
 #: /1080i/Custom_1115_Dialog_Shortcuts.xml
 msgctxt "#31533"
