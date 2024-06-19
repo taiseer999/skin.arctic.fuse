@@ -4,7 +4,6 @@
     <coordinates>
         <origin x="0" y="0" />
     </coordinates>
-    <onload>CancelAlarm(playtrailer,silent)</onload>
     <onload>AlarmClock(Refocus,SetFocus(1001),00:00,silent)</onload>
     <controls>
 

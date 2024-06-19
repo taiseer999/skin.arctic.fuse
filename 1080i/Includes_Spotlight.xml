@@ -75,7 +75,7 @@
                 <left>-1920</left>
 
                 <include content="Defs_AutoScroll">
-                    <param name="condition">[[!ControlGroup(310).HasFocus() | System.IdleTime(3)] + !System.HasAlarm(playtrailer) + !Player.HasMedia + !Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)]</param>
+                    <param name="condition">[[!ControlGroup(310).HasFocus() | System.IdleTime(3)] + !Skin.TimerIsRunning(idle_spotlight_trailer) + !Player.HasMedia + !Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)]</param>
                 </include>
 
                 <itemlayout />
@@ -116,10 +116,6 @@
         <oninfo>SetFocus(301)</oninfo>
         <oninfo>Action(Info)</oninfo>
         <oninfo>SetFocus($PARAM[id])</oninfo>
-
-        <include content="Action_AutoTrailer_OnFocus" condition="Skin.HasSetting(Trailers.EnableAutoPlayback)">
-            <param name="id">301</param>
-        </include>
     </include>
 
     <include name="Spotlight_Main">
@@ -216,7 +212,6 @@
                         <textoffsetx>80</textoffsetx>
                         <texturenofocus />
                         <texturefocus />
-                        <onclick>CancelAlarm(playtrailer,silent)</onclick>
                         <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems] + Container(301).ListItem.IsFolder">ActivateWindow($VAR[Path_Spotlight_Target],$INFO[Container(301).ListItem.FolderPath],return)</onclick>
                         <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems] + !Container(301).ListItem.IsFolder + !String.IsEmpty(Container(301).ListItem.FileNameAndPath)">PlayMedia($ESCINFO[Container(301).ListItem.FileNameAndPath])</onclick>
                         <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems] + !Container(301).ListItem.IsFolder + String.IsEmpty(Container(301).ListItem.FileNameAndPath) + !String.IsEmpty(Container(301).ListItem.FolderPath)">PlayMedia($ESCINFO[Container(301).ListItem.FolderPath])</onclick>
@@ -240,7 +235,6 @@
                     <control type="button" id="312">
                         <include>Defs_OSD_Button</include>
                         <centertop>50%</centertop>
-                        <onclick>CancelAlarm(playtrailer,silent)</onclick>
                         <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">SetFocus(301)</onclick>
                         <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">Action(Info)</onclick>
                         <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">SetFocus(312)</onclick>
@@ -265,7 +259,6 @@
                         <left>20</left>
                         <include>Defs_OSD_Button</include>
                         <centertop>50%</centertop>
-                        <onclick>CancelAlarm(playtrailer,silent)</onclick>
                         <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">SetFocus(301)</onclick>
                         <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">Action(ContextMenu)</onclick>
                         <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">SetFocus(313)</onclick>
@@ -285,39 +278,10 @@
                         <param name="icon_colordiffuse">main_fg_90</param>
                     </include>
 
-                    <!-- <control type="button" id="314">
-                        <left>20</left>
-                        <include>Defs_OSD_Button</include>
-                        <centertop>50%</centertop>
-                        <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">Control.Move(301,1)</onclick>
-                        <onup condition="$EXP[Exp_Hubs_Spotlight_HasItems]">Control.Move(301,-1)</onup>
-                        <ondown condition="$EXP[Exp_Hubs_Spotlight_HasItems]">Control.Move(301,1)</ondown>
-                        <onclick condition="!$EXP[Exp_Hubs_Spotlight_HasItems]">Control.Move(99971,1)</onclick>
-                        <onup condition="!$EXP[Exp_Hubs_Spotlight_HasItems]">Control.Move(99971,-1)</onup>
-                        <ondown condition="!$EXP[Exp_Hubs_Spotlight_HasItems]">Control.Move(99971,1)</ondown>
-                        <include content="Spotlight_Main_Button_Standard">
-                            <param name="id">314</param>
-                            <param name="window_id">$PARAM[window_id]</param>
-                        </include>
-                    </control>
-                    <include content="OSD_Button_Icon_Overlay">
-                        <param name="icon">special://skin/extras/icons/arrow-up-arrow-down.png</param>
-                        <param name="id">314</param>
-                        <param name="groupid">324</param>
-                        <param name="vertical">false</param>
-                        <param name="itemgap">0</param>
-                        <param name="center">true</param>
-                        <param name="icon_colordiffuse">main_fg_90</param>
-                    </include> -->
-
                     <control type="button" id="314">
                         <left>20</left>
                         <include>Defs_OSD_Button</include>
                         <centertop>50%</centertop>
-                        <include content="Action_AutoTrailer_OnClick" condition="Skin.HasSetting(Trailers.EnableAutoPlayback)">
-                            <param name="id">301</param>
-                            <param name="pos">-1</param>
-                        </include>
                         <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">Control.Move(301,-1)</onclick>
                         <onclick condition="!$EXP[Exp_Hubs_Spotlight_HasItems]">Control.Move(99971,-1)</onclick>
                         <include content="Spotlight_Main_Button_Standard">
@@ -340,10 +304,6 @@
                         <left>20</left>
                         <include>Defs_OSD_Button</include>
                         <centertop>50%</centertop>
-                        <include content="Action_AutoTrailer_OnClick" condition="Skin.HasSetting(Trailers.EnableAutoPlayback)">
-                            <param name="id">301</param>
-                            <param name="pos">1</param>
-                        </include>
                         <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">Control.Move(301,1)</onclick>
                         <onclick condition="!$EXP[Exp_Hubs_Spotlight_HasItems]">Control.Move(99971,1)</onclick>
                         <include content="Spotlight_Main_Button_Standard">

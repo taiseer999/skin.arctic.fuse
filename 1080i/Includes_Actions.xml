@@ -187,8 +187,6 @@
 
             <onload condition="Window.IsVisible(Home) + String.IsEmpty(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock.OnStartUp))">AlarmClock(refocuslaunch,SetFocus($VAR[Action_Hubs_MenuID],0,absolute),00:00,silent)</onload>
             <onload condition="Window.IsVisible(Home) + String.IsEmpty(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock.OnStartUp))">SetProperty(TMDbHelper.WidgetContainer.UpdateLock.OnStartUp,True,1198)</onload>
-
-            <onunload>CancelAlarm(playtrailer,silent)</onunload>
         </definition>
     </include>
 
@@ -813,27 +811,6 @@
         <onclick condition="String.IsEmpty($PARAM[trailer]) + !String.IsEmpty($PARAM[trailer_fallback])">SetProperty(Trailer,$ESCINFO[$PARAM[trailer_fallback]],1123)</onclick>
         <onclick condition="!String.IsEmpty($PARAM[trailer])">SetProperty(Trailer,$ESCINFO[$PARAM[trailer]],1123)</onclick>
         <onclick condition="!String.IsEmpty($PARAM[trailer]) | !String.IsEmpty($PARAM[trailer_fallback])">ActivateWindow(1123)</onclick>
-    </include>
-
-    <include name="Action_AutoTrailer_OnFocus">
-        <onfocus condition="!String.IsEmpty(Container($PARAM[id]).ListItem.Trailer)">AlarmClock(autotrailer,SetProperty(AutoTrailer,$ESCINFO[Container($PARAM[id]).ListItem.Trailer]),00:05,silent)</onfocus>
-        <onfocus condition="!String.IsEmpty(Container($PARAM[id]).ListItem.Trailer)">AlarmClock(playtrailer,PlayMedia($ESCINFO[Container($PARAM[id]).ListItem.Trailer],1),00:05,silent)</onfocus>
-        <onfocus condition="String.IsEmpty(Container($PARAM[id]).ListItem.Trailer)">CancelAlarm(playtrailer,silent)</onfocus>
-        <onfocus condition="String.IsEmpty(Container($PARAM[id]).ListItem.Trailer)">CancelAlarm(autotrailer,silent)</onfocus>
-        <onunfocus>CancelAlarm(playtrailer,silent)</onunfocus>
-        <onunfocus>CancelAlarm(autotrailer,silent)</onunfocus>
-        <onunfocus condition="Player.HasVideo + String.IsEqual(Window.Property(AutoTrailer),Player.FileNameAndPath)">Action(Stop)</onunfocus>
-    </include>
-
-    <include name="Action_AutoTrailer_OnClick">
-        <param name="pos">0</param>
-        <definition>
-            <onclick condition="Player.HasVideo + String.IsEqual(Window.Property(AutoTrailer),Player.FileNameAndPath)">Action(Stop)</onclick>
-            <onclick condition="!String.IsEmpty(Container($PARAM[id]).ListItem($PARAM[pos]).Trailer)">AlarmClock(autotrailer,SetProperty(AutoTrailer,$ESCINFO[Container($PARAM[id]).ListItem($PARAM[pos]).Trailer]),00:05,silent)</onclick>
-            <onclick condition="!String.IsEmpty(Container($PARAM[id]).ListItem($PARAM[pos]).Trailer)">AlarmClock(playtrailer,PlayMedia($ESCINFO[Container($PARAM[id]).ListItem($PARAM[pos]).Trailer],1),00:05,silent)</onclick>
-            <onclick condition="String.IsEmpty(Container($PARAM[id]).ListItem($PARAM[pos]).Trailer)">CancelAlarm(playtrailer,silent)</onclick>
-            <onclick condition="String.IsEmpty(Container($PARAM[id]).ListItem($PARAM[pos]).Trailer)">CancelAlarm(autotrailer,silent)</onclick>
-        </definition>
     </include>
 
     <include name="Action_Scheme_Onclick_Miami">
