@@ -75,7 +75,7 @@
                 <left>-1920</left>
 
                 <include content="Defs_AutoScroll">
-                    <param name="condition">[[!ControlGroup(310).HasFocus() | System.IdleTime(3)] + !Skin.TimerIsRunning(idle_spotlight_trailer) + !Player.HasMedia + !Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)]</param>
+                    <param name="condition">[[!ControlGroup(310).HasFocus() | System.IdleTime(3)] + !Skin.TimerIsRunning(idle_spotlight_trailer) + !Player.HasMedia + !Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogContextMenu.xml) + !Window.IsVisible(1113) + !Window.IsVisible(1123) + !Window.IsVisible(script-wikipedia.xml)]</param>
                 </include>
 
                 <itemlayout />
