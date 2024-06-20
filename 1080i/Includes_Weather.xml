@@ -14,7 +14,6 @@
                     <param name="label">$PARAM[toplabel]</param>
                     <param name="height">132</param>
                     <param name="width">480</param>
-                    <param name="id_prefix">9998</param>
                 </include>
 
                 <control type="group">
