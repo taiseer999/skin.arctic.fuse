@@ -3,18 +3,6 @@
 
     <fontset id="Default" unicode="false">
         <include>Font_Default</include>
-
-        <!-- Required for system -->
-        <font>
-            <name>font13</name>
-            <filename>RobotoCondensed-Regular.ttf</filename>
-            <size>30</size>
-        </font>
-        <font>
-            <name>Clock</name>
-            <filename>RobotoCondensed-Bold.ttf</filename>
-            <size>130</size>
-        </font>
     </fontset>
 
     <fontset id="NotoRoboto - Arabic / Hebrew" unicode="true">
@@ -26,18 +14,6 @@
             <param name="font_light">RobotoNotoCondensed-Light.ttf</param>
             <param name="aspect_system">0.8</param>
         </include>
-
-        <!-- Required for system -->
-        <font>
-            <name>font13</name>
-            <filename>RobotoNotoCondensed-Regular.ttf</filename>
-            <size>30</size>
-        </font>
-        <font>
-            <name>Clock</name>
-            <filename>RobotoNotoCondensed-Bold.ttf</filename>
-            <size>130</size>
-        </font>
     </fontset>
 
     <fontset id="CJK - Chinese / Japanese / Korean" unicode="true">
@@ -50,20 +26,6 @@
             <param name="aspect_system">0.8</param>
             <param name="aspect_standard">0.89</param>
         </include>
-
-        <!-- Required for system -->
-        <font>
-            <name>font13</name>
-            <filename>resource://resource.font.robotocjksc/RobotoCJKSC-Regular.ttf</filename>
-            <size>30</size>
-            <aspect>0.89</aspect>
-        </font>
-        <font>
-            <name>Clock</name>
-            <filename>resource://resource.font.robotocjksc/RobotoCJKSC-Bold.ttf</filename>
-            <size>130</size>
-            <aspect>0.89</aspect>
-        </font>
     </fontset>
 
 </fonts>
