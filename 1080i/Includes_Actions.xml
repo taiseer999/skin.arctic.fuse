@@ -807,6 +807,12 @@
         </definition>
     </include>
 
+    <variable name="Action_PlayTrailer_Trigger">
+        <value condition="[Skin.HasSetting(Trailers.EnableAutoPlayback) + Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) + String.IsEmpty(Window.Property(Slide.WidgetContainer))]">Spotlight</value>
+        <value condition="[Skin.HasSetting(Trailers.EnableAutoPlayback.Info) + Window.IsVisible(DialogVideoInfo.xml)]">VideoInfo</value>
+        <value>Unknown</value>
+    </variable>
+
     <include name="Action_PlayTrailer_OnClick">
         <onclick condition="String.IsEmpty($PARAM[trailer]) + !String.IsEmpty($PARAM[trailer_fallback])">SetProperty(Trailer,$ESCINFO[$PARAM[trailer_fallback]],1123)</onclick>
         <onclick condition="!String.IsEmpty($PARAM[trailer])">SetProperty(Trailer,$ESCINFO[$PARAM[trailer]],1123)</onclick>
