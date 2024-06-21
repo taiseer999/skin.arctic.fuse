@@ -324,7 +324,7 @@
                     <label> -tmdbhelper.isupdating: $VAR[Overlay_InfoLabel_WidgetContainer,widget: , ]$INFO[Window(Home).Property(TMDBHelper.CurrentWindow),window: , ]$INFO[Window(Home).Property(TMDBHelper.IsUpdating),details: , ]$INFO[Window(Home).Property(TMDBHelper.IsUpdatingRatings),ratings: , ]</label>
                     <textcolor>yellowgreen</textcolor>
                 </include>
-                <!-- <include content="Overlay_InfoLabel">
+                <include content="Overlay_InfoLabel">
                     <height>160</height>
                     <label> -timeridle: $INFO[Skin.TimerElapsedSecs(idle_spotlight_trailer)][CR] -timerplay: $INFO[Skin.TimerElapsedSecs(play_spotlight_trailer)][CR]AT_Title: $INFO[Window(Home).Property(AutoTrailerTitle)][CR]PT_Title: $INFO[Window(Home).Property(PlayTrailerTitle)]</label>
                     <textcolor>yellowgreen</textcolor>
@@ -337,7 +337,7 @@
                     <textcolor>magenta</textcolor>
                     <visible>Skin.TimerIsRunning(idle_spotlight_trailer)</visible>
                     <visible>Skin.HasSetting(Trailers.EnableAutoPlayback)</visible>
-                </include> -->
+                </include>
             </control>
             <control type="grouplist">
                 <align>bottom</align>
