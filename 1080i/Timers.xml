@@ -20,7 +20,6 @@
         <onstart condition="!String.IsEmpty(Container(99950).ListItem.Trailer) + !String.IsEqual(Window(Home).Property(PlayTrailer),Container(99950).ListItem.Trailer)">SetProperty(PlayTrailerTrigger,$VAR[Action_PlayTrailer_Trigger],Home)</onstart>
         <onstart condition="!String.IsEmpty(Container(99950).ListItem.Trailer) + !String.IsEqual(Window(Home).Property(PlayTrailer),Container(99950).ListItem.Trailer)">SetProperty(PlayTrailerTitle,$ESCINFO[Container(99950).ListItem.Title],Home)</onstart>
         <onstart condition="!String.IsEmpty(Container(99950).ListItem.Trailer) + !String.IsEqual(Window(Home).Property(PlayTrailer),Container(99950).ListItem.Trailer)">SetProperty(PlayTrailer,$ESCINFO[Container(99950).ListItem.Trailer],Home)</onstart>
-        <onstart condition="!String.IsEmpty(Container(99950).ListItem.Trailer) + !String.IsEqual(Window(Home).Property(PlayTrailer),Container(99950).ListItem.Trailer)">SetProperty(Trailer,$ESCINFO[Container(99950).ListItem.Trailer],1123)</onstart>
         <onstart condition="!String.IsEmpty(Container(99950).ListItem.Trailer) + !String.IsEqual(Window(Home).Property(PlayTrailer),Container(99950).ListItem.Trailer)">PlayMedia($ESCINFO[Container(99950).ListItem.Trailer],1)</onstart>
     </timer>
 </timers>
