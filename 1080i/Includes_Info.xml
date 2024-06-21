@@ -36,47 +36,24 @@
         </control>
     </include>
 
-    <include name="Info_Title_LogoLabel_SmallText">
+    <include name="Info_Title_LogoLabel_SmallText_KodiLogo">
         <control type="group">
             <centertop>20</centertop>
             <height>40</height>
             <control type="group">
-                <!-- <left>-8</left> -->
+                <left>-8</left>
                 <height>40</height>
                 <width>40</width>
-                <!-- <control type="label">
-                    <label>&#xe52f;</label>
-                    <font>font_mini_iconic</font>
-                    <textcolor>$VAR[ColorHighlight]</textcolor>
-                </control>
-                <control type="label">
-                    <label>&#xe52f;</label>
-                    <font>font_mini_iconic</font>
-                    <textcolor>$VAR[ColorGradient]</textcolor>
-                    <animation effect="fade" end="33" condition="true">Conditional</animation>
-                </control> -->
                 <control type="image">
-                    <left>-8</left>
-                    <right>8</right>
                     <bordersize>-4</bordersize>
                     <texture colordiffuse="$VAR[ColorHighlight]">special://skin/extras/icons/kodi.png</texture>
                 </control>
                 <control type="image">
-                    <left>-8</left>
-                    <right>8</right>
                     <bordersize>-4</bordersize>
                     <texture colordiffuse="$VAR[ColorGradient]">special://skin/extras/icons/kodi.png</texture>
                     <animation effect="fade" end="33" condition="true">Conditional</animation>
                 </control>
             </control>
-            <!-- <control type="label">
-                <top>6</top>
-                <left>40</left>
-                <height>40</height>
-                <textcolor>$PARAM[colordiffuse]_100</textcolor>
-                <font>font_logo</font>
-                <label>arctic fuse</label>
-            </control> -->
             <control type="label">
                 <top>1</top>
                 <left>36</left>
@@ -86,6 +63,42 @@
                 <label>KODI</label>
             </control>
         </control>
+    </include>
+
+    <include name="Info_Title_LogoLabel_SmallText_ArcticFuseLogo">
+        <control type="group">
+            <centertop>20</centertop>
+            <height>40</height>
+            <control type="group">
+                <height>40</height>
+                <width>40</width>
+                <control type="label">
+                    <label>&#xe52f;</label>
+                    <font>font_tiny_iconic</font>
+                    <textcolor>$VAR[ColorHighlight]</textcolor>
+                </control>
+                <control type="label">
+                    <label>&#xe52f;</label>
+                    <font>font_tiny_iconic</font>
+                    <textcolor>$VAR[ColorGradient]</textcolor>
+                    <animation effect="fade" end="33" condition="true">Conditional</animation>
+                </control>
+            </control>
+            <control type="label">
+                <bottom>11</bottom>
+                <left>36</left>
+                <height>10</height>
+                <textcolor>$PARAM[colordiffuse]_100</textcolor>
+                <font>font_logo</font>
+                <label>arctic fuse</label>
+            </control>
+        </control>
+    </include>
+
+    <include name="Info_Title_LogoLabel_SmallText">
+        <include content="Info_Title_LogoLabel_SmallText_KodiLogo">
+            <param name="colordiffuse">$PARAM[colordiffuse]</param>
+        </include>
         <control type="label">
             <wrapmultiline>$PARAM[wrapmultiline]</wrapmultiline>
             <height>84</height>

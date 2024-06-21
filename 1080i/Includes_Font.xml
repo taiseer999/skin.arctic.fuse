@@ -287,6 +287,11 @@
                 <size>26</size>
             </font>
             <font>
+                <name>font_tiny_iconic</name>
+                <filename>fa-solid-900.ttf</filename>
+                <size>22</size>
+            </font>
+            <font>
                 <name>font_hint_iconic</name>
                 <filename>fa-solid-900.ttf</filename>
                 <size>16</size>
