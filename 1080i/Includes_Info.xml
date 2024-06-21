@@ -123,17 +123,17 @@
                 <width>$PARAM[width]</width>
                 <height>$PARAM[height]</height>
 
-                <include content="Info_Title_LogoLabel_LargeText">
+                <include content="Info_Title_LogoLabel_LargeText" condition="!Skin.HasSetting(Info.EnableSmallerTitle)">
                     <param name="label">$PARAM[label]</param>
                     <param name="colordiffuse">$PARAM[colordiffuse]</param>
                     <param name="wrapmultiline">$PARAM[wrapmultiline]</param>
                 </include>
 
-                <!-- <include content="Info_Title_LogoLabel_SmallText">
+                <include content="Info_Title_LogoLabel_SmallText" condition="Skin.HasSetting(Info.EnableSmallerTitle)">
                     <param name="label">$PARAM[label]</param>
                     <param name="colordiffuse">$PARAM[colordiffuse]</param>
                     <param name="wrapmultiline">$PARAM[wrapmultiline]</param>
-                </include> -->
+                </include>
 
             </control>
         </definition>

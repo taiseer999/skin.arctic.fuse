@@ -396,6 +396,11 @@
         <value>$LOCALIZE[31330]</value>
     </variable>
 
+    <variable name="Label_Setting_ForegroundText">
+        <value condition="!Skin.HasSetting(Info.EnableSmallerTitle)">$LOCALIZE[31439] ($LOCALIZE[31450])</value>
+        <value>$LOCALIZE[1438] ($LOCALIZE[31447])</value>
+    </variable>
+
     <variable name="Label_Setting_RatingsStyle">
         <value condition="Skin.HasSetting(Furniture.EnableColourRatings)">$LOCALIZE[737]</value>
         <value>$LOCALIZE[31458]</value>
