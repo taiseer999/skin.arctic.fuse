@@ -6,7 +6,6 @@
     </fontset>
 
     <fontset id="NotoRoboto - Arabic / Hebrew" unicode="true">
-
         <include content="Font_Default">
             <param name="font_black">RobotoNotoCondensed-Black.ttf</param>
             <param name="font_bold">RobotoNotoCondensed-Bold.ttf</param>
@@ -17,7 +16,6 @@
     </fontset>
 
     <fontset id="CJK - Chinese / Japanese / Korean" unicode="true">
-
         <include content="Font_Default">
             <param name="font_black">resource://resource.font.robotocjksc/RobotoCJKSC-Bold.ttf</param>
             <param name="font_bold">resource://resource.font.robotocjksc/RobotoCJKSC-Bold.ttf</param>

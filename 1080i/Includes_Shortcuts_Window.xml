@@ -128,11 +128,6 @@
 
     <include name="Shortcuts_Window_Content_Categories_List">
         <control type="group">
-            <!-- <include content="Settings_Label">
-                <top>-20</top>
-                <label>$LOCALIZE[31026] > $INFO[Window.Property(hub_prefix)] > $LOCALIZE[31150] ($INFO[Container(300).NumItems]$INFO[Container(302).NumItems, (,)])</label>
-                <visible>!$EXP[Shortcuts_Window_Exp_WidgetsOnly]</visible>
-            </include> -->
             <include content="Categories_Selector">
                 <param name="id">300</param>
                 <param name="offset_x">view_button_offset_x</param>
@@ -190,7 +185,6 @@
                 <left>0</left>
                 <onleft>303</onleft>
                 <ondown>304</ondown>
-                <!-- <animation effect="slide" end="-240" condition="Integer.IsLess(Container(302).NumItems,3)">Conditional</animation> -->
                 <onclick>SetFocus(1302)</onclick>
                 <visible>String.IsEmpty(Container(300).ListItem.Property(submenulist_path))</visible>
                 <visible>!String.IsEmpty(Container(300).ListItem.Property(guid))</visible>
