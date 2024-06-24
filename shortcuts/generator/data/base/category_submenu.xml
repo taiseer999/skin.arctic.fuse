@@ -9,15 +9,14 @@
                 <template>
                     <![CDATA[
                     <include content="Hub_Submenu_List">
-                        <param name="id">302</param>
-                        <param name="ondown">{submenu_ondown}</param>
+                        <param name="id">{submenu_item_x}302</param>
                         <param name="hidden_button">List_ButtonMenu_Row_HiddenButton_Home</param>
-                        <param name="hidden_button_prefix">Item.{submenu_item_x}302.</param>
+                        <param name="hidden_button_prefix">{submenu_item_x}302</param>
                         <param name="window_id">{window_id}</param>
                         <param name="submenu_widget_highlight">[$EXP[Exp_Hubs_Spotlight_IsSlide] + !$EXP[Exp_Hubs_Spotlight_IsDisabled]]</param>
                         <param name="submenu_widget_id">{submenu_widget_id}</param>
                         <include content="Action_SkinVariables_ShortcutList_Onclick">
-                            <param name="id">302</param>
+                            <param name="id">{submenu_item_x}302</param>
                         </include>
                         <content>{parts_content}</content>
                         <visible>String.IsEqual(Container(300).ListItem.Property(guid),{item_guid})</visible>
@@ -58,10 +57,9 @@
                 <template>
                     <![CDATA[
                     <include content="Hub_Submenu_List">
-                        <param name="id">302</param>
-                        <param name="ondown">{submenu_ondown}</param>
+                        <param name="id">{submenu_item_x}302</param>
                         <param name="hidden_button">List_ButtonMenu_Row_HiddenButton_Home</param>
-                        <param name="hidden_button_prefix">Item.{submenu_item_x}302.</param>
+                        <param name="hidden_button_prefix">{submenu_item_x}</param>
                         <param name="window_id">{window_id}</param>
                         <param name="submenu_widget_highlight">[$EXP[Exp_Hubs_Spotlight_IsSlide] + !$EXP[Exp_Hubs_Spotlight_IsDisabled]]</param>
                         <param name="submenu_widget_id">{submenu_widget_id}</param>
