@@ -431,7 +431,24 @@
             <include content="Furniture_Top">
                 <param name="label">$LOCALIZE[5]</param>
             </include>
-            <include>Furniture_Bottom_Left</include>
+            <include condition="Skin.String(Furniture.BottomLeft.Enable,Library) | Skin.String(Furniture.BottomLeft.Enable,Always)">Furniture_Bottom_Left</include>
+            <control type="group">
+                <include>Dimension_Bottombar</include>
+                <visible>!Skin.String(Furniture.BottomLeft.Enable,Library)</visible>
+                <visible>!Skin.String(Furniture.BottomLeft.Enable,Always)</visible>
+                <animation effect="fade" start="100" end="30" condition="true">Conditional</animation>
+                <control type="group">
+                    <height>35</height>
+                    <include content="Info_Viewline">
+                        <param name="library_condition">false</param>
+                        <param name="label">Kodi$INFO[System.BuildVersionCode, v,]</param>
+                        <param name="custom_icon_condition">Skin.HasSetting(Furniture.EnableViewLineIcons)</param>
+                        <param name="custom_icon">special://skin/extras/icons/kodi.png</param>
+                        <top>0</top>
+                        <left>0</left>
+                    </include>
+                </control>
+            </control>
         </control>
         <control type="group">
             <include>Furniture_Bottom_Right</include>
@@ -798,7 +815,7 @@
         <param name="align">left</param>
         <param name="left">0</param>
         <param name="bottom">-20</param>
-        <param name="right">320</param>
+        <param name="right">80</param>
         <definition>
             <control type="group">
                 <bottom>$PARAM[bottom]</bottom>
