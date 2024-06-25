@@ -32,7 +32,6 @@
             <label>$PARAM[label]</label>
             <textcolor>$PARAM[colordiffuse]_100</textcolor>
             <font>font_info_single_black</font>
-            <right>-40</right>
         </control>
     </include>
 
@@ -107,7 +106,6 @@
             <label>$PARAM[label]</label>
             <textcolor>$PARAM[colordiffuse]_100</textcolor>
             <font>font_title_black</font>
-            <right>-40</right>
         </control>
     </include>
 
