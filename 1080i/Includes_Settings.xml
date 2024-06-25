@@ -275,7 +275,7 @@
     <include name="Settings_Landing">
         <control type="group">
             <!-- <include>Animation_View_SlideOver</include> -->
-            <left>-100</left>
+            <left>-120</left>
             <include content="Animation_View_WindowChange">
                 <param name="windowopen_condition">[!$EXP[Exp_SettingsDialogs_Prev]]</param>
                 <param name="windowclose_condition">[!$EXP[Exp_SettingsDialogs_Next]]</param>
@@ -423,7 +423,7 @@
         <control type="group">
             <include>Animation_Group_Bumper</include>
             <!-- <include>Animation_View_SlideOver</include> -->
-            <left>-100</left>
+            <left>-120</left>
             <include content="Animation_View_WindowChange">
                 <param name="windowopen_condition">[!$EXP[Exp_SettingsDialogs_Prev]]</param>
                 <param name="windowclose_condition">[!$EXP[Exp_SettingsDialogs_Next]]</param>
