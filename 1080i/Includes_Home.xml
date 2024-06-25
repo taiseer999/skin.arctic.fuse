@@ -62,9 +62,9 @@
 
     <include name="Home_Menu_List_Horz">
         <include content="Object_Left" condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions)">
-            <param name="left">120</param>
+            <param name="left">100</param>
         </include>
-        <left>20</left>
+        <left>0</left>
         <centertop>100</centertop>
         <height>160</height>
         <width>540</width>
@@ -480,7 +480,7 @@
         <control type="group">
             <width>40</width>
             <height>40</height>
-            <centerleft>120</centerleft>
+            <centerleft>100</centerleft>
             <centertop>100</centertop>
             <include content="Home_Menu_SearchAndOptions_SearchButton">
                 <param name="vertical">false</param>
