@@ -1017,14 +1017,14 @@
                             <control type="image">
                                 <centertop>50%</centertop>
                                 <height>256</height>
-                                <include content="Object_Left" condition="$PARAM[iconic]">
+                                <!-- <include content="Object_Left" condition="$PARAM[iconic]">
                                     <param name="left">-60</param>
                                 </include>
                                 <include content="Object_Right" condition="$PARAM[iconic]">
                                     <param name="right">-60</param>
-                                </include>
-                                <left>-50</left>
-                                <right>-50</right>
+                                </include> -->
+                                <left>-60</left>
+                                <right>-60</right>
                                 <include>Texture_MainMenu_Highlight_V</include>
                             </control>
                             <include content="List_ButtonMenu_Row_Icon" condition="$PARAM[iconic]">
