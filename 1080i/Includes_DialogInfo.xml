@@ -7,6 +7,11 @@
 
     <include name="DialogInfo_Body_Group">
         <include>Dimension_Info</include>
+        <visible>!String.IsEqual(Window.Property(DetailsView),Artwork) | $EXP[Exp_HomeMenu_IsTopBar]</visible>
+        <include content="Animation_Fade_In" condition="!$EXP[Exp_HomeMenu_IsTopBar]">
+            <param name="type">Visible</param>
+            <param name="delay">0</param>
+        </include>
     </include>
 
     <include name="DialogInfo_InfoDetails_Group">
@@ -18,12 +23,7 @@
     </include>
 
     <include name="DialogInfo_InfoPanel_Group">
-        <visible>!String.IsEqual(Window.Property(DetailsView),Artwork) | $EXP[Exp_HomeMenu_IsTopBar]</visible>
         <include>Animation_Transition_InfoPanel_Open</include>
-        <include content="Animation_Fade_In" condition="!$EXP[Exp_HomeMenu_IsTopBar]">
-            <param name="type">Visible</param>
-            <param name="delay">400</param>
-        </include>
         <include content="Info_Panel">
             <param name="titlelabel">$VAR[Label_Title]</param>
             <param name="plotlabel">$VAR[Label_Plot]</param>
@@ -1534,125 +1534,128 @@
 
     <include name="DialogInfo_ArtworkGallery">
         <control type="group">
-            <include>Animation_Right</include>
-            <visible>String.IsEqual(Window.Property(DetailsView),Artwork)</visible>
+            <include>Dimension_Info</include>
             <control type="group">
-                <width>1140</width>
-                <control type="grouplist">
-                    <orientation>horizontal</orientation>
-                    <height>10</height>
-                    <centerbottom>-40</centerbottom>
-                    <itemgap>10</itemgap>
-                    <include content="Object_Circle_Counter_Ten">
-                        <param name="id">7003</param>
-                        <param name="ten">0</param>
-                        <param name="first">true</param>
-                    </include>
-                    <include content="Object_Circle_Counter_Ten">
-                        <param name="id">7003</param>
-                        <param name="ten">1</param>
-                    </include>
-                    <include content="Object_Circle_Counter_Ten">
-                        <param name="id">7003</param>
-                        <param name="ten">2</param>
-                    </include>
-                </control>
-                <control type="image">
-                    <include>Texture_Shadow_40</include>
-                    <texture colordiffuse="black" border="12">common/box.png</texture>
-                </control>
-                <control type="wraplist" id="7003">
-                    <orientation>horizontal</orientation>
-                    <scrolltime tween="quadratic">400</scrolltime>
-                    <onright>4000</onright>
-                    <onleft>4000</onleft>
-                    <onback>4000</onback>
-                    <onclick>SendClick(10)</onclick>
-                    <itemlayout>
-                        <control type="image">
-                            <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture background="true" diffuse="diffuse/landscape_w1140_h680.png">$INFO[ListItem.Icon]</texture>
-                        </control>
-                    </itemlayout>
-                    <focusedlayout>
-                        <control type="image">
-                            <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture background="true" diffuse="diffuse/landscape_w1140_h680.png">$INFO[ListItem.Icon]</texture>
-                        </control>
-                    </focusedlayout>
-                    <content>
-                        <item>
-                            <icon>$INFO[ListItem.Art(thumb)]</icon>
-                            <visible>!String.IsEmpty(ListItem.Art(thumb))</visible>
-                            <visible>Window.IsVisible(DialogVideoInfo.xml)</visible>
-                        </item>
-                        <item>
-                            <icon>$INFO[ListItem.Art(fanart)]</icon>
-                            <visible>!String.IsEmpty(ListItem.Art(fanart))</visible>
-                        </item>
-                        <item>
-                            <icon>$INFO[Container(99950).ListItem.Art(fanart)]</icon>
-                            <visible>!String.IsEmpty(Container(99950).ListItem.Art(fanart))</visible>
-                            <visible>!String.IsEqual(Container(99950).ListItem.Art(fanart),ListItem.Art(fanart))</visible>
-                        </item>
-                        <item>
-                            <icon>$INFO[ListItem.Art(fanart1)]</icon>
-                            <visible>!String.IsEmpty(ListItem.Art(fanart1))</visible>
-                            <visible>!String.IsEqual(ListItem.Art(fanart1),ListItem.Art(fanart))</visible>
-                        </item>
-                        <item>
-                            <icon>$INFO[ListItem.Art(fanart2)]</icon>
-                            <visible>!String.IsEmpty(ListItem.Art(fanart2))</visible>
-                            <visible>!String.IsEqual(ListItem.Art(fanart2),ListItem.Art(fanart))</visible>
-                        </item>
-                        <item>
-                            <icon>$INFO[ListItem.Art(fanart3)]</icon>
-                            <visible>!String.IsEmpty(ListItem.Art(fanart3))</visible>
-                            <visible>!String.IsEqual(ListItem.Art(fanart3),ListItem.Art(fanart))</visible>
-                        </item>
-                        <item>
-                            <icon>$INFO[ListItem.Art(fanart4)]</icon>
-                            <visible>!String.IsEmpty(ListItem.Art(fanart4))</visible>
-                            <visible>!String.IsEqual(ListItem.Art(fanart4),ListItem.Art(fanart))</visible>
-                        </item>
-                        <item>
-                            <icon>$INFO[ListItem.Art(fanart5)]</icon>
-                            <visible>!String.IsEmpty(ListItem.Art(fanart5))</visible>
-                            <visible>!String.IsEqual(ListItem.Art(fanart5),ListItem.Art(fanart))</visible>
-                        </item>
-                    </content>
-                    <include condition="Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogPVRInfo.xml)">DialogInfo_VideoFanartContent</include>
+                <include>Animation_Right</include>
+                <visible>String.IsEqual(Window.Property(DetailsView),Artwork)</visible>
+                <control type="group">
+                    <width>1140</width>
+                    <control type="grouplist">
+                        <orientation>horizontal</orientation>
+                        <height>10</height>
+                        <centerbottom>-40</centerbottom>
+                        <itemgap>10</itemgap>
+                        <include content="Object_Circle_Counter_Ten">
+                            <param name="id">7003</param>
+                            <param name="ten">0</param>
+                            <param name="first">true</param>
+                        </include>
+                        <include content="Object_Circle_Counter_Ten">
+                            <param name="id">7003</param>
+                            <param name="ten">1</param>
+                        </include>
+                        <include content="Object_Circle_Counter_Ten">
+                            <param name="id">7003</param>
+                            <param name="ten">2</param>
+                        </include>
+                    </control>
+                    <control type="image">
+                        <include>Texture_Shadow_40</include>
+                        <texture colordiffuse="black" border="12">common/box.png</texture>
+                    </control>
+                    <control type="wraplist" id="7003">
+                        <orientation>horizontal</orientation>
+                        <scrolltime tween="quadratic">400</scrolltime>
+                        <onright>4000</onright>
+                        <onleft>4000</onleft>
+                        <onback>4000</onback>
+                        <onclick>SendClick(10)</onclick>
+                        <itemlayout>
+                            <control type="image">
+                                <aspectratio scalediffuse="false">scale</aspectratio>
+                                <texture background="true" diffuse="diffuse/landscape_w1140_h680.png">$INFO[ListItem.Icon]</texture>
+                            </control>
+                        </itemlayout>
+                        <focusedlayout>
+                            <control type="image">
+                                <aspectratio scalediffuse="false">scale</aspectratio>
+                                <texture background="true" diffuse="diffuse/landscape_w1140_h680.png">$INFO[ListItem.Icon]</texture>
+                            </control>
+                        </focusedlayout>
+                        <content>
+                            <item>
+                                <icon>$INFO[ListItem.Art(thumb)]</icon>
+                                <visible>!String.IsEmpty(ListItem.Art(thumb))</visible>
+                                <visible>Window.IsVisible(DialogVideoInfo.xml)</visible>
+                            </item>
+                            <item>
+                                <icon>$INFO[ListItem.Art(fanart)]</icon>
+                                <visible>!String.IsEmpty(ListItem.Art(fanart))</visible>
+                            </item>
+                            <item>
+                                <icon>$INFO[Container(99950).ListItem.Art(fanart)]</icon>
+                                <visible>!String.IsEmpty(Container(99950).ListItem.Art(fanart))</visible>
+                                <visible>!String.IsEqual(Container(99950).ListItem.Art(fanart),ListItem.Art(fanart))</visible>
+                            </item>
+                            <item>
+                                <icon>$INFO[ListItem.Art(fanart1)]</icon>
+                                <visible>!String.IsEmpty(ListItem.Art(fanart1))</visible>
+                                <visible>!String.IsEqual(ListItem.Art(fanart1),ListItem.Art(fanart))</visible>
+                            </item>
+                            <item>
+                                <icon>$INFO[ListItem.Art(fanart2)]</icon>
+                                <visible>!String.IsEmpty(ListItem.Art(fanart2))</visible>
+                                <visible>!String.IsEqual(ListItem.Art(fanart2),ListItem.Art(fanart))</visible>
+                            </item>
+                            <item>
+                                <icon>$INFO[ListItem.Art(fanart3)]</icon>
+                                <visible>!String.IsEmpty(ListItem.Art(fanart3))</visible>
+                                <visible>!String.IsEqual(ListItem.Art(fanart3),ListItem.Art(fanart))</visible>
+                            </item>
+                            <item>
+                                <icon>$INFO[ListItem.Art(fanart4)]</icon>
+                                <visible>!String.IsEmpty(ListItem.Art(fanart4))</visible>
+                                <visible>!String.IsEqual(ListItem.Art(fanart4),ListItem.Art(fanart))</visible>
+                            </item>
+                            <item>
+                                <icon>$INFO[ListItem.Art(fanart5)]</icon>
+                                <visible>!String.IsEmpty(ListItem.Art(fanart5))</visible>
+                                <visible>!String.IsEqual(ListItem.Art(fanart5),ListItem.Art(fanart))</visible>
+                            </item>
+                        </content>
+                        <include condition="Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogPVRInfo.xml)">DialogInfo_VideoFanartContent</include>
+                    </control>
                 </control>
             </control>
+            <include content="Object_BigPoster" condition="![String.IsEqual(Skin.AspectRatio,3:2) | String.IsEqual(Skin.AspectRatio,4:3) | String.IsEqual(Skin.AspectRatio,16:10)] + Window.IsVisible(DialogVideoInfo.xml)">
+                <param name="icon">$VAR[Image_DialogInfo_Poster]</param>
+                <param name="diffuse">diffuse/poster_w460_h680.png</param>
+                <include>Animation_Right_Delay</include>
+                <visible>String.IsEqual(Window.Property(DetailsView),Artwork)</visible>
+                <left>1180</left>
+                <width>infodialog_poster_w</width>
+                <height>infodialog_poster_h</height>
+            </include>
+            <include content="Object_BigPoster" condition="![String.IsEqual(Skin.AspectRatio,3:2) | String.IsEqual(Skin.AspectRatio,4:3) | String.IsEqual(Skin.AspectRatio,16:10)] + !Window.IsVisible(DialogVideoInfo.xml)">
+                <param name="icon">$INFO[ListItem.Icon]</param>
+                <param name="diffuse">diffuse/square_w460_h460.png</param>
+                <include>Animation_Right_Delay</include>
+                <visible>String.IsEqual(Window.Property(DetailsView),Artwork)</visible>
+                <left>1180</left>
+                <width>infodialog_poster_w</width>
+                <height>infodialog_poster_w</height>
+            </include>
+            <include content="Object_Control" condition="![String.IsEqual(Skin.AspectRatio,3:2) | String.IsEqual(Skin.AspectRatio,4:3) | String.IsEqual(Skin.AspectRatio,16:10)] + !Window.IsVisible(DialogVideoInfo.xml)">
+                <param name="control">image</param>
+                <include>Animation_Right_Delay</include>
+                <visible>String.IsEqual(Window.Property(DetailsView),Artwork)</visible>
+                <left>1180</left>
+                <width>infodialog_poster_w</width>
+                <top>infodialog_poster_w</top>
+                <aspectratio>keep</aspectratio>
+                <texture background="true">$VAR[Image_Clearlogo]</texture>
+            </include>
         </control>
-        <include content="Object_BigPoster" condition="![String.IsEqual(Skin.AspectRatio,3:2) | String.IsEqual(Skin.AspectRatio,4:3) | String.IsEqual(Skin.AspectRatio,16:10)] + Window.IsVisible(DialogVideoInfo.xml)">
-            <param name="icon">$VAR[Image_DialogInfo_Poster]</param>
-            <param name="diffuse">diffuse/poster_w460_h680.png</param>
-            <include>Animation_Right_Delay</include>
-            <visible>String.IsEqual(Window.Property(DetailsView),Artwork)</visible>
-            <left>1180</left>
-            <width>infodialog_poster_w</width>
-            <height>infodialog_poster_h</height>
-        </include>
-        <include content="Object_BigPoster" condition="![String.IsEqual(Skin.AspectRatio,3:2) | String.IsEqual(Skin.AspectRatio,4:3) | String.IsEqual(Skin.AspectRatio,16:10)] + !Window.IsVisible(DialogVideoInfo.xml)">
-            <param name="icon">$INFO[ListItem.Icon]</param>
-            <param name="diffuse">diffuse/square_w460_h460.png</param>
-            <include>Animation_Right_Delay</include>
-            <visible>String.IsEqual(Window.Property(DetailsView),Artwork)</visible>
-            <left>1180</left>
-            <width>infodialog_poster_w</width>
-            <height>infodialog_poster_w</height>
-        </include>
-        <include content="Object_Control" condition="![String.IsEqual(Skin.AspectRatio,3:2) | String.IsEqual(Skin.AspectRatio,4:3) | String.IsEqual(Skin.AspectRatio,16:10)] + !Window.IsVisible(DialogVideoInfo.xml)">
-            <param name="control">image</param>
-            <include>Animation_Right_Delay</include>
-            <visible>String.IsEqual(Window.Property(DetailsView),Artwork)</visible>
-            <left>1180</left>
-            <width>infodialog_poster_w</width>
-            <top>infodialog_poster_w</top>
-            <aspectratio>keep</aspectratio>
-            <texture background="true">$VAR[Image_Clearlogo]</texture>
-        </include>
     </include>
 
     <include name="DialogInfo_VideoFanartContent">
