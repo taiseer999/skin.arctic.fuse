@@ -922,7 +922,7 @@
     <include name="DialogInfo_ButtonGroup_Horz">
         <bottom>20</bottom>
         <height>160</height>
-        <left>45</left>
+        <left>20</left>
     </include>
 
     <include name="DialogInfo_ButtonGroup">
