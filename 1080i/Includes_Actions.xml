@@ -103,13 +103,13 @@
         <onload>SetProperty(BlurImage.Original,$ESCINFO[Window(Home).Property(TMDBHelper.ListItem.BlurImage.Original)],Home)</onload>
         <onload>SetProperty(TMDbHelper.Image.Override,True,Home)</onload>
 
-        <onunload>SetProperty(TMDbHelper.ListItem.CropImage,$ESCINFO[Window(Home).Property(CropImage)],Home)</onunload>
-        <onunload>SetProperty(TMDbHelper.ListItem.BlurImage,$ESCINFO[Window(Home).Property(BlurImage)],Home)</onunload>
-        <onunload>SetProperty(TMDbHelper.ListItem.BlurImage.Original,$ESCINFO[Window(Home).Property(BlurImage.Original)],Home)</onunload>
-        <onunload>ClearProperty(CropImage,Home)</onunload>
-        <onunload>ClearProperty(BlurImage,Home)</onunload>
-        <onunload>ClearProperty(BlurImage.Original,Home)</onunload>
-        <onunload>ClearProperty(TMDbHelper.Image.Override,Home)</onunload>
+        <onunload condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.Image.Override))">SetProperty(TMDbHelper.ListItem.CropImage,$ESCINFO[Window(Home).Property(CropImage)],Home)</onunload>
+        <onunload condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.Image.Override))">SetProperty(TMDbHelper.ListItem.BlurImage,$ESCINFO[Window(Home).Property(BlurImage)],Home)</onunload>
+        <onunload condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.Image.Override))">SetProperty(TMDbHelper.ListItem.BlurImage.Original,$ESCINFO[Window(Home).Property(BlurImage.Original)],Home)</onunload>
+        <onunload condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.Image.Override))">ClearProperty(CropImage,Home)</onunload>
+        <onunload condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.Image.Override))">ClearProperty(BlurImage,Home)</onunload>
+        <onunload condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.Image.Override))">ClearProperty(BlurImage.Original,Home)</onunload>
+        <onunload condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.Image.Override))">ClearProperty(TMDbHelper.Image.Override,Home)</onunload>
     </include>
 
     <include name="Action_View_SlideOver_OnFocus">
@@ -312,6 +312,7 @@
 
     <include name="Action_Recommendations_OnClick">
         <oninfo>Action(Select)</oninfo>
+        <onclick>ClearProperty(TMDbHelper.Image.Override,Home)</onclick>
         <onclick>RunScript(plugin.video.themoviedb.helper,add_path=$INFO[Container($PARAM[id]).ListItem.FolderPath],call_auto=1190,return)</onclick>
         <onclick>Dialog.Close(1120,true)</onclick>
         <onclick>Dialog.Close(1121,true)</onclick>

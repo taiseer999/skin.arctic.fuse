@@ -152,6 +152,7 @@
                             <param name="labeltop">0</param>
                             <param name="include_movement">false</param>
                             <content>$INFO[Window.Property(Version_Query)]</content>
+                            <onclick>ClearProperty(TMDbHelper.Image.Override,Home)</onclick>
                             <onclick>Dialog.Close(all,true)</onclick>
                             <onclick>PlayMedia($ESCINFO[Container(513).ListItem.FolderPath])</onclick>
                             <include>Action_1120_OnWidget</include>
@@ -170,6 +171,9 @@
                             <param name="labeltop">0</param>
                             <param name="include_movement">false</param>
                             <content target="videos">plugin://plugin.video.themoviedb.helper/?info=flatseasons&amp;tmdb_type=tv$INFO[Window.Property(Item_Query)]$VAR[Path_Param_Widget]</content>
+                            <onclick>ClearProperty(TMDbHelper.Image.Override,Home)</onclick>
+                            <onclick>Dialog.Close(all,true)</onclick>
+                            <onclick>PlayMedia($ESCINFO[Container(513).ListItem.FolderPath])</onclick>
                             <include>Action_1120_OnWidget</include>
                             <include content="Animation_ConditionalFade" condition="!Skin.HasSetting(Views.DisableItemPeek)">
                                 <param name="condition">!Control.HasFocus(513)</param>
