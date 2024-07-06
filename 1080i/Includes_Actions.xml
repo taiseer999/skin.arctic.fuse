@@ -102,7 +102,6 @@
         <onload>SetProperty(BlurImage,$ESCINFO[Window(Home).Property(TMDBHelper.ListItem.BlurImage)],Home)</onload>
         <onload>SetProperty(BlurImage.Original,$ESCINFO[Window(Home).Property(TMDBHelper.ListItem.BlurImage.Original)],Home)</onload>
         <onload>SetProperty(TMDbHelper.Image.Override,True,Home)</onload>
-
         <onunload condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.Image.Override))">SetProperty(TMDbHelper.ListItem.CropImage,$ESCINFO[Window(Home).Property(CropImage)],Home)</onunload>
         <onunload condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.Image.Override))">SetProperty(TMDbHelper.ListItem.BlurImage,$ESCINFO[Window(Home).Property(BlurImage)],Home)</onunload>
         <onunload condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.Image.Override))">SetProperty(TMDbHelper.ListItem.BlurImage.Original,$ESCINFO[Window(Home).Property(BlurImage.Original)],Home)</onunload>
