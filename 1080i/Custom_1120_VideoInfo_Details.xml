@@ -5,7 +5,6 @@
     <include>Action_PreserveProcessedImagesProp_Onload</include>
     <onload>AlarmClock(refocus,SetFocus(7000,0,absolute),00:00,silent)</onload>
     <onload>SetProperty(TMDbHelper.WidgetContainer,513)</onload>
-    <!-- <onload>ClearProperty(TMDbHelper.WidgetContainer)</onload> -->
     <include>Action_PreserveTransitionProp_Onload</include>
 
     <onunload condition="!$EXP[Exp_HomeMenu_IsTopBar]">SetProperty(SideMenu.HasFocus,True,Home)</onunload>

@@ -440,6 +440,7 @@
     </include>
 
     <include name="Action_VideoInfo_Main_OnRight">
+
         <onright condition="$PARAM[condition]">SetProperty(Director_Label,$VAR[Label_FromDirector],1120)</onright>
         <onright condition="$PARAM[condition]">SetProperty(Director_Image,$VAR[Image_DirectorIcon],1120)</onright>
         <onright condition="$PARAM[condition]">SetProperty(Director_Query,$VAR[Path_FromDirector],1120)</onright>
@@ -469,6 +470,10 @@
         <onright condition="$PARAM[condition]">SetProperty(Item_Type,$VAR[Path_Param_Type],1120)</onright>
 
         <onright condition="$PARAM[condition]">SetProperty(Episodes_Label,$LOCALIZE[20366],1120)</onright>
+
+        <!-- Fake blur hack to preserve image -->
+        <onright condition="$PARAM[condition]">SetProperty(TMDBHelper.ListItem.BlurImage,$VAR[Image_Background],Home)</onright>
+        <onright condition="$PARAM[condition]">SetProperty(TMDBHelper.ListItem.BlurImage.Original,$VAR[Image_Foreground],Home)</onright>
 
         <onright condition="$PARAM[condition]">SetFocus(7001)</onright>
         <onright condition="$PARAM[condition]">ActivateWindow(1120)</onright>
@@ -504,6 +509,10 @@
         <onup condition="$PARAM[condition]">SetProperty(Item_Type,$VAR[Path_Param_Type],1120)</onup>
 
         <onup condition="$PARAM[condition]">SetProperty(Episodes_Label,$LOCALIZE[20366],1120)</onup>
+
+        <!-- Fake blur hack to preserve image -->
+        <onup condition="$PARAM[condition]">SetProperty(TMDBHelper.ListItem.BlurImage,$VAR[Image_Background],Home)</onup>
+        <onup condition="$PARAM[condition]">SetProperty(TMDBHelper.ListItem.BlurImage.Original,$VAR[Image_Foreground],Home)</onup>
 
         <onup condition="$PARAM[condition]">SetFocus(7001)</onup>
         <onup condition="$PARAM[condition]">ActivateWindow(1120)</onup>
