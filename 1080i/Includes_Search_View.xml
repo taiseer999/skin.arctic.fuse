@@ -2,9 +2,69 @@
 <includes>
 
     <include name="Search_View">
+        <include>Search_View_Bumper</include>
 
         <include>Background_Main</include>
         <include>Background_Transition</include>
+
+        <control type="group">
+            <include>Animation_Group_Bumper</include>
+            <include>Animation_View_SlideOver</include>
+            <include>Animation_View_WindowChange</include>
+            <include>Search_View_MediaWall</include>
+            <include>Search_View_Row_Items</include>
+            <include>Search_View_Row_Info</include>
+        </control>
+
+        <include>Search_View_Furniture_Edges</include>
+
+        <include>View_Dialog_VideoPIP</include>
+        <include>View_Dialog_Plot</include>
+
+        <include>Search_Filter</include>
+    </include>
+
+    <include name="Search_View_Furniture_Edges">
+        <control type="group">
+            <visible>!$EXP[Exp_InfoDialogs]</visible>
+            <include>Animation_Transition_InfoPanel_Hide</include>
+            <include>Furniture_Bottom_Right</include>
+        </control>
+        <include content="Home_Menu">
+            <param name="onlist">6000</param>
+        </include>
+    </include>
+
+    <include name="Search_View_Row_Info">
+        <control type="group">
+            <visible>!$EXP[Exp_InfoDialogs]</visible>
+            <include>Animation_Transition_InfoPanel_Hide</include>
+            <include>Search_View_Widgets_NoResults</include>
+            <include>Search_View_Widgets_InfoPanel</include>
+            <include>Search_View_Edit</include>
+        </control>
+    </include>
+
+    <include name="Search_View_Row_Items">
+        <control type="group">
+            <description>Lower Half Widgets</description>
+            <include>Animation_Half_WindowChange_UpDown</include>
+            <include>Search_View_Widgets_Group</include>
+            <include>Search_View_Widgets_Footer</include>
+        </control>
+    </include>
+
+    <include name="Search_View_MediaWall">
+        <include content="MediaWall_Main" condition="$EXP[Exp_FilterWall_IsEnabled]">
+            <param name="interchange_condition">[$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]]</param>
+        </include>
+    </include>
+
+    <include name="Search_View_Bumper">
+
+        <include content="View_Bumper">
+            <param name="groupid">5099</param>
+        </include>
 
         <include content="Object_Hidden_Button">
             <param name="id">64</param>
@@ -26,42 +86,6 @@
             <onfocus condition="String.IsEmpty(Window.Property(MediaFilterWall))">SetFocus($VAR[Action_Search_ContentID])</onfocus>
             <onfocus condition="!String.IsEmpty(Window.Property(MediaFilterWall))">Runscript(script.skinvariables,$VAR[MediaWall_Search_ScriptTypeDef],use_rules,id=$VAR[Action_Search_ContentID],win_prop=WallSlideOut,focus_id=$VAR[Action_Search_ContentID],clear_prop_one=MediaFilterBase,clear_prop_two=MediaFilterWall)</onfocus>
         </include>
-
-        <control type="group">
-            <include>Animation_View_SlideOver</include>
-            <include>Animation_View_WindowChange</include>
-            <include>Animation_Group_Bumper</include>
-            <control type="group">
-                <description>Lower Half Widgets</description>
-                <include>Animation_Half_WindowChange_UpDown</include>
-                <include>Search_View_Widgets_Group</include>
-                <include>Search_View_Widgets_Footer</include>
-            </control>
-            <include content="MediaWall_Main" condition="$EXP[Exp_FilterWall_IsEnabled]">
-                <param name="interchange_condition">[$EXP[Search_View_HasItems] + !$EXP[Search_View_IsUpdating]]</param>
-            </include>
-            <control type="group">
-                <visible>!$EXP[Exp_InfoDialogs]</visible>
-                <include>Animation_Transition_InfoPanel_Hide</include>
-                <include>Search_View_Widgets_NoResults</include>
-                <include>Search_View_Widgets_InfoPanel</include>
-                <include>Search_View_Edit</include>
-            </control>
-        </control>
-        <control type="group">
-            <visible>!$EXP[Exp_InfoDialogs]</visible>
-            <include>Animation_Transition_InfoPanel_Hide</include>
-            <include>Furniture_Bottom_Right</include>
-        </control>
-        <include content="Home_Menu">
-            <param name="onlist">6000</param>
-        </include>
-        <include content="View_Bumper">
-            <param name="groupid">5099</param>
-        </include>
-        <include>View_Dialog_VideoPIP</include>
-        <include>View_Dialog_Plot</include>
-        <include>Search_Filter</include>
     </include>
 
     <include name="Search_View_Edit_Actions">
