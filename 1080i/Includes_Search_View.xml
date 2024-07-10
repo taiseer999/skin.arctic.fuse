@@ -3,6 +3,9 @@
 
     <include name="Search_View">
 
+        <include>Background_Main</include>
+        <include>Background_Transition</include>
+
         <include content="Object_Hidden_Button">
             <param name="id">64</param>
             <include>Action_View_SlideOver_OnFocus</include>
@@ -56,6 +59,9 @@
         <include content="View_Bumper">
             <param name="groupid">5099</param>
         </include>
+        <include>View_Dialog_VideoPIP</include>
+        <include>View_Dialog_Plot</include>
+        <include>Search_Filter</include>
     </include>
 
     <include name="Search_View_Edit_Actions">
@@ -102,8 +108,6 @@
                 <width>580</width>
                 <left>view_side</left>
                 <height>80</height>
-                <visible>!$EXP[Exp_InfoDialogs]</visible>
-                <include>Animation_Transition_InfoPanel_Hide</include>
                 <include condition="$EXP[Exp_HomeMenu_IsTopBar]">Animation_View_Topbar</include>
                 <control type="grouplist">
                     <orientation>horizontal</orientation>

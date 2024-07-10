@@ -14,11 +14,6 @@
 
     <controls>
         <include>Defs_TMDbHelper_Loader</include>
-        <include>Background_Main</include>
-        <include>Background_Transition</include>
         <include>Search_View</include>
-        <include>View_Dialog_VideoPIP</include>
-        <include>View_Dialog_Plot</include>
-        <include>Search_Filter</include>
     </controls>
 </window>
