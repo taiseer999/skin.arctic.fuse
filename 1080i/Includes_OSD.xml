@@ -1532,7 +1532,7 @@
                             <height>80</height>
                             <label>$INFO[MusicPlayer.Artist]</label>
                             <textcolor>panel_fg_100</textcolor>
-                            <font>font_title_black</font>
+                            <font>font_title_midi</font>
                         </control>
                         <control type="label">
                             <label>$INFO[MusicPlayer.TrackNumber,,. ]$INFO[MusicPlayer.Title]</label>
@@ -1556,7 +1556,7 @@
                             <width>1080</width>
                             <label>$INFO[MusicPlayer.Artist]</label>
                             <textcolor>panel_fg_100</textcolor>
-                            <font>font_title_black</font>
+                            <font>font_title_midi</font>
                         </control>
                         <control type="label">
                             <width>1080</width>

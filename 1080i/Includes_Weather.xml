@@ -117,7 +117,7 @@
                                             <label>$INFO[Window(Weather).Property(Current.Temperature),[B],[/B]°]</label>
                                             <align>left</align>
                                             <aligny>center</aligny>
-                                            <font>font_info_black</font>
+                                            <font>font_title_huge</font>
                                             <textcolor>dialog_fg_90</textcolor>
                                             <width>auto</width>
                                         </control>
@@ -251,7 +251,7 @@
                         <label>$INFO[Window(Weather).Property(Current.Temperature),[B],[/B]°]</label>
                         <align>left</align>
                         <aligny>center</aligny>
-                        <font>font_info_black</font>
+                        <font>font_title_huge</font>
                         <textcolor>dialog_fg_90</textcolor>
                         <width>auto</width>
                     </control>

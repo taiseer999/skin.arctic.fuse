@@ -1,37 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
-    <include name="Info_Title_Label">
-        <param name="label">$VAR[Label_Title_Container]</param>
-        <param name="wrapmultiline">false</param>
-        <param name="visible">true</param>
-        <param name="width">info_plot_w</param>
-        <param name="height">100%</param>
-        <definition>
-            <control type="group">
-                <nested />
-                <width>$PARAM[width]</width>
-                <height>$PARAM[height]</height>
-                <control type="label">
-                    <wrapmultiline>$PARAM[wrapmultiline]</wrapmultiline>
-                    <top>5</top>
-                    <bottom>5</bottom>
-                    <label>$PARAM[label]</label>
-                    <textcolor>$PARAM[colordiffuse]_100</textcolor>
-                    <font>font_title_black</font>
-                    <right>-40</right>
-                </control>
-            </control>
-        </definition>
-    </include>
-
     <include name="Info_Title_LogoLabel_LargeText">
         <control type="label">
             <wrapmultiline>$PARAM[wrapmultiline]</wrapmultiline>
             <aligny>center</aligny>
             <label>$PARAM[label]</label>
             <textcolor>$PARAM[colordiffuse]_100</textcolor>
-            <font>font_info_single_black</font>
+            <font>font_title_huge</font>
         </control>
     </include>
 
@@ -105,7 +81,7 @@
             <aligny>center</aligny>
             <label>$PARAM[label]</label>
             <textcolor>$PARAM[colordiffuse]_100</textcolor>
-            <font>font_title_black</font>
+            <font>font_title_main</font>
         </control>
     </include>
 
@@ -178,12 +154,6 @@
                         <param name="height">132</param>
                         <param name="visible">True</param>
                     </include>
-                    <!-- <include content="Info_Title_Label" condition="!Skin.HasSetting(TMDbHelper.EnableCrop)">
-                        <param name="label">$PARAM[label]</param>
-                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                        <param name="wrapmultiline">false</param>
-                        <param name="height">42</param>
-                    </include> -->
                     <!-- Other -->
                     <include content="Info_Title_Logo" condition="Skin.HasSetting(TMDbHelper.EnableCrop)">
                         <param name="label">$PARAM[label]</param>

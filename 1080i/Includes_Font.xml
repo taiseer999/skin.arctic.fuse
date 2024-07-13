@@ -30,30 +30,24 @@
 
             <!-- Title fonts -->
             <font>
-                <name>font_info_black</name>
-                <filename>$PARAM[font_black]</filename>
-                <size>128</size>
-                <aspect>$PARAM[aspect_standard]</aspect>
-            </font>
-            <font>
-                <name>font_info_single_black</name>
+                <name>font_title_huge</name>
                 <filename>$PARAM[font_black]</filename>
                 <size>98</size>
                 <aspect>$PARAM[aspect_standard]</aspect>
             </font>
             <font>
-                <name>font_info_double_black</name>
-                <filename>$PARAM[font_black]</filename>
-                <size>64</size>
-                <linespacing>0.8</linespacing>
-                <aspect>$PARAM[aspect_standard]</aspect>
-            </font>
-            <font>
-                <name>font_title_black</name>
+                <name>font_title_midi</name>
                 <filename>$PARAM[font_black]</filename>
                 <size>74</size>
                 <aspect>$PARAM[aspect_standard]</aspect>
             </font>
+            <font>
+                <name>font_title_main</name>
+                <filename>$PARAM[font_black]</filename>
+                <size>64</size>
+                <aspect>$PARAM[aspect_standard]</aspect>
+            </font>
+
 
             <!-- Black Fonts -->
             <font>
