@@ -2598,15 +2598,7 @@
                             <textcolor>$PARAM[textcolor]_90</textcolor>
                             <selectedcolor>$PARAM[textcolor]_90</selectedcolor>
                             <align>$PARAM[align]</align>
-                            <visible>!String.IsEmpty($PARAM[listitem].Title) + String.IsEmpty($PARAM[listitem].ChannelNumberLabel)</visible>
-                        </include>
-                        <include content="Object_InfoCircle_Text_Top">
-                            <label>$INFO[$PARAM[listitem].Title]$INFO[$PARAM[listitem].Season, S,]$INFO[$PARAM[listitem].Episode, E,]</label>
-                            <include condition="$PARAM[selected]">Color_SelectedText</include>
-                            <textcolor>$PARAM[textcolor]_90</textcolor>
-                            <selectedcolor>$PARAM[textcolor]_90</selectedcolor>
-                            <align>$PARAM[align]</align>
-                            <visible>!String.IsEmpty($PARAM[listitem].Title) + !String.IsEmpty($PARAM[listitem].ChannelNumberLabel)</visible>
+                            <visible>!String.IsEmpty($PARAM[listitem].Title)</visible>
                         </include>
                     </control>
 

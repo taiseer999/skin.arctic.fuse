@@ -697,7 +697,7 @@
                 </control>
                 <control type="label">
                     <height>40</height>
-                    <label>$INFO[ListItem.Season,S]$INFO[ListItem.Episode,E, ]$INFO[ListItem.EpisodeName]</label>
+                    <label>$VAR[Label_OSD_Plot_Episode_Number,,. ]$INFO[ListItem.EpisodeName]</label>
                     <visible>!String.IsEmpty(ListItem.EpisodeName)</visible>
                     <textcolor>main_fg_70</textcolor>
                 </control>
