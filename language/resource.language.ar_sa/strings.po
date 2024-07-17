@@ -2152,9 +2152,19 @@ msgid "Prebuilt"
 msgstr "بناء مسبق"
 
 #: /1080i/Includes_Labels.xml
+msgctxt "#31457"
+msgid "Navigation Modes"
+msgstr "اوضاع التنقل"
+
+#: /1080i/Includes_Labels.xml
 msgctxt "#31458"
 msgid "Monochrome"
 msgstr "غير ملون"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31459"
+msgid "The navigation mode button toggles how widgets are displayed and navigated between on screen."
+msgstr "يقوم زر وضع التنقل بتبديل كيفية عرض الأدوات والتنقل بين الشاشة"
 
 #: /1080i/MusicOSD.xml
 msgctxt "#31460"
@@ -2166,10 +2176,30 @@ msgctxt "#31461"
 msgid "Choose preset"
 msgstr "اختار نموذج"
 
+#: /1080i/Includes_Labels.xml
+msgctxt "#31462"
+msgid "Combined mode displays a single widget with a horizontal widget selector underneath. Widgets are changed by navigating left and right through the widget selector."
+msgstr "يعرض الوضع المشترك أداة واحدة مع تفعيل widget افقي وتحته يتم تغيير الأدوات عن طريق التنقل يسارا ويمينا من خلال التفعيل"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31463"
+msgid "Stacked mode displays all widgets vertically one after the other. Widgets are changed by navigating up and down through the group."
+msgstr "يعرض الوضع Stacked جميع الأدوات عموديا واحدة تلو الأخرى. يتم تغيير الأدوات عن طريق التنقل لأعلى ولأسفل عبر المجموعة"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31464"
+msgid "The side menu is the main menu of shortcuts which appears on the left side of the screen (or top if minimise mode is topbar)."
+msgstr "القائمة الجانبية هي القائمة الرئيسية للاختصارات التي تظهر على الجانب الأيسر من الشاشة (أو أعلى إذا كان وضع التصغير هو الشريط العلوي)"
+
 #: /1080i/Custom_1161_Dialog_Weather.xml
 msgctxt "#31465"
 msgid "Rain chance"
 msgstr "فرصة هطول مطر"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31466"
+msgid "In complex mode, individual home menu category items can be linked to a specific side menu item so that they are only displayed when that side menu item has focus."
+msgstr "في الوضع complex، يمكن ربط عناصر فئة القائمة الرئيسية الفردية بعنصر قائمة جانبية معين بحيث يتم عرضها فقط عندما يكون عنصر القائمة الجانبية هذا مركزا"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31467"
@@ -2205,6 +2235,21 @@ msgstr "مطر منذ التاسعة"
 msgctxt "#31473"
 msgid "Radar"
 msgstr "رادار"
+
+: /1080i/Includes_Labels.xml
+msgctxt "#31474"
+msgid "Each side menu item can have a separate widget group which is displayed on the home screen when that side menu item has focus."
+msgstr "يمكن أن يحتوي كل عنصر من عناصر القائمة الجانبية على مجموعة عناصر واجهة مستخدم منفصلة يتم عرضها على الشاشة الرئيسية عندما يكون لعنصر القائمة الجانبية هذا التركيز"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31475"
+msgid "The spotlight is a special type of widget which is designed to showcase one item from the widget at a time."
+msgstr "spotlight هي نوع خاص من الأدوات المصممة لعرض عنصر واحد من widget في كل مرة"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31476"
+msgid "The spotlight is displayed at the very top of the widget stack."
+msgstr "يتم عرض spotlight في الجزء العلوي من widget stack"
 
 #: /1080i/SkinSettings.xml
 
@@ -2263,6 +2308,16 @@ msgstr "حوار"
 msgctxt "#31487"
 msgid "Play trailers from information in"
 msgstr "تشغيل الفيديوهات الدعائية في"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31488"
+msgid "Categories are a horizontal menu of shortcuts which appear underneath the spotlight."
+msgstr "الفئات هي قائمة أفقية من الاختصارات التي تظهر تحت spotlight"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31489"
+msgid "Each category has its own individual submenu and widgets group. Submenus are either filled dynamically from a list or defined with individual static items. Each static submenu item can further define its own additional widget subgroup."
+msgstr "كل فئة لها قائم فرعية فردية ومجموعة أدوات خاصة بها. يتم ملء القوائم الفرعية إما ديناميكيا من قائمة أو يتم تعريفها بعناصر ثابتة فردية. يمكن لكل عنصر من عناصر القائمة الفرعية الثابتة تحديد المجموعة الفرعية الإضافية الخاصة به"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31491"
