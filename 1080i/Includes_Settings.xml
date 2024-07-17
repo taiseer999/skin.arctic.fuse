@@ -2,22 +2,24 @@
 <includes>
 
     <include name="Settings_Main_Group">
-        <include content="Dialog_Foreground_Side">
-            <param name="dialog_size">Dimension_DialogMainMenu</param>
-            <param name="slide_condition">True</param>
-            <param name="lines_right">0</param>
-            <param name="topline">false</param>
-            <param name="subline">false</param>
-            <!-- Header -->
-            <include content="Dialog_Head">
-                <param name="id">9901</param>
-                <param name="label">$VAR[Label_Header_Mini]</param>
-                <!-- <param name="sublabel">Wikipedia</param>
-                <param name="sublabel_include">true</param> -->
+        <param name="include_heading">true</param>
+        <param name="label">$VAR[Label_Header_Mini]</param>
+        <definition>
+            <include content="Dialog_Foreground_Side">
+                <param name="dialog_size">Dimension_DialogMainMenu</param>
+                <param name="slide_condition">True</param>
+                <param name="lines_right">0</param>
+                <param name="topline">false</param>
+                <param name="subline">false</param>
+                <!-- Header -->
+                <include content="Dialog_Head" condition="$PARAM[include_heading]">
+                    <param name="id">9901</param>
+                    <param name="label">$PARAM[label]</param>
+                </include>
+                <include>Dialog_Head_CloseButton</include>
+                <nested />
             </include>
-            <include>Dialog_Head_CloseButton</include>
-            <nested />
-        </include>
+        </definition>
     </include>
 
     <include name="Settings_Left_Group">
@@ -456,34 +458,38 @@
     </include>
 
     <include name="Settings_Dialog">
-        <include>Settings_Landing</include>
-        <control type="group">
-            <include>Dimension_DialogMainMenu</include>
-            <!-- <include>Animation_Right</include> -->
-            <include>Animation_Settings_WindowChange</include>
-            <include content="Dialog_Dim_Side">
-                <param name="slide_condition">True</param>
-            </include>
-            <!-- Bottom Layer -->
-            <include content="Dialog_Background_Side">
-                <param name="slide_condition">True</param>
-                <param name="dialog_size">Dimension_DialogMainMenu</param>
-                <!-- Side Buttons -->
-                <control type="group">
-                    <include>Dimension_Dialog_Body</include>
-                    <control type="grouplist" id="30000">
-                        <include>Dialog_Side_Grouplist_Def</include>
-                        <onright condition="!Window.IsVisible(EventLog.xml) + !Window.IsVisible(addonbrowser) + !Window.IsVisible(filemanager)">3</onright>
-                        <onright condition="Window.IsVisible(EventLog.xml)">8000</onright>
-                        <onright condition="Window.IsVisible(addonbrowser)">6000</onright>
-                        <onright condition="Window.IsVisible(filemanager)">20</onright>
-                        <onleft>SetFocus(30040)</onleft>
-                        <include>Settings_Standard_Buttons</include>
+        <param name="side_buttons_include">Settings_Standard_Buttons</param>
+        <definition>
+            <include>Settings_Landing</include>
+            <control type="group">
+                <include>Dimension_DialogMainMenu</include>
+                <!-- <include>Animation_Right</include> -->
+                <include>Animation_Settings_WindowChange</include>
+                <include content="Dialog_Dim_Side">
+                    <param name="slide_condition">True</param>
+                </include>
+                <!-- Bottom Layer -->
+                <include content="Dialog_Background_Side">
+                    <param name="slide_condition">True</param>
+                    <param name="dialog_size">Dimension_DialogMainMenu</param>
+                    <!-- Side Buttons -->
+                    <control type="group">
+                        <include>Dimension_Dialog_Body</include>
+                        <control type="grouplist" id="30000">
+                            <include>Dialog_Side_Grouplist_Def</include>
+                            <onright condition="!Window.IsVisible(EventLog.xml) + !Window.IsVisible(addonbrowser) + !Window.IsVisible(filemanager) + !Window.IsVisible(1115)">3</onright>
+                            <onright condition="Window.IsVisible(EventLog.xml)">8000</onright>
+                            <onright condition="Window.IsVisible(addonbrowser)">6000</onright>
+                            <onright condition="Window.IsVisible(filemanager)">20</onright>
+                            <onright condition="Window.IsVisible(1115)">340</onright>
+                            <onleft>SetFocus(30040)</onleft>
+                            <include>$PARAM[side_buttons_include]</include>
+                        </control>
                     </control>
-                </control>
-            </include>
-            <nested />
-        </control>
+                </include>
+                <nested />
+            </control>
+        </definition>
     </include>
 
     <include name="Settings_Header">
