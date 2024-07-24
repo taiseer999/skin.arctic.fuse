@@ -418,16 +418,16 @@
     </include>
 
     <include name="Info_Line_Rating">
-        <param name="font">font_mini</param>
+        <param name="font">font_main</param>
         <param name="iconcolor">main_fg_90</param>
         <param name="textcolor">main_fg_70</param>
-        <param name="icon_w">26</param>
+        <param name="icon_w">28</param>
         <param name="bordersize">0</param>
         <param name="icon_centertop">50%</param>
         <definition>
             <control type="image">
                 <width>$PARAM[icon_w]</width>
-                <height>26</height>
+                <height>28</height>
                 <aspectratio>keep</aspectratio>
                 <centertop>$PARAM[icon_centertop]</centertop>
                 <texture colordiffuse="$PARAM[iconcolor]">$PARAM[icon]</texture>
@@ -656,18 +656,18 @@
 
     <include name="Info_Line_Rating_Status">
         <param name="is_player">false</param>
+        <param name="visible_movies">!Skin.HasSetting(CustomRating.Movies.DisablePremiereStatus)</param>
+        <param name="visible_tvshows">!Skin.HasSetting(CustomRating.TVShows.DisablePremiereStatus)</param>
         <definition>
             <include content="Info_Line_Rating" condition="![$PARAM[is_player]]">
-                <param name="label">$VAR[Label_ListItem_NextAired]</param>
+                <param name="label">$VAR[Label_ListItem_Status]</param>
                 <param name="icon">$VAR[Image_ListItem_Status]</param>
-                <param name="icon_centertop">50%</param>
-                <param name="visible">!String.IsEmpty(Container(99950).ListItem.Status)</param>
+                <param name="visible">[[[$PARAM[visible_movies] + [String.IsEqual(Container(99950).ListItem.DBType,movie) | String.IsEqual(Container(99950).ListItem.DBType,set)]] | [$PARAM[visible_tvshows] + [String.IsEqual(Container(99950).ListItem.DBType,tvshow) | String.IsEqual(Container(99950).ListItem.DBType,season) | String.IsEqual(Container(99950).ListItem.DBType,episode)]]] + !String.IsEmpty(Container(99950).ListItem.Status)]</param>
             </include>
             <include content="Info_Line_Rating" condition="$PARAM[is_player]">
-                <param name="label">$VAR[Label_Player_NextAired]</param>
+                <param name="label">$VAR[Label_Player_Status]</param>
                 <param name="icon">$VAR[Image_Player_Status]</param>
-                <param name="icon_centertop">50%</param>
-                <param name="visible">!String.IsEmpty(Window(Home).Property(TMDBHelper.Player.Status))</param>
+                <param name="visible">[[[$PARAM[visible_movies] + [VideoPlayer.Content(movies)]] | [$PARAM[visible_tvshows] + [VideoPlayer.Content(episodes)]]] + !String.IsEmpty(Window(Home).Property(TMDBHelper.Player.Status))]</param>
             </include>
         </definition>
     </include>
@@ -732,34 +732,36 @@
 
     <include name="Info_Ratings_Item">
         <param name="is_player">false</param>
+        <param name="visible_movies">true</param>
+        <param name="visible_tvshows">true</param>
         <definition>
             <include content="Info_Ratings_Items" condition="![$PARAM[is_player]]">
-                <param name="visible">[String.IsEqual(Container(99950).ListItem.DBType,movie) | String.IsEqual(Container(99950).ListItem.DBType,set)]</param>
+                <param name="visible">[$PARAM[visible_movies] + [String.IsEqual(Container(99950).ListItem.DBType,movie) | String.IsEqual(Container(99950).ListItem.DBType,set)]]</param>
                 <param name="content">Movies</param>
                 <param name="item">$PARAM[item]</param>
-                <param name="$PARAM[container]">$PARAM[container]</param>
+                <param name="container">$PARAM[container]</param>
                 <param name="is_player">$PARAM[is_player]</param>
             </include>
             <include content="Info_Ratings_Items" condition="![$PARAM[is_player]]">
-                <param name="visible">[String.IsEqual(Container(99950).ListItem.DBType,tvshow) | String.IsEqual(Container(99950).ListItem.DBType,season) | String.IsEqual(Container(99950).ListItem.DBType,episode)]</param>
+                <param name="visible">[$PARAM[visible_tvshows] + [String.IsEqual(Container(99950).ListItem.DBType,tvshow) | String.IsEqual(Container(99950).ListItem.DBType,season) | String.IsEqual(Container(99950).ListItem.DBType,episode)]]</param>
                 <param name="content">TVShows</param>
                 <param name="item">$PARAM[item]</param>
-                <param name="$PARAM[container]">$PARAM[container]</param>
+                <param name="container">$PARAM[container]</param>
                 <param name="is_player">$PARAM[is_player]</param>
             </include>
 
             <include content="Info_Ratings_Items" condition="$PARAM[is_player]">
-                <param name="visible">[VideoPlayer.Content(movies)]</param>
+                <param name="visible">[$PARAM[visible_movies] + [VideoPlayer.Content(movies)]]</param>
                 <param name="content">Movies</param>
                 <param name="item">$PARAM[item]</param>
-                <param name="$PARAM[container]">$PARAM[container]</param>
+                <param name="container">$PARAM[container]</param>
                 <param name="is_player">$PARAM[is_player]</param>
             </include>
             <include content="Info_Ratings_Items" condition="$PARAM[is_player]">
-                <param name="visible">[VideoPlayer.Content(episodes)]</param>
+                <param name="visible">[$PARAM[visible_tvshows] + [VideoPlayer.Content(episodes)]]</param>
                 <param name="content">TVShows</param>
                 <param name="item">$PARAM[item]</param>
-                <param name="$PARAM[container]">$PARAM[container]</param>
+                <param name="container">$PARAM[container]</param>
                 <param name="is_player">$PARAM[is_player]</param>
             </include>
         </definition>
@@ -770,44 +772,48 @@
         <definition>
             <control type="grouplist">
 
-                <include content="Info_Line_Rating_Status" condition="!Skin.HasSetting(CustomRating.DisablePremiereStatus)">
-                    <param name="$PARAM[container]">$PARAM[container]</param>
-                    <param name="is_player">$PARAM[is_player]</param>
-                </include>
-
                 <include content="Info_Ratings_Item">
                     <param name="item">Item01</param>
-                    <param name="$PARAM[container]">$PARAM[container]</param>
+                    <param name="container">$PARAM[container]</param>
                     <param name="is_player">$PARAM[is_player]</param>
                 </include>
 
                 <include content="Info_Ratings_Item">
                     <param name="item">Item02</param>
-                    <param name="$PARAM[container]">$PARAM[container]</param>
+                    <param name="container">$PARAM[container]</param>
                     <param name="is_player">$PARAM[is_player]</param>
                 </include>
 
                 <include content="Info_Ratings_Item">
                     <param name="item">Item03</param>
-                    <param name="$PARAM[container]">$PARAM[container]</param>
+                    <param name="container">$PARAM[container]</param>
                     <param name="is_player">$PARAM[is_player]</param>
                 </include>
 
                 <include content="Info_Ratings_Item">
                     <param name="item">Item04</param>
-                    <param name="$PARAM[container]">$PARAM[container]</param>
+                    <param name="container">$PARAM[container]</param>
                     <param name="is_player">$PARAM[is_player]</param>
                 </include>
 
-                <include content="Info_Ratings_Item" condition="Skin.HasSetting(CustomRating.DisablePremiereStatus)">
+                <include content="Info_Ratings_Item" condition="Skin.HasSetting(CustomRating.TVShows.DisablePremiereStatus) | Skin.HasSetting(CustomRating.Movies.DisablePremiereStatus)">
                     <param name="item">Item05</param>
-                    <param name="$PARAM[container]">$PARAM[container]</param>
+                    <param name="container">$PARAM[container]</param>
                     <param name="is_player">$PARAM[is_player]</param>
+                    <param name="visible_movies">Skin.HasSetting(CustomRating.Movies.DisablePremiereStatus)</param>
+                    <param name="visible_tvshows">Skin.HasSetting(CustomRating.TVShows.DisablePremiereStatus)</param>
                 </include>
 
-                <include content="Info_Ratings_Item" condition="Skin.HasSetting(CustomRating.DisablePremiereStatus)">
+                <include content="Info_Ratings_Item" condition="Skin.HasSetting(CustomRating.TVShows.DisablePremiereStatus) | Skin.HasSetting(CustomRating.Movies.DisablePremiereStatus)">
                     <param name="item">Item06</param>
-                    <param name="$PARAM[container]">$PARAM[container]</param>
+                    <param name="container">$PARAM[container]</param>
+                    <param name="is_player">$PARAM[is_player]</param>
+                    <param name="visible_movies">Skin.HasSetting(CustomRating.Movies.DisablePremiereStatus)</param>
+                    <param name="visible_tvshows">Skin.HasSetting(CustomRating.TVShows.DisablePremiereStatus)</param>
+                </include>
+
+                <include content="Info_Line_Rating_Status" condition="!Skin.HasSetting(CustomRating.TVShows.DisablePremiereStatus) | !Skin.HasSetting(CustomRating.Movies.DisablePremiereStatus)">
+                    <param name="container">$PARAM[container]</param>
                     <param name="is_player">$PARAM[is_player]</param>
                 </include>
 
@@ -1225,12 +1231,12 @@
                 <include content="Info_Line_Items">
                     <include content="Info_Line_Visible_06">
                         <param name="container">$PARAM[container]</param>
-                        <param name="dbtype_01">movie</param>
-                        <param name="dbtype_02">tvshow</param>
-                        <param name="dbtype_03">set</param>
-                        <param name="dbtype_04">album</param>
-                        <param name="dbtype_05">song</param>
-                        <param name="dbtype_06">season</param>
+                        <param name="dbtype_01">tvshow</param>
+                        <param name="dbtype_02">set</param>
+                        <param name="dbtype_03">album</param>
+                        <param name="dbtype_04">song</param>
+                        <param name="dbtype_05">season</param>
+                        <param name="dbtype_06">movie</param>
                     </include>
                     <param name="items_03">true</param>
                     <param name="label_01">$INFO[Container(99950).ListItem.Property(Set.Years)]</param>
@@ -3280,11 +3286,11 @@
                     </include>
 
                     <include content="Info_Ratings" condition="$PARAM[ratings]">
-                        <param name="$PARAM[container]">$PARAM[container]</param>
+                        <param name="container">$PARAM[container]</param>
                         <!-- <include content="Object_Top" condition="!Skin.HasSetting(TMDbHelper.EnableCrop)">
                             <param name="top">80</param>
                         </include> -->
-                        <top>0</top>
+                        <top>-1</top>
                         <left>0</left>
                         <visible>$PARAM[details]</visible>
                         <include>$PARAM[details_include]</include>

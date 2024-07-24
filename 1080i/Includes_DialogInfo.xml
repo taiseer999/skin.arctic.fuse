@@ -1246,11 +1246,19 @@
                         <visible>!String.IsEmpty(Container(99950).ListItem.Property(Revenue)) | !String.IsEmpty(Container(99950).ListItem.Property(Budget))</visible>
                         <visible>!String.IsEqual(Container(99950).ListItem.Property(Budget),$0)</visible>
                     </include>
+
                     <include content="Object_InfoCircle">
-                        <param name="icon">special://skin/extras/icons/trophy.png</param>
-                        <param name="role">$LOCALIZE[31064]</param>
-                        <param name="name">$INFO[Container(99950).ListItem.Property(Awards)]</param>
-                        <visible>!String.IsEmpty(Container(99950).ListItem.Property(Awards))</visible>
+                        <param name="icon">$VAR[Image_DialogInfo_Status]</param>
+                        <param name="role">$VAR[Label_ListItem_Status]</param>
+                        <param name="name">$VAR[Label_ListItem_NextAired]</param>
+                        <visible>!String.IsEmpty(Container(99950).ListItem.Property(Status)) | !String.IsEmpty(Container(99950).ListItem.Status)</visible>
+                    </include>
+
+                    <include content="Object_InfoCircle">
+                        <param name="icon">special://skin/extras/icons/earth-americas.png</param>
+                        <param name="role">$LOCALIZE[574]</param>
+                        <param name="name">$VAR[Label_Country]</param>
+                        <visible>!String.IsEmpty(Container(99950).ListItem.Country) | !String.IsEmpty(ListItem.Country)</visible>
                     </include>
                     <include content="Object_InfoCircle">
                         <param name="icon">special://skin/extras/icons/ticket.png</param>
@@ -1259,10 +1267,10 @@
                         <visible>!String.IsEmpty(Container(99950).ListItem.Tagline) | !String.IsEmpty(ListItem.Tagline)</visible>
                     </include>
                     <include content="Object_InfoCircle">
-                        <param name="icon">special://skin/extras/icons/earth-americas.png</param>
-                        <param name="role">$LOCALIZE[574]</param>
-                        <param name="name">$VAR[Label_Country]</param>
-                        <visible>!String.IsEmpty(Container(99950).ListItem.Country) | !String.IsEmpty(ListItem.Country)</visible>
+                        <param name="icon">special://skin/extras/icons/trophy.png</param>
+                        <param name="role">$LOCALIZE[31064]</param>
+                        <param name="name">$INFO[Container(99950).ListItem.Property(Awards)]</param>
+                        <visible>!String.IsEmpty(Container(99950).ListItem.Property(Awards))</visible>
                     </include>
                 </control>
             </control>

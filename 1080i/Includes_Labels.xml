@@ -1243,7 +1243,7 @@
         <value condition="!String.IsEmpty(Player.PlaySpeed) + !String.IsEqual(Player.PlaySpeed,1.00) + !String.IsEqual(Player.PlaySpeed,0.00)">$INFO[Player.PlaySpeed,$LOCALIZE[31071] ,x]</value>
     </variable>
 
-    <variable name="Label_Player_NextAired">
+    <variable name="Label_Player_Status">
         <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.Player.Next_Aired))">$INFO[Window(Home).Property(TMDbHelper.Player.Next_Aired)]</value>
         <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.Player.Last_Aired))">$INFO[Window(Home).Property(TMDbHelper.Player.Last_Aired)]</value>
         <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.Player.Premiered))">$INFO[Window(Home).Property(TMDbHelper.Player.Premiered)]</value>
@@ -1251,23 +1251,32 @@
         <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.Player.Status))">$INFO[Window(Home).Property(TMDbHelper.Player.Status)]</value>
     </variable>
 
-    <variable name="Label_Status">
-        <value condition="String.IsEqual(Container(99950).ListItem.Property(Status),Returning Series)">$LOCALIZE[31381]</value>
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Status))">$INFO[Container(99950).ListItem.Property(Status)]</value>
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Status)">$INFO[Container(99950).ListItem.Status]</value>
+    <variable name="Label_Player_Status">
+        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Next_Aired),Returning Series)">$LOCALIZE[31381]</value>
+        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Next_Aired),Canceled)">$LOCALIZE[31490]</value>
+        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Next_Aired),Ended)">$LOCALIZE[31493]</value>
+        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Next_Aired),Released)">$LOCALIZE[31498]</value>
+        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Next_Aired),In Production) | String.IsEqual(Window(Home).Property(TMDbHelper.Player.Next_Aired),Post Production)">$LOCALIZE[31499]</value>
+        <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.Player.Next_Aired),Planned)">$LOCALIZE[31504]</value>
+        <value>$LOCALIZE[13205]</value>
+    </variable>
+
+    <variable name="Label_ListItem_Status">
+        <value condition="String.IsEqual(Container(99950).ListItem.Property(Status),Returning Series) | String.IsEqual(Container(99950).ListItem.Status,Returning Series)">$LOCALIZE[31381]</value>
+        <value condition="String.IsEqual(Container(99950).ListItem.Property(Status),Canceled) | String.IsEqual(Container(99950).ListItem.Status,Canceled)">$LOCALIZE[31490]</value>
+        <value condition="String.IsEqual(Container(99950).ListItem.Property(Status),Ended) | String.IsEqual(Container(99950).ListItem.Status,Ended)">$LOCALIZE[31493]</value>
+        <value condition="String.IsEqual(Container(99950).ListItem.Property(Status),Released) | String.IsEqual(Container(99950).ListItem.Status,Released)">$LOCALIZE[31498]</value>
+        <value condition="String.IsEqual(Container(99950).ListItem.Property(Status),In Production) | String.IsEqual(Container(99950).ListItem.Status,In Production) | String.IsEqual(Container(99950).ListItem.Property(Status),Post Production) | String.IsEqual(Container(99950).ListItem.Status,Post Production)">$LOCALIZE[31499]</value>
+        <value condition="String.IsEqual(Container(99950).ListItem.Property(Status),Planned) | String.IsEqual(Container(99950).ListItem.Status,Planned)">$LOCALIZE[31504]</value>
+        <value>$LOCALIZE[13205]</value>
     </variable>
 
     <variable name="Label_ListItem_NextAired">
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Next_Aired))">$INFO[Container(99950).ListItem.Property(Next_Aired)]</value>
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Last_Aired))">$INFO[Container(99950).ListItem.Property(Last_Aired)]</value>
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Premiered)">$INFO[Container(99950).ListItem.Premiered]</value>
-        <value>$VAR[Label_Status]</value>
-    </variable>
-
-    <variable name="Label_ListItem_NextAired_Date">
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Next_Aired))">$INFO[Container(99950).ListItem.Property(Next_Aired)]</value>
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Last_Aired))">$INFO[Container(99950).ListItem.Property(Last_Aired)]</value>
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Premiered)">$INFO[Container(99950).ListItem.Premiered]</value>
+        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Next_Aired))">$LOCALIZE[31541] $INFO[Container(99950).ListItem.Property(Next_Aired)]</value>
+        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Last_Aired))">$LOCALIZE[31542] $INFO[Container(99950).ListItem.Property(Last_Aired)]</value>
+        <value condition="String.IsEmpty(Container(99950).ListItem.Premiered)">$LOCALIZE[19055]</value>
+        <value condition="String.IsEqual(Container(99950).ListItem.Property(Status),Post Production) | String.IsEqual(Container(99950).ListItem.Status,Post Production) | String.IsEqual(Container(99950).ListItem.Property(Status),In Production) | String.IsEqual(Container(99950).ListItem.Status,In Production) | String.IsEqual(Container(99950).ListItem.Property(Status),Planned) | String.IsEqual(Container(99950).ListItem.Status,Planned)">$LOCALIZE[31543] $INFO[Container(99950).ListItem.Premiered]</value>
+        <value>$LOCALIZE[20473] $INFO[Container(99950).ListItem.Premiered]</value>
     </variable>
 
     <variable name="Label_Header_Main_Home">
