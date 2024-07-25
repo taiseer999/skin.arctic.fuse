@@ -656,7 +656,7 @@
 
     <include name="Info_Line_Rating_Status">
         <param name="is_player">false</param>
-        <param name="visible_movies">!Skin.HasSetting(CustomRating.Movies.DisablePremiereStatus)</param>
+        <param name="visible_movies">Skin.HasSetting(CustomRating.Movies.EnablePremiereStatus)</param>
         <param name="visible_tvshows">!Skin.HasSetting(CustomRating.TVShows.DisablePremiereStatus)</param>
         <definition>
             <include content="Info_Line_Rating" condition="![$PARAM[is_player]]">
@@ -800,23 +800,23 @@
                     <param name="is_player">$PARAM[is_player]</param>
                 </include>
 
-                <include content="Info_Ratings_Item" condition="Skin.HasSetting(CustomRating.TVShows.DisablePremiereStatus) | Skin.HasSetting(CustomRating.Movies.DisablePremiereStatus)">
+                <include content="Info_Ratings_Item" condition="Skin.HasSetting(CustomRating.TVShows.DisablePremiereStatus) | !Skin.HasSetting(CustomRating.Movies.EnablePremiereStatus)">
                     <param name="item">Item05</param>
                     <param name="container">$PARAM[container]</param>
                     <param name="is_player">$PARAM[is_player]</param>
-                    <param name="visible_movies">Skin.HasSetting(CustomRating.Movies.DisablePremiereStatus)</param>
+                    <param name="visible_movies">!Skin.HasSetting(CustomRating.Movies.EnablePremiereStatus)</param>
                     <param name="visible_tvshows">Skin.HasSetting(CustomRating.TVShows.DisablePremiereStatus)</param>
                 </include>
 
-                <include content="Info_Ratings_Item" condition="Skin.HasSetting(CustomRating.TVShows.DisablePremiereStatus) | Skin.HasSetting(CustomRating.Movies.DisablePremiereStatus)">
+                <include content="Info_Ratings_Item" condition="Skin.HasSetting(CustomRating.TVShows.DisablePremiereStatus) | !Skin.HasSetting(CustomRating.Movies.EnablePremiereStatus)">
                     <param name="item">Item06</param>
                     <param name="container">$PARAM[container]</param>
                     <param name="is_player">$PARAM[is_player]</param>
-                    <param name="visible_movies">Skin.HasSetting(CustomRating.Movies.DisablePremiereStatus)</param>
+                    <param name="visible_movies">!Skin.HasSetting(CustomRating.Movies.EnablePremiereStatus)</param>
                     <param name="visible_tvshows">Skin.HasSetting(CustomRating.TVShows.DisablePremiereStatus)</param>
                 </include>
 
-                <include content="Info_Line_Rating_Status" condition="!Skin.HasSetting(CustomRating.TVShows.DisablePremiereStatus) | !Skin.HasSetting(CustomRating.Movies.DisablePremiereStatus)">
+                <include content="Info_Line_Rating_Status" condition="!Skin.HasSetting(CustomRating.TVShows.DisablePremiereStatus) | Skin.HasSetting(CustomRating.Movies.EnablePremiereStatus)">
                     <param name="container">$PARAM[container]</param>
                     <param name="is_player">$PARAM[is_player]</param>
                 </include>
