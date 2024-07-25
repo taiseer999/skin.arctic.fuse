@@ -1249,8 +1249,8 @@
 
                     <include content="Object_InfoCircle">
                         <param name="icon">$VAR[Image_DialogInfo_Status]</param>
-                        <param name="role">$VAR[Label_ListItem_Status]</param>
-                        <param name="name">$VAR[Label_ListItem_NextAired]</param>
+                        <param name="role">$VAR[Label_ListItem_NextAired_Header]</param>
+                        <param name="name">$VAR[Label_ListItem_NextAired]$VAR[Label_ListItem_Status, (,)]</param>
                         <visible>!String.IsEmpty(Container(99950).ListItem.Property(Status)) | !String.IsEmpty(Container(99950).ListItem.Status)</visible>
                     </include>
 
