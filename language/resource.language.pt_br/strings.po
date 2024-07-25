@@ -2052,7 +2052,7 @@ msgstr "Vídeo OSD"
 #: /1080i/SkinSettings.xml
 msgctxt "#31435"
 msgid "TMDbHelper lookups"
-msgstr "Pesquisas no TMDbHelper"
+msgstr "Pesquisas do TMDbHelper"
 
 #: /1080i/Custom_1116_Dialog_Shortcuts.xml
 msgctxt "#31436"
@@ -2323,6 +2323,11 @@ msgctxt "#31489"
 msgid "Each category has its own individual submenu and widgets group. Submenus are either filled dynamically from a list or defined with individual static items. Each static submenu item can further define its own additional widget subgroup."
 msgstr "Cada categoria possui seu próprio submenu individual e grupo de widgets. Os submenus são preenchidos dinamicamente a partir de uma lista ou definidos com itens estáticos individuais. Cada item do submenu estático pode definir ainda mais seu próprio subgrupo de widgets adicional."
 
+#: /1080i/Includes_Labels.xml
+msgctxt "#31490"
+msgid "Cancelled"
+msgstr "Cancelado"
+
 #: /1080i/SkinSettings.xml
 msgctxt "#31491"
 msgid "Miscellaneous"
@@ -2332,6 +2337,11 @@ msgstr "Diversos"
 msgctxt "#31492"
 msgid "Add-ons hub"
 msgstr "Centro de addons"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31493"
+msgid "Ended"
+msgstr "Terminado"
 
 #: /1080i/Custom_1115_Dialog_Shortcuts.xml
 msgctxt "#31494"
@@ -2353,6 +2363,16 @@ msgctxt "#31497"
 msgid "Minimise menu"
 msgstr "Minimizar menu"
 
+#: /1080i/Includes_Labels.xml
+msgctxt "#31498"
+msgid "Released"
+msgstr "Lançado"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31499"
+msgid "In-Production"
+msgstr "Em produção"
+
 #: /1080i/Includes_Search.xml
 msgctxt "#31500"
 msgid "There were no [LOWERCASE]$VAR[Label_Setting_SearchStyle][/LOWERCASE] results found for"
@@ -2372,6 +2392,11 @@ msgstr "Mais opções"
 msgctxt "#31503"
 msgid "Extras"
 msgstr "Extras"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31504"
+msgid "Planned"
+msgstr "Planeado"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31505"
@@ -2552,3 +2577,18 @@ msgstr "Permitir empilhamento"
 msgctxt "#31540"
 msgid "Submenu lists always allow stacking"
 msgstr "As listas de submenu sempre permitem empilhamento"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31541"
+msgid "Next episode"
+msgstr "Próximo episódio"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31542"
+msgid "Last episode"
+msgstr "Último episódio"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31543"
+msgid "Anticipated"
+msgstr "Antecipado"
