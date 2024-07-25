@@ -2588,3 +2588,8 @@ msgstr "الحلقة السابقة"
 msgctxt "#31543"
 msgid "Anticipated"
 msgstr "منتظرة"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31544"
+msgid "Airing"
+msgstr "بدأ البث"
