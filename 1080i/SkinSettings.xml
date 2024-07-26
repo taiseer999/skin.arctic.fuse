@@ -933,7 +933,7 @@
                             <label>$LOCALIZE[126]</label>
                             <visible>Container(3).HasFocus(7)</visible>
                             <visible>!Skin.HasSetting(Info.DisableAllRatings)</visible>
-                            <onclick>Skin.ToggleSetting(CustomRating.Movies.DisablePremiereStatus)</onclick>
+                            <onclick>Skin.ToggleSetting(CustomRating.Movies.EnablePremiereStatus)</onclick>
                             <selected>Skin.HasSetting(CustomRating.Movies.EnablePremiereStatus)</selected>
                         </include>
 
