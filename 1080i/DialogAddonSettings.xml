@@ -173,7 +173,7 @@
                         <param name="id">6</param>
                         <param name="dialog">true</param>
                         <param name="override">true</param>
-                        <param name="left">20</param>
+                        <param name="left">40</param>
                     </include>
                 </control>
             </include>
