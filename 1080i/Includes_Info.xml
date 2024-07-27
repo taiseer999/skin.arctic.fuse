@@ -1216,11 +1216,13 @@
 
                 <!-- Year / Premiered -->
                 <include content="Info_Line_Items">
-                    <include content="Info_Line_Visible_03">
+                    <include content="Info_Line_Visible_05">
                         <param name="container">$PARAM[container]</param>
                         <param name="dbtype_01">episode</param>
                         <param name="dbtype_02">video</param>
                         <param name="dbtype_03">movie</param>
+                        <param name="dbtype_04">tvshow</param>
+                        <param name="dbtype_05">season</param>
                     </include>
                     <param name="items_04">true</param>
                     <param name="label_01">$INFO[$PARAM[container]ListItem.Premiered]</param>
@@ -1234,13 +1236,11 @@
                     <param name="textcolor">$PARAM[colordiffuse]_70</param>
                 </include>
                 <include content="Info_Line_Items">
-                    <include content="Info_Line_Visible_05">
+                    <include content="Info_Line_Visible_03">
                         <param name="container">$PARAM[container]</param>
-                        <param name="dbtype_01">tvshow</param>
-                        <param name="dbtype_02">set</param>
-                        <param name="dbtype_03">album</param>
-                        <param name="dbtype_04">song</param>
-                        <param name="dbtype_05">season</param>
+                        <param name="dbtype_01">set</param>
+                        <param name="dbtype_02">album</param>
+                        <param name="dbtype_03">song</param>
                     </include>
                     <param name="items_03">true</param>
                     <param name="label_01">$INFO[Container(99950).ListItem.Property(Set.Years)]</param>
