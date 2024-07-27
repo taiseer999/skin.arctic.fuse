@@ -664,12 +664,12 @@
                 <!-- Year / Premiered -->
                 <include content="Info_Line_Item">
                     <param name="label">$INFO[VideoPlayer.Year]</param>
-                    <param name="visible">!String.IsEmpty(VideoPlayer.Year) + [String.IsEmpty(VideoPlayer.Premiered) | VideoPlayer.Content(movies)]</param>
+                    <param name="visible">!String.IsEmpty(VideoPlayer.Year) + String.IsEmpty(VideoPlayer.Premiered)</param>
                     <param name="textcolor">panel_fg_70</param>
                 </include>
                 <include content="Info_Line_Item">
                     <param name="label">$INFO[VideoPlayer.Premiered]</param>
-                    <param name="visible">!String.IsEmpty(VideoPlayer.Premiered) + !VideoPlayer.Content(movies)</param>
+                    <param name="visible">!String.IsEmpty(VideoPlayer.Premiered)</param>
                     <param name="textcolor">panel_fg_70</param>
                 </include>
 
