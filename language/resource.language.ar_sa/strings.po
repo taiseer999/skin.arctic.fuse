@@ -2590,11 +2590,6 @@ msgid "Anticipated"
 msgstr "منتظرة"
 
 #: /1080i/Includes_Labels.xml
-msgctxt "#31544"
-msgid "Airing"
-msgstr "بدأ البث"
-
-#: /1080i/Includes_Labels.xml
 msgctxt "#31544"	
 msgid "Airing"
 msgstr "بث موسم جديد"
