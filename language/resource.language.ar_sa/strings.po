@@ -2337,7 +2337,7 @@ msgstr "صفحة الإضافات"
 #: /1080i/Includes_Labels.xml
 msgctxt "#31493"
 msgid "Ended"
-msgstr "منتهي"
+msgstr "مكتمل"
 
 #: /1080i/Custom_1115_Dialog_Shortcuts.xml
 msgctxt "#31494"
@@ -2588,3 +2588,8 @@ msgstr "الحلقة السابقة"
 msgctxt "#31543"
 msgid "Anticipated"
 msgstr "منتظرة"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31544"	
+msgid "Airing"
+msgstr "بث موسم جديد"
