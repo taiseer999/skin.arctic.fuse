@@ -798,7 +798,8 @@
                     <param name="item">Item04</param>
                     <param name="container">$PARAM[container]</param>
                     <param name="is_player">$PARAM[is_player]</param>
-                    <param name="visible_tvshows">[!Skin.HasSetting(CustomRating.TVShows.EnablePremiereStatusDates) | Skin.HasSetting(CustomRating.TVShows.DisablePremiereStatus)]</param>
+                    <param name="visible_movies">[!Skin.HasSetting(CustomRating.EnablePremiereStatusDates) | !Skin.HasSetting(CustomRating.Movies.EnablePremiereStatus)]</param>
+                    <param name="visible_tvshows">[!Skin.HasSetting(CustomRating.EnablePremiereStatusDates) | Skin.HasSetting(CustomRating.TVShows.DisablePremiereStatus)]</param>
                 </include>
 
                 <include content="Info_Ratings_Item" condition="Skin.HasSetting(CustomRating.TVShows.DisablePremiereStatus) | !Skin.HasSetting(CustomRating.Movies.EnablePremiereStatus)">
