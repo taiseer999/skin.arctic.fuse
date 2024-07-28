@@ -660,7 +660,7 @@
         <param name="visible_tvshows">!Skin.HasSetting(CustomRating.TVShows.DisablePremiereStatus)</param>
         <definition>
             <include content="Info_Line_Rating" condition="![$PARAM[is_player]]">
-                <param name="label">$VAR[Label_ListItem_Status]</param>
+                <param name="label">$VAR[Label_ListItem_Status]$VAR[Label_ListItem_StatusDate, ,]</param>
                 <param name="icon">$VAR[Image_ListItem_Status]</param>
                 <param name="bordersize">1</param>
                 <param name="icon_centertop">49%</param>
@@ -798,6 +798,7 @@
                     <param name="item">Item04</param>
                     <param name="container">$PARAM[container]</param>
                     <param name="is_player">$PARAM[is_player]</param>
+                    <param name="visible_tvshows">[!Skin.HasSetting(CustomRating.TVShows.EnablePremiereStatusDates) | Skin.HasSetting(CustomRating.TVShows.DisablePremiereStatus)]</param>
                 </include>
 
                 <include content="Info_Ratings_Item" condition="Skin.HasSetting(CustomRating.TVShows.DisablePremiereStatus) | !Skin.HasSetting(CustomRating.Movies.EnablePremiereStatus)">
