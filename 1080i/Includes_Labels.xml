@@ -1066,6 +1066,12 @@
         <value>$INFO[Player.Title]</value>
     </variable>
 
+    <variable name="Label_OSD_7000_Title">
+        <value condition="!String.IsEmpty(Container(7000).ListItem.Artist)">$INFO[Container(7000).ListItem.Title]</value>
+        <value condition="!String.IsEmpty(Container(7000).ListItem.TvShowTitle)">$VAR[Label_Plot_Episode_Number_C7000,,. ]$INFO[Container(7000).ListItem.Title]</value>
+        <value>$INFO[Container(7000).ListItem.Title]</value>
+    </variable>
+
     <variable name="Label_ButtonMenu_NowPlayingSubLabel">
         <value condition="!String.IsEmpty(MusicPlayer.Artist)">$INFO[MusicPlayer.Artist]</value>
         <value condition="!String.IsEmpty(VideoPlayer.TvShowTitle)">$INFO[VideoPlayer.TvShowTitle]</value>
@@ -1083,6 +1089,15 @@
         <value condition="!String.IsEmpty(VideoPlayer.Director)">$INFO[VideoPlayer.Director]</value>
         <value condition="!String.IsEmpty(VideoPlayer.Studio)">$INFO[VideoPlayer.Studio]</value>
         <value condition="!String.IsEmpty(VideoPlayer.Premiered)">$INFO[VideoPlayer.Premiered]</value>
+    </variable>
+
+    <variable name="Label_OSD_7000_SubLabel">
+        <value condition="!String.IsEmpty(Container(7000).ListItem.Artist)">$INFO[Container(7000).ListItem.Artist]</value>
+        <value condition="!String.IsEmpty(Container(7000).ListItem.TvShowTitle)">$INFO[Container(7000).ListItem.TvShowTitle]</value>
+        <value condition="!String.IsEmpty(Container(7000).ListItem.ChannelNumberLabel)">$INFO[Container(7000).ListItem.ChannelNumberLabel,$LOCALIZE[19029] ,]</value>
+        <value condition="!String.IsEmpty(Container(7000).ListItem.Director)">$INFO[Container(7000).ListItem.Director]</value>
+        <value condition="!String.IsEmpty(Container(7000).ListItem.Studio)">$INFO[Container(7000).ListItem.Studio]</value>
+        <value condition="!String.IsEmpty(Container(7000).ListItem.Premiered)">$INFO[Container(7000).ListItem.Premiered]</value>
     </variable>
 
     <variable name="Label_VideoPlayer_AudioChannels">

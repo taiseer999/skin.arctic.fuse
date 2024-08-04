@@ -356,6 +356,12 @@
         <value condition="!String.IsEmpty(Player.Art(tvshow.poster))">$INFO[Player.Art(tvshow.poster)]</value>
     </variable>
 
+    <variable name="Image_OSD_7000_Poster">
+        <value condition="!String.IsEmpty(Container(7000).ListItem.Art(poster))">$INFO[Container(7000).ListItem.Art(poster)]</value>
+        <value condition="!String.IsEmpty(Container(7000).ListItem.Art(tvshow.poster))">$INFO[Container(7000).ListItem.Art(tvshow.poster)]</value>
+        <value condition="!String.IsEmpty(Container(7000).ListItem.Icon)">$INFO[Container(7000).ListItem.Icon]</value>
+    </variable>
+
     <variable name="Image_Background">
         <value condition="!String.IsEmpty(Window(Home).Property(BlurImage)) + !String.IsEmpty(Window(Home).Property(TMDbHelper.Image.Override))">$INFO[Window(Home).Property(BlurImage)]</value>
         <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.SimpleBackground.BlurImage)) + $EXP[Exp_SettingsDialogs]">$INFO[Window(Home).Property(TMDbHelper.SimpleBackground.BlurImage)]</value>
