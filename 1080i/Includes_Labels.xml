@@ -1118,6 +1118,13 @@
         <value>$INFO[VideoPlayer.Season]$INFO[VideoPlayer.Episode,x0,]</value>
     </variable>
 
+    <variable name="Label_OSD_UpNext_Plot_Episode_Number">
+        <value condition="String.IsEmpty(Window.Property(season)) | String.IsEmpty(Window.Property(episode))" />
+        <value condition="Skin.HasSetting(Info.UseS1E1StyleNumbers)">$INFO[Window.Property(season),S,]$INFO[Window.Property(episode),E,]</value>
+        <value condition="!Integer.IsLess(Window.Property(episode),10)">$INFO[Window.Property(season)]$INFO[Window.Property(episode),x,]</value>
+        <value condition="True">$INFO[Window.Property(season)]$INFO[Window.Property(episode),x0,]</value>
+    </variable>
+
     <variable name="Label_OSD_DirectorName">
         <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.Player.Director.1.Name)) + String.IsEqual(Window(Home).Property(TMDbHelper.Player.Director.1.Role),Director)">$INFO[Window(Home).Property(TMDbHelper.Player.Director.1.Name)]</value>
         <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.Player.Director.2.Name)) + String.IsEqual(Window(Home).Property(TMDbHelper.Player.Director.2.Role),Director)">$INFO[Window(Home).Property(TMDbHelper.Player.Director.2.Name)]</value>
