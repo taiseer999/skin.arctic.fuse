@@ -1310,7 +1310,6 @@
         <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Last_Aired.Days_From_Aired)) + Integer.IsEqual(Container(99950).ListItem.Property(Last_Aired.Days_From_Aired),0)">$LOCALIZE[33006]</value>
         <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Last_Aired.Days_From_Aired)) + Integer.IsEqual(Container(99950).ListItem.Property(Last_Aired.Days_From_Aired),1)">$LOCALIZE[31547]</value>
         <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Last_Aired.Days_From_Aired)) + Integer.IsLess(Container(99950).ListItem.Property(Last_Aired.Days_From_Aired),7)">$INFO[Container(99950).ListItem.Property(Last_Aired.Day)]</value>
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Last_Aired.Days_From_Aired)) + Integer.IsEqual(Container(99950).ListItem.Property(Last_Aired.Year),System.Date(yyyy))">$INFO[Container(99950).ListItem.Property(Last_Aired.Short)]</value>
         <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Last_Aired.Days_From_Aired))">$INFO[Container(99950).ListItem.Property(Last_Aired.Year)]</value>
 
         <value>$LOCALIZE[1446]</value>
