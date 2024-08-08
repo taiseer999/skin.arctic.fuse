@@ -2367,7 +2367,7 @@ msgstr "تم اصداره"
 #: /1080i/Includes_Labels.xml
 msgctxt "#31499"
 msgid "In-Production"
-msgstr "يتم تصويره"
+msgstr "جاري تصويره"
 
 #: /1080i/Includes_Search.xml
 msgctxt "#31500"
@@ -2587,12 +2587,12 @@ msgstr "الحلقة السابقة"
 #: /1080i/Includes_Labels.xml
 msgctxt "#31543"
 msgid "Anticipated"
-msgstr "منتظرة"
+msgstr "متوقعه"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31544"	
 msgid "Airing"
-msgstr "بث موسم جديد"
+msgstr "بدأ عرض الموسم الجديد"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31545"
@@ -2602,7 +2602,7 @@ msgstr "عرض اول"
 #: /1080i/Includes_Labels.xml
 msgctxt "#31546"
 msgid "TBC"
-msgstr "لم يحدد بعد"
+msgstr "موعده لم يحدد"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31547"
