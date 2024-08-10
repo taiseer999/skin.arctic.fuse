@@ -2612,3 +2612,28 @@ msgstr ""
 msgctxt "#31547"
 msgid "Yesterday"
 msgstr ""
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31548"
+msgid "No widgets configured"
+msgstr ""
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31549"
+msgid "Widgets for $INFO[Container(302).ListItem.Label] submenu"
+msgstr ""
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31550"
+msgid "Widgets for $INFO[Container(300).ListItem.Label] category"
+msgstr ""
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31551"
+msgid "Widgets for $INFO[Container(303).ListItem.Label] side menu"
+msgstr ""
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31552"
+msgid "Widgets for $INFO[Window.Property(hub_prefix)] hub"
+msgstr ""

@@ -647,7 +647,7 @@
                     <control type="label">
                         <font>font_tiny</font>
                         <top>24</top>
-                        <label>$PARAM[sublabel]</label>
+                        <label fallback="$PARAM[sublabel_fallback]">$PARAM[sublabel]</label>
                         <textoffsetx>40</textoffsetx>
                         <textcolor>dialog_fg_70</textcolor>
                         <visible>$PARAM[sublabel_visible]</visible>
@@ -665,7 +665,7 @@
                     <control type="label">
                         <font>font_tiny</font>
                         <top>24</top>
-                        <label>$PARAM[sublabel]</label>
+                        <label fallback="$PARAM[sublabel_fallback]">$PARAM[sublabel]</label>
                         <include>Color_SelectedText</include>
                         <textoffsetx>40</textoffsetx>
                         <visible>$PARAM[sublabel_visible]</visible>
