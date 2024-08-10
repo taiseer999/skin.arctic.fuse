@@ -983,6 +983,23 @@
                                     <textcolor>$PARAM[color_fo]</textcolor>
                                     <label>$INFO[ListItem.Label]</label>
                                 </control>
+                                <control type="group">
+                                    <include content="Object_Width" condition="$PARAM[iconic]">
+                                        <param name="width">40</param>
+                                    </include>
+                                    <control type="image">
+                                        <!-- <include>Texture_Circle_Highlight_V</include>
+                                        <aspectratio>keep</aspectratio>
+                                        <width>10</width>
+                                        <height>10</height> -->
+                                        <include>Texture_Highlight_Scrollbar_V</include>
+                                        <height>8</height>
+                                        <width>40</width>
+                                        <centerleft>50%</centerleft>
+                                        <centerbottom>-5</centerbottom>
+                                        <visible>$PARAM[underline]</visible>
+                                    </control>
+                                </control>
                             </control>
                             <control type="group">
                                 <visible>![$PARAM[label_fo]]</visible>
