@@ -1733,7 +1733,7 @@ msgstr "Recarregar"
 #: /1080i/DialogContextMenu.xml
 msgctxt "#31365"
 msgid "Node"
-msgstr "Node"
+msgstr "Nó"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31366"
@@ -2396,7 +2396,7 @@ msgstr "Extras"
 #: /1080i/Includes_Labels.xml
 msgctxt "#31504"
 msgid "Planned"
-msgstr "Planeado"
+msgstr "Planejado"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31505"
@@ -2602,3 +2602,13 @@ msgstr "Em Exibição"
 msgctxt "#31545"
 msgid "Premiering"
 msgstr "Estreia"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31546"
+msgid "TBC"
+msgstr "A Ser Confirmado"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31547"
+msgid "Yesterday"
+msgstr "Ontem"
