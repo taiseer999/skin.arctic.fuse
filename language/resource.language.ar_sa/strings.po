@@ -2367,7 +2367,7 @@ msgstr "تم اصداره"
 #: /1080i/Includes_Labels.xml
 msgctxt "#31499"
 msgid "In-Production"
-msgstr "يتم تصويره"
+msgstr "جاري تصويره"
 
 #: /1080i/Includes_Search.xml
 msgctxt "#31500"
@@ -2587,12 +2587,12 @@ msgstr "الحلقة السابقة"
 #: /1080i/Includes_Labels.xml
 msgctxt "#31543"
 msgid "Anticipated"
-msgstr "منتظرة"
+msgstr "متوقعه"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31544"	
 msgid "Airing"
-msgstr "بث موسم جديد"
+msgstr "بدأ عرض الموسم الجديد"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31545"
@@ -2602,9 +2602,34 @@ msgstr "عرض اول"
 #: /1080i/Includes_Labels.xml
 msgctxt "#31546"
 msgid "TBC"
-msgstr "لم يحدد بعد"
+msgstr "موعده لم يحدد"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31547"
 msgid "Yesterday"
 msgstr "بالامس"
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31548"
+msgid "No widgets configured"
+msgstr "لا يوجد widgets تم اعدادها"
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31549"
+msgid "Widgets for $INFO[Container(302).ListItem.Label] submenu"
+msgstr "ودجتس ل $INFO[Container(302).ListItem.Label] القائمة الفرعية"
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31550"
+msgid "Widgets for $INFO[Container(300).ListItem.Label] category"
+msgstr "ودجتس ل$INFO[Container(300).ListItem.Label] فئة"
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31551"
+msgid "Widgets for $INFO[Container(303).ListItem.Label] side menu"
+msgstr "ودجتس ل$INFO[Container(303).ListItem.Label] القائمة الجانبية"
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31552"
+msgid "Widgets for $INFO[Window.Property(hub_prefix)] hub"
+msgstr "ودجتس ل$INFO[Window.Property(hub_prefix)] hub"
