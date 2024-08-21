@@ -149,13 +149,13 @@
                         <param name="selected">false</param>
                         <param name="detailed">$PARAM[detailed]</param>
                         <param name="item_h">$PARAM[channelheight]</param>
-                        <visible>[Control.HasFocus(28) | Control.HasFocus(11) | $EXP[Exp_HomeMenu_HasFocus] | ControlGroup(9000).HasFocus()]</visible>
+                        <visible>[$EXP[Exp_PVRGuide_NoFocus]]</visible>
                     </include>
                     <include content="$PARAM[include_channels]">
                         <param name="selected">true</param>
                         <param name="detailed">$PARAM[detailed]</param>
                         <param name="item_h">$PARAM[channelheight]</param>
-                        <visible>![Control.HasFocus(28) | Control.HasFocus(11) | $EXP[Exp_HomeMenu_HasFocus] | ControlGroup(9000).HasFocus()]</visible>
+                        <visible>![$EXP[Exp_PVRGuide_NoFocus]]</visible>
                     </include>
                 </focusedchannellayout>
                 <itemlayout height="$PARAM[channelheight]" width="480">
@@ -166,12 +166,12 @@
                 <focusedlayout height="$PARAM[channelheight]" width="480">
                     <include content="$PARAM[include_programs]">
                         <param name="selected">false</param>
-                        <param name="visible">[Control.HasFocus(28) | Control.HasFocus(11) | $EXP[Exp_HomeMenu_HasFocus] | ControlGroup(9000).HasFocus()]</param>
+                        <param name="visible">[$EXP[Exp_PVRGuide_NoFocus]]</param>
                         <param name="detailed">$PARAM[detailed]</param>
                     </include>
                     <include content="$PARAM[include_programs]">
                         <param name="selected">true</param>
-                        <param name="visible">![Control.HasFocus(28) | Control.HasFocus(11) | $EXP[Exp_HomeMenu_HasFocus] | ControlGroup(9000).HasFocus()]</param>
+                        <param name="visible">![$EXP[Exp_PVRGuide_NoFocus]]</param>
                         <param name="detailed">$PARAM[detailed]</param>
                     </include>
                 </focusedlayout>
