@@ -7,6 +7,9 @@
     <include name="View_Row_Header">
         <definition>
             <control type="group">
+                <include condition="$EXP[Exp_HomeMenu_Info_IsHorizontal]" content="Animation_ConditionalFade">
+                    <param name="condition">$EXP[Exp_InfoDialogs]</param>
+                </include>
                 <visible>!$EXP[Exp_InfoDialogs]</visible>
                 <include>Animation_Transition_InfoPanel_Hide</include>
                 <visible>!Window.IsVisible(DialogAddonSettings.xml)</visible>

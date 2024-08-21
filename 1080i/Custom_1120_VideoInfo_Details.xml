@@ -225,7 +225,6 @@
 
                         <onleft condition="!$EXP[Exp_HomeMenu_IsTopBar]">Close</onleft>
                         <onright>SetFocus(5000)</onright>
-                        <onback>SetFocus(4001)</onback>
                         <onback condition="!$EXP[Exp_HomeMenu_IsTopBar]">SetProperty(SideMenu.HasFocus,True,Home)</onback>
                         <onback condition="$EXP[Exp_HomeMenu_IsTopBar]">ClearProperty(SideMenu.HasFocus,Home)</onback>
 

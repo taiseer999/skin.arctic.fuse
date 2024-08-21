@@ -479,43 +479,43 @@
         <onright condition="$PARAM[condition]">ActivateWindow(1120)</onright>
     </include>
 
-    <include name="Action_VideoInfo_Main_OnUp">
-        <onup condition="$PARAM[condition]">SetProperty(Director_Label,$VAR[Label_FromDirector],1120)</onup>
-        <onup condition="$PARAM[condition]">SetProperty(Director_Image,$VAR[Image_DirectorIcon],1120)</onup>
-        <onup condition="$PARAM[condition]">SetProperty(Director_Query,$VAR[Path_FromDirector],1120)</onup>
+    <include name="Action_VideoInfo_Main_OnDown">
+        <ondown condition="$PARAM[condition]">SetProperty(Director_Label,$VAR[Label_FromDirector],1120)</ondown>
+        <ondown condition="$PARAM[condition]">SetProperty(Director_Image,$VAR[Image_DirectorIcon],1120)</ondown>
+        <ondown condition="$PARAM[condition]">SetProperty(Director_Query,$VAR[Path_FromDirector],1120)</ondown>
 
-        <onup condition="$PARAM[condition]">SetProperty(Writer_Label,$VAR[Label_FromWriter],1120)</onup>
-        <onup condition="$PARAM[condition]">SetProperty(Writer_Image,$VAR[Image_WriterIcon],1120)</onup>
-        <onup condition="$PARAM[condition]">SetProperty(Writer_Query,$VAR[Path_FromWriter],1120)</onup>
+        <ondown condition="$PARAM[condition]">SetProperty(Writer_Label,$VAR[Label_FromWriter],1120)</ondown>
+        <ondown condition="$PARAM[condition]">SetProperty(Writer_Image,$VAR[Image_WriterIcon],1120)</ondown>
+        <ondown condition="$PARAM[condition]">SetProperty(Writer_Query,$VAR[Path_FromWriter],1120)</ondown>
 
-        <onup condition="$PARAM[condition]">SetProperty(Creator_Label,$VAR[Label_FromCreator],1120)</onup>
-        <onup condition="$PARAM[condition]">SetProperty(Creator_Image,$VAR[Image_CreatorIcon],1120)</onup>
-        <onup condition="$PARAM[condition]">SetProperty(Creator_Query,$VAR[Path_FromCreator],1120)</onup>
+        <ondown condition="$PARAM[condition]">SetProperty(Creator_Label,$VAR[Label_FromCreator],1120)</ondown>
+        <ondown condition="$PARAM[condition]">SetProperty(Creator_Image,$VAR[Image_CreatorIcon],1120)</ondown>
+        <ondown condition="$PARAM[condition]">SetProperty(Creator_Query,$VAR[Path_FromCreator],1120)</ondown>
 
-        <onup condition="$PARAM[condition]">SetProperty(Studio_Label,$VAR[Label_FromStudio],1120)</onup>
-        <onup condition="$PARAM[condition]">SetProperty(Studio_Image,$VAR[Image_StudioIcon],1120)</onup>
-        <onup condition="$PARAM[condition]">SetProperty(Studio_Query,$VAR[Path_FromStudio],1120)</onup>
+        <ondown condition="$PARAM[condition]">SetProperty(Studio_Label,$VAR[Label_FromStudio],1120)</ondown>
+        <ondown condition="$PARAM[condition]">SetProperty(Studio_Image,$VAR[Image_StudioIcon],1120)</ondown>
+        <ondown condition="$PARAM[condition]">SetProperty(Studio_Query,$VAR[Path_FromStudio],1120)</ondown>
 
-        <onup condition="$PARAM[condition]">SetProperty(Set_Label,$INFO[Container(99950).ListItem.Property(Set.Name)],1120)</onup>
-        <onup condition="$PARAM[condition]">SetProperty(Set_Image,$INFO[Container(99950).ListItem.Property(Set.Fanart)],1120)</onup>
-        <onup condition="$PARAM[condition]">SetProperty(Set_Query,$INFO[Container(99950).ListItem.Property(Set.TMDb_ID),&amp;tmdb_id=,],1120)</onup>
+        <ondown condition="$PARAM[condition]">SetProperty(Set_Label,$INFO[Container(99950).ListItem.Property(Set.Name)],1120)</ondown>
+        <ondown condition="$PARAM[condition]">SetProperty(Set_Image,$INFO[Container(99950).ListItem.Property(Set.Fanart)],1120)</ondown>
+        <ondown condition="$PARAM[condition]">SetProperty(Set_Query,$INFO[Container(99950).ListItem.Property(Set.TMDb_ID),&amp;tmdb_id=,],1120)</ondown>
 
-        <onup condition="$PARAM[condition]">SetProperty(Version_Label,$INFO[ListItem.VideoVersionName],1120)</onup>
-        <onup condition="$PARAM[condition]">SetProperty(Version_Image,$INFO[ListItem.Art(poster)],1120)</onup>
-        <onup condition="$PARAM[condition]">SetProperty(Version_Query,$INFO[ListItem.DBID,videodb://movies/videoversions/0?mediaid=,],1120)</onup>
+        <ondown condition="$PARAM[condition]">SetProperty(Version_Label,$INFO[ListItem.VideoVersionName],1120)</ondown>
+        <ondown condition="$PARAM[condition]">SetProperty(Version_Image,$INFO[ListItem.Art(poster)],1120)</ondown>
+        <ondown condition="$PARAM[condition]">SetProperty(Version_Query,$INFO[ListItem.DBID,videodb://movies/videoversions/0?mediaid=,],1120)</ondown>
 
-        <onup condition="$PARAM[condition]">SetProperty(Item_Title,$VAR[Label_Title],1120)</onup>
-        <onup condition="$PARAM[condition]">SetProperty(Item_Query,$VAR[Path_Param_Query],1120)</onup>
-        <onup condition="$PARAM[condition]">SetProperty(Item_Type,$VAR[Path_Param_Type],1120)</onup>
+        <ondown condition="$PARAM[condition]">SetProperty(Item_Title,$VAR[Label_Title],1120)</ondown>
+        <ondown condition="$PARAM[condition]">SetProperty(Item_Query,$VAR[Path_Param_Query],1120)</ondown>
+        <ondown condition="$PARAM[condition]">SetProperty(Item_Type,$VAR[Path_Param_Type],1120)</ondown>
 
-        <onup condition="$PARAM[condition]">SetProperty(Episodes_Label,$LOCALIZE[20366],1120)</onup>
+        <ondown condition="$PARAM[condition]">SetProperty(Episodes_Label,$LOCALIZE[20366],1120)</ondown>
 
         <!-- Fake blur hack to preserve image -->
-        <onup condition="$PARAM[condition]">SetProperty(TMDBHelper.ListItem.BlurImage,$VAR[Image_Background],Home)</onup>
-        <onup condition="$PARAM[condition]">SetProperty(TMDBHelper.ListItem.BlurImage.Original,$VAR[Image_Foreground],Home)</onup>
+        <ondown condition="$PARAM[condition]">SetProperty(TMDBHelper.ListItem.BlurImage,$VAR[Image_Background],Home)</ondown>
+        <ondown condition="$PARAM[condition]">SetProperty(TMDBHelper.ListItem.BlurImage.Original,$VAR[Image_Foreground],Home)</ondown>
 
-        <onup condition="$PARAM[condition]">SetFocus(7001)</onup>
-        <onup condition="$PARAM[condition]">ActivateWindow(1120)</onup>
+        <ondown condition="$PARAM[condition]">SetFocus(7001)</ondown>
+        <ondown condition="$PARAM[condition]">ActivateWindow(1120)</ondown>
     </include>
 
     <include name="Action_VideoInfo_Cast_OnRight">

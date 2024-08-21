@@ -60,13 +60,13 @@
         <control type="group">
             <include>Animation_View_SlideOver</include>
             <control type="group">
+                <include condition="$EXP[Exp_HomeMenu_IsTopBar]">Animation_View_Topbar</include>
                 <include>Animation_Transition_InfoPanel_Open</include>
                 <include content="Furniture_Top">
                     <param name="include_topbar_animation">False</param>
                 </include>
             </control>
             <control type="group">
-                <include condition="$EXP[Exp_HomeMenu_IsTopBar]">Animation_View_Topbar</include>
                 <include condition="$EXP[Exp_Footer_BottomLeft_IsVisible]">Animation_Transition_InfoPanel_Open</include>
                 <include condition="!$EXP[Exp_Footer_BottomLeft_IsVisible]">Animation_Transition_InfoPanel_Open_Fade</include>
                 <include>Furniture_Bottom_Left</include>
@@ -893,8 +893,8 @@
         <ondown condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions)">SetFocus(61)</ondown>
     </include>
     <include name="DialogInfo_ButtonGroup_Basic__Def_Recommendations_Horz">
-        <ondown>330</ondown>
-        <onup>5000</onup>
+        <onup>333</onup>
+        <ondown>5000</ondown>
     </include>
     <include name="DialogInfo_ButtonGroup_Basic__Def_1183_Person">
         <include content="Action_HomeMenu_OnRightLeft">
@@ -932,27 +932,27 @@
         <ondown condition="Skin.HasSetting(SideMenu.EnableSearchAndOptions)">SendClick(10)</ondown>
     </include>
 
-    <include name="DialogInfo_ButtonGroup_OnUp">
-        <include content="Action_VideoInfo_Main_OnUp" condition="Window.IsVisible(DialogVideoInfo.xml)">
+    <include name="DialogInfo_ButtonGroup_OnDown">
+        <include content="Action_VideoInfo_Main_OnDown" condition="Window.IsVisible(DialogVideoInfo.xml)">
             <param name="condition">![String.IsEqual(Window.Property(DetailsView),Cast) | String.IsEqual(Window.Property(DetailsView),Reviews) | String.IsEqual(Window.Property(DetailsView),Trailer) | String.IsEqual(Window.Property(DetailsView),Critics)]</param>
         </include>
 
         <!-- Cast -->
-        <onup condition="[String.IsEqual(Window.Property(DetailsView),Cast) + !Integer.IsEqual(Container(5003).NumItems,0)]">SetFocus(5003,0,absolute)</onup>
-        <onup condition="[String.IsEqual(Window.Property(DetailsView),Cast) + !Integer.IsEqual(Container(50).NumItems,0)]">SetFocus(50,0,absolute)</onup>
+        <ondown condition="[String.IsEqual(Window.Property(DetailsView),Cast) + !Integer.IsEqual(Container(5003).NumItems,0)]">SetFocus(5003,0,absolute)</ondown>
+        <ondown condition="[String.IsEqual(Window.Property(DetailsView),Cast) + !Integer.IsEqual(Container(50).NumItems,0)]">SetFocus(50,0,absolute)</ondown>
 
         <!-- Songs -->
-        <onup condition="[String.IsEqual(Window.Property(DetailsView),Songs) + !Integer.IsEqual(Container(5050).NumItems,0)]">SetFocus(5050,0,absolute)</onup>
-        <onup condition="[String.IsEqual(Window.Property(DetailsView),Songs) + !Integer.IsEqual(Container(50).NumItems,0)]">SetFocus(50,0,absolute)</onup>
+        <ondown condition="[String.IsEqual(Window.Property(DetailsView),Songs) + !Integer.IsEqual(Container(5050).NumItems,0)]">SetFocus(5050,0,absolute)</ondown>
+        <ondown condition="[String.IsEqual(Window.Property(DetailsView),Songs) + !Integer.IsEqual(Container(50).NumItems,0)]">SetFocus(50,0,absolute)</ondown>
 
         <!-- Videos / Trailers / Extras -->
-        <onup condition="[String.IsEqual(Window.Property(DetailsView),Trailer) + !Integer.IsEqual(Container(5002).NumItems,0)]">SetFocus(5002,0,absolute)</onup>
+        <ondown condition="[String.IsEqual(Window.Property(DetailsView),Trailer) + !Integer.IsEqual(Container(5002).NumItems,0)]">SetFocus(5002,0,absolute)</ondown>
 
         <!-- Reviews -->
-        <onup condition="[String.IsEqual(Window.Property(DetailsView),Reviews) + !Integer.IsEqual(Container(5004).NumItems,0)]">SetFocus(5004,0,absolute)</onup>
+        <ondown condition="[String.IsEqual(Window.Property(DetailsView),Reviews) + !Integer.IsEqual(Container(5004).NumItems,0)]">SetFocus(5004,0,absolute)</ondown>
 
         <!-- Albums -->
-        <onup condition="[String.IsEqual(Window.Property(DetailsView),Albums) + !Integer.IsEqual(Container(5008).NumItems,0)]">SetFocus(5008,0,absolute)</onup>
+        <ondown condition="[String.IsEqual(Window.Property(DetailsView),Albums) + !Integer.IsEqual(Container(5008).NumItems,0)]">SetFocus(5008,0,absolute)</ondown>
     </include>
 
     <!-- Button Group for DialogInfo -->
@@ -962,7 +962,7 @@
         <left>view_list</left>
     </include>
     <include name="DialogInfo_ButtonGroup_Horz">
-        <bottom>20</bottom>
+        <top>20</top>
         <height>160</height>
         <left>20</left>
     </include>
@@ -988,10 +988,10 @@
                     <onback>Dialog.Close(movieinformation)</onback>
 
                     <onleft condition="$PARAM[vertical]">61</onleft>
-                    <ondown condition="![$PARAM[vertical]]">61</ondown>
+                    <onup condition="![$PARAM[vertical]]">61</onup>
 
                     <include condition="$PARAM[vertical]">DialogInfo_ButtonGroup_OnRight</include>
-                    <include condition="![$PARAM[vertical]]">DialogInfo_ButtonGroup_OnUp</include>
+                    <include condition="![$PARAM[vertical]]">DialogInfo_ButtonGroup_OnDown</include>
 
                     <include content="$PARAM[include]">
                         <param name="vertical">$PARAM[vertical]</param>
@@ -1756,13 +1756,13 @@
                     <include condition="![Window.IsVisible(1120) | Window.IsVisible(1121) | Window.IsVisible(1122)]">Animation_View_WindowChange</include>
                     <control type="group">
                         <visible>$PARAM[header_visible]</visible>
+                        <include condition="$EXP[Exp_HomeMenu_IsTopBar]">Animation_View_Topbar</include>
                         <include content="Furniture_Top">
                             <param name="label">$PARAM[header]</param>
                             <param name="include_topbar_animation">false</param>
                         </include>
                     </control>
                     <control type="group">
-                        <include condition="$EXP[Exp_HomeMenu_IsTopBar]">Animation_View_Topbar</include>
                         <include content="Hub_Widgets_Group_Furniture">
                             <param name="visible">true</param>
                             <param name="include_conditionalfade">false</param>
