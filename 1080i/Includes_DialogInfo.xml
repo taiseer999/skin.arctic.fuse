@@ -425,6 +425,47 @@
         </definition>
     </include>
 
+    <include name="DialogInfo_Details_PersonBiography">
+        <control type="group">
+            <include>Animation_View_SlideOver_Invert</include>
+            <control type="group">
+                <include content="DialogInfo_VideoInfo_CastSpotlight">
+                    <param name="icon">$INFO[Container(7000).ListItem.Icon]</param>
+                    <param name="plot">$VAR[Label_VideoInfo_CastBio]</param>
+                    <param name="label">$INFO[Container(7000).ListItem.Label2]</param>
+                    <param name="label2">$VAR[Label_VideoInfo_CastAge,   ,]</param>
+                </include>
+                <include content="Animation_Slide_In">
+                    <param name="type">Visible</param>
+                    <param name="posx">320</param>
+                </include>
+                <include content="Animation_Slide_Out">
+                    <param name="type">Hidden</param>
+                    <param name="posx">320</param>
+                </include>
+                <visible>Control.HasFocus(7000)</visible>
+                <visible>!String.ISEmpty(Container(7000).ListItem.Property(query))</visible>
+                <top>view_top</top>
+            </control>
+        </control>
+    </include>
+
+    <include name="DialogInfo_Cast_PersonBiography">
+        <include content="Object_Hidden_List">
+            <param name="id">5203</param>
+            <content sortby="year" sortorder="descending">$INFO[Container(5003).ListItem.Property(TMDb_ID),plugin://plugin.video.themoviedb.helper/?info=details&amp;tmdb_type=person&amp;tmdb_id=,]</content>
+        </include>
+        <control type="group">
+            <include>Animation_View_SlideOver_Invert</include>
+            <control type="group">
+                <include>DialogInfo_VideoInfo_CastSpotlight</include>
+                <include>Animation_Right</include>
+                <visible>Control.HasFocus(5003) | Control.HasFocus(5103) | Control.HasFocus(5303)</visible>
+                <top>-390</top>
+            </control>
+        </control>
+    </include>
+
     <include name="DialogInfo_VideoInfo">
         <include content="DialogInfo_VideoDetails">
             <param name="visible">String.IsEmpty(Window.Property(DetailsView))</param>
@@ -534,19 +575,7 @@
             </include>
             <visible>String.IsEqual(Window.Property(DetailsView),Cast)</visible>
 
-            <include content="Object_Hidden_List">
-                <param name="id">5203</param>
-                <content sortby="year" sortorder="descending">$INFO[Container(5003).ListItem.Property(TMDb_ID),plugin://plugin.video.themoviedb.helper/?info=details&amp;tmdb_type=person&amp;tmdb_id=,]</content>
-            </include>
-            <control type="group">
-                <include>Animation_View_SlideOver_Invert</include>
-                <control type="group">
-                    <include>DialogInfo_VideoInfo_CastSpotlight</include>
-                    <include>Animation_Right</include>
-                    <visible>Control.HasFocus(5003) | Control.HasFocus(5103) | Control.HasFocus(5303)</visible>
-                    <top>-390</top>
-                </control>
-            </control>
+            <include condition="!$EXP[Exp_AspectRatio_Reduced]">DialogInfo_Cast_PersonBiography</include>
 
             <control type="group">
                 <top>-40</top>

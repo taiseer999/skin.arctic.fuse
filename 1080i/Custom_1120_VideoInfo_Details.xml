@@ -191,28 +191,7 @@
                 </control>
 
                 <!-- Person Info -->
-                <control type="group">
-                    <include>Animation_View_SlideOver_Invert</include>
-                    <control type="group">
-                        <include content="DialogInfo_VideoInfo_CastSpotlight">
-                            <param name="icon">$INFO[Container(7000).ListItem.Icon]</param>
-                            <param name="plot">$VAR[Label_VideoInfo_CastBio]</param>
-                            <param name="label">$INFO[Container(7000).ListItem.Label2]</param>
-                            <param name="label2">$VAR[Label_VideoInfo_CastAge,   ,]</param>
-                        </include>
-                        <include content="Animation_Slide_In">
-                            <param name="type">Visible</param>
-                            <param name="posx">320</param>
-                        </include>
-                        <include content="Animation_Slide_Out">
-                            <param name="type">Hidden</param>
-                            <param name="posx">320</param>
-                        </include>
-                        <visible>Control.HasFocus(7000)</visible>
-                        <visible>!String.ISEmpty(Container(7000).ListItem.Property(query))</visible>
-                        <top>view_top</top>
-                    </control>
-                </control>
+                <include condition="!$EXP[Exp_AspectRatio_Reduced]">DialogInfo_Details_PersonBiography</include>
             </control>
 
             <control type="group">
