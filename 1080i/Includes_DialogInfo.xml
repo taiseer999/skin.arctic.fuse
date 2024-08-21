@@ -786,7 +786,7 @@
                 <right>view_board_itemlayout_w</right>
                 <height>view_poster_itemlayout_h</height>
                 <width>view_poster_itemlayout_w</width>
-                <include content="Layout_Poster">
+                <include content="Layout_Poster" condition="!$EXP[Exp_AspectRatio_Reduced]">
                     <param name="icon">$VAR[Image_DialogInfo_Poster]</param>
                     <param name="indicator">false</param>
                     <param name="item_w">view_poster_item_w</param>
@@ -1132,6 +1132,7 @@
 
         <control type="group">
             <left>200</left>
+            <right>100</right>
 
             <visible>$PARAM[visible]</visible>
 
@@ -1220,8 +1221,8 @@
 
             <!-- Right Details -->
             <control type="group">
-                <include content="Object_Right" condition="True">
-                    <param name="right">100</param>
+                <include content="Object_Right" condition="$EXP[Exp_AspectRatio_Reduced]">
+                    <param name="right">-view_poster_itemlayout_w</param>
                 </include>
                 <control type="grouplist">
                     <left>300</left>

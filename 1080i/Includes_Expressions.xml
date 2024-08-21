@@ -126,6 +126,8 @@
 
     <expression name="Exp_PVRGuide_NoFocus">[Control.HasFocus(28) | Control.HasFocus(11) | $EXP[Exp_HomeMenu_HasFocus] | $EXP[Exp_ViewDialog_HasFocus]]</expression>
 
+    <expression name="Exp_AspectRatio_Reduced">[String.IsEqual(Skin.AspectRatio,4:3) | String.IsEqual(Skin.AspectRatio,3:2)]</expression>
+
     <!-- Discover -->
     <expression name="Exp_View_55">[Container.Content(files) + [String.IsEqual(Container.ListItem.Property(param.info),user_discover) | String.IsEqual(Container.Property(param.info),user_discover)]]</expression>
 
