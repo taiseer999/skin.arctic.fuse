@@ -296,7 +296,12 @@
                     <include>Animation_View_SlideOver</include>
                     <include>Animation_View_WindowChange</include>
                     <include>Hub_Widgets_Group_Furniture</include>
-                    <include>Furniture_Top</include>
+                    <control type="group">
+                        <include condition="$EXP[Exp_HomeMenu_Info_IsHorizontal]" content="Animation_ConditionalFade">
+                            <param name="condition">$EXP[Exp_InfoDialogs]</param>
+                        </include>
+                        <include>Furniture_Top</include>
+                    </control>
                 </control>
                 <include>Furniture_Bottom_Right</include>
             </control>
