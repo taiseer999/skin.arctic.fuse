@@ -125,7 +125,6 @@
                 <onfocus>ClearProperty(SearchDiscover.FocusFilter,Home)</onfocus>
                 <onfocus condition="!Window.IsVisible(1105)">SetFocus(9094)</onfocus>
 
-                <!-- <onfocus condition="Window.IsVisible(1105) | Window.IsMedia">SetFocus(64)</onfocus> -->
             </control>
             <control type="group" id="9990">
                 <centertop>100</centertop>
@@ -133,6 +132,11 @@
                 <left>view_side</left>
                 <height>80</height>
                 <include condition="$EXP[Exp_HomeMenu_IsTopBar]">Animation_View_Topbar</include>
+
+                <include condition="$EXP[Exp_HomeMenu_Info_IsHorizontal]" content="Animation_ConditionalFade">
+                    <param name="condition">$EXP[Exp_InfoDialogs]</param>
+                </include>
+
                 <control type="grouplist">
                     <orientation>horizontal</orientation>
                     <animation effect="slide" start="0" end="0,-15" condition="true">Conditional</animation>
