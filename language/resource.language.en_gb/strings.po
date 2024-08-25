@@ -2637,3 +2637,8 @@ msgstr ""
 msgctxt "#31552"
 msgid "Widgets for $INFO[Window.Property(hub_prefix)] hub"
 msgstr ""
+
+#: /1080i/Custom_1175_Dialog_Discover.xml
+msgctxt "#31553"
+msgid "Query"
+msgstr ""
