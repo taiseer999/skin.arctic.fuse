@@ -1354,7 +1354,7 @@ msgstr "Classificação Etária"
 
 msgctxt "#31286"
 msgid "Won"
-msgstr "Ganhou"
+msgstr "Vencedor"
 
 msgctxt "#31287"
 msgid "Nominated for"
@@ -2606,9 +2606,34 @@ msgstr "Estreia"
 #: /1080i/Includes_Labels.xml
 msgctxt "#31546"
 msgid "TBC"
-msgstr "A Ser Confirmado"
+msgstr "TBC"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31547"
 msgid "Yesterday"
 msgstr "Ontem"
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31548"
+msgid "No widgets configured"
+msgstr "Nenhum widget configurado"
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31549"
+msgid "Widgets for $INFO[Container(302).ListItem.Label] submenu"
+msgstr "Widgets para o submenu $INFO[Container(302).ListItem.Label]"
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31550"
+msgid "Widgets for $INFO[Container(300).ListItem.Label] category"
+msgstr "Widgets para a categoria $INFO[Container(300).ListItem.Label]"
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31551"
+msgid "Widgets for $INFO[Container(303).ListItem.Label] side menu"
+msgstr "Widgets para o menu lateral $INFO[Container(303).ListItem.Label]"
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31552"
+msgid "Widgets for $INFO[Window.Property(hub_prefix)] hub"
+msgstr "Widgets para o hub $INFO[Window.Property(hub_prefix)]"
